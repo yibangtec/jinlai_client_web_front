@@ -1,17 +1,19 @@
-		</main>
+		<!--</main>-->
 <!-- End #maincontainer -->
 
 <?php
-	// 若通过微信访问，则不显示部分内容
+	// 检查当前设备信息
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	if ( ! $is_wechat):
+	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
+	$is_android = ($this->input->get('device_platform') === 'android' || strpos($user_agent, 'Android'))? TRUE: FALSE;
+	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
 ?>
 		<footer id=footer role=contentinfo>
 			<div id=copyright>
 				<div class=container>
 					<p>&copy;<?php echo date('Y') ?>
-					
+
 					<a title="<?php echo SITE_DESCRIPTION ?>" href="<?php echo base_url() ?>"><?php echo SITE_NAME ?></a>
 
 					<?php if ( !empty(ICP_NUMBER)): ?>
