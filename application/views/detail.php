@@ -1,37 +1,3 @@
-	<!--店铺首页商家信息开始-->
-		<div class="shopinfo wid710 auto clearfix">
-			<div class="shoppic fl">
-				<img src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
-			</div>
-			<!--商家名字等信息-->
-			<div class="shopname fl">
-				<span class="fl">NIKE官方旗舰店</span>
-				<a href="#" class="fl">入驻商家</a>
-			</div>
-			<div class="gnwrap fr">
-				<a href="#" class="pay">充值</a>
-				<a href="#" class="focus">+关注</a>
-			</div>
-		</div>
-		<!--tab切换区域开始-->
-		<div class="shopIndextabtitle wid710 auto">
-			<ul class="clearfix">
-				<li class="current">
-					首页
-				</li>
-				<li>
-					<span>商品</span>
-					<span>(99)</span>
-				</li>
-				<li>
-					最新上架
-				</li>
-				<li style="border-right:0">
-					活动商品
-				</li>
-			</ul>
-			
-		</div>
 	<!--头部banner区域开始-->
 		<div class="bannerWrap auto">
 			<div class="swiper-container">

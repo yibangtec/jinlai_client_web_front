@@ -1,16 +1,51 @@
 <style>
 	#content {width:100%;}
 		#content>* {color:#898989;background-color:#fff;}
-		#content>section {padding:30px 20px;border-radius:20px;margin:20px;}
+		#content>section {padding:.3rem .2rem;border-radius:.2rem;margin:.2rem;position: relative;}
 
 	#item-figure {border-radius:0 0 20px 20px;}
 
-	#item-name {color:#3e3a39;font-size:30px;line-height:1;margin-bottom:10px;}
-	#slogan {color:#9fa0a0;font-size:24px;margin-bottom:30px;}
+	#item-name {    
+	    color: #3e3a39;
+    font-size: .3rem;
+    line-height: 1;
+    margin-bottom: .1rem;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 2.43rem;
+    }
+	#slogan {
+		color:#9fa0a0;
+		font-size:.24rem;
+		margin-bottom:.3rem;
+		white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:5.63rem;
+		}
+	.detailshare{
+		width: .68rem;
+		height: .52rem;
+		border-left:1px solid #ddd ;
+		position: absolute;
+		top: .38rem;
+		right: .2rem;
+	}
+	.detailshare img{
+		display: block;
+		margin-top: .08rem;
+		margin-left: .3rem;
+	}
+	#service-promise ul{
+		width: 5.76rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	#service-promise li {font-size:.24rem;color:#898989;/*background:url('/media/item/detail/quan@3x.png') no-repeat left center;background-size:24px 24px;*/}
 
-	#service-promise li {background:url('/media/item/detail/quan@3x.png') no-repeat left center;background-size:24px 24px;padding-left:34px;}
-
-	#prices {font-size:24px;}
+	#prices {font-size:.24rem}
 		#prices strong {color:#ff3649;font-size:44px;font-weight:600;}
 		#prices small {font-size:32px;}
 
@@ -24,6 +59,91 @@
 	#general-seperater {font-size:24px;background-color:transparent;text-align:center;margin:50px 0;}
 
 	#description p, #description img {line-height:1;}
+	.tipprice{
+		font-size: 24px;
+		color: #898989;
+		padding-top: .2rem;
+	}
+	.tipprice span{
+		position: relative;
+	}
+	.tipprice span i{
+		    position: absolute;
+    width: .45rem;
+    height: 1px;
+    background: #898989;
+    display: block;
+    top: 50%;
+    left: rem;
+    left: 0px;
+	}
+	.detailtag{
+		padding-top: .2rem;
+		font-size: .24rem;
+		color: #898989;
+		    display: flex;
+    	justify-content: space-between;
+	}
+	.skus{
+		padding: .3rem 0;
+	}
+	.topcardwrap{
+		position: relative;
+		margin: 0 .2rem;
+	}
+	.topcardwrap .get{
+		    width: .76rem;
+    height: .4rem;
+    font-size: .16rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    line-height: .4rem;
+    background: #ccc;
+    text-align: center;
+    border-radius: .5rem;
+	}
+	.topcardwrap h1:nth-child(1){
+		margin-bottom: .2rem;
+	}
+	.topcardwrap h1 span{
+		    border-radius: .04rem;
+    height: .24rem;
+    line-height: .24rem;
+   
+	}
+	.topcardwrap h1 span:nth-child(1){
+		display: block;
+		float: left;
+		font-size: .2rem;
+		color: #fff;
+		margin-top: .02rem;
+		    background: linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+    background: -o-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+    background: -ms-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+    background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+     width: 1.12rem;
+     text-align: center;
+		
+	}
+	hr{
+		border: none;
+    height: 1px;
+    background: #ccc;
+    /* display: block; */
+    /* float: left; */
+    /* padding: 0; */
+    margin: .3rem 0;
+	}
+	.topcardwrap h1 span:nth-child(2){
+		display: block;
+		float: left;
+		margin-left: .1rem;
+		font-size: .26rem;
+		color: #3e3a39;
+	}
+	
 </style>
 
 <script>
@@ -64,13 +184,13 @@ wx.ready(function(){
 
 <base href="<?php echo $this->media_root ?>">
 
-<div id=breadcrumb>
+<!--<div id=breadcrumb>
 	<ol class="breadcrumb container">
 		<li><a href="<?php echo base_url() ?>">首页</a></li>
 		<li><a href="<?php echo base_url('item?category_id='.$item['category_id']) ?>"><?php echo $category['name'] ?></a></li>
 		<li class=active><?php echo $title ?></li>
 	</ol>
-</div>
+</div>-->
 
 <div id=content class=container>
 	<div id=item-figure class="swiper-container row">
@@ -111,6 +231,10 @@ wx.ready(function(){
 	</div>
 
 	<section id=item-brief>
+		<!--分享-->
+		<div class="detailshare">
+			<img src="<?php echo CDN_URL ?>media/item/detail/fenxiang@3x.png" />
+		</div>
 		<h2 id=item-name><?php echo $item['name'] ?></h2>
 
 		<?php echo !empty($item['slogan'])? '<h3 id=slogan>'.$item['slogan'].'</h3>': NULL ?>
@@ -124,39 +248,68 @@ wx.ready(function(){
 			</li>
 
 			<?php $unit_name = !empty($item['unit_name'])? $item['unit_name']: '份' ?>
-			<li id=stocks>
+			<!--<li id=stocks>
 				库存 <?php echo $item['stocks']. $unit_name ?>
 				<?php echo $item['quantity_min'] > 1? ' '.$item['quantity_min'].$unit_name. '起售': NULL; ?>
 				<?php echo $item['quantity_max'] > 0? ' 限购 '.$item['quantity_max'].$unit_name: NULL ?>
+			</li>-->
+			<li class="tipprice">
+				价格:¥ <span><i></i>199</span>
 			</li>
 		</ul>
+		<div class="detailtag">
+			<span>
+				快递:  8.00
+			</span>
+			<span>
+				月销:  12345
+			</span>
+			<span>
+				美国进口
+			</span>
+		</div>
 	</section>
 	
 	<section id=service-promise>
-		<ul class=row>
-			<li class=col-xs-4>上门处理投诉</li>
-			<li class=col-xs-4>满58元包邮</li>
-			<li class=col-xs-4>3小时送达</li>
+		<ul>
+			<li>
+				<span></span>
+				上门处理投诉
+			</li>
+			<li>满58元包邮</li>
+			<li>3小时送达</li>
 		</ul>
 	</section>
 
 	<?php if ( !empty($skus) ): ?>
-	<section id=skus>
-		<ul class=horizontal>
-			<?php foreach ($skus as $sku): ?>
-			<li>
-				<a data-item-id="<?php echo $item['item_id'] ?>" data-sku-id="<?php echo $sku['sku_id'] ?>" data-stocks="<?php echo $sku['stocks'] ?>" href="<?php echo base_url('sku/detail?id='.$sku['sku_id']) ?>">
-					<?php if ( !empty($sku['url_image']) ): ?>
-					<figure>
-						<img src="<?php echo MEDIA_URL.'/sku/'.$sku['url_image'] ?>">
-					</figure>
-					<?php endif ?>
-					<h3><?php echo $sku['name_first'].$sku['name_second'].$sku['name_third'] ?></h3>
-				</a>
-			</li>
-			<?php endforeach ?>
-		</ul>
-	</section>
+	<div id=skus class="wid710 auto border20 bgfff skus clearfix">
+		<!--购物券区域-->
+		<div class="topcardwrap">
+			<h1 class="clearfix">
+				<span>进来购物券</span>
+				<span>全进来实物商品通用</span>
+			</h1>
+			<h1 class="clearfix">
+				<span>店铺优惠券</span>
+				<span>领取优惠券</span>
+			</h1>
+			<div class="get">
+				领取
+			</div>
+		</div>
+		<hr>
+		<div class="topcardwrap">
+			<h1 class="clearfix">
+				<span>进来购物券</span>
+				<span>全进来实物商品通用</span>
+			</h1>
+			<h1 class="clearfix">
+				<span>店铺优惠券</span>
+				<span>领取优惠券</span>
+			</h1>
+		</div>
+		
+	</div>
 	<?php endif ?>
 
 	<section id=biz-info class=row>
