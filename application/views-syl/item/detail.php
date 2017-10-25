@@ -51,6 +51,7 @@
 
 	/* SKU */
 	#skus li {line-height:28px;padding:1px;margin-bottom:4px;margin-right:4px;}
+	#skus i{font-size: .26rem;color: #3e3a39;}
 		#skus a {height:38px;line-height:38px;border:1px solid #b8b7bd;text-align:center;overflow:hidden;}
 			#skus a>* {float:left;display:inline;}
 			#skus figure {width:28px;height:28px;}
@@ -143,7 +144,15 @@
 		font-size: .26rem;
 		color: #3e3a39;
 	}
-	
+	.bottomcardwrap h1 span:nth-child(1){
+		width: .5rem;
+		height: .24rem;
+		text-align: center;
+		line-height: .24rem;
+		background: #EFEFEF !important;
+		color: #ff3649;
+		font-size: .2rem;
+	}
 </style>
 
 <script>
@@ -282,7 +291,9 @@ wx.ready(function(){
 	</section>
 
 	<?php if ( !empty($skus) ): ?>
-	<div id=skus class="wid710 auto border20 bgfff skus clearfix">
+
+	<?php endif ?>
+		<div class="wid710 auto border20 bgfff skus clearfix mt20">
 		<!--购物券区域-->
 		<div class="topcardwrap">
 			<h1 class="clearfix">
@@ -298,6 +309,30 @@ wx.ready(function(){
 			</div>
 		</div>
 		<hr>
+		<div class="topcardwrap bottomcardwrap">
+			<h1 class="clearfix">
+				<span>促销</span>
+				<span>满199立减50元</span>
+			</h1>
+			<h1 class="clearfix">
+				<span>积分</span>
+				<span>购买可得12积分</span>
+			</h1>
+		</div>
+		
+	</div>
+		<div id=skus class="wid710 auto border20 bgfff skus clearfix mt20">
+		<!--购物券区域-->
+		<div class="topcardwrap">
+			<h1 class="clearfix">
+				<i>全进来实物商品通用</i>
+			</h1>
+			<h1 class="clearfix">
+				<i>领取优惠券</i>
+			</h1>
+			
+		</div>
+		<hr>
 		<div class="topcardwrap">
 			<h1 class="clearfix">
 				<span>进来购物券</span>
@@ -310,8 +345,6 @@ wx.ready(function(){
 		</div>
 		
 	</div>
-	<?php endif ?>
-
 	<section id=biz-info class=row>
 		<a title="<?php echo $biz['name'] ?>" href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>">
 			<?php echo $biz['name'] ?>
