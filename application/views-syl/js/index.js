@@ -107,3 +107,6 @@ $(document).ready(function(){
 	  })
 })
 
+$('.shopIndextabtitle li').click(function(){
+	$(this).addClass("current").siblings("li").removeClass('current');
+})
