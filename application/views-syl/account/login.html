@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #fff; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative}
+        .loginTab .textLeft{box-sizing: border-box; border-right: 0.02rem solid #e6e6e6;}
+        .input-box{width: 100%;}
+        .ver-box{
+            margin: 0 0.9rem;
+        }
+        .input-item {display: flex;height: 1.16rem; margin: 0 0.9rem;}
+        .label{display:block;width: 0.28rem;height: 0.36rem;}
+        .tel-icon{height: 0.4rem;width: 0.4rem; display: block;}
+        .no-icon{
+            position: fixed;width: 0.22rem;height: 0.22rem;display: block;padding:0.1rem 0.2rem 0.2rem 0.2rem;right: 0.7rem;margin-bottom: -0.2rem;
+            }
+        .input-item .input{flex:1;height: 0.35rem; margin-left:0.26rem; font-size: 0.3rem;border:none;border-bottom: 0.01rem solid #e1e1e1;}
+        .next{position: relative}
+        .next-btn{height: 0.76rem; width: 5.8rem;position: absolute;top:0;left: 50%;margin-left: -2.9rem;}
+        .login_sms{width: 100%;font-size: 0.26rem; color: #9fa0a0; text-align: center;margin: 1.3rem 0 0 0}
+        .login-bot{position:absolute; width:100%;text-align: center;bottom: 0;font-size: 0.26rem; color: #e1e1e1}
+        .wx-icon{width: 0.84rem;height: 0.84rem;margin: 0.60rem 0 1.5rem 0}
+        .line{display:inline-block;border-bottom: 0.01rem solid #e1e1e1;width: 1.5rem;margin-bottom: 0.1rem}
+        .ver-btn{height: 0.6rem;width: 1.5rem;font-size: 0.2rem;color: #fff;background-color: #FC5353;border-radius: 0.12rem;text-align: center;line-height: 0.6rem;margin-top: -0.2rem}
+        .forget{text-align: right;font-size: 0.26rem; margin: 0 0.3rem 0.3rem 0; color: #9fa0a0;}
+        .logo{width: 100%;height: 4.8rem;position: relative;}
+        .logo img{width: 1.46rem;height: 1.8rem;position: absolute;top:50%;margin-top: -0.9rem;left: 50%;margin-left: -0.73rem;}
+        .submit{display: none;}
+        .login-password{display: none}
+        .login-ver{display: none}
+        .tel{
+            display: none;
+        }
+        .pass{
+            display: none;
+        }
+        .error-tips{
+            display: none;
+            width: 3rem;
+            height: 1.4rem;
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            margin-left: -1.5rem;
+            font-size: 0.3rem;
+            text-align: center;
+            color: #ffffff;
+            padding: 0.3rem 0;
+            background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="error-tips">
+            dsfsdfasdf
+    </div>
+    <div class="logo">
+        <img src="../media/account/login/logo@3x.png" alt=""/>
+    </div>
+    <div class="input-box">
+        <div class='input-item'>
+            <label class="label" for="mobile"><img class="tel-icon" src="../media/account/login/shouji@3x.png" alt=""/></label>
+            <input id="mobile" name="mobile" class="input" type="tel" size=11  placeholder="请输入手机号" required />
+            <img class="no-icon tel" src="../media/account/login/no@3x.png" alt=""/>
+        </div>
+
+        <div class="login-ver">
+            <div class='input-item'>
+                <label class="label" for="verification"><img class="tel-icon" src="../media/account/login/mima@3x.png" alt=""/></label>
+                <input id="verification" name="verification" class="input" type="number" value="" size=11 pattern="\d{11}" placeholder="请输入验证码" required />
+                <text class="label"><img class="no-icon" src="../media/account/login/no@3x.png" alt=""/></text>
+                <text class="ver-btn">获取验证码</text>
+            </div>
+        </div>
+
+        <div class="ver-box login-password" >
+            <div class='input-item' style="height: 0.8rem;margin: 0">
+                <label class="label" for="password"><img class="tel-icon" src="../media/account/login/mima@3x.png" alt=""/></label>
+                <input id="password" name="password" class="input" type="text" value=""  placeholder="请输入密码" required />
+                <img class="no-icon pass" src="../media/account/login/no@3x.png" alt=""/>
+            </div>
+            <div class="forget">忘记密码？</div>
+        </div>
+    </div>
+
+    <div id="next" class="next">
+        <img class="next-btn" src="../media/account/login/xiabu@3x.png" alt=""/>
+    </div>
+
+    <div id="submit" class="next submit">
+        <img class="next-btn" src="../media/account/login/degnlu@3x.png" alt=""/>
+    </div>
+
+    <div class="login_sms">短信登录</div>
+    <div class="login-bot">
+        <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
+        <img class="wx-icon" src="../media/account/login/weixin@3x.png" alt=""/>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+
+        var tel='';
+        $('#mobile').bind('input onchange', function() {
+            tel = $('#mobile').val()
+            var isFocus = $('#mobile').is(":focus");
+            console.log(isFocus)
+            if($('#mobile').val().length > 0 || isFocus == true){
+                $('.tel').show();
+            }
+        });
+        $('#mobile').focus(function(){
+            if($('#mobile').val().length > 0){
+                $('.tel').show();
+            }
+        });
+        $('#mobile').blur(function(){
+            $('.tel').hide();
+        });
+        var pass='';
+        $('#password').bind('input onchange', function() {
+            pass = $('#password').val()
+            var isFocus = $('#password').is(":focus");
+            console.log(isFocus)
+            if($('#password').val().length > 0 || isFocus == true){
+                $('.pass').show();
+            }
+        });
+        $('#password').focus(function(){
+            if($('#mobile').val().length > 0){
+                $('.pass').show();
+            }
+        });
+        $('#password').blur(function(){
+            $('.pass').hide();
+        });
+
+
+        $("#next").click(function(){
+            var re = /^1\d{10}$/;
+
+            if (re.test(tel)) {
+                $(this).hide();
+                //这里判断是否注册过
+                var id = 2;
+                if(id==1){
+                    $('.login-ver').show();
+
+                }else{
+                    $('.login-password').show();
+                }
+                $('#submit').show();
+            }else{
+                $('.error-tips').html('手机号格式错误');
+                $('.error-tips').show()
+                actionDo();
+            }
+        });
+
+        var ProBox = $(".box");
+        // 构建一个要执行的函数
+        function Hide(){
+            ProBox.children('.error-tips').fadeOut(200);
+        }
+        // 定时器函数
+        function actionDo(){
+            return setInterval(function(){
+                // 插入要执行的函数
+                Hide();
+            },2000); // 设定执行或延时时间
+        };
+        // 执行它
+
+    });
+
+</script>
+</body>
+</html>
