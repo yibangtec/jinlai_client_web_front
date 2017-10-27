@@ -1,3 +1,26 @@
+	<style>
+		input[type="checkbox"]{-webkit-appearance:none;outline: none;}
+input.check{
+	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
+	 background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -.21rem;
+    width: .42rem;
+    height: .42rem;
+ }
+input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;background-size:20px 20px;}
+input.goodsCheck:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;background-size:20px 20px;}
+input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -.21rem;
+    width: .42rem;
+    height: .42rem;}
+.checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat left center;background-size:20px 20px;position:absolute;top:50%;left:15px;margin-top:-18px;width:20px;height:35px;}
+	</style>
 <!--tab切换content区域-->
 		<div class="tabcontent" id="list">
 			<div class="item" style="display: block;">
@@ -824,7 +847,80 @@
 			</div>
 			<div class="item">分类</div>
 			<div class="item">发现</div>
-			<div class="item">购物车</div>
+			<div class="item">
+				<div class="payment-bar">
+					<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
+					<div class="shop-total">
+						<strong>总价：<i class="total" id="AllTotal">0.00</i></strong>
+					</div>
+					<a href="#" class="settlement">结算</a>
+				</div>
+				<div class="my-address-list wid710 auto border20 mt20 bgfff" id="my-address-list">
+					<div class="shopping">
+					<div class="shop-group-item">
+				    <div class="touch">
+				    <!--商家标题-->
+					    	<div class="buycarshoptitle">
+					    		<div class="shop-name clearfix">
+									<input type="checkbox" class="check goods-check shopCheck">
+									<h4>
+										<img src="<?php echo CDN_URL ?>media/cart/jinlaitit.png" />
+									</h4>
+									<h3 class="fl">进来自营店</h3>
+								</div>
+					    	</div>
+					    <div class="itemlist">
+						    <div class="goodslist clearfix">
+							   <div class="shop-info">
+								<input type="checkbox" class="check goods-check goodsCheck">
+								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
+								<div class="shop-info-text">
+									<h4>云南芒果（约400/个）</h4>
+									<div class="shop-price">
+										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
+										<div class="shop-arithmetic">
+											<a href="javascript:;" class="minus">-</a>
+											<span class="num" >1</span>
+											<a href="javascript:;" class="plus">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+				<!--<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>-->
+							   <!-- <div class="address-info">¥1585</div>-->
+						    </div>
+						    <a href="javascript:;" class="remove">删除</a>
+					    </div>
+					     <div class="itemlist">
+						    <div class="goodslist clearfix">
+							   <div class="shop-info">
+								<input type="checkbox" class="check goods-check goodsCheck">
+								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
+								<div class="shop-info-text">
+									<h4>云南芒果（约400/个）</h4>
+									<div class="shop-price">
+										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
+										<div class="shop-arithmetic">
+											<a href="javascript:;" class="minus">-</a>
+											<span class="num" >1</span>
+											<a href="javascript:;" class="plus">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+							   <!-- <div class="address-info">¥1585</div>-->
+						    </div>
+						    <a href="javascript:;" class="remove">删除</a>
+					    </div>
+				    </div>
+				  
+				   </div>
+				  </div>
+				</div>
+			</div>
 			<div class="item">我的进来</div>
 		</div>
 		<!--底部tab切换区域-->
@@ -929,6 +1025,23 @@ $(document).ready(function(){
 		el.src = '<?php echo CDN_URL ?>media/home/default.png'
 	      
 	    }
-	  })
+	});
+    $(".itemlist").on("swipeleft",function(){
+    	$(".itemlist").removeClass('selected');
+        $(this).addClass('selected');
+        $(this).find("a.remove").on("click",function(){
+            var touchId = $(this).parents(".itemlist");
+            //执行删除效果
+            touchId.css("border","0");
+            touchId.stop().animate({
+                height:"0",
+                margin:"0"
+            },300,function(){
+                $(this).remove();
+            })
+        })
+    }).on("swiperight",function(){
+        $(this).parents(".touch").find(".itemlist").removeClass('selected');
+    })
 })
 </script>

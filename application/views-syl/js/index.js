@@ -105,8 +105,9 @@ $(document).ready(function(){
 	      el.src = ''
 	    }
 	  })
-})
+});
 
 $('.shopIndextabtitle li').click(function(){
 	$(this).addClass("current").siblings("li").removeClass('current');
-})
+});
+
