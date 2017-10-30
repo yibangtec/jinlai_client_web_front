@@ -1,5 +1,5 @@
 	<style>
-		input[type="checkbox"]{-webkit-appearance:none;outline: none;}
+		input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
 input.check{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
 	 background-size: cover;
@@ -10,16 +10,42 @@ input.check{
     width: .42rem;
     height: .42rem;
  }
-input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;background-size:20px 20px;}
-input.goodsCheck:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;background-size:20px 20px;}
-input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;    background-size: cover;
+input.check:checked{
+	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
+	background-size:20px 20px;
+	}
+input.goodsCheck:checked{
+	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
+	background-size:20px 20px;
+	}
+input.check:checked{
+	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;    
+	background-size: cover;
     position: absolute;
     top: 50%;
     left: 10px;
     margin-top: -.21rem;
     width: .42rem;
-    height: .42rem;}
-.checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat left center;background-size:20px 20px;position:absolute;top:50%;left:15px;margin-top:-18px;width:20px;height:35px;}
+    height: .42rem;
+    }
+.checked{
+	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat left center;
+	background-size:20px 20px;
+	position:absolute;
+	top:50%;
+	left:15px;
+	margin-top:-18px;
+	width:20px;
+	height:35px;
+	}
+.usercenter{
+	background-size:cover ;
+	height: 3.5rem;
+	background:url(<?php echo CDN_URL ?>media/account/mine/beijing@3x.png) no-repeat center left ;
+	    border-bottom-left-radius: .35rem;
+    border-bottom-right-radius: .35rem;
+    overflow: hidden;
+}
 	</style>
 <!--tab切换content区域-->
 		<div class="tabcontent" id="list">
@@ -851,11 +877,12 @@ input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_rad
 				<div class="payment-bar">
 					<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
 					<div class="shop-total">
-						<strong>总价：<i class="total" id="AllTotal">0.00</i></strong>
+						<strong>合计：<span>¥</span><i class="total" id="AllTotal">0.00</i></strong>
+						<p>不含运费</p>
 					</div>
 					<a href="#" class="settlement">结算</a>
 				</div>
-				<div class="my-address-list wid710 auto border20 mt20 bgfff" id="my-address-list">
+				<div class="my-address-list wid710 auto border20 mt20" id="my-address-list">
 					<div class="shopping">
 					<div class="shop-group-item">
 				    <div class="touch">
@@ -866,7 +893,9 @@ input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_rad
 									<h4>
 										<img src="<?php echo CDN_URL ?>media/cart/jinlaitit.png" />
 									</h4>
-									<h3 class="fl">进来自营店</h3>
+									<h3 class="fl">进来自营店
+										<i class="icon-Arrow"></i>
+									</h3>
 								</div>
 					    	</div>
 					    <div class="itemlist">
@@ -879,16 +908,20 @@ input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_rad
 									<div class="shop-price">
 										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
 										<div class="shop-arithmetic">
-											<a href="javascript:;" class="minus">-</a>
+											<a href="javascript:;" class="minus">
+												<i class="icon-jian" style="font-size: .44rem;"></i>
+											</a>
 											<span class="num" >1</span>
-											<a href="javascript:;" class="plus">+</a>
+											<a href="javascript:;" class="plus active">
+												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-				<!--<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>-->
-							   <!-- <div class="address-info">¥1585</div>-->
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+							   <!-- <div class="address-info">¥1585</div>
 						    </div>
 						    <a href="javascript:;" class="remove">删除</a>
 					    </div>
@@ -916,19 +949,134 @@ input.check:checked{background:url(<?php echo CDN_URL ?>media/cart/icon/icon_rad
 						    <a href="javascript:;" class="remove">删除</a>
 					    </div>
 				    </div>
+				    
+				  
+				   </div>
+				   	<div class="shop-group-item">
+				    <div class="touch">
+				    <!--商家标题-->
+					    	<div class="buycarshoptitle">
+					    		<div class="shop-name clearfix">
+									<input type="checkbox" class="check goods-check shopCheck">
+									<h4>
+										<img src="<?php echo CDN_URL ?>media/cart/akzy.png" />
+									</h4>
+									<h3 class="fl">爱康卓越<i class="icon-Arrow"></i></h3>
+								</div>
+					    	</div>
+					    <div class="itemlist">
+						    <div class="goodslist clearfix">
+							   <div class="shop-info">
+								<input type="checkbox" class="check goods-check goodsCheck">
+								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" /></div>
+								<div class="shop-info-text">
+									<h4>女性特色健身项目</h4>
+									<div class="shop-price">
+										<div class="shop-pices">￥<b class="price">98</b>/份</div>
+										<div class="shop-arithmetic">
+											<a href="javascript:;" class="minus">
+												<i class="icon-jian" style="font-size: .44rem;"></i>
+											</a>
+											<span class="num" >1</span>
+											<a href="javascript:;" class="plus active">
+												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+							   <!-- <div class="address-info">¥1585</div>-->
+						    </div>
+						    <a href="javascript:;" class="remove">删除</a>
+					    </div>
+					     <div class="itemlist">
+						    <div class="goodslist clearfix">
+							   <div class="shop-info">
+								<input type="checkbox" class="check goods-check goodsCheck">
+								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" /></div>
+								<div class="shop-info-text">
+									<h4>巨峰葡萄</h4>
+									<div class="shop-price">
+										<div class="shop-pices">￥<b class="price">3.2</b>/份</div>
+										<div class="shop-arithmetic">
+											<a href="javascript:;" class="minus">
+													<i class="icon-jian" style="font-size: .44rem;"></i>
+											</a>
+											<span class="num" >1</span>
+											<a href="javascript:;" class="plus active">
+												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
+							   <!-- <div class="address-info">¥1585</div>-->
+						    </div>
+						    <a href="javascript:;" class="remove">删除</a>
+					    </div>
+				    </div>
+				    
 				  
 				   </div>
 				  </div>
 				</div>
 			</div>
-			<div class="item">我的进来</div>
+			<div class="item">
+				<div class="usercenter clearfix">
+					<!--头像区域开始-->
+					<div class="userinfo clearfix">
+						<div class="userpic fl">
+							<img data-src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						</div>
+						<div class="usertext fl">
+							<h1>后海小王子</h1>
+							<h2>普通会员</h2>
+						</div>
+						<div class="usermessage fr">
+							<i class="icon-chat"></i>
+						</div>
+					</div>
+					<!--关注店铺,收藏宝贝区域-->
+					<div class="mymenu">
+						<ul>
+							<li>
+								<div class="mymenuicon">
+									<i class="icon-guanzhu"></i>
+								</div>
+								<p>关注店铺</p>
+							</li>
+							<li>
+								<div class="mymenuicon">
+									<i class="icon-shoucang"></i>
+								</div>
+								<p>收藏宝贝</p>
+							</li>
+							<li>
+								<div class="mymenuicon">
+									<i class="icon-kabao"></i>
+								</div>
+								<p>卡包</p>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+									<!--我的订单区域-->
+					<div class="myorder wid690 auto bgfff border20 mt20">
+						
+					</div>
+			</div>
 		</div>
 		<!--底部tab切换区域-->
 		<!--<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
 				<div class="item cur">
-					<i class="icon iconfont icon-icon"></i>
+					<i class="icon-shouye_xiala"></i>
 					<span class="text">主页</span>
 				</div>
 				<div class="item">
@@ -1026,19 +1174,46 @@ $(document).ready(function(){
 	      
 	    }
 	});
+function TotalPrice() {
+    var allprice = 0; //总价
+    $(".shop-group-item").each(function() { //循环每个店铺
+      var oprice = 0; //店铺总价
+      $(this).find(".goodsCheck").each(function() { //循环店铺里面的商品
+        if ($(this).is(":checked")) { //如果该商品被选中
+          var num = parseInt($(this).parents(".shop-info").find(".num").text()); //得到商品的数量
+          var price = parseFloat($(this).parents(".shop-info").find(".price").text()); //得到商品的单价
+          var total = price * num; //计算单个商品的总价
+          oprice += total; //计算该店铺的总价
+        }
+        $(this).closest(".shop-group-item").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
+      });
+      var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
+      allprice += oneprice; //计算所有店铺的总价
+    });
+    $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
+}
+
     $(".itemlist").on("swipeleft",function(){
     	$(".itemlist").removeClass('selected');
         $(this).addClass('selected');
         $(this).find("a.remove").on("click",function(){
             var touchId = $(this).parents(".itemlist");
+            if(touchId.siblings().length - 1 == 0){
+            	touchId.parents('.touch').parents('.shop-group-item').remove();
+            	TotalPrice();
+            }
+            TotalPrice();
             //执行删除效果
             touchId.css("border","0");
             touchId.stop().animate({
                 height:"0",
                 margin:"0"
             },300,function(){
+            	//alert($(this).parents().siblings().length);
                 $(this).remove();
-            })
+                TotalPrice();
+            });
+            
         })
     }).on("swiperight",function(){
         $(this).parents(".touch").find(".itemlist").removeClass('selected');

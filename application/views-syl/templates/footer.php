@@ -1,6 +1,11 @@
 		<!--</main>-->
 <!-- End #maincontainer -->
-
+<style>
+	#footer{
+		text-align: center;
+		font-size: .2rem;
+	}
+</style>
 <?php
 	// 检查当前设备信息
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
