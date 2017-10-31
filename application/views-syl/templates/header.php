@@ -213,12 +213,13 @@
 		</script>
 		<?php endif ?>
 		
-		<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
-		
+		<script src="<?php echo CDN_URL ?>js/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo CDN_URL ?>js/jqm.js"></script>
 		<script src="<?php echo CDN_URL ?>js/rem.js"></script>
 		<script src="<?php echo CDN_URL ?>js/swiper.min.js"></script>
 		<script src="<?php echo CDN_URL ?>js/jquery.easing.min.js"></script>
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
+		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
 		
 		<!--清除浏览器默认样式css-->

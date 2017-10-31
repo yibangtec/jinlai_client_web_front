@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d24f63f-9278-49c9-86c3-1f7dccace59d" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/media/account/mine/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/media/account/login/mima_qr@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/media/account/login/wancheng@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/media/account/login/yanzhen@3x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/css/account.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/js/account.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/media/account/mine/chat.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/account/mine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/account/password_change.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/account/password_reset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views-syl/account/password_set.html" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\yue@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\degnlu@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\logo@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\mima@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\no@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\shouji@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\weixin@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\xiabu@3x.png" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\media\cart\weixuanzhong@3x.png" afterPath="$PROJECT_DIR$/media/cart/icon_radio3.png" />
+      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\media\cart\xuanzhong@3x.png" afterPath="$PROJECT_DIR$/media/cart/icon_radio4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/biz/detail.php" afterPath="$PROJECT_DIR$/application/views-syl/biz/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/templates/footer.php" afterPath="$PROJECT_DIR$/application/views-syl/templates/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/js/form.js" afterPath="$PROJECT_DIR$/application/views-syl/js/form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/templates/header.php" afterPath="$PROJECT_DIR$/application/views-syl/templates/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/home.php" afterPath="$PROJECT_DIR$/application/views-syl/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/js/index.js" afterPath="$PROJECT_DIR$/application/views-syl/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/account/login.html" afterPath="$PROJECT_DIR$/application/views-syl/account/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/account/login.php" afterPath="$PROJECT_DIR$/application/views-syl/account/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/account/login_sms.html" afterPath="$PROJECT_DIR$/application/views-syl/account/login_sms.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views-syl/account/login_sms.php" afterPath="$PROJECT_DIR$/application/views-syl/account/login_sms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jinlai_client_web_front.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +43,24 @@
     <splitter split-orientation="horizontal" split-proportion="0.456057">
       <split-first>
         <leaf>
-          <file leaf-file-name="account.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="account.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views-syl/css/account.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.49034336">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
                   <folding>
                     <element signature="e#2866#3155#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.063053094">
+                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -70,7 +81,7 @@
             <entry file="file://$PROJECT_DIR$/application/views-syl/templates/header.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-19.678572">
-                  <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+                  <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -79,8 +90,8 @@
           <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views-syl/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.178572">
-                  <caret line="199" column="34" selection-start-line="195" selection-start-column="28" selection-end-line="199" selection-end-column="34" />
+                <state vertical-scroll-proportion="-43.42857">
+                  <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -89,8 +100,8 @@
           <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views-syl/account/login.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.464286">
-                  <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+                <state vertical-scroll-proportion="-9.160714">
+                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -223,240 +234,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="font" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views-syl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,13 +371,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.101862">
@@ -860,14 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.566/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views-syl/account/login_sms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.392857">
@@ -949,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views-syl/account/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state vertical-scroll-proportion="-9.160714">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -974,15 +736,15 @@
     <entry file="file://$PROJECT_DIR$/application/views-syl/templates/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.678572">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <caret line="252" column="0" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views-syl/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.178572">
-          <caret line="199" column="34" selection-start-line="195" selection-start-column="28" selection-end-line="199" selection-end-column="34" />
+        <state vertical-scroll-proportion="-43.42857">
+          <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -999,11 +761,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views-syl/css/account.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49034336">
+        <state vertical-scroll-proportion="0.0">
           <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
           <folding>
             <element signature="e#2866#3155#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.063053094">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

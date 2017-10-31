@@ -26,8 +26,13 @@
 
 	}
 </style>
+<<<<<<< HEAD
 <script src="<?php echo CDN_URL ?>js/main.js"></script>
 <script defer src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
+=======
+
+
+>>>>>>> 241fb737b70e2ab03bfed71ec076c1d9751fdfcb
 <script src="<?php echo CDN_URL ?>js/form.js"></script>
 
 <div id=content class=container>
@@ -60,6 +65,7 @@
 				</div>
 			</div>
 		</fieldset>
+<<<<<<< HEAD
 
 		<div id=next class=row>
 		    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
@@ -77,6 +83,25 @@
 			</div>
 		</fieldset>
 
+=======
+
+		<div id=next class=row>
+		    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
+				<button class="btn btn-primary btn-lg btn-block" type=button role=button>下一步</button>
+		    </div>
+		</div>
+
+		<fieldset class=hide id=login-password>
+			<div class=form-group>
+				<label for=password>密码</label>
+				<div class=input-group>
+					<span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden=true></i></span>
+					<input class=form-control name=password type=password <?php if ($this->input->cookie('mobile')) echo 'autofocus '; ?> placeholder="密码">
+				</div>
+			</div>
+		</fieldset>
+
+>>>>>>> 241fb737b70e2ab03bfed71ec076c1d9751fdfcb
 		<fieldset class=hide id=login-sms>
 			<input name=sms_id type=hidden>
 

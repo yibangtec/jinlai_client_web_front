@@ -191,7 +191,7 @@
 		</div>
 	</div>
 	<div class="wid718 auto bgfff border20 exercise clearfix">
-					<img src="<?php echo CDN_URL ?>media/home/linebar.png">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
 	</div>
 	<div class="like wid718 auto clearfix mt10">
 					<ul>
