@@ -22,8 +22,8 @@
 
 		}
 	</style>
-
-<script src="/js/form.js"></script>
+<script defer src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
+<script src="<?php echo CDN_URL ?>js/form.js"></script>
 
 <div id=content class=container>
 	<div class="btn-group btn-group-justified" role=group>

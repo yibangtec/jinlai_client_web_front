@@ -249,7 +249,7 @@
 
 		<!--
 		<script defer src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
-		<script src="/js/main.js"></script>
+
 
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>css/reset.css">
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>bootstrap/css/bootstrap.min.css">

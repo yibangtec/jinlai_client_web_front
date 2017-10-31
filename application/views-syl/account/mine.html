@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>智能登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <link rel="stylesheet" href="../css/account.css"/>
+    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/c0ed8ca77a/jinlai/style.css">
+</head>
+<body>
+<div class="header">
+    <div class="header-top clearfix">
+        <div class="header-img"><img src="../media/account/mine/logo.png" alt=""/></div>
+        <div class="header-name">
+            <div class="nick-name">小王子</div>
+            <div class="member">普通会员</div>
+        </div>
+        <div class="header-news">
+            <!--图标-->
+            <i class="icon-chat">
+            </i>
+        </div>
+    </div>
+    <div class="header-bot">
+        <div class="bot-float">
+            <i class="icon-guanzhu"></i>
+            <p>关注店铺</p>
+        </div>
+        <div class="bot-float">
+            <i class="icon-shoucang2"></i>
+            <p>收藏宝贝</p>
+        </div>
+        <div class="bot-float">
+            <i class="icon-kabao"></i>
+            <p>卡包</p>
+        </div>
+    </div>
+</div>
+<div class="mine-order">
+
+</div>
+</body>
+</html>
