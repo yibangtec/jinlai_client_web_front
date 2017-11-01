@@ -5,7 +5,7 @@
 }
 /*swiper部分css*/
 .bannerWrap{
-	width: 94.67%;
+	width: 1000px;
 	margin-top: .2rem;
 	overflow: hidden;
 }
@@ -1657,4 +1657,8 @@ border-radius:.2rem;
 }
 .coloroverlaycontent .midright img.h150{
 height:1.5rem !important;
+}
+.swiper-containersj{
+	width: 100%;
+	background: red;
 }

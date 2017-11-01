@@ -29,6 +29,7 @@
 //	        autoplay: 2000,
 	        loop:true
 	   });	
+	   
 });
 
 //新闻公告自动轮播区域
@@ -105,5 +106,9 @@ $(document).ready(function(){
 	      el.src = ''
 	    }
 	  })
-})
+});
+
+$('.shopIndextabtitle li').click(function(){
+	$(this).addClass("current").siblings("li").removeClass('current');
+});
 

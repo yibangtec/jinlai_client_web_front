@@ -9,9 +9,28 @@
 				<a href="#" class="fl">入驻商家</a>
 			</div>
 			<div class="gnwrap fr">
-				<a href="#">充值</a>
-				<a href="#">+关注</a>
+				<a href="#" class="pay">充值</a>
+				<a href="#" class="focus">+关注</a>
 			</div>
+		</div>
+		<!--tab切换区域开始-->
+		<div class="shopIndextabtitle wid710 auto">
+			<ul class="clearfix">
+				<li class="current">
+					首页
+				</li>
+				<li>
+					<span>商品</span>
+					<span>(99)</span>
+				</li>
+				<li>
+					最新上架
+				</li>
+				<li style="border-right:0">
+					活动商品
+				</li>
+			</ul>
+			
 		</div>
 	<!--头部banner区域开始-->
 		<div class="bannerWrap auto">
@@ -172,7 +191,7 @@
 		</div>
 	</div>
 	<div class="wid718 auto bgfff border20 exercise clearfix">
-					<img src="<?php echo CDN_URL ?>media/home/linebar.png">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
 	</div>
 	<div class="like wid718 auto clearfix mt10">
 					<ul>

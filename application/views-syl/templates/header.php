@@ -221,6 +221,7 @@
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
 		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
+		<!--<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>-->
 		
 		<!--清除浏览器默认样式css-->
 		<link href="<?php echo CDN_URL ?>css/normal.css" rel="stylesheet"/>
