@@ -25,11 +25,11 @@ a {text-decoration: none;}
 }
 .input-item {display:flex;height: 0.36rem; margin: 0 0.9rem 0.7rem 0.9rem;}
 .label{width: 0.28rem;height: 0.36rem; margin-right: 0.3rem}
-.tel-input{flex:1;height: 0.36rem;border-bottom: 0.01rem solid #e1e1e1; position: relative;}
+.tel-input{flex:1;height: 0.36rem; position: relative;}
 .tel-icon{height: 0.4rem;width: 0.4rem; display: block;}
 .no-icon{position:absolute;right: 0; width: 0.22rem;height: 0.22rem;padding:0.1rem 0 0 0.2rem;
 }
-.tel-input .input{ float:left; height: 0.3rem; font-size: 0.3rem; border:none;}
+.tel-input .input{ float:left; height: 0.3rem; width: 100%; font-size: 0.3rem; border:none;border-bottom: 0.01rem solid #e1e1e1; padding: 0.05rem 0;}
 .next{position: relative}
 .next-btn{height: 0.76rem; width: 5.8rem;position: absolute;top:0;left: 50%;margin-left: -2.9rem;}
 .login_sms{width: 100%;font-size: 0.26rem; color: #9fa0a0; text-align: center;margin: 1.3rem 0 0 0}
@@ -72,6 +72,7 @@ a {text-decoration: none;}
     color: #ffffff;
     padding: 0.3rem 0;
     background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;
+    z-index: 100;
 }
 
 
@@ -159,5 +160,138 @@ a {text-decoration: none;}
     color: #ffffff;
 }
 .mine-order{
+    margin: 0.2rem 0.1rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+}
+.order-title{
+    height: 0.88rem;
+    font-size: 0.28rem;
+    line-height: 0.88rem;
+    padding: 0 0.1rem;
+}
+.title-left{
+    float: left;
+    color: #3E3A39;
+}
+.title-right{
+    float: right;
+    color: #898989;
+}
+.icon-Arrow:before {
+    content: "\e904";
+    font-size: 0.28rem;
+    color: #898989;
+}
+.order-item{
+    width: 100%;
+    border-top: 0.01rem solid #dcdddd;
+}
+.item-list{
+    float: left;
+    width: 20%;
+    text-align: center;
+    font-size: 0.26rem;
+    padding-top: 0.2rem;
+}
+.item-list p{
+    font-size: 0.26rem;
+    color: #3E3A39;
+    padding: 0.14rem 0 0.2rem 0;
+}
+.icon-daifukuan:before {
+    content: "\e90b";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.icon-daifahuo:before {
+    content: "\e90a";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.icon-daishouhuo:before {
+    content: "\e90e";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.icon-daipingjia:before {
+    content: "\e90c";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.icon-jintuikuan:before {
+    content: "\e959";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.item-team{
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 0.26rem;
+    padding-top: 0.2rem;
+}
+.item-team p{
+    font-size: 0.26rem;
+    color: #3E3A39;
+    padding: 0.14rem 0 0.2rem 0;
+}
+.item-service{
+    float: left;
+    width: 33.3333333%;
+    text-align: center;
+    font-size: 0.26rem;
+    padding-top: 0.2rem;
+}
+.item-service p{
+    font-size: 0.26rem;
+    color: #3E3A39;
+    padding: 0.14rem 0 0.2rem 0;
+}
+.icon-daishiyong:before {
+    content: "\e90d";
+    font-size: 0.48rem;
+    color: #3E3A39;
+}
+.sing-out-btn{
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+    color: #3E3A39;
+    text-align: center;
+    border-radius: 0.15rem;
 
+}
+.icon-dizhiguanli:before {
+    content: "\e96a";
+    color: #67c67e;
+    font-size: 0.54rem;
+}
+.icon-guanyuwomen:before {
+    content: "\e96b";
+    color: #f5cf4a;
+    font-size: 0.54rem;
+}
+.icon-hongka:before {
+    content: "\e96d";
+    color: #fd7088;
+    font-size: 0.54rem;
+}
+.icon-jifen:before {
+    content: "\e96e";
+    color: #81b7f3;
+    font-size: 0.54rem;
+}
+.icon-kabao2:before {
+    content: "\e96f";
+    color: #c4de74;
+    font-size: 0.54rem;
+}
+.icon-yue2:before {
+    content: "\e97f";
+    color: #f3bc41;
+    font-size: 0.54rem;
+}
+.icon-xiazai:before {
+    content: "\e97d";
+    font-size: 0.34rem;
 }
