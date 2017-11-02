@@ -220,6 +220,7 @@
 		<script src="<?php echo CDN_URL ?>js/jquery.easing.min.js"></script>
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
 		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
+		<script src="<?php echo CDN_URL ?>js/fsbanner.js"></script>
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
 		<!--<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>-->
 		
@@ -231,8 +232,6 @@
 		<link href="<?php echo CDN_URL ?>css/swiper.css" rel="stylesheet"/>
 		<link href="<?php echo CDN_URL ?>css/index.css" rel="stylesheet"/>
 		<link href="<?php echo CDN_URL ?>css/alert.css" rel="stylesheet"/>
-
-
 		<style>
 			body{
 				padding-bottom: 1rem;
@@ -253,7 +252,7 @@
 
 		<!--
 		<script defer src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
-
+		<script src="/js/main.js"></script>
 
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>css/reset.css">
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>bootstrap/css/bootstrap.min.css">
@@ -269,7 +268,6 @@
 
 		<meta name=format-detection content="telephone=yes, address=no, email=no">
 		<meta name=apple-itunes-app content="app-id=1066224229">
-		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css"/>
 	</head>
 <?php
 	// 将head内容立即输出，让用户浏览器立即开始请求head中各项资源，提高页面加载速度

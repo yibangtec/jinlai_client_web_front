@@ -454,7 +454,7 @@ input.check:checked{
 			</div>
 			<!--颜色叠加公用部分-->
 			<div class="coloroverlay">
-				<div class="coloroverlaywrap">
+				<div class="coloroverlaywrap activecoverplay">
 					<div class="zbottom">
 						时尚
 					</div>
@@ -1761,9 +1761,9 @@ function TotalPrice() {
     }).on("swiperight",function(){
         $(this).parents(".touch").find(".itemlist").removeClass('selected');
     });
-  
+//$('.activecoverplay').fsBanner();	
 });
 //banner焦点图
 //banner焦点图
-		
+	//$('.coloroverlaywrap').fsBanner();	
 </script>

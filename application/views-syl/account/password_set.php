@@ -1,42 +1,56 @@
-<script src="<?php echo CDN_URL ?>js/rem.js"></script>
-<div class="box">
-    <div class="error-tips">
-        dsfsdfasdf
-    </div>
-    <div style="height: 5rem; padding-top: 1.4rem;">
-        <div class="input-box clearfix">
-            <div class="ver-box" >
-                <div class='input-item' style="height: 0.8rem;margin:0 0 0.3rem 0">
-                    <label class="label" for="password"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""/></label>
-                    <div class="tel-input">
-                        <input id="password" name="password" class="input" type="text" value=""  placeholder="请设置密码" required />
-                        <img class="no-icon pass" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
-                    </div>
+<style>
+	#content {padding-top:2rem;}
+	form {padding-top:2rem;}
 
-                </div>
-            </div>
-            <div class="ver-box" >
-                <div class='input-item' style="height: 0.8rem;margin:0 0 0.3rem 0">
-                    <label class="label" for="password1"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima_qr@3x.png" alt=""/></label>
-                    <div class="tel-input">
-                        <input id="password1" name="password1" class="input" type="text" value=""  placeholder="请确认密码" required />
-                        <img class="no-icon pass1" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
-                    </div>
+	/* 宽度在750像素以上的设备 */
+	@media only screen and (min-width:751px)
+	{
 
-                </div>
-            </div>
+	}
+	
+	/* 宽度在960像素以上的设备 */
+	@media only screen and (min-width:961px)
+	{
 
-        </div>
+	}
 
+	/* 宽度在1280像素以上的设备 */
+	@media only screen and (min-width:1281px)
+	{
 
-        <div id="submit" class="next">
-            <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/wancheng@3x.png" alt=""/>
-        </div>
+	}
+</style>
 
-    </div>
+<div id=content class=container>
+	<p class="bg-info text-center">请设置您的账户密码</p>
+	
+	<?php
+		if ( !empty($error) ) echo '<div class="alert alert-warning" role=alert>'.$error.'</div>'; // 若有错误提示信息则显示
+		$attributes = array('class' => 'form-password-set col-xs-12 col-md-6 col-md-offset-3', 'role' => 'form');
+		echo form_open('password_set', $attributes);
+	?>
+		<fieldset>
+			<div class=form-group>
+				<label for=password>密码</label>
+				<div class=input-group>
+					<span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden=true></i></span>
+					<input class=form-control name=password type=password placeholder="密码" autofocus required>
+				</div>
+			</div>
 
+			<div class=form-group>
+				<label for=password_confirm>确认密码</label>
+				<div class=input-group>
+					<span class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden=true></i></span>
+					<input class=form-control name=password_confirm type=password placeholder="确认密码" required>
+				</div>
+			</div>
+		</fieldset>
 
+		<div class=row>
+		    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
+				<button class="btn btn-primary btn-lg btn-block" type=submit>确定</button>
+		    </div>
+		</div>
+	</form>
 </div>
-
-<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
-<script src="<?php echo CDN_URL ?>js/account.js"></script>

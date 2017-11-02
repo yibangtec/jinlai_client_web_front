@@ -21,9 +21,9 @@
 	}
 	.articletext h1{
 		text-align: center;
-	color: #3E3A39;
-	font-size: .28rem;
-	padding-bottom: .2rem;
+		color: #3E3A39;
+		font-size: .28rem;
+		padding-bottom: .2rem;
 	}
 	.articletext time{
 		font-size: .22rem;
