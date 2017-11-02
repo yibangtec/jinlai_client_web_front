@@ -23,7 +23,7 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20171019">
+		<meta name=version content="revision20171103">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -221,6 +221,12 @@
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
 		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
+		<script>
+			// 访客设备类型判断
+			var is_wechat = <?php echo ($is_wechat === TRUE)? 'true': 'false' ?>;
+			var is_ios = <?php echo ($is_ios === TRUE)? 'true': 'false' ?>;
+			var is_android = <?php echo ($is_android === TRUE)? 'true': 'false' ?>;
+		</script>
 		
 		<!--清除浏览器默认样式css-->
 		<link href="<?php echo CDN_URL ?>css/normal.css" rel="stylesheet"/>
@@ -273,18 +279,17 @@
 ?>
 
 <!-- 内容开始 -->
-	<body<?php echo (isset($class))? ' class="'.$class.'"': NULL; ?>>
+	<?php
+		$body_class = (isset($class))? ' '.$class: NULL;
+		$body_class .= ($is_wechat === TRUE)? ' is_wechat': NULL;
+		$body_class .= ($is_ios === TRUE)? ' is_ios': NULL;
+		$body_class .= ($is_android === TRUE)? ' is_android': NULL;
+	?>
+	<body class="<?php echo trim($body_class) ?>">
 		<noscript>
 			<p>您的浏览器功能加载出现问题，请刷新浏览器重试；如果仍然出现此提示，请考虑更换浏览器。</p>
 		</noscript>
 
-<?php
-	/**
-	 * APP、微信中调用webview时配合URL按需显示相应部分
-	 * 此处以在APP中以WebView打开页面时不显示页面header部分为例
-	 */
-	if ($is_ios + $is_android + $is_wechat === FALSE):
-?>
 		<header id=header role=banner>
 			<div class=container>
 				<h1>
@@ -360,7 +365,6 @@
 
 			</div>
 		</nav>
-<?php endif ?>
 
 		<!--
 		<script>
@@ -399,6 +403,6 @@
 		});
 		</script>
 		
-
+-->
 		<main id=maincontainer role=main>
-		-->
+		

@@ -31,14 +31,6 @@
 </nav>
 -->
 
-<?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
-?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
 		<div class="tabbar auto">
@@ -66,5 +58,3 @@
 			</div>
 		</div>
 	</div>
-
-<?php endif ?>
