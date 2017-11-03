@@ -6,7 +6,7 @@ $(function(){
 	var url_sms = 'https://api.517ybang.com/sms/create';
 
 	// 清空cookie中的sms_id记录
-	Cookies.remove('sms_id');
+	//Cookies.remove('sms_id');
 
 	// 更新图片验证码
 	$('#captcha-image img').click(function(){
