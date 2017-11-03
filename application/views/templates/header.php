@@ -220,7 +220,12 @@
 		<script src="<?php echo CDN_URL ?>js/jquery.easing.min.js"></script>
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
 		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
+<<<<<<< HEAD
+=======
+		<script src="<?php echo CDN_URL ?>js/fsbanner.js"></script>
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
+		<!--<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>-->
 		
 		<!--清除浏览器默认样式css-->
 		<link href="<?php echo CDN_URL ?>css/normal.css" rel="stylesheet"/>

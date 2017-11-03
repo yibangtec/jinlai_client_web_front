@@ -1,5 +1,5 @@
 //banner焦点图
-		var swiper = new Swiper('.swiper-container', {
+		var swiper = new Swiper('.swiper-container10', {
 	        pagination: '.swiper-pagination',
 	        paginationClickable: true,
 	        autoplay: 2000,

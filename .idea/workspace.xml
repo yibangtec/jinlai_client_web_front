@@ -2,251 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d24f63f-9278-49c9-86c3-1f7dccace59d" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/css/LArea.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/LArea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/LAreaData1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/address/create.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/address/index.html" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\.project" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\mine.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\register.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\result.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\address\create.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\address\delete.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\address\edit.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\address\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\address\result.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\article\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\article\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\biz\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\biz\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\businesscooperation.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\cart\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon\result.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon_combo\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon_template\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\coupon_template\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\alert.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\base.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\common.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\datepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\flat-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\home.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\index.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\normal.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\reset.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\style.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\swiper.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\swiper.min.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\educationclassification.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\error\400.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\error\404.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\error\not_yours.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\error\permission.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\error_404.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\error_db.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\error_exception.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\error_general.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\error_php.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\cli\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\error_404.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\error_db.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\error_exception.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\error_general.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\error_php.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\html\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\errors\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\fav_biz\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\fav_item\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\font\iconfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\font\iconfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\font\iconfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\font\iconfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\home.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\item\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\alert.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\datepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\educationclassification.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\file-upload.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\form.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\index.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\jquery-3.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\jquery.easing.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\jquery.qrcode.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\js.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\lazy-load-img.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\main.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\rem.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\swiper.jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\swiper.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\beijing@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\daifahuo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\daifukuan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\daipingjia@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\daishouhuo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\dizhi@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\guanyuwomen@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\guanzhu@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\hongka@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\jifen@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\kabao2@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\kabao@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\shangjiahezuo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\shezhi@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\shoucang@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\shouhou@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\xiaoxi@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\yaoqinghaoyou@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\yue@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\address-elect@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\class@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\del@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\failure@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\succeed@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\uncaddress-uncelect@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\address\write@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\arrows.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\add_hui@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\add_shopcar@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\arrow@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\jian_bg@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\jian_shopcar@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\top_bg@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\weixuanzhong@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\cart\xuanzhong@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\coupon\coupons-bg@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\banner1@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\banner@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan\cainixihuan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan\cnxh\210x210_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan\cnxh\210x210_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan\cnxh\210x210_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\cainixihuan\cnxh\210x210_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\260x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\410x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\dianzichanpin@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\dzcp\160x160_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\dzcp\160x160_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\dzcp\160x160_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\dzcp\160x160_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\left.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\dianzichanpin\right.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\icon_1@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\icon_2@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\icon_3@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\icon_4@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\jianhuo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\jianhuo_mangguo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\jianhuo_putao@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\linebar.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\list.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjaisousuo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\260x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\410x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\shangjiasouluo@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\sjss\160x160_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\sjss\160x160_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\sjss\160x160_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\sjss\160x160_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\top1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\shangjiasouluo\top2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\title.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\xinpinshangxin@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\160x160_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\160x160_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\160x160_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\160x160_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\260x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\410x150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\left.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\right.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\yundongjiankang\yundongjiankang@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\240x240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\zaixianpintuan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\zxpt\140x140_0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\zxpt\140x140_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\zxpt\140x140_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\home\zaixianpintuan\zxpt\140x140_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\icon120@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\icon28@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\chakanpingjia@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\dianpu_icon@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\fanhui@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\fengxiang@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\gouqudi@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\kafu_icon@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\lingqu@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\menu@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\quan@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\shop@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\shoucang-@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\item\detail\shoucang-_xuanzhong@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\slider1-1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\slider1-2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\create.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\delete.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\edit.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\edit_certain.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\pay.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\restore.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\result.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\order\trash.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\setup\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\templates\footer.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\templates\header.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\templates\nav-main.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\bank_reset.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\detail.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\edit.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\email_reset.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\index.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\mine.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\result.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\user\ssn_reset.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views\account\test.txt" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\login.html" afterPath="$PROJECT_DIR$/application/views/account/login.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\login.php" afterPath="$PROJECT_DIR$/application/views/account/login.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\login_sms.html" afterPath="$PROJECT_DIR$/application/views/account/login_sms.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\login_sms.php" afterPath="$PROJECT_DIR$/application/views/account/login_sms.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\mine.html" afterPath="$PROJECT_DIR$/application/views/account/mine.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_change.html" afterPath="$PROJECT_DIR$/application/views/account/password_change.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_change.php" afterPath="$PROJECT_DIR$/application/views/account/password_change.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_reset.html" afterPath="$PROJECT_DIR$/application/views/account/password_reset.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_reset.php" afterPath="$PROJECT_DIR$/application/views/account/password_reset.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_set.html" afterPath="$PROJECT_DIR$/application/views/account/password_set.html" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\account\password_set.php" afterPath="$PROJECT_DIR$/application/views/account/password_set.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\css\account.css" afterPath="$PROJECT_DIR$/application/views/css/account.css" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\item\detail.php" afterPath="$PROJECT_DIR$/application/views/item/detail.php" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\js\account.js" afterPath="$PROJECT_DIR$/application/views/js/account.js" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\degnlu@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/degnlu@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\degnlu_hui@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/degnlu_hui@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\logo@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/logo@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\mima@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/mima@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\mima_qr@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/mima_qr@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\no@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/no@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\shouji@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/shouji@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\wancheng@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/wancheng@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\weixin@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/weixin@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\xiabu@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/xiabu@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\login\yanzhen@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/yanzhen@3x.png" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\chat.svg" afterPath="$PROJECT_DIR$/application/views/media/account/mine/chat.svg" />
-      <change type="MOVED" beforePath="C:\Users\Administrator\Documents\jinlai_client_web_front\application\views-syl\media\account\mine\logo.png" afterPath="$PROJECT_DIR$/application/views/media/account/mine/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/css/common.css" afterPath="$PROJECT_DIR$/application/views/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/biz/detail.php" afterPath="$PROJECT_DIR$/application/views/biz/detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer.php" afterPath="$PROJECT_DIR$/application/views/templates/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/js/form.js" afterPath="$PROJECT_DIR$/application/views/js/form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/coupon/kabao_shangjia@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/coupon/yiguoqi@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/coupon/yiguoqidi@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/coupon/yishiyong@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/coupon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/degnlu@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/degnlu@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/degnlu_hui@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/degnlu_hui@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/mine/logo.png" afterPath="$PROJECT_DIR$/application/views/media/account/mine/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/logo@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/logo@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/mima@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/mima@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/mima_qr@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/mima_qr@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/no@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/no@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/shouji@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/shouji@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/wancheng@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/wancheng@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/weixin@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/weixin@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/login/xiabu@3x.png" afterPath="$PROJECT_DIR$/application/views/media/account/login/xiabu@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/media/account/mine/chat.svg" afterPath="$PROJECT_DIR$/application/views/media/account/mine/chat.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/article/detail.php" afterPath="$PROJECT_DIR$/application/views/article/detail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/js/educationclassification.js" afterPath="$PROJECT_DIR$/application/views/js/educationclassification.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/header.php" afterPath="$PROJECT_DIR$/application/views/templates/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home.php" afterPath="$PROJECT_DIR$/application/views/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/js/index.js" afterPath="$PROJECT_DIR$/application/views/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/css/reset.css" afterPath="$PROJECT_DIR$/application/views/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/css/index.css" afterPath="$PROJECT_DIR$/application/views/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/coupon/index.php" afterPath="$PROJECT_DIR$/application/views/coupon/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/login.html" afterPath="$PROJECT_DIR$/application/views/account/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/login.php" afterPath="$PROJECT_DIR$/application/views/account/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/login_sms.html" afterPath="$PROJECT_DIR$/application/views/account/login_sms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/mine.html" afterPath="$PROJECT_DIR$/application/views/account/mine.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/password_change.html" afterPath="$PROJECT_DIR$/application/views/account/password_change.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/password_reset.html" afterPath="$PROJECT_DIR$/application/views/account/password_reset.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/account/password_set.html" afterPath="$PROJECT_DIR$/application/views/account/password_set.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jinlai_client_web_front.iws" />
@@ -268,16 +54,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/account/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="17.928572">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login_sms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/account/login_sms.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -298,12 +74,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/address/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5254425">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state vertical-scroll-proportion="-10.857142">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/js/account.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.020386266">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#55#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -611,9 +399,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="7" width="1883" height="1096" extended-state="1" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19228709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19228709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -908,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/js/account.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#55#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/js/LArea.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3809013">
@@ -1039,9 +817,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/address/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5254425">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/js/account.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020386266">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#55#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

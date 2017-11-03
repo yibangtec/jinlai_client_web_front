@@ -1,4 +1,10 @@
 	<style>
+<<<<<<< HEAD
+=======
+		body{
+			background: #eaeaea;
+		}
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 		input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
 input.check{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
@@ -275,7 +281,7 @@ input.check:checked{
 				<div class="announcement auto">
 					<!--左边图片区域-->
 					<div class="pic">
-						<img data-src="<?php echo CDN_URL ?>media/home/title.png" />
+						<img src="<?php echo CDN_URL ?>media/home/title.png" />
 					</div>
 					<div class="line"></div>
 					<!--右边文字部分-->
@@ -451,7 +457,7 @@ input.check:checked{
 			</div>
 			<!--颜色叠加公用部分-->
 			<div class="coloroverlay">
-				<div class="coloroverlaywrap">
+				<div class="coloroverlaywrap activecoverplay">
 					<div class="zbottom">
 						时尚
 					</div>
@@ -468,7 +474,7 @@ input.check:checked{
 					
 				</div>
 				<div class="fr squarecube" id="more">
-					<img data-src="<?php echo CDN_URL ?>media/home/list.png" class="block auto" />
+					<img src="<?php echo CDN_URL ?>media/home/list.png" class="block auto" />
 				</div>
 			</div>
 			<!--颜色叠加区域内容-->
@@ -477,13 +483,17 @@ input.check:checked{
 				<div class="colorovertab clearfix" style="display:block">
 				<div class="left fl refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top1.png" />
+						</div>
 						<h1>The Diner  啤酒配披萨</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top2.png" />
+						</div>
 						<h1>遇见你很高兴  小资多彩</h1>
 					</a>
 				</div>
@@ -508,27 +518,35 @@ input.check:checked{
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
+						</div>
 						<h1>The Diner  啤酒配披萨</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
+						</div>
 						<h1>The Diner  啤酒配披萨</h1>
 					</a>
 				</div>
 				<div class="mid fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
+							</div>
 							<h1>买了面包大面包也可以带有亲情人</h1>
 							<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
+							</div>
 							<h1>买了面包大面包也可以带有亲情人</h1>
 							<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 						</a>
@@ -539,27 +557,35 @@ input.check:checked{
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+							</div>
 						<h1>The Diner  啤酒配披萨</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
 					<a href="https://www.517ybang.com/biz/detail?id=2">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+							</div>
 						<h1>The Diner  啤酒配披萨</h1>
 					</a>
 				</div>
 				<div class="mid fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+								</div>
 							<h1>买了面包大面包也可以带有亲情人</h1>
 							<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+								</div>
 							<h1>买了面包大面包也可以带有亲情人</h1>
 							<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 						</a>
@@ -570,27 +596,35 @@ input.check:checked{
 					<div class="colorovertab clearfix">
 					<div class="left fl refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+								</div>
 							<h1>The Diner  啤酒配披萨</h1>
 						</a>
 					</div>
 					<div class="right fr refreshcontent">
 						<a href="https://www.517ybang.com/biz/detail?id=2">
+							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+								</div>
 							<h1>遇见你 很高兴  啤酒配披萨</h1>
 						</a>
 					</div>
 					<div class="mid fl" style="margin-top:.1rem">
 						<div class="midleft refreshcontent">
 							<a href="https://www.517ybang.com/biz/detail?id=2">
+								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+									</div>
 								<h1>买了面包大面包也可以带有亲情人</h1>
 								<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 							</a>
 						</div>
 						<div class="midright fr refreshcontent">
 							<a href="https://www.517ybang.com/biz/detail?id=2">
+								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
+									</div>
 								<h1>买了面包大面包也可以带有亲情人</h1>
 								<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>
 							</a>
@@ -657,12 +691,16 @@ input.check:checked{
 				<!--运动装备区域-->
 				<div class="mid fl">
 					<div class="midleft fl mt0">
+						<div class="bgefefef">
 						<img src="https://cdn-remote.517ybang.com/media/home/yundongjiankang/left.png" class="success">
+						</div>
 						<h1>挑战极限 边界由你定</h1>
 						
 					</div>
 					<div class="midright fr mt0">
+						<div class="bgefefef">
 						<img src="https://cdn-remote.517ybang.com/media/home/yundongjiankang/right.png" class="success">
+						</div>
 						<h1>美女运动装备</h1>
 						
 					</div>
@@ -683,12 +721,16 @@ input.check:checked{
 				</div> -->
 				<div class="mid fl">
 					<div class="midleft fr">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/410x150.jpg">
+						</div>
 						<h1>DIOS</h1>
 						<h2>DIOS精准标靶装备</h2>
 					</div>
 					<div class="midright fl">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/260x150.jpg">
+						</div>
 						<h1>极限装备</h1>
 						<h2>极限运动装备</h2>
 					</div>
@@ -746,7 +788,9 @@ input.check:checked{
 				
 				<!--电子产品-->
 				<div class="wid718 auto bgfff border20 exercise clearfix">
+					<div class="bgefefef">
 					<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/dianzichanpin@3x.png">
+					</div
 				</div>
 				<div class="coloroverlay mt14">
 				<div class="coloroverlaywrap">
@@ -770,12 +814,16 @@ input.check:checked{
 				<!--运动装备区域-->
 				<div class="mid fl">
 					<div class="midleft fr mt0">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/right.png">
+						</div>
 						<h1>镜头再长一点 再长一点</h1>
 						
 					</div>
 					<div class="midright fl mt0">
+						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/left.png">
+						</div>
 						<h1>我的镜头 我的世界</h1>
 						
 					</div>
@@ -803,22 +851,23 @@ input.check:checked{
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
 							<li>
-								<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="auto block">
+								
+								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="auto block">
 								<h1>IPHONE7P</h1>
 								<h2>¥5199.00</h2>
 							</li>
 							<li>
-								<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="auto block">
+								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="auto block">
 								<h1>APPLE Ipad 平板</h1>
 								<h2>¥383.2</h2>
 							</li>
 							<li>
-								<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="auto block">
+								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="auto block">
 								<h1>苹果SLO</h1>
 								<h2>¥383.22</h2>
 							</li>
 							<li>
-								<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="auto block">
+								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="auto block">
 								<h1>iWatch</h1>
 								<h2>¥1388.00</h2>
 							</li>
@@ -872,7 +921,385 @@ input.check:checked{
 				</div>
 			</div>
 			<div class="item">分类</div>
+<<<<<<< HEAD
 			<div class="item">发现</div>
+=======
+			<div class="item">
+					<!--头部banner区域开始-->
+		<div class="bannerWrap auto">
+			<div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	            	<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
+	            </div>
+	            <!--<div class="swiper-slide">
+	            	<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
+	            </div>-->
+	        </div>
+	        <!-- Add Pagination -->
+	        <div class="swiper-pagination"></div>
+	    </div>
+	</div>
+	<!--培训分类区域开始-->
+	<div class="classification auto">
+		<div class="swiper-container5">
+        <div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<p class="colorarea colorareaRed">
+				</p>
+				<div class="move">
+					<span class="titletext">外语培训</span>
+					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+				<div class="downarrow"></div>
+			</div>
+			<div class="swiper-slide">
+				<p class="colorarea colorareaYellow">
+				</p>
+				<div class="move">
+				<span class="titletext">音乐培训</span>
+				<span class="smalltitle smallcolor_two">APPLE</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
+				<div class="downarrow arrYellow"></div>
+			</div>
+			<div class="swiper-slide">
+				<p class="colorarea colorareaBlue">
+				</p>
+				<div class="move">
+				<span class="titletext">美术培训</span>
+				<span class="smalltitle smallcolor_three">FRESH FRUIT</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+				<div class="downarrow arrBlue"></div>
+			</div>
+			<div class="swiper-slide">
+				<p class="colorarea colorareaRed">
+				</p>
+				<div class="move">
+					<span class="titletext">外语培训</span>
+					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+				<div class="downarrow"></div>
+			</div>
+			<div class="swiper-slide">
+				<p class="colorarea colorareaPink"></p>
+				<div class="move">
+				<span class="titletext">升学培训</span>
+				<span class="smalltitle smallcolor_four">GRUNT</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+				<div class="downarrow arrPink"></div>
+			</div>
+			<div class="swiper-slide">
+				<p class="colorarea colorareaRed">
+				</p>
+				<div class="move">
+					<span class="titletext">外语培训</span>
+					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png" />
+				<div class="downarrow"></div>
+			</div>
+			<div class="swiper-slide" style="margin-right: 0;">
+				<p class="colorarea colorareaGreen">
+				</p>
+				<div class="move">
+				<span class="titletext">生活兴趣</span>
+				<span class="smalltitle smallcolor_five">DRINK</span>
+				</div>
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
+				<div class="downarrow arrGreen"></div>
+			</div>
+		 <div class="swiper-scrollbar"></div>
+		</div>
+	</div>
+	</div>
+	<!--立即体验区域开始-->
+	<div class="experience wid710 auto">
+		<div class="experience_one fl">
+			<div class="title">
+				<img src="<?php echo CDN_URL ?>media/home/title.png" class="fl"/>
+			</div>
+			<div class="goodpic auto">
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png"/>
+			</div>
+			<h1>芝麻街英语芝麻街英语芝麻街英语</h1>
+			<h2>英语的领导品牌</h2>
+			<a href="###" class="atonce">立即体验</a>
+		</div>
+		<div class="experience_two fr">
+			<div class="card_one">
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl"/>
+				<h1 class="mt10">沃尔德国际英语</h1>
+				<h2>英语的领导品牌</h2>
+				<a href="###" class="atonce atonce_r">立即体验</a>
+			</div>
+			<div class="card_one mt10">
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl"/>
+				<h1 class="mt10">沃尔德国际英语</h1>
+				<h2>英语的领导品牌</h2>
+				<a href="###" class="atonce atonce_r">立即体验</a>
+			</div>
+		</div>
+	</div>
+	<!--tab切换区域开始-->
+	
+	<div class="tab">
+		<a class="active" href="javascript:;">全部</a>
+		<a href="javascript:;">人气优先</a>
+		<a href="javascript:;">距离优先</a>
+	</div>
+	<div class="swiper-container6">
+		<div class="swiper-wrapper w">
+			<div class="swiper-slide d">
+				<div class="init-loading list-group-item text-center" style="display: none;">下拉可以刷新</div>
+				<div class="swiper-container7">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide list-group">
+						<div class="list-group-item">
+							<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+            	<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+						</div>
+						
+					</div>
+					<div class="swiper-slide list-group">
+						<div class="list-group-item">
+							<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+						</div>
+						
+					</div>
+					<div class="swiper-slide list-group">
+						<div class="list-group-item">
+							<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+						</div>
+						<div class="list-group-item">
+							<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+            	<div class="list">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
+			            		<div class="listtext fr">
+		            			<!--显示距离-->
+		            			<span class="area">0.3km</span>
+		            			<h1>韦博英语韦博英语韦博英语韦博英语韦博英语(麦岛分路店)</h1>
+		            			<!--五星区域-->
+		            			<div class="star">
+		            				<ul>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            					<li>
+		            						<i class="icon iconfont icon-wuxing"></i>
+		            					</li>
+		            				</ul>
+            				</div>
+            			<div class="tag">
+            				麦岛路沿线   英语
+            			</div>
+            			<div class="allbuy">
+            				<span class="tuan">团</span>
+            				<span>99元 单人体验一次</span>
+            			</div>
+            		</div>
+            	</div>
+						</div>
+						
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="loadtip">上拉加载更多</div>
+		<div class="swiper-scrollbar"></div>-->
+	</div>
+			</div>
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 			<div class="item">
 				<div class="payment-bar">
 					<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
@@ -1066,8 +1493,124 @@ input.check:checked{
 
 				</div>
 									<!--我的订单区域-->
+<<<<<<< HEAD
 					<div class="myorder wid690 auto bgfff border20 mt20">
 						
+=======
+					<div class="myorder wid730 auto bgfff border20 mt20 clearfix">
+						<!--我的订单区域-->
+						<div class="myordertitle">
+							<span class="fl myordertext">我的订单</span>
+							<i class="icon-Arrow fr" style="position: relative;top: .009rem;"></i>
+							<span class="fr allorder">全部订单</span>
+							
+						</div>
+						<div class="myordercontent clearfix">
+							<ul>
+							
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifahuo"></i>
+									</div>
+									<h2>待发货</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daishouhuo"></i>
+									</div>
+									<h2>待收货</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daipingjia"></i>
+									</div>
+									<h2>待评价</h2>
+								</li>
+									<li>
+									<div class="orderpic">
+										<i class="icon-daituikuan"></i>
+									</div>
+									<h2>退款售后</h2>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--我的服务-->
+						<div class="myorder myservice wid730 auto bgfff border20 mt20 clearfix">
+						<!--我的订单区域-->
+						<div class="myordertitle">
+							<span class="fl myordertext">我的服务</span>
+						</div>
+						<div class="myordercontent clearfix">
+							<ul>
+							
+								<li>
+									<div class="orderpic">
+										<i class="icon-yue" style="color: #edbf3e;"></i>
+									</div>
+									<h2>余额</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-kabao" style="color: #c4de74;"></i>
+									</div>
+									<h2>卡包</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								<li>
+									<div class="orderpic">
+										<i class="icon-daifukuan"></i>
+									</div>
+									<h2>待付款</h2>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="exit">
+						退出
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 					</div>
 			</div>
 		</div>
@@ -1163,7 +1706,23 @@ $(document).ready(function(){
 	      left: 0 // 元素距离左边
 	    },
 	    before: function (el) { // 图片加载之前执行方法
+<<<<<<< HEAD
 	      el.src = '<?php echo CDN_URL ?>media/home/default.png'
+=======
+//	    	el.css({
+//	    		'height' : '100%'
+//	    	})
+//			el.style.width='auto';
+//			el.style.display = 'block';
+//			el.style.margin = '0 auto';
+			
+	      el.src = '<?php echo CDN_URL ?>media/home/default.png';
+	      if( el.src = '<?php echo CDN_URL ?>media/home/default.png'){
+	      	el.style.width='auto';
+			el.style.display = 'block';
+			el.style.margin = '0 auto';
+	      }
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 	    },
 	    success: function (el) { // 图片加载成功执行方法
 	      el.classList.add('success')
@@ -1217,6 +1776,15 @@ function TotalPrice() {
         })
     }).on("swiperight",function(){
         $(this).parents(".touch").find(".itemlist").removeClass('selected');
+<<<<<<< HEAD
     })
 })
+=======
+    });
+//$('.activecoverplay').fsBanner();	
+});
+//banner焦点图
+//banner焦点图
+	//$('.coloroverlaywrap').fsBanner();	
+>>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 </script>
