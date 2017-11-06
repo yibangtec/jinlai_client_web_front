@@ -49,11 +49,8 @@
         .address-content{margin: 0 0.2rem;color: #666464;padding-bottom: 0.24rem;border-bottom: 0.01rem solid #e6e6e6;}
         .address-operation{margin: 0 0.2rem;color: #666464;padding: 0.23rem 0;}
         .operation-type{margin-left: 0.4rem;}
-        .icon-weixuanzhong:before {
-            content: "\e93e";
-            color: #000;
-            font-size: 0.3rem;
-        }
+        .operation-del{margin-left: 0.4rem;}
+
         .icon-write:before {
             content: "\e93f";
             color: #000;
@@ -72,7 +69,8 @@
 
         .icon-zidongtui:before {
               content: "\e94d";
-          }
+              font-size: 0.3rem;
+        }
         .icon-xuanzhong:before {
             content: "\e942";
             color: #ff3649;
@@ -92,8 +90,8 @@
             <p>东海东路1号，麦岛金岸，意帮3层</p>
         </div>
         <div class="address-operation clearfix">
-            <div class="title-left"><i class="icon-zidongtui select"></i> <span>设为默认</span></div>
-            <div class="title-right"><span class="operation-type"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
+            <div class="title-left select"><i class="icon-zidongtui"></i> <span>设为默认</span></div>
+            <div class="title-right"><span class="operation-del"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
         </div>
     </div>
     <div class="address">
@@ -106,34 +104,13 @@
             <p>东海东路1号，麦岛金岸，意帮3层</p>
         </div>
         <div class="address-operation clearfix">
-            <div class="title-left"><i class="icon-zidongtui select"></i> <span>设为默认</span></div>
-            <div class="title-right"><span class="operation-type"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
+            <div class="title-left select"><i class="icon-zidongtui"></i> <span>设为默认</span></div>
+            <div class="title-right"><span class="operation-del"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
         </div>
     </div>
     <div class="creat-address">新建地址</div>
 </div>
-<script>
-
-
-        var li=document.querySelectorAll('select')
-        console.log(li);
-        for(var i=0;i<li.length;i++){
-            console.log(li);
-            li[i].index=i;
-            li[i].onclick = function(){
-                //alert(this.index);
-                console.log(this.index);
-                this.classList.add('icon-xuanzhong');
-                this.classList.remove('icon-zidongtui');
-                for(var j=0;j<li.length;j++){
-                    li[j].classList.add('icon-zidongtui');
-                    li[j].classList.remove('icon-xuanzhong');
-                }
-
-            };
-        }
-
-
-</script>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/account.js"></script>
 </body>
 </html>

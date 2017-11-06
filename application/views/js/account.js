@@ -161,4 +161,25 @@ $(document).ready(function(){
     };
     // 执行它
 
+    $(".select").click(function(){
+        console.log('jfsdk')
+        $(".select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
+        $(".select").siblings(".title-right").find(".operation-del").css('display','inline-block');
+        if($(this).find("i").is('.icon-zidongtui')){
+            console.log('jfsdk')
+            $(this).find("i").removeClass('icon-zidongtui')
+            $(this).find("i").addClass('icon-xuanzhong')
+            $(this).siblings(".title-right").find(".operation-del").css('display','none');
+        }
+
+    })
+    $('.operation-type').click(function(){
+        location.href = "edit.html";
+    })
+    $('.operation-del').click(function(){
+        $(this).parents(".address").remove();
+    })
+
+
+
 });
