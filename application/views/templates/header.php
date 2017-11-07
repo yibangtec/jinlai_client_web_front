@@ -220,11 +220,9 @@
 		<script src="<?php echo CDN_URL ?>js/jquery.easing.min.js"></script>
 		<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>
 		<script src="<?php echo CDN_URL ?>js/shopping.js"></script>
-<<<<<<< HEAD
-=======
-		<script src="<?php echo CDN_URL ?>js/fsbanner.js"></script>
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
+	
 		<script src="<?php echo CDN_URL ?>js/index.js"></script>
+			<script src="<?php echo CDN_URL ?>js/fsbanner.js"></script>
 		<!--<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>-->
 		
 		<!--清除浏览器默认样式css-->
@@ -235,8 +233,6 @@
 		<link href="<?php echo CDN_URL ?>css/swiper.css" rel="stylesheet"/>
 		<link href="<?php echo CDN_URL ?>css/index.css" rel="stylesheet"/>
 		<link href="<?php echo CDN_URL ?>css/alert.css" rel="stylesheet"/>
-
-
 		<style>
 			body{
 				padding-bottom: 1rem;
@@ -253,11 +249,14 @@
 		    left: 0;
 		    width: 100%;
 		}
+		#nav-header{
+			display: none;
+		}
 		</style>
 
 		<!--
 		<script defer src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
-
+		<script src="/js/main.js"></script>
 
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>css/reset.css">
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>bootstrap/css/bootstrap.min.css">
@@ -273,8 +272,28 @@
 
 		<meta name=format-detection content="telephone=yes, address=no, email=no">
 		<meta name=apple-itunes-app content="app-id=1066224229">
-		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css"/>
+		<script>
+            var user_agent = new Object();
+            user_agent.is_wechat = <?php echo ($is_wechat === TRUE)? 'true': 'false' ?>;
+            console.log( user_agent.is_wechat);
+            user_agent.is_ios = <?php echo ($is_ios === TRUE)? 'true': 'false' ?>;
+            user_agent.is_android = <?php echo ($is_android === TRUE)? 'true': 'false' ?>;
+        </script>
 	</head>
+<?php
+	// 将head内容立即输出，让用户浏览器立即开始请求head中各项资源，提高页面加载速度
+	ob_flush();flush();
+
+    // 生成body的class
+	$body_class = ( isset($class) )? $class: NULL;
+    $body_class .= ($is_wechat === TRUE)? ' is_wechat': NULL;
+    $body_class .= ($is_ios === TRUE)? ' is_ios': NULL;
+    $body_class .= ($is_android === TRUE)? ' is_android': NULL;
+?>
+
+<!-- 内容开始 -->
+	<body<?php echo ( !empty($body_class) )? ' class="'.$body_class.'"': NULL ?>>
+
 <?php
 	// 将head内容立即输出，让用户浏览器立即开始请求head中各项资源，提高页面加载速度
 	ob_flush();flush();

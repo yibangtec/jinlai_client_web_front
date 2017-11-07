@@ -14,7 +14,7 @@
 	$is_android = ($this->input->get('device_platform') === 'android' || strpos($user_agent, 'Android'))? TRUE: FALSE;
 	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
 ?>
-		<footer id=footer role=contentinfo>
+		<!--<footer id=footer role=contentinfo>
 			<div id=copyright>
 				<div class=container>
 					<p>&copy;<?php echo date('Y') ?>
@@ -30,7 +30,7 @@
 			</div>
 
 			<a id=totop title="回到页首" href="#"><i class="fa fa-chevron-up" aria-hidden=true></i></a>
-		</footer>
+		</footer>-->
 <?php endif ?>
 
 		<script>
