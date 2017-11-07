@@ -552,6 +552,8 @@
 	line-height: .76rem;
 	text-align: center;
 	  color: #3e3a39;
+	   display: block;
+	 
 }
 .tabbar .column .item i{
 	display: block;
@@ -584,7 +586,9 @@
 .tabcontent .item{
 	display:none;
 }
-
+.tabWrap .item{
+	display: block !important;
+}
 /*首页菜单区域开始*/
 .menuOuter{
 	width: 95.733333333333333%;
@@ -703,73 +707,50 @@
 }
 .menuWrap li .iconWrap{
 	height: 1.1rem;
-	background: #f98b33;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #fbc68d;
+
 }
 .menuWrap li .iconWrap2{
 	height: 1.1rem;
-	background: #ff5240;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #f9e6d3;
+	
 }
 .menuWrap li .iconWrap3{
 	height: 1.1rem;
-	background: #ec3f82;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #f7ccd1;
+
 }
 .menuWrap li .iconWrap3{
 	height: 1.1rem;
-	background: #ec3f82;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #f7ccd1;
 }
 .menuWrap li .iconWrap4{
 	height: 1.1rem;
-	background: #6d58dc;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #d4befe;
+
 }
 .menuWrap li .iconWrap5{
 	height: 1.1rem;
-	background: #185bd6;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #c1cfef;
+
 }
 
 .menuWrap li .iconWrap6{
 	height: 1.1rem;
-	background: #f84b5a;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #fdbed3;
+
 }
 .menuWrap li .iconWrap7{
 	height: 1.1rem;
-	background: #f5477d;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #f9cae7;
+
 }
 
 .menuWrap li .iconWrap8{
 	height: 1.1rem;
-	background: #c82ec5;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #f7d6ff;
+
 }
 
 .menuWrap li .iconWrap9{
 	height: 1.1rem;
-	background: #1783ed;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #ccecff;
+
 }
 
 .menuWrap li .iconWrap10{
 	height: 1.1rem;
-	background: #5997f9;
-	border-radius: .38rem;
-	box-shadow:0px 0px .15rem #cdf2f5;
+
 }
 /*导航区域十个渐变*/
 .bg1{
@@ -1744,3 +1725,90 @@ height:1.5rem !important;
 	    color: #999;
 	font-size: .24rem;
 }
+/*credit页面css*/
+.creditinfo{
+	height: 2.1rem;
+	margin-top: .2rem;
+}
+.creditinfo .creditpic{
+	width: 3.02rem;
+	height: 2.1rem;
+	border-right: 1px dotted #c9c9c9;
+
+}
+.creditinfo .creditpic img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: .3rem;
+	margin-left: .8rem;
+	display: block;
+}
+.credittext{
+	width: 1.42rem;
+	height: .94rem;
+	margin-left: 1.36rem;
+	margin-top: .6rem;
+}
+.credittext h1{
+	text-align: center;
+	font-size: .42rem;
+	color: #fe3747;
+}
+.credittext h2{
+	text-align: center;
+	font-size: .24rem;
+	color: #fe3747;
+	margin-top: .2rem;
+	width: 1.42rem;
+	line-height: .3rem;
+	background: #efefef;
+	border-radius: .35rem;
+	height: .3rem;
+	color: #3E3A39;
+	
+}
+.creditlist{
+	    border-bottom: 1px solid #ddd;
+    padding-bottom: .2rem;
+    padding-top: .2rem;
+}
+.creditlist .creditcontenttext{
+	padding-top: .1rem;
+	margin-left: .2rem;
+}
+.creditlist .creditcontenttext h1{
+	font-size: .28rem;
+	color: #3e3a39;
+}
+.creditlist .creditcontenttext h2{ 
+	margin-top: .2rem;
+	width: 1.28rem;
+	height: .28rem;
+	line-height: .28rem;
+	text-align: center;
+	color: #9FA0A0;
+	font-size: .24rem;
+	border: 1px solid #9FA0A0;
+	border-radius: .15rem ;
+}
+.credittime{
+	font-size: .22rem;
+	color: #9FA0A0;
+	margin-top: .32rem;
+	margin-right: .23rem;
+}
+.creditmore{
+	color: #FF3649;
+	margin-top: .2rem;
+	font-size: .3rem;
+	margin-right: .23rem;
+}
+.creditcontentwrap{
+	padding: .2rem;
+	background: #fff;
+	border-radius: .2rem;
+}
+.creditlist:nth-child(1){
+	padding-top: 0;
+}
+
