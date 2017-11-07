@@ -1,10 +1,7 @@
 	<style>
-<<<<<<< HEAD
-=======
 		body{
 			background: #eaeaea;
 		}
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 		input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
 input.check{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
@@ -16,6 +13,8 @@ input.check{
     width: .42rem;
     height: .42rem;
  }
+.ui-loader{
+display: none;}
 input.check:checked{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 	background-size:20px 20px;
@@ -65,102 +64,82 @@ input.check:checked{
 						<li>
 							<!--图标-->
 							<div class="iconWrap">
-								<div class="menuicon bg1">
-									<i class="icon iconfont icon-putao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/shengxianchaoshi@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">生鲜超市</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap2">
-								<div class="menuicon2 bg2">
-									<i class="icon iconfont icon-putao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/jiankangjiaoyu@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">健康教育</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap3">
-								<div class="menuicon3 bg3">
-									<i class="icon iconfont icon-iconcopy"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/gesemeishi@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">各色美食</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap4">
-								<div class="menuicon4 bg4">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/shishangyule@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">时尚娱乐</sapn>
 						</li>
 						<li style="margin-right:0">
 							<!--图标-->
 							<div class="iconWrap5">
-								<div class="menuicon5 bg5">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/zhinengjiaju@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">智能家居</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap6">
-								<div class="menuicon6 bg6">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">领券中心</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap7">
-								<div class="menuicon7 bg7">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/yaoqinghaoyou@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">邀请好友</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap8">
-								<div class="menuicon8 bg8">
-									<i class="icon iconfont icon-putao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">我要入驻</sapn>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap9">
-								<div class="menuicon9 bg9">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+								<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuantime@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">在线拼团</sapn>
 						</li>
 						<li style="margin-right:0">
 							<!--图标-->
 							<div class="iconWrap10">
-								<div class="menuicon10 bg10">
-									<i class="icon iconfont icon-ruanxiangjiao"></i>
-								</div>
+							<img data-src="<?php echo CDN_URL ?>media/home/chakangengduo@3x.png" />
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<sapn class="text">查看更多</sapn>
 						</li>
 					</ul>
 				</div>
@@ -457,19 +436,31 @@ input.check:checked{
 			</div>
 			<!--颜色叠加公用部分-->
 			<div class="coloroverlay">
-				<div class="coloroverlaywrap activecoverplay">
+				<div class="coloroverlaywrap activecoverplay" id="activecoverplay">
 					<div class="zbottom">
-						时尚
+						<b>时尚</b>
+						<a style="display: none;">Shishang</a>
+						<i style="display: none;">时尚</i>
+						
 					</div>
 					<div class="zbottom zfirst">
-						丽人
+						<b>丽人</b>
+						<a style="display: none;">Liren</a>
+						<i style="display: none;">丽人</i>
+						
 					</div>
 					<div class="zbottom zsecond">
-						娱乐
+						<b>娱乐</b>
+						<a style="display: none;">Yule</a>
+						<i style="display: none;">娱乐</i>
+						
 					</div>
-					<div class="zbottom zthree">
-						Delauise
-						<span class="r">美食美客</span>
+					<div class="zbottom zthree coverCur">
+						<b>美食</b>
+						<a style="display: none;">Delatious</a>
+						<span class="r">美食</span>
+						<i style="display: none;">美食</i>
+						
 					</div>
 					
 				</div>
@@ -920,10 +911,11 @@ input.check:checked{
 					</ul>
 				</div>
 			</div>
-			<div class="item">分类</div>
-<<<<<<< HEAD
-			<div class="item">发现</div>
-=======
+		
+			
+			
+			</div>
+				<div class="item">分类</div>
 			<div class="item">
 					<!--头部banner区域开始-->
 		<div class="bannerWrap auto">
@@ -1299,7 +1291,7 @@ input.check:checked{
 		<div class="swiper-scrollbar"></div>-->
 	</div>
 			</div>
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
+			<!--change-->
 			<div class="item">
 				<div class="payment-bar">
 					<div class="all-checkbox"><input type="checkbox" class="check goods-check" id="AllCheck">全选</div>
@@ -1452,6 +1444,7 @@ input.check:checked{
 				  </div>
 				</div>
 			</div>
+			<!--change-->
 			<div class="item">
 				<div class="usercenter clearfix">
 					<!--头像区域开始-->
@@ -1493,10 +1486,6 @@ input.check:checked{
 
 				</div>
 									<!--我的订单区域-->
-<<<<<<< HEAD
-					<div class="myorder wid690 auto bgfff border20 mt20">
-						
-=======
 					<div class="myorder wid730 auto bgfff border20 mt20 clearfix">
 						<!--我的订单区域-->
 						<div class="myordertitle">
@@ -1610,31 +1599,29 @@ input.check:checked{
 					</div>
 					<div class="exit">
 						退出
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 					</div>
-			</div>
 		</div>
 		<!--底部tab切换区域-->
 		<!--<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
-				<div class="item cur">
+				<div class="itemmenulist cur">
 					<i class="icon-shouye_xiala"></i>
 					<span class="text">主页</span>
 				</div>
-				<div class="item">
+				<div class="itemmenulist">
 					<i class="icon iconfont icon-fenlei"></i>
 					<span class="text">分类</span>
 				</div>
-				<div class="item">
+				<div class="itemmenulist">
 					<i class="icon iconfont icon-fenlei1"></i>
 					<span class="text">发现</span>
 				</div>
-				<div class="item">
+				<div class="itemmenulist">
 					<i class="icon iconfont icon-gouwuche"></i>
 					<span class="text">购物车</span>
 				</div>
-				<div class="item">
+				<div class="itemmenulist">
 					<i class="icon iconfont icon-wode"></i>
 					<span class="text">我的</span>
 				</div>
@@ -1706,9 +1693,6 @@ $(document).ready(function(){
 	      left: 0 // 元素距离左边
 	    },
 	    before: function (el) { // 图片加载之前执行方法
-<<<<<<< HEAD
-	      el.src = '<?php echo CDN_URL ?>media/home/default.png'
-=======
 //	    	el.css({
 //	    		'height' : '100%'
 //	    	})
@@ -1722,7 +1706,6 @@ $(document).ready(function(){
 			el.style.display = 'block';
 			el.style.margin = '0 auto';
 	      }
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 	    },
 	    success: function (el) { // 图片加载成功执行方法
 	      el.classList.add('success')
@@ -1776,15 +1759,10 @@ function TotalPrice() {
         })
     }).on("swiperight",function(){
         $(this).parents(".touch").find(".itemlist").removeClass('selected');
-<<<<<<< HEAD
-    })
-})
-=======
     });
-//$('.activecoverplay').fsBanner();	
+
 });
 //banner焦点图
 //banner焦点图
 	//$('.coloroverlaywrap').fsBanner();	
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
 </script>
