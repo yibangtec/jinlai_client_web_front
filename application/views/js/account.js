@@ -147,18 +147,7 @@ $(document).ready(function(){
         }
     });
 
-    var ProBox = $(".box");
-    // 构建一个要执行的函数
-    function Hide(){
-        ProBox.children('.error-tips').fadeOut(200);
-    }
-    // 定时器函数
-    function actionDo(){
-        return setInterval(function(){
-            // 插入要执行的函数
-            Hide();
-        },2000); // 设定执行或延时时间
-    };
+
     // 执行它
 
     $(".select").click(function(){
@@ -180,6 +169,39 @@ $(document).ready(function(){
         $(this).parents(".address").remove();
     })
 
+    $('#tel').blur(function(){
+        var re = /^1\d{10}$/;
 
+        if (re.test($('#tel').val())) {
 
+        }else{
+            $('.error-tips').find('p').html('手机号格式错误');
+            $('.error-tips').show();
+            actionToDo();
+        }
+    });
+
+    var ProBox = $(".box");
+    // 构建一个要执行的函数
+    function Hide(){
+        ProBox.children('.error-tips').fadeOut(200);
+    }
+    function Hideng(){
+        ProBox.children('.error-tips').fadeOut(200);
+    }
+    // 定时器函数
+    function actionToDo(){
+        return setInterval(function(){
+            // 插入要执行的函数
+            Hideng();
+        },2000); // 设定执行或延时时间
+    };
+    // 定时器函数
+    function actionDo(){
+        return setInterval(function(){
+            // 插入要执行的函数
+            Hide();
+            Hideng();
+        },2000); // 设定执行或延时时间
+    };
 });
