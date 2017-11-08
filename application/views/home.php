@@ -2,6 +2,14 @@
 		body{
 			background: #eaeaea;
 		}
+		span,div,p,li,a,i,b{
+			 -webkit-touch-callout:none;  /*系统默认菜单被禁用*/     
+    -webkit-user-select:none; /*webkit浏览器*/     
+    -khtml-user-select:none; /*早期浏览器*/     
+    -moz-user-select:none;/*火狐*/     
+    -ms-user-select:none; /*IE10*/     
+    user-select:none;  
+		}
 		input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
 input.check{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
@@ -289,13 +297,19 @@ input.check:checked{
 				<div class="fruidWrap clearfix auto">
 					<ul>
 						<li>
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<img data-src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+							</a>
 						</li>
 						<li>
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" />
+							</a>
 						</li>
 						<li style="margin-right:0">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -712,14 +726,18 @@ input.check:checked{
 				<div class="mid fl">
 					<div class="midleft fl mt0">
 						<div class="bgefefef">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<img src="https://cdn-remote.517ybang.com/media/home/yundongjiankang/left.png" class="success">
+						</a>
 						</div>
 						<h1>挑战极限 边界由你定</h1>
 						
 					</div>
 					<div class="midright fr mt0">
 						<div class="bgefefef">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<img src="https://cdn-remote.517ybang.com/media/home/yundongjiankang/right.png" class="success">
+							</a>
 						</div>
 						<h1>美女运动装备</h1>
 						
@@ -742,14 +760,18 @@ input.check:checked{
 				<div class="mid fl">
 					<div class="midleft fr">
 						<div class="bgefefef">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/410x150.jpg">
+							</a>
 						</div>
 						<h1>DIOS</h1>
 						<h2>DIOS精准标靶装备</h2>
 					</div>
 					<div class="midright fl">
 						<div class="bgefefef">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/260x150.jpg">
+							</a>
 						</div>
 						<h1>极限装备</h1>
 						<h2>极限运动装备</h2>
