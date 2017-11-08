@@ -1,4 +1,12 @@
 	<!--店铺首页商家信息开始-->
+	<?php
+	// 检查当前设备信息
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
+	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
+	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
+	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+?>
 		<div class="shopinfo wid710 auto clearfix">
 			<div class="shoppic fl">
 				<img src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
@@ -32,6 +40,32 @@
 			</ul>
 			
 		</div>
+			<!--底部导航区域-->
+				<div class="fiex footerbar clearfix">
+					<div class="textbar fl">
+						<ul>
+							<li>
+								<span>宝贝分类</span>
+								<p class="line"></p>
+							</li>
+							<li>
+								<span>宝贝分类</span>
+								<p class="line"></p>
+							</li>
+							<li>
+								<span>宝贝分类</span>
+								<p class="line"></p>
+							</li>
+						</ul>
+					</div>
+					<div class="wechat">
+						<i></i>
+						<span>客服</span>
+					</div>
+					
+				</div>
+		<?php endif ?>
+		
 	<!--头部banner区域开始-->
 		<div class="bannerWrap auto">
 			<div class="swiper-container">
@@ -267,27 +301,4 @@
 						</li>
 					</ul>
 				</div>
-				<!--底部导航区域-->
-				<div class="fiex footerbar clearfix">
-					<div class="textbar fl">
-						<ul>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-						</ul>
-					</div>
-					<div class="wechat">
-						<i></i>
-						<span>客服</span>
-					</div>
-					
-				</div>
+			
