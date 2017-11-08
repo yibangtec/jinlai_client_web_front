@@ -37,6 +37,7 @@
 			<div class="swiper-container">
 	        <div class="swiper-wrapper">
 	            <div class="swiper-slide">
+	            	
 	            	<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
 	            </div>
 	            <div class="swiper-slide">
@@ -57,9 +58,11 @@
 	<div class="threecol clearfix none">
 	<ul>
 		<li>
+			<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 			<div class="pic shopIndexpic">
 				<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
 			</div>
+			</a>
 		</li>
 		<li>
 			<div class="pic shopIndexpic">
@@ -85,25 +88,31 @@
 		<div class="cardnavcontent clearfix wid710 auto mt14">
 			<ul>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_1.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=4" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li style="margin-right: 0;">
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_2.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
@@ -124,25 +133,31 @@
 		<div class="cardnavcontent clearfix wid710 auto mt14">
 			<ul>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_0.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_1.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li style="margin-right: 0;">
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_2.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
@@ -163,25 +178,31 @@
 		<div class="cardnavcontent clearfix wid710 auto mt14">
 			<ul>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_0.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li>
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_1.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
 				</li>
 				<li style="margin-right: 0;">
+					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
 					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" />
+						<img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg" />
 					</div>
+					</a>
 						<h1>NIKE男子休闲鞋子</h1>
 						<h2>AIR PERSON</h2>
 						<h3>¥3444.00</h3>
@@ -195,41 +216,54 @@
 	</div>
 	<div class="like wid718 auto clearfix mt10">
 					<ul>
+						
 						<li>
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 						<li>
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 						<li class="mr0">
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 						<li>
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_3.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 						<li>
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 						<li class="mr0">
-							<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
+							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
+							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg">
 							<h1>JUSTE UN CLOU 手镯</h1>
 							<h2>8K玫瑰金</h2>
 							<h3>¥5100</h3>
+							</a>
 						</li>
 					</ul>
 				</div>
