@@ -254,7 +254,9 @@ input.check:checked{
 			</div>
 				<!--广告图区域-->
 				<div class="addpic auto">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 					<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
+					</a>
 				</div>
 				<!--公告文字区域开始-->
 				<div class="announcement auto">
@@ -307,16 +309,22 @@ input.check:checked{
 						<div class="goodsleft">
 							<ul class="clearfix">
 								<li>
+									<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<div class="pic">
+										
 										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156.jpg" />
+										
 									</div>
+									</a>
 									<p>IPhone7红色版</p>
 									<span>¥3,900</span>
 								</li>
 								<li style="margin-left: .3rem;">
+									<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<div class="pic">
 										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_1.jpg" />
 									</div>
+										</a>
 									<p>IPhone7红色版</p>
 									<span>¥3,900</span>
 								</li>
@@ -325,16 +333,21 @@ input.check:checked{
 						<div class="goodsleft" style="margin-left:.1rem">
 							<ul class="clearfix">
 								<li>
+									<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<div class="pic">
+										
 										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_2.jpg" />
 									</div>
+									</a>
 									<p>IPhone7红色版</p>
 									<span>¥3,900</span>
 								</li>
 								<li style="margin-left: .3rem;">
+									<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<div class="pic">
 										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_3.jpg" />
 									</div>
+									</a>
 									<p>IPhone7红色版</p>
 									<span>¥3,900</span>
 								</li>
@@ -344,23 +357,29 @@ input.check:checked{
 					<div class="threecol">
 						<ul>
 							<li>
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 								<div class="pic">
 									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_0.jpg" />
 								</div>
+								</a>
 								<p>IPhone8</p>
 								<span>¥9985</span>
 							</li>
 							<li>
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 								<div class="pic">
 									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_1.jpg" />
 								</div>
+								</a>
 								<p>IPhone8</p>
 								<span>¥9985</span>
 							</li>
 							<li style="margin-right:0">
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 								<div class="pic">
 									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_2.jpg" />
 								</div>
+								</a>
 								<p>IPhone8</p>
 								<span>¥9985</span>
 							</li>
@@ -377,9 +396,11 @@ input.check:checked{
 						<div class="onlinegoodsleft">
 							<!--倒计时区域-->
 							<div class="time"></div>
+							<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 							<div class="pic">
 								<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/240x240.jpg"/>
 							</div>
+							</a>
 							<h1>OMG超霸系列</h1>
 							<h2>同轴设计时腕表</h2>
 							<p>
@@ -391,16 +412,20 @@ input.check:checked{
 							<div class="onlinegoodstop">
 								<ul>
 									<li>
+										<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 										<div class="pic">
 											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/zxpt/140x140_0.jpg"/>
 										</div>
+										</a>
 										<h1>日本阳光红富士</h1>
 										<h2>¥9.9/斤</h2>
 									</li>
 									<li>
+										<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 										<div class="pic">
 											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/zxpt/140x140_1.jpg"/>
 										</div>
+										</a>
 										<h1>里吉塔蓝莓</h1>
 										<h2>¥4.9/斤</h2>
 									</li>
@@ -409,16 +434,20 @@ input.check:checked{
 							<div class="onlinegoodstop" style="margin-top:.1rem">
 								<ul>
 									<li>
+										<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 										<div class="pic">
 											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/zxpt/140x140_2.jpg"/>
 										</div>
+										</a>
 										<h1>i7 1071组装机</h1>
 										<h2>¥7500/斤</h2>
 									</li>
 									<li>
+										<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 										<div class="pic">
 											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/zxpt/140x140_3.jpg"/>
 										</div>
+										</a>
 										<h1>VITA红茶整箱</h1>
 										<h2>¥31.95/斤</h2>
 									</li>
@@ -473,7 +502,7 @@ input.check:checked{
 				<!--时尚内容-->
 				<div class="colorovertab clearfix" style="display:block">
 				<div class="left fl refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top1.png" />
 						</div>
@@ -481,7 +510,7 @@ input.check:checked{
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top2.png" />
 						</div>
@@ -490,14 +519,14 @@ input.check:checked{
 				</div>
 				<div class="mid fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<img class="h150" data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/410x150.jpg" />
 							<h1>麦乐面包达人</h1>
 							<h2>面包也可以带有亲情</h2>
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<img class="h150" data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/260x150.jpg" />
 							<h1>主推新品</h1>
 							<h2>甜品也可以甜而不腻</h2>
@@ -626,28 +655,28 @@ input.check:checked{
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
 							<li>
-								<a href="https://www.517ybang.com/item/detail?id=26">
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_0.jpg" class="auto block">
 									<h1>蘑菇火腿炒饭</h1>
 									<h2>¥38.28</h2>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.517ybang.com/item/detail?id=26">
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_1.jpg" class="auto block">
 									<h1>韩式海鲜汤</h1>
 									<h2>¥22.25</h2>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.517ybang.com/item/detail?id=26">
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_2.jpg" class="auto block">
 									<h1>新西兰精品牛排</h1>
 									<h2>¥68.00</h2>
 								</a>
 							</li>
 							<li>
-								<a href="https://www.517ybang.com/item/detail?id=26">
+								<a href="https://www.517ybang.com/item/detail?id=2" target="_self">
 									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_3.jpg" class="auto block">
 									<h1>狮子头意面</h1>
 									<h2>¥28.00</h2>
