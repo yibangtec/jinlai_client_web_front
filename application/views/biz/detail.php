@@ -1,3 +1,5 @@
+<base href="<?php echo $this->media_root ?>">
+
 	<!--店铺首页商家信息开始-->
 	<?php
 	// 检查当前设备信息
@@ -9,11 +11,11 @@
 ?>
 		<div class="shopinfo wid710 auto clearfix">
 			<div class="shoppic fl">
-				<img src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
+				<img src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 			</div>
 			<!--商家名字等信息-->
 			<div class="shopname fl">
-				<span class="fl">NIKE官方旗舰店</span>
+				<span class="fl"><?php echo $item['brief_name'] ?></span>
 				<a href="#" class="fl">入驻商家</a>
 			</div>
 			<div class="gnwrap fr">
@@ -71,7 +73,6 @@
 			<div class="swiper-container">
 	        <div class="swiper-wrapper">
 	            <div class="swiper-slide">
-	            	
 	            	<img src="<?php echo CDN_URL ?>media/slider1-2.png" />
 	            </div>
 	            <div class="swiper-slide">
@@ -116,42 +117,26 @@
 			<img src="<?php echo CDN_URL ?>media/home/linebar.png" />
 		</div>
 		<div class="pic mt10">
-			<img src="<?php echo CDN_URL ?>media/home/banner1@3x.png" />
+			<a href="<?php echo base_url('item/detail?id='.$item['m1ace_id']) ?>">
+				<img src="<?php echo $this->media_root.$item['m1figure_url'] ?>">
+			</a>
 		</div>
 		<!--卡片式导航商品内容区域-->
 		<div class="cardnavcontent clearfix wid710 auto mt14">
 			<ul>
+				<?php foreach ($item['m1_items'] as $item): ?>
 				<li>
-					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_1.jpg" />
-					</div>
+					<a href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
+						<div class=pic>
+							<img src="<?php echo MEDIA_URL. 'item/'.$item['url_image_main'] ?>">
+						</div>
+					
+						<h1><?php echo $item['name'] ?></h1>
+						<h2><?php echo $item['slogan'] ?></h2>
+						<h3>￥ <?php echo $item['price'] ?></h3>
 					</a>
-						<h1>NIKE男子休闲鞋子</h1>
-						<h2>AIR PERSON</h2>
-						<h3>¥3444.00</h3>
 				</li>
-				<li>
-					<a href="https://www.517ybang.com/item/detail?id=4" target="_self">
-					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156.jpg" />
-					</div>
-					</a>
-						<h1>NIKE男子休闲鞋子</h1>
-						<h2>AIR PERSON</h2>
-						<h3>¥3444.00</h3>
-				</li>
-				<li style="margin-right: 0;">
-					<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-					<div class="pic">
-						<img src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_2.jpg" />
-					</div>
-					</a>
-						<h1>NIKE男子休闲鞋子</h1>
-						<h2>AIR PERSON</h2>
-						<h3>¥3444.00</h3>
-				</li>
-			
+				<?php endforeach ?>
 			</ul>
 		</div>
 	</div>
@@ -301,4 +286,7 @@
 						</li>
 					</ul>
 				</div>
-			
+<script>
+	// <?php echo $this->class_name_cn ?>数据
+	var item = <?php echo json_encode($item) ?>
+</script>

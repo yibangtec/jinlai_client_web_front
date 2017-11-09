@@ -200,16 +200,11 @@
     </h5>
     <ul>
       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-     
-      
-     
     </ul>
   </section>
 
 </div>
 </div>
-<script src="<?php echo CDN_URL ?>js/jquery-2.1.4.min.js"></script>
-
 
 <script>
 	$(function($){
@@ -221,4 +216,9 @@
 		$('#sidebar ul li').eq(0).click();
 	});
 	
+</script>
+	
+<script>
+	// <?php echo $this->class_name_cn ?>数据
+	var items = <?php echo json_encode($items) ?>
 </script>

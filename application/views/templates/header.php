@@ -23,7 +23,7 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20171019">
+		<meta name=version content="revision20171109">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -275,7 +275,6 @@
 		<script>
             var user_agent = new Object();
             user_agent.is_wechat = <?php echo ($is_wechat === TRUE)? 'true': 'false' ?>;
-            console.log( user_agent.is_wechat);
             user_agent.is_ios = <?php echo ($is_ios === TRUE)? 'true': 'false' ?>;
             user_agent.is_android = <?php echo ($is_android === TRUE)? 'true': 'false' ?>;
         </script>
@@ -293,14 +292,6 @@
 
 <!-- 内容开始 -->
 	<body<?php echo ( !empty($body_class) )? ' class="'.$body_class.'"': NULL ?>>
-
-<?php
-	// 将head内容立即输出，让用户浏览器立即开始请求head中各项资源，提高页面加载速度
-	ob_flush();flush();
-?>
-
-<!-- 内容开始 -->
-	<body<?php echo (isset($class))? ' class="'.$class.'"': NULL; ?>>
 		<noscript>
 			<p>您的浏览器功能加载出现问题，请刷新浏览器重试；如果仍然出现此提示，请考虑更换浏览器。</p>
 		</noscript>
