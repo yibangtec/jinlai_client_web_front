@@ -429,3 +429,8 @@
 
 		<main id=maincontainer role=main>
 		-->
+		<style>
+			.ui-loader{
+				display: none;
+			}
+		</style>

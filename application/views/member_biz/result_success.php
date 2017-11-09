@@ -13,7 +13,7 @@
 		<link href="css/index.css" rel="stylesheet"/>
 		<style>
 			body{
-			background: url(media/home/beijing@3x.png) #f2f2f3;
+			background: url(<?php echo CDN_URL ?>media/home/beijing@3x.png) #f2f2f3;
 		       background-size: contain;
 		    background-repeat: no-repeat;
 			}
@@ -24,21 +24,19 @@
 	</head>
 <body>
 	<div class="storemainlogo">
-		<img src="media/home/logo@3x.png" />
+		<img src="<?php echo CDN_URL ?>media/home/logo@3x.png" />
 	</div>
 	<div class="enterstorebtn">
 		进入店铺
 	</div>
 	<div class="vipcard wid670 auto">
 		<div class="storelogo fl">
-			<img src="media/home/logo@3x.png"/>
+			<img src="<?php echo CDN_URL ?>media/home/logo@3x.png"/>
 		</div>
 		<div class="rule fr">
 			耐克
 		</div>
-		<h2>申请成为NIKE会员</h2>
-		<input type="text" />
-		<a>加入会员</a>
+		<div class="viptext">VIP</div>
 		<p>
 			Hi,Siri
 			<span>普通会员</span>

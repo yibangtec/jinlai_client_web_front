@@ -39,7 +39,7 @@
 		<h2>申请成为NIKE会员</h2>
 		<div class="clearfix">
 			<input type="text" />
-			<a>加入会员</a>
+			<a href="<?php echo base_url('member_biz/joined') ?>" target="_self">加入会员</a>
 		</div>
 		
 		<p>

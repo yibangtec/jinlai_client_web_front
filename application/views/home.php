@@ -262,7 +262,7 @@ input.check:checked{
 			</div>
 				<!--广告图区域-->
 				<div class="addpic auto">
-					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
+					<a href="https://www.517ybang.com/biz/detail?id=13" target="_self">
 					<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
 					</a>
 				</div>
@@ -761,7 +761,7 @@ input.check:checked{
 					<div class="midleft fr">
 						<div class="bgefefef">
 							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
-						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/410x150.jpg">
+						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/left.png">
 							</a>
 						</div>
 						<h1>DIOS</h1>
@@ -770,7 +770,7 @@ input.check:checked{
 					<div class="midright fl">
 						<div class="bgefefef">
 							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
-						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/260x150.jpg">
+						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/right.png">
 							</a>
 						</div>
 						<h1>极限装备</h1>
@@ -848,7 +848,7 @@ input.check:checked{
 					
 				</div>
 				<div class="fr square">
-					<img data-src="<?php echo CDN_URL ?>media/home/icon_1@3x.png" class="block auto">
+					<img data-src="<?php echo CDN_URL ?>media/home/icon_1@3x.png" class="block auto" style="height:.42rem">
 				</div>
 			</div>
 			<div class="coloroverlaycontent clearfix" style="margin-top:.14rem">
