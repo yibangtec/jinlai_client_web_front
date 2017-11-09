@@ -1863,27 +1863,27 @@ height:1.5rem !important;
 	float: left;
 }
 .vipcard input{
-	    display: inline-block;
+	     display: block;
     float: left;
-    width: 4.2rem;
+    width: 4.15rem;
     height: .7rem;
     border: none;
     text-indent: .2rem;
     color: #3e3a39;
+    padding: 0px;
     font-size: .26rem;
 }
 .vipcard a{
-	display: inline-block;
+	    display: block;
     width: 1.5rem;
     height: .7rem;
-    float: left;
+    float: right;
     font-size: .26rem;
     border-radius: .35rem;
     line-height: .7rem;
     background: rgba(0,0,0,.25);
     text-align: center;
     color: #fff;
-    margin-left: .2rem;
 }
 .vipcard p{
 	    float: left;
@@ -1940,14 +1940,15 @@ height:1.5rem !important;
 	    display: block;
     width: 1rem;
     height: 1rem;
-    background: #dec08e;
     border-radius: 50%;
     margin: 0 auto;
     font-size: .6rem;
     margin-bottom: .3rem;
     line-height: 1rem;
 }
-
+.equity ul li a i{
+	    font-size: 1rem;
+}
 .icon-jifen:before{
 	color: #fff !important;
 }
@@ -1958,9 +1959,22 @@ height:1.5rem !important;
 .member_list{
 	height: 2.6rem;
 	overflow: hidden;
-	background: url(../media/member/tu1@3x.png);
+	background: url(<?php echo CDN_URL ?>media/member/tu1@3x.png);
+	
 	position: relative;
 	margin-bottom: .2rem;
+}
+.t2{
+	background: url('https://cdn-remote.517ybang.com/media/member/tu2@3x.png') !important;
+	background-size: contain !important;
+}
+.t3{
+	background: url('https://cdn-remote.517ybang.com/media/member/tu3@3x.png') !important;
+	background-size: contain !important;
+}
+.t4{
+	background: url('https://cdn-remote.517ybang.com/media/member/tu4@3x.png') !important;
+	background-size: contain !important;
 }
 .memberlistpic{
 	    width: 1rem;
@@ -1974,6 +1988,7 @@ height:1.5rem !important;
 .memberlistpic img{
 	display: block;
 	width: 100%;
+height:100%;
 }
 .member_list h1{
 	font-size: .28rem;
