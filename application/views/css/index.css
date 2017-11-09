@@ -2079,7 +2079,8 @@ height:100%;
 	display: block;
 	top: .12rem;
 }
-.menu-right ul{overflow: hidden;}
+.menu-right ul{    overflow: hidden;
+    padding: 0px .08rem;}
 .menu-right ul li{
 	text-align: center;
 	width: 33%;

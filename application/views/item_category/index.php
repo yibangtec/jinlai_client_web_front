@@ -30,7 +30,7 @@
   <aside>
     <div class="menu-left scrollbar-none" id="sidebar">
       <ul>
-        <li  class="active">推荐区</li>
+        <li>推荐区</li>
         <li >水果区</li>
         <li >海鲜区</li>
         <li >家居</li>
@@ -57,14 +57,7 @@
       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      
+     
      
     </ul>
   </section>
@@ -216,7 +209,7 @@
 </div>
 </div>
 <script src="<?php echo CDN_URL ?>js/jquery-2.1.4.min.js"></script>
-<script src="<?php echo CDN_URL ?>js/ectouch.js"></script> 
+
 
 <script>
 	$(function($){
@@ -224,6 +217,8 @@
 			$(this).addClass('active').siblings('li').removeClass('active');
 			var index = $(this).index();
 			$('.j-content').eq(index).show().siblings('.j-content').hide();
-		})
-	})
+		});
+		$('#sidebar ul li').eq(0).click();
+	});
+	
 </script>
