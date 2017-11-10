@@ -1346,6 +1346,7 @@
 	padding-bottom:.1rem;
 	border-radius: .2rem;
 	background: #fff;
+	    overflow: hidden;
 }
 .coloroverlaycontent .midright img{
 	width: 2.6rem;
@@ -1549,10 +1550,14 @@ border-radius:.2rem;
 	height: 100%;
 	display: block;
 }
+.cardnavcontent ul{
+	margin-left: -.1rem;
+}
 .cardnavcontent li{
-	float: left;
-	width: 2.3rem;
-	margin-right: .1rem;
+	    float: left;
+    width: 2.3rem;
+    margin-left: .1rem;
+    margin-top: .15rem;
 }
 .cardnavcontent li .pic{
 	width: 2.3rem;
@@ -1580,7 +1585,7 @@ border-radius:.2rem;
 	
 }
 .cardnavcontent li h2{
-	width: 1.3rem;
+	width: 1.6rem;
 	margin: 0 auto;
 	font-size: .20rem;
 	color: #323232;
@@ -1591,7 +1596,7 @@ border-radius:.2rem;
     text-overflow: ellipsis;
 }
 .cardnavcontent li h3{
-	width: 1.1rem;
+	
 	margin: 0 auto;
 	font-size: .24rem;
 	color: #323232;
@@ -2043,7 +2048,11 @@ height:100%;
     border-bottom: 1px solid #ececec;
     color: #4b4b4b;
     height: .8rem;
-    font-size: .28rem;}
+    font-size: .28rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .menu-left ul li.active{background:#f7f7f7; position:relative;color: #ff415b}
 .menu-left ul li.active:before{
 	    content: " ";
@@ -2056,20 +2065,26 @@ height:100%;
     left: 0;
 }
 .menu-right{
-           background: #fff;
+
     position: fixed;
     width: 5.5rem;
     left: 1.8rem;}
 .menu-right h5{
-	       text-align: center;
+    text-align: center;
     font-size: .24rem;
     margin: 0 auto;
     color: #2d2d2d;
     margin-top: .4rem;
     margin-bottom: .7rem;
     width: 2.26re;
-    width: 2.26rem;
+    /* width: 2.26rem; */
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.menu-right h5 i{
+	color:#ededed;
 }
 .menu-right h5 span{
 	position: absolute;
@@ -2114,3 +2129,45 @@ height:100%;
 }
 
 
+
+
+
+.evaluationinfo{
+	line-height:.5rem;
+}
+.evaluationinfo .pic{
+	width: .56rem;
+	height: .56rem;
+}
+.evaluationinfo .pic img{
+	display: block;
+	width: 100%;
+}
+.evaluationinfo span{
+	display: block;
+	font-size: .26rem;
+	color: #3e3a39;
+    margin-left: .1rem;
+}
+.evaluationinfo time{
+	font-size:.26rem;
+color:#898989;
+}
+.evaluationcontent p{
+	    font-size: .2rem;
+    color: #3e3a39;
+    padding: .2rem;
+    line-height: .3rem;
+}
+.evaluationbtn{
+	width: 1.8rem;
+    font-size: .2rem;
+    height: .5rem;
+    color: #fff;
+    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+    box-shadow: 0px 0px 0.15rem #ffc7bc;
+    border-radius: .35rem;
+    text-align: center;
+    line-height: .5rem;
+    margin-top: .3rem;
+}

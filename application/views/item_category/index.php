@@ -25,200 +25,68 @@
 
 
 <div id=content class=container>
+	 
 	
 	<div class="con">
   <aside>
     <div class="menu-left scrollbar-none" id="sidebar">
-      <ul>
-        <li>推荐区</li>
-        <li >水果区</li>
-        <li >海鲜区</li>
-        <li >家居</li>
-        <li >商超</li>
-        <li >跑腿</li>
-        <li >服务</li>
-        <li >商超</li>
-        
-      </ul>
+    	<ul>
+    	<?php foreach ($items as $item): ?>
+				<li>
+					<?php 
+					if ($item['parent_id'] == null) {
+			   			 echo $item['name'];
+					}	
+					else{
+						break;
+					}
+					?>
+				</li>
+			<?php endforeach ?>
+       </ul>
+
     </div>
   </aside>
-  <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	海鲜区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-     
-     
-    </ul>
-  </section>
-   <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	水果区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-    
-      
-     
-    </ul>
-  </section>
-   <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	海鲜区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-    
-      
-     
-    </ul>
-  </section>
-   <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	家居区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-    
-      
-     
-    </ul>
-  </section>
-   <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	商超区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-     
-      
-     
-    </ul>
-  </section>
-  <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	跑腿区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-    
-      
-     
-    </ul>
-  </section>
-   <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	服务区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li>
-       <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-    
-      
-     
-    </ul>
-  </section>
-  <section class="menu-right padding-all j-content">
-  	<div class="category_pic">
-  		<img src="<?php echo CDN_URL ?>media/pangxielogo.png" />
-  	</div>
-    <h5>
-    	<span></span>
-    	商超区分类
-    	<span style="right: 0;"></span>
-    </h5>
-    <ul>
-      <li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li>
-    </ul>
-  </section>
+
+ 
+
+ 
+
 
 </div>
 </div>
 
 <script>
-	$(function($){
-		$('#sidebar ul li').click(function(){
+	var num;
+		// <?php echo $this->class_name_cn ?>数据
+	var items = <?php echo json_encode($items) ?>;
+		//生成section
+		for(var key in items){
+			if(items[key].parent_id == null){
+			var goodsList = '<section class="menu-right padding-all j-content" style="background:#fff"><div class="category_pic"><img src="<?php echo CDN_URL ?>media/pangxielogo.png" /></div><div class="category_wrap"></div></section>';
+			$('.con').append(goodsList);
+			}
+		}
+	$('#sidebar li').click(function(){
+			$('section').eq(num - 1).find('.category_wrap').html(' ');
+			num = $(this).index() + 1;
 			$(this).addClass('active').siblings('li').removeClass('active');
-			var index = $(this).index();
-			$('.j-content').eq(index).show().siblings('.j-content').hide();
-		});
-		$('#sidebar ul li').eq(0).click();
+			$('.j-content').eq(num - 1).show().siblings('.j-content').hide();
+			//获取点击li后的商品分类总id
+			var category_id = items[num - 1].category_id;
+		for(var key in items){
+			if(items[key].parent_id == category_id){
+			var goodsListContent = '<h5><p><i>—  </i>'+items[key].name+'<i>  —</i></p></h5><ul><li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>螃蟹</span></li><li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>花蛤</span></li><li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/haishen.png" /><span>娃娃鱼</span></li><li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/yu.png" /><span>螃蟹</span></li><li class="w-3"><a href="#"></a> <img src="<?php echo CDN_URL ?>media/pangxie.png" /><span>花蛤</span></li></ul></div>';
+				$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
+				}
+		}
 	});
-	
+	$('#sidebar li').eq(0).click();
 </script>
 	
 <script>
-	// <?php echo $this->class_name_cn ?>数据
-	var items = <?php echo json_encode($items) ?>
+
+
+		
+
 </script>

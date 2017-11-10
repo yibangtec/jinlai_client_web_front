@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <script>
         (function (doc, win) {
             var docEl = doc.documentElement,
@@ -77,7 +77,7 @@
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 </div>
-=======
+
 <style>
 	#content {padding-top:2rem;}
 	form {padding-top:2rem;}
@@ -182,4 +182,4 @@
 		<li><a title="忘记密码" class="btn btn-default btn-block" href="<?php echo base_url('password_reset') ?>">忘记密码</a></li>
 	</ul>
 </div>
->>>>>>> 8e811abd91ba5d2e1136cc0f4347ed106bd2cc9a
+

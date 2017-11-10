@@ -117,7 +117,7 @@
 			<img src="<?php echo CDN_URL ?>media/home/linebar.png" />
 		</div>
 		<div class="pic mt10">
-			<a href="<?php echo base_url('item/detail?id='.$item['m1ace_id']) ?>">
+			<a href="<?php echo base_url('item/detail?id='.$item['m1ace_id']) ?>" target="_self">
 				<img src="<?php echo $this->media_root.$item['m1figure_url'] ?>">
 			</a>
 		</div>
@@ -125,8 +125,9 @@
 		<div class="cardnavcontent clearfix wid710 auto mt14">
 			<ul>
 				<?php foreach ($item['m1_items'] as $item): ?>
+
 				<li>
-					<a href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
+					<a href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>" target="_self">
 						<div class=pic>
 							<img src="<?php echo MEDIA_URL. 'item/'.$item['url_image_main'] ?>">
 						</div>

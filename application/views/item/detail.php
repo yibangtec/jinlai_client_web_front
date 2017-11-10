@@ -370,7 +370,7 @@ wx.ready(function(){
 		
 	</div>
 	<!--商品评价区域-->
-	<div class="productevaluation mt20 auto wid710 border20 clearfix">
+	<div class="productevaluation mt20 auto wid710 border20 clearfix skus">
 		<div class="topcardwrap">
 			<h2>商品评价  ( 1967 )  </h2>
 		</div>
