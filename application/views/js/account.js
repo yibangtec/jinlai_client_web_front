@@ -204,4 +204,6 @@ $(document).ready(function(){
             Hideng();
         },2000); // 设定执行或延时时间
     };
+
+
 });

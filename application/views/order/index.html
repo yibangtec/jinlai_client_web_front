@@ -2,9 +2,172 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>我的订单</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #F2F2F3; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative}
+        .order-header{
+            margin: 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.26rem;
+            color: #3e3a39;
+        }
+        .order-header li{
+            width: 20%;
+            float: left;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .order-header li a{
+            display: inline-block;
+            padding: 0.26rem 0.15rem;
+        }
+        .order-active{
+            color: #ff3649;
+            border-bottom: 0.04rem solid #ff3649;
+        }
+        .order-all{
+            display: none;
+        }
+        .content{
+            margin: 0 0.2rem;
+            font-size: 0.26rem;
+            color: #3e3a39;
+        }
+        .order-item{
+            background-color: #fff;
+            border-radius: 0.15rem;
+        }
+        .left-float{
+            float: left;
+        }
+        .right-float{
+            float: right;
+        }
+        .item-title{
+            padding: 0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .item-detail{
+            padding: 0 0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .item-left{
+            height: 1.4rem;
+            width: 1.4rem;
+            margin: 0.1rem 0.2rem 0.1rem 0;
+        }
+        .item-left img{
+            display: block;
+            height: 1.4rem;
+            width: 1.4rem;
+        }
+        .item-center p:first-child{
+            padding: 0.2rem 0;
+        }
+        .item-center p:last-child{
+            font-size: 0.22rem;
+            color: #9fa0a0;
+        }
+    </style>
 </head>
 <body>
+<div class="box">
+    <ul class="order-header clearfix">
+        <li><a class="order-tab order-active">全部</a></li>
+        <li><a class="order-tab">待付款</a></li>
+        <li><a class="order-tab">待发货</a></li>
+        <li><a class="order-tab">待收货</a></li>
+        <li><a class="order-tab">待评价</a></li>
+    </ul>
+    <div class="content">
+        <div class="order-all" style="display: block">
+            <div class="order-item">
+                <div class="item-title clearfix">
+                    <div class="title-left left-float">东唐旺</div>
+                    <div class="title-right right-float">待评价</div>
+                </div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>asdfsadfsadf</p>
+                        <p>fasdfasdfsdaf</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>dfsaa</p>
+                        <p>dasf</p>
+                        <p>afsd</p>
+                    </div>
+                </div>
+                <div class="item-price"></div>
+                <div class="item-operation"></div>
+            </div>
+        </div>
+        <div class="order-all">
+            222
+        </div>
+        <div class="order-all">
+            333
+        </div>
+        <div class="order-all">
+            444
+        </div>
+        <div class="order-all">
+            555
+        </div>
+    </div>
 
+
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        console.log($('.order-tab').length);
+        $('.order-tab').click(function () {
+            var index = $('.order-tab').index($(this));
+            console.log(index);
+            $(this).addClass("order-active").parent().siblings().children().removeClass('order-active');
+            $('.order-all').eq(index).show(200).siblings('.order-all').hide();
+        });
+
+    })
+
+
+</script>
 </body>
 </html>
