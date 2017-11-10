@@ -1756,6 +1756,7 @@ $(document).ready(function(){
 	      	el.style.width='auto';
 			el.style.display = 'block';
 			el.style.margin = '0 auto';
+			el.style.border = 'none';
 	      }
 	    },
 	    success: function (el) { // 图片加载成功执行方法

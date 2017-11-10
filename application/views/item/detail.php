@@ -395,7 +395,7 @@ wx.ready(function(){
 	</div>
 	
 	<!--店铺信息区域-->
-	<div class="shopInfo mt20 auto border20 clearfix">
+	<div class="shopInfo mt20 auto border20 clearfix auto wid670">
 		<div class="headerinfo clearfix">
 			<div class="pic fl">
 				<img src="<?php echo CDN_URL ?>media/item/detail/ximei@3x.png" />

@@ -68,6 +68,7 @@
 			}
 		}
 	$('#sidebar li').click(function(){
+			$('section').eq(num - 1).scrollTop(0);
 			$('section').eq(num - 1).find('.category_wrap').html(' ');
 			num = $(this).index() + 1;
 			$(this).addClass('active').siblings('li').removeClass('active');
