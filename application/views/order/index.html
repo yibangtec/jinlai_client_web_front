@@ -71,6 +71,7 @@
         .order-item{
             background-color: #fff;
             border-radius: 0.15rem;
+            padding-bottom: 0.2rem;
         }
         .left-float{
             float: left;
@@ -80,11 +81,10 @@
         }
         .item-title{
             padding: 0.2rem;
-            border-bottom: 0.01rem solid #DDDDDD;
         }
         .item-detail{
             padding: 0 0.2rem;
-            border-bottom: 0.01rem solid #DDDDDD;
+            border-top: 0.01rem solid #DDDDDD;
         }
         .item-left{
             height: 1.4rem;
@@ -96,12 +96,54 @@
             height: 1.4rem;
             width: 1.4rem;
         }
+        .item-center{
+            width: 3.8rem;
+        }
         .item-center p:first-child{
-            padding: 0.2rem 0;
+            padding: 0.2rem 0 0.15rem 0;
         }
         .item-center p:last-child{
             font-size: 0.22rem;
             color: #9fa0a0;
+        }
+        .item-right{
+            padding-top: 0.2rem;
+            text-align: right;
+        }
+        .item-right .price-text{
+            color: #9fa0a0;
+
+        }
+        .item-right .cont-indent{
+            padding-top: 0.1rem;
+        }
+        .item-price{
+            text-align: right;
+            padding-right: 0.2rem;
+        }
+        .item-operation{
+            text-align: right;
+        }
+        .item-operation span{
+            display: inline-block;
+            width: 1.2rem;
+            height: 0.54rem;
+            text-align: center;
+            line-height: 0.5rem;
+            margin: 0.2rem 0.2rem 0 0;
+            border: 0.02rem solid #9fa0a0;
+            border-radius: 0.27rem;
+
+        }
+        .weight{
+            font-weight: 600;
+        }
+        .item-operation .pay-btn{
+            border: 0.02rem solid #ff3649;
+            color: #ff3649;
+        }
+        .send{
+            color: #ff3649;
         }
     </style>
 </head>
@@ -124,30 +166,118 @@
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
                     <div class="item-center left-float">
-                        <p>asdfsadfsadf</p>
-                        <p>fasdfasdfsdaf</p>
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
                     </div>
                     <div class="item-right right-float">
-                        <p>dfsaa</p>
-                        <p>dasf</p>
-                        <p>afsd</p>
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥69.80</del></p>
+                        <p class="cont-indent">×1</p>
                     </div>
                 </div>
-                <div class="item-price"></div>
-                <div class="item-operation"></div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥6229.80</del></p>
+                        <p class="cont-indent">×1</p>
+                    </div>
+                </div>
+                <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
+                <div class="item-operation"><span>删除</span><span>申请售后</span><span>追加评论</span></div>
             </div>
         </div>
         <div class="order-all">
-            222
+            <div class="order-item">
+                <div class="item-title clearfix">
+                    <div class="title-left left-float">东唐旺</div>
+                    <div class="title-right right-float send">待付款</div>
+                </div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥69.80</del></p>
+                        <p class="cont-indent">×1</p>
+                    </div>
+                </div>
+
+                <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
+                <div class="item-operation"><span>联系卖家</span><span>取消</span><span class="pay-btn">付款</span></div>
+            </div>
         </div>
         <div class="order-all">
-            333
+            <div class="order-item">
+                <div class="item-title clearfix">
+                    <div class="title-left left-float">东唐旺</div>
+                    <div class="title-right right-float send">待发货</div>
+                </div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥69.80</del></p>
+                        <p class="cont-indent">×1</p>
+                    </div>
+                </div>
+                <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
+            </div>
         </div>
         <div class="order-all">
-            444
+            <div class="order-item">
+                <div class="item-title clearfix">
+                    <div class="title-left left-float">东唐旺</div>
+                    <div class="title-right right-float send">待发货</div>
+                </div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥69.80</del></p>
+                        <p class="cont-indent">×1</p>
+                    </div>
+                </div>
+                <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
+                <div class="item-operation"><span>退款</span><span>延长收货</span><span>查看物流</span><span class="pay-btn">确认收货</span></div>
+            </div>
         </div>
         <div class="order-all">
-            555
+            <div class="order-item">
+                <div class="item-title clearfix">
+                    <div class="title-left left-float">东唐旺</div>
+                    <div class="title-right right-float send">待评价</div>
+                </div>
+                <div class="item-detail clearfix">
+                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                    <div class="item-center left-float">
+                        <p>新西兰进口黄金奇异果6个/份</p>
+                        <p>含有丰富的vc，清热降火热量极低。</p>
+                    </div>
+                    <div class="item-right right-float">
+                        <p>¥49.68</p>
+                        <p class="price-text"> <del>¥69.80</del></p>
+                        <p class="cont-indent">×1</p>
+                    </div>
+                </div>
+                <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
+                <div class="item-operation"><span>删除</span><span>申请售后</span><span class="pay-btn">评价</span></div>
+            </div>
         </div>
     </div>
 
