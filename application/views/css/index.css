@@ -1568,10 +1568,12 @@ border-radius:.2rem;
 	text-align: center;
 }
 .cardnavcontent li .pic img{
-	      width: 1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    margin-top: 0.38rem;
+	width: 2.1rem;
+    height: 2.1rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: .1rem;
+
 }
 .cardnavcontent li h1{
 	width: 1.8rem;
@@ -1908,7 +1910,7 @@ height:1.5rem !important;
 	height: .27rem;
 	border-radius: .35rem;
 	text-align: center;
-	line-height: .27rem;
+	line-height: .3rem;
 	background: #fff;
 	color: #ddc18d;
 }
@@ -1985,7 +1987,6 @@ height:1.5rem !important;
 .memberlistpic{
 	    width: 1rem;
     height: 1rem;
-    background: red;
     margin-top: .4rem;
     margin-left: .4rem;
     border-radius: .2rem;
@@ -2025,7 +2026,7 @@ height:100%;
 	color: #3e3a39;
 	background: rgba(255,255,255,.7);
 	width: 100%;
-	bottom: 0;
+	bottom: -1px;
 }
 .viptext{
 	    float: left;
@@ -2226,4 +2227,110 @@ color:#898989;
 .shopinfolike img{
 	display: block;
 	width: 100%;
+}
+.shoppic{
+	width: 1rem;
+	height: 1rem;
+}
+.shoppic img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: .2rem;
+}
+.shopname{
+	       font-size: .3rem;
+    padding-left: .22rem;
+    padding-top: .12rem;
+    color: #323232;
+    width: 2.5rem;
+}
+.shopname span{
+	width: 100%;
+}
+.shopname a{
+	    display: block;
+    width: 1.5rem;
+    margin-top: .22rem;
+    height: .34rem;
+    background: #ff5171;
+    font-size: .19rem;
+    text-align: center;
+    line-height: .34rem;
+    color: #fff;
+    border-radius: .35rem;
+}
+.gnwrap{
+	font-size: .3rem;
+	margin-top: .2rem;
+}
+.gnwrap a{
+	display: block;
+	width: 1.04rem;
+	height: .54rem;
+	border:2px solid #ff5171;
+	border-radius: .35rem;
+	color: #FF5171;
+	text-align: center;
+	line-height: .54rem;
+	float: left;
+}
+.gnwrap a:nth-child(2){
+	width: 1.33rem;
+	margin-left: .2rem;
+}
+.shopIndextabtitle li{
+	    float: left;
+  background: #fff;;
+    color:  #FF5171;
+    font-size: .24rem;
+    line-height: .7rem;
+    height: .7rem;
+    width: 1.76rem;
+    text-align: center;
+    border-right: 1px solid #FF5171;
+}
+.shopIndextabtitle li.current{
+	  background: #FF5171;
+	  color:#fff;
+}
+
+.shopIndextabtitle{
+	     width: 7.1rem;
+    /* margin: 0 auto; */
+    float: left;
+    margin-bottom: .3rem;
+    margin-left: .2rem;
+    margin-top: .2rem;
+    border-radius: .2rem;
+    overflow: hidden;
+}
+.shopTitle{
+	width: 7.1rem;
+	margin: 0 auto;
+	float: left;
+	margin-left: .2rem;
+	margin-bottom: .3rem;
+	margin-top: .15rem;
+}
+.shopTitle input{
+	float: left;
+    height: .66rem;
+    width: 4.26rem;
+    border: none;
+    border-radius: .35rem;
+    background: rgba(0,0,0,.1);
+    outline: none;
+    text-indent: .4rem;
+    color: #fff;
+}
+.shopTitle input::-webkit-input-placeholder{
+    color: #fff;opacity:1;
+}
+.shopback i{
+	    color: #fff;
+    font-size: .38rem;
+    float: left;
+    margin-top: .15rem;
+    margin-right: .5rem;
 }

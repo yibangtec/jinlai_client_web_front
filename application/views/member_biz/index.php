@@ -22,46 +22,53 @@
 				display: none;
 			}
 		</style>
-
-	<div class="member_list wid710 auto border20">
+		<a class="entermember_wrap" href="<?php echo base_url('member_biz/create') ?>" target='_self'>
+			<div class="member_list wid710 auto border20">
 		<div class="memberlistpic">
 			<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" />
 		</div>
 		<h1>NIKE耐克旗舰店</h1>
-		<a class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</a>
+		<span class="entermember">加入会员</span>
 		<div class="memberdescription">
 			会员享特权,多重优惠抢不停!
 		</div>
 	</div>
+	</a>
+	<a class="entermember_wrap" href="<?php echo base_url('member_biz/create') ?>" target='_self'>
 	<div class="member_list wid710 auto border20 t2">
 		<div class="memberlistpic">
 			<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" />
 		</div>
 		<h1>NIKE耐克旗舰店</h1>
-		<a class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</a>
+		<span class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</span>
 		<div class="memberdescription">
 			会员享特权,多重优惠抢不停!
 		</div>
 	</div>
+	</a>
+	<a class="entermember_wrap" href="<?php echo base_url('member_biz/create') ?>" target='_self'>
 	<div class="member_list wid710 auto border20 t3">
 		<div class="memberlistpic">
 			<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" />
 		</div>
 		<h1>NIKE耐克旗舰店</h1>
-		<a class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</a>
+		<span class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</span>
 		<div class="memberdescription">
 			会员享特权,多重优惠抢不停!
 		</div>
 	</div>
+	</a>
+	<a class="entermember_wrap" href="<?php echo base_url('member_biz/create') ?>" target='_self'>
 	<div class="member_list wid710 auto border20 t4">
 		<div class="memberlistpic">
 			<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png" />
 		</div>
 		<h1>NIKE耐克旗舰店</h1>
-		<a class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</a>
+		<span class="entermember" href="<?php echo base_url('member_biz/create') ?>" target='_self'>加入会员</span>
 		<div class="memberdescription">
 			会员享特权,多重优惠抢不停!
 		</div>
 	</div>
+	</a>
 	
 		<script src="<?php echo CDN_URL ?>js/rem.js" ></script>
