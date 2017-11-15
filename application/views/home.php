@@ -127,9 +127,11 @@ input.check:checked{
 						</li>
 						<li>
 							<!--图标-->
-							<div class="iconWrap8">
-								<img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu@3x.png" />
-							</div>
+							<a href="https://biz.517ybang.com/biz/create" target="_self">
+								<div class="iconWrap8">
+									<img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu@3x.png" />
+								</div>
+							</a>
 							<!--文字-->
 							<sapn class="text">我要入驻</sapn>
 						</li>
@@ -277,18 +279,36 @@ input.check:checked{
 					<div class="text" id="news">
 						<ul class="clearfix">
 							<li>
+								<a href="###">
 								<span class="cir"></span><span class="listr">注册送188新人礼包,绑定红卡惊喜不断</span>
+								</a>
 							</li>
 							<li>
+								<a href="###">
 								<span class="cir"></span><span class="listr">路易威登成功入进来</span>
+								</a>
 							</li>
 							<li>
+								<a href="###">
 								<span class="cir"></span>
 								<span class="listr">中共十九大</span>
+								</a>
 							</li>
 							<li>
+								<a href="###">
 								<span class="cir"></span>
 								<span class="listr">积极促进一带一路</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+								<span class="cir"></span><span class="listr">进来,上新</span>
+								</a>
+							</li>
+							<li>
+								<a href="###">
+								<span class="cir"></span><span class="listr">进来成功在纳斯达克上市</span>
+								</a>
 							</li>
 						</ul>
 					</div>

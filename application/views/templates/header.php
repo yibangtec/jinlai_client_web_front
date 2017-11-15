@@ -27,13 +27,7 @@
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
-
-		<meta name=viewport content="width=device-width,user-scalable=0">
-		<!--
-		<meta name=viewport content="width=750,user-scalable=0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		-->
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<?php if ($is_wechat): ?>
 		<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 		<script>

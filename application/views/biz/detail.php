@@ -33,31 +33,8 @@
 				</li>
 			</ul>
 			
-		</div>		<?php endif ?>
-			<!--底部导航区域-->
-				<div class="fiex footerbar clearfix">
-					<div class="textbar fl">
-						<ul>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-							<li>
-								<span>宝贝分类</span>
-								<p class="line"></p>
-							</li>
-						</ul>
-					</div>
-					<div class="wechat">
-						<i></i>
-						<span>客服</span>
-					</div>
-					
-				</div>
+		</div>			<!--底部导航区域-->				<div class="fiex footerbar clearfix">					<div class="textbar fl">						<ul>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>						</ul>					</div>					<div class="wechat">						<i></i>						<span>客服</span>					</div>									</div>		<?php endif ?>
+		
 
 		
 	<!--头部banner区域开始-->

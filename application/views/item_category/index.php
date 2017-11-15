@@ -1,6 +1,4 @@
 ﻿<style>
-
-
 	/* 宽度在750像素以上的设备 */
 	@media only screen and (min-width:751px)
 	{
@@ -22,11 +20,7 @@
 		background: #f7f7f7;
 	}
 </style>
-
-
 <div id=content class=container>
-	 
-	
 	<div class="con">
   <aside>
     <div class="menu-left scrollbar-none" id="sidebar">
@@ -44,21 +38,14 @@
 				</li>
 			<?php endforeach ?>
        </ul>
-
     </div>
   </aside>
-
- 
-
- 
-
-
 </div>
 </div>
 
 <script>
 	var num;
-		// <?php echo $this->class_name_cn ?>数据
+	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
 		//生成section
 		for(var key in items){

@@ -1,51 +1,50 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-		<title></title>
-		<!--清除浏览器默认样式css-->
-		<link href="css/normal.css" rel="stylesheet"/>
-		<!--公用部分css-->
-		<link href="css/common.css" rel="stylesheet"/>
-		<link href="css/base.css" rel="stylesheet"/>
-		<link href="css/swiper.css" rel="stylesheet"/>
-		<link href="css/index.css" rel="stylesheet"/>
-		<style>
-			body{
-			background: url(<?php echo CDN_URL ?>media/home/beijing@3x.png) #f2f2f3;
-		       background-size: contain;
-		    background-repeat: no-repeat;
-			}
-			.ui-loader{
-				display: none;
-			}
-		</style>
-	</head>
-<body>
+<style>
+    <?php if ( !empty($item['ornament']['main_figure_url']) ): ?>
+    body{
+        background:#f2f2f3 url(<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['main_figure_url'] ?>) no-repeat center top;
+        background-size: contain;
+    }
+    <?php endif ?>
+
+    <?php if ( !empty($item['ornament']['member_figure_url']) ): ?>
+    .vipcard {background:url(<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['member_figure_url'] ?>) no-repeat center center;}
+    <?php endif ?>
+
+    <?php if ( !empty($item['ornament']['vi_color_first']) ): ?>
+    .vipcard {background-color:#<?php echo $item['ornament']['vi_color_first'] ?>;background-size: contain;}
+    .equity i:before {color:#<?php echo $item['ornament']['vi_color_first'] ?>;}
+    <?php endif ?>
+
+    .ui-loader {display:none;}
+	.vipcard p{margin-top: 0px;}
+    .enterstorebtn a {color:#fff;}
+</style>
+
 	<div class="storemainlogo">
-		<img src="<?php echo CDN_URL ?>media/home/logo@3x.png" />
+		 <a href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>" target="_self">
+        	<img src="<?php echo MEDIA_URL.'biz/'. $item['url_logo'] ?>">
+        </a>
 	</div>
 	<div class="enterstorebtn">
-		进入店铺
+        <a href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>" target="_self">进入店铺</a>
 	</div>
-	<div class="vipcard wid670 auto">
+	<div class="vipcard wid670 auto" style="background:url(<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['member_figure_url'] ?>) no-repeate center center">
 		<div class="storelogo fl">
-			<img src="<?php echo CDN_URL ?>media/home/logo@3x.png"/>
+            <img src="<?php echo MEDIA_URL.'biz/'. $item['url_logo'] ?>">
 		</div>
 		<div class="rule fr">
-			耐克
+            <?php echo $item['brief_name'] ?>
 		</div>
 		<div class="viptext">VIP</div>
 		<p>
-			Hi,Siri
+			Hi，<?php echo $this->session->nickname ?>
 			<span>普通会员</span>
 		</p>
 	</div>
 	<div class="equity">
 		<h2>我的特权<span>当前等级普通会员</span><span class="fr">解绑会员卡</span></h2>
 		
-	<ul>
+	    <ul>
 			<li>
 				<a>
 					<i class="icon-xiaoxi"></i>
@@ -72,9 +71,3 @@
 			</li>
 		</ul>
 	</div>
-
-
-<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
-		<script type="text/javascript" src="js/rem.js" ></script>
-</body>
-</html>
