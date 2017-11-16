@@ -378,7 +378,7 @@
                 </div>
 
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>联系卖家</span><span class="can-btn">取消</span><span class="pay-btn">付款</span></div>
+                <div class="item-operation"><span>联系卖家</span><span class="can-btn">取消</span><span class="pay-btn go-pay">付款</span></div>
             </div>
         </div>
         <div class="order-all">
@@ -421,7 +421,7 @@
                     </div>
                 </div>
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>退款</span><span>延长收货</span><span>查看物流</span><span class="pay-btn">确认收货</span></div>
+                <div class="item-operation"><span>退款</span><span>延长收货</span><span>查看物流</span><span class="pay-btn goods-receipt">确认收货</span></div>
             </div>
         </div>
         <div class="order-all">
@@ -466,7 +466,7 @@
             var index =$(this).index;
             $(this).addClass('reasonSelect').removeClass('reasonUnSelect').parent().siblings().children('i').addClass('reasonUnSelect').removeClass('reasonSelect');
 
-        })
+        });
         $('.cancel-btn').click(function(){
             $('.tips').hide();
         });
@@ -476,10 +476,13 @@
         $('.can-btn').click(function(){
             $('.tips').show().children('.cancel').show();
         });
-        $('.pay-btn').click(function(){
+        //确认收货
+        $('.goods-receipt').click(function(){
             $('.tips').show().children('.receipt').show();
         });
-        
+        $('.go-pay').click(function(){
+            $(location).attr('href', 'pay.html');
+        })
     })
 
 
