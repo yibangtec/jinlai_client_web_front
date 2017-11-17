@@ -3,7 +3,7 @@
 	width: 0.2rem;
 }
 .wid710{
-	width: 7.1rem;
+	width: 7.1rem !important;
 }
 .wid718{
 	width: 7.18rem;
@@ -125,6 +125,9 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-huiyuan:before {
+  content: "\e980";
+}
 .icon-gouwu:before {
   content: "\e93e";
   color: #dec08e;
@@ -254,7 +257,7 @@ i {
 }
 .icon-weixuanzhong2:before {
   content: "\e964";
-  color: #c9caca;
+  color: #fff;
 }
 .icon-xuanzhong2:before {
   content: "\e965";
@@ -775,4 +778,8 @@ i {
 }
 .icon-29be58:before {
   content: "\e962";
+}
+.icon-xiajiantou:before {
+  content: "\e981";
+  color: #fd799c;
 }

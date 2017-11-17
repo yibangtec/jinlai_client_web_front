@@ -111,9 +111,11 @@ input.check:checked{
 						</li>
 						<li>
 							<!--图标-->
+							<a href="https://www.517ybang.com/coupon_template/index" target="_self">
 							<div class="iconWrap6">
 								<img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin@3x.png" />
 							</div>
+							</a>
 							<!--文字-->
 							<sapn class="text">领券中心</sapn>
 						</li>
@@ -571,7 +573,7 @@ input.check:checked{
 				<!--丽人内容-->
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
 						</div>
@@ -579,7 +581,7 @@ input.check:checked{
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
 						</div>
@@ -588,7 +590,7 @@ input.check:checked{
 				</div>
 				<div class="mid fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
 							</div>
@@ -597,7 +599,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
 							</div>
@@ -610,7 +612,7 @@ input.check:checked{
 				<!--娱乐内容-->
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 							</div>
@@ -618,7 +620,7 @@ input.check:checked{
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 							</div>
@@ -636,7 +638,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -649,7 +651,7 @@ input.check:checked{
 				<!--美食tab内容-->
 					<div class="colorovertab clearfix">
 					<div class="left fl refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -657,7 +659,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="right fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -666,7 +668,7 @@ input.check:checked{
 					</div>
 					<div class="mid fl" style="margin-top:.1rem">
 						<div class="midleft refreshcontent">
-							<a href="https://www.517ybang.com/biz/detail?id=2">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 									</div>
@@ -675,7 +677,7 @@ input.check:checked{
 							</a>
 						</div>
 						<div class="midright fr refreshcontent">
-							<a href="https://www.517ybang.com/biz/detail?id=2">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 									</div>

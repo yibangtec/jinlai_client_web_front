@@ -32,3 +32,6 @@
 .fiex{
 	position: fixed;
 }
+.text-left{
+	text-align: left !important;
+}
