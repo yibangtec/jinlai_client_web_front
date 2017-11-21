@@ -19,6 +19,9 @@
 	</div>
     <?php
         foreach ($items as $item):
+            // 若未指定会员卡LOGO，使用商家LOGO
+            $logo_url = MEDIA_URL. (!empty($item['member_logo_url'])? 'ornament_biz/'. $item['member_logo_url']: 'biz/'. $item['url_logo']);
+
             $inline_style = '';
             if ( !empty($item['vi_color_first']) )
                 $inline_style .= 'background-color:#'.$item['vi_color_first'].';';
@@ -28,8 +31,8 @@
 
     <a class="entermember_wrap" href="<?php echo base_url('member_biz/detail?id='.$item['biz_id']) ?>" target="_self">
         <div class="member_list wid710 auto border20" style="<?php echo $inline_style ?>">
-            <div class="memberlistpic">
-                <img src="<?php echo MEDIA_URL.'biz/'. $item['url_logo'] ?>">
+            <div class="memberlistpic"<?php if (!empty($item['member_logo_url']) && !empty($item['vi_color_second'])) echo ' style="background-color:#'.$item['vi_color_second'].'"' ?>>
+                <img src="<?php echo $logo_url ?>">
             </div>
             <h1><?php echo $item['brief_name'] ?></h1>
             <span class="entermember">加入会员</span>

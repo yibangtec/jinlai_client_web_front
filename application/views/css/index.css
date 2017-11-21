@@ -9,6 +9,7 @@
 	margin-top: .2rem;
 	overflow: hidden;
 }
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -356,7 +357,7 @@
 	width: 94.67%;
 	border-top-left-radius: .2rem;
 	border-top-right-radius: .2rem;
-	border-bottom: 1px solid #eee;
+	
 	margin: 0 auto;
 	margin-top: .1rem;
 	font-size: .26rem;
@@ -411,9 +412,9 @@
 	background-color: #fff;
 	border: 1px solid #eee;
 }
-.list-group-item:first-child {
+/*.list-group-item:first-child {
 	    border-radius: .2rem;
-}
+}*/
 /*商家合作区域css开始*/
 .cardtitle{
 	text-align: center;
@@ -950,6 +951,7 @@ border-radius:.2rem;
 	width: 7.18rem;
 	height: 1.56rem;
 	margin-top: .2rem;
+    background: #efefef;
 }
 .newgoodspic img{
 	display: block;
@@ -1841,13 +1843,15 @@ height:1.5rem !important;
 	margin-top: .2rem;
 }
 .storemainlogo{
-	width: 1.5rem;
+	    max-width: 1.8rem;
+    max-height: 1.26rem;
 	margin: 0 auto;
 	margin-top: .6rem;
 }
 .storemainlogo img{
 	display: block;
 	width: 100%;
+	height:100%;
 }
 .vipcard{
     height: 3.2rem;
@@ -1859,8 +1863,8 @@ height:1.5rem !important;
     box-shadow: 0px 0px 0.1rem #cfcfd0;
 }
 .vipcard .storelogo{
-	width: 1rem;
-	height:1rem;
+	    max-height: .76rem;
+    max-width: 1.08rem;
 }
 .storelogo img{
 	display: block;
@@ -1889,9 +1893,9 @@ height:1.5rem !important;
     padding: 0px;
     font-size: .26rem;
 }
-.vipcard a{
+.vipcard button{
 	    display: block;
-    width: 1.5rem;
+    width: 1.6rem;
     height: .7rem;
     float: right;
     font-size: .26rem;
@@ -1900,6 +1904,7 @@ height:1.5rem !important;
     background: rgba(0,0,0,.25);
     text-align: center;
     color: #fff;
+    border: none;
 }
 .vipcard p{
     float: left;
@@ -2047,13 +2052,13 @@ height:100%;
 /*商品分类页面*/
 
 .menu-left,.menu-right{position:fixed; left:0;top:0; bottom:0; overflow-y: scroll;}
-.menu-left{background:#F6F6F9;border-right: 1px solid #ececec;}
+.menu-left ul{background:#fff;width:1.59rem;}
 .menu-left ul li{    /* padding: 1.3rem .8rem; */
 	    line-height: .8rem;
-    background: #fff;
+   
     box-sizing: border-box;
-    font-size: rem;
-    width: 1.6rem;
+
+    width: 1.59rem;
     text-align: center;
     border-bottom: 1px solid #ececec;
     color: #4b4b4b;
@@ -2343,8 +2348,9 @@ color:#898989;
     margin-right: .5rem;
 }
 .star li i{
-	    position: relative;
-    top: -.019rem;
+	    font-size:.22rem;
+position:relative;
+top:.025rem
 }
 .freshsupertitle{
 	    padding: .12rem .16rem;
@@ -2407,7 +2413,7 @@ color:#898989;
     font-size: .24rem;
     font-weight: bold;
     /* right: 0; */
-    right: -.1rem;
+    right: .14rem;
 }
 .lowerprice span:nth-child(2){
 	    font-size: .13rem;
@@ -2425,8 +2431,8 @@ color:#898989;
     background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
     background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
         position: absolute;
-    right: .4rem;
-    bottom: 0.2rem;
+   right: .16rem;
+    bottom: 0.1rem;
     font-size: .3rem;
     color: #fff;
     line-height: .45rem;
@@ -2484,3 +2490,6 @@ color:#898989;
     font-weight: 800;
     font-style: italic;
 }
+/*.bgefefef{
+	background:#efefef;
+}*/
