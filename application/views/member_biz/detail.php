@@ -28,13 +28,13 @@
     <?php endif ?>
 
     <?php if ( !empty($item['ornament']['vi_color_first']) ): ?>
-    .vipcard {background-color:#<?php echo $item['ornament']['vi_color_first'] ?>;background-size: contain;}
+    .vipcard {background-color:#<?php echo $item['ornament']['vi_color_first'] ?>;background-size: contain;padding: 0px;height: 3.9rem;}
     .vipcard p span{color:#<?php echo $item['ornament']['vi_color_first'] ?>;}
     .equity i:before {color:#<?php echo $item['ornament']['vi_color_first'] ?>;}
     <?php endif ?>
-
+    .vipcard{position: relative;overflow: hidden;padding: 0px;height: 3.9rem;}
     .ui-loader {display:none;}
-	.vipcard p{margin-top: 0px;}
+	.vipcard p{margin-top: 0px;width: 100%;position: absolute;left:0px;height: 1.2rem;padding-left: .4rem;background: rgba(0,0,0,.2);bottom: 0px;}
     .enterstorebtn a {color:#fff;}
 </style>
 
@@ -73,7 +73,7 @@
 	<div class=equity>
 		<h2>
             我的特权
-            <span>当前等级 VIP<?php echo $member_biz['level'] ?></span>
+            <span>当前等级 普通会员</span>
             <span class="fr">解绑会员卡</span>
         </h2>
 		

@@ -18,7 +18,44 @@
 	}
 	body{
 		background: #f7f7f7;
+		
 	}
+.menu-left,.menu-right{
+	position: absolute;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch !important;
+		z-index:1;
+	}
+.menu-right:before {  
+            content:"";  
+            width: 1px;  
+            float: left;  
+            height: calc(100% + 1px);  
+            margin-left: -1px;  
+            display: block;  
+        }  
+.menu-right:after{  
+            content:"";  
+            width: 100%;  
+            clear: both;  
+            display: block;  
+      }
+.menu-left:before {  
+            content:"";  
+            width: 1px;  
+            float: left;  
+            height: calc(100% + 1px);  
+            margin-left: -1px;  
+            display: block;  
+        }  
+.menu-left:after{  
+            content:"";  
+            width: 100%;  
+            clear: both;  
+            display: block;  
+      }
+.menu-right::-webkit-scrollbar{width:0;height:0}
+.menu-left::-webkit-scrollbar{width:0;height:0}
 </style>
 <div id=content class=container>
 	<div class="con">
@@ -44,10 +81,12 @@
 </div>
 
 <script>
+	$(document).ready(function(){
 	var num;
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
 		//生成section
+
 		for(var key in items){
 			if(items[key].parent_id == null){
 			var goodsList = '<section class="menu-right padding-all j-content" style="background:#fff"><div class="category_pic"><img src="<?php echo CDN_URL ?>media/pangxielogo.png" /></div><div class="category_wrap"></div></section>';
@@ -69,7 +108,10 @@
 				}
 		}
 	});
-	$('#sidebar li').eq(0).click();
+			$('#sidebar li')[0].click();
+	})
+	
+	
 </script>
 	
 <script>

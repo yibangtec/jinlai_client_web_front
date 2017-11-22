@@ -42,7 +42,7 @@ $logo_url = MEDIA_URL. (!empty($item['ornament']['member_logo_url'])? 'ornament_
 	</div>
     <?php
     $attributes = array('class' => 'form-'.$this->class_name.'-create vipcard  auto', 'role' => 'form');
-    echo form_open($this->class_name.'/create?id='.$item['biz_id'], $attributes);
+    echo form_open($this->class_name.'/create?biz_id='.$item['biz_id'], $attributes);
     ?>
 		<div class="storelogo fl">
             <img src="<?php echo $logo_url ?>">
