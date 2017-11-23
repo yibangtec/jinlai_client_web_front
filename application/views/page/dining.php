@@ -1,44 +1,42 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-		<title></title>
-		<!--清除浏览器默认样式css-->
-		<link href="css/normal.css" rel="stylesheet"/>
-		<!--公用部分css-->
-		<link href="css/common.css" rel="stylesheet"/>
-		<link href="css/base.css" rel="stylesheet"/>
-		<link href="css/swiper.css" rel="stylesheet"/>
-		<link href="css/index.css" rel="stylesheet"/>
-		<link href="css/alert.css" rel="stylesheet"/>
-		<style>
-			.swiper-scrollbar{
-				display: none;
-			}
-		</style>
-	</head>
-	<body>
-		<!--头部banner区域开始-->
-		<div class="bannerWrap auto">
-			<div class="swiper-container">
-	        <div class="swiper-wrapper">
-	            <div class="swiper-slide">
-	            	<img src="media/slider1-2.png" />
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="media/slider1-2.png" />
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="media/slider1-1.png" />
-	            </div>
-	            <div class="swiper-slide">
-	            	<img src="media/slider1-2.png" />
-	            </div>
-	        </div>
-	        <!-- Add Pagination -->
-	        <div class="swiper-pagination"></div>
-	    </div>
+
+    <style>
+        .swiper-scrollbar{
+            display: none;
+        }
+    </style>
+
+    <script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>
+    <script>
+    	$(document).ready(function(){
+      		var swiperIndex = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 2000,
+            loop:true
+        });
+    	});
+    </script>
+
+    <!--头部banner区域开始-->
+    <div class="bannerWrap auto">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="<?php echo CDN_URL ?>media/slider1-2.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?php echo CDN_URL ?>media/slider1-2.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?php echo CDN_URL ?>media/slider1-1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?php echo CDN_URL ?>media/slider1-2.png">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
 	</div>
 	<!--培训分类区域开始-->
 	<div class="classification auto">
@@ -51,7 +49,7 @@
 					<span class="titletext">外语培训</span>
 					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
 				</div>
-				<img src="media/slider1-1.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png">
 				<div class="downarrow"></div>
 			</div>
 			<div class="swiper-slide">
@@ -61,7 +59,7 @@
 				<span class="titletext">音乐培训</span>
 				<span class="smalltitle smallcolor_two">APPLE</span>
 				</div>
-				<img src="media/slider1-2.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png">
 				<div class="downarrow arrYellow"></div>
 			</div>
 			<div class="swiper-slide">
@@ -71,7 +69,7 @@
 				<span class="titletext">美术培训</span>
 				<span class="smalltitle smallcolor_three">FRESH FRUIT</span>
 				</div>
-				<img src="media/slider1-1.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png">
 				<div class="downarrow arrBlue"></div>
 			</div>
 			<div class="swiper-slide">
@@ -81,7 +79,7 @@
 					<span class="titletext">外语培训</span>
 					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
 				</div>
-				<img src="media/slider1-1.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png">
 				<div class="downarrow"></div>
 			</div>
 			<div class="swiper-slide">
@@ -90,7 +88,7 @@
 				<span class="titletext">升学培训</span>
 				<span class="smalltitle smallcolor_four">GRUNT</span>
 				</div>
-				<img src="media/slider1-1.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png">
 				<div class="downarrow arrPink"></div>
 			</div>
 			<div class="swiper-slide">
@@ -100,7 +98,7 @@
 					<span class="titletext">外语培训</span>
 					<span class="smalltitle smallcolor_one">FRESH FRUIT</span>
 				</div>
-				<img src="media/slider1-1.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-1.png">
 				<div class="downarrow"></div>
 			</div>
 			<div class="swiper-slide" style="margin-right: 0;">
@@ -110,7 +108,7 @@
 				<span class="titletext">生活兴趣</span>
 				<span class="smalltitle smallcolor_five">DRINK</span>
 				</div>
-				<img src="media/slider1-2.png" />
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png">
 				<div class="downarrow arrGreen"></div>
 			</div>
 		 <div class="swiper-scrollbar"></div>
@@ -121,10 +119,10 @@
 	<div class="experience wid710 auto">
 		<div class="experience_one fl">
 			<div class="title">
-				<img src="media/home/title.png" class="fl"/>
+				<img src="<?php echo CDN_URL ?>media/home/title.png" class="fl"/>
 			</div>
 			<div class="goodpic auto">
-				<img src="media/slider1-2.png"/>
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png"/>
 			</div>
 			<h1>芝麻街英语芝麻街英语芝麻街英语</h1>
 			<h2>英语的领导品牌</h2>
@@ -132,13 +130,13 @@
 		</div>
 		<div class="experience_two fr">
 			<div class="card_one">
-				<img src="media/slider1-2.png" class="fl"/>
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl"/>
 				<h1 class="mt10">沃尔德国际英语</h1>
 				<h2>英语的领导品牌</h2>
 				<a href="###" class="atonce atonce_r">立即体验</a>
 			</div>
 			<div class="card_one mt10">
-				<img src="media/slider1-2.png" class="fl"/>
+				<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl"/>
 				<h1 class="mt10">沃尔德国际英语</h1>
 				<h2>英语的领导品牌</h2>
 				<a href="###" class="atonce atonce_r">立即体验</a>
@@ -146,6 +144,39 @@
 		</div>
 	</div>
 	<!--tab切换区域开始-->
+		<div class="fruiteContent wid710 auto mt10 border20 bgfff clearfix">
+		<ul class="clearfix">
+			<li>
+				<div class="pic">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+				</div>
+				<h1>美国蓝莓</h1>
+				<h2>¥29.9/斤</h2>
+			</li>
+			<li>
+				<div class="pic">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+				</div>
+				<h1>美国蓝莓</h1>
+				<h2>¥29.9/斤</h2>
+			</li>
+			<li>
+				<div class="pic">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+				</div>
+				<h1>美国蓝莓</h1>
+				<h2>¥29.9/斤</h2>
+			</li>
+			<li>
+				<div class="pic">
+					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+				</div>
+				<h1>美国蓝莓</h1>
+				<h2>¥29.9/斤</h2>
+			</li>
+		</ul>
+		
+	</div>
 	
 	<div class="tab">
 		<a class="active" href="javascript:;">
@@ -164,7 +195,7 @@
 					<div class="swiper-slide list-group">
 						<div class="list-group-item">
 							<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -199,7 +230,7 @@
             		</div>
             	</div>
             	<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -239,7 +270,7 @@
 					<div class="swiper-slide list-group">
 						<div class="list-group-item">
 							<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -279,7 +310,7 @@
 					<div class="swiper-slide list-group">
 						<div class="list-group-item">
 							<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -316,7 +347,7 @@
 						</div>
 						<div class="list-group-item">
 							<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -351,7 +382,7 @@
             		</div>
             	</div>
             	<div class="list">
-			            		<img src="media/slider1-2.png" class="fl">
+			            		<img src="<?php echo CDN_URL ?>media/slider1-2.png" class="fl">
 			            		<div class="listtext fr">
 		            			<!--显示距离-->
 		            			<span class="area">0.3km</span>
@@ -395,21 +426,3 @@
 		<!--<div class="loadtip">上拉加载更多</div>
 		<div class="swiper-scrollbar"></div>-->
 	</div>
-
-
-	</body>
-	<script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
-	<script type="text/javascript" src="js/rem.js" ></script>
-	<script type="text/javascript" src="js/swiper.min.js" ></script>
-	<script type="text/javascript" src="js/alert.js" ></script>
-	<script src="js/educationclassification.js"></script>
-		<script>
-		var swiperIndex = new Swiper('.swiper-container', {
-	        pagination: '.swiper-pagination',
-	        paginationClickable: true,
-	        autoplay: 2000,
-	        loop:true
-	   });	
-		
-	</script>
-</html>

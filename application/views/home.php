@@ -60,6 +60,7 @@ input.check:checked{
     overflow: hidden;
 }
 	</style>
+	<script src="<?php echo CDN_URL ?>js/jqm.js"></script>
 <!--tab切换content区域-->
 		<div class="tabcontent" id="list">
 			<div class="item" style="display: block;">
@@ -70,100 +71,115 @@ input.check:checked{
 					<div class="menuWrap auto clearfix swiper-slide">
 					<ul class="clearfix">
 						<li>
-							<!--图标-->
-							<div class="iconWrap">
-								<img data-src="<?php echo CDN_URL ?>media/home/shengxianchaoshi@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">生鲜超市</sapn>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/shengxianchaoshi@3x.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">生鲜超市</span>
+                            </a>
 						</li>
 						<li>
-							<!--图标-->
-							<div class="iconWrap2">
-								<img data-src="<?php echo CDN_URL ?>media/home/jiankangjiaoyu@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">健康教育</sapn>
+                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap2">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/jiankangjiaoyu@3x.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">健康教育</span>
+                            </a>
 						</li>
 						<li>
-							<!--图标-->
-							<div class="iconWrap3">
-								<img data-src="<?php echo CDN_URL ?>media/home/gesemeishi@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">各色美食</sapn>
+                            <a href="<?php echo base_url('page/detail?id=3') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap3">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/gesemeishi@3x.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">各色美食</span>
+                            </a>
 						</li>
 						<li>
-							<!--图标-->
-							<div class="iconWrap4">
-								<img data-src="<?php echo CDN_URL ?>media/home/shishangyule@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">时尚娱乐</sapn>
+                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/shishangyule@3x.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">时尚娱乐</span>
+                            </a>
 						</li>
 						<li style="margin-right:0">
-							<!--图标-->
-							<div class="iconWrap5">
-								<img data-src="<?php echo CDN_URL ?>media/home/zhinengjiaju@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">智能家居</sapn>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap5">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/zhinengjiaju@3x.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">智能家居</span>
+                            </a>
 						</li>
 						<li>
 							<!--图标-->
-							<div class="iconWrap6">
-								<img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin@3x.png" />
-							</div>
-							<!--文字-->
-							<sapn class="text">领券中心</sapn>
+							<a href="https://www.517ybang.com/coupon_template/index" target="_self">
+                                <div class="iconWrap6">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin@3x.png">
+                                </div>
+
+                                <!--文字-->
+                                <span class="text">领券中心</span>
+                            </a>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap7">
-								<img data-src="<?php echo CDN_URL ?>media/home/yaoqinghaoyou@3x.png" />
+								<img data-src="<?php echo CDN_URL ?>media/home/yaoqinghaoyou@3x.png">
 							</div>
 							<!--文字-->
-							<sapn class="text">邀请好友</sapn>
+							<span class="text">邀请好友</span>
 						</li>
 						<li>
 							<!--图标-->
 							<a href="https://biz.517ybang.com/biz/create" target="_self">
 								<div class="iconWrap8">
-									<img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu@3x.png" />
+									<img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu@3x.png">
 								</div>
 							</a>
 							<!--文字-->
-							<sapn class="text">我要入驻</sapn>
+							<span class="text">我要入驻</span>
 						</li>
 						<li>
 							<!--图标-->
 							<div class="iconWrap9">
-								<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuantime@3x.png" />
+								<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuantime@3x.png">
 							</div>
 							<!--文字-->
-							<sapn class="text">在线拼团</sapn>
+							<span class="text">在线拼团</span>
 						</li>
 						<li style="margin-right:0">
 							<!--图标-->
 							<div class="iconWrap10">
-							<img data-src="<?php echo CDN_URL ?>media/home/chakangengduo@3x.png" />
+							<img data-src="<?php echo CDN_URL ?>media/home/chakangengduo@3x.png">
 							</div>
 							<!--文字-->
-							<sapn class="text">查看更多</sapn>
+							<span class="text">查看更多</span>
 						</li>
 					</ul>
 				</div>
 				<div class="menuWrap auto clearfix swiper-slide">
 					<ul class="clearfix">
 						<li>
-							<!--图标-->
-							<div class="iconWrap">
-								<div class="menuicon bg1">
-									<i class="icon iconfont icon-putao"></i>
-								</div>
-							</div>
-							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>">
+                                <!--图标-->
+                                <div class="iconWrap">
+                                    <div class="menuicon bg1">
+                                        <i class="icon iconfont icon-putao"></i>
+                                    </div>
+                                </div>
+                                <!--文字-->
+                                <span class="text">进来生鲜</span>
+                            </a>
 						</li>
 						<li>
 							<!--图标-->
@@ -173,7 +189,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -183,7 +199,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -193,7 +209,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li style="margin-right:0">
 							<!--图标-->
@@ -203,7 +219,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -213,7 +229,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -223,7 +239,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -233,7 +249,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li>
 							<!--图标-->
@@ -243,7 +259,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 						<li style="margin-right:0">
 							<!--图标-->
@@ -253,7 +269,7 @@ input.check:checked{
 								</div>
 							</div>
 							<!--文字-->
-							<sapn class="text">进来生鲜</sapn>
+							<span class="text">进来生鲜</span>
 						</li>
 					</ul>
 				</div>
@@ -571,7 +587,7 @@ input.check:checked{
 				<!--丽人内容-->
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
 						</div>
@@ -579,7 +595,7 @@ input.check:checked{
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.png" />
 						</div>
@@ -588,7 +604,7 @@ input.check:checked{
 				</div>
 				<div class="mid fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
 							</div>
@@ -597,7 +613,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png" />
 							</div>
@@ -610,7 +626,7 @@ input.check:checked{
 				<!--娱乐内容-->
 				<div class="colorovertab clearfix">
 				<div class="left fl refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 							</div>
@@ -618,7 +634,7 @@ input.check:checked{
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="https://www.517ybang.com/biz/detail?id=2">
+					<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 							</div>
@@ -636,7 +652,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -649,7 +665,7 @@ input.check:checked{
 				<!--美食tab内容-->
 					<div class="colorovertab clearfix">
 					<div class="left fl refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -657,7 +673,7 @@ input.check:checked{
 						</a>
 					</div>
 					<div class="right fr refreshcontent">
-						<a href="https://www.517ybang.com/biz/detail?id=2">
+						<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 								</div>
@@ -666,7 +682,7 @@ input.check:checked{
 					</div>
 					<div class="mid fl" style="margin-top:.1rem">
 						<div class="midleft refreshcontent">
-							<a href="https://www.517ybang.com/biz/detail?id=2">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 									</div>
@@ -675,7 +691,7 @@ input.check:checked{
 							</a>
 						</div>
 						<div class="midright fr refreshcontent">
-							<a href="https://www.517ybang.com/biz/detail?id=2">
+							<a href="https://www.517ybang.com/biz/detail?id=2" target="_self">
 								<div class="bgefefef">
 								<img data-src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 									</div>

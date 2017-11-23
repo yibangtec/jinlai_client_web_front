@@ -17,7 +17,6 @@
 	}
 	.articletext{
 		margin-top: .6rem;
-		
 	}
 	.articletext h1{
 		text-align: center;

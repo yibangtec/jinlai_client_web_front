@@ -1,5 +1,5 @@
 <base href="<?php echo $this->media_root ?>">
-<style>	.shopBg{		padding-bottom: .2rem;	}</style><?php	// 检查当前设备信息	$user_agent = $_SERVER['HTTP_USER_AGENT'];	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):?>
+<style>	.shopBg{		padding-bottom: .2rem;	}	.pictitle{		background:url(<?php echo CDN_URL ?>media/biz/linebar.png) no-repeat center left; 		background-size:cover ;	}</style><?php	// 检查当前设备信息	$user_agent = $_SERVER['HTTP_USER_AGENT'];	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):?>
 	<!--店铺首页商家信息开始-->	<div class="shopBg clearfix">	<div class="shopTitle">		<div class="shopback fl">			<i class="icon-Back"></i>		</div>		<div class="shopSearch fl">			<input type="text" placeholder="耳机 APP 蓝牙"/>		</div>	</div>		
 		<div class="shopinfo wid710 auto clearfix">
 			<div class="shoppic fl">
@@ -83,9 +83,7 @@
 	
 	<?php if ( !empty($ornament['home_m1_ids']) ): ?>
 	<!--卡片式导航分类区域-->
-	<div class="shopIndexcard clearfix auto mt10 wid710">
-		<div class="pictitle wid710 border20">
-			<img src="<?php echo CDN_URL ?>media/home/linebar.png">
+	<div class="shopIndexcard clearfix auto mt10 wid710">		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>
 		</div>
 		<div class="pic mt10">
 			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m1_ace_id']) ?>" target="_self">
@@ -116,9 +114,7 @@
 	<?php if ( !empty($ornament['home_m2_ids']) ): ?>
 	<!--卡片式导航分类区域-->
 	<div class="shopIndexcard clearfix auto mt10 wid710">
-		<div class="pictitle wid710 border20">
-			<img src="<?php echo CDN_URL ?>media/home/linebar.png">
-		</div>
+		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>
 		<div class="pic mt10">
 			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m2_ace_id']) ?>" target="_self">
 				<img src="<?php echo MEDIA_URL.'ornament_biz/'.$ornament['home_m2_ace_url'] ?>">
@@ -148,9 +144,7 @@
 	<?php if ( !empty($ornament['home_m3_ids']) ): ?>
 	<!--卡片式导航分类区域-->
 	<div class="shopIndexcard clearfix auto mt10 wid710">
-		<div class="pictitle wid710 border20">
-			<img src="<?php echo CDN_URL ?>media/home/linebar.png">
-		</div>
+		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>
 		<div class="pic mt10">
 			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m3_ace_id']) ?>" target="_self">
 				<img src="<?php echo MEDIA_URL.'ornament_biz/'.$ornament['home_m3_ace_url'] ?>">
@@ -233,5 +227,5 @@
 				</div>
 <script>		var swiperIndex = new Swiper('.swiper-container', {	        pagination: '.swiper-pagination',	        paginationClickable: true,	        autoplay: 2000,	        loop:true	   });	
 	// <?php echo $this->class_name_cn ?>数据
-	var item = <?php echo json_encode($item) ?>	// 店铺装修信息	var ornament = <?php echo isset($ornament)? json_encode($ornament): 'undefined' ?>;//	console.log(ornament);	$('.shopBg').css({		'background':'url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/'+ornament.main_figure_url+') no-repeat center'	})
+	var item = <?php echo json_encode($item) ?>;		// 店铺装修信息	var ornament = <?php echo isset($ornament)? json_encode($ornament): 'undefined' ?>;	console.log(item,ornament);//	console.log(ornament);	$('.shopBg').css({		'background':'url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/'+ornament.main_figure_url+') no-repeat center'	})
 </script>
