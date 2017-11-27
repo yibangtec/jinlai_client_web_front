@@ -2,9 +2,297 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>发表评价</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%; height: 100%;background-color: #F2F2F3;}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%; position: relative}
+        .evaluate{
+            margin: 0 0.2rem 0.1rem 0.2rem;
+
+            background-color: #fff;
+            border-radius: 0.15rem;
+        }
+        .item_eva{
+            font-size: 0.28rem;
+            color: #3e3a39;
+            padding: 0.2rem 0.2rem;
+        }
+        .item_eva img{
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.12rem;
+            vertical-align: middle;
+            margin-right: 0.2rem;
+        }
+
+        .item_eva i{
+            font-size: 0.34rem;
+            margin-left: 0.3rem;
+        }
+        .input-content{
+            margin: 0 0.2rem;
+            font-size: 0.24rem;
+            line-height: 0.35rem;
+            min-height: 1.8rem;
+            color: #9fa0a0;
+            border-top: 0.01rem solid #e1e1e1;
+            border-bottom: 0.01rem solid #e1e1e1;
+            padding: 0.2rem 0;
+            outline: none;
+        }
+        .up-img{
+            padding: 0.2rem 0;
+            margin-left: 0.1rem;
+        }
+
+        .img-list{
+            float: left;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.12rem;
+            margin-left: 0.1rem;
+        }
+        .img-list img{
+            display: block;
+            width: 1.25rem;
+            height: 1.25rem;
+
+            border-radius: 0.12rem;
+        }
+        .file-btn{
+            float: left;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.12rem;
+            border: 0.01rem dashed #9fa0a0;
+            font-size: 0.36rem;
+            text-align: center;
+            line-height: 1.2rem;
+            margin-left: 0.1rem;
+        }
+        .biz-eva{
+            margin: 0 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.28rem;
+            color: #3e3a39;
+            padding: 0.25rem 0 0.3rem;
+        }
+        .biz-name{
+            padding-left: 0.3rem;
+        }
+        .biz-name i{
+            font-size: 0.36rem;
+            margin-right: 0.2rem;
+        }
+        .biz-server{
+            padding: 0.4rem 0 0 0.3rem;
+        }
+        .biz-server i{
+            margin-left: 0.3rem;
+            font-size: 0.34rem;
+        }
+        .logistics-server{
+            padding: 0.4rem 0 0 0.3rem;
+        }
+        .logistics-server i{
+            margin-left: 0.3rem;
+            font-size: 0.34rem;
+        }
+        .Submission-evaluation{
+            height: 0.9rem;
+            width: 100%;
+            background-color: #ff3649;
+            font-size: 0.28rem;
+            color: #fff;
+            text-align: center;
+            line-height: 0.9rem;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
 
+<div class="box">
+    <div style="padding-top: 0.2rem;"></div>
+    <div class="evaluate">
+        
+        <div class="item_eva">
+            <span><img src="../media/order/orderimg.png" alt=""/>商品评价</span>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+        </div>
+        <div class="input-content" contenteditable="true">
+            商品怎么样，写点评论，给其他想买的小伙伴做个参考呗。
+        </div>
+        <div class="up-img clearfix">
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="file-btn">
+                <i class="icon-xiangji"></i>
+            </div>
+        </div>
+    </div>
+    <div class="evaluate">
+
+        <div class="item_eva">
+            <span><img src="../media/order/orderimg.png" alt=""/>商品评价</span>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+        </div>
+        <div class="input-content" contenteditable="true">
+            商品怎么样，写点评论，给其他想买的小伙伴做个参考呗。
+        </div>
+        <div class="up-img clearfix">
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="file-btn">
+                <i class="icon-xiangji"></i>
+            </div>
+        </div>
+    </div>
+    <div class="evaluate">
+
+        <div class="item_eva">
+            <span><img src="../media/order/orderimg.png" alt=""/>商品评价</span>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-xuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+            <i class="icon-weixuanzhong2 e-icon"></i>
+        </div>
+        <div class="input-content" contenteditable="true">
+            商品怎么样，写点评论，给其他想买的小伙伴做个参考呗。
+        </div>
+        <div class="up-img clearfix">
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="img-list">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="file-btn">
+                <i class="icon-xiangji"></i>
+            </div>
+        </div>
+    </div>
+    <div class="biz-eva">
+        <div class="biz-name">
+            <i class="icon-dianpu"></i><span>进来生鲜超市</span>
+        </div>
+        <div class="biz-server">
+            <span>卖家服务</span>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+        </div>
+        <div class="logistics-server">
+            <span>物流服务</span>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+            <i class="icon-weixuanzhong2"></i>
+        </div>
+    </div>
+    <div class="Submission-evaluation">发表评论</div>
+</div>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $('.e-icon').click(function(){
+            var index =$(this).index();
+            console.log(index);
+            $('.e-icon').slice(0, index).addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
+            $('.e-icon').slice(index, 5).addClass('icon-weixuanzhong2').removeClass('icon-xuanzhong2');
+        });
+        $('.biz-server i').click(function(){
+            var index =$(this).index();
+            console.log(index);
+            $('.biz-server i').slice(0, index).addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
+            $('.biz-server i').slice(index, 5).addClass('icon-weixuanzhong2').removeClass('icon-xuanzhong2');
+        });
+        $('.logistics-server i').click(function(){
+            var index =$(this).index();
+            console.log(index);
+            $('.logistics-server i').slice(0, index).addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
+            $('.logistics-server i').slice(index, 5).addClass('icon-weixuanzhong2').removeClass('icon-xuanzhong2');
+        });
+
+    })
+
+
+</script>
 </body>
 </html>
