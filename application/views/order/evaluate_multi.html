@@ -182,7 +182,6 @@
         </div>
     </div>
     <div class="evaluate">
-
         <div class="item_eva">
             <span><img src="../media/order/orderimg.png" alt=""/>商品评价</span>
             <i class="icon-xuanzhong2 e-icon"></i>
@@ -271,11 +270,14 @@
 <script>
 
     $(document).ready(function(){
-        $('.e-icon').click(function(){
+        $('.e-icon').on('click',function(){
             var index =$(this).index();
             console.log(index);
-            $('.e-icon').slice(0, index).addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
-            $('.e-icon').slice(index, 5).addClass('icon-weixuanzhong2').removeClass('icon-xuanzhong2');
+            console.log($('.e-icon').length);
+
+            $(this).prevAll('.e-icon').addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
+            $(this).addClass('icon-xuanzhong2').removeClass('icon-weixuanzhong2');
+            $(this).nextAll('.e-icon').addClass('icon-weixuanzhong2').removeClass('icon-xuanzhong2');
         });
         $('.biz-server i').click(function(){
             var index =$(this).index();
