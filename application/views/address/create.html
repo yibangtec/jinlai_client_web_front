@@ -4,29 +4,10 @@
     <meta charset="UTF-8">
     <title>修改地址</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        if(clientWidth>=750){
-                            docEl.style.fontSize = '100px';
-                        }else{
-                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                        }
-                    };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-
-    </script>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/account.js"></script>
-    <link rel="stylesheet" href="https://i.icomoon.io/public/022b3dd411/jinlai/style.css">
 
     <link rel="stylesheet" href="../css/LArea.css"/>
     <script src="../js/LArea.js"></script>
@@ -100,8 +81,8 @@
 </div>
 <div class="box" id="box">
     <div class="error-tips">
-        <p></p>
-        <img src="../media/address/failure.png" alt=""/>
+        <p class="tips-text"></p>
+        <i class="icon-failure"></i>
     </div>
     <div class="create-content">
         <div class="save">保存</div>

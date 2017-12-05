@@ -24,7 +24,7 @@ $(document).ready(function(){
         if (re.test(tel)) {
 
         }else{
-            $('.error-tips').html('手机号格式错误');
+            $('.tips-text').html('手机号格式错误');
             $('.error-tips').show();
             actionDo();
         }
@@ -49,7 +49,7 @@ $(document).ready(function(){
         if (re.test(pass)) {
 
         }else{
-            $('.error-tips').html('密码长度应在6-20位之间');
+            $('.tips-text').html('密码长度应在6-20位之间');
             $('.error-tips').show();
             actionDo();
         }
@@ -75,7 +75,7 @@ $(document).ready(function(){
         if (re.test(pass1)) {
 
         }else{
-            $('.error-tips').html('密码长度应在6-20位之间');
+            $('.tips-text').html('密码长度应在6-20位之间');
             $('.error-tips').show();
             actionDo();
         }
@@ -101,7 +101,7 @@ $(document).ready(function(){
         if (re.test(pass2)) {
 
         }else{
-            $('.error-tips').html('密码长度应在6-20位之间');
+            $('.tips-text').html('密码长度应在6-20位之间');
             $('.error-tips').show();
             actionDo();
         }
@@ -141,7 +141,7 @@ $(document).ready(function(){
             }
             $('#submit').show();
         }else{
-            $('.error-tips').html('手机号格式错误');
+            $('.tips-text').html('手机号格式错误');
             $('.error-tips').show();
             actionDo();
         }

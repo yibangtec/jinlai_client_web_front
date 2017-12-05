@@ -4,27 +4,8 @@
     <meta charset="UTF-8">
     <title>地址列表</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        if(clientWidth>=750){
-                            docEl.style.fontSize = '100px';
-                        }else{
-                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                        }
-                    };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-
-    </script>
-    <link rel="stylesheet" href="https://i.icomoon.io/public/022b3dd411/jinlai/style.css">
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
     <style>
         *:before, *:after {box-sizing: border-box; }
         *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}

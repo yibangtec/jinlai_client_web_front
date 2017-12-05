@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <title>短信登录</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        if(clientWidth>=750){
-                            docEl.style.fontSize = '100px';
-                        }else{
-                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                        }
-                    };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-
-    </script>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
     <link rel="stylesheet" href="../css/account.css"/>
 </head>
 <body>
 <div class="box">
     <div class="error-tips">
-        dsfsdfasdf
+        <p class="tips-text"></p>
+        <i class="icon-failure"></i>
     </div>
     <div style="height: 5rem; padding-top: 1.4rem;">
         <div class="input-box clearfix">
