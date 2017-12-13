@@ -5,6 +5,7 @@
     <title>订单详情</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
     <style>
         *:before, *:after {box-sizing: border-box; }
         *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
@@ -23,15 +24,51 @@
         .detail-header{
             margin:0.2rem 0.2rem 0 0.2rem; background-color: #fff;border-radius: 0.15rem;font-size: 0.26rem;color: #3e3a39;
         }
-        .detail-type{
+        .detail-type1{
             height: 1.4rem;
             background: url("../media/order/daipingjia@3x.png") no-repeat;
             background-size: 100% 1.4rem;
             padding-left: 0.8rem;
             color: #ffffff;
         }
+        .detail-type2{
+            height: 1.4rem;
+            background: url("../media/order/daipingjia@3x.png") no-repeat;
+            background-size: 100% 1.4rem;
+            padding-left: 0.8rem;
+            color: #ffffff;
+        }
+        .detail-type3{
+            height: 1.4rem;
+            background: url("../media/order/daifahuo@3x.png") no-repeat;
+            background-size: 100% 1.4rem;
+            padding-left: 0.8rem;
+            color: #ffffff;
+        }
+        .detail-type4{
+            height: 1.4rem;
+            background: url("../media/order/daifukuan@3x.png") no-repeat;
+            background-size: 100% 1.4rem;
+            padding-left: 0.8rem;
+            color: #ffffff;
+        }
+        .detail-type5{
+            height: 1.4rem;
+            background: url("../media/order/daishouhuo@3x.png") no-repeat;
+            background-size: 100% 1.4rem;
+            padding-left: 0.8rem;
+            color: #ffffff;
+        }
+        .detail-type6{
+            height: 1.4rem;
+            background: url("../media/order/yiguanbi@3x.png") no-repeat;
+            background-size: 100% 1.4rem;
+            padding-left: 0.8rem;
+            color: #ffffff;
+        }
         .detail-address{
             padding: 0.3rem 0.2rem 0.3rem 0.8rem;
+            position: relative;
         }
         .detail-address div b:first-child{
             display: inline-block;
@@ -49,6 +86,12 @@
         .detail-address p:last-child{
             padding-top: 0.08rem;
         }
+        .detail-address i{
+            position: absolute;
+            left: 0.15rem;
+            top: 0.85rem;
+            font-size: 0.4rem;
+        }
         .order-all{
             margin: 0.1rem 0.2rem;
         }
@@ -64,6 +107,10 @@
         }
         .item-title{
             padding: 0.2rem;
+        }
+        .item-title .title-left i{
+            font-size: 0.36rem;
+            margin-right: 0.2rem;
         }
         .item-detail{
             padding: 0 0.2rem;
@@ -229,18 +276,41 @@
             display: inline-block;
             border: 0.02rem solid #9fa0a0;
             border-radius: 0.25rem;
-            margin-right: 0.4rem;
+            margin-right: 0.3rem;
+        }
+        .status1,.status2,.status3,.status4,.status5,.status6{
+            display: none;
         }
     </style>
 </head>
 <body>
 <div class="box">
     <div class="detail-header">
-        <div class="detail-type">
+        <div class="detail-type1 status1">
             <p style="padding-top: 0.25rem">待评价</p>
             <p style="padding-top: 0.2rem">2天2小时后自动好评</p>
         </div>
+        <div class="detail-type2 status2">
+            <p style="padding-top: 0.45rem">已评价</p>
+        </div>
+        <div class="detail-type3 status3">
+            <p style="padding-top: 0.25rem">等待卖家发货</p>
+            <p style="padding-top: 0.2rem">2天2小时后未发货则自动退款</p>
+        </div>
+        <div class="detail-type4 status4">
+            <p style="padding-top: 0.25rem">等待买家付款</p>
+            <p style="padding-top: 0.2rem">2天2小时后未付款则自动关闭</p>
+        </div>
+        <div class="detail-type5 status5">
+            <p style="padding-top: 0.25rem">待收货</p>
+            <p style="padding-top: 0.2rem">2天2小时后自动确认收货</p>
+        </div>
+        <div class="detail-type6 status6">
+            <p style="padding-top: 0.25rem">已关闭</p>
+            <p style="padding-top: 0.2rem">超时未付款</p>
+        </div>
         <div class="detail-address">
+            <i class="icon-dizhi"></i>
             <div><b>孙悟空</b><b>13523071265</b></div>
             <p>山东省 青岛市 崂山区</p>
             <p>东海东路一号意帮网络科技3层</p>
@@ -249,7 +319,7 @@
     <div class="order-all">
         <div class="order-item">
             <div class="item-title clearfix">
-                <div class="title-left left-float">东唐旺</div>
+                <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span></div>
             </div>
             <div class="item-detail clearfix">
                 <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -308,16 +378,59 @@
         <p>发货时间：<span>2017-09-01 22:33:33</span></p>
         <p>成交时间：<span>2017-09-01 22:33:33</span></p>
     </div>
-    <div class="detail-operation">
+    <!--待评价-->
+    <div class="detail-operation status1">
+        <a>删除</a>
+        <a>退款/售后</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">待评价</a>
+    </div>
+    <!--已评价-->
+    <div class="detail-operation status2">
         <a>删除</a>
         <a>申请售后</a>
         <a>追加评论</a>
+    </div>
+    <!--待发货-->
+    <div class="detail-operation status3">
+        <a>取消</a>
+        <a>退款/售后</a>
+    </div>
+    <!--待付款-->
+    <div class="detail-operation status4">
+        <a>取消</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">去付款</a>
+    </div>
+    <!--待收货-->
+    <div class="detail-operation status5">
+        <a>延长收货</a>
+        <a>查看物流</a>
+        <a>退款/售后</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">确认收货</a>
+    </div>
+    <!--已关闭-->
+    <div class="detail-operation status6">
+        <a>删除</a>
     </div>
 </div>
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script>
 
     $(document).ready(function(){
+        var status ='';
+        status = 2;
+        if(status == 1){
+            $('.status1').css('display','block')
+        }else if(status==2){
+            $('.status2').css('display','block')
+        }else if(status==3){
+            $('.status3').css('display','block')
+        }else if(status==4){
+            $('.status4').css('display','block')
+        }else if(status==5){
+            $('.status5').css('display','block')
+        }else if(status==6){
+            $('.status6').css('display','block')
+        }
 
 
     })
