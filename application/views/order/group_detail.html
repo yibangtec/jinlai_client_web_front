@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>团购订单详情</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #F2F2F3; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative;font-size: 0.26rem}
+        .public{
+            margin: 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.3rem;
+            color: #3e3a39;
+        }
+        .group{
+            display: flex;
+            padding: 0.2rem;
+            border-bottom: 0.01rem solid #e1e1e1;
+        }
+        .group-img{
+            width: 2rem;
+        }
+        .group-img img{
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 0.15rem;
+            vertical-align: middle;
+        }
+        .group-info{
+            flex: 1;
+        }
+        .info-text{
+            height: 1.2rem;
+        }
+        .info-text p:last-child{
+            font-size: 0.26rem;
+            color: #9FA0A0;
+        }
+        .price{
+            font-size: 0.3rem;
+            color: #FF3649;
+            padding: 0.1rem 0;
+        }
+        .price span:last-child{
+            font-size: 0.24rem;
+            color: #c9caca;
+            margin-left: 0.2rem;
+        }
+        .group-more{
+            width: 0.8rem;
+        }
+        .group-more i{
+            font-size: 0.4rem;
+            padding-left: 0.28rem;
+            line-height: 1.8rem;
+        }
+        .support{
+            width: 100%;
+            padding: 0.22rem 0;
+            text-align: center;
+        }
+        .support .support-left,.support-right{
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .support .support-left{
+            border-right: 0.01rem solid #e1e1e1;
+        }
+        .support i{
+            display: inline-block;
+            font-size: 0.3rem;
+            color: #000000;
+        }
+        .support span{
+            padding: 0.06rem 0.2rem;
+            display: inline-block;
+            font-size: 0.22rem;
+        }
+        .group-code{
+            margin: 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.24rem;
+            color: #3e3a39;
+            padding: 0 0.2rem;
+        }
+        .group-code .same{
+            height: 0.66rem;
+            line-height: 0.66rem;
+            border-bottom: 0.01rem solid #e1e1e1;
+        }
+        .group-code .same:last-child{
+            border-bottom: none;
+        }
+        .group-verify .ver-left{
+            float: left;
+        }
+        .group-verify .ver-right{
+            float: right;
+        }
+        .group-title{
+            font-size: 0.28rem;
+        }
+        .group-date{
+            font-size: 0.22rem;
+            color: #9FA0A0;
+        }
+        .available{
+            font-size: 0.24rem;
+            color: #2abb5b;
+        }
+        .used{
+            font-size: 0.24rem;
+            color: #9FA0A0;
+        }
+        .text-red{
+            color: #FF3649;
+        }
+        .group-order-detail{
+            font-size: 0.24rem;
+            color: #3e3a39;
+            line-height: 0.42rem;
+            padding: 0.1rem 0;
+        }
+        .copy{
+            display: inline-block;
+            width: 0.56rem;
+            height: 0.34rem;
+            font-size: 0.22rem;
+            color: #9FA0A0;
+            line-height: 0.34rem;
+            border: 0.01rem solid #9FA0A0;
+            border-radius: 0.08rem;
+            text-align: center;
+            margin-left: 0.4rem;
+        }
+        .group-content{
+            display: inline-block;
+        }
+        .group-content:first-child{
+            width: 50%;
+        }
+        .group-content:nth-child(2){
+            width: 23%;
+        }
+        .group-content:nth-child(3){
+            width: 23%;
+
+            text-align: right;
+        }
+        .refund{
+            margin: 0.3rem 0.2rem;
+            height: 0.86rem;
+            line-height: 0.9rem;
+            font-size: 0.3rem;
+            color: #9FA0A0;
+            text-align: center;
+            border-radius: 0.43rem;
+            border: 0.01rem solid #9FA0A0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="public">
+        <div class="group">
+            <div class="group-img">
+                <img src="../media/order/orderimg.png" alt=""/>
+            </div>
+            <div class="group-info">
+                <div class="info-text">
+                    <p>舞蹈工作室</p>
+                    <p>全国连锁通用券</p>
+                </div>
+                <div class="price">
+                    ¥<span>29</span><span>¥<del>188</del></span>
+                </div>
+            </div>
+            <div class="group-more"><i class="icon-Arrow"></i></div>
+        </div>
+        <div class="support clearfix">
+            <div class="support-left"><i class="icon-jintuikuan"></i><span>支持自动退款</span></div>
+            <div class="support-right"><i class="icon-zidongtui"></i><span>支持过期退款</span></div>
+        </div>
+    </div>
+    <div class="group-code">
+        <div class="group-verify same">
+            <div class="ver-left group-title">团购券</div>
+            <div class="ver-right group-date">有效期至：2017-12-30</div>
+        </div>
+        <div class="group-verify same clearfix">
+            <div class="ver-left">验证码</div>
+            <div class="ver-right available">可使用</div>
+        </div>
+        <div class="group-verify same clearfix">
+            <div class="ver-left">验证码</div>
+            <div class="ver-right used">已使用</div>
+        </div>
+    </div>
+    <div class="group-code">
+        <div class="group-verify same">
+            <div class="group-title">团购券</div>
+        </div>
+        <div class="group-verify same clearfix">
+            <div class="text-red">
+                本券法定节假日不可用。有疑问请拨打4001213123
+            </div>
+        </div>
+    </div>
+    <div class="group-code">
+        <div class="group-verify same">
+            <div class="group-title">内容</div>
+        </div>
+        <div class="group-verify same clearfix">
+            <span class="group-content">舞蹈体验卡3次</span>
+            <span class="group-content">×1</span>
+            <span class="group-content">¥29</span>
+        </div>
+    </div>
+    <div class="group-code">
+        <div class="group-verify same">
+            <div class="group-title">订单详情</div>
+        </div>
+        <div class="group-order-detail">
+            <p>订单编号：<span>324566778654321</span> <span class="copy">复制</span></p>
+            <p>下单时间：<span>2017-09-09 20:59</span></p>
+            <p>手机号：<span>12345654322</span></p>
+            <p>数量：<span>1</span></p>
+            <p>总价：¥<span>12</span></p>
+        </div>
+    </div>
+    <div class="refund">
+        申请退款
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+
+
+
+    })
+
+
+</script>
+</body>
+</html>
