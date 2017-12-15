@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>拼单结果</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #F2F2F3; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative;font-size: 0.26rem;}
+        .result-header{
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.24rem;
+            color: #9FA0A0;
+            text-align: center;
+            padding: 0.5rem 0 0.3rem 0;
+            margin: 0 0.2rem 0.1rem 0.2rem;
+        }
+        .result-header p{
+            line-height: 0.64rem;
+            text-align: center;
+        }
+        .groups-img {
+            padding: 0.3rem 0 0.1rem 0;
+            text-align: center;
+        }
+        .groups-img li{
+            display: inline-block;
+            margin: 0 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            border: 0.01rem solid #9FA0A0;
+            border-radius: 50%;
+            box-sizing: content-box;
+        }
+        .groups-img li img{
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+        }
+        .result-title span{
+            font-size: 0.32rem;
+            color: #3e3a39;
+            line-height: 0.5rem;
+            padding-left: 0.2rem;
+        }
+        .result-title i{
+            font-size: 0.48rem;
+            color: #27BE58;
+
+        }
+        .line{
+            height: 0.2rem;
+            width: 100%;
+        }
+        .groups-img .img-active{
+            border: 0.01rem solid #FF3649;
+        }
+        .pindan-info{
+            background-color: #fff;
+            border-radius: 0.15rem;
+            font-size: 0.26rem;
+            color: #9FA0A0;
+            margin: 0 0.2rem;
+        }
+        .pindan-info-title{
+            color: #3e3a39;
+            line-height: 0.66rem;
+            border-bottom: 0.01rem solid #e1e1e1;
+            padding-left: 0.2rem;
+        }
+        .pindan-info-content{
+            display: flex;
+            line-height: 0.46rem;
+        }
+        .label{
+            width: 1.5rem;
+            padding-left: 0.2rem;
+        }
+        .label-map{
+            flex: 1;
+        }
+        .again{
+            width: 4.9rem;
+            height: 0.8rem;
+            margin-top: 0.6rem;
+            border-radius: 0.2rem;
+            border: 0.02rem solid #9FA0A0;
+            font-size: 0.3rem;
+            text-align: center;
+            line-height: 0.8rem;
+            margin-left: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="line"></div>
+    <div class="result-header">
+        <div class="result-title">
+            <i class="icon-yituikuan"></i><span>拼单成功</span>
+        </div>
+        <p>商家正在努力发货，请耐心等待！</p>
+        <ul class="groups-img clearfix">
+            <li class="img-active"><img src="../media/order/touxiang@3x.png" alt=""/></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p>等XX位团友</p>
+    </div>
+    <div class="pindan-info">
+        <div class="pindan-info-title">
+            拼单信息
+        </div>
+        <div style="padding: 0.1rem 0">
+            <div class="pindan-info-content">
+                <div class="label">商品名称：</div>
+                <div class="label-map">新西兰奇异果</div>
+            </div>
+            <div class="pindan-info-content">
+                <div class="label">收 货 人 ：</div>
+                <div class="label-map">孙亚男</div>
+            </div>
+            <div class="pindan-info-content">
+                <div class="label">电话号码：</div>
+                <div class="label-map">12345676542</div>
+            </div>
+            <div class="pindan-info-content">
+                <div class="label">收货地址：</div>
+                <div class="label-map"><p>山东省青岛市市北区</p><p>意帮管家3层</p></div>
+            </div>
+        </div>
+    </div>
+    <div class="again">
+        再拼一份
+    </div>
+</div>
+</body>
+</html>

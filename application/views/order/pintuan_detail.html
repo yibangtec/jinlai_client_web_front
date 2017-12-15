@@ -160,11 +160,11 @@
         }
         .item-operation span{
             display: inline-block;
-            width: 1.8rem;
+            padding: 0 0.1rem;
             height: 0.54rem;
             text-align: center;
             line-height: 0.5rem;
-            margin: 0.2rem 0 0.2rem 0;
+            margin: 0.2rem 0 0.2rem 0.2rem;
             border: 0.02rem solid #9fa0a0;
             border-radius: 0.27rem;
         }
@@ -282,7 +282,10 @@
             border-radius: 0.25rem;
             margin-right: 0.3rem;
         }
-        .status1,.status2,.status3,.status4,.status5,.status6{
+        .box .status1,.box .status2{
+            display: none;
+        }
+        .status2-span{
             display: none;
         }
         .bot-pingdan{
@@ -305,10 +308,133 @@
             border-radius: 0.25rem;
             margin-right: 0.2rem;
         }
+        .join-order{
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, .8);
+        }
+        .count-down{
+            width: 1.8rem;
+            height: 0.56rem;
+            background-color: #fff;
+            font-size: 0.26rem;
+            color: #3e3a39;
+            border-radius: 0.25rem;
+            margin: 0.5rem 0 2rem 2.85rem;
+            line-height: 0.56rem;
+            text-align: center;
+        }
+        .pintuan-tips{
+            font-size: 0.32rem;
+            color: #ffffff;
+            text-align: center;
+        }
+        .pintuan-tips span{
+            color: #FF3649;
+        }
+        .list{
+           margin-left: 0.36rem;
+        }
+        .share{
+            float: left;
+            margin-left: 0.98rem;
+            margin-top: 0.6rem;
+        }
+        .share i{
+            width: 0.6rem;
+            height: 0.6rem;
+            font-size: 0.94rem;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .share p{
+            font-size: 0.24rem;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 0.3rem;
+        }
+        .QR-code{
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, .8);
+        }
+        .code{
+            width: 100%;
+        }
+        .code img{
+            display: block;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 0.2rem;
+            margin: 0 auto;
+        }
+        .code p{
+            font-size: 0.3rem;
+            color: #ffffff;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        .code-top{
+            height: 3.2rem;
+            width: 100%;
+        }
+        .code-bot{
+            height: 5.2rem;
+            width: 100%;
+        }
+        .count-bot{
+            height: 4.8rem;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 <div class="box">
+    <div class="join-order">
+        <div class="QR-code">
+            <div class="code-top code-none"></div>
+            <div class="code">
+                <img src="../media/order/邀请好友.png" alt=""/>
+                <p>用手机扫一扫二维码，参加我的团</p>
+            </div>
+            <div class="code-bot code-none"></div>
+        </div>
+        <div class="count-down">19:18:05.1</div>
+        <p class="pintuan-tips">还差<span>1</span>人，赶紧邀请好友来拼单吧~</p>
+        <div class="list clearfix">
+            <div class="share">
+                <i class="icon-weixin3"></i>
+                <p>微信好友</p>
+            </div>
+            <div class="share">
+                <i class="icon-pengyouquan"></i>
+                <p>朋友圈</p>
+            </div>
+            <div class="share">
+                <i class="icon-QQ"></i>
+                <p>QQ</p>
+            </div>
+            <div class="share">
+                <i class="icon-QQkongjian"></i>
+                <p>QQ空间</p>
+            </div>
+            <div class="share">
+                <i class="icon-weibo"></i>
+                <p>微博</p>
+            </div>
+            <div class="share" id="scanCode">
+                <i class="icon-saoma"></i>
+                <p>当面扫码</p>
+            </div>
+        </div>
+        <div class="count-bot"></div>
+    </div>
     <div class="null"></div>
     <div class="detail-header">
         <div class="detail-type1 status1">
@@ -316,7 +442,7 @@
             <p style="padding-top: 0.2rem">让小伙伴们都来拼单吧</p>
         </div>
         <div class="detail-type2 status2">
-            <<p style="padding-top: 0.25rem">拼单成功</p>
+            <p style="padding-top: 0.25rem">拼单成功</p>
             <p style="padding-top: 0.2rem">预计拼单成功后48小时内发货</p>
         </div>
         <div class="detail-address">
@@ -342,7 +468,7 @@
                     <p class="price-text"><del>¥69.80</del></p>
                     <p class="cont-indent">×1</p>
                 </div>
-                <div class="item-operation"><span>查看拼单详情</span></div>
+                <div class="item-operation"><span><a href="group_detail.html">查看拼单详情</a></span><span class="status2-span">申请退款</span></div>
             </div>
         </div>
     </div>
@@ -356,47 +482,14 @@
             <div class="number-copy">复制</div>
         </div>
         <p>支付方式：<span>支付宝支付</span></p>
-        <p>支付流水号：<span>32874837158728315123576231576123</span></p>
+        <p>支付流水号：<span>328748371587283</span></p>
         <p>下单时间：<span>2017-09-01 22:33:33</span></p>
     </div>
-    <div class="bot-pingdan">
+    <div class="bot-pingdan status1">
         <div class="invite">
             邀请好友拼单
         </div>
     </div>
-    <!--&lt;!&ndash;待评价&ndash;&gt;
-    <div class="detail-operation status1">
-        <a>删除</a>
-        <a>退款/售后</a>
-        <a style="color: #FF3649;border: 0.01rem solid #FF3649">待评价</a>
-    </div>
-    &lt;!&ndash;已评价&ndash;&gt;
-    <div class="detail-operation status2">
-        <a>删除</a>
-        <a>申请售后</a>
-        <a>追加评论</a>
-    </div>
-    &lt;!&ndash;待发货&ndash;&gt;
-    <div class="detail-operation status3">
-        <a>取消</a>
-        <a>退款/售后</a>
-    </div>
-    &lt;!&ndash;待付款&ndash;&gt;
-    <div class="detail-operation status4">
-        <a>取消</a>
-        <a style="color: #FF3649;border: 0.01rem solid #FF3649">去付款</a>
-    </div>
-    &lt;!&ndash;待收货&ndash;&gt;
-    <div class="detail-operation status5">
-        <a>延长收货</a>
-        <a>查看物流</a>
-        <a>退款/售后</a>
-        <a style="color: #FF3649;border: 0.01rem solid #FF3649">确认收货</a>
-    </div>
-    &lt;!&ndash;已关闭&ndash;&gt;
-    <div class="detail-operation status6">
-        <a>删除</a>
-    </div>-->
 </div>
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script>
@@ -407,16 +500,21 @@
         if(status == 1){
             $('.status1').css('display','block')
         }else if(status==2){
-            $('.status2').css('display','block')
-        }else if(status==3){
-            $('.status3').css('display','block')
-        }else if(status==4){
-            $('.status4').css('display','block')
-        }else if(status==5){
-            $('.status5').css('display','block')
-        }else if(status==6){
-            $('.status6').css('display','block')
+            $('.status2').css('display','block');
+            $('.status2-span').css('display','inline-block');
         }
+        $('.invite').click(function(){
+            $('.join-order').show();
+        })
+        $('.count-bot').click(function(){
+            $('.join-order').hide();
+        })
+        $('#scanCode').click(function(){
+            $('.QR-code').show();
+        })
+        $('.code-none').click(function(){
+            $('.QR-code').hide();
+        })
     })
 
 
