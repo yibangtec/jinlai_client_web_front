@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>退款售后</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #F2F2F3; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative;font-size: 0.26rem}
+        .refund-list {
+            background-color: #fff;margin: 0.1rem 0.2rem;border-radius: 0.15rem;font-size: 0.26rem;color: #3e3a39;
+        }
+        .refund-shops {
+            padding: 0.2rem;
+            font-weight: 700;
+        }
+        .refund-goods {
+            display: flex;
+            border-top: 0.01rem solid #dddddd;
+            padding-bottom: 0.1rem;
+        }
+        .refund-goods img{
+            display: block;
+            width: 1.44rem;
+            height: 1.44rem;
+            margin: 0.1rem 0.2rem 0 0.2rem;
+        }
+        .goods-info{
+            flex: 1;
+        }
+        .goods-info p:first-child{
+            line-height: 0.26rem;
+            padding: 0.2rem 0;
+        }
+        .goods-info p:nth-child(2){
+            height: 0.64rem;
+            font-size: 0.22rem;
+            color: #9fa0a0;
+            line-height: 0.22rem;
+        }
+        .goods-info p:nth-child(3){
+            font-size: 0.24rem;
+            color: #FF3649;
+            line-height: 0.24rem;
+        }
+        .refund-amount{
+            padding: 0.2rem;
+            line-height: 0.26rem;
+        }
+        .refund-results{
+            height: 1.08rem;
+
+        }
+        .results-left{
+            float: left;
+            font-weight: 700;
+            margin: 0.3rem 0 0 0.17rem;
+        }
+        .results-right{
+            float: right;
+            height: 0.54rem;
+            width: 1.2rem;
+            border: 0.02rem solid #FF3649;
+            border-radius: 0.25rem;
+            text-align: center;
+            line-height: 0.54rem;
+            color: #FF3649;
+            margin: 0.3rem 0.2rem 0.2rem 0;
+        }
+        .icon-dianpu:before {
+            content: "\e911";
+            color: #a0a0a0;
+            font-size: 0.36rem;
+            padding-right: 0.2rem;
+        }
+        .icon-Arrow:before {
+            content: "\e905";
+            color: #a0a0a0;
+            font-size: 0.26rem;
+            padding-left: 0.15rem;
+        }
+        .icon-jintuikuan:before {
+            content: "\e959";
+            font-size: 0.54rem;
+            color: #FF3649;
+            vertical-align: -0.1rem;
+            padding-right: 0.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="refund-list">
+            <div class="refund-shops"><i class="icon-dianpu"></i>东堂纹身<i class="icon-Arrow"></i></div>
+            <div class="refund-goods">
+                <img src="../media/icon120@3x.png" alt=""/>
+                <div class="goods-info">
+                    <p>新西兰进口黄金奇异果 6个/份</p>
+                    <p>含有丰富的VC，清热降火，热量极低</p>
+                    <p>退款金额：¥49.80</p>
+                </div>
+                <div class="refund-amount">×1</div>
+            </div>
+            <div class="refund-results clearfix">
+                <div class="results-left"><i class="icon-jintuikuan"></i>仅退款 退款成功</div>
+                <div class="results-right">查看详情</div>
+            </div>
+        </div>
+        <div class="refund-list">
+            <div class="refund-shops"><i class="icon-dianpu"></i>东堂纹身<i class="icon-Arrow"></i></div>
+            <div class="refund-goods">
+                <img src="../media/icon120@3x.png" alt=""/>
+                <div class="goods-info">
+                    <p>新西兰进口黄金奇异果 6个/份</p>
+                    <p>含有丰富的VC，清热降火，热量极低</p>
+                    <p>退款金额：¥49.80</p>
+                </div>
+                <div class="refund-amount">×1</div>
+            </div>
+            <div class="refund-goods">
+                <img src="../media/icon120@3x.png" alt=""/>
+                <div class="goods-info">
+                    <p>新西兰进口黄金奇异果 6个/份</p>
+                    <p>含有丰富的VC，清热降火，热量极低</p>
+                    <p>退款金额：¥49.80</p>
+                </div>
+                <div class="refund-amount">×1</div>
+            </div>
+            <div class="refund-results clearfix">
+                <div class="results-left"><i class="icon-jintuikuan"></i>仅退款 退款失败</div>
+                <div class="results-right">查看详情</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
