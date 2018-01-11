@@ -3,20 +3,166 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-		<title></title>
-		<!--清除浏览器默认样式css-->
-		<link href="css/normal.css" rel="stylesheet"/>
-		<!--公用部分css-->
-		<link href="css/common.css" rel="stylesheet"/>
-		<link href="css/base.css" rel="stylesheet"/>
-		<link href="css/index.css" rel="stylesheet"/>
+		<title>退款申请</title>
+		<script src="../js/rem.js"></script>
+		<link rel="stylesheet" href="../css/fontStyle.css"/>
 		<style>
-			.swiper-scrollbar{
-				display: none;
+			*:before, *:after {box-sizing: border-box; }
+			*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+			html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+				border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+			h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+			em, strong { font-style: normal;}
+			ul, ol, li {list-style: none;}
+			.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+			input{outline:none;}
+			button{border: none;}
+			html{ margin: 0 auto; height: 100%}
+			body {width: 100%;background-color: #f6f6f6; height: 100%}
+			a {text-decoration: none;}
+			.box {width: 100%; height: 100%;position: relative;font-size: 0.26rem}
+			.bgc{
+				background-color: #fff;
+				border-radius: 0.2rem;
+				margin: 0.2rem;
+				padding: 0 0.2rem;
+			}
+			.refund-goods{
+				padding-bottom: 0.22rem;
+			}
+
+			.goods-title{
+				display: flex;
+				line-height: 0.26rem;
+			}
+			.refund-item{
+				padding: 0.34rem 0 0.2rem 0;
+			}
+			.explain{
+				flex: 1;
+				text-align: right;
+				padding: 0.2rem 0;
+			}
+			.explain span{
+				display: inline-block;
+				width: 0.8rem;
+				height: 0.34rem;
+				line-height: 0.34rem;
+				text-align: center;
+				color: #898989;
+				border: 0.01rem solid #9FA0A0;
+				border-radius: 0.06rem;
+			}
+			.imgs img{
+				width: 1.6rem;
+				height: 1.6rem;
+				display: block;
+				float: left;
+				border-radius: 0.12rem;
+				margin-left: 0.1rem;
+				margin-bottom: 0.1rem;
+			}
+			.imgs img:first-child{
+				margin-left: 0;
+			}
+			.imgs img:nth-child(5){
+				margin-left: 0;
+			}
+			.refund-money{
+				display: flex;
+				line-height: 0.26rem;
+				padding: 0.32rem 0.2rem;
+			}
+			.money-title span{
+				color: #FF3649;
+				padding-left: 0.34rem;
+			}
+			.money-message{
+				flex: 1;
+				text-align: right;
+			}
+			.money-message{
+				color: #666464;
+			}
+			.goods-status{
+				padding: 0.32rem 0;
+				border-bottom: 0.01rem solid #dddddd;
+			}
+			.goods-status span{
+				display: inline-block;
+				width: 32.3333333333%;
+			}
+			.icon-Arrow:before {
+				content: "\e905";
+				color: #a0a0a0;
+				font-size: 0.26rem;
+				padding-left: 0.15rem;
+			}
+			.related-description{
+				resize: none;
+				outline: none;
+				width: 6.5rem;
+				border: none;
+				border-bottom: 0.01rem solid #cfcfcf;
+				height: 2rem;
+			}
+			.submit-refund{
+				display: block;
+				width: 7.1rem;
+				height: 0.9rem;
+				margin: 0.5rem 0.2rem;
+				background-color: #FF3649;
+				color: #ffffff;
+				border-radius: 0.12rem;
 			}
 		</style>
 	</head>
 	<body>
-		
+		<div class="box">
+			<div class="refund-goods bgc">
+				<div class="goods-title">
+					<div class="refund-item">退款商品</div>
+					<div class="explain"><span>调整</span></div>
+				</div>
+				<div class="imgs clearfix">
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+				</div>
+			</div>
+			<div class="refund-money bgc">
+				<div class="money-title">退款金额<span>¥999.00</span></div>
+				<div class="money-message">实际金额与商家协商</div>
+			</div>
+			<div class="bgc">
+				<div class="goods-status">
+					<span>货物状态</span>
+					<span>已收货</span>
+					<span>未收货</span>
+				</div>
+				<div class="refund-money" style="padding: 0.32rem 0">
+					<div class="money-title">退款原因</div>
+					<div class="money-message">不想要了<i class="icon-Arrow"></i></div>
+				</div>
+			</div>
+			<div class="refund-goods bgc">
+				<div class="goods-title">
+					<div class="refund-item">相关照片/截图</div>
+				</div>
+				<div class="imgs clearfix">
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="../media/icon120@3x.png" alt=""/>
+				</div>
+			</div>
+			<div class="bgc" style="padding: 0.3rem 0.2rem">
+				<textarea class="related-description" name="" id="" placeholder="请输入相关描述"></textarea>
+			</div>
+			<button class="submit-refund">提交申请</button>
+		</div>
 	</body>
 </html>

@@ -2,9 +2,118 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>商品选择列表</title>
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none;}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #f6f6f6; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative;font-size: 0.26rem}
+        .bgc{
+            background-color: #fff;
+            border-radius: 0.2rem;
+            margin: 0.2rem;
+        }
+        .item-list{
+            display: flex;
+        }
+        .item-img{
+            height: 1.9rem;
+            width: 1.9rem;
+            display: block;
+            border-radius: 0.12rem;
+            margin: 0.2rem;
+            margin-left: 0;
+        }
+        .item-info{
+            flex: 1;
+            padding-top: 0.25rem;
+            border-bottom: 0.01rem solid #9FA0A0;
+        }
+        .item-info .item-name{
+            padding-right: 0.2rem;
+            line-height: 0.36rem;
+        }
+        .item-introduce{
+            font-size: 0.22rem;
+            line-height: 0.22rem;
+            color: #9FA0A0;
+            padding: 0.15rem 0.2rem 0.3rem 0;
+        }
+        .item-money{
+            display: flex;
+            padding-right: 0.2rem;
+        }
+        .item-price{
+            flex: 1;
+        }
+        .item-price del{
+            font-size: 0.22rem;
+            color: #9FA0A0;
+            padding-left: 0.15rem;
+        }
+        .item-quantity{
+
+        }
+        .icon-uncaddress-uncelec-t:before {
+            content: "\e900";
+            padding: 0 0.2rem;
+            font-size: 0.4rem;
+            line-height: 2.3rem;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="box">
+        <div class="bgc">
+            <div class="item-list">
+                <i class="icon-uncaddress-uncelec-t"></i>
+                <img class="item-img" src="../media/icon120@3x.png" alt=""/>
+                <div class="item-info">
+                    <p class="item-name">越南红心火龙果5斤（约400/个）进口水果</p>
+                    <p class="item-introduce">含有丰富的VC，清热降火，热量极低</p>
+                    <p class="item-money"><span class="item-price">¥49.50<del>¥49.50</del></span><span class="item-quantity">×2</span></p>
+                </div>
+            </div>
+            <div class="item-list">
+                <i class="icon-uncaddress-uncelec-t"></i>
+                <img class="item-img" src="../media/icon120@3x.png" alt=""/>
+                <div class="item-info">
+                    <p class="item-name">越南红心火龙果5斤（约400/个）进口水果</p>
+                    <p class="item-introduce">含有丰富的VC，清热降火，热量极低</p>
+                    <p class="item-money"><span class="item-price">¥49.50<del>¥49.50</del></span><span class="item-quantity">×2</span></p>
+                </div>
+            </div>
+            <div class="item-list">
+                <i class="icon-uncaddress-uncelec-t"></i>
+                <img class="item-img" src="../media/icon120@3x.png" alt=""/>
+                <div class="item-info">
+                    <p class="item-name">越南红心火龙果5斤（约400/个）进口水果</p>
+                    <p class="item-introduce">含有丰富的VC，清热降火，热量极低</p>
+                    <p class="item-money"><span class="item-price">¥49.50<del>¥49.50</del></span><span class="item-quantity">×2</span></p>
+                </div>
+            </div>
+            <div class="item-list">
+                <i class="icon-uncaddress-uncelec-t"></i>
+                <img class="item-img" src="../media/icon120@3x.png" alt=""/>
+                <div class="item-info">
+                    <p class="item-name">越南红心火龙果5斤（约400/个）进口水果</p>
+                    <p class="item-introduce">含有丰富的VC，清热降火，热量极低</p>
+                    <p class="item-money"><span class="item-price">¥49.50<del>¥49.50</del></span><span class="item-quantity">×2</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
