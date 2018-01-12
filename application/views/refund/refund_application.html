@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 		<title>退款申请</title>
 		<script src="../js/rem.js"></script>
 		<link rel="stylesheet" href="../css/fontStyle.css"/>
@@ -24,7 +24,7 @@
 			.bgc{
 				background-color: #fff;
 				border-radius: 0.2rem;
-				margin: 0.2rem;
+				margin: 0 0.2rem 0.2rem 0.2rem;
 				padding: 0 0.2rem;
 			}
 			.refund-goods{
@@ -92,12 +92,7 @@
 				display: inline-block;
 				width: 32.3333333333%;
 			}
-			.icon-Arrow:before {
-				content: "\e905";
-				color: #a0a0a0;
-				font-size: 0.26rem;
-				padding-left: 0.15rem;
-			}
+
 			.related-description{
 				resize: none;
 				outline: none;
@@ -115,10 +110,33 @@
 				color: #ffffff;
 				border-radius: 0.12rem;
 			}
+			.icon-un-selected:before {
+				content: "\e9a6";
+			}
+			.icon-address-elect:before {
+				content: "\e903";
+				color: #09bb07;
+			}
+			.icon-Arrow:before {
+				content: "\e905";
+			}
+			.refund-money .icon-Arrow:before {
+				color: #666464;
+				font-size: 0.26rem;
+				padding-left: 0.15rem;
+			}
+			.goods-status .icon-address-elect:before {
+				content: "\e903";
+				color: #09bb07;
+			}
+			.goods-status .icon-un-selected:before {
+				content: "\e9a6";
+			}
 		</style>
 	</head>
 	<body>
 		<div class="box">
+			<div class="placeholder-line"></div>
 			<div class="refund-goods bgc">
 				<div class="goods-title">
 					<div class="refund-item">退款商品</div>
@@ -140,8 +158,8 @@
 			<div class="bgc">
 				<div class="goods-status">
 					<span>货物状态</span>
-					<span>已收货</span>
-					<span>未收货</span>
+					<span><i class="icon-un-selected"></i>已收货</span>
+					<span><i class="icon-address-elect"></i>未收货</span>
 				</div>
 				<div class="refund-money" style="padding: 0.32rem 0">
 					<div class="money-title">退款原因</div>
