@@ -199,9 +199,22 @@ a {text-decoration: none;}
     content: "\e9a9";
 }
 .refund-res .icon-refunded:before {
-    content: "\e962";
     font-size: 0.46rem;
     color: #27BE58;
+    padding-right: 0.2rem;
+}
+.refund-res .icon-waiting-handling:before {
+     font-size: 0.46rem;
+     color: #4e8cee;
+     padding-right: 0.2rem;
+ }
+.refund-res .icon-closed:before {
+    font-size: 0.46rem;
+    padding-right: 0.2rem;
+}
+.refund-res .icon-cancelled:before {
+    font-size: 0.46rem;
+    color: #FF3649;
     padding-right: 0.2rem;
 }
 .refund-res span{
@@ -412,6 +425,194 @@ a {text-decoration: none;}
     height: 0.2rem;
     width: 100%;
     visibility: hidden;
+}
+
+/* refund_application*/
+.bgc{
+    background-color: #fff;
+    border-radius: 0.2rem;
+    margin: 0 0.2rem 0.2rem 0.2rem;
+    padding: 0 0.2rem;
+}
+.refund-goods-img{
+    padding-bottom: 0.22rem;
+}
+
+.goods-title{
+    display: flex;
+    line-height: 0.26rem;
+}
+.refund-item{
+    padding: 0.34rem 0 0.2rem 0;
+}
+.explain{
+    flex: 1;
+    text-align: right;
+    padding: 0.2rem 0 0 0;
+}
+.explain span{
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    text-align: center;
+    color: #898989;
+    border: 0.01rem solid #9FA0A0;
+    border-radius: 0.06rem;
+    margin-top: 0.1rem;
+}
+.imgs img{
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    float: left;
+    border-radius: 0.12rem;
+    margin-left: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+.imgs img:first-child{
+    margin-left: 0;
+}
+.imgs img:nth-child(5){
+    margin-left: 0;
+}
+.refund-money{
+    display: flex;
+    line-height: 0.26rem;
+    padding: 0.32rem 0.2rem;
+}
+.money-title span{
+    color: #FF3649;
+    padding-left: 0.34rem;
+}
+.money-message{
+    flex: 1;
+    text-align: right;
+}
+.money-message{
+    color: #666464;
+}
+.goods-status{
+    padding: 0.28rem 0;
+    border-bottom: 0.01rem solid #dddddd;
+}
+.goods-status span{
+    display: inline-block;
+    width: 32.3333333333%;
+}
+
+.related-description{
+    resize: none;
+    outline: none;
+    width: 6.55rem;
+    border: none;
+    border-bottom: 0.01rem solid #cfcfcf;
+    height: 2rem;
+}
+.submit-refund{
+    display: block;
+    width: 7.1rem;
+    height: 0.9rem;
+    margin: 0.5rem 0.2rem;
+    background-color: #FF3649;
+    color: #ffffff;
+    border-radius: 0.12rem;
+}
+.icon-xuanzhong:before {
+    content: "\e942";
+    color: #09bb07;
+}
+.refund-money .icon-Arrow:before {
+    color: #666464;
+    font-size: 0.26rem;
+    padding-left: 0.15rem;
+}
+.goods-status .icon-xuanzhong:before {
+
+    color: #FF3649;
+    font-size: 0.36rem;
+    padding-right: 0.15rem;
+}
+.goods-status .icon-un-selected:before {
+
+    font-size: 0.36rem;
+    color: #666464;
+    padding-right: 0.15rem;
+}
+.upLoaderBtn{
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 0.01rem solid #CED1D0;
+    border-radius: 0.15rem;
+    box-sizing: border-box;
+    background: url("../media/inputBtn.png") no-repeat;
+    background-size: 1.6rem 1.6rem;
+    overflow: hidden;
+    margin-left: 0.1rem;
+}
+.upLoader{
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    opacity: 0;
+}
+
+
+/* negotiation_record */
+.record-list{
+    background-color: #fff;
+    border-radius: 0.2rem;
+    font-size: 0.26rem;
+    color: #9FA0A0;
+    margin: 0.1rem 0.2rem;
+}
+.icon-dianpu:before {
+    content: "\e911";
+}
+.record-list .icon-dianpu:before {
+    color: #a0a0a0;
+    font-size: 0.36rem;
+    padding-right: 0.2rem;
+}
+.record-shops{
+    padding: 0.2rem;
+    border-bottom: 0.01rem solid #dddddd;
+}
+.shop-name{
+    float: left;
+}
+.shop-name span{
+    color: #3e3a39;
+    font-weight: 700;
+}
+.record-date{
+    float: right;
+}
+.record-detail{
+    padding: 0.3rem 0.2rem;
+}
+.record-detail p{
+    line-height: 0.26rem;
+}
+.record-operation{
+    padding-top: 0.2rem;
+}
+.icon-wode-2:before {
+    content: "\e95e";
+}
+.record-list .icon-wode-2:before {
+    font-size: 0.36rem;
+    padding-right: 0.2rem;
+}
+.record-type{
+    padding-top: 0.1rem;
+}
+
+
+.placeholder-div{
+    height: 0.1rem;
+    width: 100%;
 }
 
 

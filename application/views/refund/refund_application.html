@@ -6,138 +6,12 @@
 		<title>退款申请</title>
 		<script src="../js/rem.js"></script>
 		<link rel="stylesheet" href="../css/fontStyle.css"/>
-		<style>
-			*:before, *:after {box-sizing: border-box; }
-			*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-			html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-				border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
-			h1, h2, h3, h4, h5, h6 {font-weight: normal;}
-			em, strong { font-style: normal;}
-			ul, ol, li {list-style: none;}
-			.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-			input{outline:none;}
-			button{border: none;}
-			html{ margin: 0 auto; height: 100%}
-			body {width: 100%;background-color: #f6f6f6; height: 100%}
-			a {text-decoration: none;}
-			.box {width: 100%; height: 100%;position: relative;font-size: 0.26rem}
-			.bgc{
-				background-color: #fff;
-				border-radius: 0.2rem;
-				margin: 0 0.2rem 0.2rem 0.2rem;
-				padding: 0 0.2rem;
-			}
-			.refund-goods{
-				padding-bottom: 0.22rem;
-			}
-
-			.goods-title{
-				display: flex;
-				line-height: 0.26rem;
-			}
-			.refund-item{
-				padding: 0.34rem 0 0.2rem 0;
-			}
-			.explain{
-				flex: 1;
-				text-align: right;
-				padding: 0.2rem 0;
-			}
-			.explain span{
-				display: inline-block;
-				width: 0.8rem;
-				height: 0.34rem;
-				line-height: 0.34rem;
-				text-align: center;
-				color: #898989;
-				border: 0.01rem solid #9FA0A0;
-				border-radius: 0.06rem;
-			}
-			.imgs img{
-				width: 1.6rem;
-				height: 1.6rem;
-				display: block;
-				float: left;
-				border-radius: 0.12rem;
-				margin-left: 0.1rem;
-				margin-bottom: 0.1rem;
-			}
-			.imgs img:first-child{
-				margin-left: 0;
-			}
-			.imgs img:nth-child(5){
-				margin-left: 0;
-			}
-			.refund-money{
-				display: flex;
-				line-height: 0.26rem;
-				padding: 0.32rem 0.2rem;
-			}
-			.money-title span{
-				color: #FF3649;
-				padding-left: 0.34rem;
-			}
-			.money-message{
-				flex: 1;
-				text-align: right;
-			}
-			.money-message{
-				color: #666464;
-			}
-			.goods-status{
-				padding: 0.32rem 0;
-				border-bottom: 0.01rem solid #dddddd;
-			}
-			.goods-status span{
-				display: inline-block;
-				width: 32.3333333333%;
-			}
-
-			.related-description{
-				resize: none;
-				outline: none;
-				width: 6.5rem;
-				border: none;
-				border-bottom: 0.01rem solid #cfcfcf;
-				height: 2rem;
-			}
-			.submit-refund{
-				display: block;
-				width: 7.1rem;
-				height: 0.9rem;
-				margin: 0.5rem 0.2rem;
-				background-color: #FF3649;
-				color: #ffffff;
-				border-radius: 0.12rem;
-			}
-			.icon-un-selected:before {
-				content: "\e9a6";
-			}
-			.icon-address-elect:before {
-				content: "\e903";
-				color: #09bb07;
-			}
-			.icon-Arrow:before {
-				content: "\e905";
-			}
-			.refund-money .icon-Arrow:before {
-				color: #666464;
-				font-size: 0.26rem;
-				padding-left: 0.15rem;
-			}
-			.goods-status .icon-address-elect:before {
-				content: "\e903";
-				color: #09bb07;
-			}
-			.goods-status .icon-un-selected:before {
-				content: "\e9a6";
-			}
-		</style>
+		<link rel="stylesheet" href="../css/refund.css"/>
 	</head>
 	<body>
 		<div class="box">
 			<div class="placeholder-line"></div>
-			<div class="refund-goods bgc">
+			<div class="refund-goods-img bgc">
 				<div class="goods-title">
 					<div class="refund-item">退款商品</div>
 					<div class="explain"><span>调整</span></div>
@@ -158,23 +32,22 @@
 			<div class="bgc">
 				<div class="goods-status">
 					<span>货物状态</span>
-					<span><i class="icon-un-selected"></i>已收货</span>
-					<span><i class="icon-address-elect"></i>未收货</span>
+					<span class="item-status"><i class="icon-un-selected"></i>已收货</span>
+					<span class="item-status"><i class="icon-xuanzhong"></i>未收货</span>
 				</div>
 				<div class="refund-money" style="padding: 0.32rem 0">
 					<div class="money-title">退款原因</div>
 					<div class="money-message">不想要了<i class="icon-Arrow"></i></div>
 				</div>
 			</div>
-			<div class="refund-goods bgc">
+			<div class="refund-goods-img bgc">
 				<div class="goods-title">
 					<div class="refund-item">相关照片/截图</div>
 				</div>
 				<div class="imgs clearfix">
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
+					<div class="upLoaderBtn">
+						<input class="upLoader" type="file" multiple="multiple" name='file' onchange="upfload(this,'currentAfter')"/>
+					</div>
 				</div>
 			</div>
 			<div class="bgc" style="padding: 0.3rem 0.2rem">
@@ -182,5 +55,93 @@
 			</div>
 			<button class="submit-refund">提交申请</button>
 		</div>
+		<script src="../js/hash.js"></script>
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script>
+			var that ='';
+			var biz = '222';//传入
+			var str='';
+			$(function(){
+				that=$('.upLoaderBtn');
+				$('.item-status').on('click',function(e){
+					$('.item-status').children('i').addClass('icon-un-selected').removeClass('icon-xuanzhong');
+					$(this).children('i').addClass('icon-xuanzhong').removeClass('icon-un-selected');
+				})
+
+			});
+			function upfload(obj,ele) {
+				var bucketname="jinlaisandbox-images"; //服务名
+				var username="jinlaisandbox";	  //操作员账号
+				var password="jinlaisandbox";
+				var file = $(obj).get(0).files[0];
+				var list = $(obj).get(0).files;
+				//console.log(list);
+				for(var i = 0;i < list.length;i++){
+					$('.editContent .loading').show();
+					var time= buildFileName(i, biz);
+					var save_key="/item/description/"+time;
+					var url="https://v0.api.upyun.com/"+ bucketname;
+					var fileinfo=document.getElementById("fileinfo");
+					var policy=btoa(JSON.stringify({"bucket": bucketname, "save-key": save_key, "x-gmkerl-thumb": "/fwfh/2048x2048/rotate/auto", "expiration": parseInt(Date.parse(new Date())+3600)}));
+					var signature="UPYUN jinlaisandbox:"+b64hamcsha1(HexMD5.MD5(password).toString(HexMD5.enc.Hex), "POST&/"+bucketname+"&"+policy);
+					var xhrOnProgress=function(fun){
+						xhrOnProgress.onprogress=fun;
+						return function(){
+							var xhr=$.ajaxSettings.xhr();
+							if (typeof xhrOnProgress.onprogress!=='function'){
+								return xhr;
+							}
+							if (xhrOnProgress.onprogress&&xhr.upload){
+								xhr.upload.onprogress=xhrOnProgress.onprogress;
+							}
+							return xhr;
+						}
+					};
+					var formData=new FormData();
+					formData.append("file",list[i]);
+					formData.append("policy",policy);
+					formData.append("authorization",signature);
+					$.ajax({
+						url:url,
+						type:"POST",
+						data:formData,
+						contentType:false,
+						processData:false,
+						success:function(data, textStatus,xhr){
+							console.log(JSON.parse(data).url);
+							var code =JSON.parse(data).code;
+							console.log(code);
+							var imgUrl = JSON.parse(data).url;
+							var img =$('<img src="https://jinlaisandbox-images.b0.upaiyun.com' + imgUrl +'" />');
+							that.before(img);
+							console.log(that);
+
+						},
+						error:function(xhr){
+							console.log(xhr);
+						}
+					});
+				}
+			}
+			function buildFileName(s, bizId) {
+				var objD = new Date();
+				var timeStr;
+				var yy = objD.getYear();
+				if (yy < 1900) yy = yy + 1900;
+				var MM = objD.getMonth() + 1;
+				if (MM < 10) MM = '0' + MM;
+				var dd = objD.getDate();
+				if (dd < 10) dd = '0' + dd;
+				var hh = objD.getHours();
+				if (hh < 10) hh = '0' + hh;
+				var mm = objD.getMinutes();
+				if (mm < 10) mm = '0' + mm;
+				var ss = objD.getSeconds()+s;
+				if (ss < 10) ss = '0' + ss;
+				bizId = bizId.toString();
+				timeStr = yy + '/' + MM + dd + '/' + hh + mm + ss + bizId + '.jpg';
+				return timeStr;
+			}
+		</script>
 	</body>
 </html>
