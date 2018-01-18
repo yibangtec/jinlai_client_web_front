@@ -21,7 +21,7 @@
         a {text-decoration: none;}
         .box {width: 100%; height: 100%; position: relative}
         .order-header{
-            margin: 0.2rem;
+            margin: 0 0.2rem 0.2rem 0.2rem;
             background-color: #fff;
             border-radius: 0.15rem;
             font-size: 0.26rem;
@@ -260,6 +260,10 @@
             background: url("../media/order/weixuanzhong@3x.png") no-repeat;
             background-size: 0.4rem 0.4rem;
         }
+        .line{
+            height: 0.2rem;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -307,6 +311,7 @@
     </div>
 </div>
 <div class="box">
+    <div class="line"></div>
     <ul class="order-header clearfix">
         <li><a class="order-tab order-active">全部</a></li>
         <li><a class="order-tab">待付款</a></li>

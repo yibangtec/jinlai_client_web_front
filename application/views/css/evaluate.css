@@ -1,0 +1,174 @@
+html{ margin: 0 auto; height: 100%}
+body {width: 100%; height: 100%;background-color: #F2F2F3;}
+a {text-decoration: none;}
+.box {width: 100%; height: 100%; position: relative}
+.evaluate{
+    margin: 0 0.2rem 0.1rem 0.2rem;
+
+    background-color: #fff;
+    border-radius: 0.15rem;
+}
+.item_eva{
+    font-size: 0.28rem;
+    color: #3e3a39;
+    padding: 0.4rem 0.2rem;
+}
+.item_eva img{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.12rem;
+    vertical-align: middle;
+    margin-right: 0.2rem;
+}
+
+.item_eva i{
+    font-size: 0.34rem;
+    margin-left: 0.3rem;
+}
+.input-content{
+    margin: 0 0.2rem;
+    font-size: 0.24rem;
+    line-height: 0.35rem;
+    min-height: 2.5rem;
+    color: #9fa0a0;
+    border-top: 0.01rem solid #e1e1e1;
+    border-bottom: 0.01rem solid #e1e1e1;
+    padding: 0.2rem 0;
+    outline: none;
+}
+.up-img{
+    padding: 0.2rem 0;
+    margin-left: 0.1rem;
+}
+
+.img-list{
+    float: left;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.12rem;
+    margin-left: 0.1rem;
+}
+.img-list img{
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+
+    border-radius: 0.12rem;
+}
+.file-btn{
+    float: left;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.12rem;
+    border: 0.01rem dashed #9fa0a0;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 1.2rem;
+    margin-left: 0.1rem;
+}
+.biz-eva{
+    margin: 0 0.2rem;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    font-size: 0.28rem;
+    color: #3e3a39;
+    padding: 0.25rem 0 0.3rem;
+}
+.biz-name{
+    padding-left: 0.3rem;
+}
+.biz-name i{
+    font-size: 0.36rem;
+    margin-right: 0.2rem;
+}
+.biz-server{
+    padding: 0.4rem 0 0 0.3rem;
+}
+.biz-server i{
+    margin-left: 0.3rem;
+    font-size: 0.34rem;
+}
+.logistics-server{
+    padding: 0.4rem 0 0 0.3rem;
+}
+.logistics-server i{
+    margin-left: 0.3rem;
+    font-size: 0.34rem;
+}
+.Submission-evaluation{
+    position: absolute;
+    bottom: 0;
+    height: 0.9rem;
+    width: 100%;
+    background-color: #ff3649;
+    font-size: 0.28rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.9rem;
+}
+.Submit-evaluate{
+    height: 0.9rem;
+    width: 100%;
+    background-color: #ff3649;
+    font-size: 0.28rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.9rem;
+    margin-top: 2rem;
+}
+.line{
+    height: 0.2rem;
+    width: 100%;
+}
+
+/*È«²¿ÆÀ¼Û*/
+.evaluate-list{
+    margin: 0 0.2rem 0.1rem 0.2rem;
+    font-size: 0.28rem;
+    color: #3e3a39;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    padding-bottom: 0.2rem;
+}
+.evaluate-list:first-child{
+    margin-top: 0.2rem;
+}
+.user-evaluate{
+    margin: 0 0.2rem;
+    padding: 0.2rem 0;
+}
+.eva-left{
+    float: left;
+}
+.eva-left img{
+    display: inline-block;
+    vertical-align: middle;
+    width: 0.56rem;
+    height: 0.56rem;
+    border-radius: 50%;
+    margin-right: 0.1rem;
+}
+
+.eva-right{
+    float: right;
+    color: #9fa0a0;
+}
+.eva-content{
+    padding: 0 0.2rem;
+    line-height: 0.4rem;
+}
+.eva-imgs{
+    margin: 0.3rem 0.2rem 0 0.2rem;
+}
+.eva-imgs img{
+    display: block;
+    float: left;
+    width: 1.26rem;
+    height: 1.26rem;
+    border-radius: 0.12rem;
+    margin-left: 0.1rem;
+}
+.eva-imgs img:first-child{
+    margin-left: 0;
+}
