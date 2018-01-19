@@ -45,7 +45,7 @@ $(document).ready(function(){
     });
     $('#password').blur(function(){
         $('.pass').hide();
-        var re = /^[a-zA-Z0-9]{6,20}$/
+        var re = /^[a-zA-Z0-9]{6,20}$/;
         if (re.test(pass)) {
 
         }else{
@@ -71,7 +71,7 @@ $(document).ready(function(){
     });
     $('#password1').blur(function(){
         $('.pass1').hide();
-        var re = /^[a-zA-Z0-9]{6,20}$/
+        var re = /^[a-zA-Z0-9]{6,20}$/;
         if (re.test(pass1)) {
 
         }else{
@@ -97,7 +97,7 @@ $(document).ready(function(){
     });
     $('#password2').blur(function(){
         $('.pass2').hide();
-        var re = /^[a-zA-Z0-9]{6,20}$/
+        var re = /^[a-zA-Z0-9]{6,20}$/;
         if (re.test(pass2)) {
 
         }else{
@@ -151,23 +151,23 @@ $(document).ready(function(){
     // 执行它
 
     $(".select").click(function(){
-        console.log('jfsdk')
+        console.log('jfsdk');
         $(".select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
         $(".select").siblings(".title-right").find(".operation-del").css('display','inline-block');
         if($(this).find("i").is('.icon-zidongtui')){
-            console.log('jfsdk')
-            $(this).find("i").removeClass('icon-zidongtui')
-            $(this).find("i").addClass('icon-xuanzhong')
+            console.log('jfsdk');
+            $(this).find("i").removeClass('icon-zidongtui');
+            $(this).find("i").addClass('icon-xuanzhong');
             $(this).siblings(".title-right").find(".operation-del").css('display','none');
         }
 
-    })
+    });
     $('.operation-type').click(function(){
         location.href = "edit.html";
-    })
+    });
     $('.operation-del').click(function(){
         $(this).parents(".address").remove();
-    })
+    });
 
     $('#tel').blur(function(){
         var re = /^1\d{10}$/;

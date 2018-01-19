@@ -5,266 +5,10 @@
     <title>团购订单</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="../js/rem.js"></script>
-    <style>
-        *:before, *:after {box-sizing: border-box; }
-        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
-        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
-        em, strong { font-style: normal;}
-        ul, ol, li {list-style: none;}
-        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-        input{outline:none;}
-        button{border: none;}
-        html{ margin: 0 auto; height: 100%}
-        body {width: 100%;background-color: #F2F2F3; height: 100%}
-        a {text-decoration: none;}
-        .box {width: 100%; height: 100%; position: relative}
-        .order-header{
-            margin: 0 0.2rem 0.2rem 0.2rem;
-            background-color: #fff;
-            border-radius: 0.15rem;
-            font-size: 0.26rem;
-            color: #3e3a39;
-        }
-        .order-header li{
-            width: 25%;
-            float: left;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .order-header li a{
-            display: inline-block;
-            padding: 0.26rem 0.15rem;
-        }
-        .order-active{
-            color: #ff3649;
-            border-bottom: 0.04rem solid #ff3649;
-        }
-        .order-all{
-            display: none;
-        }
-        .content{
-            margin: 0 0.2rem;
-            font-size: 0.26rem;
-            color: #3e3a39;
-        }
-        .order-item{
-            background-color: #fff;
-            border-radius: 0.15rem;
-            padding-bottom: 0.2rem;
-            margin:0.1rem 0;
-        }
-        .left-float{
-            float: left;
-        }
-        .right-float{
-            float: right;
-        }
-        .item-title{
-            padding: 0.2rem;
-        }
-        .item-title .title-left i{
-            font-size: 0.36rem;
-            margin-right: 0.2rem;
-        }
-        .item-detail{
-            padding: 0 0.2rem;
-            border-top: 0.01rem solid #DDDDDD;
-        }
-        .item-left{
-            height: 1.4rem;
-            width: 1.4rem;
-            margin: 0.1rem 0.2rem 0.1rem 0;
-        }
-        .item-left img{
-            display: block;
-            height: 1.4rem;
-            width: 1.4rem;
-        }
-        .item-center{
-            width: 3.8rem;
-        }
-        .item-center p:first-child{
-            padding: 0.2rem 0 0.15rem 0;
-        }
-        .item-center p:last-child{
-            font-size: 0.22rem;
-            color: #9fa0a0;
-        }
-        .item-right{
-            padding-top: 0.2rem;
-            text-align: right;
-        }
-        .item-right .price-text{
-            color: #9fa0a0;
-
-        }
-        .item-right .cont-indent{
-            padding-top: 0.1rem;
-        }
-        .item-price{
-            text-align: right;
-            padding-right: 0.2rem;
-        }
-        .item-operation{
-            text-align: right;
-        }
-
-        .item-operation span{
-            display: inline-block;
-            width: 1.2rem;
-            height: 0.54rem;
-            text-align: center;
-            line-height: 0.5rem;
-            margin: 0.2rem 0.2rem 0 0;
-            border: 0.02rem solid #9fa0a0;
-            border-radius: 0.27rem;
-
-        }
-        .item-operation .status{
-            color: #ff3649;
-            border: 0.02rem solid #ff3649;
-        }
-        .weight{
-            font-weight: 600;
-        }
-        .item-operation .pay-btn{
-            border: 0.02rem solid #ff3649;
-            color: #ff3649;
-        }
-        .send{
-            color: #ff3649;
-        }
-        .tips{display: none;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);position: fixed; z-index: 100;margin-top: -0.2rem;
-        }
-        .delete{
-            display: none;
-            width: 6.5rem;
-            height: 3rem;
-            background-color: #fff;
-            position: absolute;
-            left: 50%;
-            margin-left: -3.25rem;
-            top: 50%;
-            margin-top: -1.8rem;
-            border-radius: 0.15rem;
-            font-size: 0.3rem;
-        }
-        .delete p:first-child{
-            height: 0.88rem;
-            line-height: 0.88rem;
-            color: #ff3649;
-            padding-left: 0.2rem;
-        }
-        .delete p:nth-child(2){
-            font-size: 0.26rem;
-            color: #3e3a39;
-            padding: 0.3rem 0 0.6rem 0.2rem;
-            border-bottom: 0.01rem solid #c9caca;
-        }
-        .confirm-select{
-            width: 100%;
-            padding-top: 0.2rem;
-        }
-        .confirm-select div{
-            float: left;
-            width: 50%;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .confirm-select div:first-child{
-            border-right: 0.01rem solid #c9caca;
-        }
-        .confirm-select div:nth-child(2){
-            color: #ff3649;
-        }
-        .receipt{
-            display: none;
-            position: absolute;
-            width: 6.5rem;
-            height: 3.65rem;
-            color: #3e3a39;
-            background-color: #fff;
-            left: 50%;
-            margin-left: -3.25rem;
-            top: 50%;
-            margin-top: -1.8rem;
-            border-radius: 0.15rem;
-            font-size: 0.3rem;
-        }
-        .place-input{
-            padding: 0.2rem 0;
-            text-align: center;
-            border-bottom: 0.01rem solid #c9caca;
-        }
-        .receipt input{
-            height: 0.8rem;
-            width: 5.42rem;
-            border: 0.02rem solid #c9caca;
-            border-radius: 0.12rem;
-            margin: 0.4rem 0 0 0.43rem;
-            padding-left: 0.2rem;
-        }
-        .forget{
-            text-align: right;
-            border-bottom: 0.01rem solid #c9caca;
-        }
-        .forget a{
-            display: inline-block;
-            font-size: 0.26rem;
-            color: #9fa0a0;
-            padding: 0.2rem 0.4rem 0.2rem 0;
-        }
-        .cancel{
-            display: none;
-            position: absolute;
-            width: 6.5rem;
-            height: 6.62rem;
-            color: #3e3a39;
-            background-color: #fff;
-            left: 50%;
-            margin-left: -3.25rem;
-            top: 50%;
-            margin-top: -3.4rem;
-            border-radius: 0.15rem;
-            font-size: 0.3rem;
-        }
-        .cancel-reason{
-            color: #ff3649;
-            padding: 0.3rem 0 0.3rem 0.2rem;
-            border-bottom: 0.01rem solid #ff3649;
-        }
-        .reason-list span{
-            display: inline-block;
-            float: left;
-            margin-left: 0.2rem;
-            padding: 0.27rem 0;
-        }
-        .reason-list{
-            border-bottom: 0.01rem solid #c9caca;
-        }
-        .reason-list i{
-            float: right;
-            display: inline-block;
-            height: 0.4rem;
-            width: 0.4rem;
-            margin-top: 0.2rem;
-            margin-right: 0.2rem;
-        }
-        .reasonSelect{
-            background: url("../media/order/xuanzhong@3x.png") no-repeat;
-            background-size: 0.4rem 0.4rem;
-        }
-        .reasonUnSelect{
-            background: url("../media/order/weixuanzhong@3x.png") no-repeat;
-            background-size: 0.4rem 0.4rem;
-        }
-        .line{
-            height: 0.2rem;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <link rel="stylesheet" href="../css/normal.css"/>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
 </head>
 <body>
 <div class="tips">
@@ -312,7 +56,7 @@
 </div>
 <div class="box">
     <div class="line"></div>
-    <ul class="order-header clearfix">
+    <ul class="group-order-header clearfix">
         <li><a class="order-tab order-active">全部</a></li>
         <li><a class="order-tab">待付款</a></li>
         <li><a class="order-tab">待使用</a></li>
@@ -323,7 +67,7 @@
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
-                    <div class="title-right right-float send">待评价</div>
+                    <div class="title-right right-float current-status">待评价</div>
                 </div>
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -350,12 +94,12 @@
                     </div>
                 </div>
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>删除</span><span>申请售后</span><span class="status"><a href="evaluate_single.html">评价</a></span></div>
+                <div class="item-operation"><span>删除</span><span>申请售后</span><span class="current-red"><a href="evaluate_multi.html">评价</a></span></div>
             </div>
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
-                    <div class="title-right right-float send">已完成</div>
+                    <div class="title-right right-float">已完成</div>
                 </div>
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -377,7 +121,7 @@
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
-                    <div class="title-right right-float send">待付款</div>
+                    <div class="title-right right-float current-status">待付款</div>
                 </div>
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -393,14 +137,14 @@
                 </div>
 
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>联系卖家</span><span class="can-btn">取消</span><span class="go-pay">付款</span></div>
+                <div class="item-operation"><span>联系卖家</span><span class="can-btn">取消</span><span class="go-pay current-red">付款</span></div>
             </div>
         </div>
         <div class="order-all">
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
-                    <div class="title-right right-float send">待使用</div>
+                    <div class="title-right right-float current-status">待使用</div>
                 </div>
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -415,14 +159,14 @@
                     </div>
                 </div>
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>申请售后</span><span class="status"><a href="group_purchase.html">查看券码</a></span></div>
+                <div class="item-operation"><span>申请售后</span><span class="current-red"><a href="group_purchase.html">查看券码</a></span></div>
             </div>
         </div>
         <div class="order-all">
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
-                    <div class="title-right right-float send">待评价</div>
+                    <div class="title-right right-float current-status">待评价</div>
                 </div>
                 <div class="item-detail clearfix">
                     <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
@@ -449,7 +193,7 @@
                     </div>
                 </div>
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
-                <div class="item-operation"><span>删除</span><span>申请售后</span><span class="status"><a href="evaluate_single.html">评价</a></span></div>
+                <div class="item-operation"><span>删除</span><span>申请售后</span><span class="current-red"><a href="evaluate_single.html">评价</a></span></div>
             </div>
         </div>
     </div>
