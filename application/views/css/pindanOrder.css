@@ -1,0 +1,473 @@
+*:before, *:after {box-sizing: border-box; }
+*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+em, strong { font-style: normal;}
+ul, ol, li {list-style: none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+input{outline:none;}
+button{border: none;}
+html{ margin: 0 auto; height: 100%}
+body {width: 100%;background-color: #F2F2F3; height: 100%}
+a {text-decoration: none;}
+.box {width: 100%; height: 100%;position: relative;font-size: 0.26rem;}
+.null{
+    height: 0.2rem;
+    width: 100%;
+}
+.detail-header{
+    margin:0 0.2rem 0 0.2rem; background-color: #fff;border-radius: 0.15rem;font-size: 0.26rem;color: #3e3a39;
+}
+.detail-type1{
+    height: 1.4rem;
+    background: url("../media/order/pindanweichenggong@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-type2{
+    height: 1.4rem;
+    background: url("../media/order/daipingjia@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-type3{
+    height: 1.4rem;
+    background: url("../media/order/daifahuo@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-type4{
+    height: 1.4rem;
+    background: url("../media/order/daifukuan@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-type5{
+    height: 1.4rem;
+    background: url("../media/order/daishouhuo@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-type6{
+    height: 1.4rem;
+    background: url("../media/order/yiguanbi@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+.detail-address{
+    padding: 0.3rem 0.2rem 0.3rem 0.8rem;
+    position: relative;
+}
+.detail-address div b:first-child{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+.detail-address div{
+    padding-bottom: 0.2rem;
+}
+.detail-address div b:last-child{
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+.detail-address p:last-child{
+    padding-top: 0.08rem;
+}
+.detail-address i{
+    position: absolute;
+    left: 0.15rem;
+    top: 0.85rem;
+    font-size: 0.4rem;
+}
+.order-all{
+    margin: 0.1rem 0.2rem;
+}
+.order-item{
+    background-color: #fff;
+    border-radius: 0.15rem;
+}
+.left-float{
+    float: left;
+}
+.right-float{
+    float: right;
+}
+.item-title{
+    padding: 0.2rem;
+}
+.item-title .title-left i{
+    font-size: 0.36rem;
+    margin-right: 0.2rem;
+}
+.item-detail{
+    padding: 0 0.2rem;
+    border-top: 0.01rem solid #DDDDDD;
+}
+.item-left{
+    height: 1.4rem;
+    width: 1.4rem;
+    margin: 0.1rem 0.2rem 0.1rem 0;
+}
+.item-left img{
+    display: block;
+    height: 1.4rem;
+    width: 1.4rem;
+}
+.item-center{
+    width: 3.8rem;
+}
+.item-center p:first-child{
+    padding: 0.2rem 0 0.15rem 0;
+}
+.item-center p:last-child{
+    font-size: 0.22rem;
+    color: #9fa0a0;
+}
+.item-right{
+    padding-top: 0.2rem;
+    text-align: right;
+}
+.item-right .price-text{
+    color: #9fa0a0;
+
+}
+.item-right .cont-indent{
+    padding-top: 0.1rem;
+}
+.item-price{
+    text-align: right;
+    padding-right: 0.2rem;
+}
+.item-operation{
+    text-align: right;
+}
+.item-operation span{
+    display: inline-block;
+    padding: 0 0.1rem;
+    height: 0.54rem;
+    text-align: center;
+    line-height: 0.5rem;
+    margin: 0.2rem 0 0.2rem 0.2rem;
+    border: 0.02rem solid #9fa0a0;
+    border-radius: 0.27rem;
+}
+
+.item-operation .pay-btn{
+    border: 0.02rem solid #ff3649;
+    color: #ff3649;
+}
+.send{
+    color: #ff3649;
+}
+.price-type{
+    margin: 0.1rem 0.2rem;
+    background-color: #fff;
+    font-size: 0.26rem;
+    color: #3e3a39;
+    border-radius: 0.15rem;
+}
+.price-info{
+    padding: 0.3rem 0 0.2rem 0.2rem;
+    font-weight: 600;
+    border-bottom: 0.01rem solid #DDDDDD;
+}
+.total{
+    margin: 0 0.2rem;
+}
+.total span:first-child{
+    display: inline-block;
+    width: 50%;
+    font-size: 0.24rem;
+    color: #666464;
+}
+.total span:last-child{
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+    font-size: 0.24rem;
+    color: #666464;
+}
+.total-box{
+    border-bottom: 0.01rem dashed #DDDDDD;
+    padding: 0.2rem 0;
+}
+.total-box .total .weight{
+    font-weight: 600;
+    font-size: 0.26rem;
+    color: #3e3a39;!important;
+}
+.total-box:last-child{
+    border: none;
+}
+.detail-btn{
+    margin: 0.1rem 0.2rem;
+    background-color: #fff;
+    font-size: 0.24rem;
+    color: #3e3a39;
+    border-radius: 0.15rem;
+}
+.detail-btn div{
+    height: 0.6rem;
+    width: 3.22rem;
+    line-height: 0.6rem;
+    text-align: center;
+    border: 0.02rem solid #9fa0a0;
+    border-radius: 0.1rem;
+}
+.detail-btn .customer-service{
+    float: left;
+    margin: 0.2rem 0 0.2rem 0.2rem;
+}
+.detail-btn .tel-service{
+    float: right;
+    margin: 0.2rem 0.2rem 0.2rem 0;
+}
+.order-parameter{
+    margin: 0.1rem 0.2rem;
+    background-color: #fff;
+    font-size: 0.24rem;
+    color: #666464;
+    border-radius: 0.15rem;
+    padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+}
+.serial-number{
+    float: left;
+    margin-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
+.number-copy{
+    float: right;
+    border: 0.02rem solid #9fa0a0;
+    border-radius: 0.06rem;
+    padding: 0.05rem;
+}
+.order-parameter p{
+    height: 0.34rem;
+    line-height: 0.34rem;
+}
+.detail-operation{
+    width: 100%;
+    text-align: right;
+    background-color: #fff;
+    border-top: 0.02rem solid #D4D4D4;
+    padding: 0.22rem 0;
+    margin-top: 0.6rem;
+}
+.detail-operation a{
+    height: 0.5rem;
+    width: 1.4rem;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.24rem;
+    color: #3e3a39;
+    display: inline-block;
+    border: 0.02rem solid #9fa0a0;
+    border-radius: 0.25rem;
+    margin-right: 0.3rem;
+}
+.box .status1,.box .status2{
+    display: none;
+}
+.status2-span{
+    display: none;
+}
+.bot-pingdan{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.2rem 0;
+    background-color: #fff;border-top: 0.01rem solid #e1e1e1;
+    text-align: right;
+}
+.invite{
+    display: inline-block;
+    height: 0.54rem;
+    width: 1.8rem;
+    font-size: 0.24rem;
+    text-align: center;
+    color: #ffffff;
+    line-height: 0.54rem;
+    background-color: #FF3649;
+    border-radius: 0.25rem;
+    margin-right: 0.2rem;
+}
+.join-order{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .8);
+}
+.count-down{
+    width: 1.8rem;
+    height: 0.56rem;
+    background-color: #fff;
+    font-size: 0.26rem;
+    color: #3e3a39;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0 2rem 2.85rem;
+    line-height: 0.56rem;
+    text-align: center;
+}
+.pintuan-tips{
+    font-size: 0.32rem;
+    color: #ffffff;
+    text-align: center;
+}
+.pintuan-tips span{
+    color: #FF3649;
+}
+.list{
+    margin-left: 0.36rem;
+}
+.share{
+    float: left;
+    margin-left: 0.98rem;
+    margin-top: 0.6rem;
+}
+.share i{
+    width: 0.6rem;
+    height: 0.6rem;
+    font-size: 0.94rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.share p{
+    font-size: 0.24rem;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 0.3rem;
+}
+.QR-code{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .8);
+}
+.code{
+    width: 100%;
+}
+.code img{
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.2rem;
+    margin: 0 auto;
+}
+.code p{
+    font-size: 0.3rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+.code-top{
+    height: 3.2rem;
+    width: 100%;
+}
+.code-bot{
+    height: 5.2rem;
+    width: 100%;
+}
+.count-bot{
+    height: 4.8rem;
+    width: 100%;
+}
+
+
+
+.result-header{
+    background-color: #fff;
+    border-radius: 0.15rem;
+    font-size: 0.24rem;
+    color: #9FA0A0;
+    text-align: center;
+    padding: 0.5rem 0 0.3rem 0;
+    margin: 0 0.2rem 0.1rem 0.2rem;
+}
+.result-header p{
+    line-height: 0.64rem;
+    text-align: center;
+}
+.groups-img {
+    padding: 0.3rem 0 0.1rem 0;
+    text-align: center;
+}
+.groups-img li{
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    border: 0.01rem solid #9FA0A0;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+.groups-img li img{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+.result-title span{
+    font-size: 0.32rem;
+    color: #3e3a39;
+    line-height: 0.5rem;
+    padding-left: 0.2rem;
+}
+.result-title i{
+    font-size: 0.48rem;
+    color: #27BE58;
+
+}
+.line{
+    height: 0.2rem;
+    width: 100%;
+}
+.groups-img .img-active{
+    border: 0.01rem solid #FF3649;
+}
+.pindan-info{
+    background-color: #fff;
+    border-radius: 0.15rem;
+    font-size: 0.26rem;
+    color: #9FA0A0;
+    margin: 0 0.2rem;
+}
+.pindan-info-title{
+    color: #3e3a39;
+    line-height: 0.66rem;
+    border-bottom: 0.01rem solid #e1e1e1;
+    padding-left: 0.2rem;
+}
+.pindan-info-content{
+    display: flex;
+    line-height: 0.46rem;
+}
+.label{
+    width: 1.5rem;
+    padding-left: 0.2rem;
+}
+.label-map{
+    flex: 1;
+}
+.again{
+    width: 4.9rem;
+    height: 0.8rem;
+    margin-top: 0.6rem;
+    border-radius: 0.2rem;
+    border: 0.02rem solid #9FA0A0;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.8rem;
+    margin-left: 1.3rem;
+}

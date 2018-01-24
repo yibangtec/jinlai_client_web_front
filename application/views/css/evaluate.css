@@ -49,11 +49,10 @@ a {text-decoration: none;}
     border-radius: 0.12rem;
     margin-left: 0.1rem;
 }
-.img-list img{
+.up-img img{
     display: block;
     width: 1.25rem;
     height: 1.25rem;
-
     border-radius: 0.12rem;
 }
 .file-btn{
@@ -66,6 +65,15 @@ a {text-decoration: none;}
     text-align: center;
     line-height: 1.2rem;
     margin-left: 0.1rem;
+    position: relative;
+}
+.upload-img {
+    position: absolute;
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    top: 0;left: 0;
+    opacity: 0;
 }
 .biz-eva{
     margin: 0 0.2rem;
@@ -122,7 +130,7 @@ a {text-decoration: none;}
     width: 100%;
 }
 
-/*È«²¿ÆÀ¼Û*/
+/**/
 .evaluate-list{
     margin: 0 0.2rem 0.1rem 0.2rem;
     font-size: 0.28rem;

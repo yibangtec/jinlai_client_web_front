@@ -1,11 +1,11 @@
 /**
  * Created by Administrator on 2017/10/30 0030.
  */
-$(document).ready(function(){
+$(function(){
 
-    var tel='';
+
     $('#mobile').bind('input onchange', function() {
-        tel = $('#mobile').val();
+
         var isFocus = $('#mobile').is(":focus");
         console.log(isFocus);
         if($('#mobile').val().length > 0 || isFocus == true){
@@ -17,21 +17,14 @@ $(document).ready(function(){
             $('.tel').show();
         }
     });
-    $('#mobile').blur(function(){
-        $('.tel').hide();
-        var re = /^1\d{10}$/;
-
-        if (re.test(tel)) {
-
-        }else{
-            $('.tips-text').html('手机号格式错误');
-            $('.error-tips').show();
-            actionDo();
-        }
+    $('.input-box .tel').on('click',function(){
+        $('#mobile').val('');
+        console.log('sdfsdf')
     });
-    var pass='';
+
+
     $('#password').bind('input onchange', function() {
-        pass = $('#password').val();
+
         var isFocus = $('#password').is(":focus");
         console.log(isFocus);
         if($('#password').val().length > 0 || isFocus == true){
@@ -39,25 +32,99 @@ $(document).ready(function(){
         }
     });
     $('#password').focus(function(){
+        $('.tel').hide();
+
         if($('#password').val().length > 0){
             $('.pass').show();
         }
     });
-    $('#password').blur(function(){
+    $('.input-box .pass').on('click',function(){
+        $('#password').val('');
+        console.log('sdfsdf')
+    });
+
+    $('#submit').on('click',function(){
+        console.log('safdsfsdf');
         $('.pass').hide();
+        $('.ver').hide();
+        var verification = $('#verification').val();
+        var pass = $('#password').val();
+        var tel = $('#mobile').val();
+        if(tel){
+            var regTel = /^1\d{10}$/;
+            if (re.test(regTel)) {
+
+            }else{
+                $('.tips-text').html('手机号格式错误');
+                $('.error-tips').show();
+                actionDo();
+            }
+        }else if(pass){
+            console.log('pass');
+            var regPass = /^[a-zA-Z0-9]{6,20}$/;
+            if (re.test(regPass)) {
+
+            }else{
+                $('.tips-text').html('密码长度应在6-20位之间');
+                $('.error-tips').show();
+                actionDo();
+            }
+        }else if(verification){
+            console.log('ver');
+            var reg = /^.{6,}$/;
+            if(!reg.test(verification)){
+                $('.tips-text').html('验证码格式不正确');
+                $('.error-tips').show();
+                actionDo();
+            }else{
+
+            }
+        }
+
+    });
+    $('#submit-reset').on('click',function(){
+        $('.pass2').hide();
+        var pass1 = $('#password1').val();
+        var pass2 = $('#password2').val();
         var re = /^[a-zA-Z0-9]{6,20}$/;
-        if (re.test(pass)) {
+        if (pass1==pass2) {
 
         }else{
-            $('.tips-text').html('密码长度应在6-20位之间');
+            $('.tips-text').html('两次密码输入不一致');
             $('.error-tips').show();
             actionDo();
         }
     });
 
-    var pass1='';
+    $('#submit-change').on('click',function(){
+        $('.pass2').hide();
+        var pass1 = $('#password1').val();
+        var pass2 = $('#password2').val();
+        var re = /^[a-zA-Z0-9]{6,20}$/;
+        if (pass1==pass2) {
+
+        }else{
+            $('.tips-text').html('两次密码输入不一致');
+            $('.error-tips').show();
+            actionDo();
+        }
+    });
+
+    $('#submit-set').on('click',function(){
+        $('.pass2').hide();
+        var pass1 = $('#password1').val();
+        var pass2 = $('#password2').val();
+        var re = /^[a-zA-Z0-9]{6,20}$/;
+        if (pass1==pass2) {
+
+        }else{
+            $('.tips-text').html('两次密码输入不一致');
+            $('.error-tips').show();
+            actionDo();
+        }
+    });
     $('#password1').bind('input onchange', function() {
-        pass1 = $('#password1').val();
+
         var isFocus = $('#password1').is(":focus");
         console.log(isFocus);
         if($('#password1').val().length > 0 || isFocus == true){
@@ -65,12 +132,51 @@ $(document).ready(function(){
         }
     });
     $('#password1').focus(function(){
+        $('.pass').hide();
+        $('.ver').hide();
+        var verification = $('#verification').val();
+        var pass = $('#password').val();
+        if(pass){
+            var re = /^[a-zA-Z0-9]{6,20}$/;
+            if (re.test(pass)) {
+
+            }else{
+                $('.tips-text').html('密码长度应在6-20位之间');
+                $('.error-tips').show();
+                actionDo();
+            }
+        }else if(verification){
+            var reg = /^.{6,}$/;
+            if(!reg.test(verification)){
+                $('.tips-text').html('验证码格式不正确');
+                $('.error-tips').show();
+                actionDo();
+            }else{
+
+            }
+        }
         if($('#password1').val().length > 0){
             $('.pass1').show();
         }
     });
-    $('#password1').blur(function(){
+    $('.input-box .pass1').on('click',function(){
+        $('#password1').val('');
+        console.log('sdfsdf')
+    });
+
+
+
+    $('#password2').bind('input onchange', function() {
+
+        var isFocus = $('#password2').is(":focus");
+        console.log(isFocus);
+        if($('#password2').val().length > 0 || isFocus == true){
+            $('.pass2').show();
+        }
+    });
+    $('#password2').focus(function(){
         $('.pass1').hide();
+        var pass1 = $('#password1').val();
         var re = /^[a-zA-Z0-9]{6,20}$/;
         if (re.test(pass1)) {
 
@@ -79,37 +185,18 @@ $(document).ready(function(){
             $('.error-tips').show();
             actionDo();
         }
-    });
-
-    var pass2='';
-    $('#password2').bind('input onchange', function() {
-        pass2 = $('#password2').val();
-        var isFocus = $('#password2').is(":focus");
-        console.log(isFocus);
-        if($('#password2').val().length > 0 || isFocus == true){
-            $('.pass2').show();
-        }
-    });
-    $('#password2').focus(function(){
         if($('#password2').val().length > 0){
             $('.pass2').show();
         }
     });
-    $('#password2').blur(function(){
-        $('.pass2').hide();
-        var re = /^[a-zA-Z0-9]{6,20}$/;
-        if (re.test(pass2)) {
-
-        }else{
-            $('.tips-text').html('密码长度应在6-20位之间');
-            $('.error-tips').show();
-            actionDo();
-        }
+    $('.input-box .pass2').on('click',function(){
+        $('#password2').val('');
+        console.log('sdfsdf')
     });
 
-    var verification='';
+
+
     $('#verification').bind('input onchange', function() {
-        verification = $('#verification').val();
         var isFocus = $('#verification').is(":focus");
         console.log(isFocus);
         if($('#verification').val().length > 0 || isFocus == true){
@@ -117,18 +204,28 @@ $(document).ready(function(){
         }
     });
     $('#verification').focus(function(){
+        $('.tel').hide();
+        var tel = $('#mobile').val();
+        var re = /^1\d{10}$/;
+        if (re.test(tel)) {
+        }else{
+            $('.tips-text').html('手机号格式错误');
+            $('.error-tips').show();
+            actionDo();
+        }
         if($('#verification').val().length > 0){
             $('.ver').show();
         }
     });
-    $('#verification').blur(function(){
-        $('.ver').hide();
-        
+
+    $('.input-box .ver').on('click',function(){
+        $('#verification').val('');
+        console.log('sdfsdf')
     });
 
     $("#next").click(function(){
         var re = /^1\d{10}$/;
-
+        var tel = $('#mobile').val();
         if (re.test(tel)) {
             $(this).hide();
             //这里判断是否注册过
@@ -146,7 +243,6 @@ $(document).ready(function(){
             actionDo();
         }
     });
-
 
     // 执行它
 

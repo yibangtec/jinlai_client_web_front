@@ -1,78 +1,39 @@
-<style>
-	#item-list>li {border-bottom:1px solid #aaa;margin-bottom:2rem;}
+    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/address.css"/>
 
-	/* 宽度在750像素以上的设备 */
-	@media only screen and (min-width:751px)
-	{
-
-	}
-	
-	/* 宽度在960像素以上的设备 */
-	@media only screen and (min-width:961px)
-	{
-
-	}
-
-	/* 宽度在1280像素以上的设备 */
-	@media only screen and (min-width:1281px)
-	{
-
-	}
-</style>
-
-<div id=content class=container>
-	<nav id=nav-main>
-		<ul class=row>
-			<li class="col-xs-12">
-				<a class="btn btn-primary btn-lg btn-block" title="创建<?php echo $this->class_name_cn ?>" href="<?php echo base_url($this->class_name.'/create') ?>"><i class="fa fa-plus" aria-hidden=true></i> 添加新<?php echo $this->class_name_cn ?></a>
-			</li>
-		</ul>
-	</nav>
-
-	<?php if ( empty($items) ): ?>
-	<blockquote>
-		<p>这里空空如也，快点添加<?php echo $this->class_name_cn ?>吧</p>
-	</blockquote>
-
-	<?php else: ?>
-	<ul id=item-list class=row>
-
-		<?php foreach ($items as $item): ?>
-		<li class=col-xs-12>
-			<ul class=row>
-				<?php if ( strpos(DEVELOPER_MOBILES, ','.$this->session->mobile.',') !== FALSE ): ?>
-				<li class=col-xs-12>ID <?php echo $item[$this->id_name] ?></li>
-				<?php endif ?>
-
-				<li class=col-xs-12>
-					<?php if ( !empty($item['brief']) ): ?>
-					<em>[<?php echo $item['brief'] ?>]</em>
-					<?php endif ?>
-
-					<?php echo $item['fullname'] ?>
-					<span class="pull-right text-right"><?php echo $item['mobile'] ?></span>
-				</li>
-				<li class=col-xs-12>
-					<?php echo $item['province']. $item['city']. $item['county']. '<br>'.$item['street'] ?>
-				</li>
-				<li class=col-xs-12>
-					<ul class="row">
-						<?php if ($item['address_id'] == $this->session->address_id): ?>
-						<li class="col-xs-6"><i class="fa fa-check-circle" aria-hidden=true></i> 默认地址</li>
-
-						<?php else: ?>
-						<li class="col-xs-6"><a title="设为默认" href="<?php echo base_url($this->view_root.'/default_this?id='.$item[$this->id_name]) ?>" target=_blank><i class="fa fa-circle-o"></i> 设为默认</a></li>
-						<li class="col-xs-3"><a title="删除" href="<?php echo base_url($this->class_name.'/delete?ids='.$item[$this->id_name]) ?>" target=_blank><i class="fa fa-trash"></i> 删除</a></li>
-
-						<?php endif ?>
-
-						<li class="col-xs-3"><a title="修改" href="<?php echo base_url($this->class_name.'/edit?id='.$item[$this->id_name]) ?>" target=_blank><i class="fa fa-edit"></i> 修改</a></li>
-					</ul>
-				</li>
-			</ul>
-		</li>
-		<?php endforeach ?>
-
-	</ul>
-	<?php endif ?>
+<div class="box">
+    <div class="address">
+        <div class="address-title clearfix">
+            <div class="title-left"><span class="address-type">家</span>谭女士</div>
+            <div class="title-right">139****2419</div>
+        </div>
+        <div class="address-content">
+            <p>青岛市崂山区</p>
+            <p>东海东路1号，麦岛金岸，意帮3层</p>
+        </div>
+        <div class="address-operation clearfix">
+            <div class="title-left select"><i class="icon-zidongtui"></i> <span>设为默认</span></div>
+            <div class="title-right"><span class="operation-del"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
+        </div>
+    </div>
+    <div class="address">
+        <div class="address-title clearfix">
+            <div class="title-left"><span class="address-type">家</span>谭女士</div>
+            <div class="title-right">139****2419</div>
+        </div>
+        <div class="address-content">
+            <p>青岛市崂山区</p>
+            <p>东海东路1号，麦岛金岸，意帮3层</p>
+        </div>
+        <div class="address-operation clearfix">
+            <div class="title-left select"><i class="icon-zidongtui"></i> <span>设为默认</span></div>
+            <div class="title-right"><span class="operation-del"><i class="icon-del"></i> 删除</span><span class="operation-type"><i class="icon-write"></i> 编辑</span></div>
+        </div>
+    </div>
+    <div class="creat-address"><a href="create">新建地址</a></div>
 </div>
+<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo CDN_URL ?>js/account.js"></script>

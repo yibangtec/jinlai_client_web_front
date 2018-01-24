@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>拼团订单详情</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script src="../js/rem.js"></script>
-    <link rel="stylesheet" href="../css/fontStyle.css"/>
-    <link rel="stylesheet" href="../css/pindanOrder.css"/>
-</head>
-<body>
+
+    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/pindanOrder.css"/>
+
 <div class="box">
     <div class="join-order">
         <div class="QR-code">
             <div class="code-top code-none"></div>
             <div class="code">
-                <img src="../media/order/邀请好友.png" alt=""/>
+                <img src="<?php echo CDN_URL ?>media/order/邀请好友.png" alt=""/>
                 <p>用手机扫一扫二维码，参加我的团</p>
             </div>
             <div class="code-bot code-none"></div>
@@ -72,7 +66,7 @@
                 <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span></div>
             </div>
             <div class="item-detail clearfix">
-                <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                <div class="item-left left-float"><img src="<?php echo CDN_URL ?>media/order/orderimg.png" alt=""/></div>
                 <div class="item-center left-float">
                     <p>新西兰进口黄金奇异果6个/份</p>
                     <p>含有丰富的vc，清热降火热量极低。</p>
@@ -105,7 +99,7 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script>
 
     $(document).ready(function(){
@@ -133,5 +127,3 @@
 
 
 </script>
-</body>
-</html>

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+
 		<title>退款申请</title>
-		<script src="../js/rem.js"></script>
-		<link rel="stylesheet" href="../css/fontStyle.css"/>
-		<link rel="stylesheet" href="../css/refund.css"/>
-	</head>
-	<body>
+		<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/refund.css"/>
+
 		<div class="box">
 			<div class="placeholder-line"></div>
 			<div class="refund-goods-img bgc">
@@ -17,12 +12,12 @@
 					<div class="explain"><span>调整</span></div>
 				</div>
 				<div class="imgs clearfix">
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
-					<img src="../media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
+					<img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
 				</div>
 			</div>
 			<div class="refund-money bgc">
@@ -55,8 +50,8 @@
 			</div>
 			<button class="submit-refund">提交申请</button>
 		</div>
-		<script src="../js/hash.js"></script>
-		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="<?php echo CDN_URL ?>js/hash.js"></script>
+		<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 		<script>
 			var that ='';
 			var biz = '222';//传入
@@ -71,6 +66,5 @@
 			});
 
 		</script>
-		<script src="../js/uploadImg.js"></script>
-	</body>
-</html>
+		<script src="<?php echo CDN_URL ?>js/uploadImg.js"></script>
+

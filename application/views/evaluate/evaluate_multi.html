@@ -28,19 +28,9 @@
             商品怎么样，写点评论，给其他想买的小伙伴做个参考呗。
         </div>
         <div class="up-img clearfix">
-            <div class="img-list">
-                <img src="../media/order/orderimg.png" alt=""/>
-            </div>
-            <div class="img-list">
-                <img src="../media/order/orderimg.png" alt=""/>
-            </div>
-            <div class="img-list">
-                <img src="../media/order/orderimg.png" alt=""/>
-            </div>
-            <div class="img-list">
-                <img src="../media/order/orderimg.png" alt=""/>
-            </div>
+
             <div class="file-btn">
+                <input type="file" class="upload-img" multiple="multiple" name='file' onchange="upfload(this,'currentAfter')"/>
                 <i class="icon-xiangji"></i>
             </div>
         </div>
@@ -71,6 +61,7 @@
                 <img src="../media/order/orderimg.png" alt=""/>
             </div>
             <div class="file-btn">
+                <input type="file" class="upload-img" multiple="multiple" name='file' onchange="upfload(this,'currentAfter')"/>
                 <i class="icon-xiangji"></i>
             </div>
         </div>
@@ -102,6 +93,7 @@
                 <img src="../media/order/orderimg.png" alt=""/>
             </div>
             <div class="file-btn">
+                <input type="file" class="upload-img"/>
                 <i class="icon-xiangji"></i>
             </div>
         </div>
@@ -132,7 +124,9 @@
 
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script>
-
+    var that ='';
+    var biz = '222';//传入
+    var str='';
     $(function(){
         $('.e-icon').on('click',function(){
             var index =$(this).index();
@@ -160,5 +154,8 @@
 
 
 </script>
+<script src="../js/hash.js"></script>
+
+<script src="../js/uploadImg.js"></script>
 </body>
 </html>

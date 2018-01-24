@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>拼单结果</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script src="../js/rem.js"></script>
-    <link rel="stylesheet" href="../css/fontStyle.css"/>
-    <link rel="stylesheet" href="../css/pindanOrder.css"/>
-</head>
-<body>
+
+    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/pindanOrder.css"/>
+
 <div class="box">
     <div class="line"></div>
     <div class="result-header">
@@ -17,7 +11,7 @@
         </div>
         <p>商家正在努力发货，请耐心等待！</p>
         <ul class="groups-img clearfix">
-            <li class="img-active"><img src="../media/order/touxiang@3x.png" alt=""/></li>
+            <li class="img-active"><img src="<?php echo CDN_URL ?>media/order/touxiang@3x.png" alt=""/></li>
             <li></li>
             <li></li>
         </ul>
@@ -50,5 +44,3 @@
         再拼一份
     </div>
 </div>
-</body>
-</html>
