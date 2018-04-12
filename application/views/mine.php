@@ -100,12 +100,3 @@
 		<dd><?php echo $item['last_login_ip'] ?></dd>
 	</dl>
 </div>
-<script>
-	var code = getQueryString('code');
-    console.log(code)
-        function getQueryString(name) {//取URL参数  你要得到userid 就传userid
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]); return null;
-        }
-</script>

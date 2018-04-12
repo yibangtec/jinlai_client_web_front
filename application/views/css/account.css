@@ -13,7 +13,7 @@ ul, ol, li {list-style: none;}
     visibility:hidden;
 }
 input{outline:none;}
-button{border: none;}
+button{border: none; outline: none;}
 html{ margin: 0 auto; height: 100%}
 body {width: 100%;background-color: #fff; height: 100%}
 a {text-decoration: none;}
@@ -133,6 +133,27 @@ input:-webkit-autofill {
     margin-top: 0.1rem;
 }
 
+.bank{
+    margin: 0.2rem 0.1rem;
+    background-color: #fff;
+    border-radius: 0.2rem;
+}
+.bank-name{
+    font-size: 0.28rem;
+    color: rgb(62,58,57);
+    padding-left: 0.2rem;
+    line-height: 0.86rem;
+    border-bottom: 0.01rem solid #dcdddd;
+}
+.bank-name span{
+    font-size: 0.22rem;
+    color: rgb(114,113,113);
+}
+.bank-item{
+    width: 100%;
+}
+
+
 
 .header-news{
     float: right;
@@ -152,7 +173,7 @@ input:-webkit-autofill {
 .bot-float{
     float: left;
     text-align: center;
-    width: 33.3333333%;
+    width: 25%;
     font-size: 0.26rem;
     padding-top: 0.16rem;
 }
@@ -320,4 +341,36 @@ input:-webkit-autofill {
     content: "\e97e";
     color: #f59ae3;
     font-size: 0.54rem;
+}
+
+.icon-kanguode:before {
+    content: "\e9b4";
+    color: #ffffff;
+    font-size: 0.45rem;
+}
+.icon-huiyuan-2:before {
+    content: "\e957";
+    color: #ffffff;
+    font-size: 0.45rem;
+}
+.icon-shezhi:before {
+    content: "\e974";
+    color: #a19fed;
+    font-size: 0.54rem;
+}
+
+.icon-huiyuanquanyi:before {
+    content: "\e9af";
+    color: #f5b53a;
+    font-size: 0.54rem;
+}
+.icon-jiekuan:before {
+    content: "\e971";
+    color: #f5cf4c;
+    font-size: 0.45rem;
+}
+.icon-shenqing:before {
+    content: "\e973";
+    color: #81b5f1;
+    font-size: 0.45rem;
 }

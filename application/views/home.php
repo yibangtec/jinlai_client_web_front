@@ -1854,3 +1854,14 @@ function TotalPrice() {
 //banner焦点图
 	//$('.coloroverlaywrap').fsBanner();	
 </script>
+
+<script>
+	var code = getQueryString('code');
+    console.log(code)
+
+        function getQueryString(name) {//取URL参数  你要得到userid 就传userid
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+</script>

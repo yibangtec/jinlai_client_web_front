@@ -48,7 +48,7 @@
                         </div>
 
                     </div>
-                    <div class="forget">忘记密码？</div>
+                    <div class="forget"><a href="password_reset.html">忘记密码？</a></div>
                 </div>
             </div>
 
@@ -73,5 +73,26 @@
 <script src="../js/jquery-3.2.1.min.js"></script>
 
 <script src="../js/account.js"></script>
+<script>
+    $(function(){
+        $('.wx-icon').on('click',function(){
+            $.ajax({
+                url: "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect",
+                type: 'GET',
+                dataType: 'JSONP',
+                success: function (data) {
+                    var info=JSON.parse(data);
+                    console.log(info);
+                }
+            });
+        })
+
+        function getQueryString(name) {//取URL参数  你要得到userid 就传userid
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    })
+</script>
 </body>
 </html>

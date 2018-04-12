@@ -40,7 +40,7 @@
                         </div>
 
                     </div>
-                    <div class="forget">忘记密码？</div>
+                    <div class="forget"><a href="password_reset">忘记密码？</a></div>
                 </div>
             </div>
 
@@ -65,3 +65,14 @@
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<script>
+    $(function(){
+        $('.wx-icon').on('click',function(){
+            var APPID = '<?php echo WECHAT_APP_ID ?>';
+            var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxba173a67df14c087&redirect_uri=https%3a%2f%2fwww.517ybang.com&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+            window.location = url;
+
+        })
+
+    })
+</script>
