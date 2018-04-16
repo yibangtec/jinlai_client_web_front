@@ -98,7 +98,7 @@ input:-webkit-autofill {
 .header{
     width: 100%;
     height: 3.5rem;
-    background: url("<?php echo CDN_URL ?>media/account/mine/beijing@3x.png") no-repeat;
+    background: url("https://cdn-remote.517ybang.com/media/account/mine/beijing@3x.png") no-repeat;
     background-size: 100% 3.5rem;
 }
 .header-top{
