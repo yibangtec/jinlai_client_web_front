@@ -25,6 +25,11 @@
     text-overflow: ellipsis;
     width:5.63rem;
 		}
+
+    #item-description {background-color:transparent;}
+        #item-description p, #item-description img, #item-description video {width:100%;max-width:100%}
+
+
 	.detailshare{
 		width: .68rem;
 		height: .52rem;
@@ -218,15 +223,8 @@ wx.ready(function(){
 
 <base href="<?php echo $this->media_root ?>">
 
-<!--<div id=breadcrumb>
-	<ol class="breadcrumb container">
-		<li><a href="<?php echo base_url() ?>">首页</a></li>
-		<li><a href="<?php echo base_url('item?category_id='.$item['category_id']) ?>"><?php echo $category['name'] ?></a></li>
-		<li class=active><?php echo $title ?></li>
-	</ol>
-</div>-->
-
 <div id=content class=container>
+    <!-- 主图&形象图 -->
 	<div id=item-figure class="swiper-container row">
 		<?php
 			// 判断是否有形象图，若有，则将形象图与主图拼装为轮播内容进行显示
@@ -251,8 +249,7 @@ wx.ready(function(){
 			</li>
 			<?php endforeach ?>
 		</ul>
-		<!-- 页码提示 -->
-	    <div class="swiper-pagination"></div>
+	    <div class="swiper-pagination"></div><!-- 轮播页码提示 -->
 		
 		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/swiper.min.css">
 		<script src="<?php echo CDN_URL ?>js/swiper.jquery.min.js"></script>
@@ -265,10 +262,6 @@ wx.ready(function(){
 	</div>
 
 	<section id=item-brief>
-		<!--分享-->
-		<div class="detailshare">
-			<img src="<?php echo CDN_URL ?>media/item/detail/fengxiang@3x.png" />
-		</div>
 		<h2 id=item-name><?php echo $item['name'] ?></h2>
 
 		<?php echo !empty($item['slogan'])? '<h3 id=slogan>'.$item['slogan'].'</h3>': NULL ?>
@@ -284,13 +277,14 @@ wx.ready(function(){
 			<?php $unit_name = !empty($item['unit_name'])? $item['unit_name']: '份' ?>
 			<!--<li id=stocks>
 				库存 <?php echo $item['stocks']. $unit_name ?>
-				<?php echo $item['quantity_min'] > 1? ' '.$item['quantity_min'].$unit_name. '起售': NULL; ?>
+				<?php echo $item['quantity_min'] > 1? ' '.$item['quantity_min'].$unit_name. '起售': NULL ?>
 				<?php echo $item['quantity_max'] > 0? ' 限购 '.$item['quantity_max'].$unit_name: NULL ?>
 			</li>-->
 			<li class="tipprice">
 				价格:¥ <span><i></i>199</span>
 			</li>
 		</ul>
+
 		<div class="detailtag">
 			<span>
 				快递:  8.00
@@ -302,6 +296,11 @@ wx.ready(function(){
 				美国进口
 			</span>
 		</div>
+
+        <!--分享-->
+        <div class="detailshare">
+            <img src="<?php echo CDN_URL ?>media/item/detail/fengxiang@3x.png">
+        </div>
 	</section>
 	
 	<section id=service-promise>
@@ -328,63 +327,68 @@ wx.ready(function(){
 	</section>
 
 	<?php if ( !empty($skus) ): ?>
-
+    // TODO: SKU
 	<?php endif ?>
-		<div class="wid710 auto border20 bgfff skus clearfix mt20">
-		<!--购物券区域-->
-		<div class="topcardwrap">
-			<h1 class="clearfix">
-				<span>进来购物券</span>
-				<span>全进来实物商品通用</span>
-			</h1>
-			<h1 class="clearfix">
-				<span>店铺优惠券</span>
-				<span>领取优惠券</span>
-			</h1>
-			<div class="get">
-				领取
-			</div>
-		</div>
-		<hr>
-		<div class="topcardwrap bottomcardwrap">
-			<h1 class="clearfix">
-				<span>促销</span>
-				<span>满199立减50元</span>
-			</h1>
-			<h1 class="clearfix">
-				<span>积分</span>
-				<span>购买可得12积分</span>
-			</h1>
-		</div>
-		
-	</div>
-		<div class="wid710 auto border20 bgfff skus clearfix mt20">
-		<!--购物券区域-->
-		<div class="topcardwrap">
-			<h2>产品参数</h2>
-		</div>
-		<hr>
-		<div class="topcardwrap">
-			<h2>配送范围:市南区、市北区大部、崂山区大部。</h2>
-		</div>
-		
-	</div>
-	<!--商品评价区域-->
+
+    <!-- 优惠券模板 -->
+    <div class="wid710 auto border20 bgfff skus clearfix mt20">
+
+        <div class="topcardwrap">
+            <h1 class="clearfix">
+                <span>进来购物券</span>
+                <span>全进来实物商品通用</span>
+            </h1>
+            <h1 class="clearfix">
+                <span>店铺优惠券</span>
+                <span>领取优惠券</span>
+            </h1>
+            <div class="get">
+                领取
+            </div>
+        </div>
+        <hr>
+        <div class="topcardwrap bottomcardwrap">
+            <h1 class="clearfix">
+                <span>促销</span>
+                <span>满199立减50元</span>
+            </h1>
+            <h1 class="clearfix">
+                <span>积分</span>
+                <span>购买可得12积分</span>
+            </h1>
+        </div>
+
+    </div>
+
+    <!-- 产品参数 -->
+    <div class="wid710 auto border20 bgfff skus clearfix mt20">
+        <div class="topcardwrap">
+            <h2>产品参数</h2>
+        </div>
+        <hr>
+        <div class="topcardwrap">
+            <h2>配送范围:市南区、市北区大部、崂山区大部。</h2>
+        </div>
+
+    </div>
+
+	<!-- 商品评价 -->
 	<div class="productevaluation mt20 auto wid710 border20 clearfix skus">
 		<div class="topcardwrap">
-			<h2>商品评价  ( 1967 )  </h2>
+			<h2>商品评价</h2>
 		</div>
 		
-		<hr />
+		<hr>
 		<div class="topcardwrap clearfix">
 			<div class="evaluationinfo clearfix">
 				<div class="pic fl">
 					<img src="<?php echo CDN_URL ?>media/item/detail/ximei@3x.png"/>
 				</div>
-				<span class="fl block">150****4.32</span>
+				<span class="fl block">150****4832</span>
 				<time class="fr">2017-03-22</time>
 			</div>
 		</div>
+
 		<!--商品评价内容区域-->
 		<div class="evaluationcontent">
 			<p>商品一如既往的好,实物和照片一样没有色差,口感非常好,以后一如既往的关注意帮管家平台的,希望平台以后多搞一些这样的</p>
@@ -394,14 +398,14 @@ wx.ready(function(){
 		</div>
 	</div>
 	
-	<!--店铺信息区域-->
+	<!-- 商家信息 -->
 	<div class="shopInfo mt20 auto border20 clearfix auto wid670">
 		<div class="headerinfo clearfix">
-			<div class="pic fl">
-				<img src="<?php echo CDN_URL ?>media/item/detail/ximei@3x.png" />
+			<div class="pic fl centered_xy">
+				<img src="<?php echo MEDIA_URL.'biz/'.$biz['url_logo'] ?>">
 			</div>
 			<div class="headertext fl">
-				<h1>进来自营</h1>
+				<h1><?php echo $biz['brief_name'] ?></h1>
 				<h2>入驻进来平台</h2>
 			</div>
 		</div>
@@ -433,14 +437,15 @@ wx.ready(function(){
 		</div>
 		<!--查看分类-->
 		<div class="shopmore">
-			<a href="##">
+			<a href="<?php echo base_url('item_category_biz/index?biz_id='.$item['biz_id']) ?>">
 				查看分类
 			</a>
-			<a href="##">
+			<a href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>">
 				进店逛逛
 			</a>
 		</div>
 	</div>
+
 		<!--热门活动-->
 		<div class="hotactivetitle wid710 auto mt20 border20">
 			<img src="<?php echo CDN_URL ?>media/item/detail/remenhuodong@3x.png" />
@@ -474,35 +479,46 @@ wx.ready(function(){
 			</ul>
 			
 		</div>
-	<p id=general-seperater>继续拖动，查看图文详情</p>
-	<div class="bigadd border20 wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/tu@3x.png" />
-	</div>
-	<div class="particularstag wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/shangpinliangdian@3x.png" class="pictitle"/>
-		<img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
-		<p>
-			健脑、抗氧化、预防糖尿病、增强食欲、促进代谢、美容养颜、显著改善贫血等。适合老人、
-			小孩及孕妇食用。
-		</p>
-	</div>
-	<div class="particularstag wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/ruhetiaoxuan@3x.png" class="pictitle"/>
-		<img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
-		<p>
-			血橙上一头上的圆形博文就是所谓的“脐”，血橙的脐越小越甜。如果表皮出现白色的霉点，则血橙的内部开始霉烂。
-		</p>
-	</div>
-	<div class="particularstag wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/shiyongfangshi@3x.png" class="pictitle"/>
-		<img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
-		<p>
-			美国血橙适宜鲜美血橙酸奶杯
-			1、将血橙去皮切薄片（厚度约3mm）、酸奶备用。
-			2、用筷子夹取橙片，贴在玻璃杯内壁。
-			3、将备好的酸奶倒入杯中即可。
-		</p>
-	</div>
+
+    <?php if ( ! empty($item['description'])): ?>
+        <p id=general-seperater>继续拖动，查看图文详情</p>
+
+        <div id="item-description" class="wid710 auto">
+            <?php echo $item['description'] ?>
+        </div>
+        <!--
+        <p id=general-seperater>继续拖动，查看图文详情</p>
+        <div class="bigadd border20 wid710 auto">
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu@3x.png" />
+        </div>
+        <div class="particularstag wid710 auto">
+            <img src="<?php echo CDN_URL ?>media/item/detail/shangpinliangdian@3x.png" class="pictitle"/>
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
+            <p>
+                健脑、抗氧化、预防糖尿病、增强食欲、促进代谢、美容养颜、显著改善贫血等。适合老人、
+                小孩及孕妇食用。
+            </p>
+        </div>
+        <div class="particularstag wid710 auto">
+            <img src="<?php echo CDN_URL ?>media/item/detail/ruhetiaoxuan@3x.png" class="pictitle"/>
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
+            <p>
+                血橙上一头上的圆形博文就是所谓的“脐”，血橙的脐越小越甜。如果表皮出现白色的霉点，则血橙的内部开始霉烂。
+            </p>
+        </div>
+        <div class="particularstag wid710 auto">
+            <img src="<?php echo CDN_URL ?>media/item/detail/shiyongfangshi@3x.png" class="pictitle"/>
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
+            <p>
+                美国血橙适宜鲜美血橙酸奶杯
+                1、将血橙去皮切薄片（厚度约3mm）、酸奶备用。
+                2、用筷子夹取橙片，贴在玻璃杯内壁。
+                3、将备好的酸奶倒入杯中即可。
+            </p>
+        </div>
+        -->
+    <?php endif ?>
+
 	<div class="particularstag wid710 auto">
 		<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle"/>
 		<!--特色介绍-->
