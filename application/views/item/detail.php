@@ -1,30 +1,30 @@
 <style>
 	#content {width:100%;}
-		#content>* {color:#898989;background-color:#fff;}
-		#content>section {padding:.3rem .2rem;border-radius:.2rem;margin:.2rem;position: relative;}
+	#content>* {color:#898989;background-color:#fff;}
+	#content>section {padding:.3rem .2rem;border-radius:.2rem;margin:.2rem;position: relative;}
 	#item-figure {border-radius:0 0 20px 20px;}
 	#item-name {    
 	    color: #3e3a39;
-    font-size: .3rem;
-    line-height: 1;
-    margin-bottom: .1rem;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 5rem;
+	    font-size: .3rem;
+	    line-height: 1;
+	    margin-bottom: .1rem;
+	    display: block;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    width: 5rem;
     }
 	#slogan {
 		color:#9fa0a0;
 		font-size:.24rem;
 		margin-bottom:.3rem;
 		white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width:5.63rem;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    width:5.63rem;
 		}
     #item-description {background-color:transparent;}
-        #item-description p, #item-description img, #item-description video {width:100%;max-width:100%;display: block;}
+    #item-description p, #item-description img, #item-description video {width:100%;max-width:100%;display: block;}
 	.detailshare{
 		width: .68rem;
 		height: .52rem;
@@ -33,12 +33,19 @@
 		top: .38rem;
 		right: .2rem;
 	}
-	.detailshare img{
-		    display: block;
-    margin-top: .08rem;
-    margin-left: .3rem;
-    width: .38rem;
-    height: .39rem;
+	.detailshare > .icon-dp_fenxiang:before{
+		color: #393838;
+	    font-size: .4rem;
+	    position: absolute;
+	    left: .2rem;
+	    top: .0654443rem;
+	}
+	.icon-Arrow{
+		position: absolute;
+	    right: .15rem;
+	    font-size: .3rem;
+	    top: .27rem;
+	    color: #aaa;
 	}
 	#service-promise ul{
 		width: 5.76rem;
@@ -47,10 +54,10 @@
 	}
 	#service-promise li {font-size:.24rem;color:#898989;/*background:url('/media/item/detail/quan@3x.png') no-repeat left center;background-size:24px 24px;*/}
 	#service-promise li span{
-		    width: .24rem;
-    height: .24rem;
-    float: left;
-    margin-right: .1rem;
+		width: .24rem;
+	    height: .24rem;
+	    float: left;
+	    margin-right: .1rem;
 	}
 	#service-promise li span img{
 		display: block;
@@ -58,15 +65,15 @@
 		height: 100%;
 	}
 	#prices {font-size:.24rem}
-		#prices strong {color:#ff3649;font-size:44px;font-weight:normal;}
-		#prices small {font-size:32px;}
+	#prices strong {color:#ff3649;font-size:44px;font-weight:normal;}
+	#prices small {font-size:32px;}
 	/* SKU */
 	#skus li {line-height:28px;padding:1px;margin-bottom:4px;margin-right:4px;}
 	#skus i{font-size: .26rem;color: #3e3a39;}
-		#skus a {height:38px;line-height:38px;border:1px solid #b8b7bd;text-align:center;overflow:hidden;}
-			#skus a>* {float:left;display:inline;}
-			#skus figure {width:28px;height:28px;}
-			#skus h3 {font-size:12px;max-width:97px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-indent: 0;padding-left:1px;}
+	#skus a {height:38px;line-height:38px;border:1px solid #b8b7bd;text-align:center;overflow:hidden;}
+	#skus a>* {float:left;display:inline;}
+	#skus figure {width:28px;height:28px;}
+	#skus h3 {font-size:12px;max-width:97px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-indent: 0;padding-left:1px;}
 	#general-seperater {font-size:.24rem;background-color:transparent;text-align:center;margin:.5rem 0;}
 	#description p, #description img {line-height:1;}
 	.tipprice{
@@ -78,20 +85,20 @@
 		position: relative;
 	}
 	.tipprice span i{
-		    position: absolute;
-    width: .45rem;
-    height: 1px;
-    background: #898989;
-    display: block;
-    top: 50%;
-    left: rem;
-    left: 0px;
+		position: absolute;
+	    width: .45rem;
+	    height: 1px;
+	    background: #898989;
+	    display: block;
+	    top: 50%;
+	    left: rem;
+	    left: 0px;
 	}
 	.detailtag{
 		padding-top: .2rem;
 		font-size: .24rem;
 		color: #898989;
-		    display: flex;
+		display: flex;
     	justify-content: space-between;
 	}
 	.skus{
@@ -103,31 +110,31 @@
 	}
 	.topcardwrap .get{
 		box-shadow: 0px 0px 0.15rem #ffc7bc;
-    background: linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -o-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -ms-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    color: #fff;
-    font-size: .26rem;
-		    width: .76rem;
-    height: .4rem;
-    font-size: .16rem;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    line-height: .4rem;
-    background: #ccc;
-    text-align: center;
-    border-radius: .5rem;
+	    background: linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -o-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -ms-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    color: #fff;
+	    font-size: .26rem;
+		width: .76rem;
+	    height: .4rem;
+	    font-size: .16rem;
+	    position: absolute;
+	    top: 0px;
+	    right: 0px;
+	    line-height: .4rem;
+	    background: #ccc;
+	    text-align: center;
+	    border-radius: .5rem;
 	}
 	.topcardwrap h1:nth-child(1){
 		margin-bottom: .2rem;
 	}
 	.topcardwrap h1 span{
-		    border-radius: .04rem;
-    height: .24rem;
-    line-height: .24rem;
+		border-radius: .04rem;
+	    height: .24rem;
+	    line-height: .24rem;
    
 	}
 	.topcardwrap h1 span:nth-child(1){
@@ -136,23 +143,20 @@
 		font-size: .2rem;
 		color: #fff;
 		margin-top: .02rem;
-		    background: linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -o-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -ms-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
-     width: 1.12rem;
-     text-align: center;
+		background: linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -o-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -ms-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -moz-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
+	     width: 1.12rem;
+     	text-align: center;
 		
 	}
 	hr{
 		border: none;
-    height: 1px;
-    background: #ccc;
-    /* display: block; */
-    /* float: left; */
-    /* padding: 0; */
-    margin: .3rem 0;
+	    height: 1px;
+	    background: #ccc;
+	    margin: .3rem 0;
 	}
 	.topcardwrap h1 span:nth-child(2){
 		display: block;
@@ -173,6 +177,14 @@
 		background: #EFEFEF !important;
 		color: #ff3649;
 		font-size: .2rem;
+	}
+	.cxtitle{
+		top: .22rem;
+    	right: 0px;
+	}
+	.cpArrow{
+		top: 0px;
+		right: 0px;
 	}
 </style>
 
@@ -261,7 +273,7 @@ wx.ready(function(){
 				<strong>
 					<small>￥</small><?php echo substr($item['price'], 0, -3).'<small>'.substr($item['price'], -3).'</small>' ?>
 				</strong>
-				<?php echo ($item['tag_price'] !== '0.00')? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
+				<span class="limitedtime">限时特惠</span>
 			</li>
 
 			<?php $unit_name = !empty($item['unit_name'])? $item['unit_name']: '份' ?>
@@ -271,7 +283,7 @@ wx.ready(function(){
 				<?php echo $item['quantity_max'] > 0? ' 限购 '.$item['quantity_max'].$unit_name: NULL ?>
 			</li>-->
 			<li class="tipprice">
-				价格:¥ <del>299</del>
+				价格:<?php echo ($item['tag_price'] !== '0.00')? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
 			</li>
 		</ul>
 
@@ -289,11 +301,12 @@ wx.ready(function(){
 
         <!--分享-->
         <div class="detailshare">
-            <img src="<?php echo CDN_URL ?>media/item/detail/fengxiang@3x.png">
+           <i class="icon-dp_fenxiang"></i>
         </div>
 	</section>
 	
 	<section id=service-promise>
+		<i class="icon-Arrow"></i>
 		<ul>
 			<li>
 				<span>
@@ -324,6 +337,7 @@ wx.ready(function(){
     <div class="wid710 auto border20 bgfff skus clearfix mt20">
 
         <div class="topcardwrap">
+        	
             <h1 class="clearfix">
                 <span>进来购物券</span>
                 <span>全进来实物商品通用</span>
@@ -346,6 +360,7 @@ wx.ready(function(){
                 <span>积分</span>
                 <span>购买可得12积分</span>
             </h1>
+            <i class="icon-Arrow cxtitle"></i>
         </div>
 
     </div>
@@ -354,12 +369,14 @@ wx.ready(function(){
     <div class="wid710 auto border20 bgfff skus clearfix mt20">
         <div class="topcardwrap">
             <h2>产品参数</h2>
+            <i class="icon-Arrow cpArrow"></i>
         </div>
         <hr>
         <div class="topcardwrap">
             <h2>配送范围:市南区、市北区大部、崂山区大部。</h2>
+            <i class="icon-Arrow cpArrow"></i>
         </div>
-
+		
     </div>
 
 	<!-- 商品评价 -->
@@ -585,6 +602,7 @@ wx.ready(function(){
 </style>
 
 <nav id=nav-main>
+	
 	<ul>
 		<?php // TODO 显示客服按钮前检查当前店铺客服工作状态，决定留言或即时通讯 ?>
 		<li class=vice-button>
