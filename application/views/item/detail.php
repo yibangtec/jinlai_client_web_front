@@ -2,9 +2,7 @@
 	#content {width:100%;}
 		#content>* {color:#898989;background-color:#fff;}
 		#content>section {padding:.3rem .2rem;border-radius:.2rem;margin:.2rem;position: relative;}
-
 	#item-figure {border-radius:0 0 20px 20px;}
-
 	#item-name {    
 	    color: #3e3a39;
     font-size: .3rem;
@@ -14,7 +12,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 2.43rem;
+    width: 5rem;
     }
 	#slogan {
 		color:#9fa0a0;
@@ -25,11 +23,8 @@
     text-overflow: ellipsis;
     width:5.63rem;
 		}
-
     #item-description {background-color:transparent;}
-        #item-description p, #item-description img, #item-description video {width:100%;max-width:100%}
-
-
+        #item-description p, #item-description img, #item-description video {width:100%;max-width:100%;display: block;}
 	.detailshare{
 		width: .68rem;
 		height: .52rem;
@@ -62,11 +57,9 @@
 		width: 100%;
 		height: 100%;
 	}
-
 	#prices {font-size:.24rem}
-		#prices strong {color:#ff3649;font-size:44px;font-weight:600;}
+		#prices strong {color:#ff3649;font-size:44px;font-weight:normal;}
 		#prices small {font-size:32px;}
-
 	/* SKU */
 	#skus li {line-height:28px;padding:1px;margin-bottom:4px;margin-right:4px;}
 	#skus i{font-size: .26rem;color: #3e3a39;}
@@ -74,12 +67,10 @@
 			#skus a>* {float:left;display:inline;}
 			#skus figure {width:28px;height:28px;}
 			#skus h3 {font-size:12px;max-width:97px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-indent: 0;padding-left:1px;}
-
 	#general-seperater {font-size:.24rem;background-color:transparent;text-align:center;margin:.5rem 0;}
-
 	#description p, #description img {line-height:1;}
 	.tipprice{
-		font-size: 24px;
+		font-size: .24rem;
 		color: #898989;
 		padding-top: .2rem;
 	}
@@ -201,7 +192,6 @@ wx.ready(function(){
 			alert('未完成分享');
 	    }
 	});
-
 	// 分享给朋友
 	wx.onMenuShareAppMessage({
 	    desc: '<?php echo $description ?>', // 分享描述
@@ -263,7 +253,7 @@ wx.ready(function(){
 
 	<section id=item-brief>
 		<h2 id=item-name><?php echo $item['name'] ?></h2>
-
+		<h3 class="bussinessdescription">大容量便携 带屏双输出 适用于苹果/三星/华为/小米手机等 手机平板通用型充电宝</h3>
 		<?php echo !empty($item['slogan'])? '<h3 id=slogan>'.$item['slogan'].'</h3>': NULL ?>
 
 		<ul class=row>
@@ -281,7 +271,7 @@ wx.ready(function(){
 				<?php echo $item['quantity_max'] > 0? ' 限购 '.$item['quantity_max'].$unit_name: NULL ?>
 			</li>-->
 			<li class="tipprice">
-				价格:¥ <span><i></i>199</span>
+				价格:¥ <del>299</del>
 			</li>
 		</ul>
 
@@ -641,6 +631,8 @@ wx.ready(function(){
 </nav>
 
 <script>
+	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
+	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
 	// 点击SKU时获取SKU信息
 	$('#skus a').click(function(){
 		item_id = $(this).attr('data-item-id');
@@ -655,7 +647,6 @@ wx.ready(function(){
 		{
 			alert(item_id + ':' + sku_id + '库存 ' + stocks);
 		}
-
 		return false;
 	});
 	
@@ -664,5 +655,3 @@ wx.ready(function(){
 	
 	
 </script>
-
-
