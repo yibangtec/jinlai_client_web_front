@@ -121,7 +121,7 @@
 	    height: .4rem;
 	    font-size: .16rem;
 	    position: absolute;
-	    top: 0px;
+	    top: .13rem;
 	    right: 0px;
 	    line-height: .4rem;
 	    background: #ccc;
@@ -150,6 +150,7 @@
 	    background: -webkit-linear-gradient(right , #ff7a42 6% , #ff415a 100%) !important;
 	     width: 1.12rem;
      	text-align: center;
+     	margin-top: -.015rem;
 		
 	}
 	hr{
@@ -177,6 +178,7 @@
 		background: #EFEFEF !important;
 		color: #ff3649;
 		font-size: .2rem;
+		margin-top: -.01rem;
 	}
 	.cxtitle{
 		top: .22rem;
