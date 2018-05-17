@@ -3,14 +3,39 @@
   <component name="ChangeListManager">
     <list default="true" id="3d24f63f-9278-49c9-86c3-1f7dccace59d" name="默认的" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/dangqian@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/ditu@3x.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/keyidong@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/cart/news.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/cart/place.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/cart/place.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/tongzhi@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/touxiang.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/touxiangm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/xiaolian.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/media/chatimages/images/zwt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/1525829395946._tmp_upload.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/chatjs/area.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/browse_history.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/css/chat/cartNewsCenter.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/css/chat/chat.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/css/chat/chatcommon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/chatjs/chatjs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/chatjs/flexible.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/history_order.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/js/chatjs/jquery-1.9.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/khd_index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/css/chat/newsSelected.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/news_center.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/notification_message.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/position.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/position_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/css/chat/cartNewsCenter.css" afterPath="$PROJECT_DIR$/application/views/css/chat/cartNewsCenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chat/news_center.html" afterPath="$PROJECT_DIR$/application/views/chat/news_center.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chat/notification_message.html" afterPath="$PROJECT_DIR$/application/views/chat/notification_message.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chat/position.html" afterPath="$PROJECT_DIR$/application/views/chat/position.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/chat/store.html" afterPath="$PROJECT_DIR$/application/views/chat/store.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/receiving_address.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/sjd_index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/chat/store.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/address/create.html" afterPath="$PROJECT_DIR$/application/views/address/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index.html" afterPath="$PROJECT_DIR$/application/views/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jinlai_client_web_front.iws" />
@@ -204,68 +229,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jinlai_client_web_front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -368,9 +331,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
