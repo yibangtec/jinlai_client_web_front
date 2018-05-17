@@ -24,7 +24,7 @@
                     <div class='input-item'>
                         <label class="label" for="verification"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""/></label>
                         <div class="tel-input">
-                            <input id="verification" name="verification" class="input" type="number" value="" size=11 pattern="\d{11}" placeholder="请输入验证码" required />
+                            <input id="verification" name="verification" class="input" type="number" value="" size=11 pattern="\d{11}" placeholder="请输入验证码" required>
                             <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
                         </div>
                         <div class="ver-btn">获取验证码</div>
@@ -35,7 +35,7 @@
                     <div class='input-item' style="height: 0.8rem;margin: 0">
                         <label class="label" for="password"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""/></label>
                         <div class="tel-input">
-                            <input id="password" name="password" class="input" type="text" value=""  placeholder="请输入密码" required />
+                            <input id="password" name="password" class="input" type="password" value=""  placeholder="请输入密码" required>
                             <img class="no-icon pass" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
                         </div>
 
@@ -62,7 +62,7 @@
 
 </div>
 
-<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
 
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 <script>
