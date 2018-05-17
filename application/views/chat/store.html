@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>门店</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/fontStyle.css"/>
+    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/normal.css"/>
+    <link rel="stylesheet" href="../css/chat/cartNewsCenter.css"/>
+    <!--<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/chatjs/jquery-1.9.1.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/chatjs/area.js"></script>-->
+
+</head>
+<body>
+<div class="content">
+    <header class="header">
+        <a class="chatback" href="javascript:history.back()">
+            <i class="icon-Back"></i>
+
+        </a>
+
+        <h5 class="tit">浏览历史</h5>
+
+    </header>
+    <ul class="regional-selection clearfix">
+        <li class="regional-li" id="getProvince"><span class="province-li">省</span><i class="icon-xiajiantou"></i></li>
+        <li class="regional-li" id="getCity"><span class="province-li">市</span><i class="icon-xiajiantou"></i></li>
+        <li class="regional-li" id="getArea"><span class="province-li">区</span><i class="icon-xiajiantou"></i></li>
+    </ul>
+
+    <ul class="selected-area">
+        <li class="selected-list">3111111</li>
+        <li class="selected-list">2312222</li>
+        <li class="selected-list">1323333</li>
+    </ul>
+
+
+
+    <ul class="store-name-ul" style="display: block">
+        <li class="store-name-li">
+            <div class="store-name">门店1名称</div>
+            <div class="address-cities"><span>山东省</span><span>山东省</span><span>山东省</span></div>
+            <div class="address-detailed">东海东路一号麦岛金岸意帮管家3层</div>
+        </li>
+        <li class="store-name-li">
+            <div class="store-name">门店1名称</div>
+            <div class="address-cities"><span>山东省</span><span>山东省</span><span>山东省</span></div>
+            <div class="address-detailed">东海东路一号麦岛金岸意帮管家3层</div>
+        </li>
+        <li class="store-name-li">
+            <div class="store-name">门店1名称</div>
+            <div class="address-cities"><span>山东省</span><span>山东省</span><span>山东省</span></div>
+            <div class="address-detailed">东海东路一号麦岛金岸意帮管家3层</div>
+        </li>
+    </ul>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        var that = '';
+        $('.regional-li').on('click',function(){
+            that = $(this);
+            var areaStatus = $('.selected-area').css('display');
+            if(areaStatus == 'none'){
+                $('.selected-area').css('display','block');
+            }else{
+                $('.selected-area').css('display','none');
+            }
+
+        });
+        $('.selected-list').on('click',function(){
+            console.log($(this).text());
+            that.find('.province-li').text($(this).text());
+            $('.selected-area').css('display','none');
+        })
+    });
+</script>
+</body>
+</html>

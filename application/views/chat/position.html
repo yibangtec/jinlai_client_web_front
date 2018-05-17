@@ -30,18 +30,10 @@
         .create-list{display: flex;padding: 0.4rem 0.1rem 0.2rem 0.1rem;border-bottom: 0.02rem solid #efefef;}
         .create-list .create-input{flex: 1;border: none;font-size: 0.28rem;}
         .address-default{padding: 0.5rem 0;font-size: 0.28rem;color: #666464;}
-        .map-box {position: absolute;bottom: 0.2rem;width: 7.1rem;
-            height: 4rem; border-radius: 0.15rem; overflow: hidden; !important;}
+        .map-box {position: absolute;bottom: 0;width: 100%;
+            height: 100%; left: 0; overflow: hidden; !important;}
         .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0;}
-        .tips{width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);position: fixed; display: none;z-index: 100;
-        }
-        .tips-content{position: absolute;width: 5rem;left: 50%; margin-left: -2.5rem; top: 50%;
-            margin-top: -1.5rem;background-color: #fff;font-size: 0.3rem;border-radius: 0.15rem;text-align: center;}
-        .tips-title{padding-top: 0.25rem; }
-        .tips-text{font-size: 0.26rem;padding: 0.1rem 0 0.25rem 0;border-bottom: 0.01rem solid #efefef;}
-        .btns{width: 100%;font-size: 0.3rem;}
-        .btns-cancel{float: left;width: 50%;padding: 0.2rem 0;color: deepskyblue;box-sizing: border-box;border-right: 0.01rem solid #efefef;}
-        .btns-confirm{width: 50%;float: left;padding: 0.2rem 0;color: crimson;}
+
 
         .icon-xuanzhong:before {
             content: "\e942";
@@ -56,41 +48,76 @@
             font-size: 0.3rem;text-align: center;color: #ffffff;padding: 0.3rem 0;
             background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;background-size: 0.32rem 0.32rem;z-index: 100;}
         .error-tips img{width: 0.5rem;height: 0.5rem;}
-        .amap-geo{
-            display: none;
+         .header{
+            width: 100%;
+            border-bottom: 1px solid #dfdfdf;
+            padding:0 0.2rem;
+            height: 1rem;
+            line-height: 1rem;
+            background: #fff;
+            position: relative;
+            box-sizing: border-box;
+            z-index: 9999;
         }
+
+        .header .tit{
+            font-size: 0.32rem;
+            vertical-align: middle;
+            text-align: center;
+            height: 1rem;
+            line-height: 1rem;
+            font-weight: normal;
+        }
+        .header .right{
+            position: absolute;
+            right: 0.3rem;
+            top: 0;
+            float: none;
+            font-size: 0.42rem;
+            color: #4c4c4c;
+        }
+        .chatback i{
+            display: block;
+            /* width: 100%; */
+            height: 1.08rem;
+            border-radius: .15rem;
+            text-align: center;
+            /* border: 1px solid #e1e1e2; */
+            line-height: 1.08rem;
+            font-size: .4rem;
+            float: left;
+            position: absolute;
+            /* font-size: .32rem; */
+            left: .3rem;
+            color: #7e7e7e;
+            padding: 0 0.3rem 0 0.1rem;
+        }
+
+        .icon-Back:before {
+            content: "\e907";
+            color: #7e7e7e;
+            font-size: 0.3rem;
+        }
+        /*.amap-geolocation-con{
+            display: none;
+        }*/
     </style>
 
 </head>
 <body>
-
-<div class="tips" id="tips">
-    <div class="tips-content">
-        <div class="tips-title">提示</div>
-        <div class="tips-text">是否修改位置为当前地点</div>
-        <div class="btns">
-            <div class="btns-cancel" id="cancel">取消</div>
-            <div class="btns-confirm" id="confirm">确定</div>
-        </div>
-    </div>
-</div>
 <div class="box" id="box">
-    <div class="error-tips">
-        <p class="tips-text"></p>
-        <i class="icon-failure"></i>
-    </div>
+    <header class="header" style="position: fixed">
+        <a class="chatback" href="javascript:history.back()">
+            <i class="icon-Back"></i>
+
+        </a>
+
+        <h5 class="tit">位置</h5>
+    </header>
     <div class="create-content">
         <div class="save">保存</div>
-        <form action="">
-            <div class="create-list">
-                <input class="create-input" type="text" placeholder="简称（可选）" maxlength="10"/>
-            </div>
-            <div class="create-list">
-                <input class="create-input" type="text" placeholder="姓名" maxlength="10"/>
-            </div>
-            <div class="create-list">
-                <input id="tel" class="create-input" type="tel" placeholder="手机号"/>
-            </div>
+        <form action="" style="display: none">
+
             <div class="create-list">
                 <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区"/>
             </div>
@@ -101,13 +128,11 @@
             <div class="create-list">
                 <input class="create-input" type="tel" placeholder="邮编"/>
             </div>
-            <div class="address-default">
-                <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
-            </div>
+
         </form>
 
         <div class="map-box">
-            <div id="container" class="map" tabindex="0" style="width: 100%;height: 4rem;"></div>
+            <div id="container" class="map" tabindex="0" style="width: 100%;height: 100%;"></div>
             <div id='right' style="display: none">
                 <div>
                     <div class='title'>选择模式</div>
@@ -146,17 +171,6 @@
 <!-- UI组件库 1.0 -->
 <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 <script type="text/javascript">
-    var sel=document.getElementById('select');
-    sel.onclick = function(){
-
-        if(sel.classList.contains('icon-zidongtui')==true){
-            sel.classList.add('icon-xuanzhong');
-            sel.classList.remove('icon-zidongtui')
-        }else{
-            sel.classList.add('icon-zidongtui');
-            sel.classList.remove('icon-xuanzhong');
-        }
-    };
 
 
 
@@ -200,7 +214,7 @@
 
             geolocation.getCurrentPosition(function (status,result){
                 var start = result.position.Q;
-                console.log(result.position.Q);
+                console.log(result.position);
                 pos = result.position;
                 var positionPicker = new PositionPicker({
                     mode: 'dragMap',
@@ -211,17 +225,8 @@
                 positionPicker.on('success', function (positionResult) {
                     console.log(positionResult.position.lat);
                     if(start !== positionResult.position.lat){
-                        document.getElementById('tips').style.display = 'block';
-                        //document.getElementById('box').style.display = 'none';
-                        document.getElementById('cancel').onclick=function(){
-                            document.getElementById('tips').style.display = 'none';
-
-
-                        };
-                        document.getElementById('confirm').onclick=function(){
-                            document.getElementById('tips').style.display = 'none';
-                            document.getElementById('detailAddress').value=positionResult.address;
-                        };
+                        console.log(positionResult.address);
+                        console.log(positionResult.position);
                     }else{
                         //document.getElementById('detailAddress').value=positionResult.address;
                     }
@@ -256,19 +261,7 @@
                  AMap.event.addDomListener(dragMarkerMode, 'change', onModeChange);*/
                 positionPicker.start(pos);
                 var address = document.getElementById('detailAddress');
-                address.onblur=function(){
-                    var aress = address.value;
-                    console.log(aress);
-                    geocoder.getLocation(aress, function(status, result) {
-                        if (status === 'complete' && result.info === 'OK') {
-                            console.log(result);
-                            pos=result.geocodes[0].location;
-                            positionPicker.start(pos);
-                        }else{
-                            console.log(result)
-                        }
-                    });
-                };
+
                 map.panBy(0, 1);
 
 

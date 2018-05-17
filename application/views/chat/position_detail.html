@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>路线及距离</title>
+    <script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+    <link rel="stylesheet" href="//cache.amap.com/lbs/static/main1119.css"/>
+    <link rel="stylesheet" href="//cache.amap.com/lbs/static/AMap.DrivingRender1120.css"/>
+    <style>
+        #panel {
+            z-index: 999;
+            position: absolute;
+            background-color: white;
+            max-height: 100%;
+            overflow-y: auto;
+            right: 0;
+            width: 280px;
+        }
+        .amap-touch-toolbar .amap-zoomcontrol{
+            bottom: 46px;
+        }
+        .amap-lib-marker-from{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            color: #e90000;
+            cursor: pointer;
+            background:url(../media/chatimages/images/dangqian@3x.png) no-repeat;
+            background-size: 30px 30px;
+        }
+        .amap-lib-marker-to{
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            color: #e90000;
+            cursor: pointer;
+            background:url(../media/chatimages/images/keyidong@3x.png) no-repeat;
+            background-size: 20px 30px;
+        }
+        .amap-lib-driving {
+            margin: 0;
+            padding: 0;
+            color: #565656;
+            font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            background-color: white;
+            border: solid 1px silver;
+            display: none;
+        }
+        .bottom-con{
+            position: fixed;
+            bottom: 0.4rem;
+            width: 100%;
+            height: 2.3rem;
+            display: flex;
+        }
+        .navigation{
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-left: 0.2rem;
+            margin-top: 0.4rem;
+        }
+        .navigation-address{
+            flex: 1;
+            border-radius: 0.12rem;
+            background-color: #fff;
+            margin: 0 0.2rem;
+        }
+        .center-point{
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 0.45rem;
+            background-color: #fff;
+            margin-right: 0.2rem;
+            margin-top: 0.4rem;
+        }
+        .navigation-province{
+            padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+            font-size: 0.3rem;
+            color: #3E3A39;
+        }
+        .navigation-province span {
+            margin-right: 0.2rem;
+        }
+        .navigation-area{
+            font-size: 0.24rem;
+            color: #727171;
+            line-height: 0.3rem;
+            padding: 0 0.3rem 0.3rem 0.3rem;
+        }
+        .latitude{
+            font-size: 0.22rem;
+            color: #c9caca;
+            padding: 0 0.3rem 0.2rem 0.3rem;
+        }
+    </style>
+    <script type="text/javascript" src="//webapi.amap.com/maps?v=1.3&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.Driving"></script>
+    <script type="text/javascript" src="//cache.amap.com/lbs/static/DrivingRender1230.js"></script>
+    <script type="text/javascript" src="//cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<div id="panel"></div>
+<div class="bottom-con">
+    <div class="navigation" id="bt"></div>
+    <div class="navigation-address">
+        <div class="navigation-province"><span>山东省</span><span>青岛市</span><span>市北区</span></div>
+        <div class="navigation-area">东海东路一号，麦岛金岸，意帮管家3层。</div>
+        <div class="latitude">120.425186,36.159332</div>
+    </div>
+    <div class="center-point" id="point"></div>
+</div>
+<script type="text/javascript">
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+    });
+
+    //驾车导航，您如果想修改结果展现效果，请参考页面：http://lbs.amap.com/fn/css-style/
+    var drivingOption = {
+        policy:AMap.DrivingPolicy.LEAST_TIME,
+        map: map,
+        panel: "panel"
+    };
+    var driving = new AMap.Driving(drivingOption); //构造驾车导航类
+
+    var centerLat = 120.442614;
+    var centerLan = 36.069401;
+        //根据起终点坐标规划驾车路线
+    driving.search([120.425186,36.159332],[120.442614,36.069401], function(status, result){
+        console.log(Dis);
+        var Dis =result.routes[0].distance;
+
+        if (Dis <= 1000) {
+            var s = Dis;
+            console.log(s+"米");
+            //return s + "米";
+        } else {
+            s = Math.round(Dis / 10);
+            console.log(s/100+"公里");
+            //return "" + s / 100 + "公里";
+        }
+
+        if(status === 'complete' && result.info === 'OK'){
+            (new Lib.AMap.DrivingRender()).autoRender({
+                data: result,
+                map: map
+                //panel: "panel"
+            });
+            map.setZoomAndCenter(12, [120.442614,36.069401]);
+        }else{
+            alert(result);
+        }
+        var button = document.getElementById('bt');
+        button.onclick = function(){
+            driving.searchOnAMAP({
+                origin:result.origin,
+                destination:result.destination
+            });
+        }
+        var btn = document.getElementById('point');
+
+        btn.onclick = function(){
+            if(centerLat == 120.442614 && centerLan == 36.069401){
+                map.setZoomAndCenter(12, [120.425186,36.159332]);
+                centerLat = 120.425186;
+                centerLan = 36.159332;
+            }else{
+                map.setZoomAndCenter(12, [120.442614,36.069401]);
+
+            }
+
+        }
+    });
+
+
+</script>
+</body>
+</html>

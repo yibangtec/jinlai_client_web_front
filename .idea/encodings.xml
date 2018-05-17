@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/application/views/article/business_article..php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/css/account.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/css/chat/cartNewsCenter.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/css/chat/newsSelected.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/css/evaluate.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/css/pindanOrder.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/evaluate/all_evaluation.php" charset="UTF-8" />
@@ -10,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/application/views/evaluate/evaluate_single.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/font/iconfont.ttf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/js/account.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/js/chatjs/area.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/js/hash.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/js/uploadImg.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/order/group_detail.php" charset="UTF-8" />
