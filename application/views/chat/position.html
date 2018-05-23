@@ -106,6 +106,15 @@
         /*.amap-geolocation-con{
             display: none;
         }*/
+        .origin-point{
+            position: fixed;
+            bottom: 0.4rem;
+            right: 0.4rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            background-color: #fff;
+            border-radius: 0.45rem;
+        }
     </style>
 
 </head>
@@ -173,8 +182,9 @@
 
 
     </div>
+    <div class="origin-point" id="point">
 
-
+    </div>
 </div>
 <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/" />
 <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
@@ -194,12 +204,11 @@
         'data':LAreaData//数据源
     });
     AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
+
         var map = new AMap.Map('container', {
             zoom: 16,
             scrollWheel: false
         });
-
-
         map.plugin(['AMap.Geolocation','AMap.Geocoder'], function () {
             geolocation = new AMap.Geolocation({
                 enableHighAccuracy: true,//是否使用高精度定位，默认:true
@@ -212,8 +221,10 @@
                 showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
                 showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
                 panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-                zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                zoomToAccuracy: true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                noGeoLocation:3
             });
+
             geocoder=new AMap.Geocoder({
 
             });
@@ -277,9 +288,12 @@
 
 
             });
-
         });
+
+
     })
+
+
 </script>
 </body>
 </html>

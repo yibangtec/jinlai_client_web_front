@@ -52,7 +52,7 @@ $(function(){
         var tel = $('#mobile').val();
         if(tel){
             var regTel = /^1\d{10}$/;
-            if (re.test(regTel)) {
+            if (regTel.test(tel)) {
 
             }else{
                 $('.tips-text').html('手机号格式错误');
@@ -62,7 +62,7 @@ $(function(){
         }else if(pass){
             console.log('pass');
             var regPass = /^[a-zA-Z0-9]{6,20}$/;
-            if (re.test(regPass)) {
+            if (regPass.test(pass)) {
 
             }else{
                 $('.tips-text').html('密码长度应在6-20位之间');

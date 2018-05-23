@@ -53,7 +53,7 @@
             </button>
         </form>
 
-        <div class="login_sms"><a href="login_sms">短信登录</a></div>
+        <div class="login_sms"><a id="loginSms">短信登录</a></div>
     </div>
     <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
@@ -67,12 +67,46 @@
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 <script>
     $(function(){
-        $('.wx-icon').on('click',function(){
-            var APPID = '<?php echo WECHAT_APP_ID ?>';
-            var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxba173a67df14c087&redirect_uri=https%3a%2f%2fwww.517ybang.com&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-            window.location = url;
+         console.log(getQueryString('tel'));
+                var tel = getQueryString('tel');
+                if(tel){
+                    $('#mobile').val(tel);
+                }
+                $('.wx-icon').on('click',function(){
+                    $.ajax({
+                        url: "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect",
+                        type: 'GET',
+                        dataType: 'JSONP',
+                        success: function (data) {
+                            var info=JSON.parse(data);
+                            console.log(info);
+                        }
+                    });
+                })
 
-        })
+                $('#loginSms').on('click',function(){
+                    var tel = $('#mobile').val();
+                    if(tel) {
+                        var regTel = /^1\d{10}$/;
+                        if (regTel.test(tel)) {
+                            $(this).attr('href', 'login_sms.html?tel=' + tel);
+                        } else {
+                            $(this).attr('href', 'login_sms.html?');
+                        }
+                    }else{
+                        $(this).attr('href', 'login_sms.html?');
+                    }
 
+                })
+
+
+                function getQueryString(name) {
+                    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) {
+                        return unescape(r[2]);
+
+                    }
+                }
     })
 </script>

@@ -48,9 +48,14 @@ a {text-decoration: none;}
 }
 
 .icon-Back:before {
-    content: "\e907";
+    content: "\e90b";
     color: #7e7e7e;
     font-size: 0.3rem;
+}
+.icon-dianpu3:before {
+    content: "\e9b0";
+    color: #7d7d7e;
+    font-size: 0.4rem;
 }
 .notice{
     width: 100%;background-color: #fff;
@@ -310,11 +315,11 @@ a {text-decoration: none;}
     width: 1.5rem;
 
 }
-
-.icon-xiajiantou:before {
-    content: "\e981";
+.icon-sj:before {
+    content: "\e9c6";
     color: #b5b5b5;
-    font-size: 0.8rem;
+    font-size: 0.15rem;
+    padding: 0 0.1rem;
     float: right;
 }
 

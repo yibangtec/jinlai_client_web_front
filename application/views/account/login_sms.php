@@ -38,9 +38,44 @@
             </button>
         </form>
 
-        <div class="login_sms"><a href="login">智能登录</a></div>
+        <div class="login_sms"><a id="login">智能登录</a></div>
     </div>
 </div>
 
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<script>
+
+    $(function(){
+        console.log(getQueryString('tel'));
+        var tel = getQueryString('tel');
+        if(tel){
+            $('#mobile').val(tel);
+        }
+        $('#login').on('click',function(){
+            var tel = $('#mobile').val();
+            if(tel) {
+                var regTel = /^1\d{10}$/;
+                if (regTel.test(tel)) {
+                    $(this).attr('href', 'login.html?tel=' + tel);
+                } else {
+                    $(this).attr('href', 'login.html?');
+                }
+            }else{
+                $(this).attr('href', 'login.html?');
+            }
+
+        })
+        function getQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+
+            }
+        }
+    });
+
+
+</script>
+
