@@ -57,12 +57,12 @@
             if(tel) {
                 var regTel = /^1\d{10}$/;
                 if (regTel.test(tel)) {
-                    $(this).attr('href', 'login.html?tel=' + tel);
+                    $(this).attr('href', 'login?tel=' + tel);
                 } else {
-                    $(this).attr('href', 'login.html?');
+                    $(this).attr('href', 'login?');
                 }
             }else{
-                $(this).attr('href', 'login.html?');
+                $(this).attr('href', 'login?');
             }
 
         })

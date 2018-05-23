@@ -89,12 +89,12 @@
                     if(tel) {
                         var regTel = /^1\d{10}$/;
                         if (regTel.test(tel)) {
-                            $(this).attr('href', 'login_sms.html?tel=' + tel);
+                            $(this).attr('href', 'login_sms?tel=' + tel);
                         } else {
-                            $(this).attr('href', 'login_sms.html?');
+                            $(this).attr('href', 'login_sms?');
                         }
                     }else{
-                        $(this).attr('href', 'login_sms.html?');
+                        $(this).attr('href', 'login_sms?');
                     }
 
                 })
