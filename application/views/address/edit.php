@@ -134,7 +134,7 @@
 
 </div>
 <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/" />
-<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=2f04fd0ba4f3568b228c845e2ef19428&plugin=AMap.ToolBar'></script>
+<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
 
 <!-- UI组件库 1.0 -->
 <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
