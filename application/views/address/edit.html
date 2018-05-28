@@ -4,26 +4,7 @@
     <meta charset="UTF-8">
     <title>修改地址</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        if(clientWidth>=750){
-                            docEl.style.fontSize = '100px';
-                        }else{
-                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                        }
-                    };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-
-    </script>
+    <script src="../js/rem.js"></script>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/account.js"></script>
     <link rel="stylesheet" href="https://i.icomoon.io/public/022b3dd411/jinlai/style.css">
@@ -81,7 +62,7 @@
             background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;background-size: 0.32rem 0.32rem;z-index: 100;}
         .error-tips img{width: 0.5rem;height: 0.5rem;}
         .amap-geo{
-            display: none;
+            display: block;
         }
     </style>
 
@@ -105,7 +86,7 @@
     </div>
     <div class="create-content">
         <div class="save">保存</div>
-        <form action="">
+        <form action="" style="margin-bottom: 5rem">
             <div class="create-list">
                 <input class="create-input" type="text" placeholder="简称（可选）" maxlength="10"/>
             </div>
@@ -130,7 +111,7 @@
             </div>
         </form>
 
-        <div class="map-box">
+        <div class="map-box" style="position: fixed">
             <div id="container" class="map" tabindex="0" style="width: 100%;height: 4rem;"></div>
             <div id='right' style="display: none">
                 <div>

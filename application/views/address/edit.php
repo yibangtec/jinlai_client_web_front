@@ -54,7 +54,7 @@
             background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;background-size: 0.32rem 0.32rem;z-index: 100;}
         .error-tips img{width: 0.5rem;height: 0.5rem;}
         .amap-geo{
-            display: none;
+            display: block;
         }
 </style>
 <div class="tips" id="tips">
@@ -74,7 +74,7 @@
     </div>
     <div class="create-content">
         <div class="save">保存</div>
-        <form action="">
+        <form action="" style="margin-bottom: 5rem">
             <div class="create-list">
                 <input class="create-input" type="text" placeholder="简称（可选）" maxlength="10"/>
             </div>
