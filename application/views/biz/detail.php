@@ -1,231 +1,1 @@
-<base href="<?php echo $this->media_root ?>">
-<style>	.shopBg{		padding-bottom: .2rem;	}	.pictitle{		background:url(<?php echo CDN_URL ?>media/biz/linebar.png) no-repeat center left; 		background-size:cover ;	}</style><?php	// 检查当前设备信息	$user_agent = $_SERVER['HTTP_USER_AGENT'];	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):?>
-	<!--店铺首页商家信息开始-->	<div class="shopBg clearfix">	<div class="shopTitle">		<div class="shopback fl">			<i class="icon-Back"></i>		</div>		<div class="shopSearch fl">			<input type="text" placeholder="耳机 APP 蓝牙"/>		</div>	</div>		
-		<div class="shopinfo wid710 auto clearfix">
-			<div class="shoppic fl">
-				<img src="<?php echo CDN_URL ?>media/home/banner@3x.png">
-			</div>
-			<!--商家名字等信息-->
-			<div class="shopname fl">
-				<span class="fl"><?php echo $item['brief_name'] ?></span>
-				<a href="#" class="fl">入驻商家</a>
-			</div>
-			<div class="gnwrap fr">
-				<a href="#" class="pay">充值</a>
-				<a href="#" class="focus">+关注</a>
-			</div>
-		</div>	</div>
-		<!--tab切换区域开始-->
-		<div class="shopIndextabtitle wid710 auto">
-			<ul class="clearfix">
-				<li class="current">
-					首页
-				</li>
-				<li>
-					<span>商品</span>
-					<span>(99)</span>
-				</li>
-				<li>
-					最新上架
-				</li>
-				<li style="border-right:0">
-					活动商品
-				</li>
-			</ul>
-			
-		</div>			<!--底部导航区域-->				<div class="fiex footerbar clearfix">					<div class="textbar fl">						<ul>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>							<li>								<span>宝贝分类</span>								<p class="line"></p>							</li>						</ul>					</div>					<div class="wechat">						<i></i>						<span>客服</span>					</div>									</div>		<?php endif ?>
-		
-
-		
-	<!--头部banner区域开始-->
-		<div class="bannerWrap auto">
-			<div class="swiper-container">
-	        <div class="swiper-wrapper">
-				<?php
-					if ( !empty($ornament['home_slides']) ):
-						$slides = explode(',', $ornament['home_slides']);
-						foreach ($slides as $slide):
-				?>
-	            <div class="swiper-slide">
-	            	<img src="<?php echo MEDIA_URL.'ornament_biz/'. $slide ?>">
-	            </div>
-				<?php
-						endforeach;
-					endif;
-				?>
-	        </div>
-	        <!-- Add Pagination -->
-	        <div class="swiper-pagination"></div>
-	    </div>
-	</div>
-	<!--商品分类-->
-	<div class="threecol clearfix none">
-	<ul>
-		<li>
-			<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-			<div class="pic shopIndexpic">
-				<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
-			</div>
-			</a>
-		</li>
-		<li>
-			<div class="pic shopIndexpic">
-				<img src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
-			</div>
-		</li>
-		<li style="margin-right:0">
-			<div class="pic shopIndexpic">
-				<img src="<?php echo CDN_URL ?>media/home/banner1@3x.png">
-			</div>
-		</li>
-	</ul>
-</div>
-	
-	<?php if ( !empty($ornament['home_m1_ids']) ): ?>
-	<!--卡片式导航分类区域-->
-	<div class="shopIndexcard clearfix auto mt10 wid710">		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>
-		</div>
-		<div class="pic mt10">
-			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m1_ace_id']) ?>" target="_self">
-				<img src="<?php echo MEDIA_URL.'ornament_biz/'.$ornament['home_m1_ace_url'] ?>">
-			</a>
-		</div>
-		<!--卡片式导航商品内容区域-->
-		<div class="cardnavcontent clearfix wid710 auto mt14">
-			<ul>
-				<?php foreach ($item['m1_items'] as $module_item): ?>
-				<li>
-					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
-						<div class=pic>
-							<img src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">
-						</div>
-					
-						<h1><?php echo $module_item['name'] ?></h1>
-						<h2><?php echo $module_item['slogan'] ?></h2>
-						<h3>￥ <?php echo $module_item['price'] ?></h3>
-					</a>
-				</li>
-				<?php endforeach ?>
-			</ul>
-		</div>
-	</div>
-	<?php endif ?>
-	
-	<?php if ( !empty($ornament['home_m2_ids']) ): ?>
-	<!--卡片式导航分类区域-->
-	<div class="shopIndexcard clearfix auto mt10 wid710">
-		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>
-		<div class="pic mt10">
-			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m2_ace_id']) ?>" target="_self">
-				<img src="<?php echo MEDIA_URL.'ornament_biz/'.$ornament['home_m2_ace_url'] ?>">
-			</a>
-		</div>
-		<!--卡片式导航商品内容区域-->
-		<div class="cardnavcontent clearfix wid710 auto mt14">
-			<ul>
-				<?php foreach ($item['m2_items'] as $module_item): ?>
-				<li>
-					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
-						<div class=pic>
-							<img src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">
-						</div>
-					
-						<h1><?php echo $module_item['name'] ?></h1>
-						<h2><?php echo $module_item['slogan'] ?></h2>
-						<h3>￥ <?php echo $module_item['price'] ?></h3>
-					</a>
-				</li>
-				<?php endforeach ?>
-			</ul>
-		</div>
-	</div>
-	<?php endif ?>
-	
-	<?php if ( !empty($ornament['home_m3_ids']) ): ?>
-	<!--卡片式导航分类区域-->
-	<div class="shopIndexcard clearfix auto mt10 wid710">
-		<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>
-		<div class="pic mt10">
-			<a href="<?php echo base_url('item/detail?id='.$ornament['home_m3_ace_id']) ?>" target="_self">
-				<img src="<?php echo MEDIA_URL.'ornament_biz/'.$ornament['home_m3_ace_url'] ?>">
-			</a>
-		</div>
-		<!--卡片式导航商品内容区域-->
-		<div class="cardnavcontent clearfix wid710 auto mt14">
-			<ul>
-				<?php foreach ($item['m3_items'] as $module_item): ?>
-				<li>
-					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
-						<div class=pic>
-							<img src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">
-						</div>
-					
-						<h1><?php echo $module_item['name'] ?></h1>
-						<h2><?php echo $module_item['slogan'] ?></h2>
-						<h3>￥ <?php echo $module_item['price'] ?></h3>
-					</a>
-				</li>
-				<?php endforeach ?>
-			</ul>
-		</div>
-	</div>
-	<?php endif ?>
-	<div class="wid718 auto bgfff border20 exercise clearfix">
-		<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
-	</div>
-	<div class="like wid718 auto clearfix mt10">
-					<ul>
-						<li>
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-						<li class="mr0">
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_3.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-						<li class="mr0">
-							<a href="https://www.517ybang.com/item/detail?id=3" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg">
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-							</a>
-						</li>
-					</ul>
-				</div>
-<script>		var swiperIndex = new Swiper('.swiper-container', {	        pagination: '.swiper-pagination',	        paginationClickable: true,	        autoplay: 2000,	        loop:true	   });	
-	// <?php echo $this->class_name_cn ?>数据
-	var item = <?php echo json_encode($item) ?>;		// 店铺装修信息	var ornament = <?php echo isset($ornament)? json_encode($ornament): 'undefined' ?>;	console.log(item,ornament);//	console.log(ornament);	$('.shopBg').css({		'background':'url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/'+ornament.main_figure_url+') no-repeat center'	})
-</script>
+<base href="<?php echo $this->media_root ?>"><style>	body{		overflow-x:hidden ;	}	.shopBg{		padding-bottom: .2rem;	}	.bannerWrap{		margin-top: .2rem;		width: 94.7%;		height: 3.4rem;		background: #efefef;	}	.pictitle{		background:url(<?php echo CDN_URL ?>media/biz/linebar.png) no-repeat center left; 		background-size:cover ;	}	.fruidWrap{		width: 7.1rem;		padding: 0px;		background: none;		height: 2.3rem;		margin-bottom: .2rem;			}	.fruidWrap li{		width: 2.3rem;		height: 2.3rem;		margin-right: 0px;		margin-left: .1rem;	}	.fruidWrap ul{		margin-left: -.1rem;	}	.swiper-container_detail{		width: 100%;		overflow: hidden;		position: relative;		height: 100%;		border-radius: .2rem;		z-index: 1;	}/*.swiper-container_fruit{	height: 100%;}*/.fruidWrap .swiper-slide img{	height: 2.3rem;}</style><?php	if ($this->user_agent['is_wechat'] === TRUE || $this->user_agent['is_desktop'] === TRUE):?>	<!--从右往左滑出的div-->	<!--<div class="screening">		<span>价格区间(元)</span>		<p>			<input type="text" placeholder="最低价"/>			<b>—</b>			<input type="text" placeholder="最高价" />		</p>		<div class="screeningbtn">			<a href="###">重置</a>			<a href="###">完成</a>		</div>	</div>-->	<!--店铺首页商家信息开始-->	<div class="shopBg clearfix">        <div class="shopTitle">            <div class="shopback fl">                <i class="icon-Back"></i>            </div>            <div class="shopSearch fl">                <input type="search" placeholder="耳机 APP 蓝牙">            </div>        </div>				<div class="shopinfo wid710 auto clearfix">			<div class="shoppic fl">				<img src="<?php echo $item['url_logo'] ?>">			</div>			<!--商家名字等信息-->			<div class="shopname fl">								<span class="fl"><?php echo $item['brief_name'] ?></span>				<a href="#" class="fl">入驻商家</a>			</div>			<div class="gnwrap fr">				<!--<a href="#" class="pay">充值</a>-->				<a href="#" class="focus">关注</a>			</div>		</div>	</div>		<!--tab切换区域开始-->		<div class="shopIndextabtitle wid710 auto">			<ul class="clearfix">				<li class="current">首页</li>				<li>					<span>商品</span>                    <!--<span>(<?php echo $item['item_count'] ?>)</span>-->				</li>				<li>服务</li>				<li>活动商品</li>			</ul>		</div>        <!--底部导航区域-->        <div class="fiex footerbar clearfix">            <div class="textbar fl">                <ul>                    <li>                        <span>宝贝分类</span>                        <p class="line"></p>                    </li>                    <li>                        <span>宝贝分类</span>                        <p class="line"></p>                    </li>                    <li>                        <span>宝贝分类</span>                                           </li>                </ul>            </div>            <div class="wechat">                <i></i>                <span>客服</span>            </div>        </div>		<?php endif ?>	<div id="detailList">	<div class="bussinesswrap" style="display: block;">        <?php if ( !empty($item['ornament']['home_slides']) ): ?>        <!--头部banner区域开始-->		<div class="bannerWrap auto">			<div class="swiper-container_detail">                <div class="swiper-wrapper">                    <?php                        if ( !empty($item['ornament']['home_slides']) ):                            $slides = explode(',', $item['ornament']['home_slides']);                            foreach ($slides as $slide):                                // 根据分隔符检查点击图片后是否需要跳转到别的页面                                if (strpos($slide, '|') !== FALSE):                                    // 拆分出图片URL和链接URL                                    $slide_urls = explode('|', $slide);                                    list($slide, $class_name, $class_id) = $slide_urls;                                    echo '<div class="swiper-slide"><a title="'.SITE_NAME.'" href="'. base_url($class_name.'/detail?id='.$class_id.'&biz_id='.$item['biz_id']). '" target="_self"><img data-src="'.MEDIA_URL.'ornament_biz/'. $slide.'"></a></div>';                                else:                                    echo '<div class="swiper-slide"><img data-src="'.MEDIA_URL.'ornament_biz/'. $slide.'"></div>';                                endif;                            endforeach;                        endif;                    ?>                </div>                <!-- Add Pagination -->                <div class="swiper-pagination"></div>            </div>        </div>        <?php endif ?>    <?php if ( !empty($item['m0_items']) ): ?>	<div class="fruidWrap clearfix auto">        <div class="swiper-container_fruit">            <div class="swiper-wrapper">                <ul>                    <?php foreach ($item['m0_items'] as $module_item): ?>                    <li class=swiper-slide>                        <a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">                            <img data-src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">                        </a>                    </li>                    <?php endforeach ?>                </ul>            </div>        </div>    </div>    <?php endif ?>    <!-- 商家优惠券 -->    <?php if ( ! empty($item['coupon_templates'])): ?>	<div class="couponswrap wid710 auto mt20 clearfix">		<ul class="clearfix">				<!--有三张优惠券的时候显示-->			<?php if (count($item['coupon_templates']) == 3): ?>            <?php foreach ($item['coupon_templates'] as $template): ?>			<li>                <a href="<?php echo base_url('coupon/create?template_id='.$template['template_id']) ?>">                    <span class=couponnum><?php echo $template['amount'] ?></span>                    <span class="verticalline fl"></span>                    <div class="couponinfowrap fl">                        <span class="coupontitletext">优惠券</span>                        <?php if ( ! empty($template['min_subtotal'])): ?>                        <span class="coupontip mt10">满<?php echo $template['min_subtotal'] ?>可用</span>                        <?php endif ?>                    </div>                    <p class="getcoupon">                        点击领取                        <span></span>                    </p>                </a>			</li>			<?php endforeach ?>			<?php endif ?>				<!--有两张优惠券的时候显示-->			<?php if (count($item['coupon_templates']) == 2): ?>            <?php foreach ($item['coupon_templates'] as $template): ?>			<li class="coupontwo">                <a href="<?php echo base_url('coupon/create?template_id='.$template['template_id']) ?>">                    <span class=couponnum><?php echo $template['amount'] ?></span>                    <span class="verticalline fl"></span>                    <div class="couponinfowrap fl">                        <span class="coupontitletext">优惠券</span>                     	 <?php if ( ! empty($template['min_subtotal'])): ?>                        <span class="coupontip mt10">满<?php echo $template['min_subtotal'] ?>可用</span>                        <?php endif ?>                    </div>                    <p class="getcoupon">                        点击领取                        <span></span>                    </p>                </a>			</li>				<?php endforeach ?>			<?php endif ?>							<!--有一张优惠券的时候显示-->			<?php if (count($item['coupon_templates']) == 1): ?>            <?php foreach ($item['coupon_templates'] as $template): ?>			<li class="couponone">				<img data-src="<?php echo CDN_URL ?>media/yhqbg@3x.png" />                <a href="<?php echo base_url('coupon/create?template_id='.$template['template_id']) ?>">                	<!--可用金额-->                	<div class="curnum">                		<?php echo $template['amount'] ?>                		<div class="yuan">                			<img  data-src="<?php echo CDN_URL ?>media/yuan@3x.png"/>                		</div>                	</div>                	<div class="yhqtext">                		优惠券                	</div>                	 <?php if ( ! empty($template['min_subtotal'])): ?>                	<div class="topnum">                		满                		<span>                			<?php echo $template['min_subtotal'] ?>                		</span>                		元可用                	</div>                	<?php endif ?>                	<p class="line"></p>                   	<div  class="curgetcoupon">                   		点&nbsp;击&nbsp;领&nbsp;取                   	</div>                </a>			</li>				<?php endforeach ?>			<?php endif ?>		</ul>	</div>    <?php endif ?>	<!--商品分类-->	<div class="threecol clearfix none">        <ul>            <li>                <a href="https://www.517ybang.com/item/detail?id=3" target="_self">                <div class="pic shopIndexpic">                    <img data-src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">                </div>                </a>            </li>            <li>                <div class="pic shopIndexpic">                    <img data-src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">                </div>            </li>            <li style="margin-right:0">                <div class="pic shopIndexpic">                    <img data-src="<?php echo CDN_URL ?>media/home/banner1@3x.png">                </div>            </li>        </ul>    </div>	<?php if ( !empty($item['m1_items']) ): ?>	<!--卡片式导航分类区域-->	<div class="shopIndexcard clearfix auto mt10 wid710">		<!--<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>-->		<div class="pic mt10">			<a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m1_ace_id']) ?>" target="_self">				<img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m1_ace_url'] ?>">			</a>		</div>		<!--卡片式导航商品内容区域-->		<div class="cardnavcontent clearfix wid710 auto mt14">			<ul>				<?php foreach ($item['m1_items'] as $module_item): ?>				<li>					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">						<div class=pic>							<img data-src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">						</div>						<h1><?php echo $module_item['name'] ?></h1>						<h2><?php echo $module_item['slogan'] ?></h2>						<h3>￥ <?php echo $module_item['price'] ?></h3>					</a>				</li>				<?php endforeach ?>			</ul>		</div>	</div>	<?php endif ?>		<?php if ( !empty($item['m2_items']) ): ?>	<!--卡片式导航分类区域-->	<div class="shopIndexcard clearfix auto mt10 wid710">		<!--<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>-->		<div class="pic mt10">			<a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m2_ace_id']) ?>" target="_self">				<img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m2_ace_url'] ?>">			</a>		</div>		<!--卡片式导航商品内容区域-->		<div class="cardnavcontent clearfix wid710 auto mt14">			<ul>				<?php foreach ($item['m2_items'] as $module_item): ?>				<li>					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">						<div class=pic>							<img data-src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">						</div>						<h1><?php echo $module_item['name'] ?></h1>						<h2><?php echo $module_item['slogan'] ?></h2>						<h3>￥ <?php echo $module_item['price'] ?></h3>					</a>				</li>				<?php endforeach ?>			</ul>		</div>	</div>	<?php endif ?>	<?php if ( !empty($item['m3_items']) ): ?>	<!--卡片式导航分类区域-->	<div class="shopIndexcard clearfix auto mt10 wid710">		<!--<div class="pictitle wid710 border20">			<strong>Hisense</strong>			<i class="icon-gengduo fr"></i>			<span class="fr">创新就是生活</span>		</div>-->		<div class="pic mt10">			<a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m3_ace_id']) ?>" target="_self">				<img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m3_ace_url'] ?>">			</a>		</div>		<!--卡片式导航商品内容区域-->		<div class="cardnavcontent clearfix wid710 auto mt14">			<ul>				<?php foreach ($item['m3_items'] as $module_item): ?>				<li>					<a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">						<div class=pic>							<img data-src="<?php echo MEDIA_URL.'item/'.$module_item['url_image_main'] ?>">						</div>						<h1><?php echo $module_item['name'] ?></h1>						<h2><?php echo $module_item['slogan'] ?></h2>						<h3>￥ <?php echo $module_item['price'] ?></h3>					</a>				</li>				<?php endforeach ?>			</ul>		</div>	</div>	<?php endif ?></div><div class="bussinesswrap clearfix">	<!--店家商品分类导航条-->	<div class="shopindextextnav">		<ul>			<li class="bussinesscur">综合</li>			<li data-order_by="sold_overall">销量</li>			<li data-order_by="time_publish">上新</li>			<li data-order_by="price">价格				<span class="line"></span>			</li>			<i class="icon-shaixuan"></i>		</ul>	</div>	<div class="shopindexlist wid710 mt10 clearfix">				<ul id="bizDetailList">		</ul>			</div></div><div class="bussinesswrap">	<div class="shopindexlist wid710 mt10 clearfix">		<ul>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人生</h1>				<p>										<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人生</h1>				<p>										<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人生</h1>				<p>										<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人生</h1>				<p>					<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人生</h1>				<p>										<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>		</ul>			</div></div><div class="bussinesswrap">	<div class="shopindexlist wid710 mt10 clearfix">		<ul>			<li>				<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg"/>				<h1>Nike登山运动装备你的人ss</h1>				<p>					<span>¥</span>					<span>239</span>					<span class="buyed fr">						成交<b>123212</b>笔					</span>									</p>			</li>		</ul>			</div></div></div><!--<div class="mask_biz"></div>--><script>	// 每次获取多少条数据	var limit = <?php echo $limit ?>;	console.log('limit是' + limit);	// 页面生成时已跳过多少行数据	var offset = <?php echo $offset ?>;	console.log('offset是' + offset);		// <?php echo $this->class_name_cn ?>数据	var item = <?php echo json_encode($item) ?>;	var item_image_root = '<?php echo MEDIA_URL.'item/' ?>' // 商品媒体文件根目录	// 商家商品    var items = <?php echo json_encode($items) ?>;    console.log(items);	for(var i=0;i<items.length;i++)	{	    var url_image_main = items[i].url_image_main;	    var real_url_image_main = (url_image_main.indexOf('https://') || url_image_main.indexOf('http://'))? url_image_main: item_image_root + url_image_main; // 主图URL；若不以"https://"、"http://"开头，则需拼上商品媒体文件根目录		// 生成并渲染单品DOM        var dom_item =            '<li>' +            '   <img src="'+ real_url_image_main + '"/>' +            '   <h1>' + items[i].name + '</h1>' +            '   <p>' +            '       <span>￥ ' + items[i].price + '</span>' +            (items[i].tag_price > items[i].price? '       <del>￥ ' + items[i].tag_price + '</del>': '') +            '   </p>' +            '</li>';		$('#bizDetailList').append(dom_item);	}	$(function(){        // 店铺装修信息        var ornament = item.ornament;        $('.shopBg').css({            'background':'url(<?php echo MEDIA_URL. 'ornament_biz/' ?>' + ornament.main_figure_url + ') no-repeat center'        });        if(ornament.main_figure_url != ''){            $('.shopname span').eq(0).css('color','#fff');        };        if($('.bannerWrap').find('img').length >= 1){                var swiperIndex = new Swiper('.swiper-container_detail', {                pagination: '.swiper-pagination',                paginationClickable: true,                autoplay: 2000,                loop:true           });        };	        //	图片lazyload        var lazyLoadImg = new LazyLoadImg({            el: document.querySelector('#detailList'),            mode: 'default',            time: 300,            complete: true,            position: {                top: 0,                right: 0,                bottom: 0,                left: 0            },            before: function(el) {                el.src = '<?php echo CDN_URL ?>media/home/default.png';                if (el.src = '<?php echo CDN_URL ?>media/home/default.png') {                    el.style.width = 'auto';                    el.style.display = 'block';                    el.style.margin = '0 auto';                    el.style.border = 'none'                }            },            success: function(el) {                el.classList.add('success')            },            error: function(el) {                el.src = '<?php echo CDN_URL ?>media/home/default.png'            }        });});</script>
