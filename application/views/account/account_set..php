@@ -3,17 +3,17 @@
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/accountSet.css"/>
      <div class="box">
             <a href="" class="account-set clearfix">
-                 <span class="account-set-text">×ÊÁÏÐÞ¸Ä</span>
+                 <span class="account-set-text">èµ„æ–™ä¿®æ”¹</span>
                  <i class="icon-Arrow"></i>
             </a>
             <a href="password_set.html" class="account-set clearfix">
-                <span class="account-set-text">ÃÜÂëÉèÖÃ</span>
+                <span class="account-set-text">å¯†ç è®¾ç½®</span>
                 <i class="icon-Arrow"></i>
             </a>
             <a href="password_reset.html" class="account-set clearfix">
-                <span class="account-set-text">ÃÜÂëÖØÖÃ</span>
+                <span class="account-set-text">å¯†ç é‡ç½®</span>
                 <i class="icon-Arrow"></i>
             </a>
 
-            <div class="sign-out">ÍË³ö</div>
+            <div class="sign-out">é€€å‡º</div>
      </div>
