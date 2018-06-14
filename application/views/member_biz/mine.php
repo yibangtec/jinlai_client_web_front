@@ -17,7 +17,8 @@
         foreach ($items as $item):
             // 若未指定会员卡LOGO，使用商家LOGO
             $logo_url = MEDIA_URL. (!empty($item['member_logo_url'])? 'ornament_biz/'. $item['member_logo_url']: 'biz/'. $item['url_logo']);
-
+			if($logo_url == 'https://jinlaisandbox-images.b0.upaiyun.com/biz/')
+          $logo_url = 'https://cdn-remote.517ybang.com/media/home/default.png';
             $inline_style = ''; // 根据商家店铺装修方案设置样式
             if ( !empty($item['vi_color_first']) )
                 $inline_style .= 'background-color:#'.$item['vi_color_first'].';';
@@ -25,7 +26,7 @@
                 $inline_style .= 'background: url('. MEDIA_URL.'ornament_biz/'.$item['member_thumb_url']. ') no-repeat center center;';
     ?>
 
-    <a class="entermember_wrap" href="<?php echo base_url('member_biz/detail?id='.$item['biz_id']) ?>" target="_self">
+    <a class="entermember_wrap" href="<?php echo base_url('member_biz/detail?biz_id='.$item['biz_id']) ?>" target="_self">
         <div class="member_list wid710 auto border20" style="<?php echo $inline_style ?>">
             <div class="memberlistpic"<?php if (!empty($item['member_logo_url']) && !empty($item['vi_color_second'])) echo ' style="background-color:#'.$item['vi_color_second'].'"' ?>>
                 <img src="<?php echo $logo_url ?>">

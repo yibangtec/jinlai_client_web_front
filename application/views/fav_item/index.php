@@ -22,13 +22,6 @@
 
 <base href="<?php echo $this->media_root ?>">
 
-<div id=breadcrumb>
-	<ol class="breadcrumb container">
-		<li><a href="<?php echo base_url() ?>">首页</a></li>
-		<li class=active><?php echo $this->class_name_cn ?></li>
-	</ol>
-</div>
-
 <div id=content class=container>
 	<?php if ( isset($content) ) echo '<div class="alert alert-warning" role=alert>'.$content.'</div>'; ?>
 	
@@ -42,9 +35,6 @@
 
 		<?php foreach ($items as $item): ?>
 		<li class="item col-xs-6 col-sm-4 col-md-3" data-item-id="<?php echo $item[$this->id_name] ?>">
-			<?php if ( strpos(DEVELOPER_MOBILES, ','.$this->session->mobile.',') !== FALSE ): ?>
-			<span>ID <?php echo $item['record_id'] ?></span>
-			<?php endif ?>
 
 			<a title="<?php echo $item['name'] ?>" href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
 				<figure class=image-main class="col-xs-12 col-sm-6 col-md-4">
@@ -57,7 +47,7 @@
 
 				<div class=digits>
 					<span>￥</span><strong><?php echo substr($item['price'], 0, -3).'<small>'.substr($item['price'], -3).'</small>' ?></strong>
-					<?php echo ($item['tag_price'] !== '0.00')? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
+					<?php echo ($item['tag_price'] !== '0.00' & $item['tag_price'] > $item['price'])? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
 				</div>
 
 				<?php if ( !empty($skus) ): ?>
@@ -91,3 +81,7 @@
 	</ul>
 	<?php endif ?>
 </div>
+
+<script>
+    var items = <?php echo json_encode($items) ?>
+</script>

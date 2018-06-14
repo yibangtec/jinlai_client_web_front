@@ -127,3 +127,4 @@
 		$('.swiper-container7 .swiper-slide-active').css('height','auto').siblings('.swiper-slide').css('height','0px');
 		mySwiper6.update();
 	});
+

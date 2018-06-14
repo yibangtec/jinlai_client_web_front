@@ -106,3 +106,7 @@
 		<?php endif ?>
 	</dl>
 </div>
+
+<script>
+    var item = <?php echo json_encode($item) ?>
+</script>

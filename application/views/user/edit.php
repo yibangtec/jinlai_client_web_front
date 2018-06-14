@@ -1,140 +1,113 @@
-<style>
+	<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+    <link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
+    <link href="https://cdn-remote.517ybang.com/css/swiper.mini.css" rel="stylesheet">
+    <link href="https://cdn-remote.517ybang.com/css/index.min.css" rel="stylesheet">
+	<style>
+		body{
+			background: #fff;
+		}
+		.icon-fanhui{
+			font-size: .36rem;
+    		margin-top: .23rem;
+		}
+		.header-img{
+            text-align: center;
+            height: 1.46rem;
+            width: 1.46rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #ccc;
+             box-shadow: 0 0 0.16rem rgba(0,0,0,.5);
+        }
+        .header-img:before{
+            content: '';
+            width: 0;
+            height: 100%;
+        }
+        .header-img img{
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+        }
 
-	/* 宽度在750像素以上的设备 */
-	@media only screen and (min-width:751px)
-	{
+	</style>
 
-	}
-	
-	/* 宽度在960像素以上的设备 */
-	@media only screen and (min-width:961px)
-	{
-
-	}
-
-	/* 宽度在1280像素以上的设备 */
-	@media only screen and (min-width:1281px)
-	{
-
-	}
-</style>
-
-<link href="<?php echo CDN_URL ?>css/datepicker.min.css" rel="stylesheet">
-<script src="<?php echo CDN_URL ?>js/datepicker.min.js"></script>
-<script>
-	$(function(){
-		// 初始化日期选择器
-		$('[type=date]').datepicker(
-			{
-			    language: 'cn', // 本地化语言在js/main.js中
-			    minDate: new Date("<?php echo date('Y-m-d', strtotime("-120years")) ?>"),
-				maxDate: new Date("<?php echo date('Y-m-d', strtotime("-14years")) ?>"),
-			}
-		)
-	});
-</script>
-
-<script defer src="/js/file-upload.js"></script>
-<base href="<?php echo $this->media_root ?>">
-
-<div id=breadcrumb>
-	<ol class="breadcrumb container">
-		<li><a href="<?php echo base_url() ?>">首页</a></li>
-		<li><a href="<?php echo base_url($this->class_name) ?>"><?php echo $this->class_name_cn ?></a></li>
-		<li class=active><?php echo $title ?></li>
-	</ol>
-</div>
-
-<div id=content class=container>
+<!--编辑title区域-->
 	<?php
-		if ( !empty($error) ) echo '<div class="alert alert-warning" role=alert>'.$error.'</div>';
-		$attributes = array('class' => 'form-'.$this->class_name.'-edit form-horizontal', 'role' => 'form');
-		echo form_open_multipart($this->class_name.'/edit?id='.$item[$this->id_name], $attributes);
+		// 常用数据
+		$itemname = $item['nickname'];
+		$url_avatar = empty($item['avatar'])? DEFAULT_IMAGE: $this->media_root. $item['avatar'];
 	?>
-		<fieldset>
-			<input name=id type=hidden value="<?php echo $item[$this->id_name] ?>">
-			
-			<div class=form-group>
-				<label for=mobile class="col-sm-2 control-label">手机号</label>
-				<div class=col-sm-10>
-					<p class="form-control-static"><?php echo $item['mobile'] ?></p>
-				</div>
+		<div style="border-bottom: 1px solid #e6e6e6;">
+			<div class="changeUserTitle wid710 auto">
+				<i class="icon-fanhui fl"></i>
+				<span class="changeUserText fl">个人信息</span>
+				<span class="changeUserSave fr">保存</span>
 			</div>
-
-			<div class=form-group>
-				<label for=avatar class="col-sm-2 control-label">头像</label>
-				<div class=col-sm-10>
-					<?php if ( !empty($item['avatar']) ): ?>
-					<div class=row>
-						<figure class="col-xs-12 col-sm-6 col-md-4">
-							<img class=img-circle src="<?php echo $item['avatar'] ?>">
-						</figure>
-					</div>
-					<?php endif ?>
-
-					<div>
-						<?php $name_to_upload = 'avatar' ?>
-
-						<input id=<?php echo $name_to_upload ?> class=form-control type=file>
-						<input name=<?php echo $name_to_upload ?> type=hidden value="<?php echo $item[$name_to_upload] ?>">
-
-						<button class="file-upload btn btn-primary btn-lg col-xs-12 col-md-3" data-target-dir="user/avatar" data-selector-id=<?php echo $name_to_upload ?> data-input-name=<?php echo $name_to_upload ?> type=button><i class="fa fa-upload" aria-hidden=true></i> 上传</button>
-
-						<ul class="upload_preview list-inline row"></ul>
-					</div>
-
-				</div>
-			</div>
-			
-			<div class=form-group>
-				<label for=nickname class="col-sm-2 control-label">昵称</label>
-				<div class=col-sm-10>
-					<input class=form-control name=nickname type=text value="<?php echo $item['nickname'] ?>" placeholder="昵称">
-				</div>
-			</div>
-
-			<div class=form-group>
-				<label for=lastname class="col-sm-2 control-label">姓氏</label>
-				<div class=col-sm-10>
-					<input class=form-control name=lastname type=text value="<?php echo $item['lastname'] ?>" placeholder="姓氏">
-				</div>
-			</div>
-			<div class=form-group>
-				<label for=firstname class="col-sm-2 control-label">名</label>
-				<div class=col-sm-10>
-					<input class=form-control name=firstname type=text value="<?php echo $item['firstname'] ?>" placeholder="名">
-				</div>
-			</div>
-
-			<div class=form-group>
-				<label for=gender class="col-sm-2 control-label">性别</label>
-				<div class=col-sm-10>
-					<?php
-						$input_name = 'gender';
-						$options = array('女', '男');
-						foreach ($options as $option):
-					?>
-					<label class=radio-inline>
-						<input type=radio name="<?php echo $input_name ?>" value="<?php echo $option ?>" required <?php if ($item[$input_name] === $option) echo 'checked'; ?>> <?php echo $option ?>
-					</label>
-					<?php endforeach ?>
-				</div>
-			</div>
-
-			<div class=form-group>
-				<label for=dob class="col-sm-2 control-label">生日</label>
-				<div class=col-sm-10>
-					<input class="form-control" name=dob type=date min=<?php echo date('Y-m-d', strtotime("-120years")) ?> max=<?php echo date('Y-m-d', strtotime("-14years")) ?> value="<?php echo $item['dob'] ?>" placeholder="例如：1994-07-28">
-				</div>
-			</div>
-		</fieldset>
-
-		<div class=form-group>
-		    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
-				<button class="btn btn-primary btn-lg btn-block" type=submit>确定</button>
-		    </div>
 		</div>
+		<!--编辑个人信息上传头像区域-->
+		<div class="editMyPic wid710 auto">
+			<div class="block auto header-img" style="background: url('<?php echo $url_avatar; ?>') no-repeat center; background-size: cover;">
 
-	</form>
+			</div>
 
-</div>
+			<p>点击修改头像</p>
+		</div>
+		<!--个人信息表单填写区域-->
+		<div class="changeUserForm wid670 auto">
+			<form action="">
+				<div>
+					<label for="" class="fl">用户ID</label>
+					<input type="text" style="background-color: #ffffff" disabled="true" class="fl" value="<?php echo $item['user_id'] ?>"/>
+				</div>
+				<div>
+					<label for="" class="fl">会员等级</label>
+					<input type="text" style="background-color: #ffffff" disabled="true" class="fl" value="VIP<?php echo $item['level'] ?>"/>
+				</div>
+				<div style="width: 100%;margin: 0">
+                	<div style="width: 50%;float: left;display: flex;padding-bottom: 0;border-bottom: none;border-right: 0.01rem solid #f6f6f6;box-sizing: border-box">
+                		<label for="" style="width: 0.5rem;margin-right: 0.2rem">姓</label>
+                		<input style="margin-left: 0;flex: 1;width: 2.8rem" type="text" value="<?php echo $item['lastname'] ?>" placeholder="请输入"/>
+                	</div>
+                	<div style="width: 50%;float: left;display: flex;padding-bottom: 0;border-bottom: none">
+                		<label for="" style="width: 0.5rem;margin-right: 0.2rem;margin-left: 0.1rem">名</label>
+                		<input style="margin-left: 0;flex: 1" type="text" value="<?php echo $item['firstname'] ?>" placeholder="请输入"/>
+                	</div>
+
+                </div>
+				<div>
+					<label for="" class="fl">昵称</label>
+					<input type="text" class="fl" value="<?php echo $itemname ?>"/>
+				</div>
+				<div>
+					<label for="" class="fl">性别</label>
+					<p class="changeSex man">
+						<input type="radio" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
+					</p>
+					<p class="changeSex woman">
+						<input type="radio" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
+					</p>
+				</div>
+				<div>
+					<label for="" class="fl">出生日期</label>
+					<input type="text" class="fl" value="<?php echo $item['dob'] ?>" id="startTime"/>
+				</div>
+
+			</form>
+		</div>
+		<script src="https://cdn-remote.517ybang.com/js/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/index.min.js"></script>
+		<script type="text/javascript">
+			var calendar = new datePicker();
+			calendar.init({
+				'trigger': '#startTime', /*按钮选择器，用于触发弹出插件*/
+				'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+				'minDate':'1900-1-1',/*最小日期*/
+				'maxDate':'2100-12-31',/*最大日期*/
+				'onSubmit':function(){/*确认时触发事件*/
+					var theSelectData=calendar.value;
+				},
+				'onClose':function(){/*取消时触发事件*/
+				}
+			});
+		</script>

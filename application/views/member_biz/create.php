@@ -28,6 +28,8 @@
 <?php
 // 若未指定会员卡LOGO，使用商家LOGO
 $logo_url = MEDIA_URL. (!empty($item['ornament']['member_logo_url'])? 'ornament_biz/'. $item['ornament']['member_logo_url']: 'biz/'. $item['url_logo']);
+if($logo_url == 'https://jinlaisandbox-images.b0.upaiyun.com/biz/')
+          $logo_url = 'https://cdn-remote.517ybang.com/media/home/default.png';
 ?>
 	<div class="member_wrap">
 		<div style="text-align: center;">
@@ -61,7 +63,6 @@ $logo_url = MEDIA_URL. (!empty($item['ornament']['member_logo_url'])? 'ornament_
 
         <div class=clearfix>
             <input name='mobile' type='tel' value="<?php echo $this->input->post('mobile')? set_value('mobile'): $this->input->cookie('mobile') ?>" size=11 pattern="\d{11}" placeholder="请输入您的常用手机号" required>
-            <!--<a href="<?php echo base_url('member_biz/joined?id='.$item['biz_id']) ?>" target="_self">加入会员</a>-->
             <button type=submit class="cleardoc">加入会员</button>
         </div>
 		<p>

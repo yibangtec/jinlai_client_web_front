@@ -1,18 +1,4 @@
-﻿<style>
-	/* 宽度在750像素以上的设备 */
-	@media only screen and (min-width:751px)
-	{
-
-	}
-	
-	/* 宽度在960像素以上的设备 */
-	@media only screen and (min-width:961px)
-	{
-
-	}
-
-	/* 宽度在1280像素以上的设备 */
-
+<style>
 .menu-left,.menu-right{
 	position: absolute;
 		overflow: auto;
@@ -50,11 +36,12 @@ background:#f7f7f7;
             clear: both;  
             display: block;  
       }
+.menu-right{
+	padding-bottom: 1.5rem;
+}
+
 .menu-right::-webkit-scrollbar{width:0;height:0}
 .menu-left::-webkit-scrollbar{width:0;height:0}
-.menu-left{
-	border-right:1px solid #ececec;
-}
 .menu-left ul li:last-child{
 	border-bottom:none;
 }
@@ -77,9 +64,56 @@ background:#f7f7f7;
   </aside>
 </div>
 </div>
+<?php
+	// 检查当前设备信息
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
+	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
+	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
+	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+?>
+	<!--底部tab切换区域-->
+	<div class="tabWrap fiex">
+		<div class="tabbar auto">
+			<div class="column">
+				<a href="https://www.517ybang.com" target="_self">
+				<div class="itemmenulist">
+					<i class="homeIcon homeIcon1"></i>
+					<span class="text">主页</span>
+				</div>
+				</a>
+				<a href="https://www.517ybang.com/item_category" target="_self">
+				<div class="itemmenulist">
+					<i class="homeFenlei homeFenlei2"></i>
+					<span class="text" style="color: #ff753e;">分类</span>
+				</div>
+				</a>
+				<a href="https://www.517ybang.com/member_biz" target="_self">
+				<div class="itemmenulist">
+					<i class="homeHuiyuan"></i>
+					<span class="text">会员</span>
+				</div>
+				</a>
+				<a href="https://www.517ybang.com/cart" target="_self">
+				<div class="itemmenulist">
+					<i class="homeGouwuche"></i>
+					<span class="text">购物车</span>
+				</div>
+				</a>
+				<a href="https://www.517ybang.com/mine" target="_self">
+				<div class="itemmenulist">
+					<i class="homeWode"></i>
+					<span class="text">我的</span>
+				</div>
+				</a>
+			</div>
+		</div>
+		</div>
+
+<?php endif ?>
 
 <script>
-	$(document).ready(function(){
+	$(function(){
 	var num;
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
@@ -120,39 +154,17 @@ background:#f7f7f7;
                  	for(var key in items){
                             if( arr[i].category_id == items[key].parent_id ){
 
-								 html += '<li><a href=https://www.517ybang.com/item/detail?id='+items[key].item_id+'><img src=<?php echo MEDIA_URL ?>item_category/'+items[key].url_image+'>'+'<span>' +items[key].name +'</span>' +'</a></li>'
-                                 					console.log(items[key].name)
-
+								 html += '<li><a href="' + base_url + 'item/detail?id='+items[key].item_id+'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
                              }
 
                     }
-
                     goodsListContent = goodsListContent + '<ul>'+html+'<ul>'
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
-
                  }
-
 			}
-
-
-
-
-
-
-
-
 		}
 	});
 			$('#sidebar li')[0].click();
 			$('.menu-left').find('li').last().remove();
 	})
-	
-	
-</script>
-	
-<script>
-
-
-		
-
 </script>

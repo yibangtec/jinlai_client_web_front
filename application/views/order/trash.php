@@ -97,3 +97,7 @@
 	</form>
 	<?php endif ?>
 </div>
+
+<script>
+    var items = <?php echo json_encode($items) ?>
+</script>

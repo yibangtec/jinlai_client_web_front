@@ -348,6 +348,12 @@ wx.ready(function(){
         <p id=general-seperater>继续拖动，查看图文详情</p>
 
         <div id="item-description" class="wid710 auto">
+            <?php
+            // 若主图中含有http，则调整相对路径base为自营商品图片根路径
+            if (strpos($item['url_image_main'], 'http') !== FALSE):
+                $this->media_root = 'https://www.ybslux.com/';
+            endif;
+            ?>
             <?php echo $item['description'] ?>
         </div>
         <!--
@@ -439,24 +445,6 @@ wx.ready(function(){
 	
 </div>
 
-<style>
-	#nav-main {background:#fff;height:.63rem;width: 7.16rem;padding:.17rem 0;padding-left:.2rem;padding-right:.2rem;border-top:1px solid #c9caca;border-radius:20px 20px 0 0;font-size: .24rem;position: fixed;bottom: 0;color: #3E3A39;}
-	#nav-main li{
-		float: left;
-	}
-		#nav-main .btn {width:1.94rem;height:.64rem;line-height:.64rem;border-radius:10px;background: #fa3752;float: left;text-align: center;float: left;color: #fff;}
-		#nav-main .btn:nth-child(2){
-			background: #ff5b00;
-		}
-		#order-create{
-			background: #ff5a00 !important;
-		}
-		#nav-main li.vice-button {margin-right:.54rem;float: left;width: .5rem;}
-			#nav-main li.vice-button a {font-size:.24rem;line-height:1;text-align:center;float: left;color: #3E3A39;width: .5rem;}
-		#nav-main li:nth-of-type(3) {margin-right:.4rem;}
-		#nav-main li:last-of-type {margin-left:10px;}
-		#nav-main img {width:.36rem;height:.36rem;margin:0 auto .1rem;}
-</style>
 
 <nav id=nav-main>
 	
@@ -498,7 +486,7 @@ wx.ready(function(){
 		</li>
 
 		<li>
-			<a id=order-create class="btn btn-primary btn-lg btn-block" title="立即购买" href="<?php echo base_url('order/create?item_id='.$item['item_id']) ?>">
+			<a id=order-create class="btn btn-primary btn-lg btn-block" title="立即购买" href="<?php echo base_url('order/create?cart_string=0|'.$item['item_id'].'|0|1') ?>">
 				立即购买
 			</a>
 		</li>

@@ -38,13 +38,10 @@
 		</blockquote>
 
 	<?php else: ?>
-		<ul id=item-list class=row>
+		<ul id=item-list>
 
 			<?php foreach ($items as $item): ?>
 			<li class="item col-xs-6 col-sm-4 col-md-3" data-item-id="<?php echo $item[$this->id_name] ?>">
-				<?php if ( strpos(DEVELOPER_MOBILES, ','.$this->session->mobile.',') !== FALSE ): ?>
-				<span>ID <?php echo $item['record_id'] ?></span>
-				<?php endif ?>
 
 				<figure class="image-main col-xs-12 col-sm-6 col-md-3">
 					<a title="<?php echo $item['name'] ?>" href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>">
@@ -65,7 +62,10 @@
 				</ul>
 			</li>
 			<?php endforeach ?>
-
 		</ul>
 	<?php endif ?>
 </div>
+
+<script>
+    var items = <?php echo json_encode($items) ?>
+</script>

@@ -7,7 +7,6 @@
         <i class="icon-failure"></i>
     </div>
     <div style="height: 5rem; padding-top: 1.4rem;">
-        <form action="">
             <div class="input-box clearfix">
                 <div class='input-item'>
                     <label class="label" for="mobile"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/shouji@3x.png" alt=""/></label>
@@ -48,10 +47,9 @@
             </div>
 
 
-            <button id="submit-reset" class="next">
+            <div id="submit-reset" class="next">
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/wancheng@3x.png" alt=""/>
-            </button>
-        </form>
+            </div>
 
     </div>
 
@@ -60,3 +58,119 @@
 
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<script>
+	
+		function CheckPassWord(password1,password2) {//必须为字母加数字且长度不小于8位
+	   var str = password1;
+	    var reg = new RegExp( /^([a-z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,20}$/i);
+	    if (reg.test(str)) {
+	    	if(password1 != password2){
+	    		alert('两次输入密码不一致');
+	    		return;
+	    	}
+	        return true;
+	    } else {
+	        alert('请输入6-20位字符');
+	        $('#password1').val('');
+	        $('#password1').focus();
+	        $('#password2').val('');
+	        return false;
+	    }
+}
+	//点击获取验证码
+          let  time1 = 60;
+		    var  count = time1;
+		    var countinterval;
+			var button = $('.ver-btn');
+		    button.click(showTitle);
+		    var sms_id;
+		    function showTitle(){
+		    	var regTel = /^1\d{10}$/;
+                if (!regTel.test($('#mobile').val())) {
+                	alert('请输入正确的手机号');
+					$('#mobile').val('');
+                	$('#mobile').focus();
+                	return;
+                }
+		    	else{
+		    		$(this).focus();
+		    		$(this).css('background','#ccc');
+		    		$.ajax({
+					  url: "https://api.517ybang.com/sms/create",
+					  type: 'post',
+					  dataType: 'json',
+					  data: {app_type:'client',mobile:$('#mobile').val()},
+					  success: function (data, status) {
+					   if(data.status == 200){
+					   	sms_id = data.content.id;
+					   	alert('验证码发送成功');
+					   }
+					  },
+					  fail: function (err, status) {
+					    console.log(err)
+					  }
+					});
+		      countinterval = setInterval(timecount, 1000);
+		      button.off('click',showTitle);//解绑点击事件
+		    	}
+		    	
+		    }
+		    function timecount(){
+		      button.text(count+'s');  
+		      if (count<=0) {
+		      count = time1;
+		      clearInterval(countinterval);
+		      button.text('重新获取验证码');
+		      button.css('background','#FC5353');
+		      button.on('click',showTitle);  
+		      }
+		      else
+		        count--;
+		    }
+		   $('#submit-reset').on('click',function(){
+		   		var regTel = /^1\d{10}$/;
+		   		var regVal = /^\d{6}\b/;
+                if (!regTel.test($('#mobile').val())) {
+                	alert('请输入正确的手机号');
+                	$('#mobile').val('');
+                	$('#mobile').focus();
+                	return;
+                }
+                if (!regVal.test($('#verification').val())) {
+                	alert('请输入六位数字验证码');
+                	$('#verification').val('');
+                	$('#verification').focus();
+                	return;
+                }
+                if(!CheckPassWord($('#password1').val(),$('#password2').val())){
+                	return;
+                }
+                if(!sms_id){
+                	alert('请输入正确的验证码');
+                	$('#verification').val('');
+                	$('#verification').focus();
+                	return;
+                }
+		   		$.ajax({
+					  url: "https://api.517ybang.com/account/password_reset",
+					  type: 'post',
+					  dataType: 'json',
+					  data: {app_type:'biz',mobile:$('#mobile').val(),password:$('#password1').val(),password_confirm:$('#password2').val(),sms_id:sms_id,captcha:$('#verification').val()},
+					  success: function (data, status) {
+					  	console.log(data);
+					   if(data.status == 200){
+					   	window.location.href = 'https://www.517ybang.com/login';
+					   }
+					    if(data.status == 400){
+					   	alert('验证码错误或已过期');
+					   	$('#verification').val('');
+                	$('#verification').focus();
+					   }
+					  },
+					  fail: function (err, status) {
+					    console.log(err)
+					  }
+					});
+		   });
+					    
+</script>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=0">
+		<link href="https://cdn-remote.517ybang.com/css/normal.css" rel="stylesheet">
+		<!--公用部分css-->
+		<link href="https://cdn-remote.517ybang.com/css/common.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/swiper.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/index.css" rel="stylesheet">
+		<script src="https://cdn-remote.517ybang.com/js/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/swiper.min.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+		<style>
+			body{
+				background: #f3f3f5;
+			}
+		</style>
+	</head>
+	<body>
+		<!--高端定制详细内容页面-->
+		<div class="customizedetailnav auto">
+			<div class="swiper-wrapper auto">
+					<div class="swiper-slide">
+						<a href="###" class="active">西装定制</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="###">风衣定制</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="###">针织定制</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="###">皮革定制</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="###">婚纱定制</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="###">进来定制</a>
+					</div>
+			 <div class="swiper-scrollbar123"></div>
+			</div>
+		</div>
+		<!--内容区域开始-->
+		<div class="customizedetailcontent clearfix">
+			<ul class="clearfix">
+				<li class="clearfix">
+					<img class="block fl" src="https://cdn-remote.517ybang.com/media/home/jianhuo_putao@3x.png" />
+					<h1 class="fl">简爱</h1>
+					<h2 class="fl">'衣'朵朵娇羞的花瓣,盛开在...</h2>
+					<p>
+						<i class="icon-chakan"></i>
+						<b>(100)</b>
+						<a href="###">关注</a>
+					</p>
+				</li>
+				<li class="clearfix">
+					<img class="block fl" src="https://cdn-remote.517ybang.com/media/home/jianhuo_putao@3x.png" />
+					<h1 class="fl">简爱</h1>
+					<h2 class="fl">'衣'朵朵娇羞的花瓣,盛开在...</h2>
+					<p>
+						<i class="icon-chakan"></i>
+						<b>(100)</b>
+						<a href="###">关注</a>
+					</p>
+				</li>
+				<li class="clearfix">
+					<img class="block fl" src="https://cdn-remote.517ybang.com/media/home/jianhuo_putao@3x.png" />
+					<h1 class="fl">简爱</h1>
+					<h2 class="fl">'衣'朵朵娇羞的花瓣,盛开在...</h2>
+					<p>
+						<i class="icon-chakan"></i>
+						<b>(100)</b>
+						<a href="###">关注</a>
+					</p>
+				</li>
+				<li class="clearfix">
+					<img class="block fl" src="https://cdn-remote.517ybang.com/media/home/jianhuo_putao@3x.png" />
+					<h1 class="fl">简爱</h1>
+					<h2 class="fl">'衣'朵朵娇羞的花瓣,盛开在...</h2>
+					<p>
+						<i class="icon-chakan"></i>
+						<b>(100)</b>
+						<a href="###">关注</a>
+					</p>
+				</li>
+				<li class="clearfix">
+					<img class="block fl" src="https://cdn-remote.517ybang.com/media/home/jianhuo_putao@3x.png" />
+					<h1 class="fl">简爱</h1>
+					<h2 class="fl">'衣'朵朵娇羞的花瓣,盛开在...</h2>
+					<p>
+						<i class="icon-chakan"></i>
+						<b>(100)</b>
+						<a href="###">关注</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<script>
+			 var mySwipersuper = new Swiper('.customizedetailnav', {
+		        scrollbar: '.swiper-scrollbar123',
+		        scrollbarHide: false,
+		        slidesPerView: 'auto',
+		        centeredSlides: false,
+		        grabCursor: true,
+		        spaceBetween : 0,
+		        observer:true,
+		        observeParents:true
+	    });
+	    $(".customizedetailnav a").on('click',function(){
+	    	$(this).addClass('active').parents('div').siblings('div').children('a').removeClass('active');
+	    })
+		</script>
+	</body>
+</html>
