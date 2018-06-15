@@ -29,42 +29,40 @@
     <div class="pay-detail clearfix">
         <div class="pay-list clearfix">
             <div>优惠券抵扣</div>
-            <div>-¥<span>20.00</span></div>
+            <div>- ¥<span>20.00</span></div>
         </div>
         <div class="pay-list clearfix">
             <div>改价折扣</div>
-            <div>-¥<span>20.00</span></div>
+            <div>- ¥<span>20.00</span></div>
         </div>
         <div class="pay-list clearfix">
             <div>积分抵扣</div>
-            <div>-¥<span>20.00</span></div>
+            <div>- ¥<span>20.00</span></div>
         </div>
         <div class="pay-list clearfix">
             <div>余额抵扣</div>
-            <div>-¥<span>20.00</span></div>
+            <div>- ¥<span>20.00</span></div>
         </div>
         <div class="pay-list clearfix">
             <div>应支付</div>
-            <div><b>-¥<span>20.00</span></b></div>
+            <div><b>- ¥<span>20.00</span></b></div>
         </div>
     </div>
     <div class="pay-type">
         <p>付款方式</p>
         <div class="pay-type-btn clearfix">
-            <img src="<?php echo CDN_URL ?>media/order/weixin_xin@3x.png" alt=""/>
-            <img src="<?php echo CDN_URL ?>media/order/zhifubao_xin@3x.png" alt=""/>
-            <img src="<?php echo CDN_URL ?>media/order/yue_xin@3x.png" alt=""/>
+            <img src="<?php echo CDN_URL ?>media/order/weixin_xin@3x.png" alt="">
+            <img src="<?php echo CDN_URL ?>media/order/zhifubao_xin@3x.png" alt="">
+            <img src="<?php echo CDN_URL ?>media/order/yue_xin@3x.png" alt="">
         </div>
     </div>
 
 </div>
 
-<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script>
+    var item = <?php echo json_encode($item) ?>;
 
     $(function(){
 
     })
-
-
 </script>

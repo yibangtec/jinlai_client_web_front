@@ -1,155 +1,196 @@
-<style>
-	#biz>a {display:block;overflow:hidden;}
-		#biz>a>* {float:left;display:inline-block;}
 
-	/* 宽度在750像素以上的设备 */
-	@media only screen and (min-width:751px)
-	{
-		
-	}
-	
-	/* 宽度在960像素以上的设备 */
-	@media only screen and (min-width:961px)
-	{
+	<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css">
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/order.css">
+    <style>
+        .item-operation{
+            text-align: right;
+            height: 2rem;
+            position: relative;
+        }
+        .item-operation span{
+            display: inline-block;
+            width: 1.2rem;
+            height: 0.54rem;
+            text-align: center;
+            line-height: 0.5rem;
+            border: 0.02rem solid #9fa0a0;
+            border-radius: 0.27rem;
+            position: absolute;
+            bottom: 0;
+            right: -0.2rem;
+        }
+    </style>
 
-	}
-
-	/* 宽度在1280像素以上的设备 */
-	@media only screen and (min-width:1281px)
-	{
-
-	}
-</style>
-
-<base href="<?php echo $this->media_root ?>">
-
-<div id=breadcrumb>
-	<ol class="breadcrumb container">
-		<li><a href="<?php echo base_url() ?>">首页</a></li>
-		<li><a href="<?php echo base_url($this->class_name) ?>"><?php echo $this->class_name_cn ?></a></li>
-		<li class=active><?php echo $title ?></li>
-	</ol>
+<div class="box">
+    <div class="line"></div>
+    <div class="detail-header">
+        <div class="detail-type1 status1">
+            <p style="padding-top: 0.25rem">待评价</p>
+            <p style="padding-top: 0.2rem">2天2小时后自动好评</p>
+        </div>
+        <div class="detail-type2 status2">
+            <p style="padding-top: 0.45rem">已评价</p>
+        </div>
+        <div class="detail-type3 status3">
+            <p style="padding-top: 0.25rem">等待卖家发货</p>
+            <p style="padding-top: 0.2rem">2天2小时后未发货则自动退款</p>
+        </div>
+        <div class="detail-type4 status4">
+            <p style="padding-top: 0.25rem">等待买家付款</p>
+            <p style="padding-top: 0.2rem">2天2小时后未付款则自动关闭</p>
+        </div>
+        <div class="detail-type5 status5">
+            <p style="padding-top: 0.25rem">待收货</p>
+            <p style="padding-top: 0.2rem">2天2小时后自动确认收货</p>
+        </div>
+        <div class="detail-type6 status6">
+            <p style="padding-top: 0.25rem">已关闭</p>
+            <p style="padding-top: 0.2rem">超时未付款</p>
+        </div>
+        <div class="detail-address">
+            <i class="icon-dizhi"></i>
+            <div><b><?php echo $item['fullname'] ?></b><b><?php echo $item['mobile'] ?></b></div>
+            <p><?php echo $item['province'] ?> <?php echo $item['city'] ?> <?php echo $item['county'] ?></p>
+            <p><?php echo $item['street'] ?></p>
+        </div>
+    </div>
+    <div class="order-content">
+        <div class="order-list">
+            <div class="item-title clearfix">
+                <div class="title-left left-float"><i class="icon-dianpu"></i><span><?php echo $item['biz_name'] ?></span></div>
+            </div>
+            <div id="orderList">
+            </div>
+        </div>
+    </div>
+    <div class="price-type">
+        <div class="price-info">价格信息</div>
+        <div class="total-box">
+            <div style="<?php echo $item['subtotal'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>商品总价</span><span>¥<?php echo $item['subtotal'] ?></span></div>
+            <div style="<?php echo $item['freight'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>运费</span><span>¥<?php echo $item['freight'] ?></span></div>
+            <div style="<?php echo $item['total'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class="weight">应付金额</span><span class="weight">¥<?php echo $item['total'] ?></span></div>
+        </div>
+        <div class="total-box">
+            <div style="<?php echo $item['discount_coupon'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>优惠券抵扣</span><span>¥<?php echo $item['discount_coupon'] ?></span></div>
+            <div style="<?php echo $item['credit_payed'] == '0' ? 'display:none' : 'display:block'; ?>" class="total"><span>积分抵扣</span><span>¥<?php echo $item['credit_payed'] ?></span></div>
+            <div style="<?php echo $item['total_payed'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class="weight">实付金额</span><span class="weight">¥<?php echo $item['total_payed'] ?></span></div>
+        </div>
+    </div>
+    <div class="detail-btn clearfix">
+        <div class="customer-service">联系卖家</div>
+        <div class="tel-service">拨打电话</div>
+    </div>
+    <div class="order-parameter">
+        <div class="order-number clearfix">
+            <div class="serial-number">订单号：<span><?php echo $item['order_id'] ?></span></div>
+            <div class="number-copy">复制</div>
+        </div>
+        <p>支付方式：<span><?php echo $item['payment_type'] ?></span></p>
+        <p>支付流水号：<span><?php echo $item['payment_id'] ?></span></p>
+        <p style="<?php echo $item['time_create'] == '' ? 'display:none' : 'display:block'; ?>">创建时间：<span><?php echo date("Y-m-d H:i:s",$item['time_create']) ?></span></p>
+        <p style="<?php echo $item['time_pay'] == '' ? 'display:none' : 'display:block'; ?>">付款时间：<span><?php echo date("Y-m-d H:i:s",$item['time_pay']) ?></span></p>
+        <p style="<?php echo $item['time_deliver'] == '' ? 'display:none' : 'display:block'; ?>">发货时间：<span><?php echo date("Y-m-d H:i:s",$item['time_deliver']) ?></span></p>
+        <p style="<?php echo $item['time_confirm'] == '' ? 'display:none' : 'display:block'; ?>">成交时间：<span><?php echo date("Y-m-d H:i:s",$item['time_confirm']) ?></span></p>
+    </div>
+    <!--待评价-->
+    <div class="detail-operation status1">
+        <a>删除</a>
+        <a>退款/售后</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">待评价</a>
+    </div>
+    <!--已评价-->
+    <div class="detail-operation status2">
+        <a>删除</a>
+        <a>申请售后</a>
+        <a>追加评论</a>
+    </div>
+    <!--待发货-->
+    <div class="detail-operation status3">
+        <a>取消</a>
+        <a>退款/售后</a>
+    </div>
+    <!--待付款-->
+    <div class="detail-operation status4">
+        <a>取消</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">去付款</a>
+    </div>
+    <!--待收货-->
+    <div class="detail-operation status5">
+        <a>延长收货</a>
+        <a>查看物流</a>
+        <a>退款/售后</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649">确认收货</a>
+    </div>
+    <!--已关闭-->
+    <div class="detail-operation status6">
+        <a>删除</a>
+    </div>
 </div>
 
-<div id=content class=container>
-	<?php if ( isset($error) ) echo '<div class="alert alert-warning" role=alert>'.$error.'</div>'; ?>
+<script>
 
-	<section id=status>
-		<ul>
-			<li><?php echo $item['status'] ?></li>
-		</ul>
-	</section>
 
-	<section id=address>
-		<ul>
-			<li>
-				<?php echo $item['fullname'] ?>
-				<span class="pull-right text-right"><?php echo $item['mobile'] ?></span>
-			</li>
-			<li>
-				<?php echo $item['province']. $item['city']. $item['county']. '<br>'.$item['street'] ?>
-			</li>
-		</ul>
-	</section>
+     $(document).ready(function(){
+     	var item = <?php echo json_encode($item) ?>;
 
-	<section id=note_user>
-		<h3>留言</h3>
-		<p><?php echo $item['note_user'] ?></p>
-	</section>
 
-	<section id=biz>
-		<a title="<?php echo $item['biz_name'] ?>" href="<?php echo base_url('biz/detail?id='. $item['biz_id']) ?>">
-			<img title="<?php echo $item['biz_name'] ?>" src="<?php echo MEDIA_URL.'biz/'. $item['biz_url_logo'] ?>">
-			<?php echo $item['biz_name'] ?>
-		</a>
-	</section>
+     	console.log(item);
+		var ItemList =  item.order_items
 
-	<dl id=list-info class=dl-horizontal>
-		<li>小计 ￥<?php echo $item['subtotal'] ?></li>
-		<li>运费 ￥<?php echo $item['freight'] ?></li>
+             for(var key in ItemList){
+                 var slogan = ItemList[key].slogan;
+                 if(slogan == null){
+                    slogan = '';
+                 };
+                 var imgUrl = ItemList[key].item_image;
+                 var reg = RegExp(/http/);
+                 console.log(reg.test(imgUrl)); // true
+                 if(reg.test(imgUrl) !== true){
+                      imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+                 }else{
+                      imgUrl =''
+                 }
+                 var style = ''
+                 if(ItemList[key].tag_price > ItemList[key].price){
+                    style='display:block;'
+                 }else{
+                    style='display:none;'
+                 }
+                var Html = '<div class="item-detail clearfix">'+
+                                '<div class="item-left left-float"><img src="'+imgUrl+ItemList[key].item_image+'" alt=""/></div>'+
+                                '<div class="item-center left-float">'+
+                                     '<p>'+ ItemList[key].name +'</p>'+
+                                     '<p>'+ slogan +'</p>'+
+                                '</div>'+
+                                '<div class="item-right right-float">'+
+                                     '<p>¥'+ ItemList[key].price +'</p>'+
+                                     '<p style="'+style+'" class="price-text"><del>¥'+ ItemList[key].tag_price +'</del></p>'+
+                                     '<p class="cont-indent">×'+ ItemList[key].count +'</p>'+
+                                '</div>'+
+                                '<div class="item-operation"><span>退款</span></div>'+
+                           '</div>';
+                 $('#orderList').append(Html);
+             }
 
-		<?php if ( $item['discount_coupon'] !== '0.00' ): ?>
-		<li>营销活动折抵 -￥<?php echo $item['discount_promotion'] ?></li>
-		<?php endif ?>
+            var status = item.status;
+            console.log(status)
+            if(status == '待评价'){
+                $('.status1').css('display','block')
+            }else if(status=='已评价'){
+                $('.status2').css('display','block')
+            }else if(status == '待发货'){
+                $('.status3').css('display','block')
+            }else if(status=='待付款'){
+                $('.status4').css('display','block')
+            }else if(status=='待收货'){
+                $('.status5').css('display','block')
+            }else if(status=='已关闭'){
+                $('.status6').css('display','block')
+            }
 
-		<?php if ( $item['discount_coupon'] !== '0.00' ): ?>
-		<li>优惠券折抵 -￥<?php echo $item['discount_coupon'] ?></li>
-		<?php endif ?>
 
-		<?php if ( $item['discount_reprice'] !== '0.00' ): ?>
-		<li>改价折抵 -￥<?php echo $item['discount_reprice'] ?></li>
-		<?php endif ?>
-		
-		<li id=total>应支付 ￥<?php echo $item['total'] ?></li>
-
-		<?php if ($item['status'] !== '待付款'): ?>
-
-			<?php if ( !empty($item['credit_payed'] ) ): ?>
-			<li>积分支付 -￥<?php echo $item['credit_payed'] ?></li>
-			<?php endif ?>
-
-			<?php if ( $item['total_payed'] !== '0.00' ): ?>
-			<li id=total_payed>已支付 ￥<?php echo $item['total_payed'] ?></li>
-			<li>支付方式 ￥<?php echo $item['payment_type'] ?></li>
-			<li>支付流水号 ￥<?php echo $item['payment_id'] ?></li>
-			<?php endif ?>
-
-			<?php if ( $item['refund_status'] !== '未申请' ): ?>
-			<li>退款/售后状态 <?php echo $item['refund_status'] ?></li>
-			<li>已退款 ￥<?php echo $item['total_refund'] ?></li>
-			<?php endif ?>
-
-			<?php if ( $item['invoice_status'] !== '未申请' ): ?>
-			<li>发票状态 <?php echo $item['invoice_status'] ?></li>
-			<?php endif ?>
-
-		<?php endif ?>
-	</dl>
-
-	<dl id=list-record class=dl-horizontal>
-		<dt>订单号</dt>
-		<dd><?php echo $item['order_id'] ?></dd>
-		<dt>下单时间</dt>
-		<dd><?php echo date('Y-m-d H:i:s', $item['time_create']) ?></dd>
-
-		<?php if ($item['status'] !== '待付款'): ?>
-			<dt>取消时间</dt>
-			<dd><?php echo $item['time_cancel'] ?></dd>
-			<dt>自动过期时间</dt>
-			<dd><?php echo $item['time_expire'] ?></dd>
-			<dt>用户付款时间</dt>
-			<dd><?php echo $item['time_pay'] ?></dd>
-			<dt>商家拒绝时间</dt>
-			<dd><?php echo $item['time_refuse'] ?></dd>
-			<dt>商家接单时间</dt>
-			<dd><?php echo $item['time_accept'] ?></dd>
-			<dt>商家发货时间</dt>
-			<dd><?php echo $item['time_deliver'] ?></dd>
-			<dt>用户确认时间</dt>
-			<dd><?php echo $item['time_confirm'] ?></dd>
-			<dt>系统确认时间</dt>
-			<dd><?php echo $item['time_confirm_auto'] ?></dd>
-			<dt>用户评价时间</dt>
-			<dd><?php echo $item['time_comment'] ?></dd>
-			<dt>商家退款时间</dt>
-			<dd><?php echo $item['time_refund'] ?></dd>
-			
-			<?php if ( ! empty($item['time_delete']) ): ?>
-			<dt>用户删除时间</dt>
-			<dd><?php echo $item['time_delete'] ?></dd>
-			<?php endif ?>
-
-		<?php endif ?>
-	</dl>
-</div>
-
-<nav id=nav-main>
-	<ul>
-		
-		<li>
-			<a id=order-create class="btn btn-primary btn-lg btn-block" title="立即购买" href="<?php echo base_url('order/pay?id='.$item[$this->id_name]) ?>">
-				去付款
-			</a>
-		</li>
-	</ul>
-</nav>
+        })
+</script>

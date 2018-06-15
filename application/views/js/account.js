@@ -57,6 +57,8 @@ $(function(){
             }else{
                 $('.tips-text').html('手机号格式错误');
                 $('.error-tips').show();
+                $('#mobile').val('');
+                $('#mobile').focus();
                 actionDo();
             }
         }else if(pass){
@@ -66,6 +68,8 @@ $(function(){
 
             }else{
                 $('.tips-text').html('密码长度应在6-20位之间');
+                $('#password').val('');
+                $('#password').focus();
                 $('.error-tips').show();
                 actionDo();
             }
@@ -73,6 +77,8 @@ $(function(){
             console.log('ver');
             var reg = /^.{6,}$/;
             if(!reg.test(verification)){
+                $('#verification').val('');
+                $('#verification').focus();
                 $('.tips-text').html('验证码格式不正确');
                 $('.error-tips').show();
                 actionDo();
@@ -98,16 +104,30 @@ $(function(){
 
     $('#submit-change').on('click',function(){
         $('.pass2').hide();
+        var pass = $('#password').val();
         var pass1 = $('#password1').val();
         var pass2 = $('#password2').val();
         var re = /^[a-zA-Z0-9]{6,20}$/;
-        if (pass1==pass2) {
-
-        }else{
-            $('.tips-text').html('两次密码输入不一致');
+        if(pass==pass1){
+            $('.tips-text').html('新密码不可与原密码相等');
+            $('#password1').val('');
+            $('#password2').val('');
+            $('#password1').focus();
             $('.error-tips').show();
             actionDo();
+            return false
+        }else{
+            if (pass1==pass2) {
+
+            }else{
+                $('.tips-text').html('两次密码输入不一致');
+                $('#password2').focus();
+                $('.error-tips').show();
+                actionDo();
+                return false
+            }
         }
+
     });
 
     $('#submit-set').on('click',function(){
@@ -142,6 +162,8 @@ $(function(){
 
             }else{
                 $('.tips-text').html('密码长度应在6-20位之间');
+                $('#password').val('');
+                $('#password').focus();
                 $('.error-tips').show();
                 actionDo();
             }
@@ -181,7 +203,9 @@ $(function(){
         if (re.test(pass1)) {
 
         }else{
-            $('.tips-text').html('密码长度应在6-20位之间');
+            $('.tips-text').html('新密码长度应在6-20位之间');
+            $('#password1').val('');
+            $('#password1').focus();
             $('.error-tips').show();
             actionDo();
         }
@@ -209,6 +233,8 @@ $(function(){
         var re = /^1\d{10}$/;
         if (re.test(tel)) {
         }else{
+            $('#mobile').val('');
+            $('#mobile').focus();
             $('.tips-text').html('手机号格式错误');
             $('.error-tips').show();
             actionDo();
@@ -239,6 +265,8 @@ $(function(){
             $('#submit').show();
         }else{
             $('.tips-text').html('手机号格式错误');
+            $('#mobile').val('');
+            $('#mobile').focus();
             $('.error-tips').show();
             actionDo();
         }

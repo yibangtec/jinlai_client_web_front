@@ -1,5 +1,4 @@
 <script src="<?php echo CDN_URL ?>js/rem.js"></script>
-<script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css"/>
@@ -56,6 +55,9 @@
         .amap-geo{
             display: block;
         }
+        .address{
+                    height:0;
+                }
 </style>
 <div class="tips" id="tips">
     <div class="tips-content">
@@ -76,30 +78,30 @@
         <div class="save">保存</div>
         <form action="" style="margin-bottom: 5rem">
             <div class="create-list">
-                <input class="create-input" type="text" placeholder="简称（可选）" maxlength="10"/>
+                <input class="create-input" type="text" name="brief" placeholder="简称（可选）" maxlength="10" value="<?php echo empty(set_value('brief'))? $item['brief']: set_value('brief') ?>">
             </div>
             <div class="create-list">
-                <input class="create-input" type="text" placeholder="姓名" maxlength="10"/>
+                <input class="create-input" type="text" name="fullname" placeholder="姓名" maxlength="10" value="<?php echo empty(set_value('fullname'))? $item['fullname']: set_value('fullname') ?>">
             </div>
             <div class="create-list">
-                <input id="tel" class="create-input" type="tel" placeholder="手机号"/>
+                <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号" value="<?php echo empty(set_value('mobile'))? $item['mobile']: set_value('mobile') ?>">
             </div>
             <div class="create-list">
                 <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区"/>
             </div>
             <input id="value1" type="hidden" value="20,234,540"/>
             <div class="create-list">
-                <textarea rows="3" style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
+                <textarea rows="3" name="street" style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
             </div>
-            <div class="create-list">
-                <input class="create-input" type="tel" placeholder="邮编"/>
+            <div class="create-list" style="display:none">
+                <input class="create-input" type="tel" placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
             </div>
-            <div class="address-default">
+            <div class="address-default" style="display:none">
                 <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
             </div>
         </form>
 
-        <div class="map-box">
+        <div class="map-box" style="position: fixed">
             <div id="container" class="map" tabindex="0" style="width: 100%;height: 4rem;"></div>
             <div id='right' style="display: none">
                 <div>
@@ -180,7 +182,8 @@
                 showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
                 showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
                 panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-                zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                zoomToAccuracy: true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                noGeoLocation:3
             });
             geocoder=new AMap.Geocoder({
 
@@ -192,8 +195,9 @@
             var pos;
 
             geolocation.getCurrentPosition(function (status,result){
+             console.log(result.position);
                 var start = result.position.Q;
-                console.log(result.position.Q);
+
                 pos = result.position;
                 var positionPicker = new PositionPicker({
                     mode: 'dragMap',

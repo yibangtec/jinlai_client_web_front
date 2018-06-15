@@ -107,22 +107,36 @@ input:-webkit-autofill {
     border-bottom: 1px dashed #fff;
 }
 .header-img{
+    text-align: center;
     float: left;
-    padding: 0.6rem 0.2rem 0.3rem 0.45rem;
-}
-.header-img img{
-    display: block;
     height: 1.3rem;
     width: 1.3rem;
     border-radius: 50%;
+    overflow: hidden;
+    margin: 0.6rem 0.2rem 0.3rem 0.45rem;
+    background-color: #ccc;
+}
+.header-img:before{
+    content: '';
+    width: 0;
+    height: 100%;
+}
+.header-img img{
+    display: inline-block;
+    min-width: 100%;
+    min-height: 100%;
+
 }
 .header-name{
-    padding-top: 0.75rem;
     float: left;
+    height: 2.3rem;
+    position: relative;
 }
 .nick-name{
     font-size: 0.28rem;
     color: #ffffff;
+    display: block;
+    margin-top: 0.88rem;
 }
 .member{
     font-size: 0.18rem;
@@ -130,7 +144,9 @@ input:-webkit-autofill {
     color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 0.1rem;
-    margin-top: 0.1rem;
+    position: absolute;
+    left: 0;
+    top: 1.3rem;
 }
 
 .bank{
@@ -161,10 +177,9 @@ input:-webkit-autofill {
     width: 0.5rem;
     height: 0.5rem;
 }
-
-.icon-chat:before {
-    content: "\e908";
-    font-size: 0.46rem;
+.header-news .icon-chat:before {
+    content: "\e90d";
+    font-size: 0.4rem;
     color: #ffffff;
 }
 .header-bot{
@@ -175,29 +190,37 @@ input:-webkit-autofill {
     text-align: center;
     width: 25%;
     font-size: 0.26rem;
-    padding-top: 0.16rem;
+    padding-top: 0.2rem;
 }
 .bot-float p{
     color: #ffffff;
     padding: 0.12rem 0;
 }
-.icon-guanzhu:before {
-    content: "\e91d";
-    font-size: 0.45rem;
+.icon-guanzhu_bk:before {
+    content: "\e922";
+    font-size: 0.43rem;
     color: #ffffff;
 }
-.icon-shoucang2:before {
-    content: "\e930";
-    font-size: 0.45rem;
+.icon-shoucang:before {
+    content: "\e9d5";
+    font-size: 0.4rem;
     color: #ffffff;
 }
+.icon-wokanguode:before {
+    content: "\e972";
+    font-size: 0.4rem;
+    color: #ffffff;
+}
+
+
+
 .icon-kabao:before {
     content: "\e925";
     font-size: 0.45rem;
     color: #ffffff;
 }
 .mine-order{
-    margin: 0.2rem 0.1rem;
+    margin: 0.2rem 0.2rem;
     background-color: #fff;
     border-radius: 0.2rem;
 }
@@ -216,7 +239,7 @@ input:-webkit-autofill {
     color: #898989;
 }
 .icon-Arrow:before {
-    content: "\e904";
+    content: "\e909";
     font-size: 0.28rem;
     color: #898989;
 }
@@ -237,28 +260,28 @@ input:-webkit-autofill {
     padding: 0.14rem 0 0.2rem 0;
 }
 .icon-daifukuan:before {
-    content: "\e90b";
+    content: "\e910";
     font-size: 0.48rem;
     color: #3E3A39;
 }
 .icon-daifahuo:before {
-    content: "\e90a";
+    content: "\e90f";
     font-size: 0.48rem;
     color: #3E3A39;
 }
 .icon-daishouhuo:before {
-    content: "\e90e";
+    content: "\e913";
     font-size: 0.48rem;
     color: #3E3A39;
 }
 .icon-daipingjia:before {
-    content: "\e90c";
+    content: "\e911";
     font-size: 0.48rem;
     color: #3E3A39;
 }
 .icon-jintuikuan:before {
     content: "\e959";
-    font-size: 0.48rem;
+    font-size: 0.5rem;
     color: #3E3A39;
 }
 .item-team{
@@ -348,11 +371,17 @@ input:-webkit-autofill {
     color: #ffffff;
     font-size: 0.45rem;
 }
-.icon-huiyuan-2:before {
-    content: "\e957";
+.icon-huiyuan2:before {
+    content: "\e9d4";
     color: #ffffff;
-    font-size: 0.45rem;
+    font-size: 0.4rem;
 }
+.icon-huiyuan1:before {
+    content: "\e9d4";
+    color: #3e3a39;
+    font-size: 0.42rem;
+}
+
 .icon-shezhi:before {
     content: "\e974";
     color: #a19fed;

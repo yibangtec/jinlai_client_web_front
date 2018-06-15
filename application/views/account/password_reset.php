@@ -60,3 +60,44 @@
 
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<script>
+	//点击获取验证码
+          let  time1 = 60;
+		    var  count = time1;
+		    var countinterval;
+			var button = $('.ver-btn');
+		    button.click(showTitle);
+		    var sms_id;
+		    function showTitle(){
+		    	$(this).css('background','#ccc');
+		    		$.ajax({
+					  url: "https://api.517ybang.com/sms/create",
+					  type: 'post',
+					  dataType: 'json',
+					  data: {app_type:'client',mobile:$('#mobile').val()},
+					  success: function (data, status) {
+					   if(data.status == 200){
+					   	sms_id = data.content.id;
+					   	alert('验证码发送成功');
+					   }
+					  },
+					  fail: function (err, status) {
+					    console.log(err)
+					  }
+					});
+		      countinterval = setInterval(timecount, 1000);
+		      button.off('click',showTitle);//解绑点击事件
+		    }
+		    function timecount(){
+		      button.text(count+'s');  
+		      if (count<=0) {
+		      count = time1;
+		      clearInterval(countinterval);
+		      button.text('重新获取验证码');
+		      button.css('background','#FC5353');
+		      button.on('click',showTitle);  
+		      }
+		      else
+		        count--;
+		    }
+</script>

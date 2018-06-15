@@ -10,7 +10,7 @@
         <img src="<?php echo CDN_URL ?>media/account/login/logo@3x.png" alt=""/>
     </div>
     <div style="height: 5rem;">
-        <form action="">
+        <form action="" method="post">
             <div class="input-box clearfix">
                 <div class='input-item'>
                     <label class="label" for="mobile"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/shouji@3x.png" alt=""/></label>
@@ -48,16 +48,18 @@
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/xiabu@3x.png" alt=""/>
             </div>
 
-            <button id="submit" class="next submit">
+            <button id="submit" class="next submit" type="submit">
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt=""/>
             </button>
         </form>
 
-        <div class="login_sms"><a id="loginSms">短信登录</a></div>
+        <div class="login_sms"><a href="https://www.517ybang.com/login_sms">短信登录</a></div>
     </div>
     <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
-        <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt=""/>
+       <a class="wx-icon" href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxba173a67df14c087&redirect_uri=https%3a%2f%2fwww.517ybang.com%2flogin_sms&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">
+            <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt=""/>
+       </a>
     </div>
 
 </div>
@@ -67,21 +69,40 @@
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 <script>
     $(function(){
+
          console.log(getQueryString('tel'));
                 var tel = getQueryString('tel');
                 if(tel){
                     $('#mobile').val(tel);
                 }
                 $('.wx-icon').on('click',function(){
-                    $.ajax({
-                        url: "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect",
-                        type: 'GET',
-                        dataType: 'JSONP',
-                        success: function (data) {
-                            var info=JSON.parse(data);
-                            console.log(info);
-                        }
+                    $.ajax({
+                        url: "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect",
+                        type: 'GET',
+                        dataType: 'JSONP',
+                        success: function (data) {
+                            var info=JSON.parse(data);
+                            console.log(info);
+                        }
                     });
+//				$.ajax({
+//					  url: "https://api.517ybang.com/account_new/login_wechat",
+//					  type: 'post',
+//					  dataType: 'json',
+//					  data: {app_type:'client',wechat_union_id:'o6_bmasdasdsad6_2sgVt7hMZOPfL'},
+//					  success: function (data, status) {
+//					    if(data.status == 200){
+//					    	alert(data.content.nickname);
+//					    }
+////					    if(data.status == 200){
+////					    	window.location.href = 'https://www.517ybang.com/';
+////					    }
+//					  },
+//					  fail: function (err, status) {
+//					    console.log(err)
+//					  }
+//				});
+					
                 })
 
                 $('#loginSms').on('click',function(){
@@ -107,6 +128,40 @@
                         return unescape(r[2]);
 
                     }
-                }
-    })
+                };
+//              $('#submit').on('click',function(){
+//              	if(!($('#password').val() && $('#mobile').val())){
+//              		alert('手机号或者密码不能为空');
+//              		return false;
+//              	}
+//              	else{
+//              		$.ajax({
+//					  url: "https://api.517ybang.com/account/login",
+//					  type: 'post',
+//					  dataType: 'json',
+//					  data: {app_type:'client',mobile:$('#mobile').val(),password:$('#password').val()},
+//					  success: function (data, status) {
+//					    if(data.status == 401){
+//					    	alert(data.content.error.message);
+//					    }
+//					    if(data.status == 200){
+//					    	localStorage.removeItem('userId');
+//					    	localStorage.setItem('userId',data.content.user_id);
+//					    	window.location.href = 'https://www.517ybang.com/';
+//					    }
+//					    if(data.status == 414){
+//					    	alert('用户未注册');
+//					    	window.location.href = 'https://www.517ybang.com/register';
+//					    }
+//					  },
+//					  fail: function (err, status) {
+//					    console.log(err)
+//					  }
+//					})
+//              	}
+//              	
+//              });
+
+          
+    });
 </script>

@@ -1,283 +1,284 @@
-<style>
-	#address-list>li {border:2px solid gray;cursor:pointer;}
-		#address-list>li.active {border-color:red;}
 
-	/* 宽度在750像素以上的设备 */
-	@media only screen and (min-width:751px)
-	{
+    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+    <style>
+        *:before, *:after {box-sizing: border-box; }
+        *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+        h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+        em, strong { font-style: normal;}
+        ul, ol, li {list-style: none;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        input{outline:none; border: none}
+        button{border: none;}
+        html{ margin: 0 auto; height: 100%}
+        body {width: 100%;background-color: #F2F2F3; height: 100%}
+        a {text-decoration: none;}
+        .box {width: 100%; height: 100%;position: relative}
+        .address{margin: 0.1rem 0.2rem 0.2rem 0.2rem;font-size: 0.26rem;background-color: #fff;border-radius: 0.15rem;}
+        .address-title{margin: 0 0.2rem;color: #3E3A39;padding: 0.24rem 0 0.16rem 0;}
+        .title-left{float: left;}
+        .title-right{float: right;}
+        .address-type{display: inline-block;width: 0.7rem;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;color: #ff3649;margin-right: 0.2rem;
+        }
+        .address-content{margin: 0 0.2rem;color: #666464;padding-bottom: 0.24rem;}
+        .address-operation{margin: 0 0.2rem;color: #666464;padding: 0.23rem 0;}
 
-	}
-	
-	/* 宽度在960像素以上的设备 */
-	@media only screen and (min-width:961px)
-	{
+        .order-having{
+            display: block;
+            font-size: 0.26rem;
+            margin: 0 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+        }
+        .left-float{
+            float: left;
+        }
+        .right-float{
+            float: right;
+        }
+        .item-title{
+            padding: 0.3rem 0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .item-title .title-left i{
+            font-size: 0.36rem;
+            margin-right: 0.2rem;
+        }
+        .item-detail{
+            padding: 0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .item-left{
+            height: 1.4rem;
+            width: 1.4rem;
+            margin: 0.1rem 0.2rem 0.1rem 0;
+        }
+        .item-left img{
+            display: block;
+            height: 1.4rem;
+            width: 1.4rem;
+        }
+        .item-center{
+            font-size: 0.26rem;
+            color: #3e3a39;
+        }
+        .item-center p:first-child{
+            padding: 0.15rem 0 0.12rem 0;
+        }
+        .item-center p:nth-child(2){
+            font-size: 0.22rem;
+            color: #9fa0a0;
+            padding-bottom: 0.18rem;
+        }
 
-	}
 
-	/* 宽度在1280像素以上的设备 */
-	@media only screen and (min-width:1281px)
-	{
+        .reasonSelect{
+            background: url("<?php echo CDN_URL ?>media/order/xuanzhong@3x.png") no-repeat;
+        }
+        .reasonUnSelect{
+            display: inline-block;
+            width: 0.35rem;
+            height: 0.35rem;
+            vertical-align: bottom;
+            margin-right: 0.15rem;
+            background: url("<?php echo CDN_URL ?>media/order/weixuanzhong@3x.png") no-repeat;
+            background-size: 0.35rem 0.35rem;
+        }
+        .reasonSelect{
+            background: url("<?php echo CDN_URL ?>media/order/xuanzhong@3x.png") no-repeat;
+            background-size: 0.35rem 0.35rem;
+        }
+        .icon-Arrow{
+            margin-left: 0.1rem;
+            font-size: 0.3rem;
+        }
+        .message{
+            width: 100%;
+        }
+        .total{
+            padding: 0.3rem 0;
+            text-align: right;
+            font-size: 0.24rem;
+            color: #3e3a39;
+            padding-right: 0.2rem;
+        }
+        .total span:nth-child(1){
+            margin-right: 0.2rem;
+        }
+        .total span:nth-child(2){
+            font-size: 0.26rem;
+            color: #3e3a39;
+            font-weight: 700;
 
-	}
-</style>
+        }
+        .invoice{
+            display: block;
+            font-size: 0.26rem;
+            margin: 0.2rem;
+            background-color: #fff;
+            border-radius: 0.15rem;
+            padding-bottom: 0.3rem;
+            color: #3e3a39;
+        }
+
+        .invoice-input{
+            padding: 0.3rem 0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .invoice-input span{
+            display: inline-block;
+            width: 33.33333%;
+        }
+        .submit-btn{
+            margin: 0.3rem 0.2rem;
+            height: 0.9rem;
+            line-height: 0.9rem;
+            font-size: 0.3rem;
+            color: #ffffff;
+            text-align: center;
+            background-color: #FF3649;
+            border-radius: 0.12rem;
+        }
+        .placeholder-div{
+            height: 0.1rem;
+            width: 100%;
+        }
+    </style>
+
+    <div class="box">
+        <div class="placeholder-div"></div>
+
+        <div class="address">
+            <div class="address-title clearfix">
+                <div class="title-left"><span class="address-type">家</span>谭女士</div>
+                <div class="title-right">139****2419</div>
+            </div>
+            <div class="address-content">
+                <p>青岛市崂山区</p>
+                <p>东海东路1号，麦岛金岸，意帮3层</p>
+            </div>
+        </div>
+
+        <div class="order-having">
+            <div class="item-title clearfix">
+                <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span></div>
+                <div class="title-right right-float"><i class="icon-Arrow"></i></div>
+            </div>
+            <div class="item-detail clearfix">
+                <div class="item-left left-float"><img src="<?php echo CDN_URL ?>media/order/orderimg.png" alt=""/></div>
+                <div class="item-center left-float">
+                    <p>新西兰进口黄金奇异果6个/份</p>
+                    <p>含有丰富的vc，清热降火热量极低。</p>
+                    <p><span>?49.68</span><span>×1</span></p>
+                </div>
+            </div>
+            <div class="item-title clearfix">
+                <div class="title-left left-float">店铺优惠</div>
+                <div class="title-right right-float"><span>满100减10元</span><i class="icon-Arrow"></i></div>
+            </div>
+            <div class="item-title clearfix">
+                <div class="title-left left-float">配送方式</div>
+                <div class="title-right right-float"><span>快递配送</span><i class="icon-Arrow"></i></div>
+            </div>
+            <div class="item-title clearfix">
+                <input class="message" type="text" placeholder="给卖家留言"/>
+            </div>
+            <div class="total">
+                <span>共1件商品</span>合计：<span>?57.00</span>(含运费?8.0)
+            </div>
+        </div>
+
+        <!--
+        <div class="invoice">
+            <div class="invoice-input">
+                <span>发票类型</span><span class="sele"><i class="reasonUnSelect reasonSelect"></i>个人</span><span class="sele"><i class="reasonUnSelect"></i>企业</span>
+            </div>
+            <div class="invoice-input">
+                <input class="message" type="text" placeholder="发票抬头"/>
+            </div>
+            <div class="invoice-input">
+                <input class="message" type="text" placeholder="税号（请输入税号或社会信用代码）"/>
+            </div>
+        </div>
+        -->
+
+
+        <button class="submit-btn" type=submit>提交订单</button>
+
+        <form class=hide action="<?php echo base_url('order/create') ?>">
+            <input name=address_id type=hidden>
+            <input name=cart_string type=hidden>
+            <input name=note_user type=hidden>
+        </form>
+    </div>
 
 <script>
-	$(function(){
-		// 标注默认地址为选中状态
-		$('#address-list>li[data-id=<?php echo $this->session->address_id ?>]').addClass('active');
+    var item = <?php echo json_encode($item) ?>;
+    var default_address_id = <?php echo $this->session->address_id ?>; // 默认收货地址ID
+    var addresses = item.addresses; // 可选的收货地址
+    var order_data = item.order_data; // 子订单信息
 
-		// 点击地址项时获取并填充相应字段值
-		$('#address-list>li').click(function(){
-			var address_id = $(this).attr('data-id');
-			console.log(address_id);
-			$('[name=address_id]').val(address_id);
+    $(function(){
+        $('.sele').click(function(){
+            $(".sele").find("i").removeClass('reasonSelect').addClass('reasonUnSelect');
+            $(this).find('i').addClass('reasonSelect');
+        })
 
-			// 标注为选中状态
-			$('#address-list>li.active').removeClass('active');
-			$(this).addClass('active');
-		});
-	});
+        // 默认地址
+        $('[name=address_id]').val(default_address_id);
+
+        // 待下单商品信息
+        var cart_string = '';
+        for (var i in order_data)
+        {
+            var order_items = order_data[i]['order_items'];
+            for (var j in order_items)
+            {
+                var order = order_items[j];
+                cart_string += order['biz_id'] + '|' + order['item_id'] + '|' + (order['sku_id'] || 0) + '|' + (order['count'] || 1)
+            }
+        }
+        $('[name=cart_string]').val(cart_string);
+
+        // 提交表单
+        $('[type=submit').click(function(){
+            var form_data = $('form').serializeArray(); // 获取表单中参数为键值对数组
+
+            // 初始化参数
+            params = common_params;
+
+            // 赋值表单中各字段
+            $.each(form_data, function(i, field){
+                params[field.name] = field.value;
+            });
+
+            $.ajax({
+                type: 'post',
+                url: api_url + 'order/create',
+                data: params,
+                dataType:'json',
+                cache: false,
+                success: function(result)
+                {
+                    console.log(result);
+                    if (result.status === 200)
+                    {
+                        // 转到支付页
+                        var target_url = base_url + 'order/pay?id=' + result.content.ids;
+                        location.href = target_url;
+                    }
+                    else if (result.status !== undefined)
+                    {
+                        alert(result.content.error.message);
+                    }
+                    else
+                    {
+                        alert('网络通信失败，请稍后重试');
+                    }
+                }
+            });
+        });
+    })
 </script>
-
-<base href="<?php echo $this->media_root ?>">
-
-<div id=breadcrumb>
-	<ol class="breadcrumb container">
-		<li><a href="<?php echo base_url() ?>">首页</a></li>
-		<li><a href="<?php echo base_url($this->class_name) ?>"><?php echo $this->class_name_cn ?></a></li>
-		<li class=active><?php echo $title ?></li>
-	</ol>
-</div>
-
-<div id=content class=container>
-	<?php if ( isset($item) ): ?>
-	<div id=order-single>
-		<h2>单品订单</h2>
-		<section id=order-item>
-			<?php echo '商品名称 '.$item['name'] ?>
-			<?php echo '商家名称 '.$biz['name'] ?>
-		</section>
-	</div>
-
-	<?php else: ?>
-	<script>
-		$(function(){
-			// 将所有购物车项以商家为单位进行显示
-			$('.biz').each(function(){
-				// 获取当前biz_id
-				var biz_id = $(this).attr('data-biz-id');
-			
-				// 将所有该biz_id对应的购物车项装入同一容器
-				$('.item[data-biz-id='+ biz_id +']').wrapAll('ul.cart-items').appendTo('section[data-biz-id='+ biz_id +']');
-
-			});
-
-			// 移除购物车项前要求用户确定
-			$('a.remove').click(function(){
-				var is_confirm = confirm('确定删除这个宝贝吗');
-			
-				if (is_confirm == false)
-				{
-					return false;
-				}
-			});
-		});
-	</script>
-
-	<div id=order-multiple>
-		<h2>购物车订单</h2>
-
-		<?php foreach ($cart_data['bizs'] as $biz): ?>
-		<section style="border:2px solid red" class=biz data-biz-id="<?php echo $biz['biz_id'] ?>">
-			<h2 class=biz-name>
-				<a title="<?php echo $biz['name'] ?>" href="<?php echo base_url('biz/detail?id='.$biz['biz_id']) ?>">
-					<i class="fa fa-home" aria-hidden="true"></i> <?php echo $biz['name'] ?>
-				</a>
-			</h2>
-		</section>
-		<?php endforeach ?>
-
-		<ul>
-		<?php
-			foreach ($cart_data['items'] as $item):
-
-			// 生成操作URL参数
-			$url_param = '?';
-			// 初始化有效性、库存充足度、可减量、可加量性
-			$is_valid = $is_enough = $can_add = $can_reduce = TRUE;
-
-			// TODO 判断店铺状态是否正常，若正常则获取biz_id
-			if ( TRUE ):
-				$url_param .= 'biz_id='.$item['biz_id'];
-			else:
-				$is_valid = FALSE;
-			endif;
-
-			// 判断商品是否在售，若正常则获取item_id
-			if ( !empty($item['time_publish']) ):
-				$url_param .= '&item_id='.$item['item_id'];
-
-				// 判断库存是否充足
-				if ( $item['stocks'] < $item['count'] ):
-					$is_enough = FALSE;
-				endif;
-
-				// 判断是否可减量
-				if ( $item['quantity_min'] >= $item['count'] ):
-					$can_reduce = FALSE;
-				endif;
-
-				// 判断是否可加量
-				if ( $item['stocks'] == $item['count'] || $item['quantity_max'] <= $item['count']):
-					$can_add = FALSE;
-				endif;
-
-			else:
-				$is_valid = FALSE;
-			endif;
-
-			// 判断是否存在SKU
-			if ( isset($item['sku']) ):
-				// 判断SKU库存是否足够，若正常则获取sku_id
-				if ( $item['sku']['stocks'] >= $item['count'] ):
-					$url_param .= '&sku_id='.$item['sku']['sku_id'];
-
-					// 判断是否可加量
-					if ( $item['sku']['stocks'] == $item['count']):
-						$can_add = FALSE;
-					endif;
-				else:
-					$is_enough = FALSE;
-				endif;
-
-			endif;
-		?>
-			<li class="item row" data-biz-id="<?php echo $item['biz_id'] ?>">
-				<div class="main-images col-xs-2">
-					<a href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
-						<img alt="<?php echo $item['name'] ?>" src="<?php echo $item['url_image_main'] ?>">
-					</a>
-				</div>
-
-				<section class="col-xs-6">
-					<h2 class=item-name>
-						<a title="<?php echo $item['name'] ?>" href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
-							<?php if ($is_valid === FALSE): ?>
-								<span class="label label-danger">已失效，下单时将忽略</span>
-							<?php else: ?>
-								<?php if ($is_enough === FALSE): ?>
-								<span class="label label-warning">库存不足，下单时将忽略</span>
-								<?php endif ?>
-							<?php endif ?>
-
-							<?php echo $item['name'] ?>
-						</a>
-					</h2>
-				</section>
-
-				<!-- 价格相关 -->
-				<ul class="price list-unstyled col-xs-4">
-					<li><strong>￥ <?php echo $item['price'] ?></strong> &times; <?php echo $item['count'] ?></li>
-				</ul>
-
-				<!-- 数量调整 -->
-				<?php if ($is_valid === TRUE): ?>
-				<ul class="actions col-xs-12 row">
-					<?php if ($can_reduce === TRUE): ?>
-					<li class="col-xs-4">
-						<a class=reduce href="<?php echo base_url('cart/reduce'.$url_param) ?>"><i class="fa fa-minus-circle" aria-hidden=true></i></a>
-					</li>
-					<?php endif ?>
-
-					<li class="col-xs-4">
-						<a class=remove href="<?php echo base_url('cart/remove'.$url_param) ?>"><i class="fa fa-trash" aria-hidden=true></i></a>
-					</li>
-
-					<?php if ($can_add === TRUE): ?>
-					<li class="col-xs-4">
-						<a class=add href="<?php echo base_url('cart/add'.$url_param) ?>"><i class="fa fa-plus-circle" aria-hidden=true></i></a>
-					</li>
-					<?php endif ?>
-				</ul>
-				<?php endif ?>
-			</li>
-
-			<?php endforeach ?>
-		</ul>
-
-	</div>
-
-	<?php endif ?>
-
-	<?php
-		if ( !empty($error) ) echo '<div class="alert alert-warning" role=alert>'.$error.'</div>';
-		$attributes = array('class' => 'form-'.$this->class_name.'-create form-horizontal', 'role' => 'form');
-		echo form_open_multipart($this->class_name.'/create', $attributes);
-	?>
-		<fieldset>
-			<?php if ( isset($item) ): ?>
-			<input name=item_id type=hidden value="<?php echo $item['item_id'] ?>">
-			<?php endif ?>
-
-			<div class=form-group>
-				<label for=note_user class="col-sm-2 control-label">收货地址</label>
-				<div class=col-sm-10>
-					<input name=address_id type=hidden value="<?php echo $this->session->address_id ?>">
-
-					<?php
-						// 生成回调跳转URL
-						$url_to_return = urlencode('https://'. $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
-
-						// 若未设置收货地址，提示用户创建新收货地址
-						if ( empty($addresses) ):
-					?>
-					<p class=help-block>您目前没有可用的收货地址</p>
-
-					<a class="btn btn-primary btn-lg" href="<?php echo base_url('address/create?return_to='.$url_to_return) ?>">添加地址</a>
-
-					<?php else: ?>
-					<ul id=address-list class=row>
-
-						<?php foreach ($addresses as $item): ?>
-						<li class="col-xs-12 col-sm-6 col-md-4" data-id="<?php echo $item['address_id'] ?>">
-							<ul class=row>
-								<li class=col-xs-12>
-									<?php if ( !empty($item['brief']) ): ?>
-									<em>「<?php echo $item['brief'] ?>」</em>
-									<?php endif ?>
-
-									<?php echo $item['fullname'] ?>
-									<span class="pull-right text-right"><?php echo $item['mobile'] ?></span>
-								</li>
-								<li class=col-xs-12>
-									<?php echo $item['province']. $item['city']. $item['county']. '<br>'.$item['street'] ?>
-								</li>
-							</ul>
-						</li>
-						<?php endforeach ?>
-
-					</ul>
-					<a class="btn btn-default btn-lg" href="<?php echo base_url('address/create?return_to='.$url_to_return) ?>">添加地址</a>
-
-					<?php endif ?>
-				</div>
-			</div>
-		</fieldset>
-
-		<fieldset>
-			<div class=form-group>
-				<label for=note_user class="col-sm-2 control-label">留言</label>
-				<div class=col-sm-10>
-					<textarea name=note_user class=form-control placeholder="如有特殊要求，请留言说明，最多255个字符"><?php echo set_value('note_user') ?></textarea>
-				</div>
-			</div>
-		</fieldset>
-
-		<div class=form-group>
-		    <div class="col-xs-12 col-sm-offset-2 col-sm-2">
-				<button class="btn btn-primary btn-lg btn-block" type=submit>确定</button>
-		    </div>
-		</div>
-	</form>
-
-</div>

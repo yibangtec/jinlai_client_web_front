@@ -46,6 +46,8 @@ a {text-decoration: none;}
     float: right;
 }
 .item-title{
+    display: block;
+    color: #3e3a39;
     padding: 0.2rem;
 }
 .item-title .title-left i{
@@ -53,6 +55,7 @@ a {text-decoration: none;}
     margin-right: 0.2rem;
 }
 .item-detail{
+    display: block;
     padding: 0 0.2rem;
     border-top: 0.01rem solid #DDDDDD;
 }
@@ -70,6 +73,7 @@ a {text-decoration: none;}
     width: 3.8rem;
 }
 .item-center p:first-child{
+    color: #3e3a39;
     padding: 0.2rem 0 0.15rem 0;
 }
 .item-center p:last-child{
@@ -79,6 +83,7 @@ a {text-decoration: none;}
 .item-right{
     padding-top: 0.2rem;
     text-align: right;
+    color: #3e3a39;
 }
 .item-right .price-text{
     color: #9fa0a0;
@@ -86,6 +91,7 @@ a {text-decoration: none;}
 }
 .item-right .cont-indent{
     padding-top: 0.1rem;
+    color: #3e3a39;
 }
 .item-price{
     text-align: right;
@@ -93,6 +99,7 @@ a {text-decoration: none;}
 }
 .item-operation{
     text-align: right;
+
 }
 .item-operation span{
     display: inline-block;
@@ -445,7 +452,22 @@ a {text-decoration: none;}
     margin-right: 0.3rem;
 }
 
-.status1,.status2,.status3,.status4,.status5,.status6{
+.status1{
+    display: none;
+}
+.status2{
+    display: none;
+}
+.status3{
+    display: none;
+}
+.status4{
+    display: none;
+}
+.status5{
+    display: none;
+}
+.status6{
     display: none;
 }
 .line{
@@ -830,4 +852,21 @@ a {text-decoration: none;}
     text-align: center;
     border-radius: 0.43rem;
     border: 0.01rem solid #9FA0A0;
+}
+
+.order-item-none{
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+    display: none;
+}
+.icon_noorder{
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.text-noorder{
+    font-size: 0.28rem;
+    color: #9FA0A0;
+    padding: 0.5rem 0;
 }

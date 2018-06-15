@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="../css/normal.css"/>
     <link rel="stylesheet" href="../css/base.css"/>
     <link rel="stylesheet" href="../css/order.css"/>
+    <style>
+        .load-more{
+            margin: 0.2rem;
+            text-align: center;
+            font-size: 0.3rem;
+            color: #3E3A39;
+        }
+    </style>
 </head>
 <body>
 <div class="tips">
@@ -64,35 +72,42 @@
         <li><a class="order-tab">待评价</a></li>
     </ul>
     <div class="content">
+        <div class="order-item-none">
+            <img class="icon_noorder" src="../media/order/icon_noorder.png" alt=""/>
+            <p class="text-noorder">您没有该状态的订单</p>
+        </div>
         <div class="order-all" style="display: block">
-            <div class="order-item">
+
+            <div class="order-item" style="display: none">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
                     <div class="title-right right-float">待评价</div>
                 </div>
-                <div class="item-detail clearfix">
-                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
-                    <div class="item-center left-float">
-                        <p>新西兰进口黄金奇异果6个/份</p>
-                        <p>含有丰富的vc，清热降火热量极低。</p>
-                    </div>
-                    <div class="item-right right-float">
-                        <p>¥49.68</p>
-                        <p class="price-text"> <del>¥69.80</del></p>
-                        <p class="cont-indent">×1</p>
-                    </div>
-                </div>
-                <div class="item-detail clearfix">
-                    <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
-                    <div class="item-center left-float">
-                        <p>新西兰进口黄金奇异果6个/份</p>
-                        <p>含有丰富的vc，清热降火热量极低。</p>
-                    </div>
-                    <div class="item-right right-float">
-                        <p>¥49.68</p>
-                        <p class="price-text"> <del>¥6229.80</del></p>
-                        <p class="cont-indent">×1</p>
-                    </div>
+                <div class="item-list" id="item-list">
+                    <a class="item-detail clearfix">
+                        <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                        <div class="item-center left-float">
+                            <p>新西兰进口黄金奇异果6个/份</p>
+                            <p>含有丰富的vc，清热降火热量极低。</p>
+                        </div>
+                        <div class="item-right right-float">
+                            <p>¥49.68</p>
+                            <p class="price-text"> <del>¥69.80</del></p>
+                            <p class="cont-indent">×1</p>
+                        </div>
+                    </a>
+                    <a class="item-detail clearfix">
+                        <div class="item-left left-float"><img src="../media/order/orderimg.png" alt=""/></div>
+                        <div class="item-center left-float">
+                            <p>新西兰进口黄金奇异果6个/份</p>
+                            <p>含有丰富的vc，清热降火热量极低。</p>
+                        </div>
+                        <div class="item-right right-float">
+                            <p>¥49.68</p>
+                            <p class="price-text"> <del>¥6229.80</del></p>
+                            <p class="cont-indent">×1</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="item-price">共<span>1</span>件商品 合计：<span class="weight">¥57.68</span>（含运费¥<span>8.0</span>）</div>
                 <div class="item-operation"><span class="del-btn">删除</span><span>申请售后</span><span>追加评论</span></div>
@@ -164,7 +179,7 @@
                 <div class="item-operation"><span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span></div>
             </div>
         </div>
-        <div class="order-all">
+        <div class="order-all" id="">
             <div class="order-item">
                 <div class="item-title clearfix">
                     <div class="title-left left-float"><i class="icon-dianpu"></i><span>东唐旺</span><i class="icon-Arrow"></i></div>
@@ -188,7 +203,7 @@
             </div>
         </div>
     </div>
-
+    <div class="load-more" style="margin: 0.2rem;text-align: center;font-size: 0.3rem;color: #3E3A39;" id="load-more">点击加载更多</div>
 
 </div>
 
@@ -196,6 +211,8 @@
 <script>
 
     $(document).ready(function(){
+
+
         console.log($('.order-tab').length);
         $('.order-tab').click(function () {
             var index = $('.order-tab').index($(this));

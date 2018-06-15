@@ -4,182 +4,156 @@
     <meta charset="UTF-8">
     <title>智能登录</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <script>
-        (function (doc, win) {
-            var docEl = doc.documentElement,
-                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                    recalc = function () {
-                        var clientWidth = docEl.clientWidth;
-                        if (!clientWidth) return;
-                        if(clientWidth>=750){
-                            docEl.style.fontSize = '100px';
-                        }else{
-                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                        }
-                    };
-
-            if (!doc.addEventListener) return;
-            win.addEventListener(resizeEvt, recalc, false);
-            doc.addEventListener('DOMContentLoaded', recalc, false);
-        })(document, window);
-
-    </script>
-
-
-    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/account.css"/>
-    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/fontStyle.css"/>
+    <script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+	
+    <link rel="stylesheet" href="../css/account.css"/>
+    <style>
+        body{
+            background-color: #efefef;
+        }
+    </style>
 </head>
 <body style="background-color: #efefef; ">
-<div class="header">
-    <div class="header-top clearfix">
-        <div class="header-img"><img src="https://cdn-remote.517ybang.com/media/account/mine/logo.png" alt=""/></div>
-        <div class="header-name">
-            <div class="nick-name">小王子</div>
-            <div class="member">普通会员</div>
+<!--<img src="https://medias.517ybang.com/user/avatar/201806/0607/2145501.jpg" alt=""/>-->
+<div class="box">
+    <div class="header">
+        <div class="header-top clearfix">
+            <!--<div class="header-img" style="text-align: center;">
+                <img src="https://jinlaisandbox-images.b0.upaiyun.com/biz/logo/201709/0907/165458.jpg" alt=""/>
+            </div>-->
+            <div class="header-img" style="background: url('https://medias.517ybang.com/user/avatar/201806/0607/2145501.jpg') no-repeat center; background-size: cover;">
+            </div>
+            <a class="header-name">
+                <span class="nick-name">小王子111111</span>
+                <span class="member">普通</span>
+                <!--<div class="member">普通会员</div>-->
+            </a>
+            <div class="header-news">
+                <!--图标-->
+                <i class="icon-chat"></i>
+            </div>
         </div>
-        <div class="header-news">
-            <!--图标-->
-            <i class="icon-chat">
-            </i>
-        </div>
-    </div>
-    <div class="header-bot">
-        <div class="bot-float">
-            <i class="icon-guanzhu"></i>
-            <p>关注店铺</p>
-        </div>
-        <div class="bot-float">
-            <i class="icon-shoucang2"></i>
-            <p>收藏宝贝</p>
-        </div>
-        <div class="bot-float">
-            <i class="icon-kanguode"></i>
-            <p>我看过的</p>
-        </div>
-        <div class="bot-float">
-            <i class="icon-huiyuan-2"></i>
-            <p>会员卡</p>
-        </div>
-    </div>
-</div>
-<div class="mine-order">
-    <div class="order-title">
-        <div class="title-left">我的订单</div>
-        <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
-    </div>
-    <div class="order-item clearfix">
-        <div class="item-list">
-            <i class="icon-daifukuan"></i>
-            <p>待付款</p>
-        </div>
-        <div class="item-list">
-            <i class="icon-daifahuo"></i>
-            <p>待发货</p>
-        </div>
-        <div class="item-list">
-            <i class="icon-daishouhuo"></i>
-            <p>待收货</p>
-        </div>
-        <div class="item-list">
-            <i class="icon-daipingjia"></i>
-            <p>待评价</p>
-        </div>
-        <div class="item-list">
-            <i class="icon-jintuikuan"></i>
-            <p>退款售后</p>
+        <div class="header-bot">
+            <a class="bot-float">
+                <i class="icon-guanzhu_bk"></i>
+                <p>关注店铺</p>
+            </a>
+            <a class="bot-float">
+                <i class="icon-shoucang"></i>
+                <p>收藏宝贝</p>
+            </a>
+            <a class="bot-float">
+                <i class="icon-wokanguode"></i>
+                <p>我看过的</p>
+            </a>
+            <a class="bot-float">
+                <i class="icon-huiyuan2"></i>
+                <p>会员卡</p>
+            </a>
         </div>
     </div>
-</div>
-<div class="mine-order">
-    <div class="order-title">
-        <div class="title-left">团购订单</div>
-        <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
-    </div>
-    <div class="order-item clearfix">
-        <div class="item-team">
-            <i class="icon-daifukuan"></i>
-            <p>待付款</p>
+    <div class="mine-order">
+        <div class="order-title">
+            <div class="title-left">商品订单</div>
+            <div class="title-right">全部<i class="icon-Arrow"></i></div>
         </div>
-        <div class="item-team">
-            <i class="icon-daishiyong"></i>
-            <p>待使用</p>
-        </div>
-        <div class="item-team">
-            <i class="icon-daipingjia"></i>
-            <p>待评价</p>
-        </div>
-        <div class="item-team">
-            <i class="icon-jintuikuan"></i>
-            <p>退款售后</p>
-        </div>
-    </div>
-</div>
-<div class="mine-order">
-    <div class="order-title">
-        <div class="title-left">我的服务</div>
-    </div>
-    <div class="order-item clearfix">
-        <div class="item-service">
-            <i class="icon-yue2"></i>
-            <p>余额</p>
-        </div>
-        <div class="item-service">
-            <i class="icon-kabao2"></i>
-            <p>卡包</p>
-        </div>
-        <div class="item-service">
-            <i class="icon-jifen"></i>
-            <p>积分</p>
+        <div class="order-item clearfix">
+            <a class="item-list">
+                <i class="icon-daifukuan"></i>
+                <p>待付款</p>
+            </a>
+            <a class="item-list">
+                <i class="icon-daifahuo"></i>
+                <p>待发货</p>
+            </a>
+            <a class="item-list">
+                <i class="icon-daishouhuo"></i>
+                <p>待收货</p>
+            </a>
+            <a class="item-list">
+                <i class="icon-daipingjia"></i>
+                <p>待评价</p>
+            </a>
+            <a class="item-list">
+                <i class="icon-jintuikuan"></i>
+                <p>退款售后</p>
+            </a>
         </div>
     </div>
-    <div class="order-item clearfix">
-        <div class="item-service">
-            <i class="icon-yaoqinghaoyou"></i>
-            <p>邀请好友</p>
+    <div class="mine-order">
+        <div class="order-title">
+            <div class="title-left">我的服务</div>
         </div>
-        <div class="item-service">
-            <i class="icon-hezuo"></i>
-            <p>商家合作</p>
+        <div class="order-item clearfix">
+            <a class="item-service">
+                <i class="icon-kabao2"></i>
+                <p>卡包</p>
+            </a>
+            <a class="item-service">
+                <i class="icon-yaoqinghaoyou"></i>
+                <p>邀请好友</p>
+            </a>
+            <a class="item-service">
+                <i class="icon-hezuo"></i>
+                <p>商家合作</p>
+            </a>
         </div>
-        <div class="item-service">
-            <i class="icon-hongka"></i>
-            <p>进来红卡</p>
-        </div>
-    </div>
-    <div class="order-item clearfix">
-        <div class="item-service">
-            <i class="icon-dizhiguanli"></i>
-            <p>地址管理</p>
-        </div>
-        <div class="item-service">
-            <i class="icon-shezhi"></i>
-            <p>账户设置</p>
-        </div>
-        <div class="item-service">
-            <i class="icon-guanyuwomen"></i>
-            <p>关于我们</p>
+
+        <div class="order-item clearfix">
+            <a class="item-service">
+                <i class="icon-dizhiguanli"></i>
+                <p>地址管理</p>
+            </a>
+            <a class="item-service">
+                <i class="icon-shezhi"></i>
+                <p>账户设置</p>
+            </a>
+            <a class="item-service">
+                <i class="icon-guanyuwomen"></i>
+                <p>关于我们</p>
+            </a>
         </div>
     </div>
 </div>
 <!--<div class="mine-order">
     <div class="sing-out-btn"><i class="icon-xiazai"></i> 进来APP下载</div>
 </div>-->
-<div class="bank">
-    <div class="bank-name">平安银行 <span>(会员权益)</span></div>
-    <div class="bank-item clearfix">
-        <div class="item-service">
-            <i class="icon-huiyuanquanyi"></i>
-            <p>会员权益</p>
-        </div>
-        <div class="item-service" style="padding-top: 0.25rem">
-            <i class="icon-shenqing"></i>
-            <p style="padding-top: 0.18rem">申请信用卡</p>
-        </div>
-        <div class="item-service" style="padding-top: 0.25rem">
-            <i class="icon-jiekuan"></i>
-            <p style="padding-top: 0.18rem">申请借款</p>
-        </div>
-    </div>
-</div>
+<script>
+    function DrawImage(ImgD,s_width,s_height)
+    {
+        var   image = new Image();
+        var   iwidth   =   s_width;     //定义允许图片宽度
+        var   iheight   =   s_height;     //定义允许图片高度
+        image.src=ImgD.src;
+        if(image.width>0 && image.height>0)
+        {
+            if(image.width/image.height >= iwidth/iheight)
+            {
+                if(image.width>iwidth)
+                {
+                    ImgD.width=iwidth;
+                    ImgD.height=(image.height*iwidth)/image.width;
+                }else
+                {
+                    ImgD.width=image.width;
+                    ImgD.height=image.height;
+                }
+                ImgD.alt=image.width+"×"+image.height;
+            }
+            else{
+                if(image.height>iheight){
+                    ImgD.height=iheight;
+                    ImgD.width=(image.width*iheight)/image.height;
+                }else
+                {
+                    ImgD.width=image.width;
+                    ImgD.height=image.height;
+                }
+                ImgD.alt=image.width+"×"+image.height;
+            }
+        }
+    }
+</script>
 </body>
 </html>
