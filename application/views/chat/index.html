@@ -1,150 +1,143 @@
-<!doctype html>
-<html lang="en">
-
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>聊天界面</title>
-		<link rel="stylesheet" type="text/css" href="https://cdn-remote.517ybang.com/css/chat/chat.css" />
-		<link href="https://cdn-remote.517ybang.com/css/normal.css" rel="stylesheet">
-		<link href="https://cdn-remote.517ybang.com/css/common.css" rel="stylesheet">
-		<link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
-		<link href="https://cdn-remote.517ybang.com/css/index.css" rel="stylesheet">
-		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-		<script src="https://cdn-remote.517ybang.com/js/chatjs/flexible.js"></script>
-		<script src="https://cdn-remote.517ybang.com/js/chatjs/chatjs.js"></script>
-		<style>
-			body{
-			    max-width: 720px;
-			    margin: 0 auto;
-			    background: #f1f1f1;
-			    color:#333;
-			    font-size: 0.26rem;
-				}
-			.icon-dianpu2:before {
-			    content: "\e98d";
-			    color: #7e7e7e;
-				}
-				.icon-xl-tankuang{
-				
-				}
-				.icon-close{
-					display: inline-block;
-			    position: relative;
-			    /* top: .1rem; */
-			    width: 1rem;
-			    height: 1rem;
-				}
-				.icon-xl-tankuang:before {
-			    content: "\e9cd";
-			    color: #a9a9a9;
-			    font-size: .67rem;
-			        margin-left: .12rem;
-			    /* margin-top: 2.1rem; */
-			    position: relative;
-			    top: .136rem;
-			}
-			.icon-close:before {
-			    content: "\e99b";
-			    color: #a9a9a9;
-			    font-size: .67rem;
-			        margin-left: .12rem;
-			    /* margin-top: 2.1rem; */
-			    position: relative;
-			    top: .136rem;
-			}
-			.icon-dizhi:before {
-			    content: "\e915";
-			    color: #b2b3b2;
-			}
-		</style>
-	</head>
-
-	<body>
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>聊天界面</title>
+		<link rel="stylesheet" type="text/css" href="https://cdn-remote.517ybang.com/css/chat/chat.css" />
+		<link href="https://cdn-remote.517ybang.com/css/normal.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/common.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/index.css" rel="stylesheet">
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/chatjs/flexible.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/chatjs/chatjs.js"></script>
+		<style>
+			
+			body{
+			    max-width: 720px;
+			    margin: 0 auto;
+			    background: #f1f1f1;
+			    color:#333;
+			    font-size: 0.26rem;
+				}
+			.icon-dianpu2:before {
+			    content: "\e98d";
+			    color: #7e7e7e;
+				}
+
+				.icon-xl-tankuang:before {
+			    content: "\e9cd";
+			    color: #a9a9a9;
+			    font-size: .67rem;
+			        margin-left: .25rem;
+			    /* margin-top: 2.1rem; */
+			    position: relative;
+			    top: .3rem;
+			}
+			.icon-close2:before {
+			    content: "\e91d";
+			    color: #a9a9a9;
+			    font-size: .67rem;
+			        margin-left: .25rem;
+			    /* margin-top: 2.1rem; */
+			    position: relative;
+			    top: .3rem;
+			}
+			.icon-dizhi:before {
+			    content: "\e915";
+			    color: #b2b3b2;
+			}
+		</style>
+	</head>
+
+	<body>
 		<div id="chat">
-		<header class="header">
-			<a class="chatback" href="javascript:history.back()">
-				<i class="icon-Back"></i>
-			</a>
-			<h5 class="tit">商家店铺</h5>
-			<div class="right">
-				<i class="icon-dianpu2">
-                </i>
-			</div>
-		</header>
-		<div class="message">
-			<div class="show">
-				<div class="time">5月07日 12:00</div>
-				<div class="msg">
-					<div class="arrow"></div>
-					<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiangm.png" alt="" />
-					<p><i clas="msg_input"></i>你家宝贝质量杠杠滴,给你点赞,哈哈哈哈...</p>
-				</div>
-			</div>
-			<!--<div class="send">
-				<div class="time">5月07日 12:00</div>
-				<div class="msg">
-					<div class="arrowL"></div>
-					<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiang.png" alt="" />
-					<p><i class="msg_input"></i>谢谢,亲!我们会努力做到更好滴,嘻嘻嘻嘻嘻...</p>
-				</div>
-			</div>-->
-			
-		</div>
-		<div class="footer">
-			<input type="text" />
-			<i class="icon-xl-tankuang chatbtn">
-               </i>
-			<!--<p>发送</p>-->
-		</div>
-		<!--底部附加面板-->
-		<div class="additionalpanels">
-			<ul>
-				<li>
-					<span>
-						<i class="icon-tp"></i>
-					</span>
-					<em>图片</em>
-				</li>
-				<li>
-					<span>
-						<i class="icon-liulan"></i>
-					</span>
-					<em>浏览历史</em>
-				</li>
-				<li>
-					<span>
-						<i class="icon-sc"></i>
-					</span>
-					<em>收藏宝贝</em>
-				</li>
-				<li style="margin-right: 0px;">
-					<span>
-						<i class="icon-sh-dizhi"></i>
-					</span>
-					<em>收货地址</em>
-				</li>
-				<li>
-					<span>
-						<i class="icon-sp-dingdan"></i>
-					</span>
-					<em>商品订单</em>
-				</li>
-				<li>
-					<span>
-						<i class="icon-fw-dingdan"></i>
-					</span>
-					<em>服务订单</em>
-				</li>
-				<li>
-					<span>
-						<i class="icon-dizhi"></i>
-					</span>
-					<em>当前位置</em>
-				</li>
-			</ul>
-		</div>
-		</div>
-	</body>
+		<header class="header">
+			<a class="chatback" href="javascript:history.back()">
+				<i class="icon-Back"></i>
+			</a>
+			<h5 class="tit">商家店铺</h5>
+			<div class="right">
+				<i class="icon-dianpu3">
+                </i>
+			</div>
+		</header>
+		<div class="message" id="message">
+			<div class="show">
+				<div class="time">5月07日 12:00</div>
+				<div class="msg">
+					<div class="arrow"></div>
+					<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiangm.png" alt="" />
+					<p><i clas="msg_input"></i>你家宝贝质量杠杠滴,给你点赞,哈哈哈哈...</p>
+				</div>
+			</div>
+			<!--<div class="send">
+				<div class="time">5月07日 12:00</div>
+				<div class="msg">
+					<div class="arrowL"></div>
+					<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiang.png" alt="" />
+					<p><i class="msg_input"></i>谢谢,亲!我们会努力做到更好滴,嘻嘻嘻嘻嘻...</p>
+				</div>
+			</div>-->
+			
+		</div>
+		<div class="footer">
+			<!--<input type="text" />-->
+			<div contenteditable="true" class="chatInput" style="-webkit-user-select: auto"></div>
+			<i class="icon-xl-tankuang chatbtn">
+               </i>
+			<!--<p>发送</p>-->
+		</div>
+		<!--底部附加面板-->
+		<div class="additionalpanels">
+			<ul>
+				<li class="khdtp">
+					<span>
+						<i class="icon-tp"></i>
+					</span>
+					<em>图片</em>
+				</li>
+				<li>
+					<span>
+						<i class="icon-liulan"></i>
+					</span>
+					<em>浏览历史</em>
+				</li>
+				<li>
+					<span>
+						<i class="icon-sc"></i>
+					</span>
+					<em>收藏宝贝</em>
+				</li>
+				<li style="margin-right: 0px;" class="shdz">
+					<span>
+						<i class="icon-sh-dizhi"></i>
+					</span>
+					<em>收货地址</em>
+				</li>
+				<li class="khdsjdd">
+					<span>
+						<i class="icon-sp-dingdan"></i>
+					</span>
+					<em>商品订单</em>
+				</li>
+				<li>
+					<span>
+						<i class="icon-fw-dingdan"></i>
+					</span>
+					<em>服务订单</em>
+				</li>
+				<li class="dqdz">
+					<span>
+						<i class="icon-dq-weizhi"></i>
+					</span>
+					<em>当前位置</em>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</body>
 </html>

@@ -1,18 +1,8 @@
 		<!--</main>-->
 <!-- End #maincontainer -->
-<style>
-	#footer{
-		text-align: center;
-		font-size: .2rem;
-	}
-</style>
+
 <?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = ($this->input->get('device_platform') === 'android' || strpos($user_agent, 'Android'))? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+    if ( ! $this->user_agent['is_desktop']):
 ?>
 		<!--<footer id=footer role=contentinfo>
 			<div id=copyright>
@@ -32,16 +22,5 @@
 			<a id=totop title="回到页首" href="#"><i class="fa fa-chevron-up" aria-hidden=true></i></a>
 		</footer>-->
 <?php endif ?>
-
-		<script>
-			$(function(){
-				// 回到页首按钮
-				$('a#totop').click(function()
-				{
-					$('body,html').stop(false, false).animate({scrollTop:0}, 800);
-					return false;
-				});
-			});
-		</script>
 	</body>
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=0">
+		<link href="https://cdn-remote.517ybang.com/css/normal.css" rel="stylesheet">
+		<!--公用部分css-->
+		<link href="https://cdn-remote.517ybang.com/css/common.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/swiper.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/index.css" rel="stylesheet">
+		<!--下边两个css文件是本页面的日期选择器的样式,只需要在本页面引用-->
+		<link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/FJL.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn-remote.517ybang.com/css/FJL.picker.css" />
+		<script src="https://cdn-remote.517ybang.com/js/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+		<!--下边两个js文件是本页面的日期选择器的样式,只需要在本页面引用-->
+		<script src="https://cdn-remote.517ybang.com/js/FJL.min.js"></script>
+		<script src="https://cdn-remote.517ybang.com/js/FJL.picker.min.js"></script>
+		<style>
+		body{
+			background: #fafafa;
+		}
+	h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			* {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+			}
+input[type="radio"]{-webkit-appearance:none;outline: none;border:none}
+input.check{
+	background:url(https://cdn-remote.517ybang.com/media/cart/icon/icon_radio3.png) no-repeat center left;  
+	 background-size: cover;
+    margin-top: -.21rem;
+    width: .32rem !important;
+    height: .32rem;
+    position: relative;
+    top: .06rem;
+ }
+ input.check:checked{
+	background:url(https://cdn-remote.517ybang.com/media/cart/icon/icon_radio4.png) no-repeat center left;
+	background-size:contain;
+	}
+		</style>
+	</head>
+	<body>
+		<div class="bgfff border20 auto mt10 clearfix changeuserinfowrap wid710">
+			<div class="changeuserpic">
+				<input type="file" />
+				<img src="https://cdn-remote.517ybang.com/media/home/cainixihuan/cnxh/210x210_0.jpg"/>
+			</div>
+			<p>点击修改头像</p>
+		</div>
+		<div class="userinfolist bgfff auto mt10 border20 clearfix wid710">
+			<ul>
+				<li>
+					<span>用户ID</span>
+					<span>4545454</span>
+				</li>
+				<li>
+					<span>会员等级</span>
+					<span>普通会员</span>
+				</li>
+				<li>
+					<span style="width: auto;
+    margin-right: 0px;">姓
+						<input type="text" placeholder="请输入姓"/>
+					</span>
+					<span style="margin-left: .2rem;">名
+						<input type="text" placeholder="请输入名" />
+					</span>
+				</li>
+				<li>
+					<span>性别</span>
+					<span>
+						<form>
+							<input type="radio" class="check" name="man"/>
+						男
+						<input type="radio" class="check" name="man" style="margin-left: 1.54rem;" />
+						女
+						</form>
+						
+					</span>
+				</li>
+				<li>
+					<span>出生日期</span>
+					<span id='changeuserinfodate' data-options='{"type":"date","beginYear":2000,"endYear":2086}' class="btn">请选择</span>
+				</li>
+			</ul>
+		</div>
+		<script>
+			(function($) {
+				$.init();
+				var result = $('#changeuserinfodate')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							result.innerText = rs.text;
+							/* 
+							 * 返回 false 可以阻止选择框的关闭
+							 * return false;
+							 */
+							/*
+							 * 释放组件资源，释放后将将不能再操作组件
+							 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+							 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+							 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+							 */
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+		</script>
+	</body>
+</html>

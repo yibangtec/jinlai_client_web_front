@@ -8,7 +8,8 @@
 
     <?php if ( !empty($item['ornament']['member_figure_url']) ): ?>
     .vipcard {background:url(<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['member_figure_url'] ?>) no-repeat center center;padding: 0px;height: 3.9rem;overflow: hidden;position: relative;}
-    .vipcard p{
+    <?php endif ?>
+      .vipcard p{
     	position: absolute;
     	width: 100%;
     	height: 1.2rem;
@@ -18,15 +19,13 @@
     	font-size: .2rem;
     	    line-height: 1.2rem;
     }
-     .vipcard p span{
+	 .vipcard p span{
      	    width: .86rem;
 		    height: .26rem;
 		    line-height: .26rem;
 		    font-size: .18rem;
 		    display: inline-block;
      }
-    <?php endif ?>
-
     <?php if ( !empty($item['ornament']['vi_color_first']) ): ?>
     .vipcard {background-color:#<?php echo $item['ornament']['vi_color_first'] ?>;background-size: contain;padding: 0px;height: 3.9rem;}
     .vipcard p span{color:#<?php echo $item['ornament']['vi_color_first'] ?>;}
@@ -37,10 +36,12 @@
 	.vipcard p{margin-top: 0px;width: 100%;position: absolute;left:0px;height: 1.2rem;padding-left: .4rem;background: rgba(0,0,0,.2);bottom: 0px;}
     .enterstorebtn a {color:#fff;}
 </style>
-
 <?php
     // 若未指定会员卡LOGO，使用商家LOGO
     $logo_url = MEDIA_URL. (!empty($item['ornament']['member_logo_url'])? 'ornament_biz/'. $item['ornament']['member_logo_url']: 'biz/'. $item['url_logo']);
+    	if($logo_url == 'https://jinlaisandbox-images.b0.upaiyun.com/biz/')
+          $logo_url = 'https://cdn-remote.517ybang.com/media/home/default.png';
+          
 ?>
 	<div style="text-align: center;">
     <div class="storemainlogo">
@@ -104,18 +105,3 @@
 			</li>
 		</ul>
 	</div>
-	<script>
-// 		//$('.member_wrap').remove();
-// 		// debugger;
-// 		// function reurl(){ 
-// 		// url = location.href; //把当前页面的地址赋给变量url 
-// 		// var times = url.split('?'); //分切变量url分隔符号为“？” 
-// 		// if(times[1]!= 1){//如果？后的值不等于1表示没有刷新
-// 		// url +="？1"; //把变量url的值加入？1 
-// 		// self.location.replace(url); //刷新页面
-// } 
-// } 
-
-// reurl(); //执行这个函数
-		
-	</script>
