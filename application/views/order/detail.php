@@ -20,7 +20,7 @@
             border-radius: 0.27rem;
             position: absolute;
             bottom: 0;
-            right: 0;
+            right: -0.2rem;
         }
     </style>
 
@@ -69,14 +69,14 @@
     <div class="price-type">
         <div class="price-info">价格信息</div>
         <div class="total-box">
-            <div class="total"><span>商品总价</span><span>¥<?php echo $item['total'] ?></span></div>
-            <div class="total"><span>运费</span><span>¥<?php echo $item['freight'] ?></span></div>
-            <div class="total"><span class="weight">应付金额</span><span class="weight">¥<?php echo $item['freight'] ?></span></div>
+            <div style="<?php echo $item['subtotal'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>商品总价</span><span>¥<?php echo $item['subtotal'] ?></span></div>
+            <div style="<?php echo $item['freight'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>运费</span><span>¥<?php echo $item['freight'] ?></span></div>
+            <div style="<?php echo $item['total'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class="weight">应付金额</span><span class="weight">¥<?php echo $item['total'] ?></span></div>
         </div>
         <div class="total-box">
-            <div class="total"><span>优惠券抵扣</span><span>¥<?php echo $item['discount_coupon'] ?></span></div>
-            <div class="total"><span>积分抵扣</span><span>¥<?php echo $item['credit_payed'] ?></span></div>
-            <div class="total"><span class="weight">实付金额</span><span class="weight">¥<?php echo $item['total_payed'] ?></span></div>
+            <div style="<?php echo $item['discount_coupon'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>优惠券抵扣</span><span>¥<?php echo $item['discount_coupon'] ?></span></div>
+            <div style="<?php echo $item['credit_payed'] == '0' ? 'display:none' : 'display:block'; ?>" class="total"><span>积分抵扣</span><span>¥<?php echo $item['credit_payed'] ?></span></div>
+            <div style="<?php echo $item['total_payed'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class="weight">实付金额</span><span class="weight">¥<?php echo $item['total_payed'] ?></span></div>
         </div>
     </div>
     <div class="detail-btn clearfix">
@@ -85,15 +85,15 @@
     </div>
     <div class="order-parameter">
         <div class="order-number clearfix">
-            <div class="serial-number">订单号：<span>214732184237164</span></div>
+            <div class="serial-number">订单号：<span><?php echo $item['order_id'] ?></span></div>
             <div class="number-copy">复制</div>
         </div>
         <p>支付方式：<span><?php echo $item['payment_type'] ?></span></p>
         <p>支付流水号：<span><?php echo $item['payment_id'] ?></span></p>
-        <p>创建时间：<span><?php echo $item['time_create'] ?></span></p>
-        <p>付款时间：<span><?php echo $item['time_pay'] ?></span></p>
-        <p>发货时间：<span><?php echo $item['time_deliver'] ?></span></p>
-        <p>成交时间：<span><?php echo $item['time_confirm'] ?></span></p>
+        <p style="<?php echo $item['time_create'] == '' ? 'display:none' : 'display:block'; ?>">创建时间：<span><?php echo date("Y-m-d H:i:s",$item['time_create']) ?></span></p>
+        <p style="<?php echo $item['time_pay'] == '' ? 'display:none' : 'display:block'; ?>">付款时间：<span><?php echo date("Y-m-d H:i:s",$item['time_pay']) ?></span></p>
+        <p style="<?php echo $item['time_deliver'] == '' ? 'display:none' : 'display:block'; ?>">发货时间：<span><?php echo date("Y-m-d H:i:s",$item['time_deliver']) ?></span></p>
+        <p style="<?php echo $item['time_confirm'] == '' ? 'display:none' : 'display:block'; ?>">成交时间：<span><?php echo date("Y-m-d H:i:s",$item['time_confirm']) ?></span></p>
     </div>
     <!--待评价-->
     <div class="detail-operation status1">
@@ -139,16 +139,35 @@
 
      	console.log(item);
 		var ItemList =  item.order_items
+
              for(var key in ItemList){
+                 var slogan = ItemList[key].slogan;
+                 if(slogan == null){
+                    slogan = '';
+                 };
+                 var imgUrl = ItemList[key].item_image;
+                 var reg = RegExp(/http/);
+                 console.log(reg.test(imgUrl)); // true
+                 if(reg.test(imgUrl) !== true){
+                      imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+                 }else{
+                      imgUrl =''
+                 }
+                 var style = ''
+                 if(ItemList[key].tag_price > ItemList[key].price){
+                    style='display:block;'
+                 }else{
+                    style='display:none;'
+                 }
                 var Html = '<div class="item-detail clearfix">'+
-                                '<div class="item-left left-float"><img src="'+ItemList[key].item_image+'" alt=""/></div>'+
+                                '<div class="item-left left-float"><img src="'+imgUrl+ItemList[key].item_image+'" alt=""/></div>'+
                                 '<div class="item-center left-float">'+
                                      '<p>'+ ItemList[key].name +'</p>'+
-                                     '<p>'+ ItemList[key].slogan +'</p>'+
+                                     '<p>'+ slogan +'</p>'+
                                 '</div>'+
                                 '<div class="item-right right-float">'+
                                      '<p>¥'+ ItemList[key].price +'</p>'+
-                                     '<p class="price-text"><del>¥'+ ItemList[key].tag_price +'</del></p>'+
+                                     '<p style="'+style+'" class="price-text"><del>¥'+ ItemList[key].tag_price +'</del></p>'+
                                      '<p class="cont-indent">×'+ ItemList[key].count +'</p>'+
                                 '</div>'+
                                 '<div class="item-operation"><span>退款</span></div>'+

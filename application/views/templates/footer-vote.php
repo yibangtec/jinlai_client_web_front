@@ -48,7 +48,6 @@
                 <div class=full-screen-content>
                     <h3 class="full-screen-title">选TA……不成功</h3>
                     <p>点击右上角菜单分享本页面可以推荐TA</p>
-                    <p>点击右上角菜单分享本页面可以推荐TA</p>
                 </div>
             </div>
         </div>

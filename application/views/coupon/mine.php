@@ -13,16 +13,24 @@
 			color: #fff;
 		}
 		.swiper-container7{
-			margin-top: .2rem;
+			 margin-top: 1.1rem;
+		}
+		.minecoupontopTabbar{
+			background: #eaeaea;
+		    position: fixed;
+		    width: 100%;
+		    z-index: 999;
+		    top: 0px;
 		}
 	</style>
 	<script src="https://cdn-remote.517ybang.com/js/educationclassification.js"></script>
 	<div class="havecoupon">
-	<div class="tab coupon">
-		
-		<a class="active" href="javascript:;">可使用</a>
-		<a href="javascript:;">已使用</a>
-		<a href="javascript:;">已过期</a>
+		<div class="minecoupontopTabbar">
+			<div class="tab coupon">
+				<a class="active" href="javascript:;">可使用</a>
+				<a href="javascript:;">已使用</a>
+				<a href="javascript:;">已过期</a>
+			</div>
 	</div>
 	<div class="swiper-container6 couponcontent">
 		<div class="swiper-wrapper w">
@@ -146,6 +154,8 @@
 	<div class="morecoupon">领取更多</div>
 </a>
 <script>
+	var user_id = <?php echo $this->session->user_id ?>;
+	console.log(user_id);
 	function timestampToTime(timestamp) {
 	        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
 	        Y = date.getFullYear() + '.';
@@ -164,8 +174,7 @@
             success: function (res) {
             	//var count = 0;
                 for (var i=0;i<res.content.length;i++) {
-                	if(1 == res.content[i].user_id){
-                		
+                	if(user_id == res.content[i].user_id){
                 		//count++;
                 		var amount = res.content[i].amount;
 	                	var biz_id = res.content[i].biz_id;

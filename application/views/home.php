@@ -1,4 +1,11 @@
 <script src="https://cdn.bootcss.com/zepto/1.1.4/zepto.js"></script>
+<?php if ($this->user_agent['is_wechat']): ?>
+<script>
+document.getElementById('wechat-scan').onclick = wechat_scan;
+document.getElementById('locate').onclick = wechat_locate;
+</script>
+<?php endif ?>
+
 <style>
 body {background:#eaeaea}
  <?php
@@ -1698,7 +1705,8 @@ $(function(){
 			card();
 		}
 	});
-	function storm(el,wrap,icon) {
+	function storm(el,wrap,icon)
+    {
 		indexNum = 1;
 		el.find("img").attr("src", "<?php echo CDN_URL ?>media/home/" + icon);
 		$(".refreshcontent").hide();
@@ -1725,7 +1733,8 @@ $(function(){
 		$('#newmorelist').remove();
 	}
 });
-$(document).ready(function() {
+
+$(function(){
 	$("#timer2").oaoTime();
 	var lazyLoadImg = new LazyLoadImg({
 		el: document.querySelector('#listMenu'),
