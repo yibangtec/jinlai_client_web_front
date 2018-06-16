@@ -1,6 +1,5 @@
 <style>
-			input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
-input.check{
+/*input.check{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
 	 background-size: cover;
     position: absolute;
@@ -13,11 +12,14 @@ input.check{
  input.check:checked{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 	background-size:contain;
+	margin-top: -.21rem;
+    width: .42rem;
+    height: .42rem;
 	}
 input.goodsCheck:checked{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 	background-size:contain
-	}
+	}*/
 .shop-info-text h4 {
 	width: 3.92rem;
     overflow: hidden;
@@ -87,15 +89,14 @@ input.goodsCheck:checked{
 					</div>
 					<a href="#" class="settlement fr">结算</a>
 				</div>
-				
 
-				
 			</div>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js" ></script>
 <script src="<?php echo CDN_URL ?>js/jqm.js"></script>
 <script>
 	var user_id = <?php echo $this->session->user_id ?>;
-	$.ajax({
+	$(document).ready(function(){
+		$.ajax({
 	url : 'https://api.517ybang.com/cart/index',
 	type : 'post',
 	dataType:'json',
@@ -103,7 +104,7 @@ input.goodsCheck:checked{
 	success : function(res){
 		for (var i = 0;i<res.content.order_items.length;i++) {
 			var biz_name = res.content.order_items[i].biz_name;
-			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" class="check goods-check shopCheck"><h4><img src="/url_logo/201801/0116/141639.jpg" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
+			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="/url_logo/201801/0116/141639.jpg" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
 			$('.item').append(list);
 			for (var j = 0;j < res.content.order_items[i].order_items.length;j++ ) {
 				var name = res.content.order_items[i].order_items[j].name;
@@ -111,7 +112,7 @@ input.goodsCheck:checked{
 				var unit_name = res.content.order_items[i].order_items[j].unit_name;
 				var img_url = res.content.order_items[i].order_items[j].item_image;
 				var item_id = res.content.order_items[i].order_items[j].item_id;
-				var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+img_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >1</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
+				var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+img_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >1</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
 				$('.touch').eq(i).append(itemList);
 				
 			}
@@ -134,7 +135,10 @@ input.goodsCheck:checked{
 		$(this).siblings(".minus").children("i").addClass("icon-jian-active");
 		TotalPrice()
 	});
-	$(".goodsCheck").click(function() {
+	
+	var checkFlag = 0;
+	$(".goodsCheck").click(function(event) {
+
 		var goods = $(this).closest(".shop-group-item").find(".goodsCheck");
 		var goodsC = $(this).closest(".shop-group-item").find(".goodsCheck:checked");
 		var Shops = $(this).closest(".shop-group-item").find(".shopCheck");
@@ -225,5 +229,7 @@ input.goodsCheck:checked{
 	}
 
 })
+	})
+	
 </script>
 

@@ -253,6 +253,9 @@
 
 	<?php endif ?>
 </div>
+
+
+
 <script>
 	$(document).ready(function(){
 	var user_id = <?php echo $this->session->user_id ?>;	

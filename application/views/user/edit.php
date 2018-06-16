@@ -82,10 +82,10 @@
 				<div>
 					<label for="" class="fl">性别</label>
 					<p class="changeSex man">
-						<input type="radio" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
+						<input type="checkbox" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
 					</p>
 					<p class="changeSex woman">
-						<input type="radio" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
+						<input type="checkbox" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
 					</p>
 				</div>
 				<div>

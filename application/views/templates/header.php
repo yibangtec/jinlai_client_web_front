@@ -28,34 +28,33 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180615">
+		<meta name=version content="revision20180616">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
-
-		<meta name=viewport content="width=device-width,user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
 		<script>
-			(function (doc, win) {
-			    var docEl = doc.documentElement,
-			        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-			        recalc = function () {
-			            var clientWidth = docEl.clientWidth;
-			            if (!clientWidth) return;
-			            // [娉╙:chrome涓嬩笉鏀寔10px鎵€浠ュ墠杈圭殑100浠ｈ〃锛�1rem = 100px;鍚庤竟鐨�750浠ｈ〃璁捐绋跨殑瀹藉害
-			            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-			        };
-			 
-			    if (!doc.addEventListener) return;recalc();
-			    win.addEventListener(resizeEvt, recalc, false);
-			    doc.addEventListener('DOMContentLoaded', recalc, false);
-			})(document, window);
+			 (function (doc, win) {
+					  var docEl = doc.documentElement,
+					    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					    recalc = function () {
+					      var clientWidth = docEl.clientWidth;
+					      if (!clientWidth) return;
+					// [注]:chrome下不支持10px所以前边的100代表，1rem = 100px;后边的750代表设计稿的宽度
+					      docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+					    };
+					
+					  if (!doc.addEventListener) return;recalc();
+					  win.addEventListener(resizeEvt, recalc, false);
+					  doc.addEventListener('DOMContentLoaded', recalc, false);
+					})(document, window);
 		</script>
 		<?php
             if ($this->user_agent['is_wechat'])
-                require_once(APPPATH. 'views/templates/wechat.php');
+//              require_once(APPPATH. 'views/templates/wechat.php');
         ?>
 		<!--公用部分css-->
 		<!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->
@@ -63,7 +62,7 @@
 		<link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
 		<style>
 			.pagination-bullet-active{
-				background:#606060 !important ;
+				background:#606060 !important;
 			}
 			.swiper-pagination-bullet {
 			    background: #eaeaea;
@@ -90,10 +89,43 @@
             common_params.app_type = 'client' // 默认为商户端请求
             common_params.user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>
 
+            // UserAgent
             var user_agent = new Object();
             user_agent.is_wechat = <?php echo ($this->user_agent['is_wechat'])? 'true': 'false' ?>;
             user_agent.is_ios = <?php echo ($this->user_agent['is_ios'])? 'true': 'false' ?>;
             user_agent.is_android = <?php echo ($this->user_agent['is_android'])? 'true': 'false' ?>;
+
+            // 将时间戳格式化为可读日期
+            Date.prototype.format = function(format) {
+                var date = {
+                    "M+": this.getMonth() + 1,
+                    "d+": this.getDate(),
+                    "h+": this.getHours() > 10? this.getHours(): '0'+this.getHours(), // 补足两位数字，下同
+                    "m+": this.getMinutes() > 10? this.getMinutes(): '0'+this.getMinutes(),
+                    "s+": this.getSeconds() > 10? this.getSeconds(): '0'+this.getSeconds(),
+                    "q+": Math.floor((this.getMonth() + 3) / 3),
+                    "S+": this.getMilliseconds()
+                };
+                if (/(y+)/i.test(format)) {
+                    format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+                }
+                for (var k in date) {
+                    if (new RegExp("(" + k + ")").test(format)) {
+                        format = format.replace(RegExp.$1, RegExp.$1.length == 1
+                            ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+                    }
+                }
+                return format;
+            }
+            // 转换时间戳为日期
+            function date(timestamp)
+            {
+                var timestamp = timestamp || Date.parse(new Date());
+
+                var newDate = new Date();
+                newDate.setTime(timestamp * 1000);
+                return newDate.format('yyyy-MM-dd h:m:s');
+            }
         </script>
 
         <link rel=canonical href="<?php echo current_url() ?>">
@@ -214,9 +246,6 @@
                 <?php endif ?>
             <?php endif ?>
         <?php endif ?>
-        	<script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
-			<!--<script src="<?php echo CDN_URL ?>js/swiper.min.js"></script>-->
-			<!--<script src="<?php echo CDN_URL ?>js/lazy-load-img.js"></script>-->
 			<script src="<?php echo CDN_URL ?>js/index.min.js"></script>
 		</body>
 		<style>
