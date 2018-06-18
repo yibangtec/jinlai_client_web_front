@@ -28,7 +28,7 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180616">
+		<meta name=version content="revision20180619">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -54,7 +54,7 @@
 		</script>
 		<?php
             if ($this->user_agent['is_wechat'])
-//              require_once(APPPATH. 'views/templates/wechat.php');
+              require_once(VIEWS_PATH.'templates/wechat.php');
         ?>
 		<!--公用部分css-->
 		<!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->

@@ -104,13 +104,14 @@ input.goodsCheck:checked{
 	success : function(res){
 		for (var i = 0;i<res.content.order_items.length;i++) {
 			var biz_name = res.content.order_items[i].biz_name;
-			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="/url_logo/201801/0116/141639.jpg" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
+			var biz_img = "https://medias.517ybang.com/biz/" + res.content.order_items[i].biz_url_logo;
+			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="'+biz_img+'" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
 			$('.item').append(list);
 			for (var j = 0;j < res.content.order_items[i].order_items.length;j++ ) {
 				var name = res.content.order_items[i].order_items[j].name;
 				var price = res.content.order_items[i].order_items[j].price;
 				var unit_name = res.content.order_items[i].order_items[j].unit_name;
-				var img_url = res.content.order_items[i].order_items[j].item_image;
+				var img_url = "https://medias.517ybang.com/item/" + res.content.order_items[i].order_items[j].item_image;
 				var item_id = res.content.order_items[i].order_items[j].item_id;
 				var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+img_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >1</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
 				$('.touch').eq(i).append(itemList);

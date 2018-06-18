@@ -161,7 +161,7 @@
     <div class="detail-operation status1" data-action-group="待评价">
         <a data-action=delete href="#">删除</a>
         <a data-action=refund href="#">退款/售后</a>
-        <a style="color: #FF3649;border: 0.01rem solid #FF3649">待评价</a>
+        <a style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment href="#">待评价</a>
     </div>
     <!--已评价-->
     <div class="detail-operation status2" data-action-group="已评价">
@@ -175,14 +175,27 @@
     $(function(){
         var item = <?php echo json_encode($item) ?>;
         //console.log(item);
+        var refund_base_url = ''; // 单品退款根URL
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
         $('[data-name=time_create] span').html( date(item.time_create) );
 
+        // 接单/拒单
+        if (item.time_accept > 0)
+        {
+            $('[data-name=time_accept] span').html( date(item.time_accept) );
+            $('[data-name=time_refuse]').hide();
+        }
+        else if (item.time_refuse > 0)
+        {
+            $('[data-name=time_refuse] span').html( date(item.time_refuse) );
+            $('[data-name=time_accept]').hide();
+        }
+
         // 若已取消
         if (item.time_cancel > 0) {
-            $('[data-name=time_cancel] span').html(date(item.time_cancel));
+            $('[data-name=time_cancel] span').html( date(item.time_cancel) );
         }
         else
         {
@@ -191,7 +204,7 @@
 
         // 若已过期
         if (item.time_expire > 0) {
-            $('[data-name=time_expire] span').html(date(item.time_expire));
+            $('[data-name=time_expire] span').html( date(item.time_expire) );
         }
         else
         {
@@ -202,9 +215,12 @@
         if (item.time_pay > 0)
         {
             // 赋值DOM，下同
-            $('[data-name=time_pay] span').html(date(item.time_pay));
+            $('[data-name=time_pay] span').html( date(item.time_pay) );
             $('[data-name=payment_type] span').html(item.payment_type);
             $('[data-name=payment_id] span').html(item.payment_id);
+
+            // 生成单品退款根URL
+            refund_base_url = base_url + 'refund/create?record_id=';
         }
         else
         {
@@ -212,8 +228,8 @@
             hide_after('[data-name=time_pay]')
 
             // 生成操作页面链接并赋值到相应动作按钮
-            $('[data-action=pay').attr('href', base_url + 'order/pay?id=' + item.order_id)
-            $('[data-action=cancel').attr('href', base_url + 'order/cancel?id=' + item.order_id)
+            $('[data-action=pay]').attr('href', base_url + 'order/pay?id=' + item.order_id)
+            $('[data-action=cancel]').attr('href', base_url + 'order/cancel?id=' + item.order_id)
             $('[data-action-group=待付款]').show();
         }
 
@@ -249,36 +265,23 @@
 
             // 生成订单商品信息
              var order_item = '<div class="item-detail clearfix">'+
+                            '<a href="' + base_url + 'item/detal?id=' + item.item_id + '">' +
                             '<div class="item-left left-float"><img src="'+item_image_url+'"></div>'+
                             '<div class="item-center left-float">'+
                                 '<p>'+ item.name +'</p>'+
-                                (item.slogan == ''? '': '<p>'+item.slogan+'</p>')+
+                                (item.slogan == null? '': '<p>'+item.slogan+'</p>')+
                             '</div>'+
                             '<div class="item-right right-float">'+
                                  '<p>¥'+ item.price +'</p>'+
                 (Number(item.tag_price) < Number(item.price)? '': '<p class=price-text><del>¥'+ item.tag_price +'</del></p>')+
                                  '<p class="cont-indent">&times; '+ item.count +'</p>'+
                             '</div>'+
-                            '<div class="item-operation"><span>退款</span></div>'+
+                            '</a>' +
+                            (refund_base_url == ''? '': '<div class=item-operation><span><a href="'+ refund_base_url+item.record_id +'">退款</a></span></div>') +
+
                        '</div>';
              //console.log(order_item);
              $('#orderList').append(order_item);
          }
-
-        /*var status = item.status;
-        console.log(status)
-        if(status == '待评价'){
-            $('.status1').css('display','block')
-        }else if(status=='已评价'){
-            $('.status2').css('display','block')
-        }else if(status == '待发货'){
-            $('.status3').css('display','block')
-        }else if(status=='待付款'){
-            $('.status4').css('display','block')
-        }else if(status=='待收货'){
-            $('.status5').css('display','block')
-        }else if(status=='已关闭'){
-            $('.status6').css('display','block')
-        }*/
     })
 </script>

@@ -132,25 +132,25 @@
         $('[data-name=total] span').html('￥' + item.subtotal);
         $('[data-name=total]').slideDown('slow');
 
-        if (item.discount_promotion >= 0)
+        if (item.discount_promotion > 0)
         {
             $('[data-name=discount_promotion] span').html('-￥' + item.discount_promotion);
             $('[data-name=discount_promotion]').slideDown('slow');
         }
 
-        if (item.discount_coupon >= 0)
+        if (item.discount_coupon > 0)
         {
             $('[data-name=discount_coupon] span').html('-￥' + item.discount_coupon);
             $('[data-name=discount_coupon]').slideDown('slow');
         }
 
-        if (item.discount_promotion >= 0)
+        if (item.discount_promotion > 0)
         {
             $('[data-name=discount_reprice] span').html('-￥' + item.discount_reprice);
             $('[data-name=discount_reprice]').slideDown('slow');
         }
 
-        if (item.discount_promotion >= 0)
+        if (item.discount_promotion > 0)
         {
             $('[data-name=credit_payed] span').html('-￥' + item.credit_payed);
             $('[data-name=credit_payed]').slideDown('slow');

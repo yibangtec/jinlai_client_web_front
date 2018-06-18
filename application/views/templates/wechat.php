@@ -1,11 +1,4 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: kamaslau
-     * Date: 2018-6-15
-     * Time: 21:01
-     */
-
     // 使修改的COOKIE即时生效
     function instant_cookie($var, $value = '', $time = 0, $path = '', $domain = '', $s = false)
     {
@@ -52,7 +45,9 @@
     function get_access_token()
     {
         $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.WECHAT_APP_ID.'&secret='.WECHAT_APP_SECRET;
+        //var_dump($url);
         $result = curl($url);
+        //var_dump($result);
         return $result['access_token'];
     }
 
