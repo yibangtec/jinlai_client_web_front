@@ -15,7 +15,7 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180615">
+		<meta name=version content="revision20180619">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -28,10 +28,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
-        <?php if ($this->session->time_expire_login > time()): ?>
-        <link rel=stylesheet media=all href="/css/file-upload.css">
-        <script defer src="/js/file-upload.js"></script>
-        <?php endif ?>
 
         <?php if ($this->user_agent['is_wechat']): ?>
         <script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
@@ -42,7 +38,7 @@
 
 <?php
     if ($this->user_agent['is_wechat']):
-        require_once(APPPATH. 'views/templates/wechat.php');
+        require_once(VIEWS_PATH.'templates/wechat.php');
 ?>
         <script>
         <?php if ($this->test_mode != 'on'): ?>

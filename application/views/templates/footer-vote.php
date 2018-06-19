@@ -8,7 +8,7 @@
 
                     <img alt="进来商城微信公众号" src="<?php echo base_url('/media/images/vote/qrcode_wechat_jinlai_client.png') ?>">
 
-                    <a style="color:#333" href="<?php echo 'https://'. $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] ?>">我已关注</a>
+                    <a style="color:#333" href="<?php echo CURRENT_URL ?>">我已关注</a>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
                                 <label for=url_image>形象图（正方形图片视觉效果最佳）</label>
                                 <div>
                                     <?php
-                                    require_once(APPPATH. 'views/templates/file-uploader.php');
+                                    require_once(VIEWS_PATH.'templates/file-uploader.php');
                                     $name_to_upload = 'url_image';
                                     generate_html($name_to_upload, 'vote_option', FALSE);
                                     ?>

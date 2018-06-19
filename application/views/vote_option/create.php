@@ -60,7 +60,7 @@
                             <label for=url_image>形象图（正方形图片视觉效果最佳）</label>
                             <div>
                                 <?php
-                                require_once(APPPATH. 'views/templates/file-uploader.php');
+                                require_once(VIEWS_PATH.'templates/file-uploader.php');
                                 $name_to_upload = 'url_image';
                                 generate_html($name_to_upload, 'vote_option', FALSE);
                                 ?>

@@ -7,30 +7,30 @@
 <div class="box">
     <div class="placeholder-div"></div>
 
-    <div class="refund-notice">
+    <div class="refund-notice status1">
         <div class="refund-res">
-            <i class="icon-refunded"></i><span>退款成功</span>
+            <i class="icon-yituikuan"></i><span>退款成功</span>
         </div>
         <p class="refund-amount">退款金额：<span>¥39.8</span></p>
         <p class="refund-date">退款时间：<span>2017-09-01 11:09</span></p>
     </div>
 
-    <div class="refund-notice">
+    <div class="refund-notice status2">
         <div class="refund-res">
-            <i class="icon-waiting-handling"></i><span>退款处理中</span>
+            <i class="icon-daichuli"></i><span>退款处理中</span>
         </div>
         <p class="refund-amount">退款金额：<span>¥39.8</span></p>
     </div>
 
-    <div class="refund-notice">
+    <div class="refund-notice status3">
         <div class="refund-res">
-            <i class="icon-closed"></i><span>退款关闭</span>
+            <i class="icon-yiguanbi"></i><span>退款关闭</span>
         </div>
     </div>
 
-    <div class="refund-notice">
+    <div class="refund-notice status4">
         <div class="refund-res">
-            <i class="icon-cancelled"></i><span>退款失败</span>
+            <i class="icon-yiquxiao"></i><span>退款失败</span>
         </div>
     </div>
 

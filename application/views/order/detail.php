@@ -15,7 +15,7 @@
         height: 0.54rem;
         text-align: center;
         line-height: 0.5rem;
-        border: 0.02rem solid #9fa0a0;
+        border:1px solid #9fa0a0;
         border-radius: 0.27rem;
         position: absolute;
         bottom: 0;
@@ -172,15 +172,16 @@
 </div>
 
 <script>
-    $(function(){
-        var item = <?php echo json_encode($item) ?>;
+	$(document).ready(function(){
+		
+		var item = <?php echo json_encode($item) ?>;
         //console.log(item);
         var refund_base_url = ''; // 单品退款根URL
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
         $('[data-name=time_create] span').html( date(item.time_create) );
-
+		
         // 接单/拒单
         if (item.time_accept > 0)
         {
@@ -192,23 +193,23 @@
             $('[data-name=time_refuse] span').html( date(item.time_refuse) );
             $('[data-name=time_accept]').hide();
         }
-
+	
         // 若已取消
         if (item.time_cancel > 0) {
             $('[data-name=time_cancel] span').html( date(item.time_cancel) );
         }
         else
         {
-            $('[data-group=time_cancel').hide()
+            $('[data-group=time_cancel]').hide()
         }
-
+ 		
         // 若已过期
         if (item.time_expire > 0) {
             $('[data-name=time_expire] span').html( date(item.time_expire) );
         }
         else
         {
-            $('[data-group=time_expire').hide()
+            $('[data-group=time_expire]').hide()
         }
 
         // 若已付款
@@ -254,10 +255,10 @@
         }
 
         // 生成订单商品DOM
+       
          for(var key in item.order_items)
          {
              var item = item.order_items[key];
-             //console.log(item);
 
              // 生成订单所含商品主图URL
              var reg = RegExp(/http/);
@@ -283,5 +284,6 @@
              //console.log(order_item);
              $('#orderList').append(order_item);
          }
-    })
+	})
+        
 </script>

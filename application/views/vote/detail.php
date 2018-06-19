@@ -277,12 +277,6 @@ elseif ($this->input->get('option_create_result') === 'failed'):
     </li>
 </ul>
 
-<!-- 文件上传相关功能仅登录后可用 -->
-<?php if ($this->session->time_expire_login > time()): ?>
-<script defer src="<?php echo base_url('js/file-upload.js') ?>"></script>
-<link rel=stylesheet media=all href="<?php echo base_url('css/file-upload.css') ?>">
-<?php endif ?>
-
 <?php if (time() < $item['time_end']): ?>
 <script defer src="<?php echo CDN_URL ?>jquery/jquery.downCount.js"></script>
 <script>

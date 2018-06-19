@@ -54,7 +54,7 @@
 		</script>
 		<?php
             if ($this->user_agent['is_wechat'])
-              require_once(VIEWS_PATH.'templates/wechat.php');
+//              require_once(VIEWS_PATH.'templates/wechat.php');
         ?>
 		<!--公用部分css-->
 		<!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->
@@ -79,6 +79,7 @@
 	
         <script>
             // 全局参数
+            var user_id = <?php echo empty($this->session->user_id)? '': $this->session->user_id ?>;
             var api_url = '<?php echo API_URL ?>'; // API根URL
             var base_url = '<?php echo BASE_URL ?>'; // 页面根URL
             var media_url = '<?php echo MEDIA_URL ?>'; // 媒体文件根URL
@@ -174,55 +175,8 @@
 				</a>
 			</div>
 		</header>
-		<nav id=nav-header role=navigation>
-			<div class=container>
-				<div id=user-info class=row>
-					<?php
-						// 用户名
-						$username = !empty($this->session->nickname)? $this->session->nickname: $this->session->mobile;
-						// 用户头像
-						$avatar = !empty($this->session->avatar)? $this->session->avatar: NULL;
-					?>
-					<figure class=col-xs-4>
-						<a title="<?php echo $username ?>" href="<?php echo base_url('user/mine') ?>">
-							<img class="img-circle" alt="<?php echo $username ?>" src="<?php echo $avatar ?>">
-						</a>
-					</figure>
-					<div class=col-xs-8>
-						<a title="<?php echo $username ?>" href="<?php echo base_url('user/mine') ?>">
-							<h1><?php echo $username ?> <i class="fa fa-angle-right pull-right" aria-hidden=true></i></h1>
-						</a>
-					</div>
-				</div>
-				<ul id=user-records class=horizontal>
-					<li class=col-xs-4><a title="收藏宝贝" href="<?php echo base_url('fav_item') ?>">收藏宝贝</a></li>
-					<li class=col-xs-4><a title="关注店铺" href="<?php echo base_url('fav_biz') ?>">关注店铺</a></li>
-					<li class=col-xs-4><a title="我的足迹" href="<?php echo base_url('footprint') ?>">我的足迹</a></li>
-				</ul>
-				<ul id=main-nav>
-					<li><a title="我的订单" href="<?php echo base_url('order') ?>">我的订单</a></li>
-					<li><a title="我的钱包" href="<?php echo base_url('balance') ?>">我的钱包</a></li>
-					<li><a title="我的卡券" href="<?php echo base_url('coupon') ?>">我的卡券</a></li>
-					<li><a title="我的地址" href="<?php echo base_url('address') ?>">我的地址</a></li>
-					<!--<li><a title="邀请好友" href="<?php echo base_url('invite') ?>">邀请好友</a></li>-->
-				</ul>
-				<div id=user-panel>
-					<ul id=user-actions class=horizontal>
-						<?php if ( !isset($this->session->time_expire_login) ): ?>
-						<li><a title="登录" href="<?php echo base_url('login') ?>">登录</a></li>
-						<?php else: ?>
-						<li><a title="设置" href="<?php echo base_url('setup') ?>">设置</a></li>
-						<li><a title="退出" href="<?php echo base_url('logout') ?>">退出</a></li>
-						<?php endif ?>
-					</ul>
-				</div>
-				<a id=tel-flatform-public href="tel:4008820532">
-					<i class="fa fa-phone" aria-hidden=true></i> 400-882-0532
-				</a>
-
-			</div>
-		</nav>
 <?php endif ?>
+
         <!-- 部分功能仅在移动端非微信浏览器中可用 -->
         <?php if (!$this->user_agent['is_wechat'] && $this->user_agent['is_mobile']): ?>
             <!-- 部分功能仅在调试模式下可用 -->

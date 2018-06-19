@@ -52,7 +52,7 @@ body {background:#eaeaea}
 	.swiper-container-horizontal > .swiper-pagination{bottom: .1rem;left: 0;width: 100%;}
 </style>
 <script>
-	$(document).ready(function(){
+	$(function(){
 		var swiperadtisement = new Swiper('.swiper-containeradvertisement', {
 		pagination: '.swiper-pagination2',
 		paginationClickable: true,
@@ -1612,13 +1612,13 @@ body {background:#eaeaea}
 		</div>
 		</div>
 		<?php endif ?>
-			<?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+
+<?php
+    // 应用中不显示底部导航栏
+    if (
+        ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
+        || $this->user_agent['is_wechat'] === TRUE
+    ):
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -1655,9 +1655,9 @@ body {background:#eaeaea}
 				</a>
 			</div>
 		</div>
-		</div>
-
+    </div>
 <?php endif ?>
+
 <script>
 $(function(){
 

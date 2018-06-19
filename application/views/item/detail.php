@@ -41,6 +41,21 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
 .bottomcardwrap h1 span:nth-child(1){width:.5rem;height:.24rem;text-align:center;line-height:.24rem;background:#EFEFEF!important;color:#ff3649;font-size:.2rem;margin-top:-.01rem}
 .cxtitle{top:.22rem;right:0}
 .cpArrow{top:0;right:0}
+  #tip{
+  	position: fixed;
+  	bottom: 15%;
+  	margin-top: -.2rem;
+  	width: 2rem;
+  	height: .8rem;
+  	background: rgba(0,0,0,.5);
+  	color: #fff;
+  	border-radius: .15rem;
+  	line-height: .8rem;
+  	font-size: .24rem;
+  	text-align: center;
+  	left: 50%;
+  	margin-left: -1rem;
+  }
 </style>
 
 <script>
@@ -467,9 +482,9 @@ wx.ready(function(){
 
 		<?php // TODO 显示收藏、加入购物车、立即购买按钮前检查是否可售性（是否在售、库存是否足够、每单最高限量等） ?>
 		<li class=vice-button>
-			<a class=create data-op-class=fav_item data-op-name=create data-id="<?php echo $item['item_id'] ?>" title="收藏" href="<?php echo base_url('fav_item/create?id='.$item['item_id']) ?>">
+			<a class=create data-op-class=fav_item data-op-name=create data-id="<?php echo $item['item_id'] ?>" title="收藏" target="_self">
 				<img data-src-success="<?php echo base_url('/media/item/detail/shoucang-_xuanzhong@3x.png') ?>" src="<?php echo CDN_URL ?>media/item/detail/shoucang-@3x.png">
-				收藏
+				<b>收藏</b>
 			</a>
 		</li>
 
@@ -492,7 +507,7 @@ wx.ready(function(){
 		</li>
 	</ul>
 </nav>
-
+<span id="tip" style="display: none;">添加成功</span>
 <script>
 	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
 	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
@@ -512,9 +527,58 @@ wx.ready(function(){
 		}
 		return false;
 	});
-	
 	// 商品信息
-	var item = <?php echo $item_in_json ?>
+	var user_id = <?php echo $this->session->user_id ?>;
+	var item = <?php echo $item_in_json ?>;
+	var record_id;
+	$.ajax({
+			url : 'https://api.517ybang.com/fav_item/index',
+			type : 'post',
+			dataType:'json',
+			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
+			success : function(res){
+			for (var i = 0;i < res.content.length;i++) {
+				if(res.content[i].status == 200){
+					record_id = res.content[i].record_id;
+					$('.create').find('b').css('color','#fa3752').text('已收藏');
+						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
+				}; 
+			}
+			}
+		});
+	$('.create').on('click',function(e){
+		if($(this).find('b').text() == '已收藏'){
+			var cancelfocus = confirm('您确定要取消收藏此店铺吗?');
+				if(cancelfocus){
+						$.ajax({
+							url : api_url + 'fav_item/edit_bulk',
+							type : 'post',
+							dataType:'json',
+							data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
+							success : function(res){
+								$('.create').find('b').css('color','#3E3A39').text('收藏');
+								$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
+							}
+						});
+				}
+				else{
+				}
+		}
+		else{
+				$.ajax({
+			url: "https://api.517ybang.com/fav_item/create",
+			 type: "post",
+             dataType: 'json',
+             data:{app_type:'client',user_id:user_id,item_id:item.item_id},
+            success: function (res) {
+            	$('.create').find('b').css('color','#fa3752').text('已收藏');
+							$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
+							$('#tip').show().delay(1000).fadeOut();
+              }
+		})
+		}
+		
+	});
 	
 	
 </script>

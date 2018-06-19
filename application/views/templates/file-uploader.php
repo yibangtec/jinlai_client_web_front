@@ -1,3 +1,6 @@
+<script defer src="<?php echo base_url('js/file-upload.js') ?>"></script>
+<link rel=stylesheet media=all href="<?php echo base_url('css/file-upload.css') ?>">
+
 <?php
     function generate_html($name_to_upload, $class_name, $required = TRUE, $max_count = 1, $current_value = NULL)
     {
@@ -14,8 +17,8 @@
             endif;
 
             foreach($urls as $url):
-                $html .= '
-                <li data-input-name="'.$name_to_upload.'" data-item-url="'.$url.'">
+                $html .=
+                '<li data-input-name="'.$name_to_upload.'" data-item-url="'.$url.'">
                     <i class="adjuster remove far fa-minus"></i>
                     <i class="adjuster left far fa-arrow-left"></i>
                     <i class="adjuster right far fa-arrow-right"></i>
@@ -23,7 +26,7 @@
                         <img src="'.$url.'">
                     </figure>
                 </li>';
-            endforeach;;
+            endforeach;
         endif;
 
         // 当前值
