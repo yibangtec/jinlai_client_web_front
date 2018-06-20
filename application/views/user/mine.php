@@ -1,4 +1,4 @@
-	<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
     <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/fontStyle.css">
     <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/account.css">
 
@@ -17,8 +17,8 @@
 
     <div class="header">
         <div class="header-top clearfix">
-            <a title="我的用户资料" href="<?php echo base_url('user/edit') ?>" class="header-img" style="background: url('<?php echo $url_avatar; ?>') no-repeat center; background-size: cover;"></a>
-            <a title="我的用户资料" href="<?php echo base_url('user/edit') ?>" class="header-name">
+            <a title="修改资料" href="<?php echo base_url('user/edit') ?>" class="header-img" style="background: url('<?php echo $url_avatar ?>') no-repeat center; background-size: cover;"></a>
+            <a title="修改用户资料" href="<?php echo base_url('user/edit') ?>" class="header-name">
             	<span class="nick-name"><?php echo $itemname ?></span>
                 <span class="member">VIP<?php echo $item['level'] ?></span>
             </a>
@@ -40,7 +40,7 @@
                 <i class="icon-wokanguode"></i>
                 <p>我看过的</p>
             </a>
-            <a class="bot-float" title="会员卡" href="<?php echo base_url('coupon') ?>">
+            <a class="bot-float" title="会员卡" href="<?php echo base_url('member_biz/mine') ?>">
                 <i class="icon-huiyuan2"></i>
                 <p>会员卡</p>
             </a>
@@ -83,7 +83,7 @@
                 <i class="icon-kabao2"></i>
                 <p>卡包</p>
             </a>
-            <a class="item-service" title="邀请好友" href="<?php echo base_url('invite/create') ?>">
+            <a class="item-service" title="邀请好友" href="<?php echo base_url('invite') ?>">
                 <i class="icon-yaoqinghaoyou"></i>
                 <p>邀请好友</p>
             </a>
@@ -96,11 +96,11 @@
         <div class="order-item clearfix">
             <a class="item-service" title="我的地址" href="<?php echo base_url('address') ?>">
                 <i class="icon-dizhiguanli"></i>
-                <p>地址管理</p>
+                <p>地址</p>
             </a>
             <a class="item-service" title="系统设置" href="<?php echo base_url('setup') ?>">
                 <i class="icon-shezhi"></i>
-                <p>账户设置</p>
+                <p>设置</p>
             </a>
             <a class="item-service" title="关于我们" href="<?php echo base_url('article/about-us') ?>">
                 <i class="icon-guanyuwomen"></i>

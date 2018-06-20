@@ -21,65 +21,65 @@
 ?>
 <!DOCTYPE html>
 <html lang=zh-cn>
-	<head>
-		<meta charset=utf-8>
-		<meta http-equiv=x-dns-prefetch-control content=on>
-		<link rel=dns-prefetch href="<?php echo CDN_URL ?>">
-		<title><?php echo $title ?></title>
-		<meta name=description content="<?php echo $description ?>">
-		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180619">
-		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
-		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
-		<meta name=contact content="kamaslau@dingtalk.com">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <meta charset=utf-8>
+        <meta http-equiv=x-dns-prefetch-control content=on>
+        <link rel=dns-prefetch href="<?php echo CDN_URL ?>">
+        <title><?php echo $title ?></title>
+        <meta name=description content="<?php echo $description ?>">
+        <meta name=keywords content="<?php echo $keywords ?>">
+        <meta name=version content="revision20180620">
+        <meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
+        <meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
+        <meta name=contact content="kamaslau@dingtalk.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
-		<script>
-			 (function (doc, win) {
-					  var docEl = doc.documentElement,
-					    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-					    recalc = function () {
-					      var clientWidth = docEl.clientWidth;
-					      if (!clientWidth) return;
-					// [注]:chrome下不支持10px所以前边的100代表，1rem = 100px;后边的750代表设计稿的宽度
-					      docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-					    };
-					
-					  if (!doc.addEventListener) return;recalc();
-					  win.addEventListener(resizeEvt, recalc, false);
-					  doc.addEventListener('DOMContentLoaded', recalc, false);
-					})(document, window);
-		</script>
-		<?php
+        <script>
+             (function (doc, win) {
+                      var docEl = doc.documentElement,
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                        recalc = function () {
+                          var clientWidth = docEl.clientWidth;
+                          if (!clientWidth) return;
+                    // [注]:chrome下不支持10px所以前边的100代表，1rem = 100px;后边的750代表设计稿的宽度
+                          docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        };
+                    
+                      if (!doc.addEventListener) return;recalc();
+                      win.addEventListener(resizeEvt, recalc, false);
+                      doc.addEventListener('DOMContentLoaded', recalc, false);
+                    })(document, window);
+        </script>
+        <?php
             if ($this->user_agent['is_wechat'])
 //              require_once(VIEWS_PATH.'templates/wechat.php');
         ?>
-		<!--公用部分css-->
-		<!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->
-		<link href="<?php echo CDN_URL ?>css/swiper.mini.css" rel="stylesheet">
-		<link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
-		<style>
-			.pagination-bullet-active{
-				background:#606060 !important;
-			}
-			.swiper-pagination-bullet {
-			    background: #eaeaea;
-			}
-			.swiper-container-horizontal > .swiper-pagination {
-			    bottom: -2px;
-			    left: 0;
-			    width: 100%;
-			}
-			#nav-header{
-				display: none;
-			}
-		</style>
-	
+        <!--公用部分css-->
+        <!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->
+        <link href="<?php echo CDN_URL ?>css/swiper.mini.css" rel="stylesheet">
+        <link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
+        <style>
+            .pagination-bullet-active{
+                background:#606060 !important;
+            }
+            .swiper-pagination-bullet {
+                background: #eaeaea;
+            }
+            .swiper-container-horizontal > .swiper-pagination {
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+            }
+            #nav-header{
+                display: none;
+            }
+        </style>
+    
         <script>
             // 全局参数
-            var user_id = <?php echo empty($this->session->user_id)? '': $this->session->user_id ?>;
+            var user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>;
             var api_url = '<?php echo API_URL ?>'; // API根URL
             var base_url = '<?php echo BASE_URL ?>'; // 页面根URL
             var media_url = '<?php echo MEDIA_URL ?>'; // 媒体文件根URL
@@ -88,13 +88,10 @@
             var ajax_root = '<?php echo API_URL ?>';
             var common_params = new Object()
             common_params.app_type = 'client' // 默认为商户端请求
-            common_params.user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>
+            common_params.user_id = user_id
 
             // UserAgent
-            var user_agent = new Object();
-            user_agent.is_wechat = <?php echo ($this->user_agent['is_wechat'])? 'true': 'false' ?>;
-            user_agent.is_ios = <?php echo ($this->user_agent['is_ios'])? 'true': 'false' ?>;
-            user_agent.is_android = <?php echo ($this->user_agent['is_android'])? 'true': 'false' ?>;
+            var user_agent = <?php echo json_encode($this->user_agent) ?>;
 
             // 将时间戳格式化为可读日期
             Date.prototype.format = function(format) {
@@ -151,30 +148,30 @@
 
 <!-- 内容开始 -->
     <body<?php echo ( !empty($body_class) )? ' class="'.$body_class.'"': NULL ?>>
-		<noscript>
-			<p>您的浏览器功能加载出现问题，请刷新浏览器重试；如果仍然出现此提示，请考虑更换浏览器。</p>
-		</noscript>
+        <noscript>
+            <p>您的浏览器功能加载出现问题，请刷新浏览器重试；如果仍然出现此提示，请考虑更换浏览器。</p>
+        </noscript>
 <?php
-	/**
-	 * APP、微信中调用webview时配合URL按需显示相应部分
-	 * 此处以在APP中以WebView打开页面时不显示页面header部分为例
-	 */
-	if ($this->user_agent['is_wechat'] || $this->user_agent['is_desktop']):
+    /**
+     * APP、微信中调用webview时配合URL按需显示相应部分
+     * 此处以在APP中以WebView打开页面时不显示页面header部分为例
+     */
+    if ($this->user_agent['is_wechat'] || $this->user_agent['is_desktop']):
 ?>
-		<header id=header role=banner>
-			<div class=container>
-				<h1>
-					<a id=logo class=none title="<?php echo SITE_NAME ?>" href="<?php echo base_url() ?>"><?php echo SITE_NAME ?></a>
-				</h1>
+        <header id=header role=banner>
+            <div class=container>
+                <h1>
+                    <a id=logo class=none title="<?php echo SITE_NAME ?>" href="<?php echo base_url() ?>"><?php echo SITE_NAME ?></a>
+                </h1>
 
-				<a id=locate class=nav-icon>
-					<i class="fa fa-map-marker" aria-hidden="true"></i>
-				</a>
-				<a id=scan class=nav-icon>
-					<i class="fa fa-qrcode" aria-hidden="true"></i>
-				</a>
-			</div>
-		</header>
+                <a id=locate class=nav-icon>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                </a>
+                <a id=scan class=nav-icon>
+                    <i class="fa fa-qrcode" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
 <?php endif ?>
 
         <!-- 部分功能仅在移动端非微信浏览器中可用 -->
@@ -200,10 +197,10 @@
                 <?php endif ?>
             <?php endif ?>
         <?php endif ?>
-			<script src="<?php echo CDN_URL ?>js/index.min.js"></script>
-		</body>
-		<style>
-			.ui-loader{
-				display: none;
-			}
-		</style>
+            <script src="<?php echo CDN_URL ?>js/index.min.js"></script>
+        </body>
+        <style>
+            .ui-loader{
+                display: none;
+            }
+        </style>

@@ -507,7 +507,7 @@ wx.ready(function(){
 		</li>
 	</ul>
 </nav>
-<span id="tip" style="display: none;">添加成功</span>
+<span id="tip" style="display: none;">收藏成功</span>
 <script>
 	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
 	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
@@ -538,7 +538,7 @@ wx.ready(function(){
 			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
 			success : function(res){
 			for (var i = 0;i < res.content.length;i++) {
-				if(res.content[i].status == 200){
+				if(res.status == 200){
 					record_id = res.content[i].record_id;
 					$('.create').find('b').css('color','#fa3752').text('已收藏');
 						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
