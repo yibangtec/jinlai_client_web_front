@@ -111,7 +111,7 @@
             //$('#orderList').append(bizNameHtml);
             var orderItemHtml = '';
             for(var k in li){
-                var slogan = li[k].slogan;
+                 var slogan = li[k].slogan;
                  if(slogan == null){
                     slogan = '';
                  };

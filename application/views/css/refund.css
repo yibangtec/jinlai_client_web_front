@@ -76,10 +76,11 @@ a {text-decoration: none;}
     margin: 0.3rem 0.2rem 0.2rem 0;
 }
 .icon-dianpu:before {
-    content: "\e911";
+    content: "\e91c";
+    color: #a0a0a0;
 }
 .icon-Arrow:before {
-    content: "\e905";
+    content: "\e909";
 }
 .icon-jintuikuan:before {
     content: "\e959";
@@ -150,13 +151,13 @@ a {text-decoration: none;}
     padding-right: 0.2rem;
 }
 .refund-list .icon-Arrow:before {
-    content: "\e905";
+    content: "\e909";
     color: #a0a0a0;
     font-size: 0.28rem;
     padding-left: 0.2rem;
 }
 .negotiate .icon-Arrow:before {
-    content: "\e905";
+    content: "\e909";
     color: #a0a0a0;
     font-size: 0.28rem;
 }
@@ -170,24 +171,24 @@ a {text-decoration: none;}
 }
 
 /* 已退款 */
-.icon-refunded:before {
-    content: "\e9a4";
+.icon-yituikuan:before {
+    content: "\e962";
 }
 /* 已取消 */
-.icon-cancelled:before {
-    content: "\e904";
+.icon-yiquxiao:before {
+    content: "\e961";
 }
 /* 已关闭 */
-.icon-closed:before {
-    content: "\e9a3";
+.icon-yiguanbi:before {
+    content: "\e95f";
 }
 /* 已拒绝 */
-.icon-rejected:before {
-    content: "\e9a5";
+.icon-yijujue:before {
+    content: "\e960";
 }
 /* 待处理 */
-.icon-waiting-handling:before {
-    content: "\e9a7";
+.icon-daichuli:before {
+    content: "\e94f";
     color: #4e8cee;
 }
 /* 待退款 */
@@ -198,21 +199,21 @@ a {text-decoration: none;}
 .icon-waiting-returns:before {
     content: "\e9a9";
 }
-.refund-res .icon-refunded:before {
+.refund-res .icon-yituikuan:before {
     font-size: 0.46rem;
     color: #27BE58;
     padding-right: 0.2rem;
 }
-.refund-res .icon-waiting-handling:before {
+.refund-res .icon-daichuli:before {
      font-size: 0.46rem;
      color: #4e8cee;
      padding-right: 0.2rem;
  }
-.refund-res .icon-closed:before {
+.refund-res .icon-yiguanbi:before {
     font-size: 0.46rem;
     padding-right: 0.2rem;
 }
-.refund-res .icon-cancelled:before {
+.refund-res .icon-yiquxiao:before {
     font-size: 0.46rem;
     color: #FF3649;
     padding-right: 0.2rem;
@@ -253,7 +254,7 @@ a {text-decoration: none;}
 .refund-info{
     background-color: #fff;
     border-radius: 0.15rem;
-    margin: 0.1rem 0.2rem;
+    margin: 0.1rem 0.2rem 1.3rem 0.2rem;
     font-size: 0.26rem;
     color: #9FA0A0;
 }
@@ -270,7 +271,7 @@ a {text-decoration: none;}
     padding: 0.1rem 0;
 }
 .refund-operation{
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
     border-top: 0.02rem solid #dddddd;
@@ -519,7 +520,7 @@ a {text-decoration: none;}
     border-radius: 0.12rem;
 }
 .icon-xuanzhong:before {
-    content: "\e942";
+    content: "\e900";
     color: #09bb07;
 }
 .refund-money .icon-Arrow:before {
@@ -568,7 +569,7 @@ a {text-decoration: none;}
     margin: 0.1rem 0.2rem;
 }
 .icon-dianpu:before {
-    content: "\e911";
+    content: "\e91c;
 }
 .record-list .icon-dianpu:before {
     color: #a0a0a0;
@@ -613,6 +614,19 @@ a {text-decoration: none;}
 .placeholder-div{
     height: 0.1rem;
     width: 100%;
+}
+
+.status1{
+    display: none;
+}
+.status2{
+    display: none;
+}
+.status3{
+    display: none;
+}
+.status4{
+    display: none;
 }
 
 
