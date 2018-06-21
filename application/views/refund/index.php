@@ -26,32 +26,6 @@
     <div class="box">
         <div class="placeholder-div"></div>
         <div class="refund-content" id="refundContent"></div>
-
-        <div class="refund-item">
-            <div class="refund-shops"><i class="icon-dianpu"></i>东堂纹身<i class="icon-Arrow"></i></div>
-            <div class="refund-goods">
-                <img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
-                <div class="goods-info">
-                    <p>新西兰进口黄金奇异果 6个/份</p>
-                    <p>含有丰富的VC，清热降火，热量极低</p>
-                    <p>退款金额：¥49.80</p>
-                </div>
-                <div class="refund-amount">×1</div>
-            </div>
-            <div class="refund-goods">
-                <img src="<?php echo CDN_URL ?>media/icon120@3x.png" alt=""/>
-                <div class="goods-info">
-                    <p>新西兰进口黄金奇异果 6个/份</p>
-                    <p>含有丰富的VC，清热降火，热量极低</p>
-                    <p>退款金额：¥49.80</p>
-                </div>
-                <div class="refund-amount">×1</div>
-            </div>
-            <div class="refund-results clearfix">
-                <div class="results-left"><i class="icon-jintuikuan"></i>仅退款 退款失败</div>
-                <div class="results-right"><a href="detail.html">查看详情</a></div>
-            </div>
-        </div>
     </div>
 
 <script>
@@ -89,7 +63,7 @@
                             }
             var bizNameHtml ='<div class="refund-items">'+
                                   '<a href="<?php echo base_url('biz/detail') . "?&id='+items[key].biz_id+'" ?>" class="refund-shops"><i class="icon-dianpu"></i>'+items[key].brief_name+'<i class="icon-Arrow"></i></a>'+
-                                  '<div class="refund-goods">'+
+                                  '<a href="" class="refund-goods">'+
                                         '<img src="'+ imgUrl + orderItem.item_image +'" alt=""/>'+
                                         '<div class="goods-info">'+
                                             '<p>'+orderItem.name+'</p>'+
@@ -97,7 +71,7 @@
                                             '<p>退款金额：¥'+orderItem.single_total+'</p>'+
                                         '</div>'+
                                         '<div class="refund-amount">× '+orderItem.count+'</div>'+
-                                  '</div>'+
+                                  '</a>'+
                                   '<div class="refund-results clearfix">'+
                                          '<div class="results-left"><i class="'+statusIcon+'"></i>'+items[key].type+' '+items[key].status+'</div>'+
                                          '<div class="results-right"><a href="<?php echo base_url('refund/detail') . "?&id='+items[key].refund_id+'" ?>">查看详情</a></div>'+

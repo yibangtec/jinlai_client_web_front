@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name=viewport content="width=device-width,user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link href="https://cdn-remote.517ybang.com/css/normal.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/common.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
+		<link href="https://cdn-remote.517ybang.com/css/index.css" rel="stylesheet">
+		<script>
+			(function (doc, win) {
+			    var docEl = doc.documentElement,
+			        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			        recalc = function () {
+			            var clientWidth = docEl.clientWidth;
+			            if (!clientWidth) return;
+			            // [娉╙:chrome涓嬩笉鏀寔10px鎵€浠ュ墠杈圭殑100浠ｈ〃锛�1rem = 100px;鍚庤竟鐨�750浠ｈ〃璁捐绋跨殑瀹藉害
+			            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+			        };
+			 
+			    if (!doc.addEventListener) return;recalc();
+			    win.addEventListener(resizeEvt, recalc, false);
+			    doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+		<!--头部背景图片区域-->
+		<div class="redenvelope">
+			<img src="https://cdn-remote.517ybang.com/media/share_redenvelope/dingbutu@3x.png" alt="进来分享红包" />
+		</div>
+		<!--进来打开红包按钮-->
+		<div class="share_redenvelope_btn"></div>
+		<!--邀请注册表单区域-->
+		<div class="share_content clearfix">
+			<p class="logined_text">接受进来小伙伴邀请立享优惠</p>
+		
+			<!--信息填完后在立即领取后添加类 cur即可变色-->
+			<div class="currentGet cur">立即领取</div>
+		</div>
+		<script src="https://cdn-remote.517ybang.com/js/jquery-3.3.1.min.js"></script>
+	</body>
+</html>

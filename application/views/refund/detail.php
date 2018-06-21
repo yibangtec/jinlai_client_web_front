@@ -33,9 +33,9 @@
         </div>
     </div>
 
-    <div class="negotiate">
+    <a href="<?php echo base_url('refund_record/index') . '?id=' . $item['refund_id']; ?>" class="negotiate">
         <span>协商详情</span><i class="icon-Arrow"></i>
-    </div>
+    </a>
     <div class="refund-list">
         <div class="refund-shops"><i class="icon-dianpu"></i><?php echo $item['brief_name'] ?><i class="icon-Arrow"></i></div>
         <a href="<?php echo base_url('order/detail') . '?id=' . $item['order_id']; ?>" class="refund-goodsName">
