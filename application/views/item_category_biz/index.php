@@ -49,7 +49,7 @@
             width: 100%;
             background-color: #fff;
         }
-        .subarea .negotiate:
+        
         .border-active{
             border-left: 0.04rem solid #FF3649;
             color: #FF3649;
@@ -134,7 +134,7 @@
 
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
-	console.log(items);
+	//console.log(items);
 		//生成section
 		var arr = [];
 		for(var key in items){
@@ -144,7 +144,7 @@
         }
         var goodsListContent = '';
         for(var i=0;i<arr.length;i++){
-          		console.log(i);
+          		//console.log(i);
           		if(i == 0){
           		    goodsListContent = '<h2>'+
                                            '<div class="negotiate border-active">'+

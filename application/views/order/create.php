@@ -220,10 +220,10 @@
     var default_address_id = <?php echo $this->session->address_id ?>; // 默认收货地址ID
     var addresses = item.addresses; // 可选的收货地址
     var order_data = item.order_data; // 子订单信息
-    console.log(item);
-    console.log(default_address_id);
-    console.log(addresses);
-    console.log(order_data);
+    // console.log(item);
+    // console.log(default_address_id);
+   // console.log(addresses);
+   // console.log(order_data);
 
     $(function(){
         $('.sele').click(function(){

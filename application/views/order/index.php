@@ -68,13 +68,14 @@
         </div>
     </div>
 
-    <div class="load-more" style="margin: 0.2rem;text-align: center;font-size: 0.3rem;color: #3E3A39; display:none;" id="load-more">点击加载更多</div>
+
 </div>
+<div class="load-more" style="margin: 0.2rem;text-align: center;font-size: 0.3rem;color: #3E3A39;display:none;" id="load-more">点击加载更多</div>
 
 <script>
     $(function(){
         var items = <?php echo json_encode($items) ?>;
-        console.log(items);
+        //console.log(items);
 
         for(var key in items){
             var statusHtml = '';
@@ -97,11 +98,11 @@
             }
 
             var li = items[key].order_items;
-            console.log(li);
+            //console.log(li);
             var bizNameHtml = '<div class="order-item">'+
                                    '<a href="'+ base_url+'order/detail?id='+items[key].order_id+'" class="item-title clearfix">'+
                                        '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                       '<div class="title-right right-float">'+items[key].status+'</div>'+
+                                       '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                    '</a>'+
                                    '<div class="item-list">';
                                    var bot = '</div>'+
@@ -118,7 +119,7 @@
                  };
                  var imgUrl = li[k].item_image;
                  var reg = RegExp(/http/);
-                 console.log(reg.test(imgUrl)); // true
+                 //console.log(reg.test(imgUrl)); // true
                  if(reg.test(imgUrl) !== true){
                       imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
                  }else{
@@ -298,11 +299,11 @@
                                                 statusHtml = '<span class="del-btn">删除</span>';
                                             }
                                     var li = items[key].order_items;
-                                    console.log(li);
+                                    //console.log(li);
                                     var bizNameHtml = '<div class="order-item">'+
                                                            '<a href="<?php echo base_url('order/detail') . "?&id='+items[key].order_id+'" ?>" class="item-title clearfix">'+
                                                                '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                                               '<div class="title-right right-float">'+items[key].status+'</div>'+
+                                                               '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                                            '</a>'+
                                                            '<div class="item-list">';
                                                            var bot = '</div>'+
@@ -318,7 +319,7 @@
                                          };
                                          var imgUrl = li[k].item_image;
                                          var reg = RegExp(/http/);
-                                         console.log(reg.test(imgUrl)); // true
+                                         //console.log(reg.test(imgUrl)); // true
                                          if(reg.test(imgUrl) !== true){
                                               imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
                                          }else{

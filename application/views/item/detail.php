@@ -546,6 +546,17 @@ wx.ready(function(){
 			}
 			}
 		});
+			//创建浏览记录
+		$.ajax({
+			url: "https://api.517ybang.com/history_item_view/create",
+			 type: "post",
+             dataType: 'json',
+             data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
+            success: function (res) {
+            	//alert('加入浏览记录成功');
+            }
+		});
+		
 	$('.create').on('click',function(e){
 		if($(this).find('b').text() == '已收藏'){
 			var cancelfocus = confirm('您确定要取消收藏此店铺吗?');
@@ -579,6 +590,4 @@ wx.ready(function(){
 		}
 		
 	});
-	
-	
 </script>

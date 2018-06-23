@@ -169,5 +169,16 @@ $(function(){
 
     $('#sidebar li')[0].click();
     $('.menu-left').find('li').last().remove();
+
+
+    function getScrollTop(){
+            $('.menu-right').bind("scroll", function () {  
+                var sTop = $(this).scrollTop();  
+                var sTop = parseInt(sTop);   
+			HostApp.topScrollY(sTop + '');
+		
+            });  
+    }
+    getScrollTop();
 });
 </script>

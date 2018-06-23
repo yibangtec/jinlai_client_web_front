@@ -83,7 +83,7 @@
                 <i class="icon-kabao2"></i>
                 <p>卡包</p>
             </a>
-            <a class="item-service" title="邀请好友" href="<?php echo base_url('invite') ?>">
+            <a class="item-service" title="邀请好友" href="<?php echo base_url('invite/send') ?>">
                 <i class="icon-yaoqinghaoyou"></i>
                 <p>邀请好友</p>
             </a>

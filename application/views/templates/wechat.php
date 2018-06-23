@@ -1,4 +1,15 @@
 <?php
+/**
+ * 微信相关功能
+ *
+ * @param $var
+ * @param string $value
+ * @param int $time
+ * @param string $path
+ * @param string $domain
+ * @param bool $s
+ */
+
     // 使修改的COOKIE即时生效
     function instant_cookie($var, $value = '', $time = 0, $path = '', $domain = '', $s = false)
     {
@@ -6,6 +17,7 @@
         setcookie($var, $value, $time, $path, $domain, $s);
     }
 
+    // 发送CURL请求
     function curl($url, $params = NULL, $return = 'array', $method = 'get')
     {
         $curl = curl_init();
@@ -17,7 +29,7 @@
 
         // 需要通过POST方式发送的数据
         if ($method === 'post'):
-            $params['app_type'] = 'client'; // 应用类型默认为biz
+            $params['app_type'] = 'client'; // 应用类型默认为client
             curl_setopt($curl, CURLOPT_POST, count($params));
             curl_setopt($curl, CURLOPT_POSTFIELDS, $params);
         endif;
@@ -123,9 +135,10 @@
 
         // 获取微信用户资料
         $sns_token = get_sns_token($code);
-        if ($test_mode === 'on') var_dump($sns_token);
+        if ($this->test_mode === 'on') var_dump($sns_token);
         $sns_info = get_user_info($access_token, $sns_token['openid']);
-        if ($test_mode === 'on') var_dump($sns_info);
+        $this->session->sns_info = $sns_info;
+        //var_dump($this->session->sns_info);
         //set_cookie('last_code_used', $code);
         instant_cookie('last_code_used', $code); // 标记当前code为已使用
 
@@ -133,8 +146,8 @@
         if ($sns_info['subscribe'] == 1 && !empty($sns_token['unionid'])):
             // 尝试使用微信union_id登录
             $user_info = login_wechat($sns_token['unionid']);
+            if ($this->test_mode === 'on') var_dump($user_info);
 
-            if ($test_mode === 'on') var_dump($user_info);
             if ($user_info !== FALSE):
                 // 将信息键值对写入session
                 foreach ($user_info as $key => $value):
@@ -164,18 +177,52 @@
 ?>
 
 <!-- 载入官方组件库 -->
-<script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 
 <!-- 微信环境中的业务内容 -->
 <script>
     // 微信用户信息
-    var wx_userinfo;
-    var wx_userinfo_subscribe = <?php echo empty(get_cookie('wechat_subscribe'))? 0: get_cookie('wechat_subscribe') ?>;
+    var wx_userinfo = '<?php json_encode($this->session->sns_info) ?>';
+    console.log(wx_userinfo);
+    var wx_userinfo_subscribe = wx_userinfo.subscribe; // 是否已关注微信号
 
-    /*if (wx_userinfo_subscribe != 1)
+    // 未关注微信公众号时的逻辑
+    if (wx_userinfo_subscribe !== 1)
     {
-        document.getElementById('follow-guide').style.display = 'none';
-    }*/
+        console.log('未关注');
+        //document.getElementById('follow-guide').style.display = 'none';
+    }
+
+    // 全局声明微信功能
+    var wechat_scan,wechat_locate;
+    
+    // 微信扫描内容解析
+    function parse_scaned(content)
+    {
+        // 条码/二维码内容
+        var content;
+
+        // 需跳转到的页面内容
+        var url;
+
+        // 根据内容类型执行不同业务逻辑
+        if (content.indexOf('EAN_') === 0)
+        {
+            var code = content.split(',')[1]; // 获取条码
+            url = base_url + 'item?barcode=' + code; // 转到商品搜索页
+        }
+        else if (content.indexOf('http', 0) === 0)
+        {
+            url = content; // 转到所属页面
+        }
+        else
+        {
+            url = base_url + 'item?name=' + content; // 转到商品搜索页
+        }
+
+        // 页面跳转
+        location.href = url;
+    }
 
     wx.config({
         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -184,9 +231,13 @@
         nonceStr: '<?php echo $wesign['noncestr'] ?>', // 必填，生成签名的随机串
         signature: '<?php echo wechat_sign_generate($wesign) ?>',// 必填，签名，见附录1
         jsApiList: [
+            'hideMenuItems',
             'onMenuShareTimeline',
             'onMenuShareAppMessage',
-            'hideMenuItems',
+            'scanQRCode',
+            'getLocation',
+            'getNetworkType',
+            'openAddress', // 获取微信收货地址
         ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     });
 
@@ -237,21 +288,27 @@
         });
 
         // 调起扫一扫
-        var wechat_scan = function (){
+        wechat_scan = function (){
             wx.scanQRCode({
                 needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
                 scanType: ['qrCode','barCode'], // 可以指定扫二维码还是一维码，默认二者都有
                 success: function (res){
-                    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                    var result = res.resultStr; // 当needResult为1时，扫码返回的结果
+                    parse_scaned(result);
+                    
                     //TODO 若为条形码，输出条码；若为二维码，转到URL
-                    alert(JSON.stringify(res));
+                    //alert(JSON.stringify(res));
+                },
+                cancel:function(){
+                    alert('微信扫码调用失败');
                 }
             });
             return false;
         };
 
         // 获取地理位置及网络类型
-        var wechat_locate = function (){
+        wechat_locate = function (){
+            console.log('wechat_locate');
             wx.getLocation({
                 type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
                 success: function (res) {

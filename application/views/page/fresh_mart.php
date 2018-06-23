@@ -115,7 +115,7 @@
 
 <!--培训分类区域开始-->
 <div class="classification auto">
-    <!--<div class="swiper-container5">
+    <div class="swiper-container5">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <p class="colorarea">
@@ -191,7 +191,7 @@
         </div>
      <div class="swiper-scrollbar"></div>
     </div>
-</div>-->
+</div>
 
 </div>
 <!--水果、蔬菜、肉类等分类内容承载的容器-->

@@ -32,17 +32,17 @@
 
 	<?php if ( empty($items) ): ?>
 	<blockquote class=row>
-		<p>商家正在备货，敬请期待！</p>
+		<p>没有符合条件的商品</p>
 	</blockquote>
 
 	<?php else: ?>
-
 		<ul id=item-list class=row>
 			<?php foreach ($items as $item): ?>
 			<li class="item col-xs-6 col-sm-3 col-md-4">
+
 				<a href="<?php echo base_url($this->class_name. '/detail?id='.$item[$this->id_name]) ?>">
 
-					<figure class=image-main class="col-xs-12 col-sm-6 col-md-4">
+					<figure class=image-main>
 						<img title="<?php echo $item['name'] ?>" src="<?php echo $item['url_image_main'] ?>">
 					</figure>
 
@@ -50,7 +50,7 @@
 
 					<div class=digits>
 						<span>￥</span><strong><?php echo substr($item['price'], 0, -3).'<small>'.substr($item['price'], -3).'</small>' ?></strong>
-						<?php echo ($item['tag_price'] !== '0.00')? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
+						<?php echo ($item['tag_price'] > $item['price'])? ' <del>￥'. $item['tag_price']. '</del>': NULL ?>
 					</div>
 
 					<?php if ( !empty($skus) ): ?>
@@ -87,3 +87,7 @@
 
 	<?php endif ?>
 </div>
+
+<script>
+    var items = <?php json_encode($items) ?>;
+</script>

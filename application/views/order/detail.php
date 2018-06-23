@@ -21,7 +21,13 @@
         bottom: 0;
         right: -0.2rem;
     }
-
+    .item-operation a{
+        color:#3e3a39;
+    }
+    .detail-btn a{
+        color:#3e3a39;
+    }
+    .total-box .current-status{color:#ff3649;}
     /* 订单信息 */
     .order-parameter li {line-height:0.34rem;overflow:hidden;}
         .order-parameter span:before {content:' ';}
@@ -35,22 +41,22 @@
     <div class="detail-header">
         <div class="detail-type1 status1">
             <p style="padding-top: 0.25rem">待评价</p>
-            <p style="padding-top: 0.2rem">2天2小时后自动好评</p>
+            <p style="padding-top: 0.2rem"><span class="remainingTime">2天2小时</span>后自动好评</p>
         </div>
         <div class="detail-type2 status2">
             <p style="padding-top: 0.45rem">已评价</p>
         </div>
         <div class="detail-type3 status3">
             <p style="padding-top: 0.25rem">等待卖家发货</p>
-            <p style="padding-top: 0.2rem">2天2小时后未发货则自动退款</p>
+            <p style="padding-top: 0.2rem"><span class="remainingTime">2天2小时</span>后未发货则自动退款</p>
         </div>
         <div class="detail-type4 status4">
             <p style="padding-top: 0.25rem">等待买家付款</p>
-            <p style="padding-top: 0.2rem">2天2小时后未付款则自动关闭</p>
+            <p style="padding-top: 0.2rem"><span class="remainingTime">2天2小时</span>后未付款则自动关闭</p>
         </div>
         <div class="detail-type5 status5">
             <p style="padding-top: 0.25rem">待收货</p>
-            <p style="padding-top: 0.2rem">2天2小时后自动确认收货</p>
+            <p style="padding-top: 0.2rem"><span class="remainingTime">2天2小时</span>后自动确认收货</p>
         </div>
         <div class="detail-type6 status6">
             <p style="padding-top: 0.25rem">已关闭</p>
@@ -88,7 +94,7 @@
             <div style="<?php echo $item['total'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class=weight>应付金额</span><span class="weight">¥<?php echo $item['total'] ?></span></div>
         </div>
         <div class="total-box">
-            <div style="<?php echo $item['discount_coupon'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>优惠券抵扣</span><span>¥<?php echo $item['discount_coupon'] ?></span></div>
+            <div style="<?php echo $item['discount_coupon'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span>优惠券抵扣</span><span style="color:#ff3649;">-¥<?php echo $item['discount_coupon'] ?></span></div>
             <div style="<?php echo $item['credit_payed'] == '0' ? 'display:none' : 'display:block'; ?>" class="total"><span>积分抵扣</span><span>¥<?php echo $item['credit_payed'] ?></span></div>
             <div style="<?php echo $item['total_payed'] == '0.00' ? 'display:none' : 'display:block'; ?>" class="total"><span class="weight">实付金额</span><span class="weight">¥<?php echo $item['total_payed'] ?></span></div>
         </div>
@@ -172,11 +178,81 @@
 </div>
 
 <script>
-	$(document).ready(function(){
+	$(function(){
 		
 		var item = <?php echo json_encode($item) ?>;
-        //console.log(item);
+        console.log(item);
         var refund_base_url = ''; // 单品退款根URL
+
+        var status = item.status;
+        console.log(status)
+        var meta = <?php echo json_encode($meta) ?>;
+        console.log(meta)
+
+        // 状态自动变更时间不足1日时仅显示n小时，超过1日时显示n日n小时
+         if (status == '待评价')
+         {
+             // meta.name=time_confirm_to_comment
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_confirm_to_comment'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status1').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='已评价')
+         {
+             $('.status2').css('display','block')
+         }
+         else if(status == '待发货')
+         {
+              //meta.name=time_pay_to_deliver;
+              //console.log(meta.name);
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_pay_to_deliver'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status3').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='待付款')
+         {
+             // meta.name=time_created_to_expire
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_created_to_expire'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status4').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='待收货')
+         {
+             // meta.name=time_deliver_to_confirm
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_deliver_to_confirm'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status5').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='已关闭')
+         {
+             // meta.name=time_expire_to_delete
+             $('.status6').css('display','block')
+         }
+
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
@@ -205,11 +281,15 @@
  		
         // 若已过期
         if (item.time_expire > 0) {
+
             $('[data-name=time_expire] span').html( date(item.time_expire) );
+
         }
         else
         {
+
             $('[data-group=time_expire]').hide()
+
         }
 
         // 若已付款
@@ -278,12 +358,38 @@
                                  '<p class="cont-indent">&times; '+ item.count +'</p>'+
                             '</div>'+
                             '</a>' +
-                            (refund_base_url == ''? '': '<div class=item-operation><span><a href="'+ refund_base_url+item.record_id +'">退款</a></span></div>') +
+                            (refund_base_url == ''? '': '<div class="item-operation"><span><a href="'+ refund_base_url+item.record_id +'">退款</a></span></div>') +
 
                        '</div>';
              //console.log(order_item);
              $('#orderList').append(order_item);
          }
+
+         function sec_to_time(second_time) {
+                 var time = parseInt(second_time) + "秒";
+                 if( parseInt(second_time )> 60){
+
+                     var second = parseInt(second_time) % 60;
+                     var min = parseInt(second_time / 60);
+                     time = min + "分" + second + "秒";
+
+                     if( min > 60 ){
+                         min = parseInt(second_time / 60) % 60;
+                         var hour = parseInt( parseInt(second_time / 60) /60 );
+                         time = hour + "小时" + min + "分" + second + "秒";
+
+                         if( hour > 24 ){
+                             hour = parseInt( parseInt(second_time / 60) /60 ) % 24;
+                             var day = parseInt( parseInt( parseInt(second_time / 60) /60 ) / 24 );
+                             //time = day + "天" + hour + "小时" + min + "分" + second + "秒";
+                             time = day + "天" + hour + "小时";
+                         }
+                     }
+
+
+                 }
+
+                 return time;
+             }
 	})
-        
 </script>
