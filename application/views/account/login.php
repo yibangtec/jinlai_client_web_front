@@ -58,8 +58,7 @@
         <div><span class="line"></span> 第三方登录 <span class="line"></span></div>
         <?php
         // 微信授权网址
-        $wechat_oauth_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.WECHAT_APP_ID.'&redirect_uri='. urlencode(base_url('login_sms')).'&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect';
-        var_dump($wechat_oauth_url);
+        $wechat_oauth_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.WECHAT_APP_ID.'&redirect_uri='. urlencode(base_url('login_wechat')).'&response_type=code&scope=snsapi_userinfo#wechat_redirect';
         ?>
        <a class="wx-icon" href="<?php echo $wechat_oauth_url ?>">
             <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt="">
@@ -75,35 +74,6 @@
                 if(tel){
                     $('#mobile').val(tel);
                 }
-                $('.wx-icon').on('click',function(){
-                    $.ajax({
-                        url: "https://open.weixin.qq.com/connect/qrconnect?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect",
-                        type: 'GET',
-                        dataType: 'JSONP',
-                        success: function (data) {
-                            var info=JSON.parse(data);
-                            console.log(info);
-                        }
-                    });
-//				$.ajax({
-//					  url: "https://api.517ybang.com/account_new/login_wechat",
-//					  type: 'post',
-//					  dataType: 'json',
-//					  data: {app_type:'client',wechat_union_id:'o6_bmasdasdsad6_2sgVt7hMZOPfL'},
-//					  success: function (data, status) {
-//					    if(data.status == 200){
-//					    	alert(data.content.nickname);
-//					    }
-////					    if(data.status == 200){
-////					    	window.location.href = 'https://www.517ybang.com/';
-////					    }
-//					  },
-//					  fail: function (err, status) {
-//					    console.log(err)
-//					  }
-//				});
-					
-                })
 
                 $('#loginSms').on('click',function(){
                     var tel = $('#mobile').val();
@@ -142,9 +112,7 @@
 		                	return false;
                 		}
                 		$.ajax({
-					  url: "https://api.517ybang.com/account/login",
-					  type: 'post',
-					  dataType: 'json',
+					  url: api_url + 'account/login',
 					  data: {app_type:'client',mobile:$('#mobile').val(),password:$('#password').val()},
 					  success: function (data, status) {
 					    if(data.status == 401){

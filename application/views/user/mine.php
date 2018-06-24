@@ -11,15 +11,15 @@
 <div class="box">
 	<?php
 		// 常用数据
-		$itemname = $item['nickname'];
-		$url_avatar = empty($item['avatar'])? DEFAULT_IMAGE: $this->media_root. $item['avatar'];
+		$url_avatar = empty($item['avatar'])? DEFAULT_IMAGE: $item['avatar'];
+		$url_avatar = (strpos($url_avatar, 'http') === FALSE)? $this->media_root.$url_avatar: $url_avatar;
 	?>
 
     <div class="header">
         <div class="header-top clearfix">
             <a title="修改资料" href="<?php echo base_url('user/edit') ?>" class="header-img" style="background: url('<?php echo $url_avatar ?>') no-repeat center; background-size: cover;"></a>
             <a title="修改用户资料" href="<?php echo base_url('user/edit') ?>" class="header-name">
-            	<span class="nick-name"><?php echo $itemname ?></span>
+            	<span class="nick-name" data-name=nickname></span>
                 <span class="member">VIP<?php echo $item['level'] ?></span>
             </a>
             <div class="header-news">
@@ -155,3 +155,11 @@
         </div>
     </div>
 <?php endif ?>
+
+<script>
+    var item = <?php echo json_encode($item) ?>
+
+    $(function(){
+        $('[data-name=nickname]').html(item.nickname);
+    });
+</script>

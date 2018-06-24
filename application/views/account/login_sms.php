@@ -14,7 +14,7 @@
 
             <div class="input-box clearfix">
                 <div class='input-item'>
-                    <label class="label" for="mobile"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/shouji@3x.png" alt=""/></label>
+                    <label class="label" for="mobile"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/shouji@3x.png" alt=""></label>
                     <div class="tel-input">
                         <input id="mobile" name=mobile class="input" type=tel size=11 placeholder="请输入手机号" required>
                         <img class="no-icon tel" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt="">
@@ -36,7 +36,7 @@
 
 
             <button id="submit" class="next" type="submit">
-                <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt=""/>
+                <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt="">
             </button>
         </form>
 
