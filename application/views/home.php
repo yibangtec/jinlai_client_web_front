@@ -1,12 +1,7 @@
 <script src="https://cdn.bootcss.com/zepto/1.1.4/zepto.js"></script>
-<<<<<<< HEAD
-<style>
-body {background:#eaeaea}
-=======
 
 <style>
 body {background:#eaeaea;}
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
  <?php
 	/**
 	 * APP、微信中调用webview时配合URL按需显示相应部分
@@ -48,17 +43,10 @@ body {background:#eaeaea;}
 	/*.recent-area span:nth-child(3n){margin-right: 0;}*/
 	.hot-area span{margin-top: 15px;margin-bottom: 15px;}
 	.mui-bar-nav~.mui-content{padding-top: 0px;height: 100%;}
-<<<<<<< HEAD
-	.swiper-container-horizontal > .swiper-pagination{bottom: .1rem;left: 0;width: 100%;}
-</style>
-<script>
-	$(document).ready(function(){
-=======
 	.swiper-container-horizontal > .swiper-pagination{bottom: -.05rem;left: 0;width: 100%;}
 </style>
 <script>
 	$(function(){
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		var swiperadtisement = new Swiper('.swiper-containeradvertisement', {
 		pagination: '.swiper-pagination2',
 		paginationClickable: true,
@@ -916,7 +904,7 @@ body {background:#eaeaea;}
 							<!--<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>-->
 						</a>
 					</div>
-					<div class="midright fr refreshcontent">
+					<div class="midright fr refreshcontent" style="margin-left: .1rem;">
 						<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/xnr.png">
@@ -1772,15 +1760,6 @@ body {background:#eaeaea;}
 		</div>
 		</div>
 		<?php endif ?>
-<<<<<<< HEAD
-			<?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
-=======
 
 <?php
     // 应用中不显示底部导航栏
@@ -1788,7 +1767,6 @@ body {background:#eaeaea;}
         ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
         || $this->user_agent['is_wechat']
     ):
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -1825,13 +1803,6 @@ body {background:#eaeaea;}
 				</a>
 			</div>
 		</div>
-<<<<<<< HEAD
-		</div>
-
-<?php endif ?>
-<script>
-$(function(){
-=======
     </div>
 <?php endif ?>
 
@@ -1847,7 +1818,6 @@ $(function(){
             wechat_locate()
         })
     }
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
 	var mySwiper_cube = new Swiper('.swiper-container_fruit', {
 		scrollbar: '.swiper-scrollbarcube',
