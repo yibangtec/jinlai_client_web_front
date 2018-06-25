@@ -48,7 +48,7 @@
     $('form').submit(function(){
         // 获取密码字段值
         var password = $('[name=password]').val();
-<<<<<<< HEAD
+
         // 获取确认密码字段值
         var password2 = $('[name=password_confirm]').val();
         var re = /^[a-zA-Z0-9]{6,20}$/;
@@ -75,10 +75,6 @@
             return false;
         }
 
-
-
-
-
     });
     var ProBox = $(".box");
                 // 构建一个要执行的函数
@@ -103,27 +99,5 @@
                         Hideng();
                     },2000); // 设定执行或延时时间
                 };
-=======
 
-        // 检查密码格式是否正确（参考API文档））
-        if ()
-        {
-            // 若不正确，清空并聚焦到密码字段
-
-            return false;
-        }
-        else
-        {
-            // 获取确认密码字段值
-            var password2 = $('[name=password_confirm]').val();
-
-            if (password !== password2)
-            {
-                // 若不相符，清空并聚焦到确认密码字段
-
-                return false;
-            }
-        }
-    });
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 </script>

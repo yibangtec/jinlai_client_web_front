@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
-<link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css?n=1"/>
-=======
+
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css">
 
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 <div class="box">
     <div class="error-tips">
         <p class="tips-text"></p>
@@ -25,7 +21,7 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
+
                 <div class="login-ver">
 
                     <div class='input-item'>
@@ -34,29 +30,19 @@
 
                         <div class="tel-input">
 
-                            <input id="verification" name="captcha" class="input" type="number" placeholder="请输入验证码">
+                            <input id="verification" name="captcha" class="input" type="number" size=6 pattern="\d{6}" placeholder="请输入验证码">
 
                             <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
 
-=======
-                <!--<div class="login-ver">
-                    <div class='input-item'>
-                        <label class="label" for="verification"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""></label>
-                        <div class="tel-input">
-                            <input id="verification" name=verification class="input" type=number size=6 pattern="\d{11}" placeholder="请输入验证码" required>
-                            <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt="">
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                         </div>
 
                         <div class="ver-btn">获取验证码</div>
 
                     </div>
-<<<<<<< HEAD
+
 
                 </div>
-=======
-                </div>-->
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 
                 <div class="ver-box login-password" >
                     <div class='input-item' style="height: 0.8rem;margin: 0">
@@ -75,18 +61,7 @@
             </div>
 
             <button id="submit" class="next submit" type="submit">
-<<<<<<< HEAD
-                <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt=""/>
-            </button>
-        </form>
 
-        <div class="login_sms"><a href="https://www.517ybang.com/login_sms">短信登录</a></div>
-    </div>
-    <div class="login-bot">
-        <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
-       <a class="wx-icon" href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxba173a67df14c087&redirect_uri=https%3a%2f%2fwww.517ybang.com%2flogin_sms&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">
-            <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt=""/>
-=======
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt="">
             </button>
         </form>
@@ -101,7 +76,7 @@
         ?>
        <a class="wx-icon" href="<?php echo $wechat_oauth_url ?>">
             <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt="">
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
        </a>
     </div>
 
@@ -114,7 +89,7 @@
                 if(tel){
                     $('#mobile').val(tel);
                 }
-<<<<<<< HEAD
+
                 $('.wx-icon').on('click',function(){
                     $.ajax({
 
@@ -166,10 +141,7 @@
 //					  }
 
 //				});
-					
-                })
-=======
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 
                 $('#loginSms').on('click',function(){
                     var tel = $('#mobile').val();
@@ -196,10 +168,7 @@
                     }
                 };
                 $('#submit').on('click',function(){
-<<<<<<< HEAD
 
-=======
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 		var regTel = /^1\d{10}$/;
                 		 var regPass = new RegExp( /^([a-z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,20}$/i);
 		                if (!regTel.test($('#mobile').val())) {
@@ -212,68 +181,32 @@
 		                	return false;
                 		}
                 		$.ajax({
-<<<<<<< HEAD
-							  url: "https://api.517ybang.com/account/login",
-							  type: 'post',
-							  dataType: 'json',
-							  data: {app_type:'client',mobile:$('#mobile').val(),password:$('#password').val()},
-							  success: function (data, status) {
-							    if(data.status == 401){
+					        url: api_url + 'account/login',
+					        data: {app_type:'client',mobile:$('#mobile').val(),password:$('#password').val()},
+					        success: function (data, status) {
+					          if(data.status == 401){
+					          	alert(data.content.error.message);
+					          }
+					          if(data.status == 200){
+					          	window.localStorage.removeItem('userId');
+					          	window.localStorage.setItem('userId',data.content.user_id);
 
-							    	alert(data.content.error.message);
-
-							    }
-							    if(data.status == 200){
-							    	localStorage.removeItem('userId');
-							    	localStorage.setItem('userId',data.content.user_id);
-							    	
-							    }
-							    if(data.status == 414){
-
-							    	alert('用户未注册');
-
-							    	window.location.href = 'https://www.517ybang.com/register';
-
-							    }
-							  },
-							  fail: function (err, status) {
-							    console.log(err)
-							  }
+					          }
+					          if(data.status == 414){
+					          	alert('用户未注册');
+					          	window.location.href = 'https://www.517ybang.com/register';
+					          }
+					        },
+					        fail: function (err, status) {
+					          console.log(err)
+					        }
 					})
 
-                	
-
-                	
-
-=======
-					  url: api_url + 'account/login',
-					  data: {app_type:'client',mobile:$('#mobile').val(),password:$('#password').val()},
-					  success: function (data, status) {
-					    if(data.status == 401){
-					    	alert(data.content.error.message);
-					    }
-					    if(data.status == 200){
-					    	window.localStorage.removeItem('userId');
-					    	window.localStorage.setItem('userId',data.content.user_id);
-					    	
-					    }
-					    if(data.status == 414){
-					    	alert('用户未注册');
-					    	window.location.href = 'https://www.517ybang.com/register';
-					    }
-					  },
-					  fail: function (err, status) {
-					    console.log(err)
-					  }
-					})
-                	
-                	
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 });
 	
           
     });
-<<<<<<< HEAD
+
             //点击获取验证码
           let  time1 = 60;
 		    var  count = time1;
@@ -319,7 +252,5 @@
 		        count--;
 		    }
 
-		    
-=======
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 </script>

@@ -25,13 +25,9 @@
                     <div class='input-item'>
                         <label class="label" for="verification"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""></label>
                         <div class="tel-input">
-<<<<<<< HEAD
-                            <input id="verification" name="verification" class="input" type="number" value="" size=6 pattern="\d{6}" placeholder="请输入验证码" required />
-                            <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
-=======
                             <input id="verification" name=captcha class="input" type=number size=6 pattern="\d{6}" placeholder="请输入验证码" required>
                             <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt="">
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
                         </div>
 
                         <div class="ver-btn">获取验证码</div>
@@ -40,15 +36,10 @@
             </div>
 
 
-<<<<<<< HEAD
-            <div id="submit" class="next">
-                <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt=""/>
-            </div>
-=======
+
             <button id="submit" class="next" type="submit">
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/degnlu@3x.png" alt="">
             </button>
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         </form>
 
         <div class="login_sms"><a id="login">智能登录</a></div>
@@ -94,21 +85,7 @@
 		    button.click(showTitle);
 		    var sms_id;
 		    function showTitle(){
-<<<<<<< HEAD
-		    	$(this).css('background','#ccc');
-		    		$.ajax({
-					  url: "https://api.517ybang.com/sms/create",
-					  type: 'post',
-					  dataType: 'json',
-					  data: {app_type:'client',mobile:$('#mobile').val()},
-					  success: function (data, status) {
-					   if(data.status == 200){
-					   	sms_id = data.content.id;
-					   	alert('验证码发送成功');
-					   }
-					  },
-					  fail: function (err, status) {
-=======
+
 		    	var regTel = /^1\d{10}$/;
                 if (!regTel.test($('#mobile').val())) {
                 	alert('请输入正确手机号');
@@ -131,7 +108,6 @@
 					  },
 					  fail: function (err, status)
                       {
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 					    console.log(err)
 					  }
 					});
@@ -140,20 +116,13 @@
 		    }
 		    function timecount(){
 		      button.text(count+'s');  
-<<<<<<< HEAD
-		      if (count<=0) {
-		      count = time1;
-		      clearInterval(countinterval);
-		      button.text('重新获取验证码');
-		      button.css('background','#FC5353');
-		      button.on('click',showTitle);  
-=======
+
 		      if (count<=0)
 		      {
 		      count = time1;
 		      clearInterval(countinterval);
 		      button.text('重新获取验证码').css('background','#FC5353').on('click',showTitle);
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 		      }
 		      else
 		        count--;
@@ -163,7 +132,7 @@
 		    		alert('验证码或手机号不能为空');
 		    		return false;
 		    	}
-<<<<<<< HEAD
+
 		    	else{
 		    		if(!sms_id){
 		    			alert('请输入正确的验证码');
@@ -189,9 +158,7 @@
 		    	}
 		    	
 		    });
-		    });
-=======
-		    });
+
 		    
 //		    $('#submit').on('click',function(){
 //		    	if(!($('#mobile').val() && $('#verification').val())){
@@ -204,7 +171,6 @@
 //		    			alert('请输入正确的验证码');
 //		    			return false;
 //		    		}
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
                     // var params = common_params;
                     // params.mobile = $('#mobile').val();

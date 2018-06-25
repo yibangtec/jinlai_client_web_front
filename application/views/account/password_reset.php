@@ -59,8 +59,6 @@
 <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
 <script>
-<<<<<<< HEAD
-=======
 	
 		function CheckPassWord(password1,password2) {//必须为字母加数字且长度不小于8位
 	   var str = password1;
@@ -79,7 +77,6 @@
 	        return false;
 	    }
 }
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	//点击获取验证码
           let  time1 = 60;
 		    var  count = time1;
@@ -87,10 +84,7 @@
 			var button = $('.ver-btn');
 		    button.click(showTitle);
 		    var sms_id;
-		    function showTitle(){
-<<<<<<< HEAD
-		    	$(this).css('background','#ccc');
-=======
+
 		    	var regTel = /^1\d{10}$/;
                 if (!regTel.test($('#mobile').val())) {
                 	alert('请输入正确的手机号');
@@ -101,7 +95,6 @@
 		    	else{
 		    		$(this).focus();
 		    		$(this).css('background','#ccc');
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		    		$.ajax({
 					  url: "https://api.517ybang.com/sms/create",
 					  type: 'post',
@@ -119,11 +112,9 @@
 					});
 		      countinterval = setInterval(timecount, 1000);
 		      button.off('click',showTitle);//解绑点击事件
-<<<<<<< HEAD
-=======
+
 		    	}
-		    	
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 		    }
 		    function timecount(){
 		      button.text(count+'s');  
@@ -137,8 +128,7 @@
 		      else
 		        count--;
 		    }
-<<<<<<< HEAD
-=======
+
 		   $('#submit-reset').on('click',function(){
 		   		var regTel = /^1\d{10}$/;
 		   		var regVal = /^\d{6}\b/;
@@ -184,6 +174,5 @@
 					  }
 					});
 		   });
-					    
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 </script>
