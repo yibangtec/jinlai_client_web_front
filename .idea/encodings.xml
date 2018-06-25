@@ -22,13 +22,15 @@
     <file url="file://$PROJECT_DIR$/application/views/order/group_purchase.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/order/pindan_result.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/order/pintuan_detail.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/refund/create.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/refund/detail.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/refund/index.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/application/views/refund/negotiation_record.php" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/application/views/refund/refund_application.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/refund/refund_goods_selected.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/refund/refund_record.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/refund/refund_service_type.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/application/views/refund_record/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/share/share_goods.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/application/views/share/share_shop.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

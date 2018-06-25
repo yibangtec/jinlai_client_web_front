@@ -15,7 +15,7 @@ a {text-decoration: none;}
 
 
 /* index */
-.refund-item {
+.refund-items {
     background-color: #fff;margin: 0.1rem 0.2rem;border-radius: 0.15rem;font-size: 0.26rem;color: #3e3a39;
 }
 .refund-shops {
@@ -109,8 +109,10 @@ a {text-decoration: none;}
     padding-bottom: 0.1rem;
 }
 .refund-shops {
+    display: block;
     padding: 0.2rem;
     font-weight: 700;
+    font-size: 0.26rem;color: #3e3a39
 }
 .refund-goodsName {
     display: flex;
@@ -235,6 +237,7 @@ a {text-decoration: none;}
     padding: 0.2rem 0 0 0;
 }
 .negotiate{
+    display: block;
     background-color: #fff;
     border-radius: 0.15rem;
     margin: 0.1rem 0.2rem;

@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>协商记录</title>
-    <script src="../js/rem.js"></script>
-    <link rel="stylesheet" href="../css/fontStyle.css"/>
-    <link rel="stylesheet" href="../css/refund.css"/>
-</head>
-<body>
+
+
+    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/refund.css"/>
+
     <div class="box">
         <div class="placeholder-div"></div>
         <div class="record-list">
@@ -63,5 +59,3 @@
             </div>
         </div>
     </div>
-</body>
-</html>

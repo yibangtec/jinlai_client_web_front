@@ -130,7 +130,7 @@ $(function(){
 
     });
 
-    $('#submit-set').on('click',function(){
+    /*$('#submit-set').on('click',function(){
         $('.pass2').hide();
         var pass1 = $('#password1').val();
         var pass2 = $('#password2').val();
@@ -142,7 +142,7 @@ $(function(){
             $('.error-tips').show();
             actionDo();
         }
-    });
+    });*/
     $('#password1').bind('input onchange', function() {
 
         var isFocus = $('#password1').is(":focus");
@@ -253,15 +253,34 @@ $(function(){
         var re = /^1\d{10}$/;
         var tel = $('#mobile').val();
         if (re.test(tel)) {
-            $(this).hide();
-            //这里判断是否注册过
-            var id = 2;
-            if(id==1){
-                $('.login-ver').show();
 
-            }else{
-                $('.login-password').show();
-            }
+            //这里判断是否注册过
+            $.ajax({
+				  url: "https://api.517ybang.com/account/user_exist",
+				  type: 'post',
+				  dataType: 'json',
+				  data: {mobile:tel},
+				  success: function (data, status) {
+
+                      if(data.status == 200){
+                          console.log('存在');
+                          $('.login-ver').hide();
+                          $('.login-password').show();
+                      }else{
+                          $('.login-password').hide();
+                          $('.login-ver').show();
+                          console.log('不存在');
+                      }
+
+
+				  },
+				  fail: function (err, status) {
+
+				    console.log(err)
+
+				  }
+            });
+            $(this).hide();
             $('#submit').show();
         }else{
             $('.tips-text').html('手机号格式错误');
@@ -270,6 +289,9 @@ $(function(){
             $('.error-tips').show();
             actionDo();
         }
+
+
+
     });
 
     // 执行它

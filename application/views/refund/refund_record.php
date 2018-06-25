@@ -1,5 +1,5 @@
 
-    <title>商品选择列表</title>
+
     <script src="<?php echo CDN_URL ?>js/rem.js"></script>
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/refund.css"/>

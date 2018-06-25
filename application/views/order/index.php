@@ -1,9 +1,9 @@
+<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css">
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/order.css">
 
-    <script src="<?php echo CDN_URL ?>js/rem.js"></script>
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css">
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/order.css">
 <div class="tips">
     <div class="delete">
         <p>确认删除？</p>
@@ -47,6 +47,7 @@
         </div>
     </div>
 </div>
+
 <div class="box">
     <div class="line"></div>
     <ul class="order-header clearfix">
@@ -58,25 +59,24 @@
     </ul>
     <div class="content">
         <div class="order-item-none">
-                    <img class="icon_noorder" src="<?php echo CDN_URL ?>media/order/icon_noorder.png" alt=""/>
-                    <p class="text-noorder">您没有该状态的订单</p>
-                </div>
+            <img class="icon_noorder" src="<?php echo CDN_URL ?>media/order/icon_noorder.png" alt="">
+            <p class="text-noorder">您没有该状态的订单</p>
+        </div>
+
         <div class="order-all" id="orderList" style="display: block">
 
         </div>
-
     </div>
 
-    <div class="load-more" style="margin: 0.2rem;text-align: center;font-size: 0.3rem;color: #3E3A39; display:none;" id="load-more">点击加载更多</div>
+
 </div>
+<div class="load-more" style="margin: 0.2rem;text-align: center;font-size: 0.3rem;color: #3E3A39;display:none;" id="load-more">点击加载更多</div>
 
 <script>
-
     $(function(){
-
         var items = <?php echo json_encode($items) ?>;
+        //console.log(items);
 
-        console.log(items);
         for(var key in items){
             var statusHtml = '';
             var status = items[key].status;
@@ -92,16 +92,17 @@
                 statusHtml = '<span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
             }
             else if(status == '待付款'){
-                statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay">付款</span>';
+                statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
             }else if(status == ""){
                 statusHtml = '<span class="del-btn">删除</span>';
             }
+
             var li = items[key].order_items;
-            console.log(li);
+            //console.log(li);
             var bizNameHtml = '<div class="order-item">'+
-                                   '<a href="<?php echo base_url('order/detail') . "?&id='+items[key].order_id+'" ?>" class="item-title clearfix">'+
+                                   '<a href="'+ base_url+'order/detail?id='+items[key].order_id+'" class="item-title clearfix">'+
                                        '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                       '<div class="title-right right-float">'+items[key].status+'</div>'+
+                                       '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                    '</a>'+
                                    '<div class="item-list">';
                                    var bot = '</div>'+
@@ -109,15 +110,16 @@
                                    '<div class="item-operation">'+statusHtml+'</div>'+
                               '</div>';
             //$('#orderList').append(bizNameHtml);
+
             var orderItemHtml = '';
             for(var k in li){
-                 var slogan = li[k].slogan;
+                var slogan = li[k].slogan;
                  if(slogan == null){
                     slogan = '';
                  };
                  var imgUrl = li[k].item_image;
                  var reg = RegExp(/http/);
-                 console.log(reg.test(imgUrl)); // true
+                 //console.log(reg.test(imgUrl)); // true
                  if(reg.test(imgUrl) !== true){
                       imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
                  }else{
@@ -141,13 +143,6 @@
             }
             $('#orderList').append(bizNameHtml+orderItemHtml+bot);
         }
-
-
-
-
-
-
-
 
 
         console.log($('.order-tab').length);
@@ -236,9 +231,7 @@
                             //}
 
                         }
-
                     });
-
         }
 
         // 分页参数
@@ -306,11 +299,11 @@
                                                 statusHtml = '<span class="del-btn">删除</span>';
                                             }
                                     var li = items[key].order_items;
-                                    console.log(li);
+                                    //console.log(li);
                                     var bizNameHtml = '<div class="order-item">'+
                                                            '<a href="<?php echo base_url('order/detail') . "?&id='+items[key].order_id+'" ?>" class="item-title clearfix">'+
                                                                '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                                               '<div class="title-right right-float">'+items[key].status+'</div>'+
+                                                               '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                                            '</a>'+
                                                            '<div class="item-list">';
                                                            var bot = '</div>'+
@@ -326,7 +319,7 @@
                                          };
                                          var imgUrl = li[k].item_image;
                                          var reg = RegExp(/http/);
-                                         console.log(reg.test(imgUrl)); // true
+                                         //console.log(reg.test(imgUrl)); // true
                                          if(reg.test(imgUrl) !== true){
                                               imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
                                          }else{

@@ -22,7 +22,7 @@
                     <div class='input-item'>
                         <label class="label" for="verification"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""/></label>
                         <div class="tel-input">
-                            <input id="verification" name="verification" class="input" type="number" value="" size=11 pattern="\d{11}" placeholder="请输入验证码" required />
+                            <input id="verification" name="verification" class="input" type="number" value="" size=6 pattern="\d{6}" placeholder="请输入验证码" required />
                             <img class="no-icon ver" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt=""/>
                         </div>
 
