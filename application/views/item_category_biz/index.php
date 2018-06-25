@@ -49,11 +49,7 @@
             width: 100%;
             background-color: #fff;
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         .border-active{
             border-left: 0.04rem solid #FF3649;
             color: #FF3649;
