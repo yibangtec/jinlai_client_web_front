@@ -88,7 +88,6 @@
     }
 }
 
-
 /* page */
 #app{position: absolute;left: 0;top: 1.6rem;width: 96%;height: 100%;overflow-y:auto;-webkit-overflow-scrolling: touch;overflow-x:hidden; }
 
@@ -128,22 +127,38 @@
 					<div class="sc-days"></div>
 				</div>
 			</div>
-			
 				<div class="content" id="app">
-
+				<p id="getDateBefore" style="text-align: center;font-size: .26rem;color: #3e3a39;">正在加载...</p>
 				<ul class="items outer">
 
 				</ul>
 			</div>
 		</div>
-
 		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/jquery-3.3.1.min.js" ></script>
 		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/simple-calendar.js"></script>
-		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/hammer-2.0.8-min.js"></script>
-		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/PullToRefresh.min.js"></script>
+		<!--<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/hammer-2.0.8-min.js"></script>
+		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/PullToRefresh.min.js"></script>-->
 		<script type="text/javascript">
 		//获取商品浏览记录列表
 			var user_id = <?php echo $this->session->user_id ?>;
+			var myCalendar = new SimpleCalendar('#calendar');
+			//myCalendar.createDate();
+			$(function(){
+				var monthCH = $('.sc-select-month').text();
+				$(".sc-mleft").click(function(){
+				myCalendar.subMonth();
+				var year = $('.sc-select-year').text();
+				var monthCH = $('.sc-select-month').text();
+				var month = SimpleCalendar.prototype.languageData.months_CH.indexOf(monthCH)+1;
+				})
+				$(".sc-mright").click(function(){
+				myCalendar.addMonth();
+				var year = $('.sc-select-year').text();
+				var monthCH = $('.sc-select-month').text();
+				var month = SimpleCalendar.prototype.languageData.months_CH.indexOf(monthCH)+1;
+				});
+			    
+		    });
 			//生成变量来判断是否点击箭头返回
 			var isShow;
 			var curIndex;
@@ -255,7 +270,7 @@
             	console.log(arrDate);
             	
             	for (var i = 0; i < newArr.length; i++) {
-            		var outerTitle = '<li class="firstDate" style="float: none;font-size: .36rem;border: none;color: #828282;padding: .1rem;width:2rem">'+newArr[i].slice(5)+'<span style="display:none">'+newArr[i]+'</span></li>';
+            		var outerTitle = '<li class="firstDate" style="float: none;font-size: .36rem;border: none;color: #828282;padding: .1rem;width:2rem"><i>'+newArr[i].slice(5)+'</i><span style="display:none">'+newArr[i]+'</span></li>';
             		$('.items').append(outerTitle);
             		for (var j = 0; j < arrDate.length; j++) {
             			//alert($('.firstDate').eq(i).find('span').text());
@@ -277,29 +292,11 @@
             		}
             	}
 
-			var myCalendar = new SimpleCalendar('#calendar');
-			//myCalendar.createDate();
-			$(function(){
-				var monthCH = $('.sc-select-month').text();
-				$(".sc-mleft").click(function(){
-					myCalendar.subMonth();
-				   var year = $('.sc-select-year').text();
-				   var monthCH = $('.sc-select-month').text();
-
-				   var month = SimpleCalendar.prototype.languageData.months_CH.indexOf(monthCH)+1;
-			   })
-			    $(".sc-mright").click(function(){
-			   		myCalendar.addMonth();
-				    var year = $('.sc-select-year').text();
-				    var monthCH = $('.sc-select-month').text();
-				    var month = SimpleCalendar.prototype.languageData.months_CH.indexOf(monthCH)+1;
-			    });
-			    
-		    });
+		
 			
 			//滑动切换
-			var myElement = document.getElementById('calendar');
-　　  			var hammer = new Hammer(myElement);
+//			var myElement = document.getElementById('calendar');
+//　　  			var hammer = new Hammer(myElement);
 			// hammer.on("swipeleft", function (ev) {
 				
 			//  	myCalendar.addMonth();
@@ -334,7 +331,18 @@
 			//显示选择日期当天的活动
 			 function announceList(v){
 			 	if(v.children().hasClass('sc-mark-show')){
-			 		alert($('.sc-mark-show').index(this));
+			 		//点击有浏览记录的日期触发的事件
+			 		var oMon = parseInt($('.sc-select-month').text());
+			 		if(oMon < 10){
+			 			oMon = '0' + oMon;
+			 		}
+			 		var curDay =oMon+'-'+ v.find('.day').text(); 
+			 		for (var i = 0;i < $('.firstDate').length;i++) {
+			 			if($('.firstDate').eq(i).find('i').text() == curDay){
+			 				$(document).scrollTop($('.firstDate').eq(i).offset().top);
+			 			};
+			 			
+			 		}
 					
 			 	}
 			 }
@@ -406,13 +414,7 @@
 				$('#calendar .sc-days .sc-item').eq(41).show();
 			}
 			});
-	
-		
 
-			
-
-		
-			
 			$('#calendar .sc-days .sc-item').hide();
 			function calendarShow(){
 				var curIndex;
@@ -421,8 +423,6 @@
 					curIndex = index;
 				}
 			});
-		
-			
 			//0-6
 			if (curIndex>=0 && curIndex <=6) {
 				$('#calendar .sc-days .sc-item').eq(0).show();
@@ -575,6 +575,7 @@
 //	}
 	
 //});
+	$('#getDateBefore').css('display','none');
             	}
 			});
 		
