@@ -122,6 +122,7 @@
         <!-- 接/拒单相关信息 -->
         <li data-name=time_refuse>拒单时间<span></span></li>
         <li data-name=time_accept>接单时间<span></span></li>
+<<<<<<< HEAD
 
         <!-- 发货相关信息 -->
         <li data-name=time_deliver data-group=delivered>发货时间<span></span></li>
@@ -133,6 +134,19 @@
         <li data-name=time_confirm>确认时间<span></span></li>
         <li data-name=time_confirm_auto>确认时间<span></span></li>
 
+=======
+
+        <!-- 发货相关信息 -->
+        <li data-name=time_deliver data-group=delivered>发货时间<span></span></li>
+        <li data-name=deliver_method data-group=delivered>发货方式<span></span></li>
+        <li data-name=deliver_biz data-group=delivered>服务商<span></span></li>
+        <li data-name=waybill_id data-group=delivered>运单号<span></span></li>
+
+        <!-- 确认收货相关信息 -->
+        <li data-name=time_confirm>确认时间<span></span></li>
+        <li data-name=time_confirm_auto>确认时间<span></span></li>
+
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         <!-- 评论相关信息 -->
         <li data-name=time_comment>评论时间<span></span></li>
 
@@ -183,6 +197,7 @@
 		var item = <?php echo json_encode($item) ?>;
         console.log(item);
         var refund_base_url = ''; // 单品退款根URL
+<<<<<<< HEAD
 
         var status = item.status;
         console.log(status)
@@ -253,6 +268,78 @@
              $('.status6').css('display','block')
          }
 
+=======
+
+        var status = item.status;
+        console.log(status)
+        var meta = <?php echo json_encode($meta) ?>;
+        console.log(meta)
+
+        // 状态自动变更时间不足1日时仅显示n小时，超过1日时显示n日n小时
+         if (status == '待评价')
+         {
+             // meta.name=time_confirm_to_comment
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_confirm_to_comment'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status1').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='已评价')
+         {
+             $('.status2').css('display','block')
+         }
+         else if(status == '待发货')
+         {
+              //meta.name=time_pay_to_deliver;
+              //console.log(meta.name);
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_pay_to_deliver'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status3').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='待付款')
+         {
+             // meta.name=time_created_to_expire
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_created_to_expire'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status4').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='待收货')
+         {
+             // meta.name=time_deliver_to_confirm
+             var time = '';
+             for(var key in meta){
+                if(meta[key].name == 'time_deliver_to_confirm'){
+                    console.log(meta[key].value);
+                    time = sec_to_time(meta[key].value);
+                }
+             }
+             $('.status5').css('display','block');
+             $('.remainingTime').html(time);
+         }
+         else if(status=='已关闭')
+         {
+             // meta.name=time_expire_to_delete
+             $('.status6').css('display','block')
+         }
+
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
@@ -365,8 +452,11 @@
              $('#orderList').append(order_item);
          }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
          function sec_to_time(second_time) {
                  var time = parseInt(second_time) + "秒";
                  if( parseInt(second_time )> 60){

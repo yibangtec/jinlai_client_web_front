@@ -40,16 +40,16 @@
 	</blockquote>
 
 	<?php else: ?>
+    <ul id=item-list class=row>
+        <?php foreach ($items as $item): ?>
+        <li class="item col-xs-6 col-sm-3 col-md-4">
+            <a href="<?php echo base_url($this->class_name. '/detail?id='.$item[$this->id_name]) ?>">
+                <?php echo $item['title'] ?>
+                <?php echo $item['excerpt'] ?>
+            </a>
+        </li>
+        <?php endforeach ?>
+    </ul>
 
-		<ul id=item-list class=row>
-			<?php foreach ($items as $item): ?>
-			<li class="item col-xs-6 col-sm-3 col-md-4">
-				<a href="<?php echo base_url($this->class_name. '/detail?id='.$item[$this->id_name]) ?>">
-					<?php echo $item['title'] ?>
-					<?php echo $item['excerpt'] ?>
-				</a>
-			</li>
-			<?php endforeach ?>
-		</ul>
 	<?php endif ?>
 </div>

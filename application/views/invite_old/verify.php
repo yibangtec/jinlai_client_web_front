@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-    <style>
-        body{
-            background: #eb4b4a;
-            padding-bottom: 2.5rem;
-        }
-    </style>
+﻿<style>
+.invite-content img{
+    height:auto;
+}
+</style>
 
     <!--topbanner区域开始-->
     <div class="invite-top-banner">
@@ -17,17 +15,18 @@
         <!--中间部分内容-->
         <!--头像-->
         <div class="bgfff invitecontentbg">
-        <div class="pic">
-            <img src="https://cdn-remote.517ybang.com/media/invite/head.png" />
-        </div>
-        <span class="name">YUFEIHONG</span>
+        <!--<div class="pic">
+            <img src="media/invite/Coupon.png" />
+        </div>-->
+        <!--<span class="name">YUFEIHONG</span>-->
         <p>您的好友送您<span>388元</span>红包,</p>
-        <p>邀请您一起进来!</p>
-        <div class="dottedbg">
+        <p style="padding-top: 0rem;padding-bottom: .6rem;">邀请您一起进来!</p>
+        <!--<div class="dottedbg">
             <span>¥</span>
             388
-        </div>
-        <a href="invite_success.html">立即领取</a>
+        </div>-->
+            <input type="text" class="codewrap" placeholder="请输入您的兑换码" maxlength="14"/>
+        <a href="#">立即使用</a>
         </div>
         <!--最下边的图片-->
         <img src="https://cdn-remote.517ybang.com/media/invite/lower.png" />
@@ -46,14 +45,3 @@
             关注
         </a>
     </div>
-=======
-<?php
-/**
- * Created by PhpStorm.
- * User: kamaslau
- * Date: 2018-6-21
- * Time: 20:43
- */
-?>
-接受邀请
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425

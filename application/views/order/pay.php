@@ -53,7 +53,11 @@
 
         #list-payment {overflow:hidden;margin-top:0.5rem;}
             #list-payment h2 {color:#3e3a39;font-size:0.3rem;padding:0.2rem 0;}
+<<<<<<< HEAD
             #list-payment li {height:1.04rem;float:left;margin-right:0.2rem;}
+=======
+            #list-payment li {height:1.04rem;float:left;margin-right:0.2rem;display:none}
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 #list-payment li:nth-of-type(4n+0) {margin-right:0;}
                 #list-payment a {color:#fff}
 
@@ -81,13 +85,21 @@
     <div id=list-payment>
         <h2>付款方式</h2>
         <ul>
+<<<<<<< HEAD
             <li title=微信支付 data-name=wepay>
+=======
+            <li id=wepay data-name=wepay>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 <a href="#">
                     <i class="icon-weixin-pay"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
                     <p class="icon-text-p">微信支付</p>
                 </a>
             </li>
+<<<<<<< HEAD
             <li title=支付宝 data-name=alipay>
+=======
+            <li id=alipay data-name=alipay>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 <a href="#">
                     <i class="icon-zhifubao-pay"><span class="path1"></span><span class="path2"></span></i>
                     <p class="icon-text-p">支付宝</p>
@@ -95,6 +107,7 @@
             </li>
         </ul>
     </div>
+<<<<<<< HEAD
 
     <!--<div class="pay-type">
         <div class="pay-type-btn clearfix">
@@ -103,6 +116,8 @@
             <img src="<?php echo CDN_URL ?>media/order/yue_xin@3x.png" alt="">
         </div>
     </div>-->
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 </div>
 
 <div class="tips">
@@ -148,11 +163,17 @@
     var payment_common_params = 'type=order&body=';
     payment_common_params += encodeURI('进来商城商品订单 ' + date('')+'_' +item.order_id);
     payment_common_params += '&order_id=' + item.order_id;
+<<<<<<< HEAD
     payment_common_params += '&total_fee=' + item.total;
+=======
+    // payment_common_params += '&total_fee=' + item.total;
+    payment_common_params += '&total_fee=' + 0.01; // 测试环境
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
     //console.log(payment_common_params);
 
     // 生成各类支付链接
     var payment_common_url = base_url + 'payment/'; // 支付通用链接
+<<<<<<< HEAD
     // if (user_agent.is_wechat)
     // {
         var wepay_url_jsapi = 'wepay/example/jsapi.php?showwxpaytitle=1&'; // 微信支付 公众号支付URL
@@ -164,6 +185,21 @@
         var alipay_url_mobile = 'alipay/wappay/pay.php?'; // 支付宝 手机网站支付URL
         var alipay_url_desktop = 'alipay/wappay/qrpay.php?'; // 支付宝 电脑网站支付URL
     // }
+=======
+    // 微信支付付款链接
+    var wepay_url_jsapi = 'wepay/example/jsapi.php?showwxpaytitle=1&'; // 微信支付 公众号支付URL
+    var wepay_url_qrpay = 'wepay/example/qrpay.php?showwxpaytitle=1&'; // 微信支付 扫码支付URL
+    var wepay_url_micropay = 'wepay/example/micropay.php?showwxpaytitle=1&'; // 微信支付 刷卡支付URL
+    document.getElementById('wepay').style.display = 'block';
+
+    // 若非微信浏览器，则生成支付宝付款链接
+    if (user_agent.is_wechat === false)
+    {
+        var alipay_url_mobile = 'alipay/wappay/pay.php?'; // 支付宝 手机网站支付URL
+        var alipay_url_desktop = 'alipay/wappay/qrpay.php?'; // 支付宝 电脑网站支付URL
+        document.getElementById('alipay').style.display = 'block';
+    }
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
     $(function(){
         // 赋值各财务字段

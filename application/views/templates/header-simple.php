@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
     // 生成SEO相关变量，一般为页面特定信息与在config/config.php中设置的站点通用信息拼接
@@ -8,6 +9,30 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+=======
+    defined('BASEPATH') OR exit('No direct script access allowed');
+
+    // 生成SEO相关变量，一般为页面特定信息与在config/config.php中设置的站点通用信息拼接
+    $title_prefix = (ENVIRONMENT !== 'production')? '': NULL;
+    $title = isset($title)? $title: SITE_NAME.' - '.SITE_SLOGAN;
+    $title = $title_prefix. $title;
+    $keywords = (isset($keywords)? $keywords.',': NULL). SITE_KEYWORDS;
+    $description = (isset($description)? $description: NULL). SITE_DESCRIPTION;
+
+    // 生成body的class
+    $body_class = ( isset($class) )? $class: NULL;
+    $body_class .= ($this->user_agent['is_wechat'])? ' is_wechat': NULL;
+    $body_class .= ($this->user_agent['is_ios'])? ' is_ios': NULL;
+    $body_class .= ($this->user_agent['is_android'])? ' is_android': NULL;
+    $body_class .= ($this->user_agent['is_mobile'])? ' is_mobile': NULL; // 移动端设备
+
+    $body_class .= ($this->user_agent['is_macos'])? ' is_macos': NULL;
+    $body_class .= ($this->user_agent['is_windows'])? ' is_windows': NULL;
+    $body_class .= ($this->user_agent['is_desktop'])? ' is_desktop': NULL; // 非移动端设备
+?>
+<!DOCTYPE html>
+<html lang=zh-cn>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	<head>
 		<meta charset=utf-8>
 		<meta http-equiv=x-dns-prefetch-control content=on>
@@ -15,7 +40,11 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
+<<<<<<< HEAD
 		<meta name=version content="revision20180305">
+=======
+		<meta name=version content="revision20180621">
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -25,6 +54,7 @@
 
 		<script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
 		<script defer src="<?php echo CDN_URL ?>bootstrap/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
         <script>
             var user_agent = new Object();
             user_agent.is_wechat = <?php echo ($this->user_agent['is_wechat'])? 'true': 'false' ?>;
@@ -240,11 +270,80 @@
         </script>
         <?php endif ?>
 
+=======
+		<script defer src="<?php echo CDN_URL ?>font-awesome/v5.0.13/fontawesome-all.min.js"></script>
+        <script defer src="<?php echo CDN_URL ?>js/jquery.qrcode.min.js"></script>
+        <script>
+        $(function(){
+            // 生成二维码
+            $('figure.qrcode').each(function(){
+                var qrcode_string = $(this).attr('data-qrcode-string');
+                var dom = $(this);
+                qrcode_generate(qrcode_string, dom);
+            });
+            function qrcode_generate(string, dom)
+            {
+                // 若未传入二维码容器，则默认为#qrcode
+                var dom = dom || '#qrcode';
+
+                // 创建二维码并转换为图片格式，以使微信能识别该二维码
+                $(dom).qrcode(string);
+
+                // 将canvas转换为Base64格式的图片内容
+                function convertCanvasToImage(canvas)
+                {
+                    // 新Image对象，可以理解为DOM
+                    var image = new Image();
+                    // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+                    // 指定格式 PNG
+                    image.src = canvas.toDataURL("image/png");
+                    return image;
+                }
+
+                // 获取网页中的canvas对象
+                var mycanvas = document.getElementsByTagName('canvas')[0];
+
+                // 将转换后的img标签插入到html中
+                var img = convertCanvasToImage(mycanvas);
+                $(dom).append(img);
+                dom.find('canvas').remove(); // 移除canvas格式的二维码
+            }
+        });
+        </script>
+        <script>
+            // 当前用户信息
+            var user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>;
+
+            // 全局参数
+            var api_url = '<?php echo API_URL ?>'; // API根URL
+            var base_url = '<?php echo BASE_URL ?>'; // 页面根URL
+            var media_url = '<?php echo MEDIA_URL ?>'; // 媒体文件根URL
+            var class_name = '<?php echo $this->class_name ?>';
+            var class_name_cn = '<?php echo $this->class_name_cn ?>';
+
+            // AJAX参数
+            var ajax_root = '<?php echo API_URL ?>';
+            var common_params = new Object()
+            common_params.app_type = 'client' // 默认为商户端请求
+            common_params.user_id = user_id
+
+            // UserAgent
+            var user_agent = <?php echo json_encode($this->user_agent) ?>;
+        </script>
+
+		<?php
+            if ($this->user_agent['is_wechat'])
+                require_once(VIEWS_PATH.'templates/wechat.php');
+        ?>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		<!--清除浏览器默认样式css-->
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>css/reset.css">
 		<!--公用部分css-->
 <!--        <link rel=stylesheet media=all href="--><?php //echo CDN_URL ?><!--bootstrap/css/bootstrap.min.css">-->
+<<<<<<< HEAD
         <link rel=stylesheet media=all href="<?php echo CDN_URL ?>font-awesome/css/font-awesome.min.css">
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         <style>
             h1 {text-align: center;}
             h1 a {color:#ae424f}
@@ -266,6 +365,7 @@
 <?php
     // 将head内容立即输出，让用户浏览器立即开始请求head中各项资源，提高页面加载速度
     ob_flush();flush();
+<<<<<<< HEAD
 
     // 生成body的class
     $body_class = ( isset($class) )? $class: NULL;
@@ -277,6 +377,8 @@
     $body_class .= ($this->user_agent['is_macos'] === TRUE)? ' is_macos': NULL;
     $body_class .= ($this->user_agent['is_windows'] === TRUE)? ' is_windows': NULL;
     $body_class .= ($this->user_agent['is_desktop'])? ' is_desktop': NULL; // 非移动端设备
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 
 <!-- 内容开始 -->

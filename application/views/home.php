@@ -1,6 +1,12 @@
 <script src="https://cdn.bootcss.com/zepto/1.1.4/zepto.js"></script>
+<<<<<<< HEAD
 <style>
 body {background:#eaeaea}
+=======
+
+<style>
+body {background:#eaeaea;}
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
  <?php
 	/**
 	 * APP、微信中调用webview时配合URL按需显示相应部分
@@ -42,10 +48,17 @@ body {background:#eaeaea}
 	/*.recent-area span:nth-child(3n){margin-right: 0;}*/
 	.hot-area span{margin-top: 15px;margin-bottom: 15px;}
 	.mui-bar-nav~.mui-content{padding-top: 0px;height: 100%;}
+<<<<<<< HEAD
 	.swiper-container-horizontal > .swiper-pagination{bottom: .1rem;left: 0;width: 100%;}
 </style>
 <script>
 	$(document).ready(function(){
+=======
+	.swiper-container-horizontal > .swiper-pagination{bottom: -.05rem;left: 0;width: 100%;}
+</style>
+<script>
+	$(function(){
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		var swiperadtisement = new Swiper('.swiper-containeradvertisement', {
 		pagination: '.swiper-pagination2',
 		paginationClickable: true,
@@ -108,23 +121,128 @@ body {background:#eaeaea}
                             </a>
 						</li>
 						<li>
+                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/jiaodongtechan.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">地方特产</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap3">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/muyingyongpin.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">母婴用品</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/kejishuma.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">科技数码</span>
+                            </a>
+						</li>
+						<li style="margin-right:0">
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap5">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/jujiashenghuo.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">居家生活</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/xiuxianlingshi.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">休闲零食</span>
+                            </a>
+						</li>
+						<li>
+                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/yundonghuwai.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">运动户外</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap3">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/youxidongman.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">游戏动漫</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">领券中心</span>
+                            </a>
+						</li>
+						<li style="margin-right:0">
+                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap5">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">我要入驻</span>
+                            </a>
+						</li>
+					</ul>
+				</div>
+				<!--第二屏幕-->
+						<div class="menuWrap auto clearfix swiper-slide">
+					<ul class="clearfix">
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/xuexijiaoyu.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">学习教育</span>
+                            </a>
+						</li>
+						<li>
                              <a href="<?php echo base_url('page/detail?id=6') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/gaoduandingzhi@3x.png">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/xiuxianyule.png">
                                 </div>
                                 <!--文字-->
-                                <span class="text">高端定制</span>
+                                <span class="text">休闲娱乐</span>
                             </a>
 						</li>
 						<li>
                             <a href="<?php echo base_url('page/detail?id=3') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap3">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/xuexijiaoyu@3x.png">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/tesemeishi.png">
                                 </div>
                                 <!--文字-->
-                                <span class="text">学习教育</span>
+                                <span class="text">特色美食</span>
                             </a>
 						</li>
 						<li>
@@ -147,12 +265,61 @@ body {background:#eaeaea}
                                 <span class="text">时尚丽人</span>
                             </a>
 						</li>
-						
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/hunshasheying.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">婚纱摄影</span>
+                            </a>
+						</li>
+						<li>
+                             <a href="<?php echo base_url('page/detail?id=6') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/chongwufuwu.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">宠物服务</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=3') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap3">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/lvyouminsu.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">旅游民宿</span>
+                            </a>
+						</li>
+						<li>
+                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap4">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/qicheguanjia.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">汽车管家</span>
+                            </a>
+						</li>
+						<li style="margin-right:0">
+                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                                <!--图标-->
+                                <div class="iconWrap5">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/sirendingzhi.png">
+                                </div>
+                                <!--文字-->
+                                <span class="text">私人订制</span>
+                            </a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<!-- Add Pagination -->
-	      <!--<div class="swiper-pagination"></div>-->
+	      <div class="swiper-pagination"></div>
 			</div>
 			</div>
 				<!--广告图区域-->
@@ -1605,6 +1772,7 @@ body {background:#eaeaea}
 		</div>
 		</div>
 		<?php endif ?>
+<<<<<<< HEAD
 			<?php
 	// 检查当前设备信息
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -1612,6 +1780,15 @@ body {background:#eaeaea}
 	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
 	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
 	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+=======
+
+<?php
+    // 应用中不显示底部导航栏
+    if (
+        ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
+        || $this->user_agent['is_wechat']
+    ):
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -1648,11 +1825,29 @@ body {background:#eaeaea}
 				</a>
 			</div>
 		</div>
+<<<<<<< HEAD
 		</div>
 
 <?php endif ?>
 <script>
 $(function(){
+=======
+    </div>
+<?php endif ?>
+
+<script>
+$(function(){
+    // 若在微信中打开，初始化扫码、定位功能
+    if (user_agent.is_wechat)
+    {
+        $('#wechat-scan').click(function(){
+            wechat_scan()
+        })
+        $('#locate').click(function(){
+            wechat_locate()
+        })
+    }
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
 	var mySwiper_cube = new Swiper('.swiper-container_fruit', {
 		scrollbar: '.swiper-scrollbarcube',
@@ -1698,7 +1893,8 @@ $(function(){
 			card();
 		}
 	});
-	function storm(el,wrap,icon) {
+	function storm(el,wrap,icon)
+    {
 		indexNum = 1;
 		el.find("img").attr("src", "<?php echo CDN_URL ?>media/home/" + icon);
 		$(".refreshcontent").hide();
@@ -1725,7 +1921,8 @@ $(function(){
 		$('#newmorelist').remove();
 	}
 });
-$(document).ready(function() {
+
+$(function(){
 	$("#timer2").oaoTime();
 	var lazyLoadImg = new LazyLoadImg({
 		el: document.querySelector('#listMenu'),

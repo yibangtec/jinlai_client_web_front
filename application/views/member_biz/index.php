@@ -101,9 +101,65 @@
             			echo '会员享特权,多重优惠抢不停!';
             		} 
             	?>
+<<<<<<< HEAD
             </div>
         </div>
 	</a>
+    <?php endforeach ?>
+    	</div>
+    	<div class="swiper-slide">
+    		<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
+        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
+        	            <div class="memberlistpic" style="background-color:#0081c9">
+                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
+            </div>
+            <h1>游乐游儿童游泳</h1>
+            <span class="entermember">加入会员</span>
+            <div class="memberdescription">
+            	会员享特权,多重优惠抢不停!            </div>
+        </div>
+	</a>
+    	</div>
+    	<div class="swiper-slide">
+    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
+        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
+        	            <div class="memberlistpic" style="background-color:#bccdb6">
+                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
+            </div>
+            <h1>萃匠坚果</h1>
+            <span class="entermember">加入会员</span>
+            <div class="memberdescription">
+            	会员享特权,多重优惠抢不停!            </div>
+        </div>
+	</a>
+    	</div>
+    	<div class="swiper-slide">
+    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
+        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
+        	            <div class="memberlistpic" style="background-color:#bccdb6">
+                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
+            </div>
+            <h1>萃匠坚果</h1>
+            <span class="entermember">加入会员</span>
+            <div class="memberdescription">
+            	会员享特权,多重优惠抢不停!            </div>
+        </div>
+	</a>
+	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
+        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
+        	            <div class="memberlistpic" style="background-color:#0081c9">
+                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+            </div>
+            <h1>游乐游儿童游泳</h1>
+            <span class="entermember">加入会员</span>
+            <div class="memberdescription">
+            	会员享特权,多重优惠抢不停!            </div>
+        </div>
+	</a>
+<<<<<<< HEAD
+=======
     <?php endforeach ?>
     	</div>
     	<div class="swiper-slide">
@@ -155,6 +211,7 @@
             	会员享特权,多重优惠抢不停!            </div>
         </div>
 	</a>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
     	</div>
     				<div class="swiper-paginationcoupon"></div>
 				</div>
@@ -162,6 +219,7 @@
 		
 		</div>
    </div>
+<<<<<<< HEAD
 <?php
 	// 检查当前设备信息
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -169,6 +227,15 @@
 	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
 	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
 	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+=======
+
+<?php
+    // 应用中不显示底部导航栏
+    if (
+        ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
+        || $this->user_agent['is_wechat'] === TRUE
+    ):
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -210,7 +277,11 @@
 
 <?php endif ?>
 <script>
+<<<<<<< HEAD
 			$(document).ready(function(){
+=======
+			$(function(){
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 				 var mySwipersuper = new Swiper('.swiper-containercouponcenter', {
 	        scrollbar: '.swiper-scrollbar123',
 	        scrollbarHide: false,

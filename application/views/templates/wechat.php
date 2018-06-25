@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
     // 使修改的COOKIE即时生效
     function instant_cookie($var, $value = '', $time = 0, $path = '', $domain = '', $s = false)
     {
@@ -165,10 +166,32 @@
 
 <!-- 载入官方组件库 -->
 <script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+=======
+/**
+ * 微信相关功能
+ *
+ * @param $var
+ * @param string $value
+ * @param int $time
+ * @param string $path
+ * @param string $domain
+ * @param bool $s
+ */
+    // 获取access_token
+    $access_token = $this->wechat->access_token;
+    $wesign = $this->wechat->wesign;
+    //var_dump($access_token);
+    //var_dump($wesign);
+?>
+
+<!-- 载入官方组件库 -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
 <!-- 微信环境中的业务内容 -->
 <script>
     // 微信用户信息
+<<<<<<< HEAD
     var wx_userinfo;
     var wx_userinfo_subscribe = <?php echo empty(get_cookie('wechat_subscribe'))? 0: get_cookie('wechat_subscribe') ?>;
 
@@ -176,17 +199,71 @@
     {
         document.getElementById('follow-guide').style.display = 'none';
     }*/
+=======
+    var is_subscribe = '<?php echo $this->session->wechat_subscribe ?>';
+    console.log(is_subscribe);
+
+    // 未关注微信公众号时的逻辑
+    if (is_subscribe != 1)
+    {
+        console.log('未关注');
+        //document.getElementById('follow-guide').style.display = 'none';
+    }
+
+    // 全局声明微信组件功能
+    var wechat_scan, wechat_locate;
+    
+    // 微信扫描内容解析
+    function parse_scaned(content)
+    {
+        // 条码/二维码内容
+        var content;
+
+        // 需跳转到的页面内容
+        var url;
+
+        // 根据内容类型执行不同业务逻辑
+        if (content.indexOf('EAN_') === 0)
+        {
+            var code = content.split(',')[1]; // 获取条码
+            url = base_url + 'item?barcode=' + code; // 转到商品搜索页
+        }
+        else if (content.indexOf('http', 0) === 0)
+        {
+            url = content; // 转到所属页面
+        }
+        else
+        {
+            url = base_url + 'item?name=' + content; // 转到商品搜索页
+        }
+
+        // 页面跳转
+        location.href = url;
+    }
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
     wx.config({
         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: '<?php echo WECHAT_APP_ID ?>', // 必填，公众号的唯一标识
         timestamp: <?php echo $wesign['timestamp'] ?>, // 必填，生成签名的时间戳
         nonceStr: '<?php echo $wesign['noncestr'] ?>', // 必填，生成签名的随机串
+<<<<<<< HEAD
         signature: '<?php echo wechat_sign_generate($wesign) ?>',// 必填，签名，见附录1
         jsApiList: [
             'onMenuShareTimeline',
             'onMenuShareAppMessage',
             'hideMenuItems',
+=======
+        signature: '<?php echo $this->wechat->wechat_sign_generate($wesign) ?>',// 必填，签名，见附录1
+        jsApiList: [
+            'hideMenuItems',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'scanQRCode',
+            'getLocation',
+            'getNetworkType',
+            'openAddress', // 获取微信收货地址
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     });
 
@@ -237,21 +314,41 @@
         });
 
         // 调起扫一扫
+<<<<<<< HEAD
         var wechat_scan = function (){
+=======
+        wechat_scan = function (){
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
             wx.scanQRCode({
                 needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
                 scanType: ['qrCode','barCode'], // 可以指定扫二维码还是一维码，默认二者都有
                 success: function (res){
+<<<<<<< HEAD
                     var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
                     //TODO 若为条形码，输出条码；若为二维码，转到URL
                     alert(JSON.stringify(res));
+=======
+                    var result = res.resultStr; // 当needResult为1时，扫码返回的结果
+                    parse_scaned(result);
+                    
+                    //TODO 若为条形码，输出条码；若为二维码，转到URL
+                    //alert(JSON.stringify(res));
+                },
+                cancel:function(){
+                    alert('微信扫码调用失败');
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
                 }
             });
             return false;
         };
 
         // 获取地理位置及网络类型
+<<<<<<< HEAD
         var wechat_locate = function (){
+=======
+        wechat_locate = function (){
+            console.log('wechat_locate');
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
             wx.getLocation({
                 type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
                 success: function (res) {

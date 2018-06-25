@@ -15,7 +15,11 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
+<<<<<<< HEAD
 		<meta name=version content="revision20180326">
+=======
+		<meta name=version content="revision20180619">
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -28,14 +32,23 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
+<<<<<<< HEAD
         <?php if ($this->user_agent['is_wechat']): ?>
         <script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
         <?php endif ?>
         <script defer src="<?php echo CDN_URL ?>font-awesome/v5.0.8/fontawesome-all.min.js"></script>
+=======
+
+        <?php if ($this->user_agent['is_wechat']): ?>
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+        <?php endif ?>
+        <script defer src="<?php echo CDN_URL ?>font-awesome/v5.0.13/fontawesome-all.min.js"></script>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         <script defer src="<?php echo CDN_URL ?>jquery/jquery.lazyload.min.js"></script>
         <script defer src="/js/vote.js"></script>
 
 <?php
+<<<<<<< HEAD
     // 判断是否打开测试模式
     $test_mode = $this->input->get('test_mode');
 
@@ -205,6 +218,13 @@
 
         <script>
         <?php if ($test_mode != 'on'): ?>
+=======
+    if ($this->user_agent['is_wechat']):
+        require_once(VIEWS_PATH.'templates/wechat.php');
+?>
+        <script>
+        <?php if ($this->test_mode != 'on'): ?>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         // 百度统计
         var _hmt = _hmt || [];
         (function() {
@@ -214,6 +234,7 @@
             s.parentNode.insertBefore(hm, s);
         })();
         <?php endif ?>
+<<<<<<< HEAD
 
         $(function(){
             // 微信用户信息
@@ -283,6 +304,8 @@
                 });
             }); // end wx.ready
         });
+=======
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         </script>
     <?php endif ?>
 

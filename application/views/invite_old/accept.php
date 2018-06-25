@@ -1,4 +1,3 @@
-<<<<<<< HEAD
     <style>
         body{
             background: #eb4b4a;
@@ -46,14 +45,3 @@
             关注
         </a>
     </div>
-=======
-<?php
-/**
- * Created by PhpStorm.
- * User: kamaslau
- * Date: 2018-6-21
- * Time: 20:43
- */
-?>
-接受邀请
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425

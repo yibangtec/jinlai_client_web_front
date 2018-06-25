@@ -51,26 +51,32 @@ background:#f7f7f7;
   <aside>
     <div class="menu-left scrollbar-none bgfff" id="sidebar">
     	<ul>
-    	<?php foreach ($items as $item): ?>
-				<li><?php
-					if ($item['level'] == 1) {
-			   			 echo $item['name'];
-					}else{
-						break;
-					}?></li>
-			<?php endforeach ?>
+    	<?php
+        foreach ($items as $item):
+            if ($item['level'] == 1) echo '<li>'.$item['name'].'</li>';
+        endforeach;
+        ?>
        </ul>
     </div>
   </aside>
 </div>
+
 </div>
 <?php
+<<<<<<< HEAD
 	// 检查当前设备信息
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
 	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
 	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
 	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
+=======
+    // 应用中不显示底部导航栏
+    if (
+        ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
+        || $this->user_agent['is_wechat'] === TRUE
+    ):
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -108,32 +114,43 @@ background:#f7f7f7;
 				</a>
 			</div>
 		</div>
+<<<<<<< HEAD
 		</div>
 
 <?php endif ?>
 
 <script>
 	$(function(){
+=======
+    </div>
+<?php endif ?>
+
+<script>
+$(function(){
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	var num;
+
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
 		//生成section
-
 		for(var key in items){
-			if(items[key].level == 1){
-				if(items[key].url_image_index == null){
-					var goodsList = '<section class="menu-right padding-all j-content"><div class="category_pic" style="display:none;"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'" /></div><div class="category_wrap"></div></section>';
-                    $('.con').append(goodsList);
-
-				}else{
-					var goodsList = '<section class="menu-right padding-all j-content""><div class="category_pic"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'" /></div><div class="category_wrap"></div></section>';
+			if(items[key].level == 1)
+			{
+				if(items[key].url_image_index == null)
+				{
+					var goodsList = '<section class="menu-right padding-all j-content"><div class="category_pic" style="display:none;"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
                     $('.con').append(goodsList);
 
 				}
+				else
+                {
+					var goodsList = '<section class="menu-right padding-all j-content""><div class="category_pic"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
+                    $('.con').append(goodsList);
 
-
+				}
 			}
 		}
+
 	$('#sidebar li').click(function(){
 			$('section').eq(num - 1).scrollTop(0);
 			$('section').eq(num - 1).find('.category_wrap').html(' ');
@@ -143,14 +160,18 @@ background:#f7f7f7;
 			//获取点击li后的商品分类总id
 			var category_id = items[num - 1].category_id;
 		for(var key in items){
-			if(items[key].parent_id == category_id ){//2及的parentID = 1级的categoryID
+            // 2级的parentID = 1级的categoryID
+			if (items[key].parent_id == category_id)
+			{
 
                 var arr = []
                  arr.push(items[key]);
-                 for(var i=0;i<arr.length;i++){
-                 		console.log( arr[i].name)
+                 for (var i=0;i<arr.length;i++)
+                 {
+                 		//console.log( arr[i].name)
                  		var goodsListContent = '<h5><p><i>—  </i>'+items[key].name+'<i>  —</i></p></h5>';
 						var html = ''
+<<<<<<< HEAD
                  	for(var key in items){
                             if( arr[i].category_id == items[key].parent_id ){
 
@@ -159,12 +180,40 @@ background:#f7f7f7;
 
                     }
                     goodsListContent = goodsListContent + '<ul>'+html+'<ul>'
+=======
+                 	for (var key in items)
+                 	{
+                            if (arr[i].category_id == items[key].parent_id)
+                            {
+								 html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
+                            }
+                    }
+                    goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
                  }
 			}
 		}
 	});
+<<<<<<< HEAD
 			$('#sidebar li')[0].click();
 			$('.menu-left').find('li').last().remove();
 	})
+=======
+
+    $('#sidebar li')[0].click();
+    $('.menu-left').find('li').last().remove();
+
+
+    function getScrollTop(){
+            $('.menu-right').bind("scroll", function () {  
+                var sTop = $(this).scrollTop();  
+                var sTop = parseInt(sTop);   
+			HostApp.topScrollY(sTop + '');
+		
+            });  
+    }
+    getScrollTop();
+});
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 </script>

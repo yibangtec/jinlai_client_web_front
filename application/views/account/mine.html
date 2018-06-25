@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>智能登录</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<<<<<<< HEAD
     <script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
     <link rel="stylesheet" href="../css/fontStyle.css"/>
 	
@@ -51,6 +52,134 @@
                 <i class="icon-huiyuan2"></i>
                 <p>会员卡</p>
             </a>
+=======
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+
+    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/fontStyle.css"/>
+	
+    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/account.css"/>
+</head>
+<body style="background-color: #efefef; ">
+<div class="header">
+    <div class="header-top clearfix">
+        <div class="header-img"><img src="https://cdn-remote.517ybang.com/media/account/mine/logo.png" alt=""/></div>
+        <div class="header-name">
+            <div class="nick-name">小王</div>
+            <div class="member"></div>
+        </div>
+        <div class="header-news">
+            <!--图标-->
+            <i class="icon-chat">
+            </i>
+        </div>
+    </div>
+    <div class="header-bot">
+        <div class="bot-float">
+            <i class="icon-guanzhu"></i>
+            <p>关注店铺</p>
+        </div>
+        <div class="bot-float">
+            <i class="icon-shoucang2"></i>
+            <p>收藏宝贝</p>
+        </div>
+        <div class="bot-float">
+            <i class="icon-kanguode"></i>
+            <p>我看过的</p>
+        </div>
+        <div class="bot-float">
+            <i class="icon-huiyuan-2"></i>
+            <p>会员卡</p>
+        </div>
+    </div>
+</div>
+<div class="mine-order">
+    <div class="order-title">
+        <div class="title-left">我的订单</div>
+        <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
+    </div>
+    <div class="order-item clearfix">
+        <div class="item-list">
+            <i class="icon-daifukuan"></i>
+            <p>待付款</p>
+        </div>
+        <div class="item-list">
+            <i class="icon-daifahuo"></i>
+            <p>待发货</p>
+        </div>
+        <div class="item-list">
+            <i class="icon-daishouhuo"></i>
+            <p>待收货</p>
+        </div>
+        <div class="item-list">
+            <i class="icon-daipingjia"></i>
+            <p>待评价</p>
+        </div>
+        <div class="item-list">
+            <i class="icon-jintuikuan"></i>
+            <p>退款售后</p>
+        </div>
+    </div>
+</div>
+<div class="mine-order">
+    <div class="order-title">
+        <div class="title-left">团购订单</div>
+        <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
+    </div>
+    <div class="order-item clearfix">
+        <div class="item-team">
+            <i class="icon-daifukuan"></i>
+            <p>待付款</p>
+        </div>
+        <div class="item-team">
+            <i class="icon-daishiyong"></i>
+            <p>待使用</p>
+        </div>
+        <div class="item-team">
+            <i class="icon-daipingjia"></i>
+            <p>待评价</p>
+        </div>
+        <div class="item-team">
+            <i class="icon-jintuikuan"></i>
+            <p>退款售后</p>
+        </div>
+    </div>
+</div>
+<div class="mine-order">
+    <div class="order-title">
+        <div class="title-left">我的服务</div>
+    </div>
+    <div class="order-item clearfix">
+        <div class="item-service">
+            <i class="icon-yue2"></i>
+            <p>余额</p>
+        </div>
+        <div class="item-service">
+            <i class="icon-kabao2"></i>
+            <p>卡包</p>
+        </div>
+        <div class="item-service">
+            <i class="icon-jifen"></i>
+            <p>积分</p>
+>>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
         </div>
     </div>
     <div class="mine-order">
