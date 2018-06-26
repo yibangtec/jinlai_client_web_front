@@ -1,10 +1,5 @@
 <style>
-<<<<<<< HEAD
-			input[type="checkbox"]{-webkit-appearance:none;outline: none;border:none}
-input.check{
-=======
 /*input.check{
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png) no-repeat center left;  
 	 background-size: cover;
     position: absolute;
@@ -17,28 +12,13 @@ input.check{
  input.check:checked{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 	background-size:contain;
-<<<<<<< HEAD
-=======
 	margin-top: -.21rem;
     width: .42rem;
     height: .42rem;
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	}
 input.goodsCheck:checked{
 	background:url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 	background-size:contain
-<<<<<<< HEAD
-	}
-
-</style>	
-<?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
-=======
 	}*/
 .shop-info-text h4 {
 	width: 3.92rem;
@@ -58,7 +38,6 @@ input.goodsCheck:checked{
         ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
         || $this->user_agent['is_wechat'] === TRUE
     ):
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -96,171 +75,6 @@ input.goodsCheck:checked{
 				</a>
 			</div>
 		</div>
-<<<<<<< HEAD
-		</div>
-
-<?php endif ?>
-		<div class="item">
-				<div class="payment-bar">
-					<div class="all-checkbox fl"><input type="checkbox" class="check goods-check" id="AllCheck">
-						<span class="allchecktext">全选<span>
-					</div>
-					<div class="shop-total fl">
-						<strong>合计：<span>¥</span><i class="total" id="AllTotal">0.00</i></strong>
-						<p>不含运费</p>
-					</div>
-					<a href="#" class="settlement fr">结算</a>
-				</div>
-				
-				<div class="my-address-list wid710 auto border20 mt20 bgfff">
-					<div class="shopping">
-					<div class="shop-group-item">
-				    <div class="touch">
-				    <!--商家标题-->
-					    	<div class="buycarshoptitle">
-					    		<div class="shop-name clearfix">
-									<input type="checkbox" class="check goods-check shopCheck">
-									<h4>
-										<img src="<?php echo CDN_URL ?>media/cart/jinlaitit.png" />
-									</h4>
-									<h3 class="fl">进来自营店
-										<i class="icon-Arrow"></i>
-									</h3>
-								</div>
-					    	</div>
-					    <div class="itemlist">
-						    <div class="goodslist clearfix">
-							   <div class="shop-info clearfix">
-								<input type="checkbox" class="check goods-check goodsCheck">
-								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
-								<div class="shop-info-text fl">
-									<h4>云南芒果（约400/个）</h4>
-									<div class="shop-price">
-										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
-										<div class="shop-arithmetic">
-											<a href="javascript:;" class="minus fl">
-												<i class="icon-jian" style="font-size: .44rem;"></i>
-											</a>
-											<span class="num fl" >1</span>
-											<a href="javascript:;" class="plus active fl">
-												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
-						    </div>
-						    <a href="javascript:;" class="remove">删除</a>
-					    </div>
-					      <div class="itemlist">
-						    <div class="goodslist clearfix">
-							   <div class="shop-info clearfix">
-								<input type="checkbox" class="check goods-check goodsCheck">
-								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
-								<div class="shop-info-text fl">
-									<h4>云南芒果（约400/个）</h4>
-									<div class="shop-price">
-										<div class="shop-pices">￥<b class="price">599.8</b>/份</div>
-										<div class="shop-arithmetic">
-											<a href="javascript:;" class="minus fl">
-												<i class="icon-jian" style="font-size: .44rem;"></i>
-											</a>
-											<span class="num fl" >1</span>
-											<a href="javascript:;" class="plus active fl">
-												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
-						    </div>
-						    <a href="javascript:;" class="remove">删除</a>
-					    </div>
-				    </div>
-				    
-				  
-				   </div>
-				  
-				  </div>
-				</div>
-					<div class="my-address-list wid710 auto border20 mt20 bgfff" id="my-address-list">
-					<div class="shopping">
-					<div class="shop-group-item">
-				    <div class="touch">
-				    <!--商家标题-->
-					    	<div class="buycarshoptitle">
-					    		<div class="shop-name clearfix">
-									<input type="checkbox" class="check goods-check shopCheck">
-									<h4>
-										<img src="<?php echo CDN_URL ?>media/cart/jinlaitit.png" />
-									</h4>
-									<h3 class="fl">进来自营店
-										<i class="icon-Arrow"></i>
-									</h3>
-								</div>
-					    	</div>
-					    <div class="itemlist">
-						    <div class="goodslist clearfix">
-							   <div class="shop-info clearfix">
-								<input type="checkbox" class="check goods-check goodsCheck">
-								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
-								<div class="shop-info-text fl">
-									<h4>云南芒果（约400/个）</h4>
-									<div class="shop-price">
-										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
-										<div class="shop-arithmetic">
-											<a href="javascript:;" class="minus fl">
-												<i class="icon-jian" style="font-size: .44rem;"></i>
-											</a>
-											<span class="num fl" >1</span>
-											<a href="javascript:;" class="plus active fl">
-												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
-						    </div>
-						    <a href="javascript:;" class="remove">删除</a>
-					    </div>
-					      <div class="itemlist">
-						    <div class="goodslist clearfix">
-							   <div class="shop-info clearfix">
-								<input type="checkbox" class="check goods-check goodsCheck">
-								<div class="shop-info-img"><img src="<?php echo CDN_URL ?>media/home/jianhuo@3x.png" /></div>
-								<div class="shop-info-text fl">
-									<h4>云南芒果（约400/个）</h4>
-									<div class="shop-price">
-										<div class="shop-pices">￥<b class="price">5.8</b>/份</div>
-										<div class="shop-arithmetic">
-											<a href="javascript:;" class="minus fl">
-												<i class="icon-jian" style="font-size: .44rem;"></i>
-											</a>
-											<span class="num fl" >1</span>
-											<a href="javascript:;" class="plus active fl">
-												<i class="icon-add-add-red" style="font-size: .44rem;"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-				<div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div>
-						    </div>
-						    <a href="javascript:;" class="remove">删除</a>
-					    </div>
-				    </div>
-				   </div>
-				  </div>
-				</div>
-			</div>
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js" ></script>
-<script src="<?php echo CDN_URL ?>js/jqm.js"></script>
-=======
     </div>
 <?php endif ?>
 
@@ -281,7 +95,20 @@ input.goodsCheck:checked{
 <script>
 	$(function(){
 	    var params = common_params;
-
+	    var user_id = <?php echo $this->session->user_id ?>;
+	    var newShopInfo;
+	    //请求下购物车最新的商品信息,尤其是重复的商品数量
+	    $.ajax({
+	    	type:"post",
+	    	url:"https://api.517ybang.com/cart/sync_down",
+	    	dataType : 'json',
+	    	data :{app_type:'client',id:user_id},
+	    	async : false,
+	    	success : function(res){
+	    		newShopInfo = res.content.cart_string.split(',');
+	    	}
+	    });
+	 
 		$.ajax({
 		url: api_url + 'cart/index',
 		type: 'post',
@@ -303,7 +130,13 @@ input.goodsCheck:checked{
                 // 生成订单所含商品主图URL
                 var item_image_url = (order_item.item_image.indexOf('http') === -1)? media_url+'item/'+order_item.item_image: order_item.item_image;
 				var item_id = res.content.order_items[i].order_items[j].item_id;
-				var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >1</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
+				  for (var k = 0;k < newShopInfo.length;k++) {
+				   	//取出每一组数据
+				   	if(item_id == newShopInfo[k].split('|')[1]){
+				   		var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >'+newShopInfo[k].split('|')[3]+'</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
+				   	}
+				   		
+				   }
 				$('.touch').eq(i).append(itemList);
 				
 			}
@@ -424,4 +257,3 @@ input.goodsCheck:checked{
 	
 </script>
 
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
