@@ -1,4 +1,5 @@
-		<div class="bgfff">
+<!--
+<div class="bgfff">
 		<div class="couponcentertitle auto bgfff">
 			<div class="swiper-containercouponcenter">
 				<div class="swiper-wrapper">
@@ -25,6 +26,7 @@
 			</div>
 		</div>
 		</div>
+        -->
 		<div class="couponcentercontent auto mt20 clearfix">
 			<div class="swiper-containercouponcentertemplate">
 				<div class="swiper-wrapper">
@@ -760,10 +762,8 @@
 		
 		</div>
 	<script>
-<<<<<<< HEAD
-=======
 		var user_id = <?php echo $this->session->user_id ?>;
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
 		$(function() {
     $('.circle').each(function(index, el) {
         var num = $(this).find('span').text() * 3.6;
@@ -795,6 +795,7 @@
         	}
         };
     });
+
  var mySwipersuper = new Swiper('.swiper-containercouponcenter', {
 	        scrollbar: '.swiper-scrollbar123',
 	        scrollbarHide: false,
@@ -831,16 +832,14 @@
 	        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
 	        Y = date.getFullYear() + '.';
 	        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '.';
-	        D = date.getDate() + '';
+	        D = date.getDate()+1 < 10 ? '0'+(date.getDate()+1) : date.getDate()+1;
 	        h = date.getHours() + ':';
 	        m = date.getMinutes() + ':';
 	        s = date.getSeconds();
 	        return Y+M+D;
     }
 	 $.ajax({
-			url: "https://api.517ybang.com/coupon_template/index",
-			 type: "post",
-             dataType: 'json',
+			url: api_url + 'coupon_template/index',
              data:{app_type:'client'},
             success: function (res) {
             	 for (var i=0;i<res.content.length;i++) {
@@ -850,97 +849,58 @@
 	                	var max_amount_user = res.content[i].max_amount_user;
 	                	var start_time = timestampToTime(res.content[i].time_start);
 	                	var min_subtotal = res.content[i].min_subtotal;
-	                	if(start_time == '1970.01.1'){
+	                	if(start_time == '1970.01.02'){
 	                		start_time = '自即日起';
 	                	}
 	                	var end_time = timestampToTime(res.content[i].time_end);
-	                	var rate = (100 - res.content[i].rate*100)/10 + '折';
+	                	var rate = (1 - res.content[i].rate)*10;
 	                	var min_subtotal = res.content[i].min_subtotal;
 	                	var name = res.content[i].brief_name + ' ' + res.content[i].name;
-<<<<<<< HEAD
-                	if(res.content[i].amount == 0){
-                		if(max_amount == 0 && max_amount_user == 0){
-						var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem;">不限</i><div class="pdt10"></div></div></div><a>立即领取</a></div></li>';						
-						$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount == 0 && max_amount_user != 0){
-                			var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a>立即领取</a></div></li>';
-                			$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount != 0 && max_amount_user == 0){
-                			var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a>立即领取</a></div></li>';
-                			$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount != 0 && max_amount_user != 0){
-                			var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a>立即领取</a></div></li>';
-=======
 	                	var couponid = res.content[i].template_id;
                 	if(res.content[i].amount == 0){
                 		if(max_amount == 0 && max_amount_user == 0){
-						var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem;">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';						
+						var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span><i>'+rate+'</i>折<b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem;">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
 						$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount == 0 && max_amount_user != 0){
-                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
+                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span><i>'+rate+'</i>折<b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount != 0 && max_amount_user == 0){
-                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
+                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span><i>'+rate+'</i>折<b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount != 0 && max_amount_user != 0){
-                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+                			var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span><i>'+rate+'</i>折<b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
 						
                 	}
                 	else{
                 		 if(max_amount == 0 && max_amount_user == 0){
-<<<<<<< HEAD
- 							var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem">不限</i><div class="pdt10"></div></div></div><a>立即领取</a></div></li>';
+ 							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
  							$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount == 0 && max_amount_user != 0){
-							var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a>立即领取</a></div></li>';
+							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount != 0 && max_amount_user == 0){
-							var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a>立即领取</a></div></li>';
+							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
                 		if(max_amount != 0 && max_amount_user != 0){
-							var canuse = '<li><a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a>立即领取</a></div></li>';
-=======
- 							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
- 							$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount == 0 && max_amount_user != 0){
-							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                			$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount != 0 && max_amount_user == 0){
-							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                			$('#canusercoupon').append(canuse);
-                		}
-                		if(max_amount != 0 && max_amount_user != 0){
-							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+							var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                 			$('#canusercoupon').append(canuse);
                 		}
                 	}
 					          		
                 }
-<<<<<<< HEAD
-            }
-          })
-=======
+
                 $('.couponcentercontent li').on('click', 'a.getTemplate', function(){
                 	var template_id = $(this).parents().siblings('a').attr('data-coupon-id');
                 	    $.ajax({
-						url: "https://api.517ybang.com/coupon/create",
-						 type: "post",
-			             dataType: 'json',
+						url: api_url + 'coupon/create',
 			             data:{app_type:'client',user_id:user_id,template_id:template_id},
 			            success: function (res) {
 			            	alert(res.content.message);
@@ -950,6 +910,4 @@
 			})
             }
          });
-
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 	</script>
