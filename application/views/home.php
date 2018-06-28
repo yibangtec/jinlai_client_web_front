@@ -90,6 +90,144 @@ body {background:#eaeaea;}
 		
 <?php endif ?>
  <div style="font-size: .12rem;" id="banben"></div>
+
+<?php
+    $menu_items_top = array(
+        // 第一行
+        array(
+            'name' => '生鲜超市', // 导航项名称
+            'url' => base_url('page/detail?id=2'), // 目标页面URL
+            'icon_url' => CDN_URL.'media/home/shengxianchaoshi@3x.png', // 图标URL
+        ),
+        array(
+            'name' => '地方特产',
+            'url' => base_url('page/detail?id=9'),
+            'icon_url' => CDN_URL.'media/home/jiaodongtechan@3x.png',
+        ),
+        array(
+            'name' => '母婴用品',
+            'url' => base_url('page/detail?id=10'),
+            'icon_url' => CDN_URL.'media/home/muyingyongpin@3x.png',
+        ),
+        array(
+            'name' => '科技数码',
+            'url' => base_url('page/detail?id=11'),
+            'icon_url' => CDN_URL.'media/home/kejishuma@3x.png',
+        ),
+        array(
+            'name' => '居家生活',
+            'url' => base_url('page/detail?id=12'),
+            'icon_url' => CDN_URL.'media/home/jujiashenghuo@3x.png',
+        ),
+
+        // 第二行
+        array(
+            'name' => '休闲零食',
+            'url' => base_url('page/detail?id=13'),
+            'icon_url' => CDN_URL.'media/home/xiuxianlingshi@3x.png',
+        ),
+        array(
+            'name' => '运动户外',
+            'url' => base_url('page/detail?id=14'),
+            'icon_url' => CDN_URL.'media/home/yundonghuwai@3x.png',
+        ),
+        array(
+            'name' => '游戏动漫',
+            'url' => base_url('page/detail?id=15'),
+            'icon_url' => CDN_URL.'media/home/youxidongman@3x.png',
+        ),
+        array(
+            'name' => '领券中心',
+            'url' => base_url('coupon'),
+            'icon_url' => CDN_URL.'media/home/lingquanzhongxin@3x.png',
+        ),
+        array(
+            'name' => '我要入驻',
+            'url' => base_url('article/biz-cooperation'),
+            'icon_url' => CDN_URL.'media/home/woyaoruzhu@3x.png',
+        ),
+
+        // 第三行
+        array(
+            'name' => '学习教育',
+            'url' => base_url('page/detail?id=4'),
+            'icon_url' => CDN_URL.'media/home/xuexijiaoyu@3x.png',
+        ),
+        array(
+            'name' => '休闲娱乐',
+            'url' => base_url('page/detail?id=5'),
+            'icon_url' => CDN_URL.'media/home/xiuxianyule@3x.png',
+        ),
+        array(
+            'name' => '特色美食',
+            'url' => base_url('page/detail?id=3'),
+            'icon_url' => CDN_URL.'media/home/tesemeishi@3x.png',
+        ),
+        array(
+            'name' => '运动健康',
+            'url' => base_url('page/detail?id=4'),
+            'icon_url' => CDN_URL.'media/home/yundognjiankang@3x.png',
+        ),
+        array(
+            'name' => '时尚丽人',
+            'url' => base_url('page/detail?id=5'),
+            'icon_url' => CDN_URL.'media/home/shishangliren@3x.png',
+        ),
+
+        // 第四行
+        array(
+            'name' => '婚纱摄影',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/hunshasheying@3x.png',
+        ),
+        array(
+            'name' => '宠物服务',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/chongwufuwu@3x.png',
+        ),
+        array(
+            'name' => '旅游民宿',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/lvyouminsu@3x.png',
+        ),
+        array(
+            'name' => '汽车管家',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/qicheguanjia@3x.png',
+        ),
+        array(
+            'name' => '私人订制',
+            'url' => base_url('page/detail?id=6'),
+            'icon_url' => CDN_URL.'media/home/sirendingzhi@3x.png',
+        ),
+    );
+?>
+<script>
+    $(function(){
+        // 页面顶部导航栏
+        var menu_items_top = <?php echo json_encode($menu_items_top) ?>;
+        var menu_items_top_dom = ;
+        // console.log(menu_items_top);
+        $.each(
+            menu_items_top,
+            function(index, item){
+                var item_dom = '<li>' +
+                    '   <a href="'+ item.url +'" target=_self>' +
+                    '       <div class=iconWrap>' +
+                    '           <img data-src="'+ item.icon_url +'">' +
+                    '       </div>' +
+                    '       <span class=text>'+ item.name +'</span>' +
+                        '</a>' +
+                    '</li>' + "\n\n";
+                menu_items_top_dom += item_dom;
+            }
+        );
+        console.log(menu_items_top_dom);
+
+        // TODO 动态赋值首页订
+        //$('[data-name=menu_items_top]').append(menu_items_top_dom);
+    });
+</script>
 		<div class="tabcontent" id="listMenu">
 			<div class="item" style="display: block;">
 				<!--菜单区域开始-->
@@ -97,7 +235,7 @@ body {background:#eaeaea;}
 				<div class="swiper-container" style="border-radius: 0;border-bottom-left-radius: .2rem;border-bottom-right-radius: .2rem;">
 				<div class="swiper-wrapper">
 					<div class="menuWrap auto clearfix swiper-slide">
-					<ul class="clearfix">
+					<ul data-name=menu_items_top class="clearfix">
 						<li>
                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
                                 <!--图标-->
@@ -310,6 +448,7 @@ body {background:#eaeaea;}
 	      <div class="swiper-pagination"></div>
 			</div>
 			</div>
+
 				<!--广告图区域-->
 				<div class="menuOuter">
 			<div class="swiper-containeradvertisement">
@@ -364,7 +503,8 @@ body {background:#eaeaea;}
 						<!-- Add Pagination -->
 	      			<div class="swiper-pagination2"></div>
 				</div>
-				<!--公告文字区域开始-->
+
+				<!--"进来说"区域开始-->
 				<div class="announcement auto">
 					<!--左边图片区域-->
 					<a href="<?php echo base_url() ?>/application/views/article/article_broadcast.html">

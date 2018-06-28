@@ -113,7 +113,7 @@
                 left: 0;
                 width: 100%;
             }
-            #nav-header{
+            #nav-header {
                 display: none;
             }
             .ui-loader{
