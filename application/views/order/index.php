@@ -89,10 +89,12 @@
                 statusHtml = '';
             }
             else if(status == '待收货'){
-                statusHtml = '<span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
+                statusHtml = '<span>再来一单</span><span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
             }
             else if(status == '待付款'){
                 statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
+            }else if(status == "待评价"){
+                statusHtml = '<span>写评价</span><span class="current-red">再来一单</span>';
             }else if(status == ""){
                 statusHtml = '<span class="del-btn">删除</span>';
             }

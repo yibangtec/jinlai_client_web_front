@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>店内商品列表页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="../js/rem.js"></script>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/fontStyle.css"/>
+    <link rel="stylesheet" href="../css/indexBiz.css"/>
+    <style>
+        body{
+            background-color: #f0f0f0;position: relative;
+        }
+        a{
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+<div id='content' class='content'>
+    <div class="headerSearch">
+        <i class="icon-Back"></i>
+        <div class="searchInput">
+            <i class="icon-srech_hui"></i>
+            <input class="searchItem" type="text" placeholder="请输入"/>
+        </div>
+        <a class="searchCar" href=""><i class="icon-gouwuche-2"></i></a>
+        <div style="position: relative">
+            <ul class="menuSearch">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="menuSearchList menuListActive">
+                <li>
+                    <a href="">
+                        <i class="icon-shouye_xiala"></i><span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon-wode-2"></i><span>我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="navigationTab">
+        <div class="navigationCategory">
+            <ul>
+                <li class="tabActive">综合</li>
+                <li>销量</li>
+                <li>新品</li>
+                <li class="NewPrice">新品价格<i class="icon-xiajiantou shang-sanjiao"></i><i class="icon-xiajiantou xia-sanjiao"></i></li>
+            </ul>
+        </div>
+        <div class="filter">
+            <i class="icon-shaixuan"></i>
+        </div>
+    </div>
+
+    <div class="itemContent">
+       <ul class="clearfix">
+           <li class="itemList">
+               <a href="">
+                   <img class="itemListImg" src="" alt=""/>
+                   <h2 class="itemSlogan">你好，很好，非常好，不错</h2>
+                   <p class="itemPrice">¥69.80</p>
+               </a>
+               <div class="carItem">
+                   <i class="icon-gouwuche-2"></i>
+               </div>
+
+           </li>
+           <li class="itemList">
+               <a href="">
+                   <img class="itemListImg" src="" alt=""/>
+                   <h2 class="itemSlogan">你好，很好，非常好，不错</h2>
+                   <p class="itemPrice">¥69.80</p>
+               </a>
+               <div class="carItem">
+                   <i class="icon-gouwuche-2"></i>
+               </div>
+
+           </li>
+       </ul>
+    </div>
+    <div class="bottomNav">
+        <a class="service">
+            <i class="icon-kefu_icon"></i>
+            <p>客服</p>
+        </a>
+        <div class="collection">
+            <i class="icon-guanzhu_bk"></i>
+            <p>已关注</p>
+        </div>
+        <a class="babyCategory">
+            宝贝分类
+        </a>
+
+    </div>
+</div>
+<script>
+    $(function(){
+
+    })
+</script>
+</body>
+</html>

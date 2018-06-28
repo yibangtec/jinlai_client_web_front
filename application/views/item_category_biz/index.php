@@ -119,7 +119,7 @@
 }
 </style>
 	<div class="box">
-        <a class="negotiate" style="margin: 0.1rem 0;">
+        <a href="<?php echo base_url('item/index?biz_id='.$biz_id) ?>" class="negotiate" style="margin: 0.1rem 0;">
             <span>全部宝贝</span><i class="icon-Arrow"></i>
         </a>
         <div class="subarea">
@@ -134,7 +134,7 @@
 
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items) ?>;
-	//console.log(items);
+	console.log(items);
 		//生成section
 		var arr = [];
 		for(var key in items){
