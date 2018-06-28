@@ -53,14 +53,11 @@
 		<dd>￥ <?php echo $item['min_subtotal'] ?></dd>
 		<dt>有效期</dt>
 		<dd><?php echo date('Y-m-d H:i:s', $item['time_start']) ?> - <?php echo date('Y-m-d H:i:s', $item['time_end']) ?></dd>
-
 		<dt>失效时间</dt>
 		<dd><?php echo $item['time_expire'] ?></dd>
 		<dt>所属订单ID</dt>
 		<dd><?php echo $item['order_id'] ?></dd>
 		<dt>使用时间</dt>
 		<dd><?php echo $item['time_used'] ?></dd>
-		<dt>状态</dt>
-		<dd><?php echo $item['status'] ?></dd>
 	</dl>
 </div>

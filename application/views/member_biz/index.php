@@ -31,34 +31,34 @@
 		<div class="bgfff memberclass">
 		<div class="couponcentertitle auto bgfff">
 			<div class="swiper-containercouponcenter">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide couponcentercur">
-						<a class="couponcenter">全部</a>
-					</div>
-					<div class="swiper-slide">
-						<a>4S店</a>
-					</div>
-					<div class="swiper-slide">
-						<a>酒店</a>
-					</div>
-					<div class="swiper-slide">
-						<a>美容</a>
-					</div>
-					<div class="swiper-slide">
-						<a>培训</a>
-					</div>
-					<div class="swiper-slide">
-						<a>美食美客</a>
-					</div>
-					<div class="swiper-slide">
-						<a>足疗店</a>
-					</div>
-					<div class="swiper-slide">
-						<a>艾灸馆</a>
-					</div>
-					<div class="swiper-scrollbar123"></div>
+				<div class="swiper-wrapper" id="memberTitle">
+					 <div class="swiper-slide couponcentercur">
+                        <a class="couponcenter">全部</a>
+                    </div>
+                    <!--<div class="swiper-slide">
+                        <a>4S店</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>酒店</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>美容</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>培训</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>美食美客</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>足疗店</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>艾灸馆</a>
+                    </div>-->
+                    <div class="swiper-scrollbar123"></div>
+                </div>
 				</div>
-			</div>
 		</div>
 		</div>
 	<div class="member_wraplist">
@@ -101,7 +101,6 @@
             			echo '会员享特权,多重优惠抢不停!';
             		} 
             	?>
-<<<<<<< HEAD
             </div>
         </div>
 	</a>
@@ -149,8 +148,6 @@
         <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
         	            <div class="memberlistpic" style="background-color:#0081c9">
                 <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
-=======
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
             </div>
             <h1>游乐游儿童游泳</h1>
             <span class="entermember">加入会员</span>
@@ -158,60 +155,6 @@
             	会员享特权,多重优惠抢不停!            </div>
         </div>
 	</a>
-<<<<<<< HEAD
-=======
-    <?php endforeach ?>
-    	</div>
-    	<div class="swiper-slide">
-    		<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#0081c9">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
-            </div>
-            <h1>游乐游儿童游泳</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-    	</div>
-    	<div class="swiper-slide">
-    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#bccdb6">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
-            </div>
-            <h1>萃匠坚果</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-    	</div>
-    	<div class="swiper-slide">
-    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#bccdb6">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
-            </div>
-            <h1>萃匠坚果</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#0081c9">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
-            </div>
-            <h1>游乐游儿童游泳</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
     	</div>
     				<div class="swiper-paginationcoupon"></div>
 				</div>
@@ -219,15 +162,6 @@
 		
 		</div>
    </div>
-<<<<<<< HEAD
-<?php
-	// 检查当前设备信息
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	$is_wechat = strpos($user_agent, 'MicroMessenger')? TRUE: FALSE;
-	$is_ios = ($this->input->get('device_platform') === 'ios' || strpos($user_agent, 'iPhone') || strpos($user_agent, 'iPad'))? TRUE: FALSE;
-	$is_android = strpos($user_agent, 'Android')? TRUE: FALSE;
-	if (($is_ios === FALSE && $is_android === FALSE) || $is_wechat === TRUE):
-=======
 
 <?php
     // 应用中不显示底部导航栏
@@ -235,7 +169,6 @@
         ($this->user_agent['is_ios'] === FALSE && $this->user_agent['is_android'] === FALSE)
         || $this->user_agent['is_wechat'] === TRUE
     ):
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 ?>
 	<!--底部tab切换区域-->
 	<div class="tabWrap fiex">
@@ -277,33 +210,44 @@
 
 <?php endif ?>
 <script>
-<<<<<<< HEAD
-			$(document).ready(function(){
-=======
 			$(function(){
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
-				 var mySwipersuper = new Swiper('.swiper-containercouponcenter', {
-	        scrollbar: '.swiper-scrollbar123',
-	        scrollbarHide: false,
-	        slidesPerView: 'auto',
-	        centeredSlides: false,
-	        grabCursor: true,
-	        spaceBetween : 0,
-	        observer:true,
-	        observeParents:true
-	    });
-	    var swiperIndex = new Swiper('.swiper-containercouponcentertemplate', {
-            pagination: '.swiper-paginationcoupon',
-            paginationClickable: true,
-//          autoplay: 2000,
-//          loop:true
-			 onSlideChangeEnd: function (swiper) {
-			                var j=swiperIndex.activeIndex;
-			                $(".swiper-containercouponcenter a").removeClass("couponcenter");
-							$(".swiper-containercouponcenter a").eq(j).addClass('couponcenter');
-			            }
-			        });
-			 $(".swiper-containercouponcenter a").on('click',function(){
+				
+//					//会员卡顶部商家分类
+			$.ajax({
+				type:"post",
+				url:"https://api.517ybang.com/item_category/index",
+				data : {app_type:'client'},
+				dataType : 'json',
+				success:function(res){
+					for (var i = 0;i < res.content.length;i++) {
+						if(res.content[i].level == 1){
+							console.log(res.content[i].name);
+						var memberTitleList = '<div class="swiper-slide"><a>'+res.content[i].name+'</a></div>';
+						$('#memberTitle').append(memberTitleList);
+						}
+					}
+					var mySwipersuper = new Swiper('.swiper-containercouponcenter', {
+				        scrollbar: '.swiper-scrollbar123',
+				        scrollbarHide: false,
+				        slidesPerView: 'auto',
+				        centeredSlides: false,
+				        grabCursor: true,
+				        spaceBetween : 0,
+				        observer:true,
+				        observeParents:true
+				    });
+				    var swiperIndex = new Swiper('.swiper-containercouponcentertemplate', {
+			            pagination: '.swiper-paginationcoupon',
+			            paginationClickable: true,
+			//          autoplay: 2000,
+			//          loop:true
+						 onSlideChangeEnd: function (swiper) {
+						                var j=swiperIndex.activeIndex;
+						                $(".swiper-containercouponcenter a").removeClass("couponcenter");
+										$(".swiper-containercouponcenter a").eq(j).addClass('couponcenter');
+						            }
+					});
+					 $(".swiper-containercouponcenter a").on('click',function(){
 						var index = $(this).parents().index();
 						console.log(index);
 						$(".swiper-containercouponcenter a").removeClass("couponcenter");
@@ -364,6 +308,19 @@
 					alert('查询会员卡信息~');
 				}
 			})
+			
+			//如果不存在会员卡头像,那么显示默认头像
+			$('.memberlistpic').find('img').each(function(i){
+				if($(this).attr('src') == 'https://medias.517ybang.com/biz/'){
+					$(this).attr('src','https://cdn-remote.517ybang.com/media/home/default.png');
+				}
 			});
+					
+				}
+			});
+		
+			
+		});
+		
 			
 </script>

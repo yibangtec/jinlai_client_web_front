@@ -1,17 +1,18 @@
 <script src="<?php echo CDN_URL ?>js/rem.js"></script>
-<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
-<link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css"/>
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css">
+
 <div class="box">
     <div class="error-tips">
         <p class="tips-text"></p>
         <i class="icon-failure"></i>
     </div>
     <div style="height: 5rem; padding-top: 1.4rem;">
-        <form action="">
+        <form method=post>
             <div class="input-box clearfix">
                 <div class="ver-box" >
                     <div class='input-item' style="height: 0.8rem;margin:0 0 0.3rem 0">
-                        <label class="label" for="password1"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""></label>
+                        <label class="label" for="password"><img class="tel-icon" src="<?php echo CDN_URL ?>media/account/login/mima@3x.png" alt=""></label>
                         <div class="tel-input">
                             <input id="password1" name=password class="input" type=password placeholder="请设置密码" required>
                             <img class="no-icon pass1" src="<?php echo CDN_URL ?>media/account/login/no@3x.png" alt="">
@@ -29,9 +30,7 @@
 
                     </div>
                 </div>
-
             </div>
-
 
             <button id="submit-set" class="next">
                 <img class="next-btn" src="<?php echo CDN_URL ?>media/account/login/wancheng@3x.png" alt="">
@@ -39,8 +38,6 @@
         </form>
 
     </div>
-
-
 </div>
 
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
@@ -62,10 +59,10 @@
                 $('.error-tips').show();
                 actionDo();
                 return false;
-            }else{
-
             }
-        }else{
+        }
+        else
+        {
             // 若不正确，清空并聚焦到密码字段
             $('.tips-text').html('密码长度应在6-20位之间');
                             $('#password1').val('');
@@ -74,8 +71,8 @@
                             actionDo();
             return false;
         }
-
     });
+
     var ProBox = $(".box");
                 // 构建一个要执行的函数
                 function Hide(){

@@ -1,5 +1,4 @@
 # IDE configs IDEA
+*.DS_Store
 
 .idea/
-
-application/views/.DS_Store

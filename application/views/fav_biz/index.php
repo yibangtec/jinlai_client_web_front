@@ -93,6 +93,7 @@
 		overflow: hidden;
 		padding-left: .2rem;
 		float: left;
+		padding-bottom: .01rem;
 	}
 	.digits{
 		    font-size: .26rem;
@@ -227,8 +228,6 @@
 <div class="currenttime wid710 auto">最新</div>
 <?php endif ?>
 <div id=content class=container>
-	
-
 	<?php if ( empty($items) ): ?>
 		<blockquote>
 			<img src="<?php echo CDN_URL ?>media/fav_biz/shoucang-kong@3x.jpg" alt="" class="sc" />
@@ -237,13 +236,9 @@
 		</blockquote>
 
 	<?php else: ?>
-		<ul id=item-list>
+		<ul id=item-list class=row>
 
 			<?php foreach ($items as $item): ?>
-<<<<<<< HEAD
-			<li class="item col-xs-6 col-sm-4 col-md-3" data-item-id="<?php echo $item[$this->id_name] ?>">
-
-=======
 			<div class="radius-wrapp">
 			<li class="item_list wid710 auto border20" data-item-id="<?php echo $item[$this->id_name] ?>">
 				<?php if ( empty(!$item['recent_items']) ): ?>
@@ -254,7 +249,6 @@
 				</b>
 				<?php endif ?>
 				<input type="checkbox" class="check">
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 				<figure class="image-main col-xs-12 col-sm-6 col-md-3">
 					<a title="<?php echo $item['name'] ?>" href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>">
 						<img title="<?php echo $item['name'] ?>" src="<?php echo $item['url_logo'] ?>">
@@ -304,11 +298,6 @@
 		</ul>
 	<?php endif ?>
 </div>
-<<<<<<< HEAD
-
-<script>
-    var items = <?php echo json_encode($items) ?>
-=======
 <script>
 	$(document).ready(function(){
 		
@@ -384,5 +373,4 @@
     });
     $('.item_list b').click();
 	});
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 </script>

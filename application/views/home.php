@@ -179,7 +179,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                            <a href="<?php echo base_url('coupon') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/lingquanzhongxin.png">
@@ -189,7 +189,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li style="margin-right:0">
-                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                            <a href="<?php echo base_url('article/biz-cooperation') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap5">
                                     <img data-src="<?php echo CDN_URL ?>media/home/woyaoruzhu.png">
