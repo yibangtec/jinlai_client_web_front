@@ -119,6 +119,7 @@ background:#f7f7f7;
 
     </div>
 <?php endif ?>
+<?php endif ?>
 
 <script>
 $(function(){
@@ -126,23 +127,23 @@ $(function(){
 	var num;
 
 	// <?php echo $this->class_name_cn ?>数据
-	var items = <?php echo json_encode($items) ?>;
-	console.log(items);
-		//生成section
-		console.log(items);
+	var items = <?php echo json_encode($items); ?>;
 
+		//生成section
+
+		console.log(items);
 		for(var key in items){
 			if(items[key].level == 1)
 			{
 				if(items[key].url_image_index == null)
 				{
-					var goodsList = '<section class="menu-right padding-all j-content"><div class="category_pic" style="display:none;"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
+					var goodsList = '<section class="menu-right padding-all j-content"><div class="category_pic" style="display:none;"><img src="<?php echo MEDIA_URL; ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
                     $('.con').append(goodsList);
 
 				}
 				else
                 {
-					var goodsList = '<section class="menu-right padding-all j-content""><div class="category_pic"><img src="<?php echo MEDIA_URL ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
+					var goodsList = '<section class="menu-right padding-all j-content""><div class="category_pic"><img src="<?php echo MEDIA_URL; ?>item_category/'+items[key].url_image_index+'"></div><div class="category_wrap"></div></section>';
                     $('.con').append(goodsList);
 
 				}
@@ -164,6 +165,7 @@ $(function(){
 
                 var arr = []
                  arr.push(items[key]);
+                 console.log(items[key]);
                  for (var i=0;i<arr.length;i++)
                  {
                  		//console.log( arr[i].name)
@@ -173,14 +175,17 @@ $(function(){
 						
                  	for (var key in items)
                  	{
+                 			console.log(arr[i].category_id);
+							//console.log(items[key].parent_id);
                             if (arr[i].category_id == items[key].parent_id)
                             {
-								 html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
+                            	console.log(items[key].parent_id);
+								html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
                             }
                     }
                     goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
 
-					
+					//console.log(goodsListContent);
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
                  }
 			}

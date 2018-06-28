@@ -166,8 +166,7 @@
 </style>
 
 
-<<<<<<< HEAD
-=======
+
 <base href="<?php echo $this->media_root ?>">
 	<div class="deleteCount">
 		<span class="fl deleteItem">
@@ -194,7 +193,6 @@
 <?php if ( !empty($items) ): ?>
 <div class="currenttime wid710 auto">最新</div>
 <?php endif ?>
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 <div id=content class=container>
 	
 	
@@ -211,18 +209,12 @@
 	<div class="favtabcontent"  style="display: block;">
 	<ul id=item-list class=row>
 		<?php foreach ($items as $item): ?>
-<<<<<<< HEAD
-		<li class="item col-xs-6 col-sm-4 col-md-3" data-item-id="<?php echo $item[$this->id_name] ?>">
 
-			<a title="<?php echo $item['name'] ?>" href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
-				<figure class=image-main class="col-xs-12 col-sm-6 col-md-4">
-=======
 		<div class="radius-wrapp">
 		<li class="item_list wid710 auto border20" data-item-id="<?php echo $item[$this->id_name] ?>">
 			<input type="checkbox" class="check">
 			<a title="<?php echo $item['name'] ?>" data-ids="<?php echo $item[$this->id_name] ?>" href="<?php echo base_url('item/detail?id='.$item['item_id']) ?>">
 				<figure class=image-main class="">
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 					<img title="<?php echo $item['name'] ?>" src="<?php echo $item['url_image_main'] ?>">
 				</figure>
 
@@ -263,14 +255,6 @@
 
 	<?php endif ?>
 </div>
-
-<<<<<<< HEAD
-<script>
-    var items = <?php echo json_encode($items) ?>
-</script>
-=======
-
-
 <script>
 	$(document).ready(function(){
 	var user_id = <?php echo $this->session->user_id ?>;	
@@ -360,4 +344,4 @@ $(".item_list").on("swipeleft",
   
 	});
 </script>
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
+
