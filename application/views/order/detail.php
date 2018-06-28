@@ -155,7 +155,7 @@
 
     <!--待收货-->
     <div class="detail-operation status5" data-action-group="待收货">
-        <a>延长收货</a>
+        <a href="#">再来一单</a>
         <a>查看物流</a>
         <a data-action=refund href="#">退款/售后</a>
         <a style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=confirm href="#">确认收货</a>
@@ -166,6 +166,7 @@
     </div>
     <!--待评价-->
     <div class="detail-operation status1" data-action-group="待评价">
+        <a href="#">再来一单</a>
         <a data-action=delete href="#">删除</a>
         <a data-action=refund href="#">退款/售后</a>
         <a style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment href="#">待评价</a>

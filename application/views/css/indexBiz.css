@@ -1,0 +1,261 @@
+*:before, *:after {box-sizing: border-box; }
+*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+em, strong { font-style: normal;}
+ul, ol, li {list-style: none;}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+input{outline:none;}
+button{border: none; outline: none;}
+html{ margin: 0 auto; height: 100%}
+body {width: 100%;background-color: #fff; height: 100%}
+a {text-decoration: none;}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.content{
+    width: 100%;
+}
+.headerSearch{
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    width: 100%;
+    height: 0.9rem;
+    background-color: #fff;
+    display: flex;
+    font-size: 0.3rem;
+    border-bottom: 0.01rem solid #e1e1e1;
+}
+.icon-Back{
+    font-size: 0.38rem;
+    line-height: 0.9rem;
+    padding: 0 0.2rem;
+}
+.searchInput{
+    flex: 1;
+    position: relative;
+}
+.searchCar{
+    height: 0.9rem;
+    width: 0.8rem;
+
+}
+.searchCar .icon-gouwuche-2{
+    font-size: 0.38rem;
+    line-height: 0.9rem;
+    padding: 0 0.2rem;
+    color: #9fa0a0;
+}
+
+.menuSearch{
+    width: 0.8rem;
+    height: 0.9rem;
+    margin-right: 0.4rem;
+    margin-left: 0.1rem;
+}
+.menuSearch li{
+    width: 0.14rem;
+    height: 0.14rem;
+    margin-left: 0.1rem;margin-top: 0.4rem;
+    float: left;
+    background-color: #000;border-radius: 0.06rem;overflow: hidden;
+}
+.icon-srech_hui{
+    font-size: 0.38rem;
+    position: absolute;
+    top: 0.25rem;left: 0.15rem;
+    color: #9FA0A0;
+}
+.searchItem{
+    width: 100%;
+    height: 0.66rem;
+    border-radius: 0.33rem;
+    background-color: #f0f0f0;font-size: 0.3rem;
+    color: #9FA0A0;
+    margin-top: 0.12rem;
+    text-indent: 0.6rem;
+}
+.icon-shouye_xiala{
+    font-size: 0.32rem;
+    color: #ffffff;
+    padding: 0 0.2rem;
+}
+.icon-wode-2{
+    font-size: 0.32rem;
+    color: #ffffff;
+    padding: 0 0.24rem;
+}
+.menuSearchList{
+    position: absolute;
+    width: 2rem;
+    top: 0.8rem;
+    right: 0.4rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 0.1rem;
+}
+.menuSearchList li{
+    height: 0.76rem;
+    line-height: 0.76rem;
+    color: #ffffff;
+}
+.menuListActive{
+    display: none;
+}
+.navigationTab{
+    position: fixed;
+    top: 0.9rem;z-index: 10000;
+    width: 100%;
+    height: 0.9rem;
+    display: flex;
+    background-color: #fff;
+}
+.navigationCategory{
+    flex: 1;
+    font-size: 0.28rem;
+    color: #9FA0A0;
+}
+.navigationCategory ul{
+    width: 100%;
+}
+.navigationCategory ul li{
+    width: 24%;
+    float: left;
+    line-height: 0.9rem;
+    text-align: center;
+}
+.NewPrice{
+    width: 27%;
+    position: relative;
+}
+.icon-xiajiantou:before {
+    content: "\e9bc";
+    color: #9FA0A0;
+    font-size: 0.5rem;
+}
+.NewPrice .shang-sanjiao{
+    position: absolute;
+    top: 0.1rem;
+    right: -0.23rem;
+    transform:rotate(180deg);
+    color: #FF3649;
+}
+
+.NewPrice .xia-sanjiao{
+    position: absolute;
+    top: 0.28rem;
+    right: -0.23rem;
+}
+.filter{
+    width: 1.2rem;
+    height: 0.5rem;
+    position: relative;
+    text-align: center;
+    border-left: 0.01rem solid #e1e1e1;
+    margin-top: 0.2rem;
+}
+.icon-shaixuan{
+    font-size: 0.44rem;
+    line-height: 0.5rem;
+    position: absolute;
+    top: 0;left: 0.3rem;
+}
+.itemContent{
+    margin: 0 0.2rem;
+    margin-top: 1.8rem;
+}
+.itemList{
+    float: left;
+    width: 3.5rem;
+    font-size: 0.28rem;
+    background-color: #fff;
+    border-radius: 0.15rem;
+    position: relative;
+    margin-right: 0.1rem;
+    margin-top: 0.1rem;
+}
+.itemList:nth-child(even){
+    margin-right: 0;
+}
+.itemListImg{
+    width: 3.1rem;
+    height: 3.1rem;
+    margin: 0.2rem;
+    display: block;
+}
+.itemSlogan{
+    height: 0.28rem;
+    font-size: 0.28rem;
+    color: #3E3A39;
+    margin: 0.2rem;
+    line-height: 0.32rem;
+}
+.itemPrice{
+    font-size: 0.28rem;
+    color: #FF3649;
+    margin: 0 0.2rem;
+    padding: 0.2rem 0;
+}
+.carItem{
+    width: 0.48rem;
+    height: 0.48rem;
+    background-color: #FF3649;
+    text-align: center;
+    border-radius: 0.24rem;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+}
+.carItem .icon-gouwuche-2{
+    font-size: 0.3rem;
+    color: #ffffff;
+    line-height: 0.48rem;
+}
+.bottomNav{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 0.9rem;
+    background-color: #fff;
+    border-top: 0.01rem solid #e1e1e1;
+    bottom: 0;
+}
+.service{
+    padding-top: 0.1rem;
+    width: 0.82rem;
+    font-size: 0.2rem;
+    text-align: center;
+    border-right: 0.01rem solid #e1e1e1;
+    color: #3e3a39;
+}
+.icon-kefu_icon{
+    font-size: 0.35rem;
+}
+.icon-guanzhu_bk{
+    font-size: 0.35rem;
+}
+.collection{
+    color: #3e3a39;
+    padding-top: 0.1rem;
+    width: 0.82rem;
+    font-size: 0.2rem;
+    text-align: center;
+    border-right: 0.01rem solid #e1e1e1;
+}
+.babyCategory{
+    flex: 1;
+    text-align: center;
+    font-size: 0.28rem;
+    line-height: 0.9rem;
+    color: #3E3A39;
+}
+.tabActive{
+    color: #FF3649;
+}
