@@ -98,12 +98,12 @@
             </div>-->
             <div class="swiper-slide">
             	<a href="https://www.517ybang.com/item/detail?id=5632" target="_self">
-                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212918.jpg">
+                	<img src="https://cdn-remote.517ybang.com/media/home/dw.png">
                 </a>
             </div>
             <div class="swiper-slide">
             	<a href="https://www.517ybang.com/item/detail?id=5629" target="_self">
-                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212544.jpg">
+                	<img src="https://cdn-remote.517ybang.com/media/home/hzm.jpg">
                 </a>
             </div>
           
@@ -306,7 +306,7 @@
 
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/wenyiguoshi@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/mwsb.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -354,7 +354,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lvyexianzong@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/yxws.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -402,7 +402,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/haixiantaotie@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/dmzb.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -450,7 +450,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/roushizhuanjia@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/dmzb.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">

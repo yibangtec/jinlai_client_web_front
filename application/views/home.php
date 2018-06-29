@@ -42,6 +42,48 @@ body {background:#eaeaea;}
     .hot-area span{margin-top: 15px;margin-bottom: 15px;}
     .mui-bar-nav~.mui-content{padding-top: 0px;height: 100%;}
     .swiper-container-horizontal > .swiper-pagination{bottom: -.05rem;left: 0;width: 100%;}
+    .shang{
+    top: .24rem !important;
+    transform: rotate(180deg);
+    right: -.247rem !important;
+    color: #999;
+}
+.xia{
+    color: #999;
+}
+.shopindextextnav li i {
+    position: absolute;
+    top: .36rem;
+    right: -.25rem;
+}
+.shopSearch{background: #f0f0f0;}
+.shopSearch i{color: #000;}
+.shopback i{color: #3a3839;margin-left: .2rem;}
+.biz_dot {
+    margin-top: .27rem;
+    margin-left: .13rem;
+    z-index: 9999999;
+}
+.biz_dot li {
+    float: left;
+    width: .08rem;
+    background: #3c3c3c;
+    height: .08rem;
+    float: left;
+    margin-left: .1rem;
+    border-radius: .02rem;
+}
+.shopTitle {
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    /* margin-left: .2rem; */
+    /* margin-bottom: .3rem; */
+    /* margin-top: .15rem; */
+   background: #fff;
+   padding-top: .2rem;
+}
+.shopTitle input::-webkit-input-placeholder{color:red;}
 </style>
 <script>
     $(function(){
@@ -204,7 +246,7 @@ body {background:#eaeaea;}
     $(function(){
         // 页面顶部导航栏
         var menu_items_top = <?php echo json_encode($menu_items_top) ?>;
-        var menu_items_top_dom = ;
+        var menu_items_top_dom;
         // console.log(menu_items_top);
         $.each(
             menu_items_top,
@@ -220,7 +262,6 @@ body {background:#eaeaea;}
                 menu_items_top_dom += item_dom;
             }
         );
-        console.log(menu_items_top_dom);
 
         // TODO 动态赋值首页订
         //$('[data-name=menu_items_top]').append(menu_items_top_dom);
@@ -1942,6 +1983,84 @@ body {background:#eaeaea;}
             </div>
         </div>
     </div>
+    <div id="itemIndexSearch" style="display:none;padding:.1rem .4rem;position:absolute;width:100%;height:100%;background:#fff;top:0px;left:0px;z-index:999999">
+        <input class="itemIndexSearchInput" style="float:left;border-radius:.15rem;background:#f0f0f0;width:6.1rem;height:.6rem;line-height:.6rem;text-indent:.35rem;outline:none;" type="search" placeholder="搜索感兴趣的内容">
+        <span style="color:#0f0f0f;font-size:.26rem;float:left;margin-top:.17rem;margin-left:.2rem" class="itemIndexCancel">取消</span>
+    </div>
+    <!--显示搜索信息-->
+    
+   <div class="bussinesswrap clearfix" style="background:#eaeaea;display: none;position: absolute;top:0px;left:0px;z-index: 99999;overflow: scroll;">
+    <!--店家商品分类导航条-->
+    <div class="shopTitle">
+            <div class="shopback fl">
+                <i class="icon-Back"></i>
+            </div>
+            <div class="shopSearch fl" style="background: transparent;">
+                <input type="search" placeholder="店内搜索" id="biz_search">
+                <i class="icon-搜索"></i>
+            </div>
+            <div class="biz_gouwuche fl">
+                <a title="购物车" href="https://www.517ybang.com/cart">
+                    <i class="icon-gouwuche-2" style="color: #949494;font-size: .4rem;float: left;margin-left: .8rem;margin-top: .1rem;"></i>
+                </a>
+            </div>
+            <div class="biz_dot fl">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="myarr">
+                    
+                </div>
+            <div class="dotshowlist" style="display: none;">
+                <div class="bizarr">
+                    <img src="https://cdn-remote.517ybang.com/media/home/biz_arr.png" alt="箭头">
+                </div>
+                <p>
+                    <a title="首页" href="https://www.517ybang.com/">
+                        <i class="icon-shouye_xiala"></i>
+                        <span>首页</span>
+                        <b></b>
+                    </a>
+                </p>
+                <p>
+                    <a title="个人中心" href="https://www.517ybang.com/mine">
+                        <i class="icon-wode-2"></i>
+                        <span>我的</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    <div class="shopindextextnav" style="margin-top: 0px;">
+        <ul>
+            <li class="bussinesscur zonghe">综合</li>
+            <li data-order_by="sold_overall" class="xiaoliang">销量</li>
+            <li data-order_by="time_publish" class="shangxin">新品</li>
+            <li data-order_by="price" class="jiage">价格<i class="icon-xiajiantou shang"></i><i class="icon-xiajiantou xia"></i><span class="line"></span></li>
+            <i class="icon-shaixuan"></i>
+        </ul>
+    </div>
+    <div class="shopindexlist wid710 mt10 clearfix">
+        <div class="content">
+            <ul id="bizDetailList" class="lists"></ul>
+        
+    </div>
+</div>
+    <!--商品筛选器-->
+    <div class=screening>
+        <span>价格区间(元)</span>
+        <p>
+            <input type=number placeholder="最低价" min=1 step=1 class="price_min">
+            <b></b>
+            <input type=number placeholder="最高价" min=1 step=1 class="price_max">
+        </p>
+        <div class="screeningbtn">
+            <a href="javascript:;" class="price_reset">重置</a>
+            <a href="javascript:;" class="price_finish">完成</a>
+        </div>
+    </div>
 <?php endif ?>
 
 <script>
@@ -2074,6 +2193,184 @@ $(function(){
         });
     });
 });
+//首页搜索区域开始
+var by_price = 0;
+$('.searchtext').on('click',function(){
+    $('#itemIndexSearch').show();
+    
+//  点击键盘13号开始搜索
+
+});
+$('.itemIndexCancel').on('click',function(){
+    $('#itemIndexSearch').hide();
+});
+// 商家信息
+var item_image_root = '<?php echo MEDIA_URL.'item/' ?>'; // 商品媒体文件根目录
+$('.itemIndexSearchInput').keydown(function(event){
+                //event.preventDefault();
+                if(event.which == 13){
+                    // 商品列表API路径
+                    var api_item_index = api_url + 'item/index';
+                    console.log(api_item_index);
+                    // 商品详情页路径
+                    var page_item_detail = base_url + 'item/detail?id=';
+                    $('#itemIndexSearch').hide();
+                    $(document.body).css({
+                           "overflow-x":"hidden",
+                           "overflow-y":"hidden"
+                    });
+                    $.ajax({
+                        url:api_item_index,
+                        async:false,
+                        data:{app_type:'client',limit:10,offset:0,name:$(this).val()},
+                        success:function(res){
+                        $('#bizDetailList').html('');
+                            var con = res.content;
+                            for (var i = 0;i < con.length;i++)
+                            {
+                                var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                $('#bizDetailList').append(oLi);
+                                
+                            }
+                            $('.zonghe').on('click',function(){
+                                        $.ajax({
+                                        url : api_item_index,
+                                        data : {app_type:'client',limit:10,offset:0,name:$('.itemIndexSearchInput').val()},
+                                        success : function(res){
+                                            $('#bizDetailList').html('');
+                                            
+                                            var con = res.content;
+                                            for (var i = 0;i < con.length;i++)
+                                            {
+                                                var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                                $('#bizDetailList').append(oLi);
+                                                
+                                            }
+                                        }
+                                    });
+                            });
+                            $('.zonghe').click();
+                            // 按照销量排行
+                                    var sold_overall = 0;
+                                    $('.xiaoliang').on('click',function(){
+                                        
+                                        page = 0;
+                                        shopClass = $(this).text();
+                                            if(sold_overall == 0){
+                                                $.ajax({
+                                                url : api_item_index,
+                                                data : {app_type:'client',limit:10,orderby_sold_overall:'DESC',name:$('.itemIndexSearchInput').val()},
+                                                success : function(res){
+                                                    $('#bizDetailList').html('');
+                                                    
+                                                    var con = res.content;
+                                                    for (var i = 0;i < con.length;i++)
+                                                    {
+                                                        var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                                        $('#bizDetailList').append(oLi);
+                                                        
+                                                    }
+                                                }
+                                            });
+                                            }
+                                    });
+                                    // 按发布时间排行
+                                    var time_publish = 0;
+                                    $('.shangxin').on('click',function(){
+                                        shopClass = $(this).text();
+                                        page = 0;
+                                            if(time_publish == 0){
+                                                $.ajax({
+                                                url : api_item_index,
+                                                data : {app_type:'client',limit:10,orderby_time_publish:'DESC',name:$('.itemIndexSearchInput').val()},
+                                                success : function(res){
+                                                    $('.shangxin').find('.shang').css('color','#999');
+                                                    $('.shangxin').find('.xia').css('color','#fd799c');
+                                                    $('#bizDetailList').html('');
+                                                    var con = res.content;
+                                                    for (var i = 0;i < con.length;i++) {
+                                                        var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+                                    +'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                                    $('#bizDetailList').append(oLi);
+                                                        
+                                                    }
+                                                }
+                                            });
+                                            }
+                                            
+                                    });
+                                    $('.price_finish').on('click',function(){
+                                        $(".screening").fadeOut();
+                                        $('body,html').css({
+                                            "overflow-y": "auto"
+                                        });
+                                        $.ajax({
+                                            url : api_item_index,
+                                            data : {app_type:'client',limit:10,price_min:$('.price_min').val(),price_max:$('.price_max').val(),name:$('.itemIndexSearchInput').val()},
+                                            success : function(res){
+                                                $('#bizDetailList').html('');
+                                                var con = res.content;
+                                                for (var i = 0;i < con.length;i++) {
+                                                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+                                +'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                                $('#bizDetailList').append(oLi);
+                                                    
+                                                }
+                                            }
+                                        });
+                                });
+                                $('.price_reset').on('click',function(){
+                                    $('.price_min').val('');
+                                    $('.price_max').val('');
+                                })
+                                    $('.jiage').on('click',function(){
+                                $('.shang').css('color','#999');
+                                $('.xia').css('color','#999');
+                                    if(by_price == 0){
+                                        $.ajax({
+                                        url : api_item_index,
+                                        data : {app_type:'client',limit:10,orderby_price:'DESC',name:$('.itemIndexSearchInput').val()},
+                                        success : function(res){
+                                            $('.jiage').find('.shang').css('color','#999');
+                                            $('.jiage').find('.xia').css('color','#fd799c');
+                                            $('#bizDetailList').html('');
+                                            var con = res.content;
+                                            for (var i = 0;i < con.length;i++) {
+                                                var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+                            +'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                            $('#bizDetailList').append(oLi);
+                                                
+                                            }
+                                        }
+                                    });
+                                    by_price = 1;
+                                    }
+                                    else{
+                                        $.ajax({
+                                        url : api_item_index,
+                                        data : {app_type:'client',limit:10,orderby_price:'ASC',name:$('.itemIndexSearchInput').val()},
+                                        success : function(res){
+                                            $('.jiage').find('.shang').css('color','#fd799c');
+                                            $('.jiage').find('.xia').css('color','#999');
+                                            $('#bizDetailList').html('');
+                                            var con = res.content;
+                                            for (var i = 0;i < con.length;i++) {
+                                                var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+                            +'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+                                            $('#bizDetailList').append(oLi);
+                                                
+                                            }
+                                        }
+                                    });
+                                        by_price = 0;
+                                    }
+                                    
+                            });
+                                                            }
+                    });
+                    $('.bussinesswrap').show();
+                }
+            })
 </script>
 
 

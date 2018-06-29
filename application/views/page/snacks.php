@@ -98,13 +98,13 @@
             </div>-->
             <div class="swiper-slide">
             	<a href="https://www.517ybang.com/item/detail?id=4915" target="_self">
-                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0627/141603.jpg">
+                	<img src="https://cdn-remote.517ybang.com/media/home/skg.jpg">
                 </a>
             </div>
             <div class="swiper-slide">
             	<a href="https://www.517ybang.com/item/detail?id=5432" target="_self">
-                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0628/163607.jpg">
-                </a>
+                	<img src="https://cdn-remote.517ybang.com/media/home/kkkl.jpg">
+                	</a>
             </div>
           
         </div>
@@ -306,7 +306,7 @@
 
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/wenyiguoshi@3x.png">
+    <img src="https://cdn-remote.517ybang.com/media/home/mltx.jpg">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -354,7 +354,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lvyexianzong@3x.png">
+    <img src="https://cdn-remote.517ybang.com/media/home/xxsg.jpg">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -402,7 +402,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/haixiantaotie@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/jkls.jpg">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -450,7 +450,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/roushizhuanjia@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/ypjyz.jpg">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
