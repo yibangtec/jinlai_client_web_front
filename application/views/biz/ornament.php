@@ -1,3 +1,4 @@
+
 <?php if ( !empty($item['ornament']['home_slides']) ): ?>
     <!--头部banner区域开始-->
     <div class="bannerWrap auto">

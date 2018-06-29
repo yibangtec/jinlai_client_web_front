@@ -41,6 +41,11 @@
                     .section>ul>li:first-child h3, .section>ul>li:first-child ul {display:none;}
 
             .section>div {margin-top:60px;}
+
+     .lottery {position:relative;display: inline-block;}
+    .lottery img {position:absolute;top:50%;left:50%;width:152px;margin-left:-76px;margin-top:-82px;cursor:pointer;}
+
+    #message {position:absolute;top:0;left:10%;}
 </style>
 
 <div id=content>
@@ -51,32 +56,42 @@
         <!-- 简介、奖品、活动 -->
         <ul>
             <li id=first>
-                转盘抽大奖
-                无条件抽取1000元水果零食大礼包！
-                下拉抽奖
+                <p>
+                    转盘抽大奖<br>
+                    无条件抽取1000元水果零食大礼包！<br>
+                    下拉抽奖
+                </p>
             </li>
 
             <li id=second>
-                前1000名下单用户
-                送上海风味青团两枚
-                仅限鲜果节页面产品
-                每ID限送一份
+                <p>
+                前1000名下单用户<br>
+                送上海风味青团两枚<br>
+                仅限鲜果节页面产品<br>
+                每ID限送一份<br>
                 且特价网纹瓜不参与活动
+                </p>
             </li>
 
             <li id=third>
-                10、12、14、16、20点
-                各推出1款免费商品＋3款超超特价商品
+                <p>
+                10、12、14、16、20点<br>
+                各推出1款免费商品＋3款超超特价商品<br>
                 抢到就是赚到
+                </p>
             </li>
         </ul>
 
         <!-- 投票入口 -->
         <div id=to_vote>
-            票选创意王者   发掘网红达人   创意秀起来！
-            大赛奖项
-            一等奖（第1名）
+            <p>
+            票选创意王者<br>
+            发掘网红达人<br>
+            创意秀起来！<br>
+            大赛奖项<br>
+            一等奖（第1名）<br>
             2888元大礼包
+            </p>
         </div>
 
     </div>
@@ -86,34 +101,12 @@
 
         <!-- 抽奖盘 -->
         <div id=plate>
-            <style>
-                .lottery {
-                    position: relative;
-                    display: inline-block;
-                }
-
-                .lottery img {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    width: 152px;
-                    margin-left: -76px;
-                    margin-top: -82px;
-                    cursor: pointer;
-                }
-
-                #message {
-                    position: absolute;
-                    top: 0px;
-                    left: 10%;
-                }
-            </style>
-            <div class="lottery">
-                <canvas id="myCanvas" width="600" height="600">
+            <div class=lottery>
+                <canvas id=myCanvas width="600" height="600">
                     当前浏览器版本过低，请使用其他浏览器尝试
                 </canvas>
-                <p id="message"></p>
-                <img src="/media/fruitful2018/start.png" id=start>
+                <p id=message></p>
+                <img id=start src="/media/fruitful2018/start.png">
             </div>
         </div>
 
@@ -418,6 +411,7 @@
     });
 </script>
 
+<!-- 抽奖转盘 -->
 <script src="/js/turntable.js"></script>
 <script>
     var wheelSurf
@@ -430,28 +424,28 @@
                 "name": "1000元水果零食大礼包",
                 "image": "/media/fruitful2018/reward1.png",
                 "rank":1,
-                "percent":3
+                "percent":1
             },
             {
                 "id": 101,
                 "name": "泰国金枕头榴莲*1",
                 "image": "/media/fruitful2018/reward1.png",
                 "rank":2,
-                "percent":5
+                "percent":3
             },
             {
                 "id": 102,
                 "name": "抖音网红妖娆花*1",
                 "image": "/media/fruitful2018/reward1.png",
                 "rank":3,
-                "percent":2
+                "percent":6
             },
             {
                 "id": 103,
                 "name": "鲜果节专用红包5元",
                 "image": "/media/fruitful2018/reward1.png",
                 "rank":4,
-                "percent":49
+                "percent":90
             }
         ]
     }
@@ -483,7 +477,7 @@
 
     // 定义转盘奖品
     wheelSurf = $('#myCanvas').WheelSurf({
-        list: list, // 奖品 列表，(必填)
+        list: list, // 奖品列表，(必填)
         outerCircle: {
             color: '#df1e15' // 外圈颜色(可选)
         },
@@ -502,33 +496,35 @@
     wheelSurf.init()
     // 抽奖
     var throttle = true;
-    $("#start").on('click', function () {
+    $(function(){
+        $("#start").on('click', function () {
+            console.log(list);
+            var winData = getGift() // 正常情况下获奖信息应该由后台返回
 
-        var winData = getGift() // 正常情况下获奖信息应该由后台返回
-
-        $("#message").html('')
-        if(!throttle){
-            return false;
-        }
-        throttle = false;
-        var count = 0
-        // 计算奖品角度
-
-        for (const key in list) {
-            if (list.hasOwnProperty(key)) {
-                if (winData.id == list[key].id) {
-                    break;
-                }
-                count++
+            $("#message").html('')
+            if(!throttle){
+                return false;
             }
-        }
+            throttle = false;
+            var count = 0
+            // 计算奖品角度
 
-        // 转盘抽奖，
-        wheelSurf.lottery((count * angel + angel / 2), function () {
-            $("#message").html(winData.name)
-            throttle = true;
+            for (const key in list) {
+                if (list.hasOwnProperty(key)) {
+                    if (winData.id == list[key].id) {
+                        break;
+                    }
+                    count++
+                }
+            }
+
+            // 转盘抽奖
+            wheelSurf.lottery((count * angel + angel / 2), function () {
+                $("#message").html(winData.name)
+                throttle = true;
+            })
         })
-    })
+    });
 
 
 </script>
