@@ -1,18 +1,18 @@
 <style>
-    body {background:url("/media/fruitful2018/bg@3x.png") repeat-y center 500px;background-size:750px auto;}
+    body {background:url("/media/fruitful2018/bg@2x.png") repeat-y center 500px;}
 
-    #content {color:#fff;font-size:24px;font-family:"苹方",sans-serif;text-align:center;background:url("/media/fruitful2018/bg-top@3x.png") no-repeat center top;background-size:750px auto;padding-top:500px;}
+    #content {color:#fff;font-size:24px;font-family:"苹方",sans-serif;text-align:center;background:url("/media/fruitful2018/bg-top@2x.png") no-repeat center top;padding-top:500px;}
         #content a {color:#fff;}
 
-    #brief {background:url("/media/fruitful2018/bg-brief@3x.png") no-repeat center top;background-size:750px auto;height:882px;}
+    #brief {background:url("/media/fruitful2018/bg-brief@2x.png") no-repeat center top;height:882px;}
 
-    #lottery {background:url("/media/fruitful2018/bg-lottery@3x.png") no-repeat center top;background-size:750px auto;}
+    #lottery {background:url("/media/fruitful2018/bg-lottery@2x.png") no-repeat center top;}
 
     #description {background-color:#7f0dc5;width:670px;height:220px;margin:40px auto 130px;border:1px solid #9719d5;border-radius:8px;}
 
     #items {width:670px;margin:0 auto;}
         .section {width:100%;margin-bottom:100px;}
-            .section h2 {font-size:36px;font-weight:bold;background:url("/media/fruitful2018/bg-title@3x.png") no-repeat center center;background-size:750px auto;height:104px;padding-top:40px;}
+            .section h2 {font-size:36px;font-weight:bold;background:url("/media/fruitful2018/bg-title@2x.png") no-repeat center center;height:104px;padding-top:40px;}
 
             .section>ul {margin-top:46px;overflow:hidden;}
                 .section>ul>li {float:left;margin-bottom:20px;margin-right:20px;border:2px solid #6a06e0;border-radius:10px;padding:10px;box-shadow:0 0 10px #5e0797;}
@@ -33,7 +33,7 @@
                     .triple>li:nth-child(3n+1) {margin-right:0;}
                     .triple .item-figure {width:190px;height:190px;}
                     .triple .item-name {color:#f90131;font-size:24px;height:24px;line-height:24px;}
-                    .triple .prices {background:#f90131 url("/media/fruitful2018/bg-prices@3x.png") no-repeat right center;background-size:16px 26px;height:26px;line-height:26px;margin:12px 10px 0;}
+                    .triple .prices {background:#f90131 url("/media/fruitful2018/bg-prices@2x.png") no-repeat right center;background-size:16px 26px;height:26px;line-height:26px;margin:12px 10px 0;}
                         .triple .prices>li:first-child {color:#f9ff48;}
                     .triple del {font-size:18px;}
                 .section>ul>li:first-child {width:100%;margin-left:0;}
@@ -137,14 +137,14 @@
         'items' => array(
             array(
                 'item_id' => '4762',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/1-1@2x.png',
                 'name' => '网纹瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/1-2@2x.png',
                 'name' => '桃本桃水晶皇后',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -158,7 +158,7 @@
             ),
             array(
                 'item_id' => '5641',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/1-4@2x.png',
                 'name' => '新西兰金果4个装',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -178,7 +178,7 @@
         'items' => array(
             array(
                 'item_id' => '',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/2-1@2x.png',
                 'name' => '沂蒙食舍双色桃拼',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -192,7 +192,7 @@
             ),
             array(
                 'item_id' => '5642',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/2-3@2x.png',
                 'name' => '上海麒麟西瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -206,7 +206,7 @@
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/2-5@2x.png',
                 'name' => '都知果蜜瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -233,7 +233,7 @@
         'items' => array(
             array(
                 'item_id' => '4752',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/3-1@2x.png',
                 'name' => '新西兰金果X6',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -247,21 +247,21 @@
             ),
             array(
                 'item_id' => '4791',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/3-3@2x.png',
                 'name' => '泰国山竹',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '5643',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/3-4@2x.png',
                 'name' => '泰国香水椰',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4786',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/3-5@2x.png',
                 'name' => '菲诺椰子冻*2',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -274,35 +274,35 @@
         'items' => array(
             array(
                 'item_id' => '4816',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-1@2x.png',
                 'name' => '阳山水蜜桃',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4757',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-2@2x.png',
                 'name' => '台湾木瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4776',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-3@2x.png',
                 'name' => '库尔勒香梨',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-4@2x.png',
                 'name' => '都知果蜜瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4748',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-5@2x.png',
                 'name' => '台湾水仙芒',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -323,7 +323,7 @@
             ),
             array(
                 'item_id' => '4755',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-8@2x.png',
                 'name' => '精品油桃',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -337,7 +337,7 @@
             ),
             array(
                 'item_id' => '4739',
-                'url_image_main' => '',
+                'url_image_main' => '/media/fruitful2018/items/4-10@2x.png',
                 'name' => '桂味荔枝',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -348,12 +348,36 @@
 ?>
 
 <script>
-    $(function(){
-        // 获取抽奖活动规则
-        //var item = <?php echo json_encode($item) ?>;
+    // 本页面内AJAX全部为同步方式
+    $.ajaxSetup({
+        async : false
+    });
 
-        // 相关商品
-        var items = <?php echo json_encode($items) ?>;
+    // 获取抽奖活动
+    var lottery;
+    var params = common_params;
+    params.id = 1;
+    api_url += 'lottery/detail';
+    // AJAX获取结果并生成相关HTML
+    $.post(
+        api_url,
+        params,
+        function(result)
+        {
+            console.log(result); // 输出回调数据到控制台
+            if (result.status == 200)
+            {
+                lottery = result.content
+            } else {
+                alert(result.content.error.message);
+            }
+        }
+    )
+
+    // 相关商品
+    var items = <?php echo json_encode($items) ?>;
+
+    $(function(){
         // 将相关商品输出为DOM
         for (var index in items)
         {
@@ -452,7 +476,10 @@
 
     // 计算分配获奖概率(前提所有奖品概率相加100%)
     function getGift(){
+        // 随机生成本次中奖数值
         var percent = Math.random()*100
+
+        // 根据中奖数值返回相应中奖概率的奖项
         var totalPercent = 0
         for(var i = 0 ,l = initData.list.length;i<l;i++){
             totalPercent += initData.list[i].percent
@@ -462,6 +489,7 @@
         }
     }
 
+    // 奖品列表
     var list = {}
 
     var angel = 360 / initData.list.length
@@ -495,32 +523,63 @@
     // 初始化转盘
     wheelSurf.init()
     // 抽奖
-    var throttle = true;
-    $(function(){
-        $("#start").on('click', function () {
-            console.log(list);
-            var winData = getGift() // 正常情况下获奖信息应该由后台返回
+    var throttle = true; // 是否正在抽奖
 
-            $("#message").html('')
+    $(function(){
+        // 点击抽奖按钮
+        $("#start").on('click', function () {
+            // 若已在抽奖中，不响应点击事件
             if(!throttle){
                 return false;
             }
-            throttle = false;
-            var count = 0
-            // 计算奖品角度
 
+            // 标记已在抽奖中
+            throttle = false;
+
+            // 进行抽奖
+            var params = common_params;
+            params.lottery_id = lottery.lottery_id
+            api_url += 'lottery_record/create';
+            // AJAX获取结果并生成相关HTML
+            $.post(
+                api_url,
+                params,
+                function(result)
+                {
+                    console.log(result); // 输出回调数据到控制台
+                    if (result.status == 200)
+                    {
+                        //
+                    } else {
+                        alert(result.content.error.message);
+                    }
+                }
+            )
+
+            // 获取中奖信息
+            var winData = getGift()
+
+            $("#message").html('')
+
+            // 计算已中奖项在奖盘中是第几个区域
+            var count = 0
             for (const key in list) {
-                if (list.hasOwnProperty(key)) {
-                    if (winData.id == list[key].id) {
+                if (list.hasOwnProperty(key))
+                {
+                    if (winData.id == list[key].id)
+                    {
                         break;
                     }
                     count++
                 }
             }
 
-            // 转盘抽奖
+            // 旋转奖盘并提示中奖信息
             wheelSurf.lottery((count * angel + angel / 2), function () {
+                // 提示中奖信息
                 $("#message").html(winData.name)
+
+                // 标记未在抽奖中
                 throttle = true;
             })
         })
