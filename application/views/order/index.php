@@ -220,6 +220,7 @@
 
                             if(load_more){
                                 listAllOffset = listAllOffset + 10;
+
                                 load_more(10, listAllOffset, api_url, status);
                                 $('.load-more').hide();
                             }

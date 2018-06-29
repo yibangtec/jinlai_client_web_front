@@ -1,5 +1,3 @@
-<script src="https://cdn.bootcss.com/zepto/1.1.4/zepto.js"></script>
-
 <style>
 body {background:#eaeaea;}
  <?php
@@ -44,6 +42,48 @@ body {background:#eaeaea;}
 	.hot-area span{margin-top: 15px;margin-bottom: 15px;}
 	.mui-bar-nav~.mui-content{padding-top: 0px;height: 100%;}
 	.swiper-container-horizontal > .swiper-pagination{bottom: -.05rem;left: 0;width: 100%;}
+	.shang{
+    top: .24rem !important;
+    transform: rotate(180deg);
+    right: -.247rem !important;
+    color: #999;
+}
+.xia{
+    color: #999;
+}
+.shopindextextnav li i {
+    position: absolute;
+    top: .36rem;
+    right: -.25rem;
+}
+.shopSearch{background: #f0f0f0;}
+.shopSearch i{color: #000;}
+.shopback i{color: #3a3839;margin-left: .2rem;}
+.biz_dot {
+    margin-top: .27rem;
+    margin-left: .13rem;
+    z-index: 9999999;
+}
+.biz_dot li {
+    float: left;
+    width: .08rem;
+    background: #3c3c3c;
+    height: .08rem;
+    float: left;
+    margin-left: .1rem;
+    border-radius: .02rem;
+}
+.shopTitle {
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+    /* margin-left: .2rem; */
+    /* margin-bottom: .3rem; */
+    /* margin-top: .15rem; */
+   background: #fff;
+   padding-top: .2rem;
+}
+.shopTitle input::-webkit-input-placeholder{color:red;}
 </style>
 <script>
 	$(function(){
@@ -90,6 +130,143 @@ body {background:#eaeaea;}
 		
 <?php endif ?>
  <div style="font-size: .12rem;" id="banben"></div>
+
+<?php
+    $menu_items_top = array(
+        // 第一行
+        array(
+            'name' => '生鲜超市', // 导航项名称
+            'url' => base_url('page/detail?id=2'), // 目标页面URL
+            'icon_url' => CDN_URL.'media/home/shengxianchaoshi@3x.png', // 图标URL
+        ),
+        array(
+            'name' => '地方特产',
+            'url' => base_url('page/detail?id=9'),
+            'icon_url' => CDN_URL.'media/home/jiaodongtechan@3x.png',
+        ),
+        array(
+            'name' => '母婴用品',
+            'url' => base_url('page/detail?id=10'),
+            'icon_url' => CDN_URL.'media/home/muyingyongpin@3x.png',
+        ),
+        array(
+            'name' => '科技数码',
+            'url' => base_url('page/detail?id=11'),
+            'icon_url' => CDN_URL.'media/home/kejishuma@3x.png',
+        ),
+        array(
+            'name' => '居家生活',
+            'url' => base_url('page/detail?id=12'),
+            'icon_url' => CDN_URL.'media/home/jujiashenghuo@3x.png',
+        ),
+
+        // 第二行
+        array(
+            'name' => '休闲零食',
+            'url' => base_url('page/detail?id=13'),
+            'icon_url' => CDN_URL.'media/home/xiuxianlingshi@3x.png',
+        ),
+        array(
+            'name' => '运动户外',
+            'url' => base_url('page/detail?id=14'),
+            'icon_url' => CDN_URL.'media/home/yundonghuwai@3x.png',
+        ),
+        array(
+            'name' => '游戏动漫',
+            'url' => base_url('page/detail?id=15'),
+            'icon_url' => CDN_URL.'media/home/youxidongman@3x.png',
+        ),
+        array(
+            'name' => '领券中心',
+            'url' => base_url('coupon'),
+            'icon_url' => CDN_URL.'media/home/lingquanzhongxin@3x.png',
+        ),
+        array(
+            'name' => '我要入驻',
+            'url' => base_url('article/biz-cooperation'),
+            'icon_url' => CDN_URL.'media/home/woyaoruzhu@3x.png',
+        ),
+
+        // 第三行
+        array(
+            'name' => '学习教育',
+            'url' => base_url('page/detail?id=4'),
+            'icon_url' => CDN_URL.'media/home/xuexijiaoyu@3x.png',
+        ),
+        array(
+            'name' => '休闲娱乐',
+            'url' => base_url('page/detail?id=5'),
+            'icon_url' => CDN_URL.'media/home/xiuxianyule@3x.png',
+        ),
+        array(
+            'name' => '特色美食',
+            'url' => base_url('page/detail?id=3'),
+            'icon_url' => CDN_URL.'media/home/tesemeishi@3x.png',
+        ),
+        array(
+            'name' => '运动健康',
+            'url' => base_url('page/detail?id=4'),
+            'icon_url' => CDN_URL.'media/home/yundognjiankang@3x.png',
+        ),
+        array(
+            'name' => '时尚丽人',
+            'url' => base_url('page/detail?id=5'),
+            'icon_url' => CDN_URL.'media/home/shishangliren@3x.png',
+        ),
+
+        // 第四行
+        array(
+            'name' => '婚纱摄影',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/hunshasheying@3x.png',
+        ),
+        array(
+            'name' => '宠物服务',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/chongwufuwu@3x.png',
+        ),
+        array(
+            'name' => '旅游民宿',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/lvyouminsu@3x.png',
+        ),
+        array(
+            'name' => '汽车管家',
+            'url' => base_url(),
+            'icon_url' => CDN_URL.'media/home/qicheguanjia@3x.png',
+        ),
+        array(
+            'name' => '私人订制',
+            'url' => base_url('page/detail?id=6'),
+            'icon_url' => CDN_URL.'media/home/sirendingzhi@3x.png',
+        ),
+    );
+?>
+<script>
+    $(function(){
+        // 页面顶部导航栏
+        var menu_items_top = <?php echo json_encode($menu_items_top) ?>;
+        var menu_items_top_dom;
+        // console.log(menu_items_top);
+        $.each(
+            menu_items_top,
+            function(index, item){
+                var item_dom = '<li>' +
+                    '   <a href="'+ item.url +'" target=_self>' +
+                    '       <div class=iconWrap>' +
+                    '           <img data-src="'+ item.icon_url +'">' +
+                    '       </div>' +
+                    '       <span class=text>'+ item.name +'</span>' +
+                        '</a>' +
+                    '</li>' + "\n\n";
+                menu_items_top_dom += item_dom;
+            }
+        );
+
+        // TODO 动态赋值首页订
+        //$('[data-name=menu_items_top]').append(menu_items_top_dom);
+    });
+</script>
 		<div class="tabcontent" id="listMenu">
 			<div class="item" style="display: block;">
 				<!--菜单区域开始-->
@@ -97,7 +274,7 @@ body {background:#eaeaea;}
 				<div class="swiper-container" style="border-radius: 0;border-bottom-left-radius: .2rem;border-bottom-right-radius: .2rem;">
 				<div class="swiper-wrapper">
 					<div class="menuWrap auto clearfix swiper-slide">
-					<ul class="clearfix">
+					<ul data-name=menu_items_top class="clearfix">
 						<li>
                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
                                 <!--图标-->
@@ -112,14 +289,14 @@ body {background:#eaeaea;}
                              <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/jiaodongtechan.png">
+                                    <img data-src="<?php echo CDN_URL ?>media/home/chao liu ku wan@3x.png">
                                 </div>
                                 <!--文字-->
-                                <span class="text">地方特产</span>
+                                <span class="text">潮流酷玩</span>
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/detail?id=8') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/muyingyongpin.png">
@@ -129,7 +306,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/detail?id=10') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/kejishuma.png">
@@ -139,7 +316,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li style="margin-right:0">
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/detail?id=11') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap5">
                                     <img data-src="<?php echo CDN_URL ?>media/home/jujiashenghuo.png">
@@ -149,7 +326,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/detail?id=12') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap">
                                     <img data-src="<?php echo CDN_URL ?>media/home/xiuxianlingshi.png">
@@ -159,7 +336,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                             <a href="<?php echo base_url('page/detail?id=13') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/yundonghuwai.png">
@@ -169,7 +346,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/detail?id=14') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/youxidongman.png">
@@ -310,12 +487,13 @@ body {background:#eaeaea;}
 	      <div class="swiper-pagination"></div>
 			</div>
 			</div>
+
 				<!--广告图区域-->
 				<div class="menuOuter">
 			<div class="swiper-containeradvertisement">
 				<div class="swiper-wrapper">
 					<div class="addpic auto swiper-slide">
-						<a href="<?php echo base_url('biz/detail?id=32') ?>" target="_self">
+						<a href="###" target="_self">
 							<img src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 						</a>
 					</div>
@@ -325,26 +503,26 @@ body {background:#eaeaea;}
 							</a>
 						</div>-->
 						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=37') ?>" target="_self">
+							<a href="###" target="_self">
 								<img src="<?php echo CDN_URL ?>media/home/yhzx.jpg">
 							</a>
 						</div>
 						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+							<a href="###" target="_self">
 								<img src="<?php echo CDN_URL ?>media/home/banner3.jpg">
 							</a>
 						</div>
 						<!--add-->
 						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=106') ?>" target="_self">
+							<a href="<?php echo base_url('biz/detail?id=146') ?>" target="_self">
 								<img src="<?php echo CDN_URL ?>media/home/banner4.jpg">
 							</a>
 						</div>
-						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=124') ?>" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/xbmy.jpg">
-							</a>
-						</div>
+						<!--<div class="addpic auto swiper-slide">
+							<a href="<?php echo base_url('biz/detail?id=124') ?>" target="_self">
+								<img src="<?php echo CDN_URL ?>media/home/xbmy.jpg">
+							</a>
+						</div>-->
 						<!--<div class="addpic auto swiper-slide">
 							<a href="<?php echo base_url('biz/detail?id=28') ?>" target="_self">
 							<img src="<?php echo CDN_URL ?>media/home/banner6.jpg">
@@ -355,16 +533,17 @@ body {background:#eaeaea;}
 							<img src="<?php echo CDN_URL ?>media/home/banner7.jpg">
 							</a>
 						</div>-->
-						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=36') ?>" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/banner2.png">
-							</a>
-						</div>
+						<!--<div class="addpic auto swiper-slide">
+							<a href="<?php echo base_url('biz/detail?id=36') ?>" target="_self">
+								<img src="<?php echo CDN_URL ?>media/home/banner2.png">
+							</a>
+						</div>-->
 				</div>
 						<!-- Add Pagination -->
 	      			<div class="swiper-pagination2"></div>
 				</div>
-				<!--公告文字区域开始-->
+
+				<!--"进来说"区域开始-->
 				<div class="announcement auto">
 					<!--左边图片区域-->
 					<a href="<?php echo base_url() ?>/application/views/article/article_broadcast.html">
@@ -1804,6 +1983,84 @@ body {background:#eaeaea;}
 			</div>
 		</div>
     </div>
+    <div id="itemIndexSearch" style="display:none;padding:.1rem .4rem;position:absolute;width:100%;height:100%;background:#fff;top:0px;left:0px;z-index:999999">
+    	<input class="itemIndexSearchInput" style="float:left;border-radius:.15rem;background:#f0f0f0;width:6.1rem;height:.6rem;line-height:.6rem;text-indent:.35rem;outline:none;" type="search" placeholder="搜索感兴趣的内容">
+    	<span style="color:#0f0f0f;font-size:.26rem;float:left;margin-top:.17rem;margin-left:.2rem" class="itemIndexCancel">取消</span>
+    </div>
+    <!--显示搜索信息-->
+    
+   <div class="bussinesswrap clearfix" style="background:#eaeaea;display: none;position: absolute;top:0px;left:0px;z-index: 99999;overflow: scroll;">
+    <!--店家商品分类导航条-->
+    <div class="shopTitle">
+            <div class="shopback fl">
+                <i class="icon-Back"></i>
+            </div>
+            <div class="shopSearch fl" style="background: transparent;">
+                <input type="search" placeholder="店内搜索" id="biz_search">
+                <i class="icon-搜索"></i>
+            </div>
+            <div class="biz_gouwuche fl">
+                <a title="购物车" href="https://www.517ybang.com/cart">
+                    <i class="icon-gouwuche-2" style="color: #949494;font-size: .4rem;float: left;margin-left: .8rem;margin-top: .1rem;"></i>
+                </a>
+            </div>
+            <div class="biz_dot fl">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="myarr">
+                    
+                </div>
+            <div class="dotshowlist" style="display: none;">
+                <div class="bizarr">
+                    <img src="https://cdn-remote.517ybang.com/media/home/biz_arr.png" alt="箭头">
+                </div>
+                <p>
+                    <a title="首页" href="https://www.517ybang.com/">
+                        <i class="icon-shouye_xiala"></i>
+                        <span>首页</span>
+                        <b></b>
+                    </a>
+                </p>
+                <p>
+                    <a title="个人中心" href="https://www.517ybang.com/mine">
+                        <i class="icon-wode-2"></i>
+                        <span>我的</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    <div class="shopindextextnav" style="margin-top: 0px;">
+        <ul>
+            <li class="bussinesscur zonghe">综合</li>
+            <li data-order_by="sold_overall" class="xiaoliang">销量</li>
+            <li data-order_by="time_publish" class="shangxin">新品</li>
+            <li data-order_by="price" class="jiage">价格<i class="icon-xiajiantou shang"></i><i class="icon-xiajiantou xia"></i><span class="line"></span></li>
+            <i class="icon-shaixuan"></i>
+        </ul>
+    </div>
+    <div class="shopindexlist wid710 mt10 clearfix">
+        <div class="content">
+            <ul id="bizDetailList" class="lists"></ul>
+        
+    </div>
+</div>
+    <!--商品筛选器-->
+    <div class=screening>
+        <span>价格区间(元)</span>
+        <p>
+            <input type=number placeholder="最低价" min=1 step=1 class="price_min">
+            <b></b>
+            <input type=number placeholder="最高价" min=1 step=1 class="price_max">
+        </p>
+        <div class="screeningbtn">
+            <a href="javascript:;" class="price_reset">重置</a>
+            <a href="javascript:;" class="price_finish">完成</a>
+        </div>
+    </div>
 <?php endif ?>
 
 <script>
@@ -1936,6 +2193,187 @@ $(function(){
         });
 	});
 });
+//首页搜索区域开始
+var by_price = 0;
+$('.searchtext').on('click',function(){
+	$('#itemIndexSearch').show();
+	
+//	点击键盘13号开始搜索
+
+});
+$('.itemIndexCancel').on('click',function(){
+	$('#itemIndexSearch').hide();
+});
+// 商家信息
+var item_image_root = '<?php echo MEDIA_URL.'item/' ?>'; // 商品媒体文件根目录
+$('.itemIndexSearchInput').keydown(function(event){
+				//event.preventDefault();
+				if(event.which == 13){
+					// 商品列表API路径
+					var api_item_index = api_url + 'item/index';
+					if(!user_id){
+						window.location.href = 'https://www.517ybang.com/login';
+						return false;
+					};
+					// 商品详情页路径
+					var page_item_detail = base_url + 'item/detail?id=';
+					$('#itemIndexSearch').hide();
+					$(document.body).css({
+						   "overflow-x":"hidden",
+						   "overflow-y":"hidden"
+					});
+					$.ajax({
+						url:api_item_index,
+						async:false,
+						data:{app_type:'client',limit:10,offset:0,name:$(this).val()},
+						success:function(res){
+						$('#bizDetailList').html('');
+			                var con = res.content;
+			                for (var i = 0;i < con.length;i++)
+			                {
+			                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+			                    $('#bizDetailList').append(oLi);
+			                    
+			                }
+			                $('.zonghe').on('click',function(){
+							            $.ajax({
+							            url : api_item_index,
+							            data : {app_type:'client',limit:10,offset:0,name:$('.itemIndexSearchInput').val()},
+							            success : function(res){
+							                $('#bizDetailList').html('');
+							                
+							                var con = res.content;
+							                for (var i = 0;i < con.length;i++)
+							                {
+							                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+							                    $('#bizDetailList').append(oLi);
+							                    
+							                }
+							            }
+							        });
+							});
+							$('.zonghe').click();
+							// 按照销量排行
+									var sold_overall = 0;
+									$('.xiaoliang').on('click',function(){
+									    
+									    page = 0;
+									    shopClass = $(this).text();
+									        if(sold_overall == 0){
+									            $.ajax({
+									            url : api_item_index,
+									            data : {app_type:'client',limit:10,orderby_sold_overall:'DESC',name:$('.itemIndexSearchInput').val()},
+									            success : function(res){
+									                $('#bizDetailList').html('');
+									                
+									                var con = res.content;
+									                for (var i = 0;i < con.length;i++)
+									                {
+									                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+									                    $('#bizDetailList').append(oLi);
+									                    
+									                }
+									            }
+									        });
+									        }
+									});
+									// 按发布时间排行
+									var time_publish = 0;
+									$('.shangxin').on('click',function(){
+									    shopClass = $(this).text();
+									    page = 0;
+									        if(time_publish == 0){
+									            $.ajax({
+									            url : api_item_index,
+									            data : {app_type:'client',limit:10,orderby_time_publish:'DESC',name:$('.itemIndexSearchInput').val()},
+									            success : function(res){
+									                $('.shangxin').find('.shang').css('color','#999');
+									                $('.shangxin').find('.xia').css('color','#fd799c');
+									                $('#bizDetailList').html('');
+									                var con = res.content;
+									                for (var i = 0;i < con.length;i++) {
+									                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+									+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+									                $('#bizDetailList').append(oLi);
+									                    
+									                }
+									            }
+									        });
+									        }
+									        
+									});
+									$('.price_finish').on('click',function(){
+								        $(".screening").fadeOut();
+								        $('body,html').css({
+								            "overflow-y": "auto"
+								        });
+								        $.ajax({
+								            url : api_item_index,
+								            data : {app_type:'client',limit:10,price_min:$('.price_min').val(),price_max:$('.price_max').val(),name:$('.itemIndexSearchInput').val()},
+								            success : function(res){
+								                $('#bizDetailList').html('');
+								                var con = res.content;
+								                for (var i = 0;i < con.length;i++) {
+								                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+								+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+								                $('#bizDetailList').append(oLi);
+								                    
+								                }
+								            }
+								        });
+								});
+								$('.price_reset').on('click',function(){
+								    $('.price_min').val('');
+								    $('.price_max').val('');
+								})
+									$('.jiage').on('click',function(){
+							    $('.shang').css('color','#999');
+							    $('.xia').css('color','#999');
+							        if(by_price == 0){
+							            $.ajax({
+							            url : api_item_index,
+							            data : {app_type:'client',limit:10,orderby_price:'DESC',name:$('.itemIndexSearchInput').val()},
+							            success : function(res){
+							                $('.jiage').find('.shang').css('color','#999');
+							                $('.jiage').find('.xia').css('color','#fd799c');
+							                $('#bizDetailList').html('');
+							                var con = res.content;
+							                for (var i = 0;i < con.length;i++) {
+							                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+							+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+							                $('#bizDetailList').append(oLi);
+							                    
+							                }
+							            }
+							        });
+							        by_price = 1;
+							        }
+							        else{
+							            $.ajax({
+							            url : api_item_index,
+							            data : {app_type:'client',limit:10,orderby_price:'ASC',name:$('.itemIndexSearchInput').val()},
+							            success : function(res){
+							                $('.jiage').find('.shang').css('color','#fd799c');
+							                $('.jiage').find('.xia').css('color','#999');
+							                $('#bizDetailList').html('');
+							                var con = res.content;
+							                for (var i = 0;i < con.length;i++) {
+							                    var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))
+							+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+							                $('#bizDetailList').append(oLi);
+							                    
+							                }
+							            }
+							        });
+							            by_price = 0;
+							        }
+							        
+							});
+															}
+					});
+					$('.bussinesswrap').show();
+				}
+			})
 </script>
 
 
