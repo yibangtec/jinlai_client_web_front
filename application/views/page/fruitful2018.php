@@ -137,35 +137,35 @@
         'items' => array(
             array(
                 'item_id' => '4762',
-                'url_image_main' => '/media/fruitful2018/items/1-1@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/1-1.png',
                 'name' => '网纹瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/1-2@2x.png',
-                'name' => '桃本桃水晶皇后',
+                'url_image_main' => '/media/fruitful2018/items/1-2.png',
+                'name' => '桃本桃玫瑰公主',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4825',
-                'url_image_main' => '/media/fruitful2018/items/1-3@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/1-3.png',
                 'name' => '泰国榴莲',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '5641',
-                'url_image_main' => '/media/fruitful2018/items/1-4@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/1-4.png',
                 'name' => '新西兰金果4个装',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/1-5@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/1-5.png',
                 'name' => '混合果盒',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -178,49 +178,49 @@
         'items' => array(
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/2-1@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-1.png',
                 'name' => '沂蒙食舍双色桃拼',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4760',
-                'url_image_main' => '/media/fruitful2018/items/2-2@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-2.png',
                 'name' => '火龙果',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '5642',
-                'url_image_main' => '/media/fruitful2018/items/2-3@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-3.png',
                 'name' => '上海麒麟西瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4822',
-                'url_image_main' => '/media/fruitful2018/items/2-4@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-4.png',
                 'name' => '蓝莓',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/2-5@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-5.png',
                 'name' => '都知果蜜瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/2-6@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-6.png',
                 'name' => '泰国山竹5只装',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/2-7@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/2-7.png',
                 'name' => '泰国榴莲5.5-6斤装',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -233,35 +233,35 @@
         'items' => array(
             array(
                 'item_id' => '4752',
-                'url_image_main' => '/media/fruitful2018/items/3-1@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/3-1.png',
                 'name' => '新西兰金果X6',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4736',
-                'url_image_main' => '/media/fruitful2018/items/3-2@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/3-2.png',
                 'name' => '进口奇士橙',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4791',
-                'url_image_main' => '/media/fruitful2018/items/3-3@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/3-3.png',
                 'name' => '泰国山竹',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '5643',
-                'url_image_main' => '/media/fruitful2018/items/3-4@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/3-4.png',
                 'name' => '泰国香水椰',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4786',
-                'url_image_main' => '/media/fruitful2018/items/3-5@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/3-5.png',
                 'name' => '菲诺椰子冻*2',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -274,70 +274,70 @@
         'items' => array(
             array(
                 'item_id' => '4816',
-                'url_image_main' => '/media/fruitful2018/items/4-1@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-1.png',
                 'name' => '阳山水蜜桃',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4757',
-                'url_image_main' => '/media/fruitful2018/items/4-2@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-2.png',
                 'name' => '台湾木瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4776',
-                'url_image_main' => '/media/fruitful2018/items/4-3@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-3.png',
                 'name' => '库尔勒香梨',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '',
-                'url_image_main' => '/media/fruitful2018/items/4-4@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-4.png',
                 'name' => '都知果蜜瓜',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4748',
-                'url_image_main' => '/media/fruitful2018/items/4-5@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-5.png',
                 'name' => '台湾水仙芒',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4779',
-                'url_image_main' => '/media/fruitful2018/items/4-6@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-6.png',
                 'name' => '大荔冬枣',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '5640',
-                'url_image_main' => '/media/fruitful2018/items/4-7@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-7.png',
                 'name' => '泰国榴莲6-6.5斤装 ',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4755',
-                'url_image_main' => '/media/fruitful2018/items/4-8@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-8.png',
                 'name' => '精品油桃',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4739',
-                'url_image_main' => '/media/fruitful2018/items/4-9@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-9.png',
                 'name' => '桂味荔枝',
                 'price' => '25.68',
                 'tag_price' => '30.5',
             ),
             array(
                 'item_id' => '4739',
-                'url_image_main' => '/media/fruitful2018/items/4-10@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/4-10.png',
                 'name' => '桂味荔枝',
                 'price' => '25.68',
                 'tag_price' => '30.5',
@@ -354,20 +354,19 @@
     });
 
     // 获取抽奖活动
-    var lottery;
+    var lottery; // 抽奖活动
     var params = common_params;
     params.id = 1;
-    api_url += 'lottery/detail';
     // AJAX获取结果并生成相关HTML
     $.post(
-        api_url,
+        api_url + 'lottery/detail',
         params,
         function(result)
         {
-            console.log(result); // 输出回调数据到控制台
+            //console.log(result); // 输出回调数据到控制台
             if (result.status == 200)
             {
-                lottery = result.content
+                lottery = result.content;
             } else {
                 alert(result.content.error.message);
             }
@@ -440,65 +439,42 @@
 <script>
     var wheelSurf
     // 初始化装盘数据 正常情况下应该由后台返回
-    var initData = {
-        "success": true,
-        "list": [
+    //var initData = lottery.prizes;
+    //console.log(initData);
+
+    var initData = [
             {
-                "id": 100,
+                "id": 1,
                 "name": "1000元水果零食大礼包",
                 "image": "/media/fruitful2018/reward1.png",
-                "rank":1,
-                "percent":1
             },
             {
-                "id": 101,
+                "id": 2,
                 "name": "泰国金枕头榴莲*1",
-                "image": "/media/fruitful2018/reward1.png",
-                "rank":2,
-                "percent":3
+                "image": "/media/fruitful2018/reward2.png",
             },
             {
-                "id": 102,
+                "id": 3,
                 "name": "抖音网红妖娆花*1",
-                "image": "/media/fruitful2018/reward1.png",
-                "rank":3,
-                "percent":6
+                "image": "/media/fruitful2018/reward3.png",
             },
             {
-                "id": 103,
+                "id": 4,
                 "name": "鲜果节专用红包5元",
-                "image": "/media/fruitful2018/reward1.png",
-                "rank":4,
-                "percent":90
+                "image": "/media/fruitful2018/reward4.png",
             }
         ]
-    }
-
-    // 计算分配获奖概率(前提所有奖品概率相加100%)
-    function getGift(){
-        // 随机生成本次中奖数值
-        var percent = Math.random()*100
-
-        // 根据中奖数值返回相应中奖概率的奖项
-        var totalPercent = 0
-        for(var i = 0 ,l = initData.list.length;i<l;i++){
-            totalPercent += initData.list[i].percent
-            if(percent<=totalPercent){
-                return initData.list[i]
-            }
-        }
-    }
 
     // 奖品列表
     var list = {}
 
-    var angel = 360 / initData.list.length
+    var angel = 360 / initData.length
     // 格式化成插件需要的奖品列表格式
-    for (var i = 0, l = initData.list.length; i < l; i++) {
-        list[initData.list[i].rank] = {
-            id:initData.list[i].id,
-            name: initData.list[i].name,
-            image: initData.list[i].image
+    for (var i = 0, l = initData.length; i < l; i++) {
+        list[i] = {
+            id: initData[i].id,
+            name: initData[i].name,
+            image: initData[i].image
         }
     }
     // 查看奖品列表格式
@@ -539,49 +515,48 @@
             // 进行抽奖
             var params = common_params;
             params.lottery_id = lottery.lottery_id
-            api_url += 'lottery_record/create';
             // AJAX获取结果并生成相关HTML
             $.post(
-                api_url,
+                api_url + 'lottery_record/create',
                 params,
                 function(result)
                 {
                     console.log(result); // 输出回调数据到控制台
                     if (result.status == 200)
                     {
-                        //
+                        // 获取中奖信息
+                        var prize_id = result.content.prize_id;
+
+                        $("#message").html('')
+
+                        // 计算已中奖项在奖盘中是第几个区域
+                        var count = 0
+                        for (const key in list)
+                        {
+                            if (list.hasOwnProperty(key))
+                            {
+                                if (prize_id == list[key].id)
+                                {
+                                    break;
+                                }
+                                count++
+                            }
+                        }
+
+                        // 旋转奖盘并提示中奖信息
+                        wheelSurf.lottery((count * angel + angel / 2), function () {
+                            // 提示中奖信息
+                            $("#message").html(result.content.prize_id)
+                        })
                     } else {
                         alert(result.content.error.message);
                     }
+
+                    // 标记未在抽奖中
+                    throttle = true;
                 }
             )
-
-            // 获取中奖信息
-            var winData = getGift()
-
-            $("#message").html('')
-
-            // 计算已中奖项在奖盘中是第几个区域
-            var count = 0
-            for (const key in list) {
-                if (list.hasOwnProperty(key))
-                {
-                    if (winData.id == list[key].id)
-                    {
-                        break;
-                    }
-                    count++
-                }
-            }
-
-            // 旋转奖盘并提示中奖信息
-            wheelSurf.lottery((count * angel + angel / 2), function () {
-                // 提示中奖信息
-                $("#message").html(winData.name)
-
-                // 标记未在抽奖中
-                throttle = true;
-            })
+            // end 进行抽奖
         })
     });
 

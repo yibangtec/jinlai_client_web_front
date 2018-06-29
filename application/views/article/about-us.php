@@ -62,6 +62,7 @@
 				font-size: .28rem;
 				background: #fff;
 			}
+            .aboutustextlist a {display:block;width:100%;height:100%;}
 			.aboutustextlist span:nth-child(1){
 				margin-left: .56rem;
 			}
@@ -79,63 +80,73 @@
 	</head>
 	<body>
 		<div class="aboutuslogo">
-			<img src="https://cdn-remote.517ybang.com/media/home/aboutuslogo.png" alt="" />
+			<img src="<?php echo CDN_URL ?>media/home/aboutuslogo.png" alt="">
 		</div>
 		<p class="aboutuscontent">
 			商城-青岛本地严选平台,进来商城-青岛本地,商城-青岛本地严选平台,进来商城-青岛本地,商城-青岛本地严选平台,进来商城-青岛本地
 		</p>
 		<div class="aboutuspiclist">
 			<ul>
+                <?php if ($this->user_agent['is_android']): ?>
 				<li>
-					<a href="javascript:;">
-						<img src="https://cdn-remote.517ybang.com/media/home/android@3x.png" alt="" />
+					<a href="https://www.517ybang.com/jinlai_client_0.0.1.apk">
+						<img src="<?php echo CDN_URL ?>media/home/android@3x.png" alt="">
 						<span>Android</span>
 					</a>
 				</li>
+                <?php elseif ($this->user_agent['is_ios']): ?>
+                <li>
+                    <a href="https://itunes.apple.com/cn/app/id1066224229">
+                        <img src="<?php echo CDN_URL ?>media/home/ios@3x.png" alt="">
+                        <span>ios</span>
+                    </a>
+                </li>
+                <?php endif ?>
 				<li>
-						<img src="https://cdn-remote.517ybang.com/media/home/wx@3x.png" alt="" />
-					</a>
-				</li>
-				<li style="margin-right:0px;">
-					<a href="###">
-						<img src="https://cdn-remote.517ybang.com/media/home/ios@3x.png" alt="" />
-						<span>ios</span>
-					</a>
+                    <img src="<?php echo CDN_URL ?>media/home/wx@3x.png" alt="">
+                    <span>微信服务号</span>
 				</li>
 			</ul>
 		</div>
 		<!--消费服务,商家,投诉举报区域-->
 		<div class="aboutustextlist">
 			<p>
-				<a href="###">
+				<a href="tel:4008820532">
 					<span class="fl">消费者服务</span>
-					<span class="fr">400-888-8888</span>
+					<span class="fr">400-882-0532</span>
 				</a>
 			</p>
 			<p>
-				<a href="###">
-					<span class="fl">商家</span>
-					<span class="fr">0532-11778916</span>
+				<a href="tel:053280862555">
+					<span class="fl">商家服务</span>
+					<span class="fr">0532-80862555</span>
 				</a>
 			</p>
+
+            <!--
 			<p>
 				<a href="###">
 					<span class="fl">投诉举报</span>
 					<span class="fr">someone@some.com</span>
 				</a>
 			</p>
-			<p style="margin-top:.2rem;">
-				<a href="###">
-					<span class="fl">文章标题</span>
-					<span class="fr">></span>
-				</a>
-			</p>
+			-->
+
+            <p style="margin-top:.2rem;">
+                <a href="<?php echo base_url('article/policy-privacy') ?>">
+                    <span class="fl">隐私协议</span>
+                    <span class="fr">&gt;</span>
+                </a>
+            </p>
+            <p>
+                <a href="<?php echo base_url('article/user-agreement') ?>">
+                    <span class="fl">用户协议</span>
+                    <span class="fr">&gt;</span>
+                </a>
+            </p>
 		</div>
-		<div class="aboutfooter">@2018 青岛意帮网络科技有限公司</div>
+
+		<div class="aboutfooter">&copy;<?php echo date('Y') ?> 青岛意帮网络科技有限公司</div>
 
 	</body>
-	<script>
-
-
-	</script>
 </html>
