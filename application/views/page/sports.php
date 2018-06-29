@@ -135,6 +135,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
+            <i style="display: none;">48</i>
             <span class="titletext">瑜伽</span>
             <span class="smalltitle smallcolor_two">FRUITES</span>
             </div>
@@ -614,7 +615,7 @@
 	<!--水果分类div区域-->
 	<div class="fresh_mart_content">
 				<!--分类总-->
-<div class="freshsupertitle border20 auto bgfff">
+<!--<div class="freshsupertitle border20 auto bgfff">
 	<div class="fruiteSec">
 		 <div class="swiper-container15 marketclass">
     <div class="swiper-wrapper">
@@ -662,7 +663,7 @@
     </div>
     </div>
     </div>
-</div>
+</div>-->
 <div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
 	<ul>
 		<li class="clearfix">
@@ -1832,5 +1833,96 @@
 			}
 		});
 	});
+//下拉加载更多
 
+              //下拉加载更多
+     // 页数
+    // 每页展示10个
+// var size = 10;
+//var page = 0;
+// // dropload
+// //一进页面先请求十条数据
+//$(".move:not('.move:first')").on('click',function(){
+//	var onum = $(this).parents().index();
+//	$.ajax({
+//		type:"post",
+//		url:"https://api.517ybang.com/item/index",
+//		dataType : 'json',
+//		async:false,
+//		data:{app_type:'client',limit:10,offset:0,category_id:48},
+//		success:function(res){
+//			console.log(res);
+////			$('.fresh_mart_contentwrap .fresh_mart_content').fadeOut('fast');
+////      	$('.fresh_mart_contentwrap .fresh_mart_content').eq($(this).parents().index()).fadeIn('fast');
+//			var con = res.content;
+//			for (var i = 0;i < con.length;i++) {
+//				var oimg = con[i].url_image_main;
+//				var oname = con[i].name;
+//				var oslogan = con[i].slogan;
+//				var onewprice = con[i].price;
+//				if(!oslogan){
+//					var oLi = '<li class="clearfix"><div class="pic fl"><img src="'+oimg+'"></div><h1 class="fl">'+oname+'</h1><h2 class="fl"></h2><h3 class="fl">￥ '+onewprice+'</h3><i class="icon-buy fr addcar" style="font-size: .38rem;color: #ff3649;margin-top: .54rem;"></i></li>';
+//				$('.fresh_mart_contentwrap .fresh_mart_content').eq(onum).find('ul').append(oLi);
+//				}
+//				else{
+//					var oLi = '<li class="clearfix"><div class="pic fl"><img src="'+oimg+'"></div><h1 class="fl">'+oname+'</h1><h2 class="fl">'+osolan+'</h2><h3 class="fl">￥ '+onewprice+'</h3><i class="icon-buy fr addcar" style="font-size: .38rem;color: #ff3649;margin-top: .54rem;"></i></li>';
+//				$('.fresh_mart_contentwrap .fresh_mart_content').eq($(this).parents().index()).append(oLi);
+//				}
+//				
+//			}
+//		}
+//	});
+//});
+// $('.fresh_like').dropload({
+//   scrollArea : window,
+//   domUp : {
+//       domClass   : 'dropload-up',
+//       domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+//       domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
+//       domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
+//   },
+//   domDown : {
+//       domClass   : 'dropload-down',
+//       domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+//       domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
+//       domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
+//   },
+//   loadUpFn : function(me){
+//          page = 0;
+//   },
+//   loadDownFn : function(me){
+//       page++;
+//      $.ajax({
+//           url: api_item_index,
+//           data : {app_type:'client',limit:10,biz_id:item.biz_id,orderby_time_publish:'DESC',offset:page},
+//           success: function(res){
+//               var arrLen = res.content.length;
+//               if(arrLen > 0){
+//               var con = res.content;
+//               for (var i = 0;i < con.length;i++)
+//               {
+//                   var oLi = '<li><a href="'+ page_item_detail+con[i].item_id +'"><img src="'+(con[i].url_image_main.indexOf('http') != -1? con[i].url_image_main: (item_image_root + con[i].url_image_main))+'"><h1>'+con[i].name+'</h1><p><span>¥'+con[i].price+'</span></p></a></li>';
+//                   $('#bizDetailList').append(oLi);
+//                    
+//                   
+//               }
+//               // 如果没有数据
+//               }else{
+//                   // 锁定
+//                   me.lock();
+//                   // 无数据
+//                   me.noData();
+//               }
+//           me.resetload();
+//           },
+//           error: function(xhr, type){
+//               console.log('Ajax error!');
+//               // 即使加载出错，也得重置
+//               me.resetload();
+//           }
+//       });
+//
+//   },
+//   threshold : 50
+// });
 </script>

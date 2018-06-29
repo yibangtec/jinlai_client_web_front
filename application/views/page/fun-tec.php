@@ -97,13 +97,13 @@
                 <img src="<?php echo CDN_URL ?>media/page/sxcs/sx1.png">
             </div>-->
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=5632" target="_self">
-                	<img src="https://cdn-remote.517ybang.com/media/home/dw.png">
+            	<a href="https://www.517ybang.com/item/detail?id=5683" target="_self">
+                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0629/234331.jpg">
                 </a>
             </div>
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=5629" target="_self">
-                	<img src="https://cdn-remote.517ybang.com/media/home/hzm.jpg">
+            	<a href="https://www.517ybang.com/item/detail?id=5687" target="_self">
+                	<img src="https://medias.517ybang.com/item/url_image_main/201806/0629/234953.jpg">
                 </a>
             </div>
           
@@ -123,7 +123,7 @@
             </p>
             <i class="freshshowbg colorareaBlue"></i>
             <div class="move">
-                <span class="titletext">模玩手办</span>
+                <span class="titletext">潮流单品</span>
                 <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
@@ -135,7 +135,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">游戏外设</span>
+            <span class="titletext">趣味生活</span>
             <span class="smalltitle smallcolor_two">FRUITES</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
@@ -147,37 +147,25 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">动漫周边</span>
+            <span class="titletext">库车摩托</span>
             <span class="smalltitle smallcolor_two">VEGETABLE</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
             <div class="downarrow arrYellow"></div>
         </div>
-        <!--<div class="swiper-slide">
+        <div class="swiper-slide">
             <p class="colorarea">
             	<img src="<?php echo CDN_URL ?>media/fresh_mart/colorarea/rou@3x.png" />
             </p>
             <i class="freshshowbg colorareaRed"></i>
             <div class="move">
-                <span class="titletext">用品</span>
+                <span class="titletext">创意神器</span>
                 <span class="smalltitle smallcolor_one">MEAT</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
             <div class="downarrow arrRed"></div>
         </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="<?php echo CDN_URL ?>media/fresh_mart/colorarea/shuichan@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaBlue"></i>
-            <div class="move">
-            <span class="titletext">配件</span>
-            <span class="smalltitle smallcolor_four">THE AQUATIC</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuichan@3x.png">
-            <div class="downarrow arrBlue"></div>
-        </div>-->
- 
+     
      <div class="swiper-scrollbar"></div>
     </div>
 </div>
@@ -198,40 +186,40 @@
 </div>-->
 <div class="fruiteContent wid710 auto mt10 border20 bgfff clearfix">
     <ul class="clearfix">
-    	<a href="https://www.517ybang.com/item/detail?id=5627">
+    	<a href="https://www.517ybang.com/item/detail?id=4730">
         <li>
             <div class="pic">
-                <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212301.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/092715.jpg">
             </div>
-            <h1>奥迪双钻儿童玩具礼物超级飞侠变形机器人套装</h1>
-            <h2>￥107.00/件</h2>
+            <h1>美的(Midea) 吸尘器 SC861A</h1>
+            <h2>￥129.00/台</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=5601">
+        <a href="https://www.517ybang.com/item/detail?id=4641">
         <li>
             <div class="pic">
-                <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/205543.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0626/203734.jpg">
             </div>
-            <h1>眼镜厂 38179 景品手办 宠物小精灵 tea party</h1>
-            <h2>￥139.00/件</h2>
+            <h1>奔腾（POVOS）PW930</h1>
+            <h2>￥45.00/台</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=5606">
+        <a href="https://www.517ybang.com/item/detail?id=4894">
         <li>
             <div class="pic">
-                <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/205930.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/140049.jpg">
             </div>
-            <h1>暴雪周边钥匙挂件饰品守望先锋周边图标版钥匙链金属可调节钥匙扣</h1>
-            <h2>￥79.00/件</h2>
+            <h1>美的YGJ15B3</h1>
+            <h2>￥198.00/台</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=5587">
+        <a href="https://www.517ybang.com/item/detail?id=4716">
         <li>
             <div class="pic">
-                <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/204604.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0626/221606.jpg">
             </div>
-            <h1>乐高星球大战系列75192 豪华千年隼 LEGO 积木玩具</h1>
-            <h2>￥8499.00/件</h2>
+            <h1>艾美特(Airmate) 电风扇 FSW50R-5</h1>
+            <h2>￥199.00/台</h2>
         </li>
         </a>
     </ul>
@@ -253,13 +241,13 @@
             </div>
 			</div>
         </div>
-         <a href="https://www.517ybang.com/item/detail?id=5568" data-id="5568" class="freshshopid">
+         <a href="https://www.517ybang.com/item/detail?id=5136" data-id="5136" class="freshshopid">
         <div class="goodpic auto">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/203406.jpg">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/180800.jpg">
         </div>
         <h1>进来秒杀</h1>
-        <h2>魔兽世界wow 巫妖王阿尔萨斯苹果iPhone5/5S/SE磨砂手机壳保护套</h2>
-        <b class="atonce price_market">69.00/件</b>
+        <h2>亨氏金装黑米紫薯猪肝枸杞鳕鱼胡萝卜粒粒面3盒装 宝宝婴儿颗粒面</h2>
+        <b class="atonce price_market">107.80/份</b>
          </a>
         	<div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -269,11 +257,11 @@
     </div>
     <div class="experience_two fl">
         <div class="card_one ml0">
-        	    	<a href="https://www.517ybang.com/item/detail?id=5544" data-id='5544' class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/201954.png" class="fl">
+        	    	<a href="https://www.517ybang.com/item/detail?id=5249" data-id='5249' class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/205625.jpg" class="fl">
             <h1 class="mt10">在线秒杀</h1>
-            <h2>blizzard暴雪守望先锋半藏T恤守望印花T恤短袖暴雪周边cos服</h2>
-            <b class="atonce atonce_r price_market">83.40/件</b>
+            <h2>五羊 婴儿湿巾纸宝宝手口专用湿巾新生儿儿童湿纸巾80抽5包带盖</h2>
+            <b class="atonce atonce_r price_market">29.80/份</b>
             <div class="lowerprice">
                 <span>89%</span>
                 <span>discount</span>
@@ -285,11 +273,11 @@
         </div>
         
         <div class="card_one mt10 ml0">
-        	   <a href="https://www.517ybang.com/item/detail?id=5577" data-id="5577" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/203957.jpg" class="fl">
+        	   <a href="https://www.517ybang.com/item/detail?id=5173" data-id="5173" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/192944.jpg" class="fl">
             <h1 class="mt10">进来热销</h1>
-            <h2>乐高好朋友系列 41335 米娅的树屋 LEGO Friends 积木玩具</h2>
-            <b class="atonce atonce_r price_market">289.00/件</b>
+            <h2>贝亲 婴儿洗发沐浴泡沫(桃叶精华)沐浴露 500ml官方旗舰店 IA209</h2>
+            <b class="atonce atonce_r price_market">72.00/件</b>
             <div class="lowerprice">
                 <span>20%</span>
                 <span>discount</span>
@@ -305,32 +293,25 @@
 </div>
 
 <!--分类区域开始-->
+<!--<div class="wid710 auto bgfff border20 exercise clearfix">
+    <img src="<?php echo CDN_URL ?>media/home/bjhh.png">
+</div>-->
+	
+
+<!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/mwsb.png">
+    <img src="<?php echo CDN_URL ?>media/home/mbcd.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=5634" class="freshshopid" target="_self" data-id="5634">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/213204.jpg">
-            <h1 class="text-left">电玩男 手办 预定 Capcom CFB 海龙</h1>
-            <h2 class="text-left">复刻版 怪物猎人</h2>
-            <h3 class="text-left">￥100.00/件</h3>
-             </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-       
-        
-        <li>
-        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=5607" target="_self" data-id="5607">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/205955.jpg">
-            <h1 class="text-left">万代 12502 NX NXEDGE STYLE Q版 数码宝贝</h1>
-            <h2 class="text-left">数码暴龙 阿尔法兽</h2>
-            <h3 class="text-left">￥139.00/件</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4931" data-id="4931" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/142854.jpg">
+            <h1 class="text-left">巴拉巴拉男婴儿套装短袖纯棉两件套夏装2018新款女宝无袖衣服裤子</h1>
+           <!-- <h2 class="text-left">限购1台</h2>-->
+            <h3 class="text-left">￥79.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -338,12 +319,25 @@
         </li>
         
        
+        <li>
+        	 <a href="https://www.517ybang.com/item/detail?id=4950" data-id="4950" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/144640.jpg">
+            <h1 class="text-left">巴拉巴拉女童夏装2018新款童装连衣裙纯棉中大童淑女裙儿童公主裙</h1>
+            <h2 class="text-left">花边松紧袖口；可爱水果贴布，松紧腰部</h2>
+            <h3 class="text-left">￥99.00/件</h3>
+             </a>
+            <div class="market_buycar addcar">
+                <i class="icon-buy"></i>
+            </div>
+        </li>
+       
+        
         <li class="mr0">
-        	 <a href="https://www.517ybang.com/item/detail?id=5600" class="freshshopid" target="_self" data-id="5600">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/205447.jpg">
-            <h1 class="text-left">万代模型 22554 圣衣神话 EX 黄金 狮子座</h1>
-            <h2 class="text-left">重生 圣斗士 艾奥利亚</h2>
-            <h3 class="text-left">￥658.00/件</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=5010" data-id="5010" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/160555.jpg">
+            <h1 class="text-left">安奈儿童装婴小童春夏新款短袖针织连体衣YB727858</h1>
+            <h2 class="text-left">短袖针织连体衣</h2>
+            <h3 class="text-left">￥65.00/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -354,66 +348,18 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/yxws.png">
+    <img src="<?php echo CDN_URL ?>media/home/hscw.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=5491" data-id="5491" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/190036.jpg">
-            <h1 class="text-left">任天堂Nintendo Switch 方向盘Joy-Con Wheel赛车方向盘</h1>
-            <h2 class="text-left">限购1台</h2>
-            <h3 class="text-left">￥125.00/件</h3>
-            </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-        
-       
-        <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=5488" data-id="5488" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/185253.jpg">
-            <h1 class="text-left">任天堂Nintendo Switch无线游戏手柄 Switch Pro 手柄</h1>
-            <h2 class="text-left">限购一台</h2>
-            <h3 class="text-left">￥342.00/件</h3>
-             </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-       
-        
-        <li class="mr0">
-        	<a href="https://www.517ybang.com/item/detail?id=5497" data-id="5497" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/190722.jpg">
-            <h1 class="text-left">GPD win10 掌上游戏机PSP/PS2游戏掌机</h1>
-            <h2 class="text-left">限购一台</h2>
-            <h3 class="text-left">￥1900.00/件</h3>
-            </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-        
-    </ul>
-</div>
-<!--分类区域开始-->
-<div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/dmzb.png">
-</div>
-	
-<div class="like wid710 auto clearfix mt10 supermarketgoodslist">
-    <ul>
-    	
-        <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=5628" data-id="5628" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212542.jpg">
-            <h1 class="text-left">铁壁阿童木大师系列公仔情人节生日礼物潮流手办</h1>
-            <!--<h2 class="text-left">法国伯希和户外帽子夏季轻薄防紫外线渔夫帽遮阳骑行</h2>-->
-            <h3 class="text-left">￥229.00/件</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=5348" data-id="5348" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/170615.jpg">
+            <h1 class="text-left">3D立体仿真可爱猫咪墙贴纸客厅卧室电视背景墙装饰破墙花猫墙壁画</h1>
+            	<h2 class="text-left">重力球设计 可躺喝 防漏防呛</h2>
+            <h3 class="text-left">￥60.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -422,11 +368,11 @@
         
       
         <li>
-        	  <a href="https://www.517ybang.com/item/detail?id=5031" data-id="5030" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212027.jpg">
-            <h1 class="text-left">奥迪双钻 火力少年王6悠悠球新品电动加速</h1>
-            <h2 class="text-left">悠悠球混沌魔龙</h2>
-            <h3 class="text-left">￥199.00/件</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=5695" data-id="5695" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0630/023116.jpg">
+            <h1 class="text-left">春风 650TR-G尊享版 大排量 摩托车 加量不加价</h1>
+            <!--<h2 class="text-left">悠悠球混沌魔龙</h2>-->
+            <h3 class="text-left">￥37800.00/辆</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -435,11 +381,11 @@
         
        
         <li class="mr0">
-        	  <a href="https://www.517ybang.com/item/detail?id=5623" data-id="5623" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/211851.jpg">
-            <h1 class="text-left">奥迪双钻 火力少年王6变形回旋悠悠球 幻光虎</h1>
-            <!--<h2 class="text-left">健脾和胃，润肠护肤，通血养颜</h2>-->
-            <h3 class="text-left">￥65.00/件</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=5694" data-id="5694" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0630/000020.jpg">
+            <h1 class="text-left">Benelli 贝纳利 Leoncino 幼狮500cc双缸复古攀爬摩托车</h1>
+           <!-- <h2 class="text-left">21袋9口味 日期新鲜 原浆配原汁好吃又有趣</h2>-->
+            <h3 class="text-left">￥38800.00/辆</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -449,50 +395,9 @@
     </ul>
 </div>
 <!--分类区域开始-->
-<div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/dmzb.png">
-</div>
+
 	
-<div class="like wid710 auto clearfix mt10 supermarketgoodslist">
-    <ul>
-    	
-        <li>
-        	<a href="https://www.517ybang.com/item/detail?id=5606" data-id="5606" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/205930.jpg">
-            <h1 class="text-left">暴雪周边钥匙挂件饰品守望先锋周边图标版钥匙链金属可调节钥匙扣</h1>
-            <!--<h2 class="text-left">黑牛牛展，即黑牛腱肉，筋肉丰富，口感筋道，适宜家常炖煮，酱卤</h2>-->
-            <h3 class="text-left">￥79.00/件</h3>
-            </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-       
-        <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=5615" data-id="5615" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/210725.jpg">
-            <h1 class="text-left">LINE FRIENDS 布朗熊拖鞋 动漫周边二次元居家休闲拖鞋</h1>
-            <!--<h2 class="text-left">口感娇嫩，肉质松软，嫩度接近“菲力”，是精肉中的顶级牛排。</h2>-->
-            <h3 class="text-left">￥134.00/件</h3>
-            </a>
-            <div class="market_buycar addcar">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-        <a href="https://www.517ybang.com/item/detail?id=5533" data-id="5533" class="freshshopid">
-        <li class="mr0">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/200922.jpg">
-            <h1 class="text-left">迪士尼商店 小熊维尼可爱毛绒玩具玩偶公仔中号大号</h1>
-           <!-- <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>-->
-            <h3 class="text-left">￥286.00/件</h3>
-            </a>
-            <div class="market_buycar ">
-                <i class="icon-buy"></i>
-            </div>
-        </li>
-        
-    </ul>
-</div>
+
 
 <!--猜你喜欢区域开始-->
 <!--<div class="wid710 auto bgfff border20 exercise clearfix">

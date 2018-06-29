@@ -175,7 +175,8 @@ wx.ready(function(){
         </div>
 	</section>
 	
-	<section id=service-promise>
+	<!--
+    <section id=service-promise>
 		<i class="icon-Arrow"></i>
 		<ul>
 			<li>
@@ -198,12 +199,14 @@ wx.ready(function(){
 			</li>
 		</ul>
 	</section>
+	-->
 
 	<?php if ( !empty($skus) ): ?>
     // TODO: SKU
 	<?php endif ?>
 
     <!-- 优惠券模板 -->
+    <!--
     <div class="wid710 auto border20 bgfff skus clearfix mt20">
 
         <div class="topcardwrap">
@@ -232,8 +235,8 @@ wx.ready(function(){
             </h1>
             <i class="icon-Arrow cxtitle"></i>
         </div>
-
     </div>
+    -->
 
     <!-- 产品参数 -->
     <div class="wid710 auto border20 bgfff skus clearfix mt20">
@@ -281,7 +284,7 @@ wx.ready(function(){
 	<div class="shopInfo mt20 auto border20 clearfix auto wid670">
 		<div class="headerinfo clearfix">
 			<div class="pic fl centered_xy">
-				<img src="<?php echo MEDIA_URL.'biz/'.$biz['url_logo'] ?>">
+				<img src="<?php echo empty($biz['url_logo'])? DEFAULT_IMAGE: MEDIA_URL.'biz/'.$biz['url_logo'] ?>">
 			</div>
 			<div class="headertext fl">
 				<h1><?php echo $biz['brief_name'] ?></h1>
@@ -405,12 +408,12 @@ wx.ready(function(){
     <?php endif ?>
 
 	<div class="particularstag wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle"/>
+		<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle">
 		<!--特色介绍-->
 		<div class="featurescard clearfix mt10">
-			<img src="<?php echo CDN_URL ?>media/item/detail/quanchenglenglian@3x.png" />
-			<img src="<?php echo CDN_URL ?>media/item/detail/3xiaoshisongda@3x.png" />
-			<img src="<?php echo CDN_URL ?>media/item/detail/tousuchuli@3x.png" />
+			<img src="<?php echo CDN_URL ?>media/item/detail/quanchenglenglian@3x.png">
+			<img src="<?php echo CDN_URL ?>media/item/detail/3xiaoshisongda@3x.png">
+			<img src="<?php echo CDN_URL ?>media/item/detail/tousuchuli@3x.png">
 		</div>
 		<!--猜你喜欢区域-->
 		<div class="shopinfolike auto wid710 border20">
@@ -501,9 +504,48 @@ wx.ready(function(){
 		</li>
 
 		<li>
+            <?php
+                $item_status = '';
+                if ( ! empty($item['time_delete']) ):
+                    $item_status = '商品已经下架啦~';
+
+                elseif ( empty($item['time_publish']) ):
+                    if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
+                        $item_status = '商品还未上架';
+                    elseif ($item['time_to_publish'] > time()):
+                        $item_status = date('Y-m-d H:i').'开售';
+                    endif;
+
+                elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
+                    if (empty($item['skus'])):
+                        $item_status = '商品已经被抢光了~';
+                    else:
+                        $sku_stocks_overall = 0;
+                        foreach ($sku as $item['skus']):
+                            $sku_stocks_overall += $sku['stocks'];
+                        endforeach;
+                        if ($sku_stocks_overall == 0) $item_status = '商品已经被抢光了~';
+                    endif;
+
+                endif;
+            ?>
+
+            <?php if (empty($item_status)): ?>
 			<a id=order-create class="btn btn-primary btn-lg btn-block" title="立即购买" href="<?php echo base_url('order/create?cart_string=0|'.$item['item_id'].'|0|1') ?>">
 				立即购买
 			</a>
+            <?php else: ?>
+            <a id=order-create class="btn btn-default btn-lg btn-block" title="无法购买" href="#">
+                <?php echo $item_status ?>
+            </a>
+            <script>
+                $(function(){
+                    $('#order-create').click(function(){
+                        return false;
+                    });
+                });
+            </script>
+            <?php endif ?>
 		</li>
 	</ul>
 </nav>

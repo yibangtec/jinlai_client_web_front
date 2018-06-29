@@ -97,13 +97,13 @@
                 <img src="<?php echo CDN_URL ?>media/page/sxcs/sx1.png">
             </div>-->
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=3978" target="_self">
-                	<img src="<?php echo CDN_URL ?>media/page/sxcs/sx2.png">
+            	<a href="https://www.517ybang.com/item/detail?id=4587" target="_self">
+                	<img src="https://cdn-remote.517ybang.com/media/home/yu1.jpg">
                 </a>
             </div>
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=3872" target="_self">
-                	<img src="<?php echo CDN_URL ?>media/page/sxcs/sx3.png">
+            	<a href="https://www.517ybang.com/item/detail?id=4554" target="_self">
+                	<img src="https://cdn-remote.517ybang.com/media/home/yu2.jpg">
                 </a>
             </div>
           
@@ -135,7 +135,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">水果</span>
+            <span class="titletext">蔬菜</span>
             <span class="smalltitle smallcolor_two">FRUITES</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
@@ -147,7 +147,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">蔬菜</span>
+            <span class="titletext">肉类</span>
             <span class="smalltitle smallcolor_two">VEGETABLE</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
@@ -159,7 +159,7 @@
             </p>
             <i class="freshshowbg colorareaRed"></i>
             <div class="move">
-                <span class="titletext">肉类</span>
+                <span class="titletext">水产</span>
                 <span class="smalltitle smallcolor_one">MEAT</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
@@ -171,13 +171,13 @@
             </p>
             <i class="freshshowbg colorareaBlue"></i>
             <div class="move">
-            <span class="titletext">水产</span>
+            <span class="titletext">生鲜</span>
             <span class="smalltitle smallcolor_four">THE AQUATIC</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shuichan@3x.png">
             <div class="downarrow arrBlue"></div>
         </div>
-         <div class="swiper-slide">
+         <!--<div class="swiper-slide">
             <p class="colorarea">
             	<img src="<?php echo CDN_URL ?>media/fresh_mart/colorarea/shangchao@3x.png" />
             </p>
@@ -188,7 +188,7 @@
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
             <div class="downarrow arrPink"></div>
-        </div>
+        </div>-->
      <div class="swiper-scrollbar"></div>
     </div>
 </div>
@@ -209,40 +209,40 @@
 </div>-->
 <div class="fruiteContent wid710 auto mt10 border20 bgfff clearfix">
     <ul class="clearfix">
-    	<a href="https://www.517ybang.com/item/detail?id=4005">
+    	<a href="https://www.517ybang.com/item/detail?id=4579">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images/A1841/ba15cf6a-257d-4298-9e3d-a246bc4ee9a3.jpg">
             </div>
-            <h1>青岛本地蓝莓 125g盒</h1>
-            <h2>￥25.80/盒</h2>
+            <h1>蟹香鱼柳 250g/份</h1>
+            <h2>￥35.00/份</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=3956">
+        <a href="https://www.517ybang.com/item/detail?id=4555">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/lanmei@3x.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images//d6387752-2db1-4c03-a674-b8e8c9b10137.jpg">
             </div>
-            <h1>四川丑桔（丑八怪）</h1>
-            <h2>￥19.80/斤</h2>
+            <h1>青岛农家菜花 500g/份</h1>
+            <h2>￥7.80/份</h2>
         </li>
         </a>
         <a href="https://www.517ybang.com/item/detail?id=4049">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/mangguo@3x.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images/A2482/07a59cc0-189e-4ed5-a0e2-cb72e92fc2f0.jpg">
             </div>
-            <h1>四川柠檬</h1>
-            <h2>￥12.80/斤</h2>
+            <h1>麻辣蟹钳   270g/罐（次日送达）</h1>
+            <h2>￥29.00/罐</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=4021">
+        <a href="https://www.517ybang.com/item/detail?id=4176">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/putao@3x.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images//a539eb08-1389-4cc8-9f4f-06cc5e868367.jpg">
             </div>
-            <h1>烟台黄蜜樱珠 500g份</h1>
-            <h2>￥78.80/斤</h2>
+            <h1>君博黑牛筋头巴脑   1kg/份  （下单后次日送达，请提前下单）</h1>
+            <h2>￥120.00/份</h2>
         </li>
         </a>
     </ul>
@@ -264,13 +264,13 @@
             </div>
 			</div>
         </div>
-         <a href="https://www.517ybang.com/item/detail?id=4097" data-id="4097" class="freshshopid">
+         <a href="https://www.517ybang.com/item/detail?id=4536" data-id="4536" class="freshshopid">
         <div class="goodpic auto">
-            <img src="<?php echo CDN_URL ?>media/home/nihoutao.jpg">
+            <img src="http://www.ybslux.com/uploadfiles/images//87f1327c-a898-4763-b8cc-c09a745b30b1.jpg">
         </div>
         <h1>进来秒杀</h1>
-        <h2>高级泥猴桃</h2>
-        <b class="atonce price_market">12.5/斤</b>
+        <h2>青岛农家鲜平菇  500g/份</h2>
+        <b class="atonce price_market">10.8/份</b>
          </a>
         	<div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -280,11 +280,11 @@
     </div>
     <div class="experience_two fl">
         <div class="card_one ml0">
-        	    	<a href="https://www.517ybang.com/item/detail?id=4355" data-id='4355' class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/yingtao.jpg" class="fl">
+        	    	<a href="https://www.517ybang.com/item/detail?id=4525" data-id='4525' class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images//0c7ca0ab-aa19-4cd4-8559-8c70985e6216.jpg" class="fl">
             <h1 class="mt10">在线秒杀</h1>
-            <h2>黑美人西瓜切盒</h2>
-            <b class="atonce atonce_r price_market">12.80/斤</b>
+            <h2>优选鸡翅中  500g/份</h2>
+            <b class="atonce atonce_r price_market">28.80/斤</b>
             <div class="lowerprice">
                 <span>89%</span>
                 <span>discount</span>
@@ -296,11 +296,11 @@
         </div>
         
         <div class="card_one mt10 ml0">
-        	   <a href="https://www.517ybang.com/item/detail?id=4024" data-id="4024" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/jianqie.jpg" class="fl">
+        	   <a href="https://www.517ybang.com/item/detail?id=4567" data-id="4567" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1138/f213fb00-a285-442d-b01e-4444dbc9ce2b.jpg" class="fl">
             <h1 class="mt10">进来热销</h1>
-            <h2>进口绿果</h2>
-            <b class="atonce atonce_r price_market">19.80/斤</b>
+            <h2>青岛鲳鱼 4条/份（100-125g/条）</h2>
+            <b class="atonce atonce_r price_market">39.60/斤</b>
             <div class="lowerprice">
                 <span>20%</span>
                 <span>discount</span>
@@ -324,11 +324,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4007" class="freshshopid" target="_self" data-id="4007">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/ningmeng@3x.jpg">
-            <h1 class="text-left">青岛蜜宝甜瓜</h1>
-            <h2 class="text-left">皮薄瓤厚，天然清新，香甜可口。</h2>
-            <h3 class="text-left">￥15.80/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4573" class="freshshopid" target="_self" data-id="4007">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1544/9d4e936c-171c-42f0-9f4b-700a4224b81a.jpg">
+            <h1 class="text-left">大金发野猪腌制烧烤肉 0.5kg/份</h1>
+            <h2 class="text-left">（冷冻肉，3日内发货）精选原料，天然生态，肉质鲜美，绝色天香</h2>
+            <h3 class="text-left">￥88.00/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -337,11 +337,11 @@
        
         
         <li>
-        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=4053" target="_self" data-id="4053">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/yezi@3x.jpg">
-            <h1 class="text-left">泰国龙眼</h1>
-            <h2 class="text-left">龙眼含丰富的葡萄糖、蔗糖和蛋白质等，含铁量比较高，可提高热能</h2>
-            <h3 class="text-left">￥22.80/斤</h3>
+        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=4178" target="_self" data-id="4053">
+            <img src="http://www.ybslux.com/uploadfiles/images/A2074/f926acae-285c-4d3d-8276-5261c260f428.jpg">
+            <h1 class="text-left">大君博黑牛牛尾 500g/份</h1>
+            <h2 class="text-left">下单后次日送达，青提前下单</h2>
+            <h3 class="text-left">￥140.00/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -350,11 +350,11 @@
         
        
         <li class="mr0">
-        	 <a href="https://www.517ybang.com/item/detail?id=4011" class="freshshopid" target="_self" data-id="4011">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/huolongguo@3x.jpg">
-            <h1 class="text-left">越南白心火龙果</h1>
-            <h2 class="text-left">含丰富的花青素，抗氧化，有美颜功效</h2>
-            <h3 class="text-left">￥18.80/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4180" class="freshshopid" target="_self" data-id="4180">
+            <img src="http://www.ybslux.com/uploadfiles/images//b8bbacf7-24f5-41c6-ad11-098015b11ce7.jpg">
+            <h1 class="text-left">君博黑牛棒骨  1kg/份（下单后次日送达，请提前下单）</h1>
+            <h2 class="text-left">媲美日本黑毛和牛，国家A级绿色食品认证，煲汤佳品。</h2>
+            <h3 class="text-left">￥40.00/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -372,11 +372,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=3840" data-id="3840" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/xihongshi@3x.jpg">
-            <h1 class="text-left">海阳西红柿</h1>
-            <h2 class="text-left">帮助消化、降低胆固醇</h2>
-            <h3 class="text-left">￥5.80/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4561" data-id="4561" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1796/cccb9b1a-b864-407c-8ed0-f7ec949d14d4.jpg">
+            <h1 class="text-left">北极贝 10只装 100g/份</h1>
+            <h2 class="text-left">不当刺身太浪费，船冻保鲜，超大个头</h2>
+            <h3 class="text-left">￥28.00/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -385,11 +385,11 @@
         
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4052" data-id="4052" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/qingjiao@3x.jpg">
-            <h1 class="text-left">青岛农家苦瓜</h1>
-            <h2 class="text-left">含有多种维生素，清暑解渴</h2>
-            <h3 class="text-left">￥6.80/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4586" data-id="4586" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1798/32981ebb-4090-427c-96dd-fdfb3172854b.jpg">
+            <h1 class="text-left">带籽甜虾   冷冻生鲜 500克/份</h1>
+            <h2 class="text-left">满籽北极虾，野生进口，捕捞后立即熟冻，只需简单冲洗就可以食用</h2>
+            <h3 class="text-left">￥38.00/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -398,11 +398,11 @@
        
         
         <li class="mr0">
-        	<a href="https://www.517ybang.com/item/detail?id=4037" data-id="4037" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/yuanshengcai@3x.jpg">
-            <h1 class="text-left">寿光彩椒</h1>
-            <h2 class="text-left">色泽诱人，汁多甜脆，可促进食欲，促进新陈代谢</h2>
-            <h3 class="text-left">￥16.00/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4122" data-id="4122" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1860/658a2ede-0f64-4aea-8396-e91f62bb57bb.jpg">
+            <h1 class="text-left">小黄花鱼 冷冻生鲜500克（3-4）条</h1>
+            <h2 class="text-left">小黄花鱼身金黄自然，鱼肉白嫩细腻，纹理分明似蒜瓣，鲜味十足。</h2>
+            <h3 class="text-left">￥39.00/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -420,11 +420,11 @@
     <ul>
     	
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=3848" data-id="3848" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/dazhaxie@3x.png">
-            <h1 class="text-left">波士顿鲜活大龙虾</h1>
-            <h2 class="text-left">富含多种维生素，可益气滋阳，开胃化痰</h2>
-            <h3 class="text-left">￥599.00/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4479" data-id="4479" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1086/90820a9f-df80-4c7e-a051-bd0aed4f06da.jpg">
+            <h1 class="text-left">天然有机芋头 500g/份</h1>
+            <h2 class="text-left">绿色栽培，无任何化学物质，软糯香甜，颗颗饱满</h2>
+            <h3 class="text-left">￥10.80/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -433,11 +433,11 @@
         
       
         <li>
-        	  <a href="https://www.517ybang.com/item/detail?id=4056" data-id="4056" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/xia@3x.png">
-            <h1 class="text-left">青岛鲜活鲍鱼</h1>
-            <h2 class="text-left">富含多种营养元素，可健脑补身，提高免疫力</h2>
-            <h3 class="text-left">￥42.80/斤</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=3959" data-id="3959" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images//ababb783-2b93-40fd-95d0-5a5f6bf34aef.jpg">
+            <h1 class="text-left">青岛鲜活多宝鱼 1000-1100g/条</h1>
+            <h2 class="text-left">胶质蛋白含量较高，可养颜美容，补肾健脑</h2>
+            <h3 class="text-left">￥128.00/条</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -446,11 +446,11 @@
         
        
         <li class="mr0">
-        	  <a href="https://www.517ybang.com/item/detail?id=3843" data-id="3843" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/shanbei@3x.png">
-            <h1 class="text-left">青岛扇贝</h1>
-            <h2 class="text-left">健脾和胃，润肠护肤，通血养颜</h2>
-            <h3 class="text-left">￥10.00/份</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=4554" data-id="4554" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A0785/2b62f542-2336-4345-87e9-1513a86b78f2.jpg">
+            <h1 class="text-left">青岛鲜活海肠  500g/份</h1>
+            <h2 class="text-left">具有温补肝肾、壮阳固精的作用</h2>
+            <h3 class="text-left">￥35.80/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -468,11 +468,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4181" data-id="4181" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/zhurou@3x.png">
-            <h1 class="text-left">君博黑牛牛展</h1>
-            <h2 class="text-left">黑牛牛展，即黑牛腱肉，筋肉丰富，口感筋道，适宜家常炖煮，酱卤</h2>
-            <h3 class="text-left">￥160.00/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4135" data-id="4135" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1909/9210b859-b66c-4ff6-b73d-1c584f32795e.jpg">
+            <h1 class="text-left">德发早餐培根切片 200g</h1>
+            <h2 class="text-left">德发香肠，开袋即食，传承经典厨艺，传世德国美味！</h2>
+            <h3 class="text-left">￥24.00/斤</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -480,22 +480,22 @@
         </li>
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4175" data-id="4175" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/zhuwuhua@3x.png">
-            <h1 class="text-left">君博黑牛原切精肉黑牛扒</h1>
-            <h2 class="text-left">口感娇嫩，肉质松软，嫩度接近“菲力”，是精肉中的顶级牛排。</h2>
-            <h3 class="text-left">￥130.00/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4569" data-id="4569" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1909/15bd0307-7acf-465e-b389-0b5220f823a8.jpg">
+            <h1 class="text-left">德发早餐培根切片 200g</h1>
+            <h2 class="text-left">德发香肠，开袋即食，传承经典厨艺，传世德国美味！</h2>
+            <h3 class="text-left">￥24.00/斤</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>
-        <a href="https://www.517ybang.com/item/detail?id=3873" data-id="3873" class="freshshopid">
+        <a href="https://www.517ybang.com/item/detail?id=4570" data-id="4570" class="freshshopid">
         <li class="mr0">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/niupai@3x.png">
-            <h1 class="text-left">特级梅花肉</h1>
-            <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>
-            <h3 class="text-left">￥23.80/斤</h3>
+            <img src="http://www.ybslux.com/uploadfiles/images//dc5c7aad-0fd0-4431-87cd-faa0da5fd382.jpg">
+            <h1 class="text-left">德发奶酪香肠 140g</h1>
+            <h2 class="text-left">德发香肠，开袋即食，传承经典厨艺，传世德国美味！</h2>
+            <h3 class="text-left">￥26.00/斤</h3>
             </a>
             <div class="market_buycar ">
                 <i class="icon-buy"></i>
@@ -506,11 +506,11 @@
 </div>
 
 <!--猜你喜欢区域开始-->
-<div class="wid710 auto bgfff border20 exercise clearfix">
+<!--<div class="wid710 auto bgfff border20 exercise clearfix">
     <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
-</div>
+</div>-->
 <!--猜你喜欢内容区域-->
-<div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
+<!--<div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
 	<ul>
 		
 		<li class="clearfix">
@@ -620,7 +620,7 @@
 		</li>
 		
 	</ul>
-</div>
+</div>-->
 	</div>
 	<!--水果分类div区域-->
 	<div class="fresh_mart_content">

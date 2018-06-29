@@ -17,7 +17,7 @@
 	<!--头部title区域开始-->
 	<div class="popwindowcontent">
 		<div class="wid670 auto clearfix">
-			<input type="text" placeholder="搜索会员卡" class="fl" id="search-membercard"/>
+			<input type="text" placeholder="搜索会员卡" class="fl" id="search-membercard">
 			<i class="icon-bottom-preview"></i>
 			<span id="popwindowcancle" class="fl">取消</span>
 		</div>
@@ -28,7 +28,9 @@
 		<i class="icon-huiyuan fr"></i>
 		<i class="icon-bottom-preview" id="popwindowbtn"></i>
 	</div>
-		<div class="bgfff memberclass">
+
+    <!--
+    <div class="bgfff memberclass">
 		<div class="couponcentertitle auto bgfff">
 			<div class="swiper-containercouponcenter">
 				<div class="swiper-wrapper" id="memberTitle">
@@ -60,7 +62,9 @@
                 </div>
 				</div>
 		</div>
-		</div>
+    </div>
+    -->
+
 	<div class="member_wraplist">
 		<div class="couponcentercontent auto mt20 clearfix">
 			<div class="swiper-containercouponcentertemplate">
@@ -210,16 +214,15 @@
 
 <?php endif ?>
 <script>
-			$(function(){
-				
-//					//会员卡顶部商家分类
+        $(function(){
+			var params = common_params;
+            //会员卡顶部商家分类
 			$.ajax({
-				type:"post",
-				url:"https://api.517ybang.com/item_category/index",
-				data : {app_type:'client'},
-				dataType : 'json',
+				url: api_url + 'item_category/index',
+				data : params,
 				success:function(res){
-					for (var i = 0;i < res.content.length;i++) {
+					for (var i = 0;i < res.content.length;i++)
+					{
 						if(res.content[i].level == 1){
 							console.log(res.content[i].name);
 						var memberTitleList = '<div class="swiper-slide"><a>'+res.content[i].name+'</a></div>';
@@ -309,9 +312,10 @@
 				}
 			})
 			
-			//如果不存在会员卡头像,那么显示默认头像
+			// TODO 如果不存在会员卡头像,那么显示默认头像
 			$('.memberlistpic').find('img').each(function(i){
-				if($(this).attr('src') == 'https://medias.517ybang.com/biz/'){
+				if ($(this).attr('src') == 'https://medias.517ybang.com/biz/')
+				{
 					$(this).attr('src','https://cdn-remote.517ybang.com/media/home/default.png');
 				}
 			});
