@@ -97,13 +97,13 @@
                 <img src="<?php echo CDN_URL ?>media/page/sxcs/sx1.png">
             </div>-->
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=3978" target="_self">
-                	<img src="<?php echo CDN_URL ?>media/page/sxcs/sx2.png">
+            	<a href="https://www.517ybang.com/item/detail?id=5150" target="_self">
+                	<img src="https://cdn-remote.517ybang.com/media/home/ffy.jpg">
                 </a>
             </div>
             <div class="swiper-slide">
-            	<a href="https://www.517ybang.com/item/detail?id=3872" target="_self">
-                	<img src="<?php echo CDN_URL ?>media/page/sxcs/sx3.png">
+            	<a href="https://www.517ybang.com/item/detail?id=5055" target="_self">
+                	<img src="https://cdn-remote.517ybang.com/media/home/xbl.jpg">
                 </a>
             </div>
           
@@ -123,7 +123,7 @@
             </p>
             <i class="freshshowbg colorareaBlue"></i>
             <div class="move">
-                <span class="titletext">进来推荐</span>
+                <span class="titletext">服饰</span>
                 <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
@@ -135,7 +135,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">水果</span>
+            <span class="titletext">瑜伽</span>
             <span class="smalltitle smallcolor_two">FRUITES</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
@@ -147,7 +147,7 @@
             </p>
             <i class="freshshowbg colorareaYellow"></i>
             <div class="move">
-            <span class="titletext">蔬菜</span>
+            <span class="titletext">游泳</span>
             <span class="smalltitle smallcolor_two">VEGETABLE</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
@@ -159,7 +159,7 @@
             </p>
             <i class="freshshowbg colorareaRed"></i>
             <div class="move">
-                <span class="titletext">肉类</span>
+                <span class="titletext">用品</span>
                 <span class="smalltitle smallcolor_one">MEAT</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
@@ -171,24 +171,13 @@
             </p>
             <i class="freshshowbg colorareaBlue"></i>
             <div class="move">
-            <span class="titletext">水产</span>
+            <span class="titletext">配件</span>
             <span class="smalltitle smallcolor_four">THE AQUATIC</span>
             </div>
             <img src="<?php echo CDN_URL ?>media/fresh_mart/shuichan@3x.png">
             <div class="downarrow arrBlue"></div>
         </div>
-         <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="<?php echo CDN_URL ?>media/fresh_mart/colorarea/shangchao@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaPink"></i>
-            <div class="move">
-            <span class="titletext">商超</span>
-            <span class="smalltitle smallcolor_four">BUSSIBES</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
-            <div class="downarrow arrPink"></div>
-        </div>
+ 
      <div class="swiper-scrollbar"></div>
     </div>
 </div>
@@ -209,40 +198,40 @@
 </div>-->
 <div class="fruiteContent wid710 auto mt10 border20 bgfff clearfix">
     <ul class="clearfix">
-    	<a href="https://www.517ybang.com/item/detail?id=4005">
+    	<a href="https://www.517ybang.com/item/detail?id=4989">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/153542.jpg">
             </div>
-            <h1>青岛本地蓝莓 125g盒</h1>
-            <h2>￥25.80/盒</h2>
+            <h1>手机防水袋 苹果7/6plus潜水套</h1>
+            <h2>￥12.90/个</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=3956">
+        <a href="https://www.517ybang.com/item/detail?id=5020">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/lanmei@3x.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/161348.jpg">
             </div>
-            <h1>四川丑桔（丑八怪）</h1>
-            <h2>￥19.80/斤</h2>
+            <h1>鲟龙防水母游泳头套防紫外线防晒护脸面基尼头罩面罩</h1>
+            <h2>￥36.00/个</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=4049">
+        <a href="https://www.517ybang.com/item/detail?id=5154">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/mangguo@3x.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/182435.jpg">
             </div>
-            <h1>四川柠檬</h1>
-            <h2>￥12.80/斤</h2>
+            <h1>探路者男士速干短袖t恤81367  菘蓝  M-2XL</h1>
+            <h2>￥89.00/件</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=4021">
+        <a href="https://www.517ybang.com/item/detail?id=5334">
         <li>
             <div class="pic">
-                <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/putao@3x.jpg">
+                <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/092643.jpg">
             </div>
-            <h1>烟台黄蜜樱珠 500g份</h1>
-            <h2>￥78.80/斤</h2>
+            <h1>奥利奥威化夹心饼干混合口味500g 散装</h1>
+            <h2>￥24.80/盒</h2>
         </li>
         </a>
     </ul>
@@ -266,11 +255,11 @@
         </div>
          <a href="https://www.517ybang.com/item/detail?id=4097" data-id="4097" class="freshshopid">
         <div class="goodpic auto">
-            <img src="<?php echo CDN_URL ?>media/home/nihoutao.jpg">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/182013.jpg">
         </div>
         <h1>进来秒杀</h1>
-        <h2>高级泥猴桃</h2>
-        <b class="atonce price_market">12.5/斤</b>
+        <h2>户外防晒衣长袖皮肤风衣  男款 彩蓝 M-2XL</h2>
+        <b class="atonce price_market">79.00/件</b>
          </a>
         	<div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -281,10 +270,10 @@
     <div class="experience_two fl">
         <div class="card_one ml0">
         	    	<a href="https://www.517ybang.com/item/detail?id=4355" data-id='4355' class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/yingtao.jpg" class="fl">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/182307.jpg" class="fl">
             <h1 class="mt10">在线秒杀</h1>
-            <h2>黑美人西瓜切盒</h2>
-            <b class="atonce atonce_r price_market">12.80/斤</b>
+            <h2>探路者背包 20升超轻背包ZEBG80106 黑色印花</h2>
+            <b class="atonce atonce_r price_market">83.40/件</b>
             <div class="lowerprice">
                 <span>89%</span>
                 <span>discount</span>
@@ -317,18 +306,18 @@
 
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/wenyiguoshi@3x.png">
+    <img src="https://cdn-remote.517ybang.com/media/home/qlyx.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4007" class="freshshopid" target="_self" data-id="4007">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/ningmeng@3x.jpg">
-            <h1 class="text-left">青岛蜜宝甜瓜</h1>
-            <h2 class="text-left">皮薄瓤厚，天然清新，香甜可口。</h2>
-            <h3 class="text-left">￥15.80/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=5158" class="freshshopid" target="_self" data-id="5158">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/183237.jpg">
+            <h1 class="text-left">脸基尼 鲟龙长袖单上衣  L码</h1>
+            <!--<h2 class="text-left">皮薄瓤厚，天然清新，香甜可口。</h2>-->
+            <h3 class="text-left">￥89.00/件</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -337,11 +326,11 @@
        
         
         <li>
-        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=4053" target="_self" data-id="4053">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/yezi@3x.jpg">
-            <h1 class="text-left">泰国龙眼</h1>
-            <h2 class="text-left">龙眼含丰富的葡萄糖、蔗糖和蛋白质等，含铁量比较高，可提高热能</h2>
-            <h3 class="text-left">￥22.80/斤</h3>
+        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=5001" target="_self" data-id="5001">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/155755.jpg">
+            <h1 class="text-left">yingfa英发游泳装备浮板打水板助泳板</h1>
+            <!--<h2 class="text-left">龙眼含丰富的葡萄糖、蔗糖和蛋白质等，含铁量比较高，可提高热能</h2>-->
+            <h3 class="text-left">￥45.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -350,11 +339,11 @@
         
        
         <li class="mr0">
-        	 <a href="https://www.517ybang.com/item/detail?id=4011" class="freshshopid" target="_self" data-id="4011">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/huolongguo@3x.jpg">
-            <h1 class="text-left">越南白心火龙果</h1>
-            <h2 class="text-left">含丰富的花青素，抗氧化，有美颜功效</h2>
-            <h3 class="text-left">￥18.80/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=5158" class="freshshopid" target="_self" data-id="5158">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/183237.jpg">
+            <h1 class="text-left">脸基尼 鲟龙长袖单上衣  L码</h1>
+            <!--<h2 class="text-left">含丰富的花青素，抗氧化，有美颜功效</h2>-->
+            <h3 class="text-left">￥89.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -365,18 +354,18 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lvyexianzong@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/ydxx.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=3840" data-id="3840" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/xihongshi@3x.jpg">
-            <h1 class="text-left">海阳西红柿</h1>
-            <h2 class="text-left">帮助消化、降低胆固醇</h2>
-            <h3 class="text-left">￥5.80/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=5046" data-id="5046" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/162820.jpg">
+            <h1 class="text-left">新基础黑L-xxxl 李宁运动短裤男士训练系列薄款运动裤</h1>
+            <!--<h2 class="text-left">帮助消化、降低胆固醇</h2>-->
+            <h3 class="text-left">￥58.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -385,11 +374,11 @@
         
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4052" data-id="4052" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/qingjiao@3x.jpg">
-            <h1 class="text-left">青岛农家苦瓜</h1>
-            <h2 class="text-left">含有多种维生素，清暑解渴</h2>
-            <h3 class="text-left">￥6.80/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=5086" data-id="5086" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/170128.jpg">
+            <h1 class="text-left">安踏男士短袖舒适修身纯色简约跑步运动半袖 肩膀压条幻彩蓝</h1>
+            <!--<h2 class="text-left">含有多种维生素，清暑解渴</h2>-->
+            <h3 class="text-left">￥69.00/斤</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -398,11 +387,11 @@
        
         
         <li class="mr0">
-        	<a href="https://www.517ybang.com/item/detail?id=4037" data-id="4037" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/lyxz/yuanshengcai@3x.jpg">
-            <h1 class="text-left">寿光彩椒</h1>
-            <h2 class="text-left">色泽诱人，汁多甜脆，可促进食欲，促进新陈代谢</h2>
-            <h3 class="text-left">￥16.00/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=5147" data-id="5147" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/181852.jpg">
+            <h1 class="text-left">彪马2018新款男女运动帽棒球帽 黑色 052919-01</h1>
+           <!-- <h2 class="text-left">色泽诱人，汁多甜脆，可促进食欲，促进新陈代谢</h2>-->
+            <h3 class="text-left">￥79.00/顶</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -413,7 +402,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/haixiantaotie@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/hwtx.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -421,10 +410,10 @@
     	
         <li>
         	 <a href="https://www.517ybang.com/item/detail?id=3848" data-id="3848" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/dazhaxie@3x.png">
-            <h1 class="text-left">波士顿鲜活大龙虾</h1>
-            <h2 class="text-left">富含多种维生素，可益气滋阳，开胃化痰</h2>
-            <h3 class="text-left">￥599.00/斤</h3>
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/160216.jpg">
+            <h1 class="text-left">法国伯希和户外帽子夏季轻薄防紫外线渔夫帽遮阳骑行</h1>
+            <!--<h2 class="text-left">法国伯希和户外帽子夏季轻薄防紫外线渔夫帽遮阳骑行</h2>-->
+            <h3 class="text-left">￥63.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -433,11 +422,11 @@
         
       
         <li>
-        	  <a href="https://www.517ybang.com/item/detail?id=4056" data-id="4056" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/xia@3x.png">
-            <h1 class="text-left">青岛鲜活鲍鱼</h1>
-            <h2 class="text-left">富含多种营养元素，可健脑补身，提高免疫力</h2>
-            <h3 class="text-left">￥42.80/斤</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=5031" data-id="5030" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/161936.jpg">
+            <h1 class="text-left">户外可拼接带枕自动充气垫便携睡垫午休垫双人防潮垫</h1>
+            <!--<h2 class="text-left">富含多种营养元素，可健脑补身，提高免疫力</h2>-->
+            <h3 class="text-left">￥69.90/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -446,11 +435,11 @@
         
        
         <li class="mr0">
-        	  <a href="https://www.517ybang.com/item/detail?id=3843" data-id="3843" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/shanbei@3x.png">
-            <h1 class="text-left">青岛扇贝</h1>
-            <h2 class="text-left">健脾和胃，润肠护肤，通血养颜</h2>
-            <h3 class="text-left">￥10.00/份</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=5050" data-id="5050" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/162939.jpg">
+            <h1 class="text-left">运动头巾无缝魔术百变脖套户外骑行围脖围巾装备防晒面巾</h1>
+            <!--<h2 class="text-left">健脾和胃，润肠护肤，通血养颜</h2>-->
+            <h3 class="text-left">￥5.50/件</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -461,18 +450,18 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/roushizhuanjia@3x.png">
+    <img src="<?php echo CDN_URL ?>media/home/bxtx.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4181" data-id="4181" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/zhurou@3x.png">
-            <h1 class="text-left">君博黑牛牛展</h1>
-            <h2 class="text-left">黑牛牛展，即黑牛腱肉，筋肉丰富，口感筋道，适宜家常炖煮，酱卤</h2>
-            <h3 class="text-left">￥160.00/斤</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=4967" data-id="4967" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/151202.jpg">
+            <h1 class="text-left">JANSPORT超级叛逆系列双肩包背包书包T501008黑色</h1>
+            <!--<h2 class="text-left">黑牛牛展，即黑牛腱肉，筋肉丰富，口感筋道，适宜家常炖煮，酱卤</h2>-->
+            <h3 class="text-left">￥199.50/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -480,22 +469,22 @@
         </li>
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4175" data-id="4175" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/zhuwuhua@3x.png">
-            <h1 class="text-left">君博黑牛原切精肉黑牛扒</h1>
-            <h2 class="text-left">口感娇嫩，肉质松软，嫩度接近“菲力”，是精肉中的顶级牛排。</h2>
-            <h3 class="text-left">￥130.00/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=5040" data-id="5040" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/162510.jpg">
+            <h1 class="text-left">酷然雨衣户外超大登山超轻背包三合一连体加厚雨披</h1>
+            <!--<h2 class="text-left">口感娇嫩，肉质松软，嫩度接近“菲力”，是精肉中的顶级牛排。</h2>-->
+            <h3 class="text-left">￥45.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>
-        <a href="https://www.517ybang.com/item/detail?id=3873" data-id="3873" class="freshshopid">
+        <a href="https://www.517ybang.com/item/detail?id=5161" data-id="5161" class="freshshopid">
         <li class="mr0">
-            <img src="<?php echo CDN_URL ?>media/home/cainixihuan/rszj/niupai@3x.png">
-            <h1 class="text-left">特级梅花肉</h1>
-            <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>
-            <h3 class="text-left">￥23.80/斤</h3>
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/183529.jpg">
+            <h1 class="text-left">JANSPORT双肩包T5010A1 多彩色</h1>
+           <!-- <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>-->
+            <h3 class="text-left">￥99.00/件</h3>
             </a>
             <div class="market_buycar ">
                 <i class="icon-buy"></i>
@@ -506,11 +495,11 @@
 </div>
 
 <!--猜你喜欢区域开始-->
-<div class="wid710 auto bgfff border20 exercise clearfix">
+<!--<div class="wid710 auto bgfff border20 exercise clearfix">
     <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
-</div>
+</div>-->
 <!--猜你喜欢内容区域-->
-<div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
+<!--<div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
 	<ul>
 		
 		<li class="clearfix">
@@ -620,7 +609,7 @@
 		</li>
 		
 	</ul>
-</div>
+</div>-->
 	</div>
 	<!--水果分类div区域-->
 	<div class="fresh_mart_content">
