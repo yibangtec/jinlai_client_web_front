@@ -1,8 +1,7 @@
 	<script src="<?php echo CDN_URL ?>js/rem.js"></script>
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
-    <script src="<?php echo CDN_URL ?>js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
     <script src="<?php echo CDN_URL ?>js/account.js"></script>
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css"/>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css">
     <script src="<?php echo CDN_URL ?>js/LArea.js"></script>
     <script src="<?php echo CDN_URL ?>js/LAreaData1.js"></script>
     <style>
@@ -57,6 +56,7 @@
                         height:0;
             }
     </style>
+
     <div class="tips" id="tips">
         <div class="tips-content">
             <div class="tips-title">提示</div>
@@ -67,33 +67,40 @@
             </div>
         </div>
     </div>
+
     <div class="box" id="box">
         <div class="error-tips">
             <p class="tips-text"></p>
             <i class="icon-failure"></i>
         </div>
+        <button form=main-form class=save>保存</button>
+
         <div class="create-content">
-            <div class="save">保存</div>
-            <form action="">
+            <form id=main-form action="" method=post>
+                <!-- 是否设为默认 -->
+                <input name=default_this type=hidden value=1>
+
                 <div class="create-list">
-                    <input class="create-input" type="text" name="brief" placeholder="简称（可选）" maxlength="10"/>
+                    <input class="create-input" type=text name=brief placeholder="简称（可选）" maxlength="10">
                 </div>
                 <div class="create-list">
-                    <input class="create-input" type="text" name="fullname" placeholder="姓名" maxlength="10"/>
+                    <input class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" autofocus required>
                 </div>
                 <div class="create-list">
-                    <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号"/>
+                    <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" required>
                 </div>
                 <div class="create-list">
-                    <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区"/>
+                    <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
                 </div>
-                <input id="value1" type="hidden" value="20,234,540"/>
+                <input id="value1" type="hidden" value="20,234,540">
                 <div class="create-list">
-                    <textarea rows="3" name="street" style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
+                    <textarea rows=3 name=street style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" placeholder="详细地址"><?php set_value('street') ?></textarea>
                 </div>
+                <!--
                 <div class="create-list" style="display:none">
-                    <input class="create-input" type="tel" placeholder="邮编"/>
+                    <input class="create-input" type="tel" placeholder="邮编">
                 </div>
+                -->
                 <div class="address-default" style="display:none">
                     <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
                 </div>
@@ -127,14 +134,43 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
-
     </div>
-    <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/" />
-    <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
+
+    <script>
+        $(function(){
+            $('form').submit(function(){
+                var params = common_params
+
+                var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
+                for (var index in data_to_process)
+                {
+                    params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
+                }
+                console.log(params);
+                $.post(
+                    api_url + 'address/create',
+                    params,
+                    function(result)
+                    {
+                        //console.log(result); // 输出回调数据到控制台
+                        if (result.status == 200)
+                        {
+                            lottery = result.content;
+                        } else {
+                            alert(result.content.error.message);
+                        }
+                    }
+                )
+
+                return false;
+            });
+        });
+    </script>
+
+    <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/">
+    <script src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
 
     <!-- UI组件库 1.0 -->
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
@@ -151,8 +187,6 @@
             }
         };
 
-
-
         var area = new LArea();
         area.init({
             'trigger': '#demo1',//触发选择控件的文本框，同时选择完毕后name属性输出到该位置
@@ -166,7 +200,6 @@
                 zoom: 16,
                 scrollWheel: false
             });
-
 
             map.plugin(['AMap.Geolocation','AMap.Geocoder'], function () {
                 geolocation = new AMap.Geolocation({
@@ -201,7 +234,6 @@
                         map: map
                     });
 
-
                     positionPicker.on('success', function (positionResult) {
                         console.log(positionResult.position.lat);
                         if(start !== positionResult.position.lat){
@@ -219,7 +251,6 @@
                         }else{
                             //document.getElementById('detailAddress').value=positionResult.address;
                         }
-
 
                     });
                     positionPicker.on('fail', function (positionResult) {
@@ -244,7 +275,6 @@
                         });
                     };
                     map.panBy(0, 1);
-
 
                 });
 

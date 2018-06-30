@@ -169,10 +169,9 @@ $(function(){
                  for (var i=0;i<arr.length;i++)
                  {
                  		//console.log( arr[i].name)
-                 		var goodsListContent = '<h5><p><i>—  </i>'+items[key].name+'<i>  —</i></p></h5>';
+                 		var goodsListContent = '<h5><p><a href="<?php echo base_url('item/index?category_id=') ?>'+ items[key].category_id +'"><i>—  </i>'+items[key].name+'<i>  —</i></a></p></h5>';
 						var html = ''
 
-						
                  	for (var key in items)
                  	{
                  			console.log(arr[i].category_id);

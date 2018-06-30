@@ -1,6 +1,6 @@
 <script src="<?php echo CDN_URL ?>js/rem.js"></script>
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
-<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css"/>
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css"/>
 <script src="<?php echo CDN_URL ?>js/LArea.js"></script>
 <script src="<?php echo CDN_URL ?>js/LAreaData1.js"></script>
@@ -74,9 +74,9 @@
         <p class="tips-text"></p>
         <i class="icon-failure"></i>
     </div>
+
     <div class="create-content">
-        <div class="save">保存</div>
-        <form action="" style="margin-bottom: 5rem">
+        <form action="" style="margin-bottom: 5rem" method="post">
             <div class="create-list">
                 <input class="create-input" type="text" name="brief" placeholder="简称（可选）" maxlength="10" value="<?php echo empty(set_value('brief'))? $item['brief']: set_value('brief') ?>">
             </div>
@@ -99,6 +99,8 @@
             <div class="address-default" style="display:none">
                 <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
             </div>
+
+            <button class="save">保存</button>
         </form>
 
         <div class="map-box" style="position: fixed">
@@ -135,7 +137,16 @@
 
 
 </div>
-<base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/" />
+
+<script>
+    var item = <?php json_encode($item) ?>
+
+    $(function(){
+
+    });
+</script>
+
+<base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/">
 <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
 
 <!-- UI组件库 1.0 -->

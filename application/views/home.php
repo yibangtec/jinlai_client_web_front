@@ -273,7 +273,7 @@ body {background:#eaeaea;}
 				<div class="menuOuter">
 				<div class="swiper-container" style="border-radius: 0;border-bottom-left-radius: .2rem;border-bottom-right-radius: .2rem;">
 				<div class="swiper-wrapper">
-					<div class="menuWrap auto clearfix swiper-slide">
+                <div class="menuWrap auto clearfix swiper-slide">
 					<ul data-name=menu_items_top class="clearfix">
 						<li>
                             <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
@@ -465,8 +465,8 @@ body {background:#eaeaea;}
 				</div>
                 -->
 			</div>
-			<!-- Add Pagination -->
-	      <div class="swiper-pagination"></div>
+                    <!-- Add Pagination -->
+<!--                  <div class="swiper-pagination"></div>-->
 			</div>
 			</div>
 
@@ -475,51 +475,51 @@ body {background:#eaeaea;}
 			<div class="swiper-containeradvertisement">
 				<div class="swiper-wrapper">
 					<div class="addpic auto swiper-slide">
-						<a href="###" target="_self">
+						<a href="#" target="_self">
 							<img src="<?php echo CDN_URL ?>media/home/banner@3x.png">
 						</a>
 					</div>
-						<!--<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=20') ?>" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/banner2.png">
-							</a>
-						</div>-->
-						<div class="addpic auto swiper-slide">
-							<a href="###" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/yhzx.jpg">
-							</a>
-						</div>
-						<div class="addpic auto swiper-slide">
-							<a href="###" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/banner3.jpg">
-							</a>
-						</div>
-						<!--add-->
-						<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=146') ?>" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/banner4.jpg">
-							</a>
-						</div>
-						<!--<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=124') ?>" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/xbmy.jpg">
-							</a>
-						</div>-->
-						<!--<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=28') ?>" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/banner6.jpg">
-							</a>
-						</div>-->
-						<!--<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=32') ?>" target="_self">
-							<img src="<?php echo CDN_URL ?>media/home/banner7.jpg">
-							</a>
-						</div>-->
-						<!--<div class="addpic auto swiper-slide">
-							<a href="<?php echo base_url('biz/detail?id=36') ?>" target="_self">
-								<img src="<?php echo CDN_URL ?>media/home/banner2.png">
-							</a>
-						</div>-->
+                    <!--<div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=20') ?>" target="_self">
+                        <img src="<?php echo CDN_URL ?>media/home/banner2.png">
+                        </a>
+                    </div>-->
+                    <div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('page/fruitful2018') ?>" target="_self">
+                            <img src="<?php echo CDN_URL ?>media/home/yhzx.jpg">
+                        </a>
+                    </div>
+                    <div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('article/about-us') ?>">
+                            <img src="<?php echo CDN_URL ?>media/home/banner3.jpg">
+                        </a>
+                    </div>
+                    <!--add-->
+                    <div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=146') ?>" target="_self">
+                            <img src="<?php echo CDN_URL ?>media/home/banner4.jpg">
+                        </a>
+                    </div>
+                    <!--<div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=124') ?>" target="_self">
+                            <img src="<?php echo CDN_URL ?>media/home/xbmy.jpg">
+                        </a>
+                    </div>-->
+                    <!--<div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=28') ?>" target="_self">
+                        <img src="<?php echo CDN_URL ?>media/home/banner6.jpg">
+                        </a>
+                    </div>-->
+                    <!--<div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=32') ?>" target="_self">
+                        <img src="<?php echo CDN_URL ?>media/home/banner7.jpg">
+                        </a>
+                    </div>-->
+                    <!--<div class="addpic auto swiper-slide">
+                        <a href="<?php echo base_url('biz/detail?id=36') ?>" target="_self">
+                            <img src="<?php echo CDN_URL ?>media/home/banner2.png">
+                        </a>
+                    </div>-->
 				</div>
 						<!-- Add Pagination -->
 	      			<div class="swiper-pagination2"></div>
@@ -574,30 +574,27 @@ body {background:#eaeaea;}
 						</ul>
 					</div>
 				</div>
+
 				<!--水果图片区域开始-->
 				<div class="fruidWrap clearfix auto cube">
 					<div class="swiper-container_fruit">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img data-src="<?php echo CDN_URL ?>media/home/jianhuo@3x.jpg">
+                                <a href="<?php echo base_url('page/fruitful2018') ?>" target="_self">
+                                	<img data-src="/media/banner/fruits-.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.jpg">
+                                <a href="<?php echo base_url('item/detail?id=4762') ?>" target="_self">
+                                	<img data-src="/media/banner/hami.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img data-src="<?php echo CDN_URL ?>media/home/yujia@3x.jpg">
+                                <a href="<?php echo base_url('item/detail?id=5638') ?>" target="_self">
+                                	<img data-src="/media/banner/durian.jpg">
                                 </a>
                             </div>
-                            <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img data-src="<?php echo CDN_URL ?>media/home/jianhuo_mangguo@3x.jpg">
-                                </a>
-                            </div>
+                    
                             <div class="swiper-scrollbarcube"></div>
                         </div>
                     </div>
@@ -605,10 +602,10 @@ body {background:#eaeaea;}
 				<!--商家爆品-->
 				<div class="wid718 auto bgfff border20 exercise clearfix fl">
 					<div class="bgefefef">
-						<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/shangjiabaopin.png">
+						<img src="/media/banner/fruitfestival.png">
 					</div>
 				</div>
-				<div class="coloroverlay mt14 fl" style="margin-bottom: .1rem;">
+				<!-- <div class="coloroverlay mt14 fl" style="margin-bottom: .1rem;">
 				<div class="coloroverlaywrap">
 					<div class="zbottom zbottomaction pinkactionbp"></div>
 					<div class="zbottom zfirst zfirstaction pinkactionbp"></div>
@@ -619,42 +616,43 @@ body {background:#eaeaea;}
 				</div>
 				<div class="fr square" id="dzcpmore">
 					<img data-src="<?php echo CDN_URL ?>media/home/dzcplist.png" class="block auto" style="height:.42rem">
-				</div>
+				</div> -->
 			</div>
 			<div class="coloroverlaycontent clearfix" style="margin-top:.14rem">
 				<!--运动装备区域-->
 				<div class="mid fl dzcpinfo">
-					<a href="<?php echo base_url('biz/detail?id=84') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4786') ?>" target="_self">
 						<div class="midright fr mt0">
 							<div class="bgefefef">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiabaopin/nzg.jpg">
+							<img data-src="/media/fruit/coconut.jpg">
 							</div>
-							<h1>澳滋黑胡椒眼肉牛排40元</h1>
+							<h1>菲诺椰子冻2个</h1>
 						</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5652') ?>" target="_self">
 						<div class="midleft fl mt0">
 							<div class="bgefefef">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sl.jpg">
+							<!-- <img data-src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sl.jpg"> -->
+                            <img src="/media/fruit/peach.jpg">
 							</div>
-							<h1>皇家圣蓝天然矿泉水1500ml</h1>
+							<h1>沂蒙食舍双拼桃</h1>
 						</div>
 					</a>
 				</div>
 				</div>
 				<div class="coloroverlaycontent clearfix dzcpinfo" style="margin-top:.10rem">
 				<div class="mid fl">
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5653') ?>" target="_self">
 						<div class="midleft fr">
-							<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/gnb.jpg" class="success">
-							<h1>西班牙进口慕利酒园干红葡萄酒 纸袋装两支</h1>
+							<img src="/media/fruit/plate.jpg" class="success">
+							<h1>8款水果混合果盒5斤装</h1>
 							<!--<h2>1309 我的MAC</h2>-->
 						</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4760') ?>" target="_self">
 					<div class="midright fl">
-						<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/qt.jpg" class="success">
-						<h1>四川柠檬</h1>
+						<img src="/media/fruit/dragon.jpg" class="success">
+						<h1>云南火龙果5斤装111</h1>
 						<!--<h2>爱疯 爱疯 疯</h2>-->
 					</div>
 					</a>
@@ -665,12 +663,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=4177') ?>">
+				      <a href="<?php echo base_url('item/detail?id=5650') ?>">
 				       <div class="list">
 				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/jbnrl.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.9km</span>
-				         <h1>君博牛肉粒 500g</h1>
+				         <h1>泰国山竹10个装</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -690,12 +688,12 @@ body {background:#eaeaea;}
 				        </div>
 				       </div>
 				       </a>
-                       <a href="<?php echo base_url('item/detail?id=4136') ?>">
+                       <a href="<?php echo base_url('item/detail?id=4752') ?>">
 				       <div class="list">
 				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/dfsc.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>德发奶酪香肠</h1>
+				         <h1>新西兰金果6个装</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -706,7 +704,7 @@ body {background:#eaeaea;}
 				          </ul>
 				         </div>
 				         <div class="tag">
-				          麦岛路沿线 肉类
+				          新西兰金果6个装
 				         </div>
 				         <div class="allbuy">
 				          <span class="tuan">团</span>
@@ -714,12 +712,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-				       <a href="<?php echo base_url('item/detail?id=4141') ?>">
+				       <a href="<?php echo base_url('item/detail?id=4816') ?>">
 				      <div class="list">
 				       <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/yxy.jpg" class="fl">
 				       <div class="listtext fr">
 				        <span class="area">0.3km</span>
-				        <h1>银鳕鱼</h1>
+				        <h1>阳山水蜜桃4个装</h1>
 				        <div class="star">
 				         <ul>
 				          <li><i class="icon-weixuanzhong2"></i></li>
@@ -739,12 +737,12 @@ body {background:#eaeaea;}
 				       </div>
 				      </div>
 				      </a>
-                         <a href="<?php echo base_url('item/detail?id=4138') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5648') ?>">
 				       <div class="list">
 				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/bjtx.jpg" class="fl" />
 				        <div class="listtext fr">
 				         <span class="area">2.3km</span>
-				         <h1>北极甜虾 30尾</h1>
+				         <h1>台湾树上熟木瓜</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -770,40 +768,41 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=4177') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5650') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/jbnrl.jpg" class="auto block">
-								<h1>君博牛肉粒 500g</h1>
-								<h2>¥100.00</h2>
+								<img src="/media/fruit/mangosteen.jpg" class="auto block">
+								<h1>泰国山竹10个装</h1>
+								<h2>¥49.80</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4136') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=4752') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/dfsc.jpg" class="auto block">
-								<h1>德发奶酪香肠</h1>
-								<h2>¥26.00</h2>
-							</li>
-							</a>
-							<a href="<?php echo base_url('item/detail?id=4141') ?>" target="_self">
-							<li>
-								<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/yxy.jpg" class="auto block">
-								<h1>银鳕鱼</h1>
-								<h2>¥99.00</h2>
-							</li>
-							</a>
-							<a href="<?php echo base_url('item/detail?id=4138') ?>" target="_self">
-							<li>
-								<img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/bjtx.jpg" class="auto block">
-								<h1>北极甜虾 30尾</h1>
+								<img src="/media/fruit/zephyr.jpg" class="auto block">
+								<h1>新西兰金果6个装</h1>
 								<h2>¥26.80</h2>
+							</li>
+							</a>
+							<a href="<?php echo base_url('item/detail?id=4816') ?>" target="_self">
+							<li>
+								<img src="/media/fruit/juicypeach.jpg" class="auto block">
+								<h1>阳山水蜜桃4个装</h1>
+								<h2>¥29.80</h2>
+							</li>
+							</a>
+							<a href="<?php echo base_url('item/detail?id=5648') ?>" target="_self">
+							<li>
+								<img src="/media/fruit/pawpaw.jpg" class="auto block">
+								<h1>台湾树上熟木瓜</h1>
+								<h2>¥19.80</h2>
 							</li>
 							</a>
 						</ul>
 					</div>
 				</div>
-				<!--新品上新图片-->
+				<!--严选商家-->
 				<div class="newgoodspic auto">
-					<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xinpinshangxin@3x.png">
+                    <!-- <img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xinpinshangxin@3x.png"> -->
+					<img data-src="/media/banner/selection.png">
 				</div>
 				<!--新品上新商品区域开始-->
 				<div class="newgoodslist auto clearfix">
@@ -811,44 +810,44 @@ body {background:#eaeaea;}
 						<div class="goodsleft">
 							<ul class="clearfix">
 								<li>
-									<a href="<?php echo base_url('item/detail?id=4179') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5676') ?>" target="_self">
 									<div class="pic">
-										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156.jpg">
+										<img src="/media/selection/dalieba.jpg">
 									</div>
 									</a>
-									<p>君博黑牛脖骨</p>
-									<span>¥60.00</span>
+									<p>新疆大列巴面包</p>
+									<span>¥32.00</span>
 								</li>
 								<li style="margin-left: .3rem;">
-									<a href="<?php echo base_url('item/detail?id=4178') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5679') ?>" target="_self">
 									<div class="pic">
-										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_1.jpg">
+										<img data-src="/media/selection/yougurt.jpg">
 									</div>
 										</a>
-									<p>君博黑牛牛尾</p>
-									<span>¥140.00</span>
+									<p>西悦冰激凌酸奶</p>
+									<span>¥60.00</span>
 								</li>
 							</ul>
 						</div>
 						<div class="goodsleft" style="margin-left:.1rem">
 							<ul class="clearfix">
 								<li>
-									<a href="<?php echo base_url('item/detail?id=4174') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5669') ?>" target="_self">
 									<div class="pic">
-										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_2.jpg">
+										<img src="/media/selection/greenball.jpg">
 									</div>
 									</a>
-									<p>君博黑牛原切眼肉牛排眼肉</p>
-									<span>¥400.00</span>
+									<p>上海风味青团</p>
+									<span>¥4.00</span>
 								</li>
 								<li style="margin-left:.3rem;">
-									<a href="<?php echo base_url('item/detail?id=4051') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5671') ?>" target="_self">
 									<div class="pic">
-										<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx156/156x156_3.jpg">
+										<img data-src="/media/selection/flower.jpg">
 									</div>
 									</a>
-									<p>特级五花肉块</p>
-									<span>¥25.00</span>
+									<p>网红花团</p>
+									<span>¥8.00</span>
 								</li>
 							</ul>
 						</div>
@@ -856,31 +855,31 @@ body {background:#eaeaea;}
 					<div class="threecol">
 						<ul>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=3870') ?>" target="_self">
+								<a href="<?php echo base_url('item/detail?id=4387') ?>" target="_self">
 								<div class="pic">
-									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_0.jpg">
+									<img data-src="/media/selection/pellow.jpg">
 								</div>
 								</a>
-								<p>特级猪外脊切片</p>
-								<span>¥21.80</span>
+								<p>昏睡枕头</p>
+								<span>¥268.00</span>
 							</li>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=3971') ?>" target="_self">
+								<a href="<?php echo base_url('item/detail?id=620') ?>" target="_self">
 								<div class="pic">
-									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_1.jpg">
+									<img data-src="/media/selection/laundry.jpg">
 								</div>
 								</a>
-								<p>特级猪五花肉片</p>
-								<span>¥19.90</span>
+								<p>壹家壹洗5件洗衣套装</p>
+								<span>¥99.00</span>
 							</li>
 							<li style="margin-right:0">
-								<a href="<?php echo base_url('item/detail?id=4054') ?>" target="_self">
+								<a href="<?php echo base_url('item/detail?id=178') ?>" target="_self">
 								<div class="pic">
-									<img data-src="<?php echo CDN_URL ?>media/home/xinpinshangxin/xpsx160/160x160_2.jpg">
+									<img data-src="/media/selection/carwash.jpg">
 								</div>
 								</a>
-								<p>优质猪前排</p>
-								<span>¥48.80</span>
+								<p>BBA级洗车套餐30元（英皇之星）</p>
+								<span>¥30.00</span>
 							</li>
 						</ul>
 					</div>
@@ -899,60 +898,61 @@ body {background:#eaeaea;}
   								<div id="timer2" class="clearfix" end-date="2018/12/16 00:5:2"></div>
   								<p>倒计时</p>
 							</div>
-							<a href="<?php echo base_url('item/detail?id=4097') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=3965') ?>" target="_self">
 							<div class="pic">
-								<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/240x240.jpg">
+								<img data-src="/media/fresh/yellowfish.jpg">
 							</div>
 							</a>
-							<h1>进口绿果</h1>
-							<h2>3个/份</h2>
+							<h1>青岛本地大黄鱼</h1>
+							<h2>1条/份</h2>
 							<p>
-								<span class="fl"><del>¥21.8</del></span>
-								<span class="fr">¥19.8</span>
+								<span class="fl"><del></del></span>
+								<span class="fr">¥47.5</span>
 							</p>
 						</div>
 						<div class="onlinegoodsright fr">
 							<div class="onlinegoodstop">
 								<ul>
 									<li>
-										<a href="<?php echo base_url('item/detail?id=4005') ?>" target="_self">
+										<a href="<?php echo base_url('item/detail?id=4471') ?>" target="_self">
 										<div class="pic">
-											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/lm.jpg">
+											<img data-src="/media/fresh/sausage.jpg">
 										</div>
 										</a>
-										<h1>蓝莓 125g/盒</h1>
-										<h2>¥25.8/盒</h2>
+										<h1>德发奶酪香肠140克</h1>
+										<h2>¥26/盒</h2>
 									</li>
 									<li>
-										<a href="<?php echo base_url('item/detail?id=3872') ?>" target="_self">
+										<a href="<?php echo base_url('item/detail?id=4529') ?>" target="_self">
 										<div class="pic">
-											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/pg.jpg">
+											<img data-src="/media/fresh/tomato.jpg">
 										</div>
 										</a>
-										<h1>墨西哥牛油果</h1>
-										<h2>¥15.80/个</h2>
+										<h1>夏庄杠六九西红柿</h1>
+										<h2>¥7.80/个</h2>
 									</li>
 								</ul>
 							</div>
 							<div class="onlinegoodstop" style="margin-top:.1rem">
 								<ul>
 									<li>
-										<a href="<?php echo base_url('item/detail?id=4007') ?>" target="_self">
+										<a href="<?php echo base_url('item/detail?id=4054') ?>" target="_self">
 										<div class="pic">
-											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/tg.jpg">
+											<img data-src="/media/fresh/pork.jpg">
 										</div>
 										</a>
-										<h1>青岛蜜宝甜瓜</h1>
-										<h2>¥15.80/份</h2>
+										<h1>优质猪前排1000克</h1>
+										<h2>¥48.80/份</h2>
 									</li>
 									<li>
-										<a href="<?php echo base_url('item/detail?id=3956') ?>" target="_self">
+                                        <!-- 数据库数据 青岛鲳鱼 4条/份（100-125g/条） -->
+										<a href="<?php echo base_url('item/detail?id=4015') ?>" target="_self">
 										<div class="pic">
-											<img data-src="<?php echo CDN_URL ?>media/home/zaixianpintuan/jz.jpg">
+											<img data-src="/media/fresh/kfish.jpg">
 										</div>
 										</a>
-										<h1>四川丑桔（丑八怪）900-1000g/份</h1>
-										<h2>¥19.80/份</h2>
+										<h1>本地鲳鱼X2</h1>
+										<h2>¥39.6/份</h2>
 									</li>
 								</ul>
 								
@@ -963,11 +963,12 @@ body {background:#eaeaea;}
 				<!--商家搜罗-->
 				<div class="onlinegroup clearfix">
 					<div class="newgoodspic auto">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/shangjiasouluo@3x.png">
+                        <!-- <img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/shangjiasouluo@3x.png"> -->
+						<img data-src="/media/banner/child.png">
 					</div>
 			</div>
 			<!--颜色叠加公用部分-->
-			<div class="coloroverlay">
+			<!-- <div class="coloroverlay">
 				<div class="coloroverlaywrap activecoverplay" id="activecoverplay">
 					<div class="zbottom" data-title="junbo">
 						<b>君博</b>
@@ -987,7 +988,7 @@ body {background:#eaeaea;}
 						<span class="r">鱼哥</span>
 						<i style="display: none;">鱼哥</i>
 						
-					</div>
+					</div> -->
 					<!--<div class="zbottom zthree coverCur">
 						<b>美食</b>
 						<a style="display: none;">Delatious</a>
@@ -995,43 +996,43 @@ body {background:#eaeaea;}
 						<i style="display: none;">美食</i>
 					</div>-->
 					
-				</div>
+		<!-- 		</div>
 				<div class="fr squarecube" id="more">
 					<img src="<?php echo CDN_URL ?>media/home/list.png" class="block auto">
 				</div>
-			</div>
+			</div> -->
 			<!--颜色叠加区域内容-->
 			<div class="coloroverlaycontent clearfix" id="morelist">
 				<!--时尚内容-->
 				<div class="colorovertab clearfix" style="display:block" data-title="junbo">
 				<div class="left fl refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=130') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4691') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top1.png">
+						<img data-src="/media/child/box.jpg">
 						</div>
-						<h1>牛眼肉新贵都 52.8元</h1>
+						<h1>婴儿奶瓶收纳盒 52.8元</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=116') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4808') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/top2.png">
+						<img data-src="/media/child/card.jpg">
 						</div>
-						<h1>牛筋头巴脑 君博120元</h1>
+						<h1>奥乐有声挂图 120元</h1>
 					</a>
 				</div>
 				<div class="mid fl" style="margin-top:.1rem !important">
 					<div class="midleft refreshcontent">
-						<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/jphnp.png">
-							<h1>精肉黑牛扒 130元</h1>
+						<a href="<?php echo base_url('item/detail?id=4647') ?>" target="_self">
+							<img data-src="/media/child/thermometer.jpg">
+							<h1>好孩子大象温度计 130元</h1>
 							<!--<h2>面包也可以带有亲情</h2>-->
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="<?php echo base_url('biz/detail?id=116') ?>" target="_self">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/xl.png">
-							<h1>西冷150g</h1>
+						<a href="<?php echo base_url('item/detail?id=4840') ?>" target="_self">
+							<img data-src="/media/child/toybricks.jpg">
+							<h1>磁力片积木儿童玩具</h1>
 							<!--<h2>甜品也可以甜而不腻</h2>-->
 						</a>
 					</div>
@@ -1040,15 +1041,15 @@ body {background:#eaeaea;}
 				<!--丽人内容-->
 				<div class="colorovertab clearfix" data-title="aozi">
 				<div class="left fl refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=45') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/zcc.png">
+						<img data-src="/media/child/box.jpg">
 						</div>
 						<h1>澳滋黑胡椒牛肉肠 24元</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=45') ?>" target="_self">
 						<div class="bgefefef">
 						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/nl.png">
 						</div>
@@ -1057,7 +1058,7 @@ body {background:#eaeaea;}
 				</div>
 				<div class="fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
-						<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+						<a href="<?php echo base_url('item/detail?id=45') ?>" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/pp.png">
 							</div>
@@ -1066,7 +1067,7 @@ body {background:#eaeaea;}
 						</a>
 					</div>
 					<div class="midright fr refreshcontent" style="margin-left: .1rem;">
-						<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+						<a href="<?php echo base_url('item/detail?id=45') ?>" target="_self">
 							<div class="bgefefef">
 							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/xnr.png">
 							</div>
@@ -1079,37 +1080,37 @@ body {background:#eaeaea;}
 				<!--娱乐内容-->
 				<div class="colorovertab clearfix" data-title="yuge">
 				<div class="left fl refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4691') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/yz.png">
+						<img data-src="/media/child/box.jpg" class="auto block">
 							</div>
-						<h1>生吃瑶柱 48元</h1>
+						<h1>婴儿奶瓶收纳盒 36元</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4808') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/hwx.png">
+						<img data-src="/media/child/card.jpg" class="auto block">
 							</div>
-						<h1>红虾尾198元</h1>
+						<h1>奥乐有声挂图 39元</h1>
 					</a>
 				</div>
 				<div class="fl" style="margin-top:.1rem">
 					<div class="midleft refreshcontent">
-						<a href="<?php echo base_url('biz/detail?id=1') ?>">
+						<a href="<?php echo base_url('item/detail?id=4647') ?>">
 							<div class="bgefefef">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/dzbg.png">
+							<img data-src="/media/child/thermometer.jpg" class="auto block">
 								</div>
-							<h1>带籽比管 55元</h1>
+							<h1>好孩子大象温度计 39元</h1>
 							<!--<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>-->
 						</a>
 					</div>
 					<div class="midright fr refreshcontent" style="margin-left: .1rem;">
-						<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+						<a href="<?php echo base_url('item/detail?id=4840') ?>" target="_self">
 							<div class="bgefefef">
-							<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/dyp.png">
+							<img data-src="/media/child/toybricks.jpg" class="auto block">
 								</div>
-							<h1>鲽鱼片45</h1>
+							<h1>磁力片积木儿童玩具  109元</h1>
 							<!--<h2>面包也可以带有亲情面包也可以带有亲情面包也可以带有亲情</h2>-->
 						</a>
 					</div>
@@ -1118,44 +1119,45 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 fl mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=574') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=4914') ?>" target="_self">
 							<li>
-                                <img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_0.jpg" class="auto block">
-                                <h1>澳滋牛尾</h1>
-                                <h2>¥312.00</h2>
+                                <img data-src="/media/child/plasticine.jpg" class="auto block">
+                                <h1>绘儿乐黏土彩泥橡皮泥套装</h1>
+                                <h2>¥129.00</h2>
 							</li>
 							</a>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=3839') ?>" target="_self">
-									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_1.jpg" class="auto block">
-									<h1>精品超新鲜带鱼 500-550g/份（约2-4条）</h1>
-									<h2>¥38.00</h2>
+								<a href="<?php echo base_url('item/detail?id=4832') ?>" target="_self">
+									<img data-src="/media/child/mp3toy.jpg" class="auto block">
+									<h1>火火兔G6早教机</h1>
+									<h2>¥168.00</h2>
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=3927') ?>" target="_self">
-									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_2.jpg" class="auto block">
-									<h1>特级猪腱子肉   500g/份</h1>
-									<h2>¥22.80</h2>
+								<a href="<?php echo base_url('item/detail?id=5087') ?>" target="_self">
+									<img data-src="/media/child/scoop.jpg" class="auto block">
+									<h1>挤压式婴儿喂养勺</h1>
+									<h2>¥79.00</h2>
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=357') ?>" target="_self">
-									<img data-src="<?php echo CDN_URL ?>media/home/shangjiasouluo/sjss/160x160_3.jpg" class="auto block">
-									<h1>三文鱼</h1>
-									<h2>¥98.00</h2>
+								<a href="<?php echo base_url('item/detail?id=5171') ?>" target="_self">
+									<img data-src="/media/child/shampoo.jpg" class="auto block">
+									<h1>好孩子儿童沐浴露</h1>
+									<h2>¥48.00</h2>
 								</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<!--农产品预售-->
+				<!--snacks-->
 				<div class="wid718 auto bgfff border20 exercise clearfix fl">
 					<div class="bgefefef">
-					<img src="<?php echo CDN_URL ?>media/home/nongchanpin/nongchanpin@3x.png">
+                    <!-- <img src="<?php echo CDN_URL ?>media/home/nongchanpin/nongchanpin@3x.png"> -->
+					<img src="/media/banner/snacks.jpg">
 					</div>
 				</div>
-				<div class="coloroverlay fl" style="margin-bottom: .1rem;">
+				<!-- <div class="coloroverlay fl" style="margin-bottom: .1rem;">
 				<div class="coloroverlaywrap">
 					<div class="zbottom zbottomaction pinkaction">
 					</div>
@@ -1170,25 +1172,25 @@ body {background:#eaeaea;}
 				</div>
 				<div class="fr square" id="lsjx">
 					<img data-src="<?php echo CDN_URL ?>media/home/dzcplist.png" class="block auto" style="height:.42rem">
-				</div>
+				</div> -->
 			</div>
 			<div class="coloroverlaycontent clearfix" style="margin-top:.14rem">
 				<!--运动装备区域-->
 				<div class="mid fl  lsjxinfo">
-					<a href="<?php echo base_url('biz/detail?id=53') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5698') ?>" target="_self">
 					<div class="midright fr mt0">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/nongchanpin/djf.png">
+						<img data-src="/media/snacks/coffeesuger.jpg">
 						</div>
-						<h1>大金发野猪肉排骨1kg 188元</h1>
+						<h1>富味咖啡咀嚼片264克 92元</h1>
 					</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4933') ?>" target="_self">
 					<div class="midleft fl mt0">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/nongchanpin/sy.png">
+						<img data-src="/media/snacks/chips.jpg">
 						</div>
-						<h1>黑美人西瓜切盒</h1>
+						<h1>乐事软萌樱花马铃薯片</h1>
 					</div>
 					</a>
 					
@@ -1196,17 +1198,17 @@ body {background:#eaeaea;}
 				</div>
 				<div class="coloroverlaycontent clearfix lsjxinfo" style="margin-top:.10rem">
 				<div class="mid fl">
-					<a href="<?php echo base_url('biz/detail?id=46') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5699') ?>" target="_self">
 					<div class="midleft fr">
-						<img src="<?php echo CDN_URL ?>media/home/nongchanpin/mmltx.jpg" class="success">
-						<h1>麻麻辣天下 麻辣天下麻辣基尾虾</h1>
+						<img src="/media/snacks/hotnoddle.jpg" class="success">
+						<h1>重庆特产正宗好哥们酸辣粉</h1>
 						<!--<h2>1309 我的MAC</h2>-->
 					</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5398') ?>" target="_self">
 					<div class="midright fl">
-						<img src="<?php echo CDN_URL ?>media/home/nongchanpin/stm.jpg" class="success">
-						<h1>硕泰米</h1>
+						<img src="/media/snacks/gingertea.jpg" class="success">
+						<h1>好想你红枣红糖姜茶</h1>
 						<!--<h2>爱疯 爱疯 疯</h2>-->
 					</div>
 					</a>
@@ -1217,12 +1219,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=3913') ?>">
+				      <a href="<?php echo base_url('item/detail?id=5700') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/nongchanpin/yth.jpg" class="fl">
+				        <img src="/media/snacks/coldnoddle.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>野茼蒿</h1>
+				         <h1>咕咕熊朝鲜冷面</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1242,12 +1244,12 @@ body {background:#eaeaea;}
 				        </div>
 				       </div>
 				       </a>
-                         <a href="<?php echo base_url('item/detail?id=4030') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5701') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/nongchanpin/lysqz.jpg" class="fl">
+				        <img src="/media/snacks/beef.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">3.3km</span>
-				         <h1>临沂山茄子</h1>
+				         <h1>手撕风干牛肉500克</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1266,12 +1268,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4048') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5432') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/nongchanpin/njzysc.jpg" class="fl">
+				        <img src="/media/snacks/coconutdrink.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">9.3km</span>
-				         <h1>农家紫叶生菜</h1>
+				         <h1>可口可乐泰国进口椰子汁12瓶</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1291,12 +1293,12 @@ body {background:#eaeaea;}
 				        </div>
 				       </div>
 				       </a>
-                         <a href="<?php echo base_url('item/detail?id=4037') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5408') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/nongchanpin/sgcj.jpg" class="fl">
+				        <img src="/media/snacks/vc.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>寿光彩椒</h1>
+				         <h1>999维生素C泡腾片</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1322,32 +1324,32 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=3913') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5700') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/nongchanpin/yth.jpg" class="auto block">
-								<h1>野茼蒿</h1>
-								<h2>¥15.8</h2>
+								<img src="/media/snacks/coldnoddle.jpg" class="auto block">
+								<h1>咕咕熊朝鲜冷面</h1>
+								<h2>¥24.90</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4030') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5701') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/nongchanpin/lysqz.jpg" class="auto block">
-								<h1>临沂山茄子</h1>
-								<h2>¥9.80</h2>
+								<img src="/media/snacks/beef.jpg" class="auto block">
+								<h1>手撕风干牛肉500克</h1>
+								<h2>¥68.00</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4048') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5432') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/nongchanpin/njzysc.jpg" class="auto block">
-								<h1>农家紫叶生菜</h1>
-								<h2>¥15.80</h2>
+								<img src="/media/snacks/coconutdrink.jpg" class="auto block">
+								<h1>可口可乐泰国进口椰子汁12瓶</h1>
+								<h2>¥109.00</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4037') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5408') ?>" target="_self">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/nongchanpin/sgcj.jpg" class="auto block">
-								<h1>寿光彩椒</h1>
-								<h2>¥16.00</h2>
+								<img src="/media/snacks/vc.jpg" class="auto block">
+								<h1>999维生素C泡腾片</h1>
+								<h2>¥49.90</h2>
 							</li>
 							</a>
 						</ul>
@@ -1357,42 +1359,41 @@ body {background:#eaeaea;}
 				<div class="wid718 auto bgfff border20 exercise fl">
 					<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/yundongjiankang@3x.png">
 				</div>
-				<div class="coloroverlay mt14 fl">
-				<div class="coloroverlaywrap">
-					<div class="zbottom zbottomaction">
-					</div>
-					<div class="zbottom zfirst zfirstaction">
-					</div>
-					
-					<div class="zbottom zthree action">
-						Come in Recommend
-						<span class="r">满减心跳</span>
-					</div>
-					
-				</div>
-				<div class="fr square" id="ydjkmore">
-					<img data-src="<?php echo CDN_URL ?>media/home/ydjklist.png" class="block auto">
-				</div>
-			</div>
+				<!-- <div class="coloroverlay mt14 fl">
+    				<div class="coloroverlaywrap">
+    					<div class="zbottom zbottomaction">
+    					</div>
+    					<div class="zbottom zfirst zfirstaction">
+    					</div>
+    					
+    					<div class="zbottom zthree action">
+    						Come in Recommend
+    						<span class="r">满减心跳</span>
+    					</div>
+    				</div>
+    				<div class="fr square" id="ydjkmore">
+    					<img data-src="<?php echo CDN_URL ?>media/home/ydjklist.png" class="block auto">
+    				</div>
+    			</div> -->
 				<div class="coloroverlaycontent clearfix fl ydjkinfo">
 				
 				<!--运动装备区域-->
 				<div class="mid fl">
-					<a href="<?php echo base_url('biz/detail?id=33') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4678') ?>" target="_self">
 					<div class="midleft fr mt0">
 						<div class="bgefefef">
-						<img src="<?php echo CDN_URL ?>media/home/yundongjiankang/left.png">
+						<img src="/media/3c/brush.jpg">
 						</a>
 						</div>
-						<h1>青岛涵碧楼两天一夜</h1>
+						<h1>赛嘉儿童电动牙刷</h1>
 					</div>
 					</a>
-					<a href="<?php echo base_url('item/detail?id=4185') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4614') ?>" target="_self">
 					<div class="midright fl mt0">
 						<div class="bgefefef">
-						<img src="<?php echo CDN_URL ?>media/home/yundongjiankang/right.png">
+						<img src="/media/3c/shaver.jpg">
 						</div>
-						<h1>苹果X 【预售3-5天送达】Apple iPhone X  256GB 银色</h1>
+						<h1>飞利浦电动剃须刀</h1>
 					</div>
 					</a>
 				</div>
@@ -1404,20 +1405,20 @@ body {background:#eaeaea;}
 				<div class="mid fl ydjkinfo">
 					<div class="midleft fl">
 						<div class="bgefefef">
-							<a href="<?php echo base_url('item/detail?id=4278') ?>" target="_self">
-						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/hcssjbig.png">
+							<a href="<?php echo base_url('item/detail?id=4767') ?>" target="_self">
+						<img data-src="/media/3c/midea.jpg">
 							</a>
 						</div>
-						<h1>【预售3-5天送达】荣耀 V9 全网通 高配版 6GB+64GB 铂光金 双卡双待</h1>
+						<h1>美的U1吸尘器</h1>
 						<!--<h2>DIOS精准标靶装备</h2>-->
 					</div>
 					<div class="midright fr">
 						<div class="bgefefef">
-							<a href="<?php echo base_url('biz/detail?id=13') ?>" target="_self">
-						<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/hcssjsmall.png">
+							<a href="<?php echo base_url('item/detail?id=4894') ?>" target="_self">
+						<img data-src="/media/3c/midea2.jpg">
 							</a>
 						</div>
-						<h1>海信电视55寸4K</h1>
+						<h1>美的大功率挂烫机</h1>
 						<!--<h2>极限运动装备</h2>-->
 					</div>
 				</div>
@@ -1531,31 +1532,31 @@ body {background:#eaeaea;}
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
                             <li>
-							    <a href="<?php echo base_url('item/detail?id=4274') ?>" target="_self">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_0.jpg" class="auto block">
-                                    <h1>【预售3-5天送达】Apple iPhoneX  256GB 银色</h1>
-                                    <h2>¥1488.00</h2>
+							    <a href="<?php echo base_url('item/detail?id=5188') ?>" target="_self">
+                                    <img data-src="/media/3c/mideaoven.jpg">
+                                    <h1>美的迷你电烤箱</h1>
+                                    <h2>¥99.00</h2>
 							    </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('item/detail?id=3937') ?>" target="_self">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_1.jpg" class="auto block">
-                                    <h1>龙泉青瓷冰裂纹挂盘</h1>
-                                    <h2>¥3080.00</h2>
+                                <a href="<?php echo base_url('item/detail?id=5696') ?>" target="_self">
+                                    <img data-src="/media/3c/airfryer.jpg">
+                                    <h1>九阳空气炸锅</h1>
+                                    <h2>¥469.00</h2>
 							    </a>
                             </li>
                             <li>
-							    <a href="<?php echo base_url('item/detail?id=4057') ?>" target="_self">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg" class="auto block">
-                                    <h1>日本资生堂秀场造型质感发蜡（自然型白）</h1>
-                                    <h2>¥158.00</h2>
+							    <a href="<?php echo base_url('item/detail?id=5213') ?>" target="_self">
+                                    <img data-src="/media/3c/joyoung.jpg">
+                                    <h1>九阳原汁榨汁机</h1>
+                                    <h2>¥299.00</h2>
 							    </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('item/detail?id=4244') ?>" target="_self">
-                                    <img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_3.jpg" class="auto block">
-                                    <h1>【预售5-7天送达】Yale 耶鲁指纹锁智能锁密码锁刷卡感应防盗门家用锁ZEN-R</h1>
-                                    <h2>¥3300.00</h2>
+                                <a href="<?php echo base_url('item/detail?id=5678') ?>" target="_self">
+                                    <img data-src="/media/3c/breakfastmachine.jpg">
+                                    <h1>小型早餐机</h1>
+                                    <h2>¥99.00</h2>
                                 </a>
                             </li>
 						</ul>
@@ -1565,10 +1566,10 @@ body {background:#eaeaea;}
 				<!--电子产品-->
 				<div class="wid718 auto bgfff border20 exercise clearfix">
 					<div class="bgefefef">
-					    <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dianzichanpin@3x.png">
+					    <img src="/media/sport/sportbanner.png">
 					</div>
 				</div>
-				<div class="coloroverlay mt14">
+				<!-- <div class="coloroverlay mt14">
                     <div class="coloroverlaywrap">
                         <div class="zbottom zbottomaction pinkactionzk">
                         </div>
@@ -1583,47 +1584,48 @@ body {background:#eaeaea;}
                     <div class="fr square" id="gxzkmore">
                         <img data-src="<?php echo CDN_URL ?>media/home/gxzklist.png" class="block auto" style="height:.42rem">
                     </div>
-                </div>
+                </div> -->
 			<div class="coloroverlaycontent clearfix gxzkinfo" style="margin-top:.14rem">
 				<!--运动装备区域-->
 				<div class="mid fl">
-					<a href="<?php echo base_url('biz/detail?id=46') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4990') ?>" target="_self">
 					<div class="midright fr mt0">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/left.png">
+						<img data-src="/media/sport/ball.jpg">
 						</div>
-						<h1>麻辣蟹钳 29元</h1>
+						<h1>正品恒博黄金1号羽毛球12只装 29元</h1>
 					</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5050') ?>" target="_self">
 					<div class="midleft fl mt0">
 						<div class="bgefefef">
-						<img data-src="<?php echo CDN_URL ?>media/home/dianzichanpin/right.png">
+						<img data-src="/media/sport/face.jpg">
 						</div>
-						<h1>德发早餐培根切片</h1>
+						<h1>百变运动头巾面巾</h1>
 					</div>
 					</a>
 				</div>
 				</div>
 				<div class="coloroverlaycontent clearfix gxzkinfo" style="margin-top:.10rem">
 				<div class="mid fl">
-					<a href="<?php echo base_url('biz/detail?id=45') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5656') ?>" target="_self">
 					<div class="midleft fr">
-						<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/410x150.jpg" class="success">
-						<h1>圣蓝一箱 皇家圣蓝天然矿泉水330ml*36瓶/箱 388元</h1>
+						<img src="/media/sport/adidas.jpg" class="success">
+						<h1>阿迪达斯运动头带吸汗带 159元</h1>
 						<!--<h2>1309 我的MAC</h2>-->
 					</div>
 					</a>
-					<a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5655') ?>" target="_self">
 					<div class="midright fl">
-						<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/260x150.jpg" class="success">
-						<h1>鱼哥红金枪 50元</h1>
+						<img src="/media/sport/backpack.jpg" class="success">
+						<h1>探路者背包 83.40元</h1>
 						<!--<h2>爱疯 爱疯 疯</h2>-->
 					</div>
 					</a>
 				</div>
 			</div>
 			<!--电子产品点击list后显示的内容-->
+
 			<div class="swiper-container7" style="margin-top:.1rem;border-radius:.2rem;display:none;" id="gxzkinfo">
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
@@ -1731,94 +1733,282 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=4202') ?>">
+							<a href="<?php echo base_url('item/detail?id=5658') ?>">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="auto block">
-								<h1>精选薏米 硕泰</h1>
-								<h2>¥10.80</h2>
+								<img src="/media/sport/rope.jpg" class="auto block">
+								<h1>瑜伽塑形拉力带</h1>
+								<h2>¥9.90</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4197') ?>">
+							<a href="<?php echo base_url('item/detail?id=5680') ?>">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="auto block">
-								<h1>硕泰五常大米</h1>
-								<h2>¥198.00</h2>
+								<img src="/media/sport/wheel.jpg" class="auto block">
+								<h1>回弹健腹轮腹肌轮训练器</h1>
+								<h2>¥39.00</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4198') ?>">
+							<a href="<?php echo base_url('item/detail?id=5681') ?>">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="auto block">
-								<h1>聚糖大米</h1>
-								<h2>¥118.00</h2>
+								<img src="/media/sport/yoga.jpg">
+								<h1>李宁瑜伽垫初学者健身垫</h1>
+								<h2>¥68.00</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4322') ?>">
+							<a href="<?php echo base_url('item/detail?id=5684') ?>">
 							<li>
-								<img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="auto block">
-								<h1>月子小米</h1>
-								<h2>¥15.00</h2>
+								<img src="/media/sport/chest.jpg">
+								<h1>弹力绳拉力绳健身器材</h1>
+								<h2>¥58.00</h2>
 							</li>
 							</a>
 						</ul>
 					</div>
 				</div>
+                <!-- 潮流酷玩 -->
+                <div class="coloroverlaycontent clearfix gxzkinfo" style="margin-top:.14rem">
+                    <div class="wid718 auto bgfff border20 exercise clearfix fl">
+                <div class="bgefefef">
+                <!-- <img src="<?php echo CDN_URL ?>media/home/nongchanpin/nongchanpin@3x.png"> -->
+                <img src="/media/banner/young.png">
+                </div>
+            </div>
+                <!--运动装备区域-->
+                <div class="mid fl">
+                    <a href="<?php echo base_url('item/detail?id=5694') ?>" target="_self">
+                    <div class="midright fr mt0">
+                        <div class="bgefefef">
+                        <img data-src="/media/young/beneli.jpg">
+                        </div>
+                        <h1>贝纳利 Leoncino 幼狮500cc双缸复古攀爬摩托车 38800元</h1>
+                    </div>
+                    </a>
+                    <a href="<?php echo base_url('item/detail?id=5687') ?>" target="_self">
+                    <div class="midleft fl mt0">
+                        <div class="bgefefef">
+                        <img data-src="/media/young/carton.jpg">
+                        </div>
+                        <h1>墙贴画ins风卡通猫门贴</h1>
+                    </div>
+                    </a>
+                </div>
+                </div>
+                <div class="coloroverlaycontent clearfix gxzkinfo" style="margin-top:.10rem">
+                <div class="mid fl">
+                    <a href="<?php echo base_url('item/detail?id=5683') ?>" target="_self">
+                    <div class="midleft fr">
+                        <img src="/media/young/dragonchair.jpg" class="success">
+                        <h1>创意实木脚凳恐龙小凳子 214.40元</h1>
+                        <!--<h2>1309 我的MAC</h2>-->
+                    </div>
+                    </a>
+                    <a href="<?php echo base_url('item/detail?id=5682') ?>" target="_self">
+                    <div class="midright fl">
+                        <img src="/media/young/hippochair.jpg" class="success">
+                        <h1>实木脚凳创意河马换鞋凳 190.40元</h1>
+                        <!--<h2>爱疯 爱疯 疯</h2>-->
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <!--电子产品点击list后显示的内容-->
+            <div class="swiper-container7" style="margin-top:.1rem;border-radius:.2rem;display:none;" id="gxzkinfo">
+                   <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                     <div class="list-group-item">
+                      <a href="<?php echo base_url('item/detail?id=4202') ?>">
+                       <div class="list">
+                        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="fl">
+                        <div class="listtext fr">
+                         <span class="area">0.3km</span>
+                         <h1>精选薏米</h1>
+                         <div class="star">
+                          <ul>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                          </ul>
+                         </div>
+                         <div class="tag">
+                          麦岛路沿线 粮食
+                         </div>
+                         <div class="allbuy">
+                          <span class="tuan">团</span>
+                          <span>10.80元</span>
+                         </div>
+                        </div>
+                       </div></a>
+                         <a href="<?php echo base_url('item/detail?id=4197') ?>">
+                       <div class="list">
+                        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="fl">
+                        <div class="listtext fr">
+                         <span class="area">5.3km</span>
+                         <h1>硕溙五常大米</h1>
+                         <div class="star">
+                          <ul>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                          </ul>
+                         </div>
+                         <div class="tag">
+                          麦岛路沿线 粮食
+                         </div>
+                         <div class="allbuy">
+                          <span class="tuan">团</span>
+                          <span>198.00元</span>
+                         </div>
+                        </div>
+                       </div></a>
+                         <a href="<?php echo base_url('item/detail?id=4198') ?>">
+                       <div class="list">
+                        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="fl">
+                        <div class="listtext fr">
+                         <span class="area">0.9km</span>
+                         <h1>聚糖大米</h1>
+                         <div class="star">
+                          <ul>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                          </ul>
+                         </div>
+                         <div class="tag">
+                          麦岛路沿线 粮食
+                         </div>
+                         <div class="allbuy">
+                          <span class="tuan">团</span>
+                          <span>118.00元 </span>
+                         </div>
+                        </div>
+                       </div></a>
+                         <a href="<?php echo base_url('item/detail?id=4322') ?>">
+                       <div class="list">
+                        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="fl">
+                        <div class="listtext fr">
+                         <span class="area">0.3km</span>
+                         <h1>月子小米</h1>
+                         <div class="star">
+                          <ul>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                           <li><i class="icon-weixuanzhong2"></i></li>
+                          </ul>
+                         </div>
+                         <div class="tag">
+                          麦岛路沿线 粮食
+                         </div>
+                         <div class="allbuy">
+                          <span class="tuan">团</span>
+                          <span>15.00元</span>
+                         </div>
+                        </div>
+                       </div></a>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                <div class="botWrap auto wid718 border20 mt10 clearfix">
+                    <div class="dotcontent clearfix bgfff border20">
+                        <ul>
+                            <a href="<?php echo base_url('item/detail?id=5686') ?>">
+                            <li>
+                                <img src="/media/young/tvwallcat.jpg" class="auto block">
+                                <h1>3D立体仿真可爱猫咪墙贴纸</h1>
+                                <h2>¥7.90</h2>
+                            </li>
+                            </a>
+                            <a href="<?php echo base_url('item/detail?id=5688') ?>">
+                            <li>
+                                <img src="/media/young/x9mouse.jpg" class="auto block">
+                                <h1>剑圣一族X9牧马人机械鼠标</h1>
+                                <h2>¥79.00</h2>
+                            </li>
+                            </a>
+                            <a href="<?php echo base_url('item/detail?id=5691') ?>">
+                            <li>
+                                <img src="/media/young/rabbit.jpg" class="auto block">
+                                <h1>抖音玩具一捏耳朵会动的兔子帽子</h1>
+                                <h2>¥49.00</h2>
+                            </li>
+                            </a>
+                            <a href="<?php echo base_url('item/detail?id=5693') ?>">
+                            <li>
+                                <img src="/media/young/pigfoot.jpg" class="auto block">
+                                <h1>抖音同款搞怪创意仿真猪蹄抱枕</h1>
+                                <h2>¥25.00</h2>
+                            </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+
+
 				<!--猜你喜欢-->
 				<div class="wid718 auto bgfff border20 exercise clearfix">
-					<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cainixihuan@3x.png">
+					<img src="/media/banner/hot.png">
 				</div>
 				<!--猜你喜欢内容区域开始-->
 				<div class="like wid718 auto clearfix mt10">
 					<ul>
 						<li>
-                            <a href="<?php echo base_url('item/detail?id=4103') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/liebiao/lanmei@3x.png">
-                                <h1>带仔甜虾</h1>
-                                <h2>满籽北极虾，野生进口，捕捞后立即熟冻，只需简单冲洗就可以食用</h2>
-                                <h3>¥38.00</h3>
+                            <a href="<?php echo base_url('item/detail?id=5649') ?>" target="_self">
+                                <img data-src="media/hot/hami.jpg">
+                                <h1>新疆都知果蜜瓜（四斤装）</h1>
+                                <h2></h2>
+                                <h3>¥29.90</h3>
                             </a>
 						</li>
 
                         <li>
-                            <a href="<?php echo base_url('item/detail?id=4020') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/liebiao/mangguo@3x.png">
-                                <h1>海南小台农芒果</h1>
-                                <h2>清肠胃，抗癌，美化肌肤，防治高血压、动脉硬化，防治便秘，杀菌</h2>
-                                <h3>¥15.80</h3>
+                            <a href="<?php echo base_url('item/detail?id=4752') ?>" target="_self">
+                                <img data-src="media/hot/zephyr.jpg">
+                                <h1>新西兰金果（6个装）</h1>
+                                <h2></h2>
+                                <h3>¥55.00</h3>
                             </a>
                         </li>
 
                         <li class="mr0">
-                            <a href="<?php echo base_url('item/detail?id=3907') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/liebiao/pingguo@3x.png">
-                                <h1>优选鸡爪</h1>
-                                <h2>含有丰富的胶质，可滋养皮肤，美容养颜</h2>
-                                <h3>¥17.80</h3>
+                            <a href="<?php echo base_url('item/detail?id=4816') ?>" target="_self">
+                                <img data-src="media/hot/juicypeach.jpg">
+                                <h1>阳山水蜜桃（4个装）</h1>
+                                <h2></h2>
+                                <h3>¥29.80</h3>
                             </a>
                         </li>
 
 						<li>
-                            <a href="<?php echo base_url('item/detail?id=3971') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/liebiao/putao@3x.png">
-                                <h1>精选五花肉</h1>
-                                <h2>富含蛋白质、碳水化合物等营养元素，补充人体热能</h2>
-                                <h3>¥19.90</h3>
+                            <a href="<?php echo base_url('item/detail?id=5638') ?>" target="_self">
+                                <img data-src="media/hot/durian.jpg">
+                                <h1>泰国金枕头榴莲（四斤装）</h1>
+                                <h2></h2>
+                                <h3>¥59.00</h3>
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('item/detail?id=4187') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/liebiao/yezi@3x.png">
-                                <h1>烟台水晶红富士</h1>
+                            <a href="<?php echo base_url('item/detail?id=4760') ?>" target="_self">
+                                <img data-src="media/hot/dragon.jpg">
+                                <h1>越南红绣球 红心火龙果</h1>
                                 <h2>山泉水灌溉，科学培育，人工除虫，无公害、无污染。</h2>
-                                <h3>¥21.80</h3>
+                                <h3>¥29.80</h3>
                             </a>
 						</li>
 
                         <li class="mr0">
-                            <a href="<?php echo base_url('item/detail?id=4056') ?>" target="_self">
-                                <img data-src="<?php echo CDN_URL ?>media/home/cainixihuan/hxtt/xia@3x.png">
-                                <h1>青岛鲜活鲍鱼</h1>
+                            <a href="<?php echo base_url('item/detail?id=4822') ?>" target="_self">
+                                <img data-src="media/hot/blueberry.jpg">
+                                <h1>胶南蓝莓（4盒装）</h1>
                                 <h2>富含多种营养元素，可健脑补身，提高免疫力</h2>
-                                <h3>¥42.80</h3>
+                                <h3>¥29.90</h3>
                             </a>
                         </li>
 					</ul>
