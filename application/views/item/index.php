@@ -1,5 +1,6 @@
     <script src="<?php echo CDN_URL ?>js/rem.js"></script>
     <script src="<?php echo CDN_URL ?>js/indexBiz.js"></script>
+    <script src="https://cdn-remote.517ybang.com/js/js.cookie.js"></script>
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/reset.css">
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
@@ -75,7 +76,7 @@
         <div class="navigationTab">
             <div class="navigationCategory">
                 <ul>
-                    <li data-id="orderList" class="order-tab tabActive">综合</li>
+                    <li data-id="orderList" class="order-tab tabActive" id="qZh">综合</li>
                     <li data-id="orderList1" class="order-tab">销量</li>
                     <li data-id="orderList2" class="order-tab">新品</li>
                     <li data-id="orderList3" class="order-tab NewPrice">价格<i class="shang-sanjiao"></i><i class="xia-sanjiao"></i></li>
@@ -135,12 +136,26 @@
 
 
     <script>
+    	var oneClick;
+    	var oneZh = 0;
         $(function(){
         var status = '综合';
-
+		getMore();
+		 var searchHistory = '<div class="itemListWrap" style="font-size: .26rem;color:#3e3a39;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;left: .57rem;top: .2rem;background: #fff;float: left;width: 1.5rem;height: .5rem;border-radius: .35rem;text-align: center;line-height: .5rem;"><span class="itemDeletList" style="position:absolute;right:.2rem;top:.0rem">x</span>'+Cookies.get('SearchIndexList')+'</div>';
+            				   $('.searchInput').children('.itemListWrap').remove();
+            				   if(!Cookies.get('SearchIndexList') == ''){
+            				     	$('.searchInput').append(searchHistory);
+            				     	}
+            				   
+            				     $('.itemDeletList').click(function(){
+            				     	$('#searchItem').focus();
+            				     	$(this).parents('.itemListWrap').remove();
+            				     	Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
+            				     	
+            				     })
         function getMore(){
 
-                            var page1 = -1;
+                            var page1 = 0;
                              // 每页展示10个
                              var size = 10;
                              $('.lists').html('');
@@ -164,10 +179,24 @@
 
                                  },
                                  loadDownFn : function(me,dataObj){
-
+										
                                      // 拼接HTML
-                                         page1++;
+                                        if(oneZh == 0){
+                                            	page1 = -10;
+                                            	oneZh++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
+                                           if(oneClick == 0){
+                                            	page1 = 0;
+                                            	
+                                            	oneClick++;
+                                            }
+                                         
+                                         
                                      var result = '';
+                                     console.log('综合page1是' + page1);
                                              $.ajax({
                                                                     url: api_url,
                                                                     data : {app_type:'client',limit:10,offset:page1},
@@ -228,7 +257,7 @@
 
         function getMoreXl(){
 
-                                    var page1 = -1;
+                                    var page1 = 0;
                                     // 每页展示10个
                                     var size = 10;
                                     $('.lists').html('');
@@ -279,12 +308,22 @@
                                         loadDownFn : function(me,dataObj){
 
                                             // 拼接HTML
-                                                page1++;
+                                            
+                                            if(oneClick == 0){
+                                            	page1 = 0;
+                                            	oneClick++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
+                                                
                                             var result = '';
+                                          
                                                     $.ajax({
                                                                            url: api_url,
                                                                            data : {app_type:'client',limit:10,offset:page1,orderby_sold_overall:'DESC'},
                                                                            success: function(data){
+                                                                           	console.log('page1是' + page1);
                                                                                console.log(data);
                                                                                var items = data.content;
                                                                                if(items){
@@ -393,7 +432,13 @@
                                         loadDownFn : function(me,dataObj){
 
                                             // 拼接HTML
-                                                page1++;
+                                                if(oneClick == 0){
+                                            	page1 = 0;
+                                            	oneClick++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
                                             var result = '';
 
                                                     $.ajax({
@@ -507,7 +552,13 @@
                                             loadDownFn : function(me,dataObj){
 
                                                 // 拼接HTML
-                                                    page1++;
+                                                    if(oneClick == 0){
+                                            	page1 = 0;
+                                            	oneClick++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
                                                 var result = '';
                                                         $.ajax({
                                                                                url: api_url,
@@ -619,7 +670,13 @@
                                                 loadDownFn : function(me,dataObj){
 
                                                     // 拼接HTML
-                                                        page1++;
+                                                     if(oneClick == 0){
+                                            	page1 = 0;
+                                            	oneClick++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
                                                     var result = '';
                                                             $.ajax({
                                                                                    url: api_url,
@@ -794,15 +851,20 @@
 
                      },
                      loadDownFn : function(me,dataObj){
-
                          // 拼接HTML
-                             page1++;
+                                   if(oneClick == 0){
+                                            	page1 = 0;
+                                            	oneClick++;
+                                            }
+                                            else{
+                                            	page1+=10;
+                                            }
                          var result = '';
                                  $.ajax({
                                       url: api_url,
                                       data : {app_type:'client',limit:10,offset:page1,name:name},
                                       success: function(data){
-                                          console.log(data);
+                                          console.log('搜索');
                                           var items = data.content;
                                           if(items.length > 0){
                                               console.log(items);
@@ -857,7 +919,7 @@
      }
     $('.itemContent').hide();
     $('.itemContent').eq(0).show();
-    getMore();
+    
             function getQueryString(name) {
                     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
                     var r = window.location.search.substr(1).match(reg);
@@ -973,28 +1035,29 @@
 
                         if(statusType == 'orderList'){
                            status = '综合';
-                           getMore();
                            $('.shang-sanjiao').css('color','#9fa0a0');
                            $('.xia-sanjiao').css('color','#9fa0a0');
                            $('#listItem').html('');
+                           oneClick = 0;
                            getMore();
-                           page=-1;
+                           
 
                         }else if(statusType == 'orderList1'){
                             status = '销量';
+                            oneClick = 0;
                             $('.shang-sanjiao').css('color','#9fa0a0');
                             $('.xia-sanjiao').css('color','#9fa0a0');
                             $('#listItemXl').html('');
                             getMoreXl();
-                            page=-1;
 
                         }else if(statusType == 'orderList2'){
                             status = '新品';
                             $('.shang-sanjiao').css('color','#9fa0a0');
                             $('.xia-sanjiao').css('color','#9fa0a0');
                             $('#listItem').html('');
+                            oneClick = 0;
                             getMoreXP();
-                            page=-1;
+                            
 
                         }else if(statusType == 'orderList3'){
                             cont = cont + 1;
@@ -1004,6 +1067,7 @@
                                 $('.shang-sanjiao').css('color','#ff3649');
                                 $('.xia-sanjiao').css('color','#9fa0a0');
                                 $('#listItemJG').html('');
+                                oneClick = 0;
                                 getMoreJGS();
                                 page=-1;
 
@@ -1012,6 +1076,7 @@
                                 $('.xia-sanjiao').css('color','#ff3649');
                                 $('.shang-sanjiao').css('color','#9fa0a0');
                                 $('#listItemJG').html('');
+                                oneClick = 0;
                                 getMoreJGJ();
                                 page=-1;
 
@@ -1021,6 +1086,7 @@
                         //load_more(10, listAllOffset, api_url, status);
 
             });
+            
             //点击跟多显示下拉菜单
             $('.menuSearch').click(function(){
                 $('.thisList').show();
@@ -1152,16 +1218,33 @@
            $('.filterList').on('click',function(event){
              event.stopPropagation()
 
-          })
+          });
+          var curleft=0.57;
             $('#searchItem').keydown(function(event){
                     name = $('#searchItem').val();
             				//event.preventDefault();
+            			
             				if(event.which == 13){
-            				    console.log('13')
                                 $('.itemContent').hide();
                                 $('.itemContent').eq(4).show();
+                                oneClick = 0;
             				    getMoreSearch();
-            				    $('#searchItem').val('');
+            				    
+            				    
+            				   
+            				   // 生成用户的搜索关键词dom
+            				   //首先清空cookie
+            				   Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
+            				   Cookies.set('SearchIndexList', $(this).val(), { expires: 9999, path: '' });
+            				   
+            				   var searchHistory = '<div class="itemListWrap" style="font-size: .26rem;color:#3e3a39;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;left: '+curleft+'rem;top: .2rem;background: #fff;float: left;width: 1.5rem;height: .5rem;border-radius: .35rem;text-align: center;line-height: .5rem;"><span class="itemDeletList" style="position:absolute;right:.2rem;top:.0rem">x</span>'+Cookies.get('SearchIndexList')+'</div>';
+            				   $('.searchInput').children('.itemListWrap').remove();
+            				    $('.searchInput').append(searchHistory);
+            				     $('.itemDeletList').click(function(){
+            				     	$('#searchItem').focus();
+            				     	$(this).parents('.itemListWrap').remove();
+            				     	Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
+            				     })
 
             				}
             });
@@ -1203,31 +1286,31 @@
                     }*/
 
 
-                    $(".html").scroll(function(){
-                            console.log("$(\this\).scrollHeight " + $(this).scrollHeight);
-                            console.log("$(this).height()" + $(this).height());
-                            console.log("$(this)[0].scrollTop" + $(this).scrollTop);
-                            //  滑到底结果为->$(this)[0].scrollTop+$(this).height()+20=$(this)[0].scrollHeight
-                            //  60应该是一半的Item高度
-                            if($(this)[0].scrollTop+$(this).height()+20+60>=$(this)[0].scrollHeight){
-                                setTimeout(function(){
-                                    loadMore();
-                                },1000)
-                            }
-                    });
+//                  $(".html").scroll(function(){
+//                          console.log("$(\this\).scrollHeight " + $(this).scrollHeight);
+//                          console.log("$(this).height()" + $(this).height());
+//                          console.log("$(this)[0].scrollTop" + $(this).scrollTop);
+//                          //  滑到底结果为->$(this)[0].scrollTop+$(this).height()+20=$(this)[0].scrollHeight
+//                          //  60应该是一半的Item高度
+//                          if($(this)[0].scrollTop+$(this).height()+20+60>=$(this)[0].scrollHeight){
+//                              setTimeout(function(){
+//                                  loadMore();
+//                              },1000)
+//                          }
+//                  });
 
                     // 分页参数
-                    var limit = 10;
-                    var offset = 0;
+//                  var limit = 10;
+//                  var offset = 0;
 
 
                     // 点击加载更多
-                    var limit = 10;
-                    $('#load-more').click(function(){
-                        var statusType = 'orderList';
-                        load_more(limit, offset, api_url);
-                        return false;
-                    });
+//                  var limit = 10;
+//                  $('#load-more').click(function(){
+//                      var statusType = 'orderList';
+//                      load_more(limit, offset, api_url);
+//                      return false;
+//                  });
                     //refresh(load_more);
                     /**
                              * 加载更多
@@ -1235,100 +1318,101 @@
                              * @param limit 当前limit值
                              * @param current_offset 当前offset值
                              */
-                            var listAllOffset = 0;
-                            var apiStatus = '';
-                            function load_more(limit, current_offset, api_url, status, minPrice, maxPrice, category, promotion, nameType)
-                            {
-                                // 初始化参数
-                                params = common_params;
-                                delete params.orderby_sold_overall;
-                                delete params.orderby_time_publish;
-                                delete params.orderby_price;
-                                delete params.maxPrice;
-                                delete params.minPrice;
-                                delete params.category;
-                                delete params.promotion;
-                                delete params.nameType;
-                                params.limit = limit;
-                                params.biz_id = bizID;
-                                params.offset = current_offset; // 新的偏移量等于当前偏移量加当前获取量
-                                params.price_max = maxPrice;
-                                params.price_min = minPrice;
-                                params.category_id = category;
-                                params.promotion_id = nameType;
-                                params.name = minPrice;
-                                //DESC为降序，ASC为升序
-                                if(status == '销量'){
-                                    params.orderby_sold_overall = 'DESC';
-                                }else if(status == '新品'){
-                                    params.orderby_time_publish = 'DESC';
-                                }else if(status == '价格降序'){
-                                    params.orderby_price = 'DESC';
-                                }else if(status == '价格升序'){
-                                    params.orderby_price = 'ASC';
-                                }
-
-                                console.log(current_offset);
+//                          var listAllOffset = 0;
+//                          var apiStatus = '';
+//                          function load_more(limit, current_offset, api_url, status, minPrice, maxPrice, category, promotion, nameType)
+//                          {
+//                              // 初始化参数
+//                              params = common_params;
+//                              delete params.orderby_sold_overall;
+//                              delete params.orderby_time_publish;
+//                              delete params.orderby_price;
+//                              delete params.maxPrice;
+//                              delete params.minPrice;
+//                              delete params.category;
+//                              delete params.promotion;
+//                              delete params.nameType;
+//                              params.limit = limit;
+//                              params.biz_id = bizID;
+//                              params.offset = current_offset; // 新的偏移量等于当前偏移量加当前获取量
+//                              params.price_max = maxPrice;
+//                              params.price_min = minPrice;
+//                              params.category_id = category;
+//                              params.promotion_id = nameType;
+//                              params.name = minPrice;
+//                              //DESC为降序，ASC为升序
+//                              if(status == '销量'){
+//                                  params.orderby_sold_overall = 'DESC';
+//                              }else if(status == '新品'){
+//                                  params.orderby_time_publish = 'DESC';
+//                              }else if(status == '价格降序'){
+//                                  params.orderby_price = 'DESC';
+//                              }else if(status == '价格升序'){
+//                                  params.orderby_price = 'ASC';
+//                              }
+//
+//                              console.log(current_offset);
                                 // 拼合完整API路径
 
                                 //console.log(api_url);
                                 // AJAX获取结果并生成相关HTML
-                                $.post(
-                                    api_url,
-                                    params,
-                                    function(result)
-                                    {
-                                        console.log(result); // 输出回调数据到控制台
-                                        apiStatus = result.status;
-                                        if (result.status == 200)
-                                        {
-
-                                            var items = result.content
-                                            console.log(items);
-                                                    var listHtml = '';
-                                                                for(var key in items){
-                                                                    var imgUrl = items[key].url_image_main;
-                                                                    var reg = RegExp(/http/);
-                                                                    if(reg.test(imgUrl) !== true){
-                                                                                      imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
-                                                                                 }else{
-                                                                                      imgUrl =''
-                                                                                 }
-                                                                        listHtml +=  '<li class="itemList">'+
-                                                                                        '<a href="'+page_item_detail+items[key].item_id+'">'+
-                                                                                            '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                                                            '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
-                                                                                            '<p class="itemPrice">¥'+items[key].price+'</p>'+
-                                                                                        '</a>'+
-                                                                                        '<div class="carItem">'+
-                                                                                            '<i class="icon-gouwuche-2"></i>'+
-                                                                                        '</div>'+
-                                                                                    '</li>';
-                                                                }
-                                                                $('#listItem').append(listHtml);
-                                            //var list_html = generete_list(content);
-
-                                            //$('#item-list').append(list_html);
-
-                                            // 更新全局分页参数
-                                            offset = params.offset;
-                                        }
-                                        else
-                                        {
-                                                    if( $('#listItem').html() == ''){
-                                                       $('.order-item-none').show();
-                                                    }else{
-                                                        $('.order-item-none').hide();
-                                                    }
-
-                                            // 若失败，进行提示
-                                            //alert(result.content.error.message);
-
-                                        }
-                                    },
-                                    "JSON"
-                                );
-                            } // end load_more
+//                              $.post(
+//                                  api_url,
+//                                  params,
+//                                  function(result)
+//                                  {
+//                                      console.log(result); // 输出回调数据到控制台
+//                                      apiStatus = result.status;
+//                                      if (result.status == 200)
+//                                      {
+//
+//                                          var items = result.content
+//                                          console.log(items);
+//                                                  var listHtml = '';
+//                                                              for(var key in items){
+//                                                                  var imgUrl = items[key].url_image_main;
+//                                                                  var reg = RegExp(/http/);
+//                                                                  if(reg.test(imgUrl) !== true){
+//                                                                                    imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+//                                                                               }else{
+//                                                                                    imgUrl =''
+//                                                                               }
+//                                                                      listHtml +=  '<li class="itemList">'+
+//                                                                                      '<a href="'+page_item_detail+items[key].item_id+'">'+
+//                                                                                          '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
+//                                                                                          '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+//                                                                                          '<p class="itemPrice">¥'+items[key].price+'</p>'+
+//                                                                                      '</a>'+
+//                                                                                      '<div class="carItem">'+
+//                                                                                          '<i class="icon-gouwuche-2"></i>'+
+//                                                                                      '</div>'+
+//                                                                                  '</li>';
+//                                                              }
+//                                                              $('#listItem').append(listHtml);
+//                                          //var list_html = generete_list(content);
+//
+//                                          //$('#item-list').append(list_html);
+//
+//                                          // 更新全局分页参数
+//                                          offset = params.offset;
+//                                      }
+//                                      else
+//                                      {
+//                                                  if( $('#listItem').html() == ''){
+//                                                     $('.order-item-none').show();
+//                                                  }else{
+//                                                      $('.order-item-none').hide();
+//                                                  }
+//
+//                                          // 若失败，进行提示
+//                                          //alert(result.content.error.message);
+//
+//                                      }
+//                                  },
+//                                  "JSON"
+//                              );
+                            //} // end load_more
+                            
 
         });
 
