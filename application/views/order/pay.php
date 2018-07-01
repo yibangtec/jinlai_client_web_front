@@ -145,8 +145,7 @@
     payment_common_params += encodeURI('进来商城商品订单 ' + date('')+'_' +item.order_id);
     payment_common_params += '&order_id=' + item.order_id;
 
-    // payment_common_params += '&total_fee=' + item.total;
-    payment_common_params += '&total_fee=' + 0.01; // 测试环境
+    payment_common_params += '&total_fee=' + item.total;
 
     //console.log(payment_common_params);
 
@@ -166,7 +165,6 @@
         var alipay_url_desktop = 'alipay/wappay/qrpay.php?'; // 支付宝 电脑网站支付URL
         document.getElementById('alipay').style.display = 'block';
     }
-
 
     $(function(){
         // 赋值各财务字段
