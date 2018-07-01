@@ -21,12 +21,13 @@
 $(function(){
     var params = common_params;
     var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
-        // 若无默认收货地址，则AJAX创建
-        if (default_address_id == '')
-        {
-            location.href = base_url + 'address/create'
-        }
-        else
+        // TODO 若无默认收货地址，则AJAX创建
+        //if (default_address_id == '')
+        //{
+        //    location.href = base_url + 'address/create'
+        //}
+        //else
+        if (true)
         {
                 var items = <?php echo json_encode($items) ?>;
                 var defaultIcon = ''
