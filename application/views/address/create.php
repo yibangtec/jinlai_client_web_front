@@ -16,14 +16,14 @@
             input{outline:none;}
             button{border: none;}
             html{ margin: 0 auto; height: 100%}
-            body {width: 100%;background-color: #ffffff; height: 100%}
+            body {background-color: #ffffff;}
             a {text-decoration: none;}
-            .box {width: 100%; height: 100%;position: relative}
-            .create-content{margin: 0 0.2rem;height: 100%;font-size: 0.28rem;color: #666464;}
+            .box {width: 100%; position: relative}
+            .create-content{margin: 0 0.2rem;height: 8rem;font-size: 0.28rem;color: #666464;margin-bottom:8rem;overflow-y:auto;}
             .create-list{display: flex;padding: 0.4rem 0.1rem 0.2rem 0.1rem;border-bottom: 0.02rem solid #efefef;}
             .create-list .create-input{flex: 1;border: none;font-size: 0.28rem;}
             .address-default{padding: 0.5rem 0;font-size: 0.28rem;color: #666464;}
-            .map-box {position: absolute;bottom: 0.2rem;width: 7.1rem;
+            .map-box {position: fixed;bottom: 0.2rem;width: 7.1rem;
                 height: 4rem; border-radius: 0.15rem; overflow: hidden; !important;}
             .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0;}
             .tips{width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);position: fixed; display: none;z-index: 100;
@@ -53,7 +53,8 @@
                 display: block;
             }
             .address{
-                        height:0;
+                height:0;
+                position: static;
             }
     </style>
 
@@ -90,6 +91,9 @@
                     <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" required>
                 </div>
                 <div class="create-list">
+                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
+                </div>
+                <div class="create-list">
                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
                 </div>
                 <input id="value1" type="hidden" value="20,234,540">
@@ -97,11 +101,11 @@
                     <textarea rows=3 name=street style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" placeholder="详细地址"><?php set_value('street') ?></textarea>
                 </div>
                 <!--
-                <div class="create-list" style="display:none">
+                <div class="create-list" >
                     <input class="create-input" type="tel" placeholder="邮编">
                 </div>
                 -->
-                <div class="address-default" style="display:none">
+                <div class="address-default">
                     <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
                 </div>
             </form>
@@ -139,32 +143,67 @@
 
     <script>
         $(function(){
-            $('form').submit(function(){
-                var params = common_params
+            var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
+            if(default_address_id != ''){
+            }else{
+            }
 
-                var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
-                for (var index in data_to_process)
-                {
-                    params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
-                }
-                console.log(params);
-                $.post(
-                    api_url + 'address/create',
-                    params,
-                    function(result)
-                    {
-                        //console.log(result); // 输出回调数据到控制台
-                        if (result.status == 200)
-                        {
-                            lottery = result.content;
-                        } else {
-                            alert(result.content.error.message);
-                        }
-                    }
-                )
-
-                return false;
+            $("#demo1").focus(function(){
+                document.activeElement.blur();
             });
+            $('form').submit(function(){
+
+                    // 若无默认收货地址，则AJAX创建
+                if (default_address_id != '')
+                {
+                    var params = common_params
+                    var addressText = $('#demo1').val();
+                    console.log(addressText);
+                    var arr = [];
+                    arr = addressText.split(',');
+                    console.log(arr);
+
+                    if(0<arr.length<3){
+                       params.province = arr[0];
+                       params.city = arr[0];
+                       params.county = arr[1];
+                    }else{
+                       params.province = arr[0];
+                       params.city = arr[1];
+                       params.county = arr[2];
+                    }
+                     var data_to_process = ['brief', 'fullname', 'mobile', 'street', 'zipcode', 'default_this']
+                     for (var index in data_to_process)
+                     {
+                         params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
+
+                     }
+
+
+
+                     console.log(params);
+                     $.post(
+                         api_url + 'address/create',
+                         params,
+                         function(result)
+                         {
+                             console.log(result); // 输出回调数据到控制台
+                             if (result.status == 200)
+                             {
+                              alert(result.content);
+
+                                location.href = "address/index";
+                             } else {
+                                alert(result.content.error.message);
+                             }
+                         }
+                     )
+
+                     return false;
+
+                }
+            });
+
         });
     </script>
 
