@@ -15,7 +15,7 @@
     </div>
     <div class="receipt">
         <div class="place-input">请输入账户密码</div>
-        <input id="password" type="text" placeholder="请输入密码"/>
+        <input id="password" minlength="6" type="password" placeholder="请输入密码"/>
         <div class="forget"><a href="">忘记密码?</a></div>
         <div class="confirm-select clearfix">
             <div class="cancel-btn">取消</div>
@@ -84,7 +84,7 @@
             var statusHtml = '';
             var status = items[key].status;
             if(status == '已评价'){
-                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><span  data-id="'+items[key].order_id+'">追加评论</span>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><span class="pingjia">追加评论</span>';
             }else if(status == '已关闭'){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -92,12 +92,22 @@
                 statusHtml = '';
             }
             else if(status == '待收货'){
-                statusHtml = '<span>再来一单</span><a href="'+ base_url+'refund/index?id='+items[key].order_id+'">退款</a><span>延长收货</span><span>查看物流</span><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
+                statusHtml = '<a class="refundBtn">退款</a><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
             }
             else if(status == '待付款'){
-                statusHtml = '<span>联系卖家</span><span data-id="'+items[key].order_id+'" class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
+                //<a href="' + base_url +'message?order_id='+items[key].order_id+'&biz_id='+items[key].biz_id +'">联系卖家</a>
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="can-btn">取消</span><a class="current-red go-pay" href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a>';
             }else if(status == "待评价"){
-                statusHtml = '<span>写评价</span><span class="current-red">再来一单</span>';
+                var cart_string = ''; // CSV格式，商家ID|商品ID|SKU_ID(若无SKU则写0)|商品数量
+                // TODO 轮询订单信息中的order_items，并生成cart_string
+               /* var orderItems = items[key].order_items;
+                var arr = [];
+                for (var j in orderItems)
+                {
+                    arr.push = orderItems[j].biz_id+'|'+orderItems[j]order_id+'|'+orderItems[j]sku_id+'|'+orderItems[j]count;
+                }
+                cart_string = arr.join(',');*/
+                statusHtml = '<span class="pingjia">写评价</span>';
             }else if(status == ""){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -110,10 +120,10 @@
                                        '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                    '</a>'+
                                    '<div class="item-list">';
-                                   var bot = '</div>'+
-                                   '<div class="item-price">共<span>'+items[key].order_items.length+'</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
-                                   '<div class="item-operation">'+statusHtml+'</div>'+
-                              '</div>';
+            var bot = '</div>'+
+                           '<div class="item-price">共<span>'+items[key].order_items.length+'</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
+                           '<div class="item-operation">'+statusHtml+'</div>'+
+                      '</div>';
             //$('#orderList').append(bizNameHtml);
 
             var orderItemHtml = '';
@@ -186,6 +196,22 @@
             }
             load_more(10, listAllOffset, api_url+'order/index', status);
         });
+        $('body').on('click','.refundBtn',function(){
+            if(true){
+                 if(confirm("网页版退款功能即将开放，现阶段您可通过AppStore下载进来商城应用申请退款"))
+                  {
+
+                  }
+             }
+        });
+        $('body').on('click','.pingjia',function(){
+             if(true){
+                  if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用评价功能"))
+                   {
+
+                   }
+              }
+         });
         $('.cancel').on('click',function(event){
             event.stopPropagation()
         })
@@ -272,24 +298,33 @@
         });
         $('#receiptSubmit').on('click',function(){
             password = $('#password').val();
-            params.ids = orderID;
-            params.operation = 'cancel';
-            params.reason_cancel= reasonCancel;
-            console.log(params);
-            $.post(
-                 api_url + 'order/edit_bulk',
-                 params,
-                 function(result)
+            console.log(password);
+
+            if(password.length<6){
+                if(confirm("密码不能小于6位"))
                  {
-                     console.log(result); // 输出回调数据到控制台
-                     if (result.status == 200)
-                     {
-                       $('.tips').hide().children('.cancel').hide();
-                     } else {
-                        alert(result.content.error.message);
-                     }
+                    $('#password').val('').focus();
                  }
-             );
+            }else{
+                params.ids = orderID;
+                params.operation = 'confirm';
+                params.password = password;
+                console.log(params);
+                $.post(
+                     api_url + 'order/edit_bulk',
+                     params,
+                     function(result)
+                     {
+                         console.log(result); // 输出回调数据到控制台
+                         if (result.status == 200)
+                         {
+                           $('.tips').hide().children('.cancel').hide();
+                         } else {
+                            alert(result.content.error.message);
+                         }
+                     }
+                 );
+            }
         });
 
 
@@ -371,7 +406,7 @@
                                             var statusHtml = '';
                                             var status = items[key].status;
                                             if(status == '已评价'){
-                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><span>追加评论</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><span class="pingjia">追加评论</span>';
                                             }else if(status == '已关闭'){
                                                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }
@@ -379,10 +414,10 @@
                                                 statusHtml = '';
                                             }
                                             else if(status == '待收货'){
-                                                statusHtml = '<span>退款</span><span>延长收货</span><span>查看物流</span><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
+                                                statusHtml = '<span class="refundBtn">退款</span><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
                                             }
                                             else if(status == '待付款'){
-                                                statusHtml = '<span>联系卖家</span><span data-id="'+items[key].order_id+'" class="can-btn">取消</span><span class="current-red go-pay">付款</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="can-btn">取消</span><span class="current-red go-pay">付款</span>';
                                             }else if(status == ""){
                                                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }

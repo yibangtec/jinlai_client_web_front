@@ -10,7 +10,7 @@ a {text-decoration: none;}
 .title-left{float: left;}
 .title-right{float: right;}
 .address-type{display: inline-block;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;
-    color: #ff3649;margin: 0 0.2rem;
+    color: #ff3649;margin-right: 0.2rem;
 }
 .address-content{display: block;margin: 0 0.2rem;color: #666464;padding-bottom: 0.24rem;border-bottom: 0.01rem solid #e6e6e6;}
 .address-content p{

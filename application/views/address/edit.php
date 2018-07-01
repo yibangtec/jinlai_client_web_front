@@ -90,14 +90,14 @@
             <div class="create-list">
                 <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号" value="<?php echo empty(set_value('mobile'))? $item['mobile']: set_value('mobile') ?>">
             </div>
-            <div class="create-list">
+           <div class="create-list">
                 <input type=hidden name=province value="<?php echo set_value('province') ?>">
                 <input type=hidden name=city value="<?php echo set_value('city') ?>">
                 <input type=hidden name=county value="<?php echo set_value('county') ?>">
 
                 <!-- 省市区选择控件 -->
-                <input id="value1" type=hidden value="20,234,540">
-                <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区" >
+                <input id=value1 type=hidden value="">
+                <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
             </div>
             <div class="create-list">
                 <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
@@ -157,6 +157,9 @@
         if (alert_to_show != '') alert( decodeURI(alert_to_show) );
         //默认地址default_this
         var params = common_params;
+        $("#demo1").focus(function(){
+            document.activeElement.blur();
+        });
          $("#select").click(function(){
 
 
@@ -169,6 +172,7 @@
                 }else{
                    $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
                    $(this).find("span").css('color','#666464');
+                   $('[name=default_this]').val(0);
                 }
 
            });
@@ -202,7 +206,7 @@
                 $('[name=city]').val(arr[1]);
                 $('[name=county]').val(arr[2]);
              }
-              var data_to_process = ['brief', 'fullname', 'mobile', 'street', 'zipcode', 'default_this']
+              var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
               for (var index in data_to_process)
               {
                   params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();

@@ -268,12 +268,17 @@
             $('.address-selected').css('display','none');
             $('#addressSelected').html($(this).html());
         });
-
+        var brief = '';
         for(var key in addresses){
             console.log(addresses[key].address_id);
+            if(addresses[key].brief !== null){
+                brief = '<span class="address-type">'+addresses[key].brief+'</span>';
+            }else{
+                brief = ''
+            }
             if(default_address_id == addresses[key].address_id ){
                 var addressHtml = '<div class="address-title clearfix">'+
-                                      '<div class="title-left"><span class="address-type">'+addresses[key].brief+'</span>'+addresses[key].fullname+'</div>'+
+                                      '<div class="title-left">'+brief+addresses[key].fullname+'</div>'+
                                       '<div class="title-right">'+addresses[key].mobile+'</div>'+
                                   '</div>'+
                                   '<div class="address-content">'+

@@ -153,6 +153,7 @@
 
     <script>
         $(function(){
+        var params = common_params
             var alert_to_show = '<?php echo urlencode($error) ?>';
             if (alert_to_show != '') alert( decodeURI(alert_to_show) );
 
@@ -204,7 +205,7 @@
                 // 若无默认收货地址，则AJAX创建
                 if (default_address_id != '')
                 {
-                    var params = common_params
+
                     /*
                     var addressText = $('#demo1').val();
                     console.log(addressText);
