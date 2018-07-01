@@ -193,14 +193,14 @@
              arr = addressText.split(',');
              console.log(arr);
 
-             if(0<arr.length<3){
-                params.province = arr[0];
-                params.city = arr[0];
-                params.county = arr[1];
+             if(arr.length<3){
+                $('[name=province]').val(arr[0]);
+                $('[name=city]').val(arr[0]);
+                $('[name=county]').val(arr[arr.length - 1]);
              }else{
-                params.province = arr[0];
-                params.city = arr[1];
-                params.county = arr[2];
+                $('[name=province]').val(arr[0]);
+                $('[name=city]').val(arr[1]);
+                $('[name=county]').val(arr[2]);
              }
               var data_to_process = ['brief', 'fullname', 'mobile', 'street', 'zipcode', 'default_this']
               for (var index in data_to_process)

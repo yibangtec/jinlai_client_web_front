@@ -89,7 +89,7 @@
                     <input id="name" class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" value="<?php echo set_value('fullname') ?>" autofocus required>
                 </div>
                 <div class="create-list">
-                    <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" value="<?php echo set_value('mobile') ?>" required>
+                    <input id="tel" class=create-input name=mobile type=tel pattern="^(1)\d{10}$"placeholder="手机号" value="<?php echo set_value('mobile') ?>" required>
                 </div>
                 <div class="create-list">
                     <input type=hidden name=province value="<?php echo set_value('province') ?>">
@@ -97,12 +97,12 @@
                     <input type=hidden name=county value="<?php echo set_value('county') ?>">
 
                     <!-- 省市区选择控件 -->
-                    <input id="value1" type=hidden value="20,234,540">
+                    <input id=value1 type=hidden value="">
                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
                 </div>
 
                 <div class="create-list">
-                    <textarea rows="3" name=street contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type=text placeholder="请输入除省市区之外的详细地址，至少5个字符" value="<?php echo set_value('street') ?>" ></textarea>
+                    <textarea rows="3" name=street contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type=text placeholder="请输入除省市区之外的详细地址，至少5个字符" value="<?php echo set_value('street') ?>" required></textarea>
                 </div>
 
                 <!--
@@ -180,23 +180,22 @@
             });
 
             $('form').submit(function(){
-                console.log('submited');
-
                 // 降低至空间获取到的值分拆赋值到相应字段
                 var addressText = $('#demo1').val();
                 console.log(addressText);
+
                 var arr = [];
                 arr = addressText.split(',');
                 console.log(arr);
 
                 // 省市区选择控件有可能存在仅可获取二级地址的现象
-                if (0<arr.length<3){
+                if (arr.length < 3){
                     $('[name=province]').val(arr[0]);
                     $('[name=city]').val(arr[0]);
-                    $('[name=county]').val(arr[1]);
+                    $('[name=county]').val(arr[arr.length - 1]);
                 }
                 else
-                    {
+                {
                     $('[name=province]').val(arr[0]);
                     $('[name=city]').val(arr[1]);
                     $('[name=county]').val(arr[2]);
