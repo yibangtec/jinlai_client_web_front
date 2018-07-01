@@ -53,6 +53,14 @@
     #actions {overflow:hidden;width:432px;margin:0 auto;padding:70px 0;}
         #actions li {background-color:#750cb3;float:left;display:inline-block;width:186px;height:70px;line-height:70px;margin-right:60px;border-radius:35px;}
             #actions li:last-child {color:#f9ed05;margin-right:0;}
+
+    .full-screen {background-color:rgba(0,0,0,.6);position:fixed;top:0;bottom:0;left:0;right:0;z-index:100;display:none;}
+        .full-screen-container {color:#3d3d3d;background-color:#fff;font-size:30px;width:710px;margin:20px auto;border-radius:20px;position:relative;overflow-y:scroll;}
+        .full-screen-close {color:#c9954b;font-size:26px;position:absolute;top:30px;right:30px;width:26px;height:26px;}
+        .full-screen-content {background-color:#fff;padding:90px 66px;}
+        .full-screen-title {color:#c9954b;font-size:36px;margin-bottom:50px;}
+        .full-screen-content figure {text-align:center;}
+        .full-screen-content p:not(:last-child) {margin-bottom:1em;}
 </style>
 
 <!-- 抽奖转盘 -->
@@ -141,6 +149,20 @@
         </div>
     </div>
 
+</div>
+
+<div class=full-screen data-window-name=customer-service>
+    <div class=full-screen-container>
+        <div class=full-screen-close><i class="far fa-times" aria-hidden=true></i></div>
+
+        <div class="full-screen-content">
+            <figure>
+                <img src="/media/fruitful2018/qrcode_customer_service.jpg">
+                <figcaption>进来客服 小五</figcaption>
+            </figure>
+            <p>优惠券类奖品将由系统自动发放到您的账户中，活动火热进行中，请稍候查看即可</p>
+        </div>
+    </div>
 </div>
 
 <?php
@@ -408,11 +430,6 @@
 
     var user_id = '<?php echo $this->session->user_id ?>';
 
-    if (user_id == '')
-    {
-        location.href = base_url + 'login?url_after_login=<?php echo trim($_SERVER['REQUEST_URI'], '/') ?>';
-    }
-
     // 当前可抽奖次数
     var chance_count = 1;
 
@@ -445,6 +462,11 @@
     var items = <?php echo json_encode($items) ?>;
 
     $(function(){
+        // 关闭全屏
+        $('.full-screen-close').click(function(){
+            $(this).closest('.full-screen').hide();
+        });
+
         // 赋值当前可抽奖次数到页面
         $('[data-name=chances]').text(chance_count)
 
@@ -637,11 +659,16 @@
         // 点击抽奖按钮
         $("#start, [data-action=try]").on('click', function () {
 
-            // 若已在抽奖中，不响应点击事件
-            if ( ! throttle)
+            // 若未登录，转到登录页面
+            if (user_id == '')
             {
+                alert('登录后即可参与活动，将自动转到登录页面');
+                location.href = base_url + 'login?url_after_login=<?php echo urlencode( trim($_SERVER['REQUEST_URI'], '/') ) ?>';
                 return false;
             }
+
+            // 若已在抽奖中，不响应点击事件
+            if ( ! throttle) return false;
 
             console.log(chance_count)
             if (chance_count < 1)
@@ -693,7 +720,17 @@
                                 console.log(prizes[index])
                                 if (prizes[index].prize_id == prize_id)
                                 {
-                                    var reminder = '恭喜！您已获抽到奖品"' + prizes[index].name + '"，请添加进来商城客服微信，我们会与您沟通奖品发送事宜！'
+                                    var reminder = ''; // 抽奖结果提示
+                                    if (result.content.coupon_id == '')
+                                    {
+                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，请添加进来商城客服微信，我们会与您沟通奖品发送事宜！'
+
+                                        // 弹出客服微信二维码
+                                        $('[data-window-name=customer-service]').show();
+                                    } else {
+                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，优惠券已发放到卡包！'
+                                    }
+
                                     alert(reminder);
                                     break
                                 }

@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/order.css">
 
 <style>
-
     .icon-weixin-pay .path1:before {
       content: "\e943";
       color: #40a039;
@@ -208,8 +207,9 @@
 
         // 点击某付款方式后弹出支付结果询问页面
         $('#list-payment a').click(function(){
+            console.log('转到支付页面');
             //$('#payment_confirm').show();
-            alert('询问支付结果');
+            //alert('询问支付结果');
         });
 
         // 用户选择了支付结果后弹出相应的引导页面
