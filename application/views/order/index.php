@@ -10,7 +10,7 @@
         <p>您可以从回收站找回已删除的订单</p>
         <div class="confirm-select clearfix">
             <div class="cancel-btn">取消</div>
-            <div class="del-confirm">确定</div>
+            <div id="delConfirm" class="del-confirm">确定</div>
         </div>
     </div>
     <div class="receipt">
@@ -74,29 +74,31 @@
 
 <script>
     $(function(){
+
+        var params = common_params;
         var items = <?php echo json_encode($items) ?>;
-        //console.log(items);
+        console.log(items);
 
         for(var key in items){
             var statusHtml = '';
             var status = items[key].status;
             if(status == '已评价'){
-                statusHtml = '<span class="del-btn">删除</span><span>申请售后</span><span>追加评论</span>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><span  data-id="'+items[key].order_id+'">追加评论</span>';
             }else if(status == '已关闭'){
-                statusHtml = '<span class="del-btn">删除</span>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
             else if(status == '待发货'){
                 statusHtml = '';
             }
             else if(status == '待收货'){
-                statusHtml = '<span>再来一单</span><span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
+                statusHtml = '<span>再来一单</span><a href="'+ base_url+'refund/index?id='+items[key].order_id+'">退款</a><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
             }
             else if(status == '待付款'){
                 statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
             }else if(status == "待评价"){
                 statusHtml = '<span>写评价</span><span class="current-red">再来一单</span>';
             }else if(status == ""){
-                statusHtml = '<span class="del-btn">删除</span>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
 
             var li = items[key].order_items;
@@ -191,7 +193,9 @@
         $('.cancel-btn').click(function(){
             $('.tips').hide();
         });
+        var orderID = '';
         $('.del-btn').click(function(){
+            orderID = $(this).attr('data-id');
             $('.tips').show().children('.delete').show();
         });
         $('.can-btn').click(function(){
@@ -204,6 +208,25 @@
         $('.go-pay').click(function(){
             $(location).attr('href', 'pay.html');
         })
+        $('#delConfirm').on('click',function(){
+            params.ids = orderID;
+            params.operation = 'delete';
+            console.log(params);
+            $.post(
+                 api_url + 'order/edit_bulk',
+                 params,
+                 function(result)
+                 {
+                     console.log(result); // 输出回调数据到控制台
+                     if (result.status == 200)
+                     {
+                       $('.tips').hide().children('.delete').show();
+                     } else {
+                        alert(result.content.error.message);
+                     }
+                 }
+             );
+        });
 
         function refresh(refresh,loadmore) {
                     $(window).scroll(function(){
