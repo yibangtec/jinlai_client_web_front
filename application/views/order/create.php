@@ -216,8 +216,14 @@
     </div>
 
 <script>
+    var default_address_id = '<?php echo $this->session->address_id ?>' // 默认收货地址ID
+    // 若未创建过地址，则转到地址创建页
+    if (default_address_id == '')
+    {
+        location.href = base_url + 'address/create'
+    }
+
     var item = <?php echo json_encode($item) ?>;
-    var default_address_id = <?php echo $this->session->address_id ?>; // 默认收货地址ID
     var addresses = item.addresses; // 可选的收货地址
     var order_data = item.order_data; // 子订单信息
     // console.log(item);
@@ -354,10 +360,8 @@
             });
 
             $.ajax({
-                type: 'post',
                 url: api_url + 'order/create',
                 data: params,
-                dataType:'json',
                 cache: false,
                 success: function(result)
                 {

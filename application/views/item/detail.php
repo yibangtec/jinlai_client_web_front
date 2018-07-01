@@ -239,6 +239,7 @@ wx.ready(function(){
     -->
 
     <!-- 产品参数 -->
+    <!--
     <div class="wid710 auto border20 bgfff skus clearfix mt20">
         <div class="topcardwrap">
             <h2>产品参数</h2>
@@ -251,6 +252,7 @@ wx.ready(function(){
         </div>
 		
     </div>
+    -->
 
 	<!-- 商品评价 -->
     <?php if ( ! empty($comments)): ?>
