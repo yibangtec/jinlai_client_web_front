@@ -1,6 +1,6 @@
 	<script src="<?php echo CDN_URL ?>js/rem.js"></script>
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
-    <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<!--    <script src="--><?php //echo CDN_URL ?><!--js/account.js"></script>-->
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css">
     <script src="<?php echo CDN_URL ?>js/LArea.js"></script>
     <script src="<?php echo CDN_URL ?>js/LAreaData1.js"></script>
@@ -83,30 +83,40 @@
                 <input name=default_this type=hidden value=1>
 
                 <div class="create-list">
-                    <input class="create-input" type=text name=brief placeholder="简称（可选）" maxlength="10">
+                    <input class="create-input" type=text name=brief placeholder="简称（可选）" maxlength="10" value="<?php echo set_value('brief') ?>">
                 </div>
                 <div class="create-list">
-                    <input id="name" class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" autofocus required>
+                    <input id="name" class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" value="<?php echo set_value('fullname') ?>" autofocus required>
                 </div>
                 <div class="create-list">
-                    <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" required>
+                    <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" value="<?php echo set_value('mobile') ?>" required>
                 </div>
                 <div class="create-list">
-                    <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
-                </div>
-                <input id="value1" type="hidden" value="20,234,540">
-                <div class="create-list">
-                    <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
+                    <input type=hidden name=province value="<?php echo set_value('province') ?>">
+                    <input type=hidden name=city value="<?php echo set_value('city') ?>">
+                    <input type=hidden name=county value="<?php echo set_value('county') ?>">
+
+                    <!-- 省市区选择控件 -->
+                    <input id="value1" type=hidden value="20,234,540">
+                    <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
                 </div>
 
+                <div class="create-list">
+                    <textarea rows="3" name=street contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type=text placeholder="请输入除省市区之外的详细地址，至少5个字符" value="<?php echo set_value('street') ?>" ></textarea>
+                </div>
+
+                <!--
                 <div class="create-list" style="display:none;" >
                     <input class="create-input" type="tel" placeholder="邮编">
                 </div>
+                -->
 
-                <input id="defaultThis" type="hidden" value=""/>
+                <?php if ( ! empty($this->session->address_id) ): ?>
                 <div id="select" class="address-default">
+                    <input id=defaultThis type=hidden name=default_this value=0>
                     <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认地址</span>
                 </div>
+                <?php endif ?>
 
             </form>
 
@@ -143,44 +153,60 @@
 
     <script>
         $(function(){
+            var alert_to_show = '<?php echo urlencode($error) ?>';
+            if (alert_to_show != '') alert( decodeURI(alert_to_show) );
 
             var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
-            if(default_address_id != ''){
-            }else{
 
-            }
             $("#demo1").focus(function(){
                 document.activeElement.blur();
             });
+
+            // 切换是否设为默认地址
             $("#select").click(function(){
-
-
-                 if($(this).find("i").is('.icon-zidongtui')){
+                 if ($(this).find("i").is('.icon-zidongtui'))
+                 {
                      $(this).find("i").removeClass('icon-zidongtui');
                      $(this).find("i").addClass('icon-xuanzhong');
                      $(this).find("span").css('color','#ff3649');
-                     $('#defaultThis').val('1');
-                 }else{
+                     $('[name=default_this]').val(1);
+                 }
+                 else
+                 {
                     $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
                     $(this).find("span").css('color','#666464');
+                     $('[name=default_this]').val(0);
                  }
-
             });
+
             $('form').submit(function(){
-            console.log('sd');
+                console.log('submited');
 
-                if($('[name=fullname]').val()==''){
-                    //$('.error-tips').show();
-                    console.log($('#name').val());
-                    console.log('sdafsad');
-                    //return false;
+                // 降低至空间获取到的值分拆赋值到相应字段
+                var addressText = $('#demo1').val();
+                console.log(addressText);
+                var arr = [];
+                arr = addressText.split(',');
+                console.log(arr);
 
+                // 省市区选择控件有可能存在仅可获取二级地址的现象
+                if (0<arr.length<3){
+                    $('[name=province]').val(arr[0]);
+                    $('[name=city]').val(arr[0]);
+                    $('[name=county]').val(arr[1]);
+                }
+                else
+                    {
+                    $('[name=province]').val(arr[0]);
+                    $('[name=city]').val(arr[1]);
+                    $('[name=county]').val(arr[2]);
                 }
 
-                    // 若无默认收货地址，则AJAX创建
+                // 若无默认收货地址，则AJAX创建
                 if (default_address_id != '')
                 {
                     var params = common_params
+                    /*
                     var addressText = $('#demo1').val();
                     console.log(addressText);
                     var arr = [];
@@ -196,14 +222,13 @@
                        params.city = arr[1];
                        params.county = arr[2];
                     }
-                     var data_to_process = ['brief', 'fullname', 'mobile', 'street', 'zipcode', 'default_this']
+                    */
+                     var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
                      for (var index in data_to_process)
                      {
                          params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
 
                      }
-
-
 
                      console.log(params);
                      $.post(
