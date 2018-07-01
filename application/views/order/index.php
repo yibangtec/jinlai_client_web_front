@@ -130,7 +130,7 @@
                       imgUrl =''
                  }
 
-                 orderItemHtml += '<a href="<?php echo base_url('order/detail') . "?&id='+li[k].order_id+'" ?>" class="item-detail clearfix">'+
+                 orderItemHtml += '<a href="'+ base_url+'order/detail?&id='+li[k].order_id+ '" class="item-detail clearfix">'+
                                        '<div class="item-left left-float"><img src="'+imgUrl+ li[k].item_image +'" alt=""/></div>'+
                                        '<div class="item-center left-float">'+
                                             '<p>'+ li[k].name +'</p>'+
@@ -183,7 +183,7 @@
                 $('#orderList').html('');
                 listAllOffset = 0;
             }
-            load_more(10, listAllOffset, api_url, status);
+            load_more(10, listAllOffset, api_url+'item/index', status);
         });
         $('.reason-list i').click(function(){
             var index =$(this).index;
@@ -244,7 +244,7 @@
                             if(load_more){
                                 listAllOffset = listAllOffset + 10;
 
-                                load_more(10, listAllOffset, api_url, status);
+                                load_more(10, listAllOffset, api_url+'item/index', status);
                                 $('.load-more').hide();
                             }
                         }else if(scrollTop<=0){
@@ -263,13 +263,12 @@
         // 分页参数
         var limit = <?php echo $this->limit ?>;
         var offset = <?php echo $this->offset ?>;
-        var api_url  = '<?php echo $this->class_name.'/index' ?>';
 
         // 点击加载更多
         var limit = 10;
         $('#load-more').click(function(){
             var statusType = 'orderList';
-            load_more(limit, offset, api_url);
+            load_more(limit, offset, api_url + 'item/index');
             return false;
         });
         refresh(load_more);
@@ -289,8 +288,6 @@
             params.status = status;
             params.offset = current_offset; // 新的偏移量等于当前偏移量加当前获取量
             console.log(current_offset);
-            // 拼合完整API路径
-            api_url = ajax_root + api_url;
 
             // AJAX获取结果并生成相关HTML
             $.post(

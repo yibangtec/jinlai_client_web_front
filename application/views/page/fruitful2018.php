@@ -631,6 +631,7 @@
             image: initData[i].image
         }
     }
+
     // 查看奖品列表格式
 
     // 定义转盘奖品
