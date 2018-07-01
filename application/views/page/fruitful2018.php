@@ -480,6 +480,15 @@
                 wechat_shared = 1;
             }
             alert('分享成功，每天完成分享可以额外抽1次奖');
+
+            // 页面滚动到转盘区
+            var target = $('#lottery');
+
+            // 获取目标元素相对于网页顶端的位置
+            var target_height = $(target[0]).offset().top - 100; // 顶端留出100像素的空间
+
+            // 页面滚动到该位置
+            $('body,html').stop(false, false).animate({scrollTop:target_height}, 400);
         })
 
         // 使用一次抽奖机会

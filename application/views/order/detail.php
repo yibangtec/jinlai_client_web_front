@@ -35,6 +35,7 @@
     /* 操作栏 */
     [data-action-group] {display:none;}
 </style>
+
 <div class="tips">
     <div class="delete">
         <p>确认删除？</p>
@@ -46,7 +47,7 @@
     </div>
     <div class="receipt">
         <div class="place-input">请输入账户密码</div>
-        <input id="password" minlength="6" type="password" placeholder="请输入密码"/>
+        <input id="password" type=password placeholder="请输入密码">
         <div class="forget"><a href="">忘记密码?</a></div>
         <div class="confirm-select clearfix">
             <div class="cancel-btn">取消</div>
@@ -69,7 +70,7 @@
                 <span>同城见面交易</span> <i data-value="同城见面交易" class="reasonUnSelect"></i>
             </div>
             <div class="reason-list clearfix">
-                <span>其他原因</span> <i data-value="其他原因" class="reasonUnSelect"></i>
+                <span>其它原因</span> <i data-value="其它原因" class="reasonUnSelect"></i>
             </div>
         </div>
         <div class="confirm-select clearfix">
@@ -147,6 +148,7 @@
     </div>
 
     <div class="detail-btn clearfix">
+        <!--<a title="客服" href="<?php echo base_url('message?biz_id='.$item['biz_id']) ?>">客服</a>-->
         <div class="customer-service"><a href="tel:<?php echo $item['tel_public'] ?>">联系卖家</a></div>
         <div class="tel-service"><a href="tel:<?php echo $item['tel_public'] ?>">拨打电话</a></div>
     </div>
@@ -195,15 +197,14 @@
 
     <!--待发货-->
     <div class="detail-operation status3" data-action-group="待发货">
-        <a class="can-btn" data-action=cancel href="#">取消</a>
-        <a class="refundBtn" data-action=refund href="#">退款/售后</a>
+        <a class="refundBtn" data-action=refund href="#">申请退款</a>
     </div>
 
     <!--待收货-->
     <div class="detail-operation status5" data-action-group="待收货">
         <a class="again" href="#">再来一单</a>
-        <a>查看物流</a>
-        <a class="refundBtn" data-action=refund href="#">退款/售后</a>
+        <!--<a>查看物流</a>-->
+        <a class="refundBtn" data-action=refund href="#">申请退款</a>
         <a class="goods-receipt" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=confirm href="#">确认收货</a>
     </div>
     <!--已关闭-->
@@ -212,10 +213,10 @@
     </div>
     <!--待评价-->
     <div class="detail-operation status1" data-action-group="待评价">
-        <a class="again" href="#">再来一单</a>
         <a class="del-btn" data-action=delete href="#">删除</a>
-        <a class="refundBtn" data-action=refund href="#">退款/售后</a>
-        <a class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment href="#">待评价</a>
+        <a class="refundBtn" data-action=refund href="#">申请售后</a>
+        <a class="again" href="#">再来一单</a>
+        <a class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment href="#">写评价</a>
     </div>
     <!--已评价-->
     <div class="detail-operation status2" data-action-group="已评价">
@@ -256,7 +257,7 @@
         });
         $('body').on('click','.pingjia',function(){
                     if(true){
-                         if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用评价功能"))
+                         if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用写评价"))
                           {
 
                           }
@@ -368,8 +369,8 @@
                 $('#receiptSubmit').on('click',function(){
                     password = $('#password').val();
 
-                    if(password.length<6){
-                        if(confirm("密码不能小于6位"))
+                    if(password.length<6 || password.length>20){
+                        if(confirm("密码长度应为6-20位"))
                          {
                             $('#password').val('').focus();
                          }

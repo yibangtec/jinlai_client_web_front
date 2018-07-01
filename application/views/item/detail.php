@@ -331,6 +331,7 @@ wx.ready(function(){
 	</div>
 
 		<!--热门活动-->
+        <!--
 		<div class="hotactivetitle wid710 auto mt20 border20">
 			<img src="<?php echo CDN_URL ?>media/item/detail/remenhuodong@3x.png" />
 		</div>
@@ -361,8 +362,8 @@ wx.ready(function(){
 					<h3>¥29.80</h3>
 				</li>
 			</ul>
-			
 		</div>
+		-->
 
     <?php if ( ! empty($item['description'])): ?>
         <p id=general-seperater>继续拖动，查看图文详情</p>
@@ -417,61 +418,64 @@ wx.ready(function(){
 			<img src="<?php echo CDN_URL ?>media/item/detail/3xiaoshisongda@3x.png">
 			<img src="<?php echo CDN_URL ?>media/item/detail/tousuchuli@3x.png">
 		</div>
+
 		<!--猜你喜欢区域-->
+        <!--
 		<div class="shopinfolike auto wid710 border20">
 			<img src="<?php echo CDN_URL ?>media/item/detail/cainixihuan@3x.png">
 		</div>
 		<div class="like wid718 auto clearfix mt10">
-					<ul>
-						<li>
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg"/>
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥10555.00</h3>
-						</li>
-						<li>
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg"/>
-							<h1>栖霞红富士</h1>
-							<h2>18k玫瑰金,手带表</h2>
-							<h3>¥1045.00</h3>
-						</li>
-						<li class="mr0">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg"/>
-							<h1>DRIVER ONE 手表</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-						</li>
-						<li>
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_3.jpg"/>
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-						</li>
-						<li>
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg"/>
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-						</li>
-						<li class="mr0">
-							<img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg"/>
-							<h1>JUSTE UN CLOU 手镯</h1>
-							<h2>8K玫瑰金</h2>
-							<h3>¥5100</h3>
-						</li>
-					</ul>
-				</div>
+            <ul>
+                <li>
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg">
+                    <h1>JUSTE UN CLOU 手镯</h1>
+                    <h2>8K玫瑰金</h2>
+                    <h3>¥10555.00</h3>
+                </li>
+                <li>
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_1.jpg">
+                    <h1>栖霞红富士</h1>
+                    <h2>18k玫瑰金,手带表</h2>
+                    <h3>¥1045.00</h3>
+                </li>
+                <li class="mr0">
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg">
+                    <h1>DRIVER ONE 手表</h1>
+                    <h2>8K玫瑰金</h2>
+                    <h3>¥5100</h3>
+                </li>
+                <li>
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_3.jpg">
+                    <h1>JUSTE UN CLOU 手镯</h1>
+                    <h2>8K玫瑰金</h2>
+                    <h3>¥5100</h3>
+                </li>
+                <li>
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_0.jpg">
+                    <h1>JUSTE UN CLOU 手镯</h1>
+                    <h2>8K玫瑰金</h2>
+                    <h3>¥5100</h3>
+                </li>
+                <li class="mr0">
+                    <img src="<?php echo CDN_URL ?>media/home/cainixihuan/cnxh/210x210_2.jpg"/>
+                    <h1>JUSTE UN CLOU 手镯</h1>
+                    <h2>8K玫瑰金</h2>
+                    <h3>¥5100</h3>
+                </li>
+            </ul>
+        </div>
+        -->
 	</div>
 	
 </div>
 
 
 <nav id=nav-main>
-	
 	<ul>
 		<?php // TODO 显示客服按钮前检查当前店铺客服工作状态，决定留言或即时通讯 ?>
 		<li class=vice-button>
-			<a title="客服" href="<?php echo base_url('dialog/detail?biz_id='.$item['biz_id']) ?>">
+            <!--<a title="客服" href="<?php echo base_url('message?biz_id='.$item['biz_id']) ?>">-->
+            <a title="客服" href="tel:<?php echo $biz['tel_public'] ?>">
 				<img src="<?php echo CDN_URL ?>media/item/detail/kafu_icon@3x.png">
 				客服
 			</a>
