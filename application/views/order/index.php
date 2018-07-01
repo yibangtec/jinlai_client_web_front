@@ -15,35 +15,35 @@
     </div>
     <div class="receipt">
         <div class="place-input">请输入账户密码</div>
-        <input type="text" placeholder="请输入密码"/>
+        <input id="password" type="text" placeholder="请输入密码"/>
         <div class="forget"><a href="">忘记密码?</a></div>
         <div class="confirm-select clearfix">
             <div class="cancel-btn">取消</div>
-            <div class="receipt-confirm">确定</div>
+            <div id="receiptSubmit" class="receipt-confirm">确定</div>
         </div>
     </div>
     <div class="cancel">
         <div class="cancel-reason">取消原因</div>
         <div>
             <div class="reason-list clearfix">
-                <span>我不想买了</span> <i class="reasonUnSelect"></i>
+                <span>我不想买了</span> <i data-value="我不想买了" class="reasonSelect"></i>
             </div>
             <div class="reason-list clearfix">
-                <span>信息填写错误，重新拍</span> <i class="reasonUnSelect"></i>
+                <span>信息填写错误，重新拍</span> <i data-value="信息填写错误，重新拍" class="reasonUnSelect"></i>
             </div>
             <div class="reason-list clearfix">
-                <span>卖家缺货</span> <i class="reasonUnSelect"></i>
+                <span>卖家缺货</span> <i data-value="卖家缺货" class="reasonUnSelect"></i>
             </div>
             <div class="reason-list clearfix">
-                <span>同城见面交易</span> <i class="reasonUnSelect"></i>
+                <span>同城见面交易</span> <i data-value="同城见面交易" class="reasonUnSelect"></i>
             </div>
             <div class="reason-list clearfix">
-                <span>其他原因</span> <i class="reasonUnSelect"></i>
+                <span>其他原因</span> <i data-value="其他原因" class="reasonUnSelect"></i>
             </div>
         </div>
         <div class="confirm-select clearfix">
             <div class="cancel-btn">取消</div>
-            <div class="receipt-confirm">确定</div>
+            <div id="cancelSubmit" class="receipt-confirm">确定</div>
         </div>
     </div>
 </div>
@@ -92,10 +92,10 @@
                 statusHtml = '';
             }
             else if(status == '待收货'){
-                statusHtml = '<span>再来一单</span><a href="'+ base_url+'refund/index?id='+items[key].order_id+'">退款</a><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
+                statusHtml = '<span>再来一单</span><a href="'+ base_url+'refund/index?id='+items[key].order_id+'">退款</a><span>延长收货</span><span>查看物流</span><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
             }
             else if(status == '待付款'){
-                statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
+                statusHtml = '<span>联系卖家</span><span data-id="'+items[key].order_id+'" class="can-btn">取消</span><span class="current-red go-pay"><a href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a></span>';
             }else if(status == "待评价"){
                 statusHtml = '<span>写评价</span><span class="current-red">再来一单</span>';
             }else if(status == ""){
@@ -186,29 +186,51 @@
             }
             load_more(10, listAllOffset, api_url+'order/index', status);
         });
-        $('.reason-list i').click(function(){
+        $('.cancel').on('click',function(event){
+            event.stopPropagation()
+        })
+        $('.receipt').on('click',function(event){
+            event.stopPropagation()
+        });
+
+        $('.delete').on('click',function(event){
+         event.stopPropagation();
+        });
+        $('.tips').on('click',function(){
+            $(this).hide().children().hide();
+        });
+
+        $('.reason-list').on('click','i',function(){
             var index =$(this).index;
             $(this).addClass('reasonSelect').removeClass('reasonUnSelect').parent().siblings().children('i').addClass('reasonUnSelect').removeClass('reasonSelect');
-
+            reasonCancel = $(this).attr('data-value');
+            console.log(reasonCancel);
         });
+        var reasonCancel = '我不想买了';
+        var password = '';
+        var orderID = '';
+        //弹框消失
         $('.cancel-btn').click(function(){
             $('.tips').hide().children().hide();
         });
-        var orderID = '';
-        $('.del-btn').click(function(){
+
+        $('body').on('click','.box .del-btn',function(){
             orderID = $(this).attr('data-id');
             $('.tips').show().children('.delete').show();
         });
-        $('.can-btn').click(function(){
+        $('body').on('click','.box .can-btn',function(){
+            orderID = $(this).attr('data-id');
             $('.tips').show().children('.cancel').show();
         });
         //确认收货
-        $('.goods-receipt').click(function(){
+        $('body').on('click','.box .goods-receipt',function(){
+            orderID = $(this).attr('data-id');
             $('.tips').show().children('.receipt').show();
         });
-        $('.go-pay').click(function(){
+
+        /*$('.go-pay').click(function(){
             $(location).attr('href', 'pay.html');
-        })
+        })*/
         $('#delConfirm').on('click',function(){
             params.ids = orderID;
             params.operation = 'delete';
@@ -221,13 +243,55 @@
                      console.log(result); // 输出回调数据到控制台
                      if (result.status == 200)
                      {
-                       $('.tips').hide().children('.delete').show();
+                       $('.tips').hide().children('.delete').hide();
                      } else {
                         alert(result.content.error.message);
                      }
                  }
              );
         });
+        $('#cancelSubmit').on('click',function(){
+            params.ids = orderID;
+            params.operation = 'cancel';
+            params.reason_cancel= reasonCancel;
+            console.log(params);
+            $.post(
+                 api_url + 'order/edit_bulk',
+                 params,
+                 function(result)
+                 {
+                     console.log(result); // 输出回调数据到控制台
+                     if (result.status == 200)
+                     {
+                       $('.tips').hide().children('.cancel').hide();
+                     } else {
+                        alert(result.content.error.message);
+                     }
+                 }
+             );
+        });
+        $('#receiptSubmit').on('click',function(){
+            password = $('#password').val();
+            params.ids = orderID;
+            params.operation = 'cancel';
+            params.reason_cancel= reasonCancel;
+            console.log(params);
+            $.post(
+                 api_url + 'order/edit_bulk',
+                 params,
+                 function(result)
+                 {
+                     console.log(result); // 输出回调数据到控制台
+                     if (result.status == 200)
+                     {
+                       $('.tips').hide().children('.cancel').hide();
+                     } else {
+                        alert(result.content.error.message);
+                     }
+                 }
+             );
+        });
+
 
         function refresh(refresh,loadmore) {
                     $(window).scroll(function(){
@@ -307,20 +371,20 @@
                                             var statusHtml = '';
                                             var status = items[key].status;
                                             if(status == '已评价'){
-                                                statusHtml = '<span class="del-btn">删除</span><span>申请售后</span><span>追加评论</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><span>追加评论</span>';
                                             }else if(status == '已关闭'){
-                                                statusHtml = '<span class="del-btn">删除</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }
                                             else if(status == '待发货'){
                                                 statusHtml = '';
                                             }
                                             else if(status == '待收货'){
-                                                statusHtml = '<span>退款</span><span>延长收货</span><span>查看物流</span><span class="current-red goods-receipt">确认收货</span>';
+                                                statusHtml = '<span>退款</span><span>延长收货</span><span>查看物流</span><span data-id="'+items[key].order_id+'" class="current-red goods-receipt">确认收货</span>';
                                             }
                                             else if(status == '待付款'){
-                                                statusHtml = '<span>联系卖家</span><span class="can-btn">取消</span><span class="current-red go-pay">付款</span>';
+                                                statusHtml = '<span>联系卖家</span><span data-id="'+items[key].order_id+'" class="can-btn">取消</span><span class="current-red go-pay">付款</span>';
                                             }else if(status == ""){
-                                                statusHtml = '<span class="del-btn">删除</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }
                                     var li = items[key].order_items;
                                     //console.log(li);
@@ -331,7 +395,7 @@
                                                            '</a>'+
                                                            '<div class="item-list">';
                                                            var bot = '</div>'+
-                                                           '<div class="item-price">共<span>'+items[key].order_items.length+'</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
+                                                           '<div class="item-price">共<span>000</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
                                                            '<div class="item-operation">'+statusHtml+'</div>'+
                                                       '</div>';
                                     //$('#orderList').append(bizNameHtml);
@@ -377,6 +441,7 @@
                                         $('.order-item-none').hide();
                                     }
                                 }
+
                         //var list_html = generete_list(content);
 
                         //$('#item-list').append(list_html);

@@ -78,6 +78,9 @@
     <div class="clearfix"><button form=main-form class=save>保存</button></div>
     <div class="create-content">
         <form id=main-form action="" style="margin-bottom: 5rem" method="post">
+            <!-- 是否设为默认 -->
+            <input name=default_this type=hidden value=1>
+
             <div class="create-list">
                 <input class="create-input" type="text" name="brief" placeholder="简称（可选）" maxlength="10" value="<?php echo empty(set_value('brief'))? $item['brief']: set_value('brief') ?>">
             </div>
@@ -88,19 +91,26 @@
                 <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号" value="<?php echo empty(set_value('mobile'))? $item['mobile']: set_value('mobile') ?>">
             </div>
             <div class="create-list">
+                <input type=hidden name=province value="<?php echo set_value('province') ?>">
+                <input type=hidden name=city value="<?php echo set_value('city') ?>">
+                <input type=hidden name=county value="<?php echo set_value('county') ?>">
+
+                <!-- 省市区选择控件 -->
+                <input id="value1" type=hidden value="20,234,540">
                 <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区" >
             </div>
-            <input id="value1" type="hidden" value="20,234,540"/>
             <div class="create-list">
                 <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
             </div>
             <div class="create-list" style="display:none">
                 <input class="create-input" type="tel" placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
             </div>
-            <div  id="select" class="address-default">
-                <i class="<?php echo $this->session->address_id == 1? 'icon-xuanzhong': 'icon-zidongtui' ?>"></i> <span>设为默认地址</span>
+            <?php if ( ! empty($this->session->address_id) ): ?>
+            <div id="select" class="address-default">
+                <input id=defaultThis type=hidden name=default_this value=0>
+                <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认地址</span>
             </div>
-            <input id="defaultThis" type="hidden" value=""/>
+            <?php endif ?>
 
         </form>
 
@@ -143,6 +153,8 @@
     var item = <?php json_encode($item) ?>
 
     $(function(){
+        var alert_to_show = '<?php echo urlencode($error) ?>';
+        if (alert_to_show != '') alert( decodeURI(alert_to_show) );
         //默认地址default_this
         var params = common_params;
          $("#select").click(function(){

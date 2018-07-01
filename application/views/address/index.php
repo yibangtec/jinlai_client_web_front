@@ -29,16 +29,20 @@ $(function(){
         else
         {
                 var items = <?php echo json_encode($items) ?>;
-                var defaultIcon = ''
-                var defaultText = ''
-                var brief = ''
+                var defaultIcon = '';
+                var defaultText = '';
+                var brief = '';
+                var color = '';
                 for(var key in items){
                     if(default_address_id == items[key].address_id){
                         defaultIcon = 'icon-xuanzhong';
-                        defaultText = '默认地址'
+                        defaultText = '默认地址';
+                        color = 'color:#ff3649;';
+
                     }else{
                         defaultIcon = 'icon-zidongtui';
-                        defaultText = '设为默认'
+                        defaultText = '设为默认';
+                        color = 'color:#666464;';
                     }
                     if(items[key].brief !== null){
                         brief = '<span class="address-type">'+items[key].brief+'</span>';
@@ -55,7 +59,7 @@ $(function(){
                                                  '<p>'+items[key].street+'</p>'+
                                               '</a>'+
                                               '<div class="address-operation clearfix">'+
-                                                 '<div data-id="'+ items[key].address_id +'" class="title-left select"><i class="'+ defaultIcon +'"></i> <span>'+defaultText+'</span></div>'+
+                                                 '<div data-id="'+ items[key].address_id +'" class="title-left select"><i class="'+ defaultIcon +'"></i> <span style="'+color +'">'+defaultText+'</span></div>'+
                                                   '<div class="title-right"><span data-id="'+ items[key].address_id +'" class="operation-del"><i class="icon-del"></i> 删除</span><a href="<?php echo base_url('address/edit') . "?&id='+items[key].address_id+'" ?>" class="operation-type"><i class="icon-write"></i> 编辑</a></div>'+
                                               '</div>'+
                                           '</div>';

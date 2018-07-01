@@ -5,11 +5,11 @@ a {text-decoration: none;}
 .box {position: relative;margin-bottom: 1.5rem; overflow-y: auto;}
 .box .address-list{margin: 0.1rem 0.2rem;font-size: 0.26rem;background-color: #fff;border-radius: 0.15rem;}
 
-.box .address-title{margin: 0 0.2rem;color: #3E3A39;padding: 0.24rem 0 0.16rem 0;}
+.box .address-title{margin: 0 0.2rem;color: #3E3A39;padding: 0.24rem 0 0.16rem 0;display: block;}
 
 .title-left{float: left;}
 .title-right{float: right;}
-.address-type{display: inline-block;width: 0.7rem;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;
+.address-type{display: inline-block;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;
     color: #ff3649;margin: 0 0.2rem;
 }
 .address-content{display: block;margin: 0 0.2rem;color: #666464;padding-bottom: 0.24rem;border-bottom: 0.01rem solid #e6e6e6;}
