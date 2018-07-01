@@ -419,7 +419,7 @@ wx.ready(function(){
 		</div>
 		<!--猜你喜欢区域-->
 		<div class="shopinfolike auto wid710 border20">
-			<img src="<?php echo CDN_URL ?>media/item/detail/cainixihuan@3x.png"/>
+			<img src="<?php echo CDN_URL ?>media/item/detail/cainixihuan@3x.png">
 		</div>
 		<div class="like wid718 auto clearfix mt10">
 					<ul>

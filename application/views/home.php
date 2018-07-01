@@ -834,7 +834,7 @@ body {background:#eaeaea;}
 								<li>
 									<a href="<?php echo base_url('item/detail?id=5669') ?>" target="_self">
 									<div class="pic">
-										<img src="/media/selection/greenball.jpg">
+										<img src="https://cdn-remote.517ybang.com/media/home/qt.jpg">
 									</div>
 									</a>
 									<p>上海风味青团</p>
@@ -843,7 +843,7 @@ body {background:#eaeaea;}
 								<li style="margin-left:.3rem;">
 									<a href="<?php echo base_url('item/detail?id=5671') ?>" target="_self">
 									<div class="pic">
-										<img data-src="/media/selection/flower.jpg">
+										<img data-src="https://cdn-remote.517ybang.com/media/home/ht.jpg">
 									</div>
 									</a>
 									<p>网红花团</p>
@@ -866,7 +866,7 @@ body {background:#eaeaea;}
 							<li>
 								<a href="<?php echo base_url('item/detail?id=620') ?>" target="_self">
 								<div class="pic">
-									<img data-src="/media/selection/laundry.jpg">
+									<img data-src="https://cdn-remote.517ybang.com/media/home/yjyx.jpg">
 								</div>
 								</a>
 								<p>壹家壹洗5件洗衣套装</p>
@@ -875,7 +875,7 @@ body {background:#eaeaea;}
 							<li style="margin-right:0">
 								<a href="<?php echo base_url('item/detail?id=178') ?>" target="_self">
 								<div class="pic">
-									<img data-src="/media/selection/carwash.jpg">
+									<img data-src="https://cdn-remote.517ybang.com/media/home/xc.jpg">
 								</div>
 								</a>
 								<p>BBA级洗车套餐30元（英皇之星）</p>
