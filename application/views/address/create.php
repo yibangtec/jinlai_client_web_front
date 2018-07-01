@@ -16,16 +16,16 @@
             input{outline:none;}
             button{border: none;}
             html{ margin: 0 auto; height: 100%}
-            body {background-color: #ffffff;}
+            body {width: 100%;background-color: #ffffff; height: 100%}
             a {text-decoration: none;}
-            .box {width: 100%; position: relative}
-            .create-content{margin: 0 0.2rem;height: 8rem;font-size: 0.28rem;color: #666464;margin-bottom:8rem;overflow-y:auto;}
+            .box {width: 100%; position: relative;}
+            .create-content{margin: 0 0.2rem 0 0.2rem;height:12rem;font-size: 0.28rem;color: #666464;}
             .create-list{display: flex;padding: 0.4rem 0.1rem 0.2rem 0.1rem;border-bottom: 0.02rem solid #efefef;}
             .create-list .create-input{flex: 1;border: none;font-size: 0.28rem;}
             .address-default{padding: 0.5rem 0;font-size: 0.28rem;color: #666464;}
             .map-box {position: fixed;bottom: 0.2rem;width: 7.1rem;
                 height: 4rem; border-radius: 0.15rem; overflow: hidden; !important;}
-            .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0;}
+            .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0.25rem;background-color:#fff;float:right;}
             .tips{width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);position: fixed; display: none;z-index: 100;
             }
             .tips-content{position: absolute;width: 5rem;left: 50%; margin-left: -2.5rem; top: 50%;
@@ -37,7 +37,7 @@
             .btns-confirm{width: 50%;float: left;padding: 0.2rem 0;color: crimson;}
 
             .icon-xuanzhong:before {
-                content: "\e942";
+                content: "\e94d";
                 color: #ff3649;
                 font-size: 0.3rem;
             }
@@ -74,7 +74,8 @@
             <p class="tips-text"></p>
             <i class="icon-failure"></i>
         </div>
-        <button form=main-form class=save>保存</button>
+        <div class="clearfix"><button form=main-form class=save>保存</button></div>
+
 
         <div class="create-content">
             <form id=main-form action="" method=post>
@@ -91,23 +92,22 @@
                     <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" required>
                 </div>
                 <div class="create-list">
-                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
-                </div>
-                <div class="create-list">
                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" required>
                 </div>
                 <input id="value1" type="hidden" value="20,234,540">
                 <div class="create-list">
-                    <textarea rows=3 name=street style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" placeholder="详细地址"><?php set_value('street') ?></textarea>
+                    <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
                 </div>
-                <!--
-                <div class="create-list" >
+
+                <div class="create-list" style="display:none;" >
                     <input class="create-input" type="tel" placeholder="邮编">
                 </div>
-                -->
-                <div class="address-default">
-                    <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
+
+                <input id="defaultThis" type="hidden" value=""/>
+                <div id="select" class="address-default">
+                    <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认地址</span>
                 </div>
+
             </form>
 
             <div class="map-box" style="position: fixed">
@@ -143,13 +143,28 @@
 
     <script>
         $(function(){
+
             var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
             if(default_address_id != ''){
             }else{
-            }
 
+            }
             $("#demo1").focus(function(){
                 document.activeElement.blur();
+            });
+            $("#select").click(function(){
+
+
+                 if($(this).find("i").is('.icon-zidongtui')){
+                     $(this).find("i").removeClass('icon-zidongtui');
+                     $(this).find("i").addClass('icon-xuanzhong');
+                     $(this).find("span").css('color','#ff3649');
+                     $('#defaultThis').val('1');
+                 }else{
+                    $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
+                    $(this).find("span").css('color','#666464');
+                 }
+
             });
             $('form').submit(function(){
 
@@ -190,9 +205,9 @@
                              console.log(result); // 输出回调数据到控制台
                              if (result.status == 200)
                              {
-                              alert(result.content);
+                              console.log(result.content);
 
-                                location.href = "address/index";
+                                location.href = base_url + "address/index";
                              } else {
                                 alert(result.content.error.message);
                              }
@@ -213,7 +228,8 @@
     <!-- UI组件库 1.0 -->
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
     <script type="text/javascript">
-        var sel=document.getElementById('select');
+
+        /*var sel=document.getElementById('select');
         sel.onclick = function(){
 
             if(sel.classList.contains('icon-zidongtui')==true){
@@ -223,7 +239,7 @@
                 sel.classList.add('icon-zidongtui');
                 sel.classList.remove('icon-xuanzhong');
             }
-        };
+        };*/
 
         var area = new LArea();
         area.init({

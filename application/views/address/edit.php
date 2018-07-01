@@ -19,7 +19,7 @@
         body {width: 100%;background-color: #ffffff; height: 100%}
         a {text-decoration: none;}
         .box {width: 100%; height: 100%;position: relative}
-        .create-content{margin: 0 0.2rem;height: 100%;font-size: 0.28rem;color: #666464;}
+        .create-content{margin: 0 0.2rem 8rem 0.2rem;height: 8rem;font-size: 0.28rem;color: #666464;}
         .create-list{display: flex;padding: 0.4rem 0.1rem 0.2rem 0.1rem;border-bottom: 0.02rem solid #efefef;}
         .create-list .create-input{flex: 1;border: none;font-size: 0.28rem;}
         .address-default{padding: 0.5rem 0;font-size: 0.28rem;color: #666464;}
@@ -28,7 +28,7 @@
 
         .map-box {position: absolute;bottom: 0.2rem;width: 7.1rem;
             height: 4rem; border-radius: 0.15rem; overflow: hidden; !important;}
-        .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0;}
+        .save{margin: 0 0.2rem;font-size: 0.30rem;color: #3E3A39;text-align: right;padding: 0.25rem 0;background-color:#fff;float:right}
         .tips{width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.3);position: fixed; display: none;z-index: 100;
         }
         .tips-content{position: absolute;width: 5rem;left: 50%; margin-left: -2.5rem; top: 50%;
@@ -40,7 +40,7 @@
         .btns-confirm{width: 50%;float: left;padding: 0.2rem 0;color: crimson;}
 
         .icon-xuanzhong:before {
-            content: "\e942";
+            content: "\e94d";
             color: #ff3649;
             font-size: 0.3rem;
         }
@@ -56,8 +56,9 @@
             display: block;
         }
         .address{
-                    height:0;
-                }
+             height:0;
+             position: static;
+        }
 </style>
 <div class="tips" id="tips">
     <div class="tips-content">
@@ -69,14 +70,14 @@
         </div>
     </div>
 </div>
-<div class="box" id="box">
+<div class="box clearfix" id="box">
     <div class="error-tips">
         <p class="tips-text"></p>
         <i class="icon-failure"></i>
     </div>
-
+    <div class="clearfix"><button form=main-form class=save>保存</button></div>
     <div class="create-content">
-        <form action="" style="margin-bottom: 5rem" method="post">
+        <form id=main-form action="" style="margin-bottom: 5rem" method="post">
             <div class="create-list">
                 <input class="create-input" type="text" name="brief" placeholder="简称（可选）" maxlength="10" value="<?php echo empty(set_value('brief'))? $item['brief']: set_value('brief') ?>">
             </div>
@@ -87,20 +88,20 @@
                 <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号" value="<?php echo empty(set_value('mobile'))? $item['mobile']: set_value('mobile') ?>">
             </div>
             <div class="create-list">
-                <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区"/>
+                <input class="create-input" id="demo1" type="text" name="input_area" placeholder="省份、城市、县区" >
             </div>
             <input id="value1" type="hidden" value="20,234,540"/>
             <div class="create-list">
-                <textarea rows="3" name="street" style="outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
+                <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
             </div>
             <div class="create-list" style="display:none">
                 <input class="create-input" type="tel" placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
             </div>
-            <div class="address-default" style="display:none">
-                <i id="select" class="icon-zidongtui"></i> <span>设为默认地址</span>
+            <div  id="select" class="address-default">
+                <i class="<?php echo $this->session->address_id == 1? 'icon-xuanzhong': 'icon-zidongtui' ?>"></i> <span>设为默认地址</span>
             </div>
+            <input id="defaultThis" type="hidden" value=""/>
 
-            <button class="save">保存</button>
         </form>
 
         <div class="map-box" style="position: fixed">
@@ -142,6 +143,82 @@
     var item = <?php json_encode($item) ?>
 
     $(function(){
+        //默认地址default_this
+        var params = common_params;
+         $("#select").click(function(){
+
+
+                if($(this).find("i").is('.icon-zidongtui')){
+                    $(this).find("i").removeClass('icon-zidongtui');
+                    $(this).find("i").addClass('icon-xuanzhong');
+                    $(this).find("span").css('color','#ff3649');
+                    $('#defaultThis').val('1');
+
+                }else{
+                   $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
+                   $(this).find("span").css('color','#666464');
+                }
+
+           });
+        $('form').submit(function(){
+            function getQueryString(name) {
+                     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                     var r = window.location.search.substr(1).match(reg);
+                     if (r != null) return unescape(r[2]);
+                     return null;
+            }
+             var ID = getQueryString('id');
+
+             // 若无默认收货地址，则AJAX创建
+
+
+             params.id = ID;
+             var addressText = $('#demo1').val();
+             console.log(addressText);
+             var arr = [];
+             arr = addressText.split(',');
+             console.log(arr);
+
+             if(0<arr.length<3){
+                params.province = arr[0];
+                params.city = arr[0];
+                params.county = arr[1];
+             }else{
+                params.province = arr[0];
+                params.city = arr[1];
+                params.county = arr[2];
+             }
+              var data_to_process = ['brief', 'fullname', 'mobile', 'street', 'zipcode', 'default_this']
+              for (var index in data_to_process)
+              {
+                  params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
+
+              }
+
+
+
+              console.log(params);
+              $.post(
+                  api_url + 'address/edit',
+                  params,
+                  function(result)
+                  {
+                      console.log(result); // 输出回调数据到控制台
+                      if (result.status == 200)
+                      {
+                       console.log(result.content);
+
+                          location.href = base_url + "address/index";
+                       } else {
+                          alert(result.content.error.message);
+                       }
+                  }
+              )
+
+              return false;
+
+
+        });
 
     });
 </script>
@@ -152,17 +229,7 @@
 <!-- UI组件库 1.0 -->
 <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 <script type="text/javascript">
-    var sel=document.getElementById('select');
-    sel.onclick = function(){
 
-        if(sel.classList.contains('icon-zidongtui')==true){
-            sel.classList.add('icon-xuanzhong');
-            sel.classList.remove('icon-zidongtui')
-        }else{
-            sel.classList.add('icon-zidongtui');
-            sel.classList.remove('icon-xuanzhong');
-        }
-    };
 
 
 
