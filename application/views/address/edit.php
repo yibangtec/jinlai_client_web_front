@@ -160,13 +160,15 @@
                 }
 
            });
+           function getQueryString(name) {
+               var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+               var r = window.location.search.substr(1).match(reg);
+               if (r != null) return unescape(r[2]);
+               return null;
+           }
         $('form').submit(function(){
-            function getQueryString(name) {
-                     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                     var r = window.location.search.substr(1).match(reg);
-                     if (r != null) return unescape(r[2]);
-                     return null;
-            }
+
+
              var ID = getQueryString('id');
 
              // 若无默认收货地址，则AJAX创建

@@ -76,6 +76,7 @@
     $(function(){
 
         var params = common_params;
+
         var items = <?php echo json_encode($items) ?>;
         console.log(items);
 
@@ -183,7 +184,7 @@
                 $('#orderList').html('');
                 listAllOffset = 0;
             }
-            load_more(10, listAllOffset, api_url+'item/index', status);
+            load_more(10, listAllOffset, api_url+'order/index', status);
         });
         $('.reason-list i').click(function(){
             var index =$(this).index;
@@ -191,7 +192,7 @@
 
         });
         $('.cancel-btn').click(function(){
-            $('.tips').hide();
+            $('.tips').hide().children().hide();
         });
         var orderID = '';
         $('.del-btn').click(function(){
@@ -244,7 +245,7 @@
                             if(load_more){
                                 listAllOffset = listAllOffset + 10;
 
-                                load_more(10, listAllOffset, api_url+'item/index', status);
+                                load_more(10, listAllOffset, api_url+'order/index', status);
                                 $('.load-more').hide();
                             }
                         }else if(scrollTop<=0){
@@ -268,7 +269,7 @@
         var limit = 10;
         $('#load-more').click(function(){
             var statusType = 'orderList';
-            load_more(limit, offset, api_url + 'item/index');
+            load_more(limit, offset, api_url + 'order/index');
             return false;
         });
         refresh(load_more);
@@ -287,7 +288,7 @@
             params.limit = limit;
             params.status = status;
             params.offset = current_offset; // 新的偏移量等于当前偏移量加当前获取量
-            console.log(current_offset);
+            console.log(params);
 
             // AJAX获取结果并生成相关HTML
             $.post(

@@ -86,7 +86,7 @@
                     <input class="create-input" type=text name=brief placeholder="简称（可选）" maxlength="10">
                 </div>
                 <div class="create-list">
-                    <input class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" autofocus required>
+                    <input id="name" class="create-input" type=text name=fullname placeholder="姓名" maxlength="10" autofocus required>
                 </div>
                 <div class="create-list">
                     <input id="tel" class=create-input name=mobile type=tel placeholder="手机号" required>
@@ -167,6 +167,15 @@
 
             });
             $('form').submit(function(){
+            console.log('sd');
+
+                if($('[name=fullname]').val()==''){
+                    //$('.error-tips').show();
+                    console.log($('#name').val());
+                    console.log('sdafsad');
+                    //return false;
+
+                }
 
                     // 若无默认收货地址，则AJAX创建
                 if (default_address_id != '')
