@@ -79,6 +79,19 @@
 
         var items = <?php echo json_encode($items) ?>;
         console.log(items);
+        console.log(params);
+
+
+    //save(params)
+    function save(cp_value){
+	    var num = new Object;
+        num.cp_keynum ="baseInfo";
+        num.cp_num_value = cp_value;
+        var str = JSON.stringify(num); // 将对象转换为字符串
+        localStorage.setItem(num.cp_keynum,str);
+        console.log(str);
+    }
+
 
         for(var key in items){
             var statusHtml = '';
@@ -107,7 +120,7 @@
                     arr.push = orderItems[j].biz_id+'|'+orderItems[j]order_id+'|'+orderItems[j]sku_id+'|'+orderItems[j]count;
                 }
                 cart_string = arr.join(',');*/
-                statusHtml = '<a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">写评价</a>';
+                statusHtml = '<a data-id="'+ items[key].order_id +'" href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">写评价</a>';
             }else if(status == ""){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -204,14 +217,15 @@
                   }
              }
         });
-       /* $('body').on('click','.pingjia',function(){
-             if(true){
-                  if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用评价功能"))
-                   {
+        $('body').on('click','.pingjia',function(){
+             var id = $(this).attr('data-id');
+             for(var key in items){
+                if(items[key].order_id == id){
+                    save(items[key]);
+                }
+             }
 
-                   }
-              }
-         });*/
+         });
         $('.cancel').on('click',function(event){
             event.stopPropagation()
         })
@@ -331,7 +345,7 @@
         function refresh(refresh,loadmore) {
                     $(window).scroll(function(){
                         console.log('正在滑动f');
-                        $('.load-more').show();
+                        //$('.load-more').show();
                         var scrollTop = $(this).scrollTop();    //滚动条距离顶部的高度
                         var scrollHeight = $(document).height();   //当前页面的总高度
                         var clientHeight = $(this).height();    //当前可视的页面高度
@@ -345,7 +359,7 @@
                                 listAllOffset = listAllOffset + 10;
 
                                 load_more(10, listAllOffset, api_url+'order/index', status);
-                                $('.load-more').hide();
+                                //$('.load-more').hide();
                             }
                         }else if(scrollTop<=0){
                             //滚动条距离顶部的高度小于等于0 TODO
