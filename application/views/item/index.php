@@ -1104,7 +1104,7 @@
 
                 $.ajax({
                      url : ajax_root + 'item_category_biz/index',
-                     data : {app_type:'client',biz_id:bizID,},
+                     data : {app_type:'client',biz_id:bizID},
                      success : function(res){
                          var items = res.content;
                          var itemCategoryBizHtml= '';
@@ -1128,18 +1128,14 @@
                      }
                  });
                  $.ajax({
-                     type: 'post',
-                     dataType: 'json',
                      url : ajax_root + 'promotion_biz/index',
-                     data : {app_type:'client',biz_id:bizID,},
+                     data : {app_type:'client',biz_id:bizID},
                      success : function(res){
                          var items = res.content;
                          var promotionBizHtml= '';
                          console.log(items);
                          		for(var key in items){
-
                                       promotionBizHtml += '<li id="'+items[key].promotion_id+'" class="activityList">'+ items[key].name +'</li>';
-
                                  }
                                  $('#promotionBiz').append(promotionBizHtml);
                                  $('.activityList').on('click',function(){
@@ -1212,8 +1208,6 @@
                 $('#itemCategoryBiz').html('');
                 $('#promotionBiz').html('');
                 $('.thisFilter').hide();
-
-
             });
            $('.filterList').on('click',function(event){
              event.stopPropagation()
@@ -1229,9 +1223,7 @@
                                 $('.itemContent').eq(4).show();
                                 oneClick = 0;
             				    getMoreSearch();
-            				    
-            				    
-            				   
+
             				   // 生成用户的搜索关键词dom
             				   //首先清空cookie
             				   Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
@@ -1412,9 +1404,5 @@
 //                                  "JSON"
 //                              );
                             //} // end load_more
-                            
-
         });
-
-
     </script>
