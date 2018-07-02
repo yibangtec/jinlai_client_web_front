@@ -172,7 +172,7 @@
         'vice-title' => '<p>14:00准时秒杀（秒杀及超超特价产品限量1份）</p>',
         'items' => array(
             array(
-                'item_id' => '5692',
+                'item_id' => '5711',
                 'url_image_main' => '/media/fruitful2018/items/063014/0-1@2x.png',
                 'name' => '网红妖娆花',
                 'price' => '1',

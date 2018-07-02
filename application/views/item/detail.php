@@ -519,7 +519,11 @@ wx.ready(function(){
                     if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
                         $item_status = '商品还未上架';
                     elseif ($item['time_to_publish'] > time()):
-                        $item_status = date('Y-m-d H:i').'开售';
+                        if (date('Ymd') == date('Ymd', $item['time_to_publish'])):
+                            $item_status = date('H:i', $item['time_to_publish']).'开售';
+                        else:
+                            $item_status = date('y-m-d', $item['time_to_publish']).'开售';
+                        endif;
                     endif;
 
                 elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
