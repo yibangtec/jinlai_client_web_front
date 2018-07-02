@@ -84,7 +84,7 @@
             var statusHtml = '';
             var status = items[key].status;
             if(status == '已评价'){
-                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><span class="pingjia">追加评论</span>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
             }else if(status == '已关闭'){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -107,7 +107,7 @@
                     arr.push = orderItems[j].biz_id+'|'+orderItems[j]order_id+'|'+orderItems[j]sku_id+'|'+orderItems[j]count;
                 }
                 cart_string = arr.join(',');*/
-                statusHtml = '<span class="pingjia">写评价</span>';
+                statusHtml = '<a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">写评价</a>';
             }else if(status == ""){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -204,14 +204,14 @@
                   }
              }
         });
-        $('body').on('click','.pingjia',function(){
+       /* $('body').on('click','.pingjia',function(){
              if(true){
                   if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用评价功能"))
                    {
 
                    }
               }
-         });
+         });*/
         $('.cancel').on('click',function(event){
             event.stopPropagation()
         })
@@ -406,7 +406,7 @@
                                             var statusHtml = '';
                                             var status = items[key].status;
                                             if(status == '已评价'){
-                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><span class="pingjia">追加评论</span>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
                                             }else if(status == '已关闭'){
                                                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }

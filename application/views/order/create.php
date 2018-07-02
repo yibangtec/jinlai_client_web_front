@@ -228,10 +228,11 @@
     var order_data = item.order_data; // 子订单信息
     // console.log(item);
     // console.log(default_address_id);
-   // console.log(addresses);
+    console.log(addresses);
    // console.log(order_data);
 
     $(function(){
+        var addressID = default_address_id;
         $('.sele').click(function(){
             $(".sele").find("i").removeClass('reasonSelect').addClass('reasonUnSelect');
             $(this).find('i').addClass('reasonSelect');
@@ -246,7 +247,7 @@
                     }else{
                         brief = '';
                     }
-                	   addressHtml += '<div class="address-list">'+
+                	   addressHtml += '<div class="address-list" data-id="'+addresses[key].address_id+'">'+
                 	                        '<div class="address-title clearfix">'+
                                               '<div class="title-left">'+ brief + addresses[key].fullname+'</div>'+
                                               '<div class="title-right">'+addresses[key].mobile+'</div>'+
@@ -265,11 +266,17 @@
 
         $('.address-selected').on('click','.address-list',function(){
             console.log('变更地址');
+            var id = $(this).attr('data-id');
+            default_address_id = id;
             $('.address-selected').css('display','none');
             $('#addressSelected').html($(this).html());
+
+
+            $('[name=address_id]').val(default_address_id);
         });
         var brief = '';
         for(var key in addresses){
+            console.log('ads');
             console.log(addresses[key].address_id);
             if(addresses[key].brief !== null){
                 brief = '<span class="address-type">'+addresses[key].brief+'</span>';
@@ -354,39 +361,60 @@
 
         // 提交表单
         $('[type=submit]').click(function(){
-            var form_data = $('form').serializeArray(); // 获取表单中参数为键值对数组
 
-            // 初始化参数
-            params = common_params;
+            if(addresses.length<1){
 
-            // 赋值表单中各字段
-            $.each(form_data, function(i, field){
-                params[field.name] = field.value;
-            });
+                console.log('address none');
 
-            $.ajax({
-                url: api_url + 'order/create',
-                data: params,
-                cache: false,
-                success: function(result)
+                if(confirm("您还没有收获地址，是否创建？"))
                 {
-                    console.log(result);
-                    if (result.status === 200)
+                    var target_url = base_url + 'address/create' ;
+                    location.href = target_url;
+                }
+                else{
+
+                }
+
+
+
+            }else{
+                console.log('address');
+                var form_data = $('form').serializeArray(); // 获取表单中参数为键值对数组
+
+                // 初始化参数
+                params = common_params;
+
+                // 赋值表单中各字段
+                $.each(form_data, function(i, field){
+                    params[field.name] = field.value;
+                });
+
+                $.ajax({
+                    url: api_url + 'order/create',
+                    data: params,
+                    cache: false,
+                    success: function(result)
                     {
-                        // 转到支付页
-                        var target_url = base_url + 'order/pay?id=' + result.content.ids;
-                        location.href = target_url;
-                    }
-                    else if (result.status !== undefined)
-                    {
-                        alert(result.content.error.message);
-                    }
-                    else
-                    {
-                        alert('网络通信失败，请稍后重试');
-                    }
-                },
-            });
+                        console.log(result);
+                        if (result.status === 200)
+                        {
+                            // 转到支付页
+                            var target_url = base_url + 'order/pay?id=' + result.content.ids;
+                            location.href = target_url;
+                        }
+                        else if (result.status !== undefined)
+                        {
+                            alert(result.content.error.message);
+                        }
+                        else
+                        {
+                            alert('网络通信失败，请稍后重试');
+                        }
+                    },
+                });
+            }
+
+
         });
     })
 </script>

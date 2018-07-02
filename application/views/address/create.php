@@ -97,7 +97,7 @@
                     <input type=hidden name=county value="<?php echo set_value('county') ?>">
 
                     <!-- 省市区选择控件 -->
-                    <input id=value1 type=hidden value="">
+                    <input id=latAndLng type=hidden value="">
                     <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
                 </div>
 
@@ -325,7 +325,7 @@
                     positionPicker.on('success', function (positionResult) {
                         console.log(positionResult.position.lat);
                         if(start !== positionResult.position.lat){
-                            document.getElementById('tips').style.display = 'block';
+                            /*document.getElementById('tips').style.display = 'block';
                             //document.getElementById('box').style.display = 'none';
                             document.getElementById('cancel').onclick=function(){
                                 document.getElementById('tips').style.display = 'none';
@@ -335,7 +335,7 @@
                             document.getElementById('confirm').onclick=function(){
                                 document.getElementById('tips').style.display = 'none';
                                 document.getElementById('detailAddress').value=positionResult.address;
-                            };
+                            };*/
                         }else{
                             //document.getElementById('detailAddress').value=positionResult.address;
                         }
@@ -357,6 +357,10 @@
                                 console.log(result);
                                 pos=result.geocodes[0].location;
                                 positionPicker.start(pos);
+                                var lat =result.geocodes[0].location.lat;
+                                var lng =result.geocodes[0].location.lng;
+                                var latAndLng = lat +','+ lng;
+                                $('#latAndLng').val(latAndLng);
                             }else{
                                 console.log(result)
                             }

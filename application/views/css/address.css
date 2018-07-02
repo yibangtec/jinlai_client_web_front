@@ -38,7 +38,7 @@ a {text-decoration: none;}
     position: fixed;
 
     bottom: 0.5rem;
-    margin: 0 0.2rem;
+    margin-left: 0.2rem;
 }
 .creat-address a{
     color: #FF3649;
