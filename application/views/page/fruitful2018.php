@@ -136,7 +136,7 @@
             <li data-action=try>抽奖次数 <span data-name=chances>1</span>次</li>
 
             <!-- 分享 -->
-            <li data-action=share>分享</li>
+            <li data-action=share>点击右上角分享</li>
         </ul>
 
         <div id=description>
@@ -168,7 +168,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '限时秒杀',
+        'title' => '10点秒杀专场',
         'vice-title' => '<p>10:00准时秒杀（秒杀及超超特价产品限量1份）</p>',
         'items' => array(
             array(
