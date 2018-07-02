@@ -96,7 +96,7 @@
 				</li>
                 <?php elseif ($this->user_agent['is_ios']): ?>
                 <li>
-                    <a href="https://itunes.apple.com/cn/app/id1066224229">
+                    <a href="https://itunes.apple.com/cn/app/id1304204060">
                         <img src="<?php echo CDN_URL ?>media/home/ios@3x.png" alt="">
                         <span>ios</span>
                     </a>
