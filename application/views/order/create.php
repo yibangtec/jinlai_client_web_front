@@ -264,7 +264,7 @@
         });
 
         $('.address-selected').on('click','.address-list',function(){
-            console.log('a');
+            console.log('变更地址');
             $('.address-selected').css('display','none');
             $('#addressSelected').html($(this).html());
         });
@@ -315,7 +315,7 @@
                              '<div class="title-right right-float"><span>包邮</span><i class="icon-Arrow"></i></div>'+
                          '</div>'+
                          '<div class="item-title clearfix">'+
-                            '<input class="message" type="text" placeholder="给卖家留言"/>'+
+                            '<input class="message" type="text" placeholder="给卖家留言">'+
                          '</div>'+
                          '<div class="total">'+
                              '<span>共'+order_data.length+'件商品</span>合计：<span>¥ '+order_data[i].subtotal+'</span>(含运费¥ 0.00)'+
@@ -338,8 +338,8 @@
                 }else{
                      imgUrl =''
                 }
-                orderItemHtml +='<a href="<?php echo base_url('biz/detail') . "?&id='+order_data[i].biz_id+'" ?>" class="item-detail">'+
-                                    '<div class="item-left"><img src="'+imgUrl+order_items[j].item_image+'" alt=""/></div>'+
+                orderItemHtml +='<a href="'+ base_url+'biz/detail?&id='+order_data[i].biz_id +'" class="item-detail">'+
+                                    '<div class="item-left"><img src="'+imgUrl+order_items[j].item_image+'" alt=""></div>'+
                                     '<div class="item-center">'+
                                         '<p>'+order_items[j].name+'</p>'+
                                         '<p>'+slogan+'</p>'+

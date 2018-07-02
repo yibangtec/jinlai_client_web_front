@@ -168,36 +168,36 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '10点秒杀专场',
-        'vice-title' => '<p>10:00准时秒杀（秒杀及超超特价产品限量1份）</p>',
+        'title' => '12点秒杀专场',
+        'vice-title' => '<p>12:00准时秒杀（秒杀及超超特价产品限量1份）</p>',
         'items' => array(
             array(
-                'item_id' => '5703',
-                'url_image_main' => '/media/fruitful2018/items/063010/0-1@2x.png',
-                'name' => '沂蒙食舍双色桃饼',
+                'item_id' => '5693',
+                'url_image_main' => '/media/fruitful2018/items/063012/0-1@2x.png',
+                'name' => '网红红烧猪蹄抱枕',
                 'price' => '1',
-                'tag_price' => '',
+                'tag_price' => '25',
             ),
             array(
-                'item_id' => '5436',
-                'url_image_main' => '/media/fruitful2018/items/063010/0-2@2x.png',
-                'name' => '雀巢咖啡15瓶装',
-                'price' => '55',
-                'tag_price' => '',
+                'item_id' => '5118',
+                'url_image_main' => '/media/fruitful2018/items/063012/0-2@2x.png',
+                'name' => '百草味麻薯3袋',
+                'price' => '20.9',
+                'tag_price' => '26.9',
             ),
             array(
-                'item_id' => '4933',
-                'url_image_main' => '/media/fruitful2018/items/063010/0-3@2x.png',
-                'name' => '乐事原味145g*3',
-                'price' => '25',
-                'tag_price' => '',
+                'item_id' => '5675',
+                'url_image_main' => '/media/fruitful2018/items/063012/0-3@2x.png',
+                'name' => '网红桃花团',
+                'price' => '9.9',
+                'tag_price' => '16',
             ),
             array(
-                'item_id' => '4904',
-                'url_image_main' => '/media/fruitful2018/items/063010/0-4@2x.png',
-                'name' => '每日坚果750g',
-                'price' => '129',
-                'tag_price' => '',
+                'item_id' => '4899',
+                'url_image_main' => '/media/fruitful2018/items/063012/0-4@2x.png',
+                'name' => '小猪佩奇社会人手表',
+                'price' => '9.9',
+                'tag_price' => '19.9',
             ),
         ),
         'appended' => ''
@@ -603,7 +603,7 @@
     var wheelSurf
     // 初始化装盘数据 正常情况下应该由后台返回
     var prizes = lottery.prizes;
-    //console.log(initData);
+    console.log(prizes);
 
     var initData = [
             {
@@ -710,7 +710,7 @@
 
                         // 计算已中奖项在奖盘中是第几个区域
                         var count = 0
-                        for (const key in list)
+                        for (var key in list)
                         {
                             if (list.hasOwnProperty(key))
                             {
@@ -731,14 +731,13 @@
                                 if (prizes[index].prize_id == prize_id)
                                 {
                                     var reminder = ''; // 抽奖结果提示
-                                    if (result.content.coupon_id == '')
+                                    if (prizes[index].template_id != '')
                                     {
-                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，请添加进来商城客服微信，我们会与您沟通奖品发送事宜！'
-
+                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，优惠券已发放到卡包！'
+                                    } else {
+                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，请添加进来商城客服微信，我们会与您沟通奖品发送事宜！';
                                         // 弹出客服微信二维码
                                         $('[data-window-name=customer-service]').show();
-                                    } else {
-                                        reminder = '恭喜！您已抽到奖品"' + prizes[index].name + '"，优惠券已发放到卡包！'
                                     }
 
                                     alert(reminder);
