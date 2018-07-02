@@ -76,8 +76,7 @@ input.goodsCheck:checked{
 			</div>
 		</div>
     </div>
-<?php endif ?>
-
+    
     <div class="item">
         <div class="payment-bar">
             <div class="all-checkbox fl"><input type="checkbox" class="check goods-check" id="AllCheck">
@@ -87,9 +86,11 @@ input.goodsCheck:checked{
                 <strong>合计：<span>¥</span><i class="total" id="AllTotal">0.00</i></strong>
                 <p>不含运费</p>
             </div>
-            <a href="#" class="settlement fr">结算</a>
+            <a href="###" class="settlement fr">结算</a>
         </div>
     </div>
+<?php endif ?>
+
 
 <script src="<?php echo CDN_URL ?>js/jqm.js"></script>
 <script>
@@ -98,6 +99,12 @@ input.goodsCheck:checked{
 	    var user_id = <?php echo $this->session->user_id ?>;
 	    var newShopInfo;
 	    //请求下购物车最新的商品信息,尤其是重复的商品数量
+	    $('.settlement').on('click',function(){
+	    	if($(this).attr('href') == '###'){
+	    		alert('请先勾选要添加到购物车的商品');
+	    		return;
+	    	}
+	    })
 	    $.ajax({
 	    	type:"post",
 	    	url:"https://api.517ybang.com/cart/sync_down",
@@ -160,10 +167,37 @@ input.goodsCheck:checked{
 	});
 	
 	var checkFlag = 0;
+	//最后添加进购物车的数组
+	var finalNum = [];
 	$(".goodsCheck").click(function(event) {
 		var goods = $(this).closest(".shop-group-item").find(".goodsCheck");
 		var goodsC = $(this).closest(".shop-group-item").find(".goodsCheck:checked");
 		var Shops = $(this).closest(".shop-group-item").find(".shopCheck");
+		//如果当前点击的是选中状态那么就取得要加入购物车的csv
+		if($(this).prop('checked') == true){
+			var url = $(this).siblings('.shop-info-text').find('a').attr('href'); 
+			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
+			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').text();
+			console.log(shopNumList);
+			finalNum.push('1' + '|' + loc + '|0|' + shopNumList);
+			$('.settlement').css('background','#ff5353');
+			
+		}
+		else{
+			var url = $(this).siblings('.shop-info-text').find('a').attr('href'); 
+			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
+			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').text();
+			var delShoplist = '1' + '|' + loc + '|0|' + shopNumList;
+			for (var i = 0;i <finalNum.length;i++) {
+				if(delShoplist == finalNum[i]){
+					finalNum.splice(i,1);
+				}
+				
+			}
+		}
+		//选完之后把cartsting传过去
+		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+	    $('.settlement').attr('href',curCartList);
 		if (goods.length == goodsC.length) {
 			Shops.prop("checked", true);
 			if ($(".shopCheck").length == $(".shopCheck:checked").length) {
@@ -180,7 +214,17 @@ input.goodsCheck:checked{
 		}
 	});
 	$(".shopCheck").click(function() {
+		$('.settlement').css('background','#ff5353');
 		if ($(this).prop("checked") == true) {
+			//如果在没有点击checked的情况下加入数组
+			for (var i = 0;i < $(this).parents(".shop-group-item").find(".goodsCheck").length;i++) {
+				if($(this).parents(".shop-group-item").find(".goodsCheck").eq(i).prop("checked") == false){
+						var url = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-info-img').find('a').attr('href'); 
+						var loc = url.substring(url.lastIndexOf('=')+1, url.length);
+						var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').text();
+						finalNum.push('1' + '|' + loc + '|0|' + shopNumList);
+				};
+			}
 			$(this).parents(".shop-group-item").find(".goods-check").prop("checked", true);
 			if ($(".shopCheck").length == $(".shopCheck:checked").length) {
 				$("#AllCheck").prop("checked", true);
@@ -190,19 +234,58 @@ input.goodsCheck:checked{
 				TotalPrice()
 			}
 		} else {
+			//对比删除数组里面的商品
+			var delShopListArr = [];
+				for (var i = 0;i < $(this).parents(".shop-group-item").find(".goodsCheck").length;i++) {
+			var url = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-info-img').find('a').attr('href'); ; 
+			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
+			var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').text();
+			var delShoplist = '1' + '|' + loc + '|0|' + shopNumList;
+			delShopListArr.push(delShoplist);
+			}
+			console.log(delShopListArr);
+			
+			
+			for (var i = 0;i <finalNum.length;i++) {
+				for (var k = 0;k <delShopListArr.length;k++) {
+					if(delShopListArr[k] == finalNum[i]){
+						finalNum.splice(i,1);
+					}
+			}
+				
+			}
 			$(this).parents(".shop-group-item").find(".goods-check").prop("checked", false);
 			$("#AllCheck").prop("checked", false);
 			TotalPrice()
 		}
+		//选完之后把cartsting传过去
+		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+	    $('.settlement').attr('href',curCartList);
 	});
 	$("#AllCheck").click(function() {
+		//如果是全选的,就让所有的全部循环进数组
+		$('.settlement').css('background','#ff5353');
 		if ($(this).prop("checked") == true) {
+			finalNum = [];
+				for (var i = 0;i < $('.shop-info-img').length;i++) {
+			var allCartSelect = $('.shop-info-img').eq(i).find('a').attr('href');
+			var allCartSelectNum = $('.shop-arithmetic').eq(i).find('.num').text();
+			var loc = allCartSelect.substring(allCartSelect.lastIndexOf('=')+1, allCartSelect.length);
+			//把数组清空
+			finalNum.push('1|' + loc + '|0|' + allCartSelectNum);
+		}
 			$(".goods-check").prop("checked", true);
 			TotalPrice()
 		} else {
+			$('.settlement').css('background','#ccc');
+			finalNum = [];
 			$(".goods-check").prop("checked", false);
 			TotalPrice()
 		}
+		//选完之后把cartsting传过去
+		console.log(finalNum.join());
+		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+	    $('.settlement').attr('href',curCartList);
 		$(".shopCheck").change()
 	});
 
@@ -230,6 +313,36 @@ input.goodsCheck:checked{
 		$(this).addClass("selected");
 		$(this).removeClass("unselected");
 		$(this).find("a.remove").on("click", function() {
+			//删除购物车
+			var delCartHref = $(this).siblings('.goodslist').find('.shop-info-text').find('a').attr('href');
+			var delCartText = $(this).siblings('.goodslist').find('.shop-arithmetic').text();
+			
+			var loc = delCartHref.substring(delCartHref.lastIndexOf('=')+1, delCartHref.length);
+			//要删除的数据拼接
+			var delCartNum = '1|' + loc + '|0|' + delCartText; 
+			for (var i = 0;i < finalNum.length;i++) {
+				if(finalNum[i] == delCartNum){
+					//当删除的时候,数组里面也删除
+					finalNum.splice(i,1);
+				}
+			}
+			for (var i = 0;i < newShopInfo.length;i++) {
+				if(delCartNum == newShopInfo[i]){
+					newShopInfo.splice(i,1);
+				}
+			}
+			var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+	    	$('.settlement').attr('href',curCartList);
+			$.ajax({
+				type:"post",
+				url:"https://api.517ybang.com/cart/sync_up",
+				async:false,
+				dataType : 'json',
+				data : {app_type:'client',name : 'cart_string',id:user_id,value:newShopInfo.join()},
+				success : function(res){
+					console.log(res);
+				}
+			});
 			var touchId = $(this).parents(".itemlist");
 			if (touchId.siblings().length - 1 == 0) {
 				touchId.parents(".touch").parents(".shop-group-item").remove();
@@ -243,7 +356,8 @@ input.goodsCheck:checked{
 			}, 300, function() {
 				$(this).remove();
 				TotalPrice()
-			})
+			});
+			//删除购物车
 		})
 	}).on("swiperight", function() {
 		$(this).parents(".touch").find(".itemlist").addClass("unselected")
