@@ -155,8 +155,8 @@
 
     <ul class=order-parameter>
         <li data-name=order_id>
-            <div class=serial-number>订单号<span></span></div>
-            <div class=number-copy>复制</div>
+            <div id="selectorOrder" class=serial-number>订单号<span></span></div>
+            <div class=number-copy  id="copyOrder">复制</div>
         </li>
         <li data-name=time_create>创建时间<span></span></li>
         <li data-name=time_cancel data-group=time_cancel>取消时间<span></span></li>
@@ -165,7 +165,10 @@
         <!-- 支付相关信息 -->
         <li data-name=time_pay data-group=payed>付款时间<span></span></li>
         <li data-name=payment_type data-group=payed>支付方式<span></span></li>
-        <li data-name=payment_id data-group=payed>支付流水号<span></span></li>
+        <li data-name=payment_id data-group=payed>
+            <div id="selectorWrite" class=serial-number>支付流水号<span></span></div>
+            <div class=number-copy  id="copyWrite">复制</div>
+        </li>
 
         <!-- 接/拒单相关信息 -->
         <li data-name=time_refuse>拒单时间<span></span></li>
@@ -188,7 +191,7 @@
         <!-- 退单相关信息 -->
         <li data-name=time_refund>退单时间<span></span></li>
     </ul>
-    <div style="padding-bottom:1rem; width:100%"></div>
+    <div style="padding-bottom:0.6rem; width:100%"></div>
 
     <!--待付款-->
     <div class="detail-operation status4" data-action-group="待付款">
@@ -256,14 +259,14 @@
             localStorage.setItem(num.cp_keynum,str);
             console.log(str);
         }
-        $('body').on('click','.refundBtn',function(){
+        /*$('body').on('click','.refundBtn',function(){
             if(true){
                  if(confirm("网页版退款功能即将开放，现阶段您可通过AppStore下载进来商城应用申请退款"))
                   {
 
                   }
              }
-        });
+        });*/
         $('body').on('click','.pingjia',function(){
 
            save(item);
@@ -489,6 +492,8 @@
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
+        $('.number-copy').attr('data-clipboard-text',item.order_id)
+
         $('[data-name=time_create] span').html( date(item.time_create) );
 		
         // 接单/拒单
@@ -568,40 +573,46 @@
         }
 
         // 生成订单商品DOM
-       
-         for(var key in item.order_items)
+         var orderItems = item.order_items
+         for(var key in orderItems)
          {
-             var item = item.order_items[key];
+
 
              // 生成订单所含商品主图URL
-             var reg = RegExp(/http/);
-             var item_image_url = (reg.test(item.item_image) === true)? item.item_image: media_url+'item/'+item.item_image;
-
+             var imgUrl = orderItems[key].item_image;
+              var reg = RegExp(/http/);
+              //console.log(reg.test(imgUrl)); // true
+              if(reg.test(imgUrl) !== true){
+                   imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+              }else{
+                   imgUrl =''
+              }
             // 生成订单商品信息
-            var timePay = item.time_pay
-                if(timePay!==''){
-                    timePay = '<a class="refundBtn" >退款</a>';
-                }else{
-                    timePay = '';
-                }
+            var timePay = item.time_pay;
+            if(timePay!==''){
+                timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
+            }else{
+                timePay = '';
+            }
 
 
              var order_item = '<div class="item-detail clearfix">'+
-                            '<a href="' + base_url + 'item/detal?id=' + item.item_id + '">' +
-                            '<div class="item-left left-float"><img src="'+item_image_url+'"></div>'+
+                            '<a href="' + base_url + 'item/detal?id=' + orderItems[key].item_id + '">' +
+                            '<div class="item-left left-float"><img src="'+imgUrl+orderItems[key].item_image+'"></div>'+
                             '<div class="item-center left-float">'+
-                                '<p>'+ item.name +'</p>'+
-                                (item.slogan == null? '': '<p>'+item.slogan+'</p>')+
+                                '<p>'+ orderItems[key].name +'</p>'+
+                                (orderItems[key].slogan == null? '': '<p>'+orderItems[key].slogan+'</p>')+
                             '</div>'+
                             '<div class="item-right right-float">'+
-                                 '<p>¥'+ item.price +'</p>'+
-                (Number(item.tag_price) < Number(item.price)? '': '<p class=price-text><del>¥'+ item.tag_price +'</del></p>')+
-                                 '<p class="cont-indent">&times; '+ item.count +'</p>'+
+                                 '<p>¥'+ orderItems[key].price +'</p>'+
+                (Number(orderItems[key].tag_price) < Number(orderItems[key].price)? '': '<p class=price-text><del>¥'+ orderItems[key].tag_price +'</del></p>')+
+                                 '<p class="cont-indent">&times; '+ orderItems[key].count +'</p>'+
                             '</div>'+
                             '</a>' +
                             (refund_base_url == ''? '': '<div class="item-operation">'+ timePay +'</div>') +
 
                        '</div>';
+
                        //href="'+ refund_base_url+item.record_id +'"   tuikuan
              //console.log(order_item);
              $('#orderList').append(order_item);
@@ -644,5 +655,56 @@
 
                  return time;
              }
+        var aEle = document.querySelector('#copyOrder');
+                aEle.addEventListener('click',function(){
+                var copyDOM = document.querySelector('#selectorOrder');
+                var range = document.createRange();
+                range.selectNode(copyDOM);
+                window.getSelection().addRange(range);
+                var successful = document.execCommand('copy');
+                try {
+                // Now that we've selected the anchor text, execute the copy command
+
+                var msg = successful ? copyDOM.innerText : 'unsuccessful';
+                if (confirm('已复制'+msg)==true){
+
+                 }else{
+                  return false;
+                 }
+                } catch(err) {
+                console.log('Oops, unable to copy');
+                }
+
+                // Remove the selections - NOTE: Should use
+                // removeRange(range) when it is supported
+                window.getSelection().removeAllRanges();
+                },false);
+
+        var WriteEle = document.querySelector('#copyWrite');
+                WriteEle.addEventListener('click',function(){
+                var copyDOM = document.querySelector('#selectorWrite');
+                var range = document.createRange();
+                range.selectNode(copyDOM);
+                window.getSelection().addRange(range);
+                var successful = document.execCommand('copy');
+                try {
+                // Now that we've selected the anchor text, execute the copy command
+
+                var msg = successful ? copyDOM.innerText : 'unsuccessful';
+                if (confirm('已复制'+msg)==true){
+
+                 }else{
+                  return false;
+                 }
+                } catch(err) {
+                console.log('Oops, unable to copy');
+                }
+
+                // Remove the selections - NOTE: Should use
+                // removeRange(range) when it is supported
+                window.getSelection().removeAllRanges();
+                },false);
+
+
 	})
 </script>

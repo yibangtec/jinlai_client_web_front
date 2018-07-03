@@ -114,9 +114,13 @@
 				</div>
 				<div style="display:flex;">
 					<label for="" style="width:1.13rem;">性别</label>
-					<p style="flex:1;">
-						<span>男</span><span>女</span>
-					</p>
+					<p class="changeSex man">
+                    	<input type="checkbox" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
+                    </p>
+                    <p class="changeSex woman">
+                    	<input type="checkbox" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
+                    </p>
+
 
 				</div>
 				<div>
@@ -141,14 +145,12 @@
 				'onClose':function(){/*取消时触发事件*/
 				}
 			});
+			/*<p style="flex:1;">
+            	<span>男</span><span>女</span>
+            </p>*/
 			$(function(){
 				var item = <?php echo json_encode($item,true) ?>;
 				console.log(item);
 			});
-			/*<p class="changeSex man">
-            						<input type="checkbox" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
-            					</p>
-            					<p class="changeSex woman">
-            						<input type="checkbox" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
-            					</p>*/
+
 		</script>

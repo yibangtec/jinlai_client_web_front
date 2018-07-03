@@ -59,3 +59,37 @@
             </div>
         </div>
     </div>
+    <script>
+    		// 由于全局的api_url被文件上传功能相关JS中的同名变量污染，需要重新声明API根URL
+                var real_api_url = '<?php echo API_URL ?>';
+                var obj = {app_type:'client'};
+                var id = getQueryString('id');
+                obj.id = id;
+                $.ajax({
+                      url: real_api_url + 'refund_record/index',
+                      data: obj,
+                      success: function(result){
+                      		console.log(result); // 输出回调数据到控制台
+                           if (result.status == 200)
+                           {
+
+
+
+                           } else {
+                              alert(result.content.error.message);
+                           }
+                      },
+                      error:function(result){
+                      	console.log(result);
+                      },
+                      dataType: 'json'
+                });
+
+
+
+                 function getQueryString(name){
+                      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                      var r = window.location.search.substr(1).match(reg);
+                      if (r!=null) return r[2]; return '';
+                 }
+    </script>

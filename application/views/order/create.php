@@ -293,13 +293,29 @@
                                       '<p>'+addresses[key].street+'</p>'+
                                   '</div>';
                 $('.address-create').html(addressHtml);
-            };
+            }else{
+                var addressHtml = '<div class="address-title clearfix">'+
+                                   '<div class="title-left">'+brief+addresses[0].fullname+'</div>'+
+                                   '<div class="title-right">'+addresses[0].mobile+'</div>'+
+                               '</div>'+
+                               '<div class="address-content">'+
+                                   '<p>'+addresses[0].province+addresses[0].city+addresses[0].county+'</p>'+
+                                   '<p>'+addresses[0].street+'</p>'+
+                               '</div>';
+                 $('.address-create').html(addressHtml);
+                 $('[name=address_id]').val(addresses[0].address_id);
+            }
+
         };
+
 
         // 默认地址
         $('[name=address_id]').val(default_address_id);
 
+
         // 待下单商品信息
+        //console.log(getQueryString(cart_string));
+
         var cart_string = '';
         for (var i in order_data)
         {
@@ -331,7 +347,7 @@
             for (var j in order_items)
             {
                 var order = order_items[j];
-                cart_string += order['biz_id'] + '|' + order['item_id'] + '|' + (order['sku_id'] || 0) + '|' + (order['count'] || 1);
+                cart_string += (','+order['biz_id'] + '|' + order['item_id'] + '|' + (order['sku_id'] || 0) + '|' + (order['count'] || 1));
                 //orderItemHtml
                 var slogan = order_items[j].slogan;
                 if(slogan == null){
@@ -361,6 +377,7 @@
 
         // 提交表单
         $('[type=submit]').click(function(){
+            $('[name=note_user]').val($('.message').val());
 
             if(addresses.length<1){
 
@@ -416,5 +433,10 @@
 
 
         });
+        function getQueryString(name){
+                               var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                               var r = window.location.search.substr(1).match(reg);
+                               if (r!=null) return r[2]; return '';
+                          }
     })
 </script>

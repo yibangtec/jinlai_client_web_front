@@ -34,21 +34,24 @@ $(function(){
                 var defaultText = '';
                 var brief = '';
                 var color = '';
+                var style = '';
                 for(var key in items){
                     if(default_address_id == items[key].address_id){
                         defaultIcon = 'icon-xuanzhong';
                         defaultText = '默认地址';
                         color = 'color:#ff3649;';
+                        style = 'display:none';
 
                     }else{
                         defaultIcon = 'icon-zidongtui';
                         defaultText = '设为默认';
                         color = 'color:#666464;';
+                        style = 'display:inline-block';
                     }
                     if(items[key].brief !== null){
                         brief = '<span class="address-type">'+items[key].brief+'</span>';
                     }else{
-                        brief = ''
+                        brief = '';
                     }
                 	var addressHtml = '<div class="address-list">'+
                                               '<a href="<?php echo base_url('address/edit') . "?&id='+items[key].address_id+'" ?>" class="address-title clearfix">'+
@@ -61,7 +64,7 @@ $(function(){
                                               '</a>'+
                                               '<div class="address-operation clearfix">'+
                                                  '<div data-id="'+ items[key].address_id +'" class="title-left select"><i class="'+ defaultIcon +'"></i> <span style="'+color +'">'+defaultText+'</span></div>'+
-                                                  '<div class="title-right"><span data-id="'+ items[key].address_id +'" class="operation-del"><i class="icon-del"></i> 删除</span><a href="<?php echo base_url('address/edit') . "?&id='+items[key].address_id+'" ?>" class="operation-type"><i class="icon-write"></i> 编辑</a></div>'+
+                                                  '<div class="title-right"><a style="'+style+'" data-id="'+ items[key].address_id +'" class="operation-del"><i class="icon-del"></i> 删除</a><a href="<?php echo base_url('address/edit') . "?&id='+items[key].address_id+'" ?>" class="operation-type"><i class="icon-write"></i> 编辑</a></div>'+
                                               '</div>'+
                                           '</div>';
                     $('.box').append(addressHtml);
