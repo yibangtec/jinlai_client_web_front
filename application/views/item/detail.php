@@ -56,6 +56,21 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
   	left: 50%;
   	margin-left: -1rem;
   }
+  #cartsuccess{
+  	position: fixed;
+  	bottom: 15%;
+  	margin-top: -.2rem;
+  	width: 2rem;
+  	height: .8rem;
+  	background: rgba(0,0,0,.5);
+  	color: #fff;
+  	border-radius: .15rem;
+  	line-height: .8rem;
+  	font-size: .24rem;
+  	text-align: center;
+  	left: 50%;
+  	margin-left: -1rem;
+  }
 </style>
 
 <script>
@@ -321,7 +336,7 @@ wx.ready(function(){
 		</div>
 		<!--查看分类-->
 		<div class="shopmore">
-			<a href="<?php echo base_url('item_category_biz?biz_id='.$item['biz_id']) ?>">
+			<a href="<?php echo base_url('item_category_biz/index?biz_id='.$item['biz_id']) ?>">
 				查看分类
 			</a>
 			<a href="<?php echo base_url('biz/detail?id='.$item['biz_id']) ?>">
@@ -366,30 +381,33 @@ wx.ready(function(){
 		-->
 
     <?php if ( ! empty($item['description'])): ?>
-<!--        <p id=general-seperater>继续拖动，查看图文详情</p>-->
+        <p id=general-seperater>继续拖动，查看图文详情</p>
 
         <div id="item-description" class="wid710 auto">
             <?php
             // 若主图中含有http，则调整相对路径base为自营商品图片根路径
-            if (strpos($item['url_image_main'], 'http') !== FALSE) echo '<base href="https://www.ybslux.com/">';
+            if (strpos($item['url_image_main'], 'http') !== FALSE):
+                $this->media_root = 'https://www.ybslux.com/';
+            endif;
             ?>
             <?php echo $item['description'] ?>
         </div>
         <!--
         <p id=general-seperater>继续拖动，查看图文详情</p>
         <div class="bigadd border20 wid710 auto">
-            <img src="<?php echo CDN_URL ?>media/item/detail/tu@3x.png">
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu@3x.png" />
         </div>
         <div class="particularstag wid710 auto">
-            <img src="<?php echo CDN_URL ?>media/item/detail/shangpinliangdian@3x.png" class="pictitle">
-            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent">
+            <img src="<?php echo CDN_URL ?>media/item/detail/shangpinliangdian@3x.png" class="pictitle"/>
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
             <p>
-                健脑、抗氧化、预防糖尿病、增强食欲、促进代谢、美容养颜、显著改善贫血等。适合老人、小孩及孕妇食用。
+                健脑、抗氧化、预防糖尿病、增强食欲、促进代谢、美容养颜、显著改善贫血等。适合老人、
+                小孩及孕妇食用。
             </p>
         </div>
         <div class="particularstag wid710 auto">
-            <img src="<?php echo CDN_URL ?>media/item/detail/ruhetiaoxuan@3x.png" class="pictitle">
-            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent">
+            <img src="<?php echo CDN_URL ?>media/item/detail/ruhetiaoxuan@3x.png" class="pictitle"/>
+            <img src="<?php echo CDN_URL ?>media/item/detail/tu1@3x.png" class="piccontent" />
             <p>
                 血橙上一头上的圆形博文就是所谓的“脐”，血橙的脐越小越甜。如果表皮出现白色的霉点，则血橙的内部开始霉烂。
             </p>
@@ -408,15 +426,13 @@ wx.ready(function(){
     <?php endif ?>
 
 	<div class="particularstag wid710 auto">
-        <!--特色介绍-->
-        <!--
-		<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle">
-		<div class="featurescard clearfix mt10">
+		<!--<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle">-->
+		<!--特色介绍-->
+		<!--<div class="featurescard clearfix mt10">
 			<img src="<?php echo CDN_URL ?>media/item/detail/quanchenglenglian@3x.png">
 			<img src="<?php echo CDN_URL ?>media/item/detail/3xiaoshisongda@3x.png">
 			<img src="<?php echo CDN_URL ?>media/item/detail/tousuchuli@3x.png">
-		</div>
-        -->
+		</div>-->
 
 		<!--猜你喜欢区域-->
         <!--
@@ -503,37 +519,33 @@ wx.ready(function(){
 			endif;
 		?>
 		<li>
-			<a id=cart-add class="btn btn-info btn-lg btn-block" title="加入购物车" href="<?php echo base_url('cart/add?biz_id='.$item['biz_id'].'&item_id='.$item['item_id']) ?>">
+			<i id=cart-add class="btn btn-info btn-lg btn-block" title="加入购物车" href="###">
 				加入<wbr>购物车
-			</a>
+			</i>
 		</li>
 
 		<li>
             <?php
                 $item_status = '';
                 if ( ! empty($item['time_delete']) ):
-                    $item_status = '已经下架啦~';
+                    $item_status = '商品已经下架啦~';
 
                 elseif ( empty($item['time_publish']) ):
                     if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
-                        $item_status = '还未上架';
+                        $item_status = '商品还未上架';
                     elseif ($item['time_to_publish'] > time()):
-                        if (date('Ymd') == date('Ymd', $item['time_to_publish'])):
-                            $item_status = date('H:i', $item['time_to_publish']).'开售';
-                        else:
-                            $item_status = date('m-d', $item['time_to_publish']).'开售';
-                        endif;
+                        $item_status = date('Y-m-d H:i').'开售';
                     endif;
 
                 elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
                     if (empty($item['skus'])):
-                        $item_status = '已经被抢光了~';
+                        $item_status = '商品已经被抢光了~';
                     else:
                         $sku_stocks_overall = 0;
                         foreach ($sku as $item['skus']):
                             $sku_stocks_overall += $sku['stocks'];
                         endforeach;
-                        if ($sku_stocks_overall == 0) $item_status = '已经被抢光了~';
+                        if ($sku_stocks_overall == 0) $item_status = '商品已经被抢光了~';
                     endif;
 
                 endif;
@@ -543,7 +555,6 @@ wx.ready(function(){
 			<a id=order-create class="btn btn-primary btn-lg btn-block" title="立即购买" href="<?php echo base_url('order/create?cart_string=0|'.$item['item_id'].'|0|1') ?>">
 				立即购买
 			</a>
-
             <?php else: ?>
             <a id=order-create class="btn btn-default btn-lg btn-block" title="无法购买" href="#">
                 <?php echo $item_status ?>
@@ -559,8 +570,8 @@ wx.ready(function(){
 		</li>
 	</ul>
 </nav>
-
 <span id="tip" style="display: none;">收藏成功</span>
+<span id="cartsuccess" style="display: none;">添加成功</span>
 <script>
 	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
 	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
@@ -580,27 +591,30 @@ wx.ready(function(){
 		}
 		return false;
 	});
-
 	// 商品信息
-	var user_id = '<?php echo $this->session->user_id ?>';
+	var user_id = <?php echo $this->session->user_id ?>;
 	var item = <?php echo $item_in_json ?>;
 	var record_id;
 	$.ajax({
-			url : api_url + 'fav_item/index',
+			url : 'https://api.517ybang.com/fav_item/index',
+			type : 'post',
+			dataType:'json',
 			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
 			success : function(res){
 			for (var i = 0;i < res.content.length;i++) {
 				if(res.status == 200){
 					record_id = res.content[i].record_id;
 					$('.create').find('b').css('color','#fa3752').text('已收藏');
-						$('.create').find('img').attr('src', cdn_url+'media/item/detail/shoucangcur.png')
+						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
 				}; 
 			}
 			}
 		});
 			//创建浏览记录
 		$.ajax({
-			url: api_url + "history_item_view/create",
+			url: "https://api.517ybang.com/history_item_view/create",
+			 type: "post",
+             dataType: 'json',
              data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
             success: function (res) {
             	//alert('加入浏览记录成功');
@@ -613,10 +627,12 @@ wx.ready(function(){
 				if(cancelfocus){
 						$.ajax({
 							url : api_url + 'fav_item/edit_bulk',
+							type : 'post',
+							dataType:'json',
 							data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
 							success : function(res){
 								$('.create').find('b').css('color','#3E3A39').text('收藏');
-								$('.create').find('img').attr('src', cdn_url + 'media/item/detail/shoucang-@3x.png')
+								$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
 							}
 						});
 				}
@@ -625,7 +641,9 @@ wx.ready(function(){
 		}
 		else{
 				$.ajax({
-			url: api_url + 'fav_item/create',
+			url: "https://api.517ybang.com/fav_item/create",
+			 type: "post",
+             dataType: 'json',
              data:{app_type:'client',user_id:user_id,item_id:item.item_id},
             success: function (res) {
             	$('.create').find('b').css('color','#fa3752').text('已收藏');
@@ -636,4 +654,172 @@ wx.ready(function(){
 		}
 		
 	});
+	//添加进购物车
+	
+	var offset = $("#end").offset();
+
+		var endLeft = $("#end").css("left");
+
+		var oldcar,
+
+			user_id,
+
+			item_id,
+
+			arrCur;
+	$('#cart-add').click(function(){
+		var url = window.location.search; 
+// alert(url.length); 
+// alert(url.lastIndexOf('=')); 
+var loc = url.substring(url.lastIndexOf('=')+1, url.length); 
+		debugger;
+		var r = loc;
+
+			oldcar = r;
+
+			var count=1;
+
+			var addCartTime;
+
+			var oldShopList = [];
+
+			var countflag = 0;
+				if(user_agent.is_wechat){
+
+					var addcar = $(this);
+
+					var user_id = <?php echo $this->session->user_id ?>;
+
+					$.ajax({
+
+			        url: 'https://api.517ybang.com/cart/index',
+
+			        type: 'post',
+
+			        dataType: "json",
+
+			        cache: false,
+
+			        timeout: 10000,
+
+			        async: false,
+
+			        data : {app_type:'client',user_id:user_id},
+
+			        error: function(date){
+
+					alert(date);
+
+			        },
+
+			        success : function(data){
+
+			        	item_id = data.content.order_items;
+
+			        }
+
+		     });
+
+		      for (var i = 0;i < item_id.length;i++) {
+
+				for (var j = 0;j < item_id[i].order_items.length;j++) {
+
+					//var oldShopList = '1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count;
+
+					if(oldcar == item_id[i].order_items[j].item_id){
+
+						count = item_id[i].order_items[j].count;
+
+						if(countflag == 0){
+
+							count++;
+
+							countflag = 1;
+
+						}
+
+					}
+
+					else{
+
+						oldShopList.push('1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count);
+
+					}
+
+				}				
+
+	        	}
+
+	        arrCur = oldShopList.join(",");
+
+			var img = addcar.parent().find('img').attr('src');
+
+			var flyer = $('<img class="u-flyer" src="'+img+'">');
+
+			flyer.fly({
+
+				start: {
+
+					left: addcar.offset().left - $(document).scrollLeft(),
+
+					top: addcar.offset().top - $(document).scrollTop()
+
+				},
+
+				end: {
+
+					left:parseInt(endLeft),
+
+					top: 0,
+
+					width: 0,
+
+					height: 0
+
+				},
+
+				onEnd: function(){
+
+					$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+
+					addcar.css("cursor","default").removeClass('orange');
+
+					this.destory();
+
+				}
+
+			});
+
+			    var shopInfo = '1|' + oldcar + '|0|' + count + ',' + arrCur;
+
+			    //上传接口
+
+			    $.ajax({
+			    	type:"post",
+			    	url:"https://api.517ybang.com/cart/sync_up",
+
+			    	dataType:'json',
+
+			    	async : false,
+
+			    	data:{app_type:'client',id:user_id,name:'cart_string',value:shopInfo},
+
+			    	success:function(res){
+
+			    		console.log(res);
+
+			    		clearTimeout(addCartTime);
+
+					    addCartTime = setTimeout(function(){
+
+							$('#cartsuccess').show().delay(1000).fadeOut();
+
+					    },1000);
+
+			    	}
+			    });
+
+			}
+	})
+	
 </script>
