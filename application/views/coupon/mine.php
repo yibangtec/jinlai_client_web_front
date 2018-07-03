@@ -30,7 +30,7 @@
 			outline: none;
 		}
 	</style>
-	<script src="https://cdn-remote.517ybang.com/js/educationclassification.js"></script>
+	<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>
 	<div class="havecoupon">
 		<div class="minecoupontopTabbar">
 			<div class="tab coupon">
@@ -46,7 +46,6 @@
 				<div class="swiper-container7">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide list-group" id="canusercoupon">
-					
 						
 					</div>
 					<div class="swiper-slide list-group">
@@ -99,7 +98,7 @@ margin-top: .5rem;" alt="">
 	<div class="morecoupon">领取更多</div>
 </a>
 <script>
-	var user_id = <?php echo $this->session->user_id ?>;
+	var user_id = '<?php echo $this->session->user_id ?>';
 	function timestampToTime(timestamp) {
 	        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
 	        Y = date.getFullYear() + '.';
@@ -110,9 +109,11 @@ margin-top: .5rem;" alt="">
 	        s = date.getSeconds();
 	        return Y+M+D+h+m;
     }
+
+    var params = common_params;
 		$.ajax({
 			url: api_url + 'coupon/index',
-            data:{app_type:'client'},
+            data: params,
             success: function (res) {
             	//var count = 0;
                 for (var i=0;i<res.content.length;i++) {
@@ -120,31 +121,32 @@ margin-top: .5rem;" alt="">
                 		//count++;
                 		var amount = res.content[i].amount;
 	                	var biz_id = res.content[i].biz_id;
-	                	var start_time = timestampToTime(res.content[i].time_start);
-	                	var end_time = timestampToTime(res.content[i].time_end);
+                        var order_id = res.content[i].order_id;
+	                	var start_time = date(res.content[i].time_start);
+	                	var end_time = date(res.content[i].time_end);
 	                	var rate = (100 - res.content[i].rate*100)/10 + '折';
 	                	var min_subtotal = res.content[i].min_subtotal;
-	                	var name = res.content[i].brief_name + ' ' + res.content[i].name;
+	                	var name = (res.content[i].brief_name || '平台通用') + ' ' + res.content[i].name;
 	                	var time_used = res.content[i].time_used;
 	                	var time_expire = res.content[i].time_expire;
-	                	if(!time_used && !time_expire){
+	                	if (!time_used && !time_expire){
 	                	if(res.content[i].amount == 0){
-                		var canuse = '<a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+                		var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#canusercoupon').append(canuse);  
                 	}
                 	else{
-                		 var canuse = '<a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+                		 var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#canusercoupon').append(canuse); 
                 	}
 	                	}
                 //此处填写已经使用过的优惠券
                 	if(time_used){
                 		if(res.content[i].amount == 0){
-                		var canuse = '<a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
+                		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#yiguoqi').append(canuse);  
                 	}
                 	else{
-                		 var canuse = '<a href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+                		 var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div> <!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#yiguoqi').append(canuse); 
                 	}
 					          		

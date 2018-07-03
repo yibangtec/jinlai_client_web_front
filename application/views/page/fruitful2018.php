@@ -141,7 +141,7 @@
             <li data-action=try>抽奖次数 <span data-name=chances>1</span>次</li>
 
             <!-- 分享 -->
-            <li data-action=share>点击右上角分享</li>
+            <li data-action=share>微信右上角分享</li>
         </ul>
 
         <div id=description>
@@ -173,75 +173,73 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '20点秒杀专场',
+        'title' => '10点秒杀专场',
 
-        // 070310
+        // 070410
+        'items' => array(
+            array(
+                'item_id' => '5692',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
+                'name' => '网红妖娆花',
+                'price' => '1',
+                'tag_price' => '69',
+            ),
+            array(
+                'item_id' => '5712',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
+                'name' => '3D猫咪墙贴',
+                'price' => '6',
+                'tag_price' => '14.9',
+            ),
+            array(
+                'item_id' => '5709',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
+                'name' => '6拼果切',
+                'price' => '24.9',
+                'tag_price' => '39.9',
+            ),
+            array(
+                'item_id' => '5710',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
+                'name' => '混合果盒8种水果装',
+                'price' => '49',
+                'tag_price' => '99',
+            ),
+        ),
+
+        // 070412
 //        'items' => array(
 //            array(
-//                'item_id' => '5692',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
-//                'name' => '网红妖娆花',
+//                'item_id' => '5716',
+//                'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
+//                'name' => '单身狗粮薯片 3包装',
 //                'price' => '1',
-//                'tag_price' => '69',
+//                'tag_price' => '29.9',
 //            ),
 //            array(
-//                'item_id' => '5712',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
-//                'name' => '3D猫咪墙贴',
-//                'price' => '6',
-//                'tag_price' => '14.9',
+//                'item_id' => '5714',
+//                'url_image_main' => '/media/fruitful2018/items/070312/0-2@2x.png',
+//                'name' => '进口猪饲料零食大礼包',
+//                'price' => '39.9',
+//                'tag_price' => '69.9',
 //            ),
 //            array(
-//                'item_id' => '5709',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
-//                'name' => '6拼果切',
-//                'price' => '24.9',
-//                'tag_price' => '39.9',
+//                'item_id' => '5725',
+//                'url_image_main' => '/media/fruitful2018/items/070312/0-3@2x.png',
+//                'name' => '抖音会动的兔子帽子',
+//                'price' => '29.9',
+//                'tag_price' => '49',
 //            ),
 //            array(
-//                'item_id' => '5710',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
-//                'name' => '混合果盒8种水果装',
-//                'price' => '49',
-//                'tag_price' => '99',
+//                'item_id' => '5726',
+//                'url_image_main' => '/media/fruitful2018/items/070312/0-4@2x.png',
+//                'name' => '北冰洋橙汁汽水6罐装',
+//                'price' => '29.9',
+//                'tag_price' => '36',
 //            ),
 //        ),
 
-/*
-        // 070312
-        'items' => array(
-            array(
-                'item_id' => '5716',
-                'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
-                'name' => '单身狗粮薯片 3包装',
-                'price' => '1',
-                'tag_price' => '29.9',
-            ),
-            array(
-                'item_id' => '5714',
-                'url_image_main' => '/media/fruitful2018/items/070312/0-2@2x.png',
-                'name' => '进口猪饲料零食大礼包',
-                'price' => '39.9',
-                'tag_price' => '69.9',
-            ),
-            array(
-                'item_id' => '5725',
-                'url_image_main' => '/media/fruitful2018/items/070312/0-3@2x.png',
-                'name' => '抖音会动的兔子帽子',
-                'price' => '29.9',
-                'tag_price' => '49',
-            ),
-            array(
-                'item_id' => '5726',
-                'url_image_main' => '/media/fruitful2018/items/070312/0-4@2x.png',
-                'name' => '北冰洋橙汁汽水6罐装',
-                'price' => '29.9',
-                'tag_price' => '36',
-            ),
-        ),
-*/
-
-        // 070314
+        // 070414
 //        'items' => array(
 //            array(
 //                'item_id' => '5730',
@@ -273,7 +271,7 @@
 //            ),
 //        ),
 
-        // 070316
+        // 070416
 //        'items' => array(
 //            array(
 //                'item_id' => '5712',
@@ -305,37 +303,37 @@
 //            ),
 //        ),
 
-        // 070320
-        'items' => array(
-            array(
-                'item_id' => '5736',
-                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
-                'name' => '旺旺小小酥（多口味）6袋装',
-                'price' => '1',
-                'tag_price' => '16.9',
-            ),
-            array(
-                'item_id' => '5729',
-                'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
-                'name' => '蜀道香麻辣牛肉',
-                'price' => '29.9',
-                'tag_price' => '49',
-            ),
-            array(
-                'item_id' => '5735',
-                'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
-                'name' => '张君雅小妹妹整箱零食15包645g',
-                'price' => '59',
-                'tag_price' => '89',
-            ),
-            array(
-                'item_id' => '5737',
-                'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
-                'name' => '泰国进口小老板海苔卷系列27g×3',
-                'price' => '25.9',
-                'tag_price' => '39.9',
-            ),
-        ),
+        // 070420
+//        'items' => array(
+//            array(
+//                'item_id' => '5736',
+//                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
+//                'name' => '旺旺小小酥（多口味）6袋装',
+//                'price' => '1',
+//                'tag_price' => '16.9',
+//            ),
+//            array(
+//                'item_id' => '5729',
+//                'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
+//                'name' => '蜀道香麻辣牛肉',
+//                'price' => '29.9',
+//                'tag_price' => '49',
+//            ),
+//            array(
+//                'item_id' => '5735',
+//                'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
+//                'name' => '张君雅小妹妹整箱零食15包645g',
+//                'price' => '59',
+//                'tag_price' => '89',
+//            ),
+//            array(
+//                'item_id' => '5737',
+//                'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
+//                'name' => '泰国进口小老板海苔卷系列27g×3',
+//                'price' => '25.9',
+//                'tag_price' => '39.9',
+//            ),
+//        ),
 
         'appended' => ''
     );
@@ -641,6 +639,11 @@
             $('[data-name=chances]').text(chance_count)
         })
 
+        <?php
+        // 以下功能仅微信中可用
+        if ($this->user_agent['is_wechat']):
+        ?>
+
         // 微信相关
         wx.ready(function(){
             <?php
@@ -683,6 +686,7 @@
             });
 
         })
+        <?php endif ?>
         // 点击分享，提示成功后可获取1次额外抽奖机会
         $('[data-action=share]').click(function(){
             alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
@@ -903,6 +907,4 @@
             // end 进行抽奖
         })
     });
-
-
 </script>
