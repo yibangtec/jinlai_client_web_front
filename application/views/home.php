@@ -497,7 +497,7 @@ body {background:#eaeaea;}
                     <!--add-->
                     <div class="addpic auto swiper-slide">
                         <a href="<?php echo base_url('biz/detail?id=146') ?>" target="_self">
-                            <img src="<?php echo CDN_URL ?>media/home/banner4.jpg">
+                            <img src="/media/banner/taobentao.jpg">
                         </a>
                     </div>
                     <!--<div class="addpic auto swiper-slide">
@@ -581,7 +581,7 @@ body {background:#eaeaea;}
                         <div class="swiper-wrapper">
                             <div class="swiper-slide advercube">
                                 <a href="<?php echo base_url('page/fruitful2018') ?>" target="_self">
-                                	<img data-src="/media/banner/fruits-.jpg">
+                                	<img data-src="/media/banner/plate.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
@@ -652,7 +652,7 @@ body {background:#eaeaea;}
 					<a href="<?php echo base_url('item/detail?id=4760') ?>" target="_self">
 					<div class="midright fl">
 						<img src="/media/fruit/dragon.jpg" class="success">
-						<h1>云南火龙果5斤装111</h1>
+						<h1>越南火龙果5斤装</h1>
 						<!--<h2>爱疯 爱疯 疯</h2>-->
 					</div>
 					</a>
@@ -1796,14 +1796,14 @@ body {background:#eaeaea;}
                 <div class="mid fl">
                     <a href="<?php echo base_url('item/detail?id=5683') ?>" target="_self">
                     <div class="midleft fr">
-                        <img src="/media/young/dragonchair.jpg" class="success">
+                        <img src="/media/young/hippochair.jpg" class="success">
                         <h1>创意实木脚凳恐龙小凳子 214.40元</h1>
                         <!--<h2>1309 我的MAC</h2>-->
                     </div>
                     </a>
                     <a href="<?php echo base_url('item/detail?id=5682') ?>" target="_self">
                     <div class="midright fl">
-                        <img src="/media/young/hippochair.jpg" class="success">
+                        <img src="/media/young/dragonchair.jpg" class="success">
                         <h1>实木脚凳创意河马换鞋凳 190.40元</h1>
                         <!--<h2>爱疯 爱疯 疯</h2>-->
                     </div>
@@ -2165,7 +2165,9 @@ body {background:#eaeaea;}
     <!--店家商品分类导航条-->
     <div class="shopTitle">
             <div class="shopback fl">
+            	<a href="https://www.517ybang.com">
                 <i class="icon-Back"></i>
+                </a>
             </div>
             <div class="shopSearch fl" style="background: transparent;">
                 <input type="search" placeholder="店内搜索" id="biz_search">
@@ -2215,7 +2217,7 @@ body {background:#eaeaea;}
         </ul>
     </div>
     <div class="shopindexlist wid710 mt10 clearfix">
-        <div class="content">
+        <div class="content" style="overflow: scroll;">
             <ul id="bizDetailList" class="lists"></ul>
         
     </div>
@@ -2390,14 +2392,21 @@ $('.itemIndexSearchInput').keydown(function(event){
 					// 商品详情页路径
 					var page_item_detail = base_url + 'item/detail?id=';
 					$('#itemIndexSearch').hide();
-					$(document.body).css({
-						   "overflow-x":"hidden",
-						   "overflow-y":"hidden"
-					});
+//					$(document.body,document.html).css({
+
+//						   "overflow-x":"hidden",
+
+//						   "overflow-y":"hidden"
+
+//					});
+					$('body,html').css({
+						'height':'100%',
+						'overflow' : 'hidden'
+					})
 					$.ajax({
 						url:api_item_index,
 						async:false,
-						data:{app_type:'client',limit:10,offset:0,name:$(this).val()},
+						data:{app_type:'client',limit:30,offset:0,name:$(this).val()},
 						success:function(res){
 						$('#bizDetailList').html('');
 			                var con = res.content;
