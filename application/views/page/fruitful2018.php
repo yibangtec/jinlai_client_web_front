@@ -50,6 +50,11 @@
      .lottery {position:relative;display:block;height:512px;}
     .lottery img {position:absolute;top:50%;left:50%;width:152px;margin-left:-76px;margin-top:-82px;cursor:pointer;}
 
+    /* 专享部分 */
+    #zhuanxiang {background:url('/media/fruitful2018/guanggao@2x.png') no-repeat center center;width:686px;height:302px;overflow:hidden;}
+        #zhuanxiang li {display:inline-block;float:left;width:33.33%;height:100%;}
+            #zhuanxiang a {display:block;width:100%;height:100%;}
+
     #actions {overflow:hidden;width:432px;margin:0 auto;padding:70px 0;}
         #actions li {background-color:#750cb3;float:left;display:inline-block;width:186px;height:70px;line-height:70px;margin-right:60px;border-radius:35px;}
             #actions li:last-child {color:#f9ed05;margin-right:0;}
@@ -168,36 +173,103 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '16点秒杀专场',
-        'vice-title' => '<p>16:00准时秒杀（秒杀及超超特价产品限量1份）</p>',
+        'title' => '14点秒杀专场',
+
+        // 070310
+//        'items' => array(
+//            array(
+//                'item_id' => '5692',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
+//                'name' => '网红妖娆花',
+//                'price' => '1',
+//                'tag_price' => '69',
+//            ),
+//            array(
+//                'item_id' => '5712',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
+//                'name' => '3D猫咪墙贴',
+//                'price' => '6',
+//                'tag_price' => '14.9',
+//            ),
+//            array(
+//                'item_id' => '5709',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
+//                'name' => '6拼果切',
+//                'price' => '24.9',
+//                'tag_price' => '39.9',
+//            ),
+//            array(
+//                'item_id' => '5710',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
+//                'name' => '混合果盒8种水果装',
+//                'price' => '49',
+//                'tag_price' => '99',
+//            ),
+//        ),
+
+/*
+        // 070312
         'items' => array(
             array(
                 'item_id' => '5716',
-                'url_image_main' => '/media/fruitful2018/items/063016/0-1@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
                 'name' => '单身狗粮薯片 3包装',
                 'price' => '1',
                 'tag_price' => '29.9',
             ),
             array(
                 'item_id' => '5714',
-                'url_image_main' => '/media/fruitful2018/items/063016/0-2@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-2@2x.png',
                 'name' => '进口猪饲料零食大礼包',
                 'price' => '39.9',
                 'tag_price' => '69.9',
             ),
             array(
                 'item_id' => '5725',
-                'url_image_main' => '/media/fruitful2018/items/063016/0-3@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-3@2x.png',
                 'name' => '抖音会动的兔子帽子',
                 'price' => '29.9',
                 'tag_price' => '49',
             ),
             array(
                 'item_id' => '5726',
-                'url_image_main' => '/media/fruitful2018/items/063016/0-4@2x.png',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-4@2x.png',
                 'name' => '北冰洋橙汁汽水6罐装',
                 'price' => '29.9',
                 'tag_price' => '36',
+            ),
+        ),
+*/
+
+        // 070314
+        'items' => array(
+            array(
+                'item_id' => '5730',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
+                'name' => '红糖糍粑5袋',
+                'price' => '29.9',
+                'tag_price' => '1',
+            ),
+            array(
+                'item_id' => '5727',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-2@2x.png',
+                'name' => '【周黑鸭】甜辣礼盒',
+                'price' => '39.9',
+                'tag_price' => '59',
+            ),
+            array(
+                'item_id' => '5728',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-3@2x.png',
+                'name' => '抖音零食大礼包',
+                'price' => '29.9',
+                'tag_price' => '49',
+            ),
+            array(
+                'item_id' => '5729',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-4@2x.png',
+                'name' => '蜀道香麻辣牛肉干',
+                'price' => '29.9',
+                'tag_price' => '49',
             ),
         ),
         'appended' => ''
@@ -242,7 +314,12 @@
                 'tag_price' => '99',
             ),
         ),
-        'appended' => '<a href="'.base_url('biz/detail?id=148').'"><img src="/media/fruitful2018/guanggao@2x.png"></a>'
+        'appended' =>
+        '<ul id=zhuanxiang>'.
+        '<li><a href="'. BASE_URL . 'item/detail?id=5663"></a></li>'.
+        '<li><a href="'. BASE_URL . 'item/detail?id=5645"></a></li>'.
+        '<li><a href="'. BASE_URL .'item/detail?id=5646"></a></li>'.
+        '</ul>'
     );
 
     $items[] = array(
@@ -403,7 +480,7 @@
                 'tag_price' => '199',
             ),
             array(
-                'item_id' => '4755',
+                'item_id' => '5651',
                 'url_image_main' => '/media/fruitful2018/items/4-9.png',
                 'name' => '精品油桃3斤（2盒）',
                 'price' => '35',
@@ -566,7 +643,7 @@
                 item.appended +
                 '   </div>' +
                 '</div>';
-            //console.log(dom);
+            console.log(dom);
 
             return dom;
         } // end generate_dom

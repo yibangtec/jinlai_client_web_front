@@ -56,6 +56,21 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
   	left: 50%;
   	margin-left: -1rem;
   }
+  #cartsuccess{
+  	position: fixed;
+  	bottom: 15%;
+  	margin-top: -.2rem;
+  	width: 2rem;
+  	height: .8rem;
+  	background: rgba(0,0,0,.5);
+  	color: #fff;
+  	border-radius: .15rem;
+  	line-height: .8rem;
+  	font-size: .24rem;
+  	text-align: center;
+  	left: 50%;
+  	margin-left: -1rem;
+  }
 </style>
 
 <script>
@@ -411,13 +426,13 @@ wx.ready(function(){
     <?php endif ?>
 
 	<div class="particularstag wid710 auto">
-		<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle">
+		<!--<img src="<?php echo CDN_URL ?>media/item/detail/jinlaiyoushi@3x.png" class="pictitle">-->
 		<!--特色介绍-->
-		<div class="featurescard clearfix mt10">
+		<!--<div class="featurescard clearfix mt10">
 			<img src="<?php echo CDN_URL ?>media/item/detail/quanchenglenglian@3x.png">
 			<img src="<?php echo CDN_URL ?>media/item/detail/3xiaoshisongda@3x.png">
 			<img src="<?php echo CDN_URL ?>media/item/detail/tousuchuli@3x.png">
-		</div>
+		</div>-->
 
 		<!--猜你喜欢区域-->
         <!--
@@ -504,9 +519,9 @@ wx.ready(function(){
 			endif;
 		?>
 		<li>
-			<a id=cart-add class="btn btn-info btn-lg btn-block" title="加入购物车" href="<?php echo base_url('cart/add?biz_id='.$item['biz_id'].'&item_id='.$item['item_id']) ?>">
+			<i id=cart-add class="btn btn-info btn-lg btn-block" title="加入购物车" href="###">
 				加入<wbr>购物车
-			</a>
+			</i>
 		</li>
 
 		<li>
@@ -519,11 +534,7 @@ wx.ready(function(){
                     if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
                         $item_status = '商品还未上架';
                     elseif ($item['time_to_publish'] > time()):
-                        if (date('Ymd') == date('Ymd', $item['time_to_publish'])):
-                            $item_status = date('H:i', $item['time_to_publish']).'开售';
-                        else:
-                            $item_status = date('y-m-d', $item['time_to_publish']).'开售';
-                        endif;
+                        $item_status = date('Y-m-d H:i').'开售';
                     endif;
 
                 elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
@@ -560,6 +571,7 @@ wx.ready(function(){
 	</ul>
 </nav>
 <span id="tip" style="display: none;">收藏成功</span>
+<span id="cartsuccess" style="display: none;">添加成功</span>
 <script>
 	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
 	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
@@ -642,4 +654,172 @@ wx.ready(function(){
 		}
 		
 	});
+	//添加进购物车
+	
+	var offset = $("#end").offset();
+
+		var endLeft = $("#end").css("left");
+
+		var oldcar,
+
+			user_id,
+
+			item_id,
+
+			arrCur;
+	$('#cart-add').click(function(){
+		var url = window.location.search; 
+// alert(url.length); 
+// alert(url.lastIndexOf('=')); 
+var loc = url.substring(url.lastIndexOf('=')+1, url.length); 
+		debugger;
+		var r = loc;
+
+			oldcar = r;
+
+			var count=1;
+
+			var addCartTime;
+
+			var oldShopList = [];
+
+			var countflag = 0;
+				if(user_agent.is_wechat){
+
+					var addcar = $(this);
+
+					var user_id = <?php echo $this->session->user_id ?>;
+
+					$.ajax({
+
+			        url: 'https://api.517ybang.com/cart/index',
+
+			        type: 'post',
+
+			        dataType: "json",
+
+			        cache: false,
+
+			        timeout: 10000,
+
+			        async: false,
+
+			        data : {app_type:'client',user_id:user_id},
+
+			        error: function(date){
+
+					alert(date);
+
+			        },
+
+			        success : function(data){
+
+			        	item_id = data.content.order_items;
+
+			        }
+
+		     });
+
+		      for (var i = 0;i < item_id.length;i++) {
+
+				for (var j = 0;j < item_id[i].order_items.length;j++) {
+
+					//var oldShopList = '1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count;
+
+					if(oldcar == item_id[i].order_items[j].item_id){
+
+						count = item_id[i].order_items[j].count;
+
+						if(countflag == 0){
+
+							count++;
+
+							countflag = 1;
+
+						}
+
+					}
+
+					else{
+
+						oldShopList.push('1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count);
+
+					}
+
+				}				
+
+	        	}
+
+	        arrCur = oldShopList.join(",");
+
+			var img = addcar.parent().find('img').attr('src');
+
+			var flyer = $('<img class="u-flyer" src="'+img+'">');
+
+			flyer.fly({
+
+				start: {
+
+					left: addcar.offset().left - $(document).scrollLeft(),
+
+					top: addcar.offset().top - $(document).scrollTop()
+
+				},
+
+				end: {
+
+					left:parseInt(endLeft),
+
+					top: 0,
+
+					width: 0,
+
+					height: 0
+
+				},
+
+				onEnd: function(){
+
+					$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+
+					addcar.css("cursor","default").removeClass('orange');
+
+					this.destory();
+
+				}
+
+			});
+
+			    var shopInfo = '1|' + oldcar + '|0|' + count + ',' + arrCur;
+
+			    //上传接口
+
+			    $.ajax({
+			    	type:"post",
+			    	url:"https://api.517ybang.com/cart/sync_up",
+
+			    	dataType:'json',
+
+			    	async : false,
+
+			    	data:{app_type:'client',id:user_id,name:'cart_string',value:shopInfo},
+
+			    	success:function(res){
+
+			    		console.log(res);
+
+			    		clearTimeout(addCartTime);
+
+					    addCartTime = setTimeout(function(){
+
+							$('#cartsuccess').show().delay(1000).fadeOut();
+
+					    },1000);
+
+			    	}
+			    });
+
+			}
+	})
+	
 </script>
