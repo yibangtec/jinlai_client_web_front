@@ -131,7 +131,6 @@ $(function(){
 
 		//生成section
 
-		console.log(items);
 		for(var key in items){
 			if(items[key].level == 1)
 			{
@@ -172,7 +171,7 @@ $(function(){
 
                  for (var i=0;i<arr.length;i++)
                  {
-                    //console.log( arr[i].name)
+                    console.log( arr[i].url_image);
                      // 生成小标题DOM
                     var goodsListContent = '<h5><p><a href="<?php echo base_url('item/index?category_id=') ?>'+ items[key].category_id +'"><i>—  </i>'+items[key].name+'<i>  —</i></a></p></h5>';
                     var html = ''
@@ -182,20 +181,24 @@ $(function(){
                     for (var key in items)
                  	{
                  		// 分类ID
-                 	    console.log(arr[i].category_id);
+                 	   // console.log(arr[i].category_id);
                         //console.log(items[key].parent_id);
 
                         if (arr[i].category_id == items[key].parent_id)
                         {
-                            console.log(items[key].parent_id);
-                            html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
+                           // console.log(items[key].parent_id);
+                            html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>';
+                            current_children_count ++;
                         }
-                        current_children_count ++
+                        
                     }
 
                     if (current_children_count == 0)
-                    {
-                        // TODO 生成二级分类形象图链接
+                    {	
+                    	console.log(arr[i].category_id);
+                    	html+='<a href="https://www.517ybang.com/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
+                    	goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+                        
                     } else {
                         goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                     }
@@ -214,16 +217,6 @@ $(function(){
     $('.menu-left').find('li').last().remove();
 
 
-    function getScrollTop(){
-            $('.menu-right').bind("scroll", function () {  
-                var sTop = $(this).scrollTop();  
-
-                var sTop = parseInt(sTop);   
-			HostApp.topScrollY(sTop + '');
-		
-            });  
-    }
-    getScrollTop();
 });
 
 
