@@ -151,44 +151,61 @@ $(function(){
 		}
 
 	$('#sidebar li').click(function(){
-			$('section').eq(num - 1).scrollTop(0);
-			$('section').eq(num - 1).find('.category_wrap').html(' ');
-			num = $(this).index() + 1;
-			$(this).addClass('active').siblings('li').removeClass('active');
-			$('.j-content').eq(num - 1).show().siblings('.j-content').hide();
-			//获取点击li后的商品分类总id
-			var category_id = items[num - 1].category_id;
-		for(var key in items){
+        $('section').eq(num - 1).scrollTop(0);
+        $('section').eq(num - 1).find('.category_wrap').html(' ');
+        num = $(this).index() + 1;
+        $(this).addClass('active').siblings('li').removeClass('active');
+        $('.j-content').eq(num - 1).show().siblings('.j-content').hide();
+
+        //获取点击li后的商品分类总id
+        var category_id = items[num - 1].category_id;
+
+		for(var key in items)
+		{
             // 2级的parentID = 1级的categoryID
 			if (items[key].parent_id == category_id)
 			{
-
+                // 当前level=2的商品分类
                 var arr = []
                  arr.push(items[key]);
-                 console.log(items[key]);
+                 //console.log(items[key]);
+
                  for (var i=0;i<arr.length;i++)
                  {
-                 		//console.log( arr[i].name)
-                 		var goodsListContent = '<h5><p><a href="<?php echo base_url('item/index?category_id=') ?>'+ items[key].category_id +'"><i>—  </i>'+items[key].name+'<i>  —</i></a></p></h5>';
-						var html = ''
+                    //console.log( arr[i].name)
+                     // 生成小标题DOM
+                    var goodsListContent = '<h5><p><a href="<?php echo base_url('item/index?category_id=') ?>'+ items[key].category_id +'"><i>—  </i>'+items[key].name+'<i>  —</i></a></p></h5>';
+                    var html = ''
 
-                 	for (var key in items)
+                 	// 生成level=3的商品分类DOM
+                     var current_children_count = 0;
+                    for (var key in items)
                  	{
-                 			console.log(arr[i].category_id);
-							//console.log(items[key].parent_id);
-                            if (arr[i].category_id == items[key].parent_id)
-                            {
-                            	console.log(items[key].parent_id);
-								html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
-                            }
+                 		// 分类ID
+                 	    console.log(arr[i].category_id);
+                        //console.log(items[key].parent_id);
+
+                        if (arr[i].category_id == items[key].parent_id)
+                        {
+                            console.log(items[key].parent_id);
+                            html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>'
+                        }
+                        current_children_count ++
                     }
-                    goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+
+                    if (current_children_count == 0)
+                    {
+                        // TODO 生成二级分类形象图链接
+                    } else {
+                        goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+                    }
 
 					//console.log(goodsListContent);
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
                  }
 			}
 		}
+
 	});
 
 	

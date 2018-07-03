@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '14点秒杀专场',
+        'title' => '16点秒杀专场',
 
         // 070310
 //        'items' => array(
@@ -242,36 +242,69 @@
 */
 
         // 070314
+//        'items' => array(
+//            array(
+//                'item_id' => '5730',
+//                'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
+//                'name' => '红糖糍粑5袋',
+//                'price' => '29.9',
+//                'tag_price' => '1',
+//            ),
+//            array(
+//                'item_id' => '5727',
+//                'url_image_main' => '/media/fruitful2018/items/070314/0-2@2x.png',
+//                'name' => '【周黑鸭】甜辣礼盒',
+//                'price' => '39.9',
+//                'tag_price' => '59',
+//            ),
+//            array(
+//                'item_id' => '5728',
+//                'url_image_main' => '/media/fruitful2018/items/070314/0-3@2x.png',
+//                'name' => '抖音零食大礼包',
+//                'price' => '29.9',
+//                'tag_price' => '49',
+//            ),
+//            array(
+//                'item_id' => '5729',
+//                'url_image_main' => '/media/fruitful2018/items/070314/0-4@2x.png',
+//                'name' => '蜀道香麻辣牛肉干',
+//                'price' => '29.9',
+//                'tag_price' => '49',
+//            ),
+//        ),
+
+        // 070316
         'items' => array(
             array(
-                'item_id' => '5730',
-                'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
-                'name' => '红糖糍粑5袋',
-                'price' => '29.9',
-                'tag_price' => '1',
+                'item_id' => '5712',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
+                'name' => '3D猫咪墙贴',
+                'price' => '1',
+                'tag_price' => '29',
             ),
             array(
-                'item_id' => '5727',
-                'url_image_main' => '/media/fruitful2018/items/070314/0-2@2x.png',
-                'name' => '【周黑鸭】甜辣礼盒',
-                'price' => '39.9',
-                'tag_price' => '59',
+                'item_id' => '5731',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
+                'name' => '实木创意凳儿童凳',
+                'price' => '268',
+                'tag_price' => '398',
             ),
             array(
-                'item_id' => '5728',
-                'url_image_main' => '/media/fruitful2018/items/070314/0-3@2x.png',
-                'name' => '抖音零食大礼包',
-                'price' => '29.9',
-                'tag_price' => '49',
+                'item_id' => '5732',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
+                'name' => '儿童益智4/6/9九宫格玩具',
+                'price' => '29',
+                'tag_price' => '69',
             ),
             array(
-                'item_id' => '5729',
-                'url_image_main' => '/media/fruitful2018/items/070314/0-4@2x.png',
-                'name' => '蜀道香麻辣牛肉干',
-                'price' => '29.9',
-                'tag_price' => '49',
+                'item_id' => '5733',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
+                'name' => '迪士尼亲子互动吸盘球',
+                'price' => '9.9',
+                'tag_price' => '29',
             ),
         ),
+
         'appended' => ''
     );
 
