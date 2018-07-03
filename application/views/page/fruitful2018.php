@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '12点秒杀专场',
+        'title' => '14点秒杀专场',
 
         // 070310
 //        'items' => array(
@@ -207,7 +207,7 @@
 //            ),
 //        ),
 
-
+/*
         // 070312
         'items' => array(
             array(
@@ -239,10 +239,9 @@
                 'tag_price' => '36',
             ),
         ),
-
+*/
 
         // 070314
-        /*
         'items' => array(
             array(
                 'item_id' => '5730',
@@ -273,7 +272,6 @@
                 'tag_price' => '49',
             ),
         ),
-        */
         'appended' => ''
     );
 
