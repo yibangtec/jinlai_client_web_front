@@ -147,6 +147,11 @@ input.goodsCheck:checked{
 				$('.touch').eq(i).append(itemList);
 			}
 		}
+		if($('.item .my-address-list').length == 0){
+			var oSpan = '<img src="https://cdn-remote.517ybang.com/media/home/nocart.png" style="width:4rem;margin:0 auto;margin-top:2rem;display:block;"><span style="display:block;font-size:.26rem;width:100%;text-align:center;color:#3e3a39;padding-top:.4rem">亲,您的购物车里什么都没有......</span><a href="https://www.517ybang.com" target="_self" style="display: block;width: 1.5rem;height: .5rem;border: 1px solid #f6964a;margin: .3rem auto;font-size: .26rem;text-align: center;line-height: .5rem;color: #f6964a;border-radius: .1rem;">去逛逛叭</a>'
+			$('.item').append(oSpan);
+			$('.payment-bar').hide();
+		};
 		$(".minus").click(function() {
 		var t = $(this).parent().find(".num");
 		t.text(parseInt(t.text()) - 1);
@@ -313,6 +318,7 @@ input.goodsCheck:checked{
 		$(this).addClass("selected");
 		$(this).removeClass("unselected");
 		$(this).find("a.remove").on("click", function() {
+		
 			//删除购物车
 			var delCartHref = $(this).siblings('.goodslist').find('.shop-info-text').find('a').attr('href');
 			var delCartText = $(this).siblings('.goodslist').find('.shop-arithmetic').text();
@@ -364,8 +370,13 @@ input.goodsCheck:checked{
 	});
 	}
 
-})
-	})
+});
+		
+	});
+
+
+	
+	
 	
 </script>
 
