@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '16点秒杀专场',
+        'title' => '20点秒杀专场',
 
         // 070310
 //        'items' => array(
@@ -274,34 +274,66 @@
 //        ),
 
         // 070316
+//        'items' => array(
+//            array(
+//                'item_id' => '5712',
+//                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
+//                'name' => '3D猫咪墙贴',
+//                'price' => '1',
+//                'tag_price' => '29',
+//            ),
+//            array(
+//                'item_id' => '5731',
+//                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
+//                'name' => '实木创意凳儿童凳',
+//                'price' => '268',
+//                'tag_price' => '398',
+//            ),
+//            array(
+//                'item_id' => '5732',
+//                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
+//                'name' => '儿童益智4/6/9九宫格玩具',
+//                'price' => '29',
+//                'tag_price' => '69',
+//            ),
+//            array(
+//                'item_id' => '5733',
+//                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
+//                'name' => '迪士尼亲子互动吸盘球',
+//                'price' => '9.9',
+//                'tag_price' => '29',
+//            ),
+//        ),
+
+        // 070320
         'items' => array(
             array(
-                'item_id' => '5712',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
-                'name' => '3D猫咪墙贴',
+                'item_id' => '5736',
+                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
+                'name' => '旺旺小小酥（多口味）6袋装',
                 'price' => '1',
-                'tag_price' => '29',
+                'tag_price' => '16.9',
             ),
             array(
-                'item_id' => '5731',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
-                'name' => '实木创意凳儿童凳',
-                'price' => '268',
-                'tag_price' => '398',
+                'item_id' => '5729',
+                'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
+                'name' => '蜀道香麻辣牛肉',
+                'price' => '29.9',
+                'tag_price' => '49',
             ),
             array(
-                'item_id' => '5732',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
-                'name' => '儿童益智4/6/9九宫格玩具',
-                'price' => '29',
-                'tag_price' => '69',
+                'item_id' => '5735',
+                'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
+                'name' => '张君雅小妹妹整箱零食15包645g',
+                'price' => '59',
+                'tag_price' => '89',
             ),
             array(
-                'item_id' => '5733',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
-                'name' => '迪士尼亲子互动吸盘球',
-                'price' => '9.9',
-                'tag_price' => '29',
+                'item_id' => '5737',
+                'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
+                'name' => '泰国进口小老板海苔卷系列27g×3',
+                'price' => '25.9',
+                'tag_price' => '39.9',
             ),
         ),
 
