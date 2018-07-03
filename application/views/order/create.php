@@ -30,8 +30,6 @@
             display: block;
             font-size: 0.26rem;
             margin: 0 0.2rem 1rem 0.2rem;
-            background-color: #fff;
-            border-radius: 0.15rem;
         }
         .left-float{
             float: left;
@@ -213,7 +211,9 @@
             <input name=cart_string type=hidden>
             <input name=note_user type=hidden>
         </form>
+        <div style="padding-bottom:1.4rem; width:100%"></div>
     </div>
+
 
 <script>
     var default_address_id = '<?php echo $this->session->address_id ?>' // 默认收货地址ID
@@ -309,7 +309,7 @@
             if(order_data[i].coupon_name == null){
                  couponNameStyle = 'display:none;';
             };
-            var bizNameHtml = '<a href="<?php echo base_url('biz/detail') . "?&id='+order_data[i].biz_id+'" ?>" class="item-title clearfix">'+
+            var bizNameHtml = '<div style="margin-top:0.15rem;background:#fff;border-radius:0.15rem;"><a href="<?php echo base_url('biz/detail') . "?&id='+order_data[i].biz_id+'" ?>" class="item-title clearfix">'+
                                  '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+order_data[i].biz_name+'</span></div>'+
                                  '<div class="title-right right-float"><i class="icon-Arrow"></i></div>'+
                               '</a>';
@@ -326,7 +326,7 @@
                          '</div>'+
                          '<div class="total">'+
                              '<span>共'+order_data.length+'件商品</span>合计：<span>¥ '+order_data[i].subtotal+'</span>(含运费¥ 0.00)'+
-                         '</div>';
+                         '</div></div>';
             var orderItemHtml = '';
             for (var j in order_items)
             {

@@ -97,7 +97,7 @@
             var statusHtml = '';
             var status = items[key].status;
             if(status == '已评价'){
-                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
+                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><a href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
             }else if(status == '已关闭'){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
@@ -420,7 +420,7 @@
                                             var statusHtml = '';
                                             var status = items[key].status;
                                             if(status == '已评价'){
-                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><a href="'+base_url + 'comment_item/index?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
+                                                statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span>申请售后</span><a href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
                                             }else if(status == '已关闭'){
                                                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
                                             }

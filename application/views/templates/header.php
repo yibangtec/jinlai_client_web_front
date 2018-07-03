@@ -153,9 +153,9 @@
                 var date = {
                     "M+": this.getMonth() + 1,
                     "d+": this.getDate(),
-                    "h+": this.getHours() > 10? this.getHours(): '0'+this.getHours(), // 补足两位数字，下同
-                    "m+": this.getMinutes() > 10? this.getMinutes(): '0'+this.getMinutes(),
-                    "s+": this.getSeconds() > 10? this.getSeconds(): '0'+this.getSeconds(),
+                    "h+": this.getHours() > 9? this.getHours(): '0'+this.getHours(), // 补足两位数字，下同
+                    "m+": this.getMinutes() > 9? this.getMinutes(): '0'+this.getMinutes(),
+                    "s+": this.getSeconds() > 9? this.getSeconds(): '0'+this.getSeconds(),
                     "q+": Math.floor((this.getMonth() + 3) / 3),
                     "S+": this.getMilliseconds()
                 };

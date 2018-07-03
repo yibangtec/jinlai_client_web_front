@@ -79,7 +79,7 @@
         </div>
     </div>
 </div>
-<div class="box" style="margin-bottom:1rem;">
+<div class="box" style="margin-bottom:1.6rem;">
     <div class="line"></div>
     <div class="detail-header">
         <div class="detail-type1 status1">
@@ -188,6 +188,7 @@
         <!-- 退单相关信息 -->
         <li data-name=time_refund>退单时间<span></span></li>
     </ul>
+    <div style="padding-bottom:1rem; width:100%"></div>
 
     <!--待付款-->
     <div class="detail-operation status4" data-action-group="待付款">
@@ -216,7 +217,7 @@
         <a class="del-btn" data-action=delete href="#">删除</a>
         <a class="refundBtn" data-action=refund href="#">申请售后</a>
         <a class="again" href="#">再来一单</a>
-        <a class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment href="#">写评价</a>
+        <a href="<?php echo base_url('comment_item/create') ?>" class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment >写评价</a>
     </div>
     <!--已评价-->
     <div class="detail-operation status2" data-action-group="已评价">
@@ -247,6 +248,14 @@
         var meta = <?php echo json_encode($meta) ?>;
         console.log(meta)
         var orderItems = item.order_items;
+        function save(cp_value){
+            var num = new Object;
+            num.cp_keynum ="baseInfo";
+            num.cp_num_value = cp_value;
+            var str = JSON.stringify(num); // 将对象转换为字符串
+            localStorage.setItem(num.cp_keynum,str);
+            console.log(str);
+        }
         $('body').on('click','.refundBtn',function(){
             if(true){
                  if(confirm("网页版退款功能即将开放，现阶段您可通过AppStore下载进来商城应用申请退款"))
@@ -256,13 +265,10 @@
              }
         });
         $('body').on('click','.pingjia',function(){
-                    if(true){
-                         if(confirm("网页版评价功能即将开放，现阶段您可通过AppStore下载进来商城应用写评价"))
-                          {
 
-                          }
-                     }
-                });
+           save(item);
+
+        });
         $('.again').on('click',function(){
             var cart_string = ''; // CSV格式，商家ID|商品ID|SKU_ID(若无SKU则写0)|商品数量
 
@@ -404,7 +410,11 @@
              for(var key in meta){
                 if(meta[key].name == 'time_confirm_to_comment'){
                     console.log(meta[key].value);
-                    time = sec_to_time(meta[key].value);
+                    var timestamp = Math.round(new Date().getTime()/1000).toString();
+                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
+                    time = sec_to_time(timestamp-temp);
+                    console.log(time);
+
                 }
              }
              $('.status1').css('display','block');
@@ -422,7 +432,10 @@
              for(var key in meta){
                 if(meta[key].name == 'time_pay_to_deliver'){
                     console.log(meta[key].value);
-                    time = sec_to_time(meta[key].value);
+                    var timestamp = Math.round(new Date().getTime()/1000).toString();
+                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
+                    time = sec_to_time(timestamp-temp);
+                    console.log(time);
                 }
              }
              $('.status3').css('display','block');
@@ -435,7 +448,10 @@
              for(var key in meta){
                 if(meta[key].name == 'time_created_to_expire'){
                     console.log(meta[key].value);
-                    time = sec_to_time(meta[key].value);
+                    var timestamp = Math.round(new Date().getTime()/1000).toString();
+                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
+                    time = sec_to_time(timestamp-temp);
+                    console.log(time);
                 }
              }
              $('.status4').css('display','block');
@@ -448,7 +464,10 @@
              for(var key in meta){
                 if(meta[key].name == 'time_deliver_to_confirm'){
                     console.log(meta[key].value);
-                    time = sec_to_time(meta[key].value);
+                    var timestamp = Math.round(new Date().getTime()/1000).toString();
+                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
+                    time = sec_to_time(timestamp-temp);
+                    console.log(time);
                 }
              }
              $('.status5').css('display','block');
@@ -532,9 +551,9 @@
         if (item.time_deliver > 0)
         {
             $('[data-name=time_deliver] span').html(date(item.time_deliver));
-            $('[data-name=deliver_method] span').html(item.deliver_method);
-            $('[data-name=deliver_biz] span').html(item.deliver_biz);
-            $('[data-name=waybill_id] span').html(item.waybill_id);
+            $('[data-name=deliver_method] span').html(date(item.deliver_method));
+            $('[data-name=deliver_biz] span').html(date(item.deliver_biz));
+            $('[data-name=waybill_id] span').html(date(item.waybill_id));
         }
         else
         {
@@ -559,6 +578,14 @@
              var item_image_url = (reg.test(item.item_image) === true)? item.item_image: media_url+'item/'+item.item_image;
 
             // 生成订单商品信息
+            var timePay = item.time_pay
+                if(timePay!==''){
+                    timePay = '<a class="refundBtn" >退款</a>';
+                }else{
+                    timePay = '';
+                }
+
+
              var order_item = '<div class="item-detail clearfix">'+
                             '<a href="' + base_url + 'item/detal?id=' + item.item_id + '">' +
                             '<div class="item-left left-float"><img src="'+item_image_url+'"></div>'+
@@ -572,7 +599,7 @@
                                  '<p class="cont-indent">&times; '+ item.count +'</p>'+
                             '</div>'+
                             '</a>' +
-                            (refund_base_url == ''? '': '<div class="item-operation"><a class="refundBtn" >退款</a></div>') +
+                            (refund_base_url == ''? '': '<div class="item-operation">'+ timePay +'</div>') +
 
                        '</div>';
                        //href="'+ refund_base_url+item.record_id +'"   tuikuan
@@ -580,6 +607,16 @@
              $('#orderList').append(order_item);
          }
 
+         function timestampToTime(timestamp) {
+                 var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+                 Y = date.getFullYear() + '-';
+                 M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                 D = date.getDate() + ' ';
+                 h = date.getHours() + ':';
+                 m = date.getMinutes() + ':';
+                 s = date.getSeconds();
+                 return Y+M+D+h+m+s;
+             }
 
          function sec_to_time(second_time) {
                  var time = parseInt(second_time) + "秒";
