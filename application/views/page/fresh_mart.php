@@ -497,7 +497,7 @@
             <h2 class="text-left">德发香肠，开袋即食，传承经典厨艺，传世德国美味！</h2>
             <h3 class="text-left">￥26.00/斤</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>

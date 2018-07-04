@@ -337,7 +337,7 @@
        
         
         <li>
-        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=5081" target="_self" data-id="5081">
+        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=4934" target="_self" data-id="4934">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/142957.jpg">
             <h1 class="text-left">美的面包机 ESC1510</h1>
             <h2 class="text-left">自动撒果料&酵母</h2>
@@ -496,7 +496,7 @@
            <h2 class="text-left">限购一台</h2>
             <h3 class="text-left">￥209.00/台</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>

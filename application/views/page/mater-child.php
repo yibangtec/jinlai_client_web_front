@@ -409,7 +409,7 @@
     <ul>
     	
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=5348" data-id="5348" class="freshshopid">
+        	 <a href="https://www.517ybang.com/item/detail?id=5090" data-id="5090" class="freshshopid">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/170615.jpg">
             <h1 class="text-left">Oright学饮杯儿童吸管杯婴儿防漏防呛6-18个月幼儿园宝宝防摔水杯</h1>
             	<h2 class="text-left">重力球设计 可躺喝 防漏防呛</h2>
@@ -485,7 +485,7 @@
            <h2 class="text-left">声光互动 环保材质 易画易擦</h2>
             <h3 class="text-left">￥109.00/台</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>

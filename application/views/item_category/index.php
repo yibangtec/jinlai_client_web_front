@@ -50,10 +50,10 @@ background:#f7f7f7;
 	<div class="con">
   <aside>
     <div class="menu-left scrollbar-none bgfff" id="sidebar">
-    	<ul>
+    	<ul id="cateLeft">
     	<?php
         foreach ($items as $item):
-            if ($item['level'] == 1) echo '<li>'.$item['name'].'</li>';
+            if ($item['level'] == 1) echo '<li>'.$item['name'].'<span style="display:none;">'.$item['category_id'].'</span></li>';
         endforeach;
         ?>
        </ul>
@@ -123,14 +123,21 @@ background:#f7f7f7;
 
 <script>
 $(function(){
-
+	
 	var num;
-
+	
 	// <?php echo $this->class_name_cn ?>数据
 	var items = <?php echo json_encode($items); ?>;
 
 		//生成section
-
+		for(var i = 0; i < $('#cateLeft li').length;i++){
+			if($('#cateLeft li').eq(i).find('span').text() == 136){
+				$('#cateLeft li').eq(i).remove();
+				var oSX = '<li>生鲜超市<span style="display:none;">136</span></li>';
+				$('#cateLeft').prepend(oSX);
+			};
+		}
+		
 		for(var key in items){
 			if(items[key].level == 1)
 			{
@@ -157,8 +164,9 @@ $(function(){
         $('.j-content').eq(num - 1).show().siblings('.j-content').hide();
 
         //获取点击li后的商品分类总id
-        var category_id = items[num - 1].category_id;
+        var category_id = $(this).find('span').text();
 
+		//console.log(category_id);
 		for(var key in items)
 		{
             // 2级的parentID = 1级的categoryID
@@ -171,7 +179,7 @@ $(function(){
 
                  for (var i=0;i<arr.length;i++)
                  {
-                    console.log( arr[i].url_image);
+                    //console.log( arr[i].url_image);
                      // 生成小标题DOM
                     var goodsListContent = '<h5><p><a href="<?php echo base_url('item/index?category_id=') ?>'+ items[key].category_id +'"><i>—  </i>'+items[key].name+'<i>  —</i></a></p></h5>';
                     var html = ''
@@ -195,7 +203,7 @@ $(function(){
 
                     if (current_children_count == 0)
                     {	
-                    	console.log(arr[i].category_id);
+                    	//console.log(arr[i].category_id);
                     	html+='<a href="https://www.517ybang.com/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
                     	goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                         

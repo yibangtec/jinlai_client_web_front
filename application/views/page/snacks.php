@@ -253,7 +253,7 @@
             </div>
 			</div>
         </div>
-         <a href="https://www.517ybang.com/item/detail?id=5568" data-id="5568" class="freshshopid">
+         <a href="https://www.517ybang.com/item/detail?id=4904" data-id="4904" class="freshshopid">
         <div class="goodpic auto">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/140948.jpg">
         </div>
@@ -361,7 +361,7 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=5491" data-id="5491" class="freshshopid">
+        	<a href="https://www.517ybang.com/item/detail?id=5368" data-id="5368" class="freshshopid">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/103917.jpg">
             <h1 class="text-left">科尔沁风干牛肉 休闲零食礼盒 806g</h1>
            <!-- <h2 class="text-left">限购1台</h2>-->
@@ -486,7 +486,7 @@
            <!-- <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>-->
             <h3 class="text-left">￥59.90/箱</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>
