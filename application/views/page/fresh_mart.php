@@ -209,25 +209,25 @@
 </div>-->
 <div class="fruiteContent wid710 auto mt10 border20 bgfff clearfix">
     <ul class="clearfix">
-    	<a href="https://www.517ybang.com/item/detail?id=4579">
+    	<a href="https://www.517ybang.com/item/detail?id=4066">
         <li>
             <div class="pic">
-                <img src="http://www.ybslux.com/uploadfiles/images/A1841/ba15cf6a-257d-4298-9e3d-a246bc4ee9a3.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images/A1499/5790a2e4-2891-4453-80f2-97eb6be1540c.jpg">
             </div>
-            <h1>蟹香鱼柳 250g/份</h1>
-            <h2>￥35.00/份</h2>
+            <h1>禧美海产加拿大野生北极甜虾带籽熟冻80-100头/kg 1.5kg/份</h1>
+            <h2>￥158.00/份</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=4555">
+        <a href="https://www.517ybang.com/item/detail?id=3995">
         <li>
             <div class="pic">
-                <img src="http://www.ybslux.com/uploadfiles/images//d6387752-2db1-4c03-a674-b8e8c9b10137.jpg">
+                <img src="http://www.ybslux.com/uploadfiles/images//24fe8f46-3b35-451e-87c5-86fb7fa1376a.jpg">
             </div>
-            <h1>青岛农家菜花 500g/份</h1>
-            <h2>￥7.80/份</h2>
+            <h1>天然有机尖椒 500g/份</h1>
+            <h2>￥8.80/份</h2>
         </li>
         </a>
-        <a href="https://www.517ybang.com/item/detail?id=4049">
+        <a href="https://www.517ybang.com/item/detail?id=4294">
         <li>
             <div class="pic">
                 <img src="http://www.ybslux.com/uploadfiles/images/A2482/07a59cc0-189e-4ed5-a0e2-cb72e92fc2f0.jpg">
@@ -264,13 +264,13 @@
             </div>
 			</div>
         </div>
-         <a href="https://www.517ybang.com/item/detail?id=4536" data-id="4536" class="freshshopid">
+         <a href="https://www.517ybang.com/item/detail?id=3994" data-id="3994" class="freshshopid">
         <div class="goodpic auto">
-            <img src="http://www.ybslux.com/uploadfiles/images//87f1327c-a898-4763-b8cc-c09a745b30b1.jpg">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1073/64a8ad80-909e-4ca2-9059-70fcb324a78a.jpg">
         </div>
         <h1>进来秒杀</h1>
-        <h2>青岛农家鲜平菇  500g/份</h2>
-        <b class="atonce price_market">10.8/份</b>
+        <h2>天然有机西红柿 500g/份</h2>
+        <b class="atonce price_market">7.8/份</b>
          </a>
         	<div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -280,11 +280,11 @@
     </div>
     <div class="experience_two fl">
         <div class="card_one ml0">
-        	    	<a href="https://www.517ybang.com/item/detail?id=4525" data-id='4525' class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images//0c7ca0ab-aa19-4cd4-8559-8c70985e6216.jpg" class="fl">
+        	    	<a href="https://www.517ybang.com/item/detail?id=4525" data-id='3974' class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images//d3ff3019-93df-4487-bc94-80742224aa51.jpg" class="fl">
             <h1 class="mt10">在线秒杀</h1>
-            <h2>优选鸡翅中  500g/份</h2>
-            <b class="atonce atonce_r price_market">28.80/斤</b>
+            <h2>鲜活牡蛎(海蛎子)  500g/份</h2>
+            <b class="atonce atonce_r price_market">12.00/份</b>
             <div class="lowerprice">
                 <span>89%</span>
                 <span>discount</span>
@@ -296,11 +296,11 @@
         </div>
         
         <div class="card_one mt10 ml0">
-        	   <a href="https://www.517ybang.com/item/detail?id=4567" data-id="4567" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1138/f213fb00-a285-442d-b01e-4444dbc9ce2b.jpg" class="fl">
+        	   <a href="https://www.517ybang.com/item/detail?id=4018" data-id="4018" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1144/979c6fea-19b3-4814-8df4-9b352d71cb8f.jpg" class="fl">
             <h1 class="mt10">进来热销</h1>
-            <h2>青岛鲳鱼 4条/份（100-125g/条）</h2>
-            <b class="atonce atonce_r price_market">39.60/斤</b>
+            <h2>青岛鲜活辣螺 500g/份</h2>
+            <b class="atonce atonce_r price_market">35.80/份</b>
             <div class="lowerprice">
                 <span>20%</span>
                 <span>discount</span>
@@ -324,11 +324,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4573" class="freshshopid" target="_self" data-id="4007">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1544/9d4e936c-171c-42f0-9f4b-700a4224b81a.jpg">
-            <h1 class="text-left">大金发野猪腌制烧烤肉 0.5kg/份</h1>
-            <h2 class="text-left">（冷冻肉，3日内发货）精选原料，天然生态，肉质鲜美，绝色天香</h2>
-            <h3 class="text-left">￥88.00/份</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=3870" class="freshshopid" target="_self" data-id="3870">
+            <img src="http://www.ybslux.com/uploadfiles/images//106efa6a-c1fa-47b8-b391-43f9e924e5c0.jpg">
+            <h1 class="text-left">特级猪外脊切片  500g/份</h1>
+            <h2 class="text-left">富含蛋白质、钙、铁等营养价值，滋补气血</h2>
+            <h3 class="text-left">￥21.80/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -372,11 +372,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=4561" data-id="4561" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1796/cccb9b1a-b864-407c-8ed0-f7ec949d14d4.jpg">
-            <h1 class="text-left">北极贝 10只装 100g/份</h1>
-            <h2 class="text-left">不当刺身太浪费，船冻保鲜，超大个头</h2>
-            <h3 class="text-left">￥28.00/份</h3>
+        	<a href="https://www.517ybang.com/item/detail?id=3935" data-id="3935" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images//63faa896-cda9-4082-9c08-da34794ac482.jpg">
+            <h1 class="text-left">特级猪腰子  400-450g/个</h1>
+            <h2 class="text-left">富含蛋白质、淡水化物，可健肾补腰，和肾理气</h2>
+            <h3 class="text-left">￥26.80/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -385,11 +385,11 @@
         
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4586" data-id="4586" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1798/32981ebb-4090-427c-96dd-fdfb3172854b.jpg">
-            <h1 class="text-left">带籽甜虾   冷冻生鲜 500克/份</h1>
-            <h2 class="text-left">满籽北极虾，野生进口，捕捞后立即熟冻，只需简单冲洗就可以食用</h2>
-            <h3 class="text-left">￥38.00/份</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4138" data-id="4138" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1939/d02000bf-adce-43bc-9c4c-ecb50c032bfc.jpg">
+            <h1 class="text-left">北极甜虾 30尾/份</h1>
+            <h2 class="text-left">日料刺身，去壳甜虾，特有的咸鲜口味，入口回味无穷</h2>
+            <h3 class="text-left">￥26.80/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -420,11 +420,11 @@
     <ul>
     	
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4479" data-id="4479" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1086/90820a9f-df80-4c7e-a051-bd0aed4f06da.jpg">
-            <h1 class="text-left">天然有机芋头 500g/份</h1>
-            <h2 class="text-left">绿色栽培，无任何化学物质，软糯香甜，颗颗饱满</h2>
-            <h3 class="text-left">￥10.80/份</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=4027" data-id="4027" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1209/87b18cfd-ba2c-40be-8128-c107788c2a93.jpg">
+            <h1 class="text-left">城阳木耳菜 500g/份</h1>
+            <h2 class="text-left">叶片肥厚，清鲜爽口，脆嫩清新，营养丰富</h2>
+            <h3 class="text-left">￥6.88/份</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -446,11 +446,11 @@
         
        
         <li class="mr0">
-        	  <a href="https://www.517ybang.com/item/detail?id=4554" data-id="4554" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A0785/2b62f542-2336-4345-87e9-1513a86b78f2.jpg">
-            <h1 class="text-left">青岛鲜活海肠  500g/份</h1>
-            <h2 class="text-left">具有温补肝肾、壮阳固精的作用</h2>
-            <h3 class="text-left">￥35.80/份</h3>
+        	  <a href="https://www.517ybang.com/item/detail?id=4056" data-id="4056" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1435/0bf9bc22-194c-426e-bf99-0bb45ae519d6.jpg">
+            <h1 class="text-left">青岛鲜活鲍鱼  4只/份 （40-50g每只）</h1>
+            <h2 class="text-left">富含多种营养元素，可健脑补身，提高免疫力</h2>
+            <h3 class="text-left">￥42.80/份</h3>
              </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -480,17 +480,17 @@
         </li>
        
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=4569" data-id="4569" class="freshshopid">
-            <img src="http://www.ybslux.com/uploadfiles/images/A1909/15bd0307-7acf-465e-b389-0b5220f823a8.jpg">
-            <h1 class="text-left">德发早餐培根切片 200g</h1>
-            <h2 class="text-left">德发香肠，开袋即食，传承经典厨艺，传世德国美味！</h2>
-            <h3 class="text-left">￥24.00/斤</h3>
+        	 <a href="https://www.517ybang.com/item/detail?id=3996" data-id="3996" class="freshshopid">
+            <img src="http://www.ybslux.com/uploadfiles/images/A1076/2818a962-9629-484c-b0ea-408352c7c00b.jpg">
+            <h1 class="text-left">天然有机茄子 500g/份</h1>
+            <h2 class="text-left">绿色栽培，无任何化学物质，果实圆润饱满，口感清甜</h2>
+            <h3 class="text-left">￥11.80/斤</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>
-        <a href="https://www.517ybang.com/item/detail?id=4570" data-id="4570" class="freshshopid">
+        <a href="https://www.517ybang.com/item/detail?id=4471" data-id="4471" class="freshshopid">
         <li class="mr0">
             <img src="http://www.ybslux.com/uploadfiles/images//dc5c7aad-0fd0-4431-87cd-faa0da5fd382.jpg">
             <h1 class="text-left">德发奶酪香肠 140g</h1>
