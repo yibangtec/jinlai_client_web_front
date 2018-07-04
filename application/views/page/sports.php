@@ -254,13 +254,13 @@
             </div>
 			</div>
         </div>
-         <a href="https://www.517ybang.com/item/detail?id=4097" data-id="4097" class="freshshopid">
+         <a href="https://www.517ybang.com/item/detail?id=161" data-id="161" class="freshshopid">
         <div class="goodpic auto">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/182013.jpg">
+            <img src="https://medias.517ybang.com/item/image_main/201712/1214/131841.jpg">
         </div>
         <h1>进来秒杀</h1>
-        <h2>户外防晒衣长袖皮肤风衣  男款 彩蓝 M-2XL</h2>
-        <b class="atonce price_market">79.00/件</b>
+        <h2>直升机婚礼</h2>
+        <b class="atonce price_market">38880/场</b>
          </a>
         	<div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -270,11 +270,11 @@
     </div>
     <div class="experience_two fl">
         <div class="card_one ml0">
-        	    	<a href="https://www.517ybang.com/item/detail?id=4355" data-id='4355' class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/182307.jpg" class="fl">
+        	    	<a href="https://www.517ybang.com/item/detail?id=5147" data-id='5147' class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/181852.jpg" class="fl">
             <h1 class="mt10">在线秒杀</h1>
-            <h2>探路者背包 20升超轻背包ZEBG80106 黑色印花</h2>
-            <b class="atonce atonce_r price_market">83.40/件</b>
+            <h2>彪马2018新款男女运动帽棒球帽 黑色 052919-01</h2>
+            <b class="atonce atonce_r price_market">79.00/件</b>
             <div class="lowerprice">
                 <span>89%</span>
                 <span>discount</span>
@@ -286,11 +286,11 @@
         </div>
         
         <div class="card_one mt10 ml0">
-        	   <a href="https://www.517ybang.com/item/detail?id=4024" data-id="4024" class="freshshopid">
-            <img src="<?php echo CDN_URL ?>media/home/jianqie.jpg" class="fl">
+        	   <a href="https://www.517ybang.com/item/detail?id=5031" data-id="5031" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/161936.jpg" class="fl">
             <h1 class="mt10">进来热销</h1>
-            <h2>进口绿果</h2>
-            <b class="atonce atonce_r price_market">19.80/斤</b>
+            <h2>户外可拼接带枕自动充气垫便携睡垫午休垫双人防潮垫</h2>
+            <b class="atonce atonce_r price_market">69.90/个</b>
             <div class="lowerprice">
                 <span>20%</span>
                 <span>discount</span>
@@ -362,11 +362,11 @@
     <ul>
     	
         <li>
-        	<a href="https://www.517ybang.com/item/detail?id=5046" data-id="5046" class="freshshopid">
-            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/162820.jpg">
-            <h1 class="text-left">新基础黑L-xxxl 李宁运动短裤男士训练系列薄款运动裤</h1>
+        	<a href="https://www.517ybang.com/item/detail?id=5052" data-id="5052" class="freshshopid">
+            <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/163151.jpg">
+            <h1 class="text-left">ugo瑜伽垫印花包时尚瑜伽包收纳袋健身专用包5mm便携包</h1>
             <!--<h2 class="text-left">帮助消化、降低胆固醇</h2>-->
-            <h3 class="text-left">￥58.00/件</h3>
+            <h3 class="text-left">￥38.00/件</h3>
             </a>
             <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
@@ -410,7 +410,7 @@
     <ul>
     	
         <li>
-        	 <a href="https://www.517ybang.com/item/detail?id=3848" data-id="3848" class="freshshopid">
+        	 <a href="https://www.517ybang.com/item/detail?id=5005" data-id="5005" class="freshshopid">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/160216.jpg">
             <h1 class="text-left">法国伯希和户外帽子夏季轻薄防紫外线渔夫帽遮阳骑行</h1>
             <!--<h2 class="text-left">法国伯希和户外帽子夏季轻薄防紫外线渔夫帽遮阳骑行</h2>-->
@@ -487,7 +487,7 @@
            <!-- <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>-->
             <h3 class="text-left">￥99.00/件</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>

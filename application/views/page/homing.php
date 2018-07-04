@@ -410,7 +410,7 @@
        
         
         <li class="mr0">
-        	<a href="https://www.517ybang.com/item/detail?id=5010" data-id="5010" class="freshshopid">
+        	<a href="https://www.517ybang.com/item/detail?id=4770" data-id="4770" class="freshshopid">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0627/101209.jpg">
             <h1 class="text-left">居家家 透明塑料密封罐奶粉罐食品罐子</h1>
             <h2 class="text-left">厨房五谷杂粮收纳盒储物罐</h2>
@@ -509,7 +509,7 @@
            <h2 class="text-left">创意彩绘本</h2>
             <h3 class="text-left">￥19.9/本</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>

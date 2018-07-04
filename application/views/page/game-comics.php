@@ -422,7 +422,7 @@
         
       
         <li>
-        	  <a href="https://www.517ybang.com/item/detail?id=5031" data-id="5030" class="freshshopid">
+        	  <a href="https://www.517ybang.com/item/detail?id=5624" data-id="5624" class="freshshopid">
             <img src="https://medias.517ybang.com/item/url_image_main/201806/0628/212027.jpg">
             <h1 class="text-left">奥迪双钻 火力少年王6悠悠球新品电动加速</h1>
             <h2 class="text-left">悠悠球混沌魔龙</h2>
@@ -486,7 +486,7 @@
            <!-- <h2 class="text-left">富含碳水化合物等营养元素，可滋阴润燥</h2>-->
             <h3 class="text-left">￥286.00/件</h3>
             </a>
-            <div class="market_buycar ">
+            <div class="market_buycar addcar">
                 <i class="icon-buy"></i>
             </div>
         </li>
