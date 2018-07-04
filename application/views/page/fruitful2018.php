@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '14点秒杀专场',
+        'title' => '16点秒杀专场',
 
         // 070410
         /*'items' => array(
@@ -240,7 +240,7 @@
         ),*/
 
         // 070414
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5730',
                 'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
@@ -269,39 +269,39 @@
                 'price' => '29.9',
                 'tag_price' => '49',
             ),
-        ),
+        ),*/
 
         // 070416
-//        'items' => array(
-//            array(
-//                'item_id' => '5712',
-//                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
-//                'name' => '3D猫咪墙贴',
-//                'price' => '1',
-//                'tag_price' => '29',
-//            ),
-//            array(
-//                'item_id' => '5731',
-//                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
-//                'name' => '实木创意凳儿童凳',
-//                'price' => '268',
-//                'tag_price' => '398',
-//            ),
-//            array(
-//                'item_id' => '5732',
-//                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
-//                'name' => '儿童益智4/6/9九宫格玩具',
-//                'price' => '29',
-//                'tag_price' => '69',
-//            ),
-//            array(
-//                'item_id' => '5733',
-//                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
-//                'name' => '迪士尼亲子互动吸盘球',
-//                'price' => '9.9',
-//                'tag_price' => '29',
-//            ),
-//        ),
+        'items' => array(
+            array(
+                'item_id' => '5712',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
+                'name' => '3D猫咪墙贴',
+                'price' => '1',
+                'tag_price' => '29',
+            ),
+            array(
+                'item_id' => '5731',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
+                'name' => '实木创意凳儿童凳',
+                'price' => '268',
+                'tag_price' => '398',
+            ),
+            array(
+                'item_id' => '5732',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
+                'name' => '儿童益智4/6/9九宫格玩具',
+                'price' => '29',
+                'tag_price' => '69',
+            ),
+            array(
+                'item_id' => '5733',
+                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
+                'name' => '迪士尼亲子互动吸盘球',
+                'price' => '9.9',
+                'tag_price' => '29',
+            ),
+        ),
 
         // 070420
 //        'items' => array(

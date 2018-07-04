@@ -3,7 +3,18 @@
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/order.css">
-
+<style>
+.item-operation a{
+        display: inline-block;
+        width: 1.2rem;
+        height: 0.54rem;
+        text-align: center;
+        line-height: 0.5rem;
+        margin: 0.5rem 0.2rem 0 0;
+        border: 0.02rem solid #9fa0a0;
+        border-radius: 0.27rem;
+        color:#3e3a39;}
+</style>
 <div class="tips">
     <div class="delete">
         <p>确认删除？</p>

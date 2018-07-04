@@ -17,7 +17,8 @@
             border-radius: 50%;
             overflow: hidden;
             background-color: #ccc;
-             box-shadow: 0 0 0.16rem rgba(0,0,0,.5);
+            box-shadow: 0 0 0.16rem rgba(0,0,0,.5);
+            position: relative;
         }
         .header-img:before{
             content: '';
@@ -29,31 +30,31 @@
             max-width: 100%;
             max-height: 100%;
         }
+        .inputBtn{
+        	height: 1.46rem;
+            width: 1.46rem;
+            display:block;
+            opacity:0;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+		.selectedSex{
+         	flex:1;font-size:0.28rem;color:#3e3a39;
+         }
+         .item-status{
+         	margin:0 0.3rem;
+         }
+         .item-status i {padding:0 0.2rem}
+        .icon-xuanzhong:before{
+        	color:#ff3649;
+        	font-size:0.35rem;
+        }
+        .icon-un-selected{
+         	color:#3e3a39;
+         	font-size:0.35rem;
+        }
 
-        .editMyPic .box .file-uploader {position: absolute;
-                                                 left: 50%;background-color:rgba(0,0,0,0);
-                                                 margin-left: -0.73rem;
-                                                 top: 0;}
-        .editMyPic .box .selector_zone {width:1.45rem;height:1.45rem;display:inline-block;position:relative; box-sizing:border-box;overflow:hidden;background-color:rgba(0,0,0,0);}
-        .editMyPic .box input[type=file] {overflow:hidden;display:inline-block;background-color:rgba(0,0,0,0);display:none;}
-        .editMyPic .box .file_selector{display:none;box-sizing:border-box;color:#ff3649;background-color:rgba(0,0,0,0);text-align:center;width:100%;height:100%;line-height:1.45rem;;border:none;border-radius:0.12rem;display:inline-block;position:absolute;top:0;left:0;}
-		.editMyPic .box .file_selector svg{display:none}
-        .editMyPic .box .upload_preview {clear:both;}
-        .editMyPic .box .upload_preview li {background-color:#ddd;position:relative;width:1.45rem;;height:1.45rem;;margin-right:0.1rem;border-radius:0.12rem;padding:0;display:inline-block;float:left;overflow:hidden;}
-        .editMyPic .box .upload_preview li:nth-child(4n+0) {margin-right:0;}
-
-        .editMyPic .box .upload_preview figure {width:100%;height:100%;display:flex;justify-content:center;align-items:center}
-        .editMyPic .box .upload_preview figure img{width:1.45rem;height:1.45rem;}
-        .editMyPic .box .upload_preview .adjuster {color:#fff;font-size:0.2rem;text-align:center;background-color:rgba(0,0,0,0);width:26%;height:0.3rem;line-height:0.3rem;cursor:pointer;position:absolute;bottom:0;z-index:100;}
-        .editMyPic .box .adjuster:not(.remove) {padding:0.15rem}
-        .editMyPic .box .upload_preview .remove {background-color:#ff3649;width:0.3rem;height:0.3rem;line-height:0.3rem;border-radius:0.15rem;right:0;top:0.6rem;}
-        .editMyPic .box .upload_preview .left {left:0;}
-        .editMyPic .box .upload_preview .right {right:0;}
-        .editMyPic .box .upload_preview li:not(:last-child) .left:after {content:"";background-color:rgba(255,255,255,0);width:0.01rem;height:0.16rem;position:absolute;left:0.76rem;bottom:0.17rem;z-index:101;}
-        .editMyPic .box .upload_preview li:first-child .right, .upload_preview li:last-child .left {width:75%;left:0;right:0;}
-        .editMyPic .box .upload_preview li:first-child .left, .upload_preview li:last-child .right {display:none;}
-
-        .editMyPic .box button.file-upload {display:none;}
 
 	</style>
 	<base href="<?php echo $this->media_root ?>">
@@ -74,14 +75,9 @@
 		<!--编辑个人信息上传头像区域-->
 		<div class="editMyPic wid710 auto">
 			<div class="block auto header-img" style="background: url('<?php echo $url_avatar; ?>') no-repeat center; background-size: cover;">
-				<div class="box" style="position: relative; width:100%;height:1.45rem;">
-                				<?php
-                                require_once(VIEWS_PATH. 'templates/file-uploader.php');
-                                $name_to_upload = 'image_urls';
-                                generate_html($name_to_upload, $this->class_name, FALSE);
-                                ?>
-                            </div>
+				<input type="file" class="inputBtn"/>
 			</div>
+
 
 
 			<p>点击修改头像</p>
@@ -114,14 +110,10 @@
 				</div>
 				<div style="display:flex;">
 					<label for="" style="width:1.13rem;">性别</label>
-					<p class="changeSex man">
-                    	<input type="checkbox" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
+					<p class="selectedSex">
+                    	<span data-value="男" class="item-status"><i class="icon-xuanzhong"></i>男</span>
+                        <span data-value="女" class="item-status"><i class="icon-un-selected"></i>女</span>
                     </p>
-                    <p class="changeSex woman">
-                    	<input type="checkbox" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
-                    </p>
-
-
 				</div>
 				<div>
 					<label for="" class="fl">出生日期</label>
@@ -145,12 +137,27 @@
 				'onClose':function(){/*取消时触发事件*/
 				}
 			});
-			/*<p style="flex:1;">
-            	<span>男</span><span>女</span>
-            </p>*/
+			/*<p class="changeSex man">
+                                	<input type="checkbox" <?php echo $item['gender'] == '男' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">男</span>
+                                </p>
+                                <p class="changeSex woman">
+                                	<input type="checkbox" <?php echo $item['gender'] == '女' ? 'checked' : '';?> style="margin-left: 0;left: 0;" name="sex" class="check goods-check"><span style="margin-left: 0.6rem">女</span>
+                                </p>*/
+
 			$(function(){
 				var item = <?php echo json_encode($item,true) ?>;
-				console.log(item);
+            				console.log(item);
+				var statusItem = item.gender;
+				$("#startTime").focus(function(){
+                   document.activeElement.blur();
+               });
+				$('.item-status').on('click',function(e){
+            		$('.item-status').children('i').addClass('icon-un-selected').removeClass('icon-xuanzhong');
+            		$(this).children('i').addClass('icon-xuanzhong').removeClass('icon-un-selected');
+            		statusItem = $(this).attr('data-value');
+            		console.log(statusItem);
+            	});
+
 			});
 
 		</script>

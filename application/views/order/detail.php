@@ -30,7 +30,16 @@
         margin: 0.5rem 0.2rem 0 0;
         border: 0.02rem solid #9fa0a0;
         border-radius: 0.27rem;
-        color:#3e3a39;
+        color:#3e3a39;}
+    .order-parameter{
+        margin: 0.1rem 0.2rem 0 0.2rem;
+        background-color: #fff;
+        font-size: 0.24rem;
+        color: #666464;
+        border-radius: 0.15rem;
+        padding: 0.2rem 0.2rem 0.3rem 0.2rem;
+
+    }
 
     .detail-btn a{
         color:#3e3a39;
@@ -199,6 +208,7 @@
         <!-- 退单相关信息 -->
         <li data-name=time_refund>退单时间<span></span></li>
     </ul>
+    <div style="padding-bottom:1.2rem;width:100%;"></div>
 
     <!--待付款-->
     <div class="detail-operation status4" data-action-group="待付款">
