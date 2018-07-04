@@ -173,9 +173,9 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '16点秒杀专场',
+        'title' => '20点秒杀专场',
 
-        // 070310
+        // 070410
 //        'items' => array(
 //            array(
 //                'item_id' => '5692',
@@ -208,7 +208,7 @@
 //        ),
 
 /*
-        // 070312
+        // 070412
         'items' => array(
             array(
                 'item_id' => '5716',
@@ -277,7 +277,7 @@
         ),*/
 
         // 070416
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5712',
                 'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
@@ -306,39 +306,39 @@
                 'price' => '9.9',
                 'tag_price' => '29',
             ),
-        ),
+        ),*/
 
         // 070420
-//        'items' => array(
-//            array(
-//                'item_id' => '5736',
-//                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
-//                'name' => '旺旺小小酥（多口味）6袋装',
-//                'price' => '1',
-//                'tag_price' => '16.9',
-//            ),
-//            array(
-//                'item_id' => '5729',
-//                'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
-//                'name' => '蜀道香麻辣牛肉',
-//                'price' => '29.9',
-//                'tag_price' => '49',
-//            ),
-//            array(
-//                'item_id' => '5735',
-//                'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
-//                'name' => '张君雅小妹妹整箱零食15包645g',
-//                'price' => '59',
-//                'tag_price' => '89',
-//            ),
-//            array(
-//                'item_id' => '5737',
-//                'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
-//                'name' => '泰国进口小老板海苔卷系列27g×3',
-//                'price' => '25.9',
-//                'tag_price' => '39.9',
-//            ),
-//        ),
+       'items' => array(
+           array(
+               'item_id' => '5736',
+               'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
+               'name' => '旺旺小小酥（多口味）6袋装',
+               'price' => '1',
+               'tag_price' => '16.9',
+           ),
+           array(
+               'item_id' => '5729',
+               'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
+               'name' => '蜀道香麻辣牛肉',
+               'price' => '29.9',
+               'tag_price' => '49',
+           ),
+           array(
+               'item_id' => '5735',
+               'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
+               'name' => '张君雅小妹妹整箱零食15包645g',
+               'price' => '59',
+               'tag_price' => '89',
+           ),
+           array(
+               'item_id' => '5737',
+               'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
+               'name' => '泰国进口小老板海苔卷系列27g×3',
+               'price' => '25.9',
+               'tag_price' => '39.9',
+           ),
+        ),
 
         'appended' => ''
     );

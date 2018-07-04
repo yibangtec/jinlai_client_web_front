@@ -116,6 +116,7 @@ $(function(){
         });*/
 
         $('.operation-del').click(function(){
+            var that =$(this);
             var ID = $(this).attr('data-id');
             params.operation = 'delete';
             params.ids = ID;
@@ -127,10 +128,11 @@ $(function(){
                    params,
                    function(result)
                    {
+
                        console.log(result); // 输出回调数据到控制台
                        if (result.status == 200)
                        {
-                         $(this).parents(".address-list").remove();
+                         location.reload();
                        } else {
                           alert(result.content.error.message);
                        }
