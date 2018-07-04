@@ -141,7 +141,7 @@
             <li data-action=try>抽奖次数 <span data-name=chances>1</span>次</li>
 
             <!-- 分享 -->
-            <li data-action=share>微信右上角分享</li>
+            <li data-action=share>点击右上角分享</li>
         </ul>
 
         <div id=description>
@@ -175,40 +175,41 @@
     $items[] = array(
         'title' => '16点秒杀专场',
 
-        // 070410
-        /*'items' => array(
-            array(
-                'item_id' => '5692',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
-                'name' => '网红妖娆花',
-                'price' => '1',
-                'tag_price' => '69',
-            ),
-            array(
-                'item_id' => '5712',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
-                'name' => '3D猫咪墙贴',
-                'price' => '6',
-                'tag_price' => '14.9',
-            ),
-            array(
-                'item_id' => '5709',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
-                'name' => '6拼果切',
-                'price' => '24.9',
-                'tag_price' => '39.9',
-            ),
-            array(
-                'item_id' => '5710',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
-                'name' => '混合果盒8种水果装',
-                'price' => '49',
-                'tag_price' => '99',
-            ),
-        ),*/
+        // 070310
+//        'items' => array(
+//            array(
+//                'item_id' => '5692',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
+//                'name' => '网红妖娆花',
+//                'price' => '1',
+//                'tag_price' => '69',
+//            ),
+//            array(
+//                'item_id' => '5712',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
+//                'name' => '3D猫咪墙贴',
+//                'price' => '6',
+//                'tag_price' => '14.9',
+//            ),
+//            array(
+//                'item_id' => '5709',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
+//                'name' => '6拼果切',
+//                'price' => '24.9',
+//                'tag_price' => '39.9',
+//            ),
+//            array(
+//                'item_id' => '5710',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
+//                'name' => '混合果盒8种水果装',
+//                'price' => '49',
+//                'tag_price' => '99',
+//            ),
+//        ),
 
-        // 070412
-        /*'items' => array(
+/*
+        // 070312
+        'items' => array(
             array(
                 'item_id' => '5716',
                 'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
@@ -237,10 +238,13 @@
                 'price' => '29.9',
                 'tag_price' => '36',
             ),
-        ),*/
+        ),
+*/
+
 
         // 070414
         /*'items' => array(
+
             array(
                 'item_id' => '5730',
                 'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
@@ -269,6 +273,7 @@
                 'price' => '29.9',
                 'tag_price' => '49',
             ),
+
         ),*/
 
         // 070416
@@ -349,17 +354,17 @@
                 'tag_price' => '29.9',
             ),
             array(
-                'item_id' => '4816',
+                'item_id' => '4389',
                 'url_image_main' => '/media/fruitful2018/items/1-2.png',
-                'name' => '阳山水蜜桃4只装',
-                'price' => '29.8',
-                'tag_price' => '38.9',
+                'name' => '桃本桃-玫瑰公主',
+                'price' => '178',
+                'tag_price' => '298',
             ),
             array(
-                'item_id' => '5638',
-                'url_image_main' => '/media/fruitful2018/items/1-3.png',
-                'name' => '泰国金枕头榴莲4斤装',
-                'price' => '65',
+                'item_id' => '5639',
+                'url_image_main' => 'https://cdn-remote.517ybang.com/media/home/jz.png',
+                'name' => '泰国榴莲4.5-5.5斤装',
+                'price' => '79',
                 'tag_price' => '98',
             ),
             array(
@@ -445,10 +450,10 @@
         'title' => '全球精品',
         'items' => array(
             array(
-                'item_id' => '5639',
-                'url_image_main' => '/media/fruitful2018/items/3-1.png',
+                'item_id' => '5638',
+                'url_image_main' => 'https://cdn-remote.517ybang.com/media/home/ll65.png',
                 'name' => '泰国榴莲4.5-5.5斤装',
-                'price' => '79',
+                'price' => '65',
                 'tag_price' => '158',
             ),
             array(
@@ -639,11 +644,6 @@
             $('[data-name=chances]').text(chance_count)
         })
 
-        <?php
-        // 以下功能仅微信中可用
-        if ($this->user_agent['is_wechat']):
-        ?>
-
         // 微信相关
         wx.ready(function(){
             <?php
@@ -686,7 +686,6 @@
             });
 
         })
-        <?php endif ?>
         // 点击分享，提示成功后可获取1次额外抽奖机会
         $('[data-action=share]').click(function(){
             alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
@@ -907,4 +906,6 @@
             // end 进行抽奖
         })
     });
+
+
 </script>

@@ -92,8 +92,8 @@
                 	<img src="<?php echo CDN_URL ?>media/page/ssyl/ssyl1.jpg">
                 </a>
             </div>
-            <!--<div class="swiper-slide">
-                <img src="<?php echo CDN_URL ?>media/page/ssyl/ssyl2.jpg">
+            <!--<div class="swiper-slide">
+                <img src="<?php echo CDN_URL ?>media/page/ssyl/ssyl2.jpg">
             </div>-->
            
           
@@ -104,85 +104,85 @@
 </div>
 
 <!--培训分类区域开始-->
-<!--<div class="classification auto">
-    <div class="swiper-container5">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/tuijian1@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaBlue"></i>
-            <div class="move">
-                <span class="titletext">时尚丽人</span>
-                <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
-            <div class="downarrow arrBlue"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuiguo@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaYellow"></i>
-            <div class="move">
-            <span class="titletext">休闲娱乐</span>
-            <span class="smalltitle smallcolor_two">FRUITES</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
-            <div class="downarrow arrYellow"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shucai@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaYellow"></i>
-            <div class="move">
-            <span class="titletext">教育培训</span>
-            <span class="smalltitle smallcolor_two">VEGETABLE</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
-            <div class="downarrow arrYellow"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/rou@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaRed"></i>
-            <div class="move">
-                <span class="titletext">运动健康</span>
-                <span class="smalltitle smallcolor_one">MEAT</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
-            <div class="downarrow arrRed"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuichan@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaBlue"></i>
-            <div class="move">
-            <span class="titletext">美食饮品</span>
-            <span class="smalltitle smallcolor_four">THE AQUATIC</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuichan@3x.png">
-            <div class="downarrow arrBlue"></div>
-        </div>
-         <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shangchao@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaPink"></i>
-            <div class="move">
-            <span class="titletext">美容美发</span>
-            <span class="smalltitle smallcolor_four">BUSSIBES</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
-            <div class="downarrow arrPink"></div>
-        </div>
-     <div class="swiper-scrollbar"></div>
-    </div>
-</div>
-
+<!--<div class="classification auto">
+    <div class="swiper-container5">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/tuijian1@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaBlue"></i>
+            <div class="move">
+                <span class="titletext">时尚丽人</span>
+                <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
+            <div class="downarrow arrBlue"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuiguo@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaYellow"></i>
+            <div class="move">
+            <span class="titletext">休闲娱乐</span>
+            <span class="smalltitle smallcolor_two">FRUITES</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
+            <div class="downarrow arrYellow"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shucai@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaYellow"></i>
+            <div class="move">
+            <span class="titletext">教育培训</span>
+            <span class="smalltitle smallcolor_two">VEGETABLE</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
+            <div class="downarrow arrYellow"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/rou@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaRed"></i>
+            <div class="move">
+                <span class="titletext">运动健康</span>
+                <span class="smalltitle smallcolor_one">MEAT</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
+            <div class="downarrow arrRed"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuichan@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaBlue"></i>
+            <div class="move">
+            <span class="titletext">美食饮品</span>
+            <span class="smalltitle smallcolor_four">THE AQUATIC</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuichan@3x.png">
+            <div class="downarrow arrBlue"></div>
+        </div>
+         <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shangchao@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaPink"></i>
+            <div class="move">
+            <span class="titletext">美容美发</span>
+            <span class="smalltitle smallcolor_four">BUSSIBES</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
+            <div class="downarrow arrPink"></div>
+        </div>
+     <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
 </div>-->
 <!--水果、蔬菜、肉类等分类内容承载的容器-->
 <div class="fresh_mart_contentwrap">
@@ -245,13 +245,13 @@
 </div>
 <!--tab切换区域开始-->
 	
-	<!--<div class="tab">
-		<a class="active" href="javascript:;">
-			全部
-			<i class="icon-xiajiantou"></i>
-		</a>
-		<a href="javascript:;">人气优先</a>
-		<a href="javascript:;">距离优先</a>
+	<!--<div class="tab">
+		<a class="active" href="javascript:;">
+			全部
+			<i class="icon-xiajiantou"></i>
+		</a>
+		<a href="javascript:;">人气优先</a>
+		<a href="javascript:;">距离优先</a>
 	</div>-->
 	<div class="swiper-container6" style="display: none;">
 		<div class="swiper-wrapper w">
