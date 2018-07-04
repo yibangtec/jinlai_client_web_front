@@ -528,24 +528,28 @@ wx.ready(function(){
             <?php
                 $item_status = '';
                 if ( ! empty($item['time_delete']) ):
-                    $item_status = '商品已经下架啦~';
+                    $item_status = '已下架';
 
                 elseif ( empty($item['time_publish']) ):
                     if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
-                        $item_status = '商品还未上架';
+                        $item_status = '未上架';
                     elseif ($item['time_to_publish'] > time()):
-                        $item_status = date('Y-m-d H:i').'开售';
+                        if (date('ymd') == date('ymd', $item['time_to_publish'])):
+                            $item_status = date('H:i', $item['time_to_publish']).' 开售';
+                        else:
+                            $item_status = date('m-d', $item['time_to_publish']).' 开售';
+                        endif;
                     endif;
 
                 elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
                     if (empty($item['skus'])):
-                        $item_status = '商品已经被抢光了~';
+                        $item_status = '抢光了';
                     else:
                         $sku_stocks_overall = 0;
                         foreach ($sku as $item['skus']):
                             $sku_stocks_overall += $sku['stocks'];
                         endforeach;
-                        if ($sku_stocks_overall == 0) $item_status = '商品已经被抢光了~';
+                        if ($sku_stocks_overall == 0) $item_status = '抢光了';
                     endif;
 
                 endif;
@@ -596,25 +600,21 @@ wx.ready(function(){
 	var item = <?php echo $item_in_json ?>;
 	var record_id;
 	$.ajax({
-			url : 'https://api.517ybang.com/fav_item/index',
-			type : 'post',
-			dataType:'json',
-			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
+			url : api_url + 'fav_item/index',
+			data : {app_type:'client',user_id:user_id,item_id:item.item_id},
 			success : function(res){
 			for (var i = 0;i < res.content.length;i++) {
 				if(res.status == 200){
 					record_id = res.content[i].record_id;
 					$('.create').find('b').css('color','#fa3752').text('已收藏');
-						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
+						$('.create').find('img').attr('src', cdn_url + 'media/item/detail/shoucangcur.png')
 				}; 
 			}
 			}
 		});
 			//创建浏览记录
 		$.ajax({
-			url: "https://api.517ybang.com/history_item_view/create",
-			 type: "post",
-             dataType: 'json',
+			url: api_url + "history_item_view/create",
              data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
             success: function (res) {
             	//alert('加入浏览记录成功');
@@ -627,12 +627,10 @@ wx.ready(function(){
 				if(cancelfocus){
 						$.ajax({
 							url : api_url + 'fav_item/edit_bulk',
-							type : 'post',
-							dataType:'json',
 							data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
 							success : function(res){
 								$('.create').find('b').css('color','#3E3A39').text('收藏');
-								$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
+								$('.create').find('img').attr('src', cdn_url + 'media/item/detail/shoucang-@3x.png')
 							}
 						});
 				}

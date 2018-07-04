@@ -28,16 +28,12 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180630">
+		<meta name=version content="revision20180703">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
 
-        <?php if ($this->user_agent['is_wechat']): ?>
         <meta name=viewport content="width=750,user-scalable=0">
-        <?php else: ?>
-        <meta name=viewport content="width=device-width,user-scalable=0">
-        <?php endif ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>

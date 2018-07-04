@@ -762,7 +762,7 @@
 		
 		</div>
 	<script>
-		var user_id = <?php echo $this->session->user_id ?>;
+		var user_id = '<?php echo $this->session->user_id ?>';
 
 		$(function() {
     $('.circle').each(function(index, el) {
@@ -789,7 +789,7 @@
             		"background" : "#ff3a49"
             	});
 			$(this).parents().parents("li").css({
-				"background":"url(https://cdn-remote.517ybang.com/media/coupon_template/coupons-bged@3x.png)",
+				"background":'url('+cdn_url+'media/coupon_template/coupons-bged@3x.png)',
 				"background-size" : "cover"
 			});
         	}
@@ -894,14 +894,15 @@
                 			$('#canusercoupon').append(canuse);
                 		}
                 	}
-					          		
                 }
 
                 $('.couponcentercontent li').on('click', 'a.getTemplate', function(){
                 	var template_id = $(this).parents().siblings('a').attr('data-coupon-id');
+                	var params = common_params
+                    params.template_id = template_id
                 	    $.ajax({
 						url: api_url + 'coupon/create',
-			             data:{app_type:'client',user_id:user_id,template_id:template_id},
+			             data:params,
 			            success: function (res) {
 			            	alert(res.content.message);
 			              }
