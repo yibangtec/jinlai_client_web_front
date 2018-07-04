@@ -199,14 +199,14 @@
         <li data-name=waybill_id data-group=delivered>运单号<span></span></li>
 
         <!-- 确认收货相关信息 -->
-        <li data-name=time_confirm>确认时间<span></span></li>
-        <li data-name=time_confirm_auto>确认时间<span></span></li>
+        <li style="<?php echo $item['time_confirm'] == null ? 'display:none' : 'display:block'; ?>" data-name=time_confirm>确认时间<span></span></li>
+        <li style="<?php echo $item['time_confirm_auto'] == null ? 'display:none' : 'display:block'; ?>" data-name=time_confirm_auto>确认时间<span></span></li>
 
         <!-- 评论相关信息 -->
-        <li data-name=time_comment>评论时间<span></span></li>
+        <li style="<?php echo $item['time_comment'] == null ? 'display:none' : 'display:block'; ?>" data-name=time_comment>评论时间<span></span></li>
 
         <!-- 退单相关信息 -->
-        <li data-name=time_refund>退单时间<span></span></li>
+        <li style="<?php echo $item['time_refund'] == null ? 'display:none' : 'display:block'; ?>" data-name=time_refund>退单时间<span></span></li>
     </ul>
     <div style="padding-bottom:1.2rem;width:100%;"></div>
 
@@ -512,7 +512,14 @@
         $('.number-copy').attr('data-clipboard-text',item.order_id)
 
         $('[data-name=time_create] span').html( date(item.time_create) );
-		
+
+
+
+        $('[data-name=time_confirm] span').html( date(item.time_confirm));
+        /*$('[data-name=time_confirm_auto] span').html( date(item.time_confirm_auto));
+        $('[data-name=time_comment] span').html( date(item.time_comment));
+        $('[data-name=time_refund] span').html( date(item.time_refund));*/
+
         // 接单/拒单
         if (item.time_accept > 0)
         {
@@ -573,9 +580,9 @@
         if (item.time_deliver > 0)
         {
             $('[data-name=time_deliver] span').html(date(item.time_deliver));
-            $('[data-name=deliver_method] span').html(date(item.deliver_method));
-            $('[data-name=deliver_biz] span').html(date(item.deliver_biz));
-            $('[data-name=waybill_id] span').html(date(item.waybill_id));
+            $('[data-name=deliver_method] span').html(item.deliver_method);
+            $('[data-name=deliver_biz] span').html(item.deliver_biz);
+            $('[data-name=waybill_id] span').html(item.waybill_id);
         }
         else
         {
