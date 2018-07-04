@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '12点秒杀专场',
+        'title' => '14点秒杀专场',
 
         // 070410
         /*'items' => array(
@@ -208,7 +208,7 @@
         ),*/
 
         // 070412
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5716',
                 'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
@@ -237,39 +237,39 @@
                 'price' => '29.9',
                 'tag_price' => '36',
             ),
-        ),
+        ),*/
 
         // 070414
-//        'items' => array(
-//            array(
-//                'item_id' => '5730',
-//                'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
-//                'name' => '红糖糍粑5袋',
-//                'price' => '29.9',
-//                'tag_price' => '1',
-//            ),
-//            array(
-//                'item_id' => '5727',
-//                'url_image_main' => '/media/fruitful2018/items/070314/0-2@2x.png',
-//                'name' => '【周黑鸭】甜辣礼盒',
-//                'price' => '39.9',
-//                'tag_price' => '59',
-//            ),
-//            array(
-//                'item_id' => '5728',
-//                'url_image_main' => '/media/fruitful2018/items/070314/0-3@2x.png',
-//                'name' => '抖音零食大礼包',
-//                'price' => '29.9',
-//                'tag_price' => '49',
-//            ),
-//            array(
-//                'item_id' => '5729',
-//                'url_image_main' => '/media/fruitful2018/items/070314/0-4@2x.png',
-//                'name' => '蜀道香麻辣牛肉干',
-//                'price' => '29.9',
-//                'tag_price' => '49',
-//            ),
-//        ),
+        'items' => array(
+            array(
+                'item_id' => '5730',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
+                'name' => '红糖糍粑5袋',
+                'price' => '29.9',
+                'tag_price' => '1',
+            ),
+            array(
+                'item_id' => '5727',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-2@2x.png',
+                'name' => '【周黑鸭】甜辣礼盒',
+                'price' => '39.9',
+                'tag_price' => '59',
+            ),
+            array(
+                'item_id' => '5728',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-3@2x.png',
+                'name' => '抖音零食大礼包',
+                'price' => '29.9',
+                'tag_price' => '49',
+            ),
+            array(
+                'item_id' => '5729',
+                'url_image_main' => '/media/fruitful2018/items/070314/0-4@2x.png',
+                'name' => '蜀道香麻辣牛肉干',
+                'price' => '29.9',
+                'tag_price' => '49',
+            ),
+        ),
 
         // 070416
 //        'items' => array(

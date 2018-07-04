@@ -22,8 +22,16 @@
         right: -0.2rem;
     }
     .item-operation a{
+        display: inline-block;
+        width: 1.2rem;
+        height: 0.54rem;
+        text-align: center;
+        line-height: 0.5rem;
+        margin: 0.5rem 0.2rem 0 0;
+        border: 0.02rem solid #9fa0a0;
+        border-radius: 0.27rem;
         color:#3e3a39;
-    }
+
     .detail-btn a{
         color:#3e3a39;
     }
@@ -79,7 +87,7 @@
         </div>
     </div>
 </div>
-<div class="box" style="margin-bottom:1.6rem;">
+<div class="box">
     <div class="line"></div>
     <div class="detail-header">
         <div class="detail-type1 status1">
@@ -155,7 +163,7 @@
 
     <ul class=order-parameter>
         <li data-name=order_id>
-            <div id="selectorOrder" class=serial-number>订单号<span></span></div>
+            订单号<span id="selectorOrder"></span>
             <div class=number-copy  id="copyOrder">复制</div>
         </li>
         <li data-name=time_create>创建时间<span></span></li>
@@ -166,7 +174,7 @@
         <li data-name=time_pay data-group=payed>付款时间<span></span></li>
         <li data-name=payment_type data-group=payed>支付方式<span></span></li>
         <li data-name=payment_id data-group=payed>
-            <div id="selectorWrite" class=serial-number>支付流水号<span></span></div>
+            支付流水号<span id="selectorWrite"></span>
             <div class=number-copy  id="copyWrite">复制</div>
         </li>
 
@@ -590,7 +598,10 @@
             var timePay = item.time_pay;
             if(timePay!==''){
                 timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
-            }else if(orderItems[key].refund_status !== ''){
+            }else{
+                timePay = '';
+            }
+            if(orderItems[key].refund_status !== ''){
                 timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
             }else{
                 timePay = '';
