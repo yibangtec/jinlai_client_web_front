@@ -96,11 +96,11 @@
                 	<img src="<?php echo CDN_URL ?>media/page/gsms/gsms1.png">
                 </a>
             </div>
-            <!--<div class="swiper-slide">
-                <img src="<?php echo CDN_URL ?>media/page/gsms/gsms2.png">
-            </div>
-           <div class="swiper-slide">
-                <img src="<?php echo CDN_URL ?>media/page/gsms/gsms3.png">
+            <!--<div class="swiper-slide">
+                <img src="<?php echo CDN_URL ?>media/page/gsms/gsms2.png">
+            </div>
+           <div class="swiper-slide">
+                <img src="<?php echo CDN_URL ?>media/page/gsms/gsms3.png">
             </div>-->
           
         </div>
@@ -110,74 +110,74 @@
 </div>
 
 <!--培训分类区域开始-->
-<!--<div class="classification auto">
-    <div class="swiper-container5">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/tuijian1@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaBlue"></i>
-            <div class="move">
-                <span class="titletext">特色美食</span>
-                <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
-            <div class="downarrow arrBlue"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuiguo@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaYellow"></i>
-            <div class="move">
-            <span class="titletext">甜点饮品</span>
-            <span class="smalltitle smallcolor_two">FRUITES</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
-            <div class="downarrow arrYellow"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shucai@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaYellow"></i>
-            <div class="move">
-            <span class="titletext">精美西餐</span>
-            <span class="smalltitle smallcolor_two">VEGETABLE</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
-            <div class="downarrow arrYellow"></div>
-        </div>
-        <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/rou@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaRed"></i>
-            <div class="move">
-                <span class="titletext">日韩料理</span>
-                <span class="smalltitle smallcolor_one">MEAT</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
-            <div class="downarrow arrRed"></div>
-        </div>
-      
-         <div class="swiper-slide">
-            <p class="colorarea">
-            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shangchao@3x.png" />
-            </p>
-            <i class="freshshowbg colorareaPink"></i>
-            <div class="move">
-            <span class="titletext">中式快餐</span>
-            <span class="smalltitle smallcolor_four">BUSSIBES</span>
-            </div>
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
-            <div class="downarrow arrPink"></div>
-        </div>
-     <div class="swiper-scrollbar"></div>
-    </div>
-</div>
-
+<!--<div class="classification auto">
+    <div class="swiper-container5">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/tuijian1@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaBlue"></i>
+            <div class="move">
+                <span class="titletext">特色美食</span>
+                <span class="smalltitle smallcolor_one">IN RECOMMEND</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
+            <div class="downarrow arrBlue"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shuiguo@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaYellow"></i>
+            <div class="move">
+            <span class="titletext">甜点饮品</span>
+            <span class="smalltitle smallcolor_two">FRUITES</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shuiguo@3x.png">
+            <div class="downarrow arrYellow"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shucai@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaYellow"></i>
+            <div class="move">
+            <span class="titletext">精美西餐</span>
+            <span class="smalltitle smallcolor_two">VEGETABLE</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shucai@3x.png">
+            <div class="downarrow arrYellow"></div>
+        </div>
+        <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/rou@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaRed"></i>
+            <div class="move">
+                <span class="titletext">日韩料理</span>
+                <span class="smalltitle smallcolor_one">MEAT</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
+            <div class="downarrow arrRed"></div>
+        </div>
+      
+         <div class="swiper-slide">
+            <p class="colorarea">
+            	<img src="https://cdn-remote.517ybang.com/media/fresh_mart/colorarea/shangchao@3x.png" />
+            </p>
+            <i class="freshshowbg colorareaPink"></i>
+            <div class="move">
+            <span class="titletext">中式快餐</span>
+            <span class="smalltitle smallcolor_four">BUSSIBES</span>
+            </div>
+            <img src="<?php echo CDN_URL ?>media/fresh_mart/shangchao@3x.png">
+            <div class="downarrow arrPink"></div>
+        </div>
+     <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
 </div>-->
 <!--水果、蔬菜、肉类等分类内容承载的容器-->
 <div class="fresh_mart_contentwrap">
@@ -251,13 +251,13 @@
 </div>
 <!--tab切换区域开始-->
 	
-	<!--<div class="tab">
-		<a class="active" href="javascript:;">
-			全部
-			<i class="icon-xiajiantou"></i>
-		</a>
-		<a href="javascript:;">人气优先</a>
-		<a href="javascript:;">距离优先</a>
+	<!--<div class="tab">
+		<a class="active" href="javascript:;">
+			全部
+			<i class="icon-xiajiantou"></i>
+		</a>
+		<a href="javascript:;">人气优先</a>
+		<a href="javascript:;">距离优先</a>
 	</div>-->
 	<div class="swiper-container6" style="display: none;">
 		<div class="swiper-wrapper w">
@@ -294,8 +294,8 @@
 		            					</li>
 		            				</ul>
             				</div>
-            			<!--<div class="tag">
-            				麦岛路沿线   美发
+            			<!--<div class="tag">
+            				麦岛路沿线   美发
             			</div>-->
             			<div class="allbuy">
             				<span class="tuan">减</span>

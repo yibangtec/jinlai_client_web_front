@@ -2356,6 +2356,7 @@ $(function(){
 	});
 	$('.maptext').on('click',function(){
 			$.ajax({
+			type:'get',
             url: 'https://cdn-remote.517ybang.com/address.txt', 
             async: true,
             cache: false,

@@ -17,9 +17,69 @@
         .service-text{padding-top:0.1rem;}
         .itemContent{
         margin-bottom:1rem;}
+        #end{
+
+		    position: fixed;
+	
+	    display: block;
+	
+	    width: 10px;
+	
+	    height: 10px;
+	
+	    top: 0px;
+	
+	    left: 6.7rem;
+
+}
+ .m-sidebar{position: fixed;top: 0;right: 0;background: #000;z-index: 2000;width: 35px;height: 100%;font-size: 12px;color: #fff;}
+
+.cart{color: #fff;text-align:center;line-height: 20px;padding: 200px 0 0 0px;}
+
+.cart span{display:block;width:20px;margin:0 auto;}
+
+.cart i{width:35px;height:35px;display:block; background:url(car.png) no-repeat;}*/
+
+/*购物车抛物线结束的位置*/
+
+.box p{line-height:20px; padding:4px 4px 10px 4px; text-align:left}
+
+.u-flyer{display: block;width: 50px;height: 50px;border-radius: 50px;position: fixed;z-index: 9999;}
+
+.button {
+
+	display: inline-block;
+
+	outline: none;
+
+	cursor: pointer;
+
+	text-align: center;
+
+	text-decoration: none;
+
+	font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+
+	padding: .5em 2em .55em;
+
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+
+	-webkit-border-radius: .5em; 
+
+	-moz-border-radius: .5em;
+
+	border-radius: .5em;
+
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+}
 
     </style>
-
+	<i id="end" style="left: 85%;"></i>
     <div class="thisList">
         <ul class="menuSearchList menuListActive">
             <li>
@@ -138,6 +198,15 @@
     <script>
     	var oneClick;
     	var oneZh = 0;
+    	function getQueryString(name) {
+		    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) {
+		        return unescape(r[2]);
+		    }
+		    return null;
+		}
+		var category_id = getQueryString('category_id');
         $(function(){
         var status = '综合';
 		getMore();
@@ -154,7 +223,6 @@
             				     	
             				     })
         function getMore(){
-
                             var page1 = 0;
                              // 每页展示10个
                              var size = 10;
@@ -199,9 +267,9 @@
                                      console.log('综合page1是' + page1);
                                              $.ajax({
                                                                     url: api_url,
-                                                                    data : {app_type:'client',limit:10,offset:page1},
+                                                                    data : {app_type:'client',limit:10,offset:page1,category_id:category_id},
                                                                     success: function(data){
-
+																		
                                                                         var items = data.content;
                                                                         if(items){
 
@@ -239,6 +307,7 @@
                                                                             // 每次数据插入，必须重置
                                                                             me.resetload();
                                                                         },1000);
+                                                                        addCart();
                                                                     },
                                                                     error: function(xhr, type){
                                                                         console.log('Ajax error!');
@@ -281,7 +350,7 @@
                                         alert('上拉');
                                             $.ajax({
                                                 url: api_url,
-                                                data : {app_type:'client',limit:10,offset:10},
+                                                data : {app_type:'client',limit:10,offset:10,category_id:category_id},
                                                 success: function(data){
                                                     console.log(data);
                                                     var result = '';
@@ -297,6 +366,7 @@
                                                         me.unlock();
                                                         me.noData(false);
                                                     },1000);
+                                                    addCart();
                                                 },
                                                 error: function(xhr, type){
                                                     console.log('Ajax error!');
@@ -321,7 +391,7 @@
                                           
                                                     $.ajax({
                                                                            url: api_url,
-                                                                           data : {app_type:'client',limit:10,offset:page1,orderby_sold_overall:'DESC'},
+                                                                           data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_sold_overall:'DESC'},
                                                                            success: function(data){
                                                                            	console.log('page1是' + page1);
                                                                                console.log(data);
@@ -407,7 +477,7 @@
                                                 url: api_url,
                                                 data : {app_type:'client',limit:10,offset:10},
                                                 success: function(data){
-                                                    console.log(data);
+                                                    addCart();
                                                     var result = '';
 
                                                     // 为了测试，延迟1秒加载
@@ -421,6 +491,7 @@
                                                         me.unlock();
                                                         me.noData(false);
                                                     },1000);
+                                                    addCart();
                                                 },
                                                 error: function(xhr, type){
                                                     console.log('Ajax error!');
@@ -443,7 +514,7 @@
 
                                                     $.ajax({
                                                                            url: api_url,
-                                                                           data : {app_type:'client',limit:10,offset:page1,orderby_time_publish:'DESC'},
+                                                                           data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_time_publish:'DESC'},
                                                                            success: function(data){
                                                                                console.log(data);
                                                                                var items = data.content;
@@ -525,7 +596,7 @@
                                             alert('上拉');
                                                 $.ajax({
                                                     url: api_url,
-                                                    data : {app_type:'client',limit:10,offset:10,},
+                                                    data : {app_type:'client',limit:10,offset:10,category_id:category_id},
                                                     success: function(data){
                                                         console.log(data);
                                                         var result = '';
@@ -541,6 +612,7 @@
                                                             me.unlock();
                                                             me.noData(false);
                                                         },1000);
+                                                        addCart();
                                                     },
                                                     error: function(xhr, type){
                                                         console.log('Ajax error!');
@@ -562,7 +634,7 @@
                                                 var result = '';
                                                         $.ajax({
                                                                                url: api_url,
-                                                                               data : {app_type:'client',limit:10,offset:page1,orderby_price:'ASC'},
+                                                                               data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_price:'ASC'},
                                                                                success: function(data){
                                                                                    console.log(data);
                                                                                    var items = data.content;
@@ -643,7 +715,7 @@
                                                 alert('上拉');
                                                     $.ajax({
                                                         url: api_url,
-                                                        data : {app_type:'client',limit:10,offset:10},
+                                                        data : {category_id:category_id,app_type:'client',limit:10,offset:10},
                                                         success: function(data){
                                                             console.log(data);
                                                             var result = '';
@@ -659,6 +731,7 @@
                                                                 me.unlock();
                                                                 me.noData(false);
                                                             },1000);
+                                                            addCart();
                                                         },
                                                         error: function(xhr, type){
                                                             console.log('Ajax error!');
@@ -680,7 +753,7 @@
                                                     var result = '';
                                                             $.ajax({
                                                                                    url: api_url,
-                                                                                   data : {app_type:'client',limit:10,offset:page1,orderby_price:'DESC',},
+                                                                                   data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_price:'DESC',},
                                                                                    success: function(data){
                                                                                        console.log(data);
                                                                                        var items = data.content;
@@ -770,9 +843,10 @@
                     var result = '';
                             $.ajax({
                                  url: api_url,
-                                 data : {app_type:'client',limit:10,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
+                                 data : {category_id:category_id,app_type:'client',limit:10,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
                                  success: function(data){
                                      console.log(data);
+                                     addCart();
                                      var items = data.content;
                                      if(items.length > 0){
                                          console.log(items);
@@ -862,8 +936,9 @@
                          var result = '';
                                  $.ajax({
                                       url: api_url,
-                                      data : {app_type:'client',limit:10,offset:page1,name:name},
+                                      data : {app_type:'client',limit:10,offset:page1,name:name,category_id:category_id},
                                       success: function(data){
+                                      	addCart();
                                           console.log('搜索');
                                           var items = data.content;
                                           if(items.length > 0){
@@ -1405,4 +1480,167 @@
 //                              );
                             //} // end load_more
         });
+        
+        function addCart(){
+        		//添加购物车
+		var offset = $("#end").offset();
+		var endLeft = $("#end").css("left");
+		$(".carItem").click(function(event){
+			//HostApp.alert(user_agent.is_ios);
+			var r = $(this).siblings('a').eq(0).attr('href');
+			var b = r.substring(r.lastIndexOf('=')+1, r.length);
+			oldcar = b;
+
+			var count=1;
+
+			var addCartTime;
+
+			var oldShopList = [];
+
+			var countflag = 0;
+
+			//在微信端
+
+				if(user_agent.is_wechat){
+
+					var addcar = $(this);
+
+					//var user_id = <?php echo $this->session->user_id ?>;
+					
+					var params = common_params;
+					
+					if(params.user_id == null){
+						window.location.href = 'https://www.517ybang.com/login';
+						return;
+					}
+					$.ajax({
+
+			        url: api_url + 'cart/index',
+
+			        cache: false,
+
+			        timeout: 10000,
+
+			        async: false,
+
+			        data : params,
+
+			        error: function(date){
+
+					alert(date);
+
+			        },
+
+			        success : function(data){
+
+			        	item_id = data.content.order_items;
+
+			        }
+
+		     });
+
+		      for (var i = 0;i < item_id.length;i++) {
+
+				for (var j = 0;j < item_id[i].order_items.length;j++) {
+
+					//var oldShopList = '1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count;
+
+					if(oldcar == item_id[i].order_items[j].item_id){
+
+						count = item_id[i].order_items[j].count;
+
+						if(countflag == 0){
+
+							count++;
+
+							countflag = 1;
+
+						}
+
+					}
+
+					else{
+
+						oldShopList.push('1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count);
+
+					}
+
+				}				
+
+	        	}
+
+	        arrCur = oldShopList.join(",");
+
+			var img = addcar.parent().find('img').attr('src');
+
+			var flyer = $('<img class="u-flyer" src="'+img+'">');
+
+			flyer.fly({
+
+				start: {
+
+					left: addcar.offset().left - $(document).scrollLeft(),
+
+					top: addcar.offset().top - $(document).scrollTop()
+
+				},
+
+				end: {
+
+					left:parseInt(endLeft),
+
+					top: 0,
+
+					width: 0,
+
+					height: 0
+
+				},
+
+				onEnd: function(){
+
+					$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
+
+					addcar.css("cursor","default").removeClass('orange');
+
+					this.destory();
+
+				}
+
+			});
+
+			    var shopInfo = '1|' + oldcar + '|0|' + count + ',' + arrCur;
+
+			    //上传接口
+				var params = common_params;
+				params.name = 'cart_string';
+				params.value = shopInfo;
+				params.id = params.user_id;
+			    $.ajax({
+			    	type:"post",
+			    	url:"https://api.517ybang.com/cart/sync_up",
+			    	dataType:'json',
+			    	async : false,
+
+			    	data:params,
+
+			    	success:function(res){
+
+			    		console.log(res);
+
+			    		clearTimeout(addCartTime);
+
+					    addCartTime = setTimeout(function(){
+
+							$('#tip').show().delay(1000).fadeOut();
+
+					    },1000);
+
+			    	}
+			    });
+
+			}
+
+		});
+        }
     </script>
