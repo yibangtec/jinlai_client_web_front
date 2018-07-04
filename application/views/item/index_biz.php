@@ -139,7 +139,7 @@
 
         function getMore(){
 
-                            var page1 = -1;
+                            var page1 = -2;
                              // 每页展示10个
                              var size = 10;
                              $('.lists').html('');
@@ -166,15 +166,18 @@
 
                                      // 拼接HTML
                                          page1++;
+                                         var offset1 = page1*10;
+                                         console.log(offset1);
                                      var result = '';
                                              $.ajax({
                                                                     type: 'POST',
                                                                     url: api_url,
                                                                     dataType: 'json',
-                                                                    data : {app_type:'client',limit:10,biz_id:bizID,offset:page1},
+                                                                    data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1},
                                                                     success: function(data){
 
                                                                         var items = data.content;
+
                                                                         if(items){
 
                                                                             for(var key in items){
@@ -211,11 +214,15 @@
                                                                             // 每次数据插入，必须重置
                                                                             me.resetload();
                                                                         },1000);
+
                                                                     },
                                                                     error: function(xhr, type){
                                                                         console.log('Ajax error!');
                                                                         // 即使加载出错，也得重置
+                                                                        // 锁定
                                                                         me.resetload();
+
+
                                                                     }
                                                                 });
 
@@ -229,7 +236,7 @@
 
         function getMoreXl(){
 
-                                    var page1 = -1;
+                                    var page1 = -2;
                                     // 每页展示10个
                                     var size = 10;
                                     $('.lists').html('');
@@ -283,12 +290,14 @@
 
                                             // 拼接HTML
                                                 page1++;
+                                                var offset1 = page1*10;
+                                                //console.log(offset1);
                                             var result = '';
                                                     $.ajax({
                                                                            type: 'POST',
                                                                            url: api_url,
                                                                            dataType: 'json',
-                                                                           data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,orderby_sold_overall:'DESC'},
+                                                                           data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,orderby_sold_overall:'DESC'},
                                                                            success: function(data){
                                                                                console.log(data);
                                                                                var items = data.content;
@@ -346,7 +355,7 @@
 
         function getMoreXP(){
 
-                                    var page1 = -1;
+                                    var page1 = -2;
                                     // 每页展示10个
                                     var size = 10;
                                     $('.lists').html('');
@@ -401,13 +410,14 @@
 
                                             // 拼接HTML
                                                 page1++;
+                                                 var offset1 = page1*10;
                                             var result = '';
 
                                                     $.ajax({
                                                                            type: 'POST',
                                                                            url: api_url,
                                                                            dataType: 'json',
-                                                                           data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,orderby_time_publish:'DESC'},
+                                                                           data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,orderby_time_publish:'DESC'},
                                                                            success: function(data){
                                                                                console.log(data);
                                                                                var items = data.content;
@@ -464,7 +474,7 @@
 
     function getMoreJGS(){
 
-                                        var page1 = -1;
+                                        var page1 = -2;
                                         // 每页展示10个
                                         var size = 10;
                                         $('.lists').html('');
@@ -519,12 +529,13 @@
 
                                                 // 拼接HTML
                                                     page1++;
+                                                    var offset1 = page1*10;
                                                 var result = '';
                                                         $.ajax({
                                                                                type: 'POST',
                                                                                url: api_url,
                                                                                dataType: 'json',
-                                                                               data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,orderby_price:'ASC'},
+                                                                               data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,orderby_price:'ASC'},
                                                                                success: function(data){
                                                                                    console.log(data);
                                                                                    var items = data.content;
@@ -581,7 +592,7 @@
                     }
     function getMoreJGJ(){
 
-                                            var page1 = -1;
+                                            var page1 = -2;
                                             // 每页展示10个
                                             var size = 10;
                                             $('.lists').html('');
@@ -635,12 +646,13 @@
 
                                                     // 拼接HTML
                                                         page1++;
+                                                        var offset1 = page1*10;
                                                     var result = '';
                                                             $.ajax({
                                                                                    type: 'POST',
                                                                                    url: api_url,
                                                                                    dataType: 'json',
-                                                                                   data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,orderby_price:'DESC',},
+                                                                                   data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,orderby_price:'DESC',},
                                                                                    success: function(data){
                                                                                        console.log(data);
                                                                                        var items = data.content;
@@ -699,7 +711,7 @@
 
     function getMoreSX(){
 
-            var page1 = -1;
+            var page1 = -2;
             // 每页展示10个
             var size = 10;
             $('.lists').html('');
@@ -727,12 +739,13 @@
 
                     // 拼接HTML
                         page1++;
+                        var offset1 = page1*10;
                     var result = '';
                             $.ajax({
                                  type: 'POST',
                                  url: api_url,
                                  dataType: 'json',
-                                 data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
+                                 data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
                                  success: function(data){
                                      console.log(data);
                                      var items = data.content;
@@ -788,7 +801,7 @@
                             });
      }
      function getMoreSearch(){
-                var page1 = -1;
+                var page1 = -2;
                  // 每页展示10个
                  var size = 10;
                  $('.lists').html('');
@@ -816,12 +829,13 @@
 
                          // 拼接HTML
                              page1++;
+                             var offset1 = page1*10;
                          var result = '';
                                  $.ajax({
                                       type: 'POST',
                                       url: api_url,
                                       dataType: 'json',
-                                      data : {app_type:'client',limit:10,biz_id:bizID,offset:page1,name:name},
+                                      data : {app_type:'client',limit:10,biz_id:bizID,offset:offset1,name:name},
                                       success: function(data){
                                           console.log(data);
                                           var items = data.content;

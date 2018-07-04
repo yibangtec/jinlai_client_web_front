@@ -173,10 +173,10 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '10点秒杀专场',
+        'title' => '12点秒杀专场',
 
         // 070410
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5692',
                 'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
@@ -205,39 +205,39 @@
                 'price' => '49',
                 'tag_price' => '99',
             ),
-        ),
+        ),*/
 
         // 070412
-//        'items' => array(
-//            array(
-//                'item_id' => '5716',
-//                'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
-//                'name' => '单身狗粮薯片 3包装',
-//                'price' => '1',
-//                'tag_price' => '29.9',
-//            ),
-//            array(
-//                'item_id' => '5714',
-//                'url_image_main' => '/media/fruitful2018/items/070312/0-2@2x.png',
-//                'name' => '进口猪饲料零食大礼包',
-//                'price' => '39.9',
-//                'tag_price' => '69.9',
-//            ),
-//            array(
-//                'item_id' => '5725',
-//                'url_image_main' => '/media/fruitful2018/items/070312/0-3@2x.png',
-//                'name' => '抖音会动的兔子帽子',
-//                'price' => '29.9',
-//                'tag_price' => '49',
-//            ),
-//            array(
-//                'item_id' => '5726',
-//                'url_image_main' => '/media/fruitful2018/items/070312/0-4@2x.png',
-//                'name' => '北冰洋橙汁汽水6罐装',
-//                'price' => '29.9',
-//                'tag_price' => '36',
-//            ),
-//        ),
+        'items' => array(
+            array(
+                'item_id' => '5716',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
+                'name' => '单身狗粮薯片 3包装',
+                'price' => '1',
+                'tag_price' => '29.9',
+            ),
+            array(
+                'item_id' => '5714',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-2@2x.png',
+                'name' => '进口猪饲料零食大礼包',
+                'price' => '39.9',
+                'tag_price' => '69.9',
+            ),
+            array(
+                'item_id' => '5725',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-3@2x.png',
+                'name' => '抖音会动的兔子帽子',
+                'price' => '29.9',
+                'tag_price' => '49',
+            ),
+            array(
+                'item_id' => '5726',
+                'url_image_main' => '/media/fruitful2018/items/070312/0-4@2x.png',
+                'name' => '北冰洋橙汁汽水6罐装',
+                'price' => '29.9',
+                'tag_price' => '36',
+            ),
+        ),
 
         // 070414
 //        'items' => array(
@@ -349,11 +349,11 @@
                 'tag_price' => '29.9',
             ),
             array(
-                'item_id' => '4389',
+                'item_id' => '4816',
                 'url_image_main' => '/media/fruitful2018/items/1-2.png',
-                'name' => '桃本桃-玫瑰公主',
-                'price' => '178',
-                'tag_price' => '298',
+                'name' => '阳山水蜜桃4只装',
+                'price' => '29.8',
+                'tag_price' => '38.9',
             ),
             array(
                 'item_id' => '5638',
