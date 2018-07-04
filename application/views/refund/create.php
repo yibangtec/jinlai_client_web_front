@@ -235,7 +235,7 @@
 				</div>
 				<div class="refund-money" style="padding: 0.32rem 0">
 					<div class="money-title">退款原因</div>
-					<div class="money-message can-btn"><span id="selectText">请选择原因</span><i class="icon-Arrow"></i></div>
+					<div id="cancelBtn" class="money-message can-btn"><span id="selectText">请选择原因</span><i class="icon-Arrow"></i></div>
 				</div>
 			</div>
 			<div class="refund-goods-img bgc">
@@ -349,7 +349,7 @@
                          {
                             //window.history.back(-1);
                            console.log(result);
-                           window.history.back(-1);
+                           window.history.back(-2);
 
                          } else {
                             alert(result.content.error.message);
@@ -391,8 +391,8 @@
                     $('.tips').hide().children().hide();
                 });
 
-                $('body').on('click','.box .can-btn',function(){
-                    orderID = $(this).attr('data-id');
+                $('#cancelBtn').on('click',function(){
+                    //orderID = $(this).attr('data-id');
                     $('.tips').show().children('.cancel').show();
                 });
                 $('#cancelSubmit').on('click',function(){

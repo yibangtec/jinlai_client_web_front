@@ -1230,7 +1230,7 @@
                     }*/
 
 
-                    $(".html").scroll(function(){
+                   /* $(".html").scroll(function(){
                             console.log("$(\this\).scrollHeight " + $(this).scrollHeight);
                             console.log("$(this).height()" + $(this).height());
                             console.log("$(this)[0].scrollTop" + $(this).scrollTop);
@@ -1256,12 +1256,12 @@
                         return false;
                     });
                     //refresh(load_more);
-                    /**
+                    *//**
                              * 加载更多
                              *
                              * @param limit 当前limit值
                              * @param current_offset 当前offset值
-                             */
+                             *//*
                             var listAllOffset = 0;
                             var apiStatus = '';
                             function load_more(limit, current_offset, api_url, status, minPrice, maxPrice, category, promotion, nameType)
@@ -1355,7 +1355,7 @@
                                     },
                                     "JSON"
                                 );
-                            } // end load_more
+                            } // end load_more*/
 
         });
 

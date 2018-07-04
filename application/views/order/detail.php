@@ -191,7 +191,6 @@
         <!-- 退单相关信息 -->
         <li data-name=time_refund>退单时间<span></span></li>
     </ul>
-    <div style="padding-bottom:0.6rem; width:100%"></div>
 
     <!--待付款-->
     <div class="detail-operation status4" data-action-group="待付款">
@@ -591,9 +590,12 @@
             var timePay = item.time_pay;
             if(timePay!==''){
                 timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
+            }else if(orderItems[key].refund_status !== ''){
+                timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
             }else{
                 timePay = '';
             }
+
 
 
              var order_item = '<div class="item-detail clearfix">'+

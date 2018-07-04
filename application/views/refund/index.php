@@ -37,7 +37,7 @@
         for (var key in items){
             var orderItem = items[key].order_item;
             var slogan = orderItem.slogan;
-                            if(slogan == null){
+                            if(slogan == 'null'){
                                slogan = '';
                             };
             var imgUrl = orderItem.item_image;
