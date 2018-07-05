@@ -859,7 +859,7 @@
     $(function(){
         // 点击抽奖按钮
         $("#start, [data-action=try]").on('click', function () {
-            alert(user_id);
+            //alert(user_id);
 
             // 若未登录，转到登录页面
             if (user_id == '')
