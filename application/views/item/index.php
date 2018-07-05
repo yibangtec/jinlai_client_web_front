@@ -196,6 +196,9 @@
 
 
     <script>
+        var api_url_item_index = api_url + 'item/index'; // 商品列表API路径
+        var page_item_detail = base_url + 'item/detail?id='; // 商品详情页根URL
+
     	var oneClick;
     	var oneZh = 0;
     	function getQueryString(name) {
@@ -261,12 +264,11 @@
                                             	
                                             	oneClick++;
                                             }
-                                         
-                                         
+
                                      var result = '';
                                      console.log('综合page1是' + page1);
                                              $.ajax({
-                                                                    url: api_url,
+                                                                    url: api_url_item_index,
                                                                     data : {app_type:'client',limit:10,offset:page1,category_id:category_id},
                                                                     success: function(data){
 																		
@@ -353,7 +355,7 @@
                                         loadUpFn : function(me){
                                         alert('上拉');
                                             $.ajax({
-                                                url: api_url,
+                                                url: api_url_item_index,
                                                 data : {app_type:'client',limit:10,offset:10,category_id:category_id},
                                                 success: function(data){
                                                     console.log(data);
@@ -394,7 +396,7 @@
                                             var result = '';
                                           
                                                     $.ajax({
-                                                                           url: api_url,
+                                                                           url: api_url_item_index,
                                                                            data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_sold_overall:'DESC'},
                                                                            success: function(data){
                                                                            	console.log('page1是' + page1);
@@ -478,7 +480,7 @@
                                         loadUpFn : function(me){
                                         alert('上拉');
                                             $.ajax({
-                                                url: api_url,
+                                                url: api_url_item_index,
                                                 data : {app_type:'client',limit:10,offset:10},
                                                 success: function(data){
                                                     addCart();
@@ -517,7 +519,7 @@
                                             var result = '';
 
                                                     $.ajax({
-                                                                           url: api_url,
+                                                                           url: api_url_item_index,
                                                                            data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_time_publish:'DESC'},
                                                                            success: function(data){
                                                                                console.log(data);
@@ -599,7 +601,7 @@
                                             loadUpFn : function(me){
                                             alert('上拉');
                                                 $.ajax({
-                                                    url: api_url,
+                                                    url: api_url_item_index,
                                                     data : {app_type:'client',limit:10,offset:10,category_id:category_id},
                                                     success: function(data){
                                                         console.log(data);
@@ -637,7 +639,7 @@
                                             }
                                                 var result = '';
                                                         $.ajax({
-                                                                               url: api_url,
+                                                                               url: api_url_item_index,
                                                                                data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_price:'ASC'},
                                                                                success: function(data){
                                                                                    console.log(data);
@@ -718,7 +720,7 @@
                                                 loadUpFn : function(me){
                                                 alert('上拉');
                                                     $.ajax({
-                                                        url: api_url,
+                                                        url: api_url_item_index,
                                                         data : {category_id:category_id,app_type:'client',limit:10,offset:10},
                                                         success: function(data){
                                                             console.log(data);
@@ -756,7 +758,7 @@
                                             }
                                                     var result = '';
                                                             $.ajax({
-                                                                                   url: api_url,
+                                                                                   url: api_url_item_index,
                                                                                    data : {category_id:category_id,app_type:'client',limit:10,offset:page1,orderby_price:'DESC',},
                                                                                    success: function(data){
                                                                                        console.log(data);
@@ -846,7 +848,7 @@
                         page1++;
                     var result = '';
                             $.ajax({
-                                 url: api_url,
+                                 url: api_url_item_index,
                                  data : {category_id:category_id,app_type:'client',limit:10,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
                                  success: function(data){
                                      console.log(data);
@@ -858,13 +860,13 @@
                                              var imgUrl = items[key].url_image_main;
                                              var reg = RegExp(/http/);
                                              if(reg.test(imgUrl) !== true){
-                                             imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+                                             imgUrl = media_url+'item/';
                                                                         }else{
                                                                              imgUrl =''
                                                                         }
                                                                result +=  '<li class="itemList">'+
                                                                                '<a href="'+page_item_detail+items[key].item_id+'">'+
-                                                                                   '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
+                                                                                   '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt="">'+
                                                                                    '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
                                                                                    '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                '</a>'+
@@ -939,7 +941,7 @@
                                             }
                          var result = '';
                                  $.ajax({
-                                      url: api_url,
+                                      url: api_url_item_index,
                                       data : {app_type:'client',limit:10,offset:page1,name:name,category_id:category_id},
                                       success: function(data){
                                       	addCart();
@@ -951,13 +953,13 @@
                                                   var imgUrl = items[key].url_image_main;
                                                   var reg = RegExp(/http/);
                                                   if(reg.test(imgUrl) !== true){
-                                                  imgUrl = '<?php echo MEDIA_URL ?>'+'item/';
+                                                  imgUrl = media_url+'item/';
                                                                              }else{
                                                                                   imgUrl =''
                                                                              }
                                                                     result +=  '<li class="itemList">'+
                                                                                     '<a href="'+page_item_detail+items[key].item_id+'">'+
-                                                                                        '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
+                                                                                        '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt="">'+
                                                                                         '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
                                                                                         '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                     '</a>'+
@@ -1008,14 +1010,10 @@
             var bizID = getQueryString('biz_id');
             //console.log(bizID);
             // 商品列表API路径
-            var api_url  = '<?php echo $this->class_name.'/index' ?>';
-            var page_item_detail = base_url + 'item/detail?id=';
-            //console.log(ajax_root + 'fav_biz/index');
-            //console.log(page_item_detail);
+
             var userID = user_id;
-            api_url = ajax_root + api_url;
             $.ajax({
-                url : ajax_root + 'fav_biz/index',
+                url : api_url + 'fav_biz/index',
                 data : {app_type:'client',user_id:userID,biz_id:bizID},
                 success : function(res){
                     console.log(res);
@@ -1032,14 +1030,19 @@
                 }
             });
             $('.collection').on('click',function(){
+                var params = common_params
+
+
                  if($('.yiguanzhu').text() == '已关注'){
+                    // 取消收藏
                      var cancelfocus = confirm('您确定要取消收藏此店铺吗?');
                      if(cancelfocus){
+                         params.ids = bizID
+                         params.operation = 'delete'
+
                          $.ajax({
-                             type: 'post',
-                             dataType: 'json',
-                             url : ajax_root + 'fav_biz/edit_bulk',
-                             data : {app_type:'client',user_id:userID,ids:bizID,operation:'delete'},
+                             url : api_url + 'fav_biz/edit_bulk',
+                             data : params,
                              success : function(res){
                                 $('.yiguanzhu').text('关注');
                                 $('.collection').css('color','#3E3A39');
@@ -1051,10 +1054,13 @@
                      }
 
                  }
-                 else{
+                 else
+                 {
+                     // 添加收藏
+                     params.biz_id = bizID
                      $.ajax({
-                        url : ajax_root + 'fav_biz/create',
-                        data : {app_type:'client',user_id:userID,biz_id : bizID},
+                        url : api_url + 'fav_biz/create',
+                        data : params,
                         success : function(res){
                             $('.yiguanzhu').text('已关注');
                             $('.collection').css('color','#ff5171');
@@ -1063,9 +1069,7 @@
                  }
             });
             /*$.ajax({
-                url : api_url,
-                type: 'post',
-                dataType: 'json',
+                url : api_url_item_index,
                 data : {app_type:'client',limit:10,biz_id:bizID,},
                 success : function(res){
                     var listHtml = '';
@@ -1508,39 +1512,30 @@
 				if(user_agent.is_wechat){
 
 					var addcar = $(this);
-
-					//var user_id = <?php echo $this->session->user_id ?>;
 					
 					var params = common_params;
-					
-					if(params.user_id == null){
-						window.location.href = 'https://www.517ybang.com/login';
-						return;
-					}
+
+                    // 若未登录，转到登录页面
+                    if (params.user_id == '')
+                    {
+                        alert('登录后即可参与活动，将自动转到登录页面');
+                        location.href = base_url + 'login?url_after_login=<?php echo urlencode( trim($_SERVER['REQUEST_URI'], '/') ) ?>';
+                        return false;
+                    }
+
 					$.ajax({
-
 			        url: api_url + 'cart/index',
-
 			        cache: false,
-
 			        timeout: 10000,
-
 			        async: false,
-
 			        data : params,
-
-			        error: function(date){
-
-					alert(date);
-
+			        error: function(data){
+					    alert(data);
 			        },
 
 			        success : function(data){
-
 			        	item_id = data.content.order_items;
-
 			        }
-
 		     });
 
 		      for (var i = 0;i < item_id.length;i++) {
@@ -1550,23 +1545,16 @@
 					//var oldShopList = '1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count;
 
 					if(oldcar == item_id[i].order_items[j].item_id){
-
 						count = item_id[i].order_items[j].count;
 
 						if(countflag == 0){
-
 							count++;
-
 							countflag = 1;
-
 						}
-
 					}
 
 					else{
-
 						oldShopList.push('1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count);
-
 					}
 
 				}				
@@ -1580,66 +1568,44 @@
 			var flyer = $('<img class="u-flyer" src="'+img+'">');
 
 			flyer.fly({
-
 				start: {
-
 					left: addcar.offset().left - $(document).scrollLeft(),
-
 					top: addcar.offset().top - $(document).scrollTop()
-
 				},
 
 				end: {
-
 					left:parseInt(endLeft),
-
 					top: 0,
-
 					width: 0,
-
 					height: 0
-
 				},
 
 				onEnd: function(){
-
 					$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
-
 					addcar.css("cursor","default").removeClass('orange');
-
 					this.destory();
-
 				}
-
 			});
 
 			    var shopInfo = '1|' + oldcar + '|0|' + count + ',' + arrCur;
 
 			    //上传接口
 				var params = common_params;
+                params.id = params.user_id;
 				params.name = 'cart_string';
 				params.value = shopInfo;
-				params.id = params.user_id;
 			    $.ajax({
-			    	type:"post",
-			    	url:"https://api.517ybang.com/cart/sync_up",
-			    	dataType:'json',
+			    	url: api_url + 'cart/sync_up',
 			    	async : false,
-
 			    	data:params,
-
 			    	success:function(res){
-
-			    		console.log(res);
+			    		//console.log(res);
 
 			    		clearTimeout(addCartTime);
 
 					    addCartTime = setTimeout(function(){
-
 							$('#tip').show().delay(1000).fadeOut();
-
 					    },1000);
-
 			    	}
 			    });
 

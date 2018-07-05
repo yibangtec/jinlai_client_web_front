@@ -875,7 +875,7 @@
             //console.log(chance_count)
             if (chance_count < 1)
             {
-                var reminder = (wechat_shared == 0)? '每天首次分享后可额外获取1次抽奖机会': '今日抽奖次数已用完，明天可以继续参与哦';
+                var reminder = (wechat_shared == 0)? '每天首次分享后可额外获取1次抽奖机会': '今日抽奖次数已用完，明天可以继续参与';
                 alert(reminder);
                 return false;
             }
