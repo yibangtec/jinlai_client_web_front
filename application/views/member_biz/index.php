@@ -17,7 +17,7 @@
 	<!--头部title区域开始-->
 	<div class="popwindowcontent">
 		<div class="wid670 auto clearfix">
-			<input type="text" placeholder="搜索会员卡" class="fl" id="search-membercard">
+			<input type="text" placeholder="搜索会员卡" class="fl" id="search-membercard"/>
 			<i class="icon-bottom-preview"></i>
 			<span id="popwindowcancle" class="fl">取消</span>
 		</div>
@@ -28,9 +28,7 @@
 		<i class="icon-huiyuan fr"></i>
 		<i class="icon-bottom-preview" id="popwindowbtn"></i>
 	</div>
-
-    <!--
-    <div class="bgfff memberclass">
+		<!--<div class="bgfff memberclass">
 		<div class="couponcentertitle auto bgfff">
 			<div class="swiper-containercouponcenter">
 				<div class="swiper-wrapper" id="memberTitle">
@@ -62,9 +60,7 @@
                 </div>
 				</div>
 		</div>
-    </div>
-    -->
-
+		</div>
 	<div class="member_wraplist">
 		<div class="couponcentercontent auto mt20 clearfix">
 			<div class="swiper-containercouponcentertemplate">
@@ -110,56 +106,8 @@
 	</a>
     <?php endforeach ?>
     	</div>
-    	<div class="swiper-slide">
-    		<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#0081c9">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
-            </div>
-            <h1>游乐游儿童游泳</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-    	</div>
-    	<div class="swiper-slide">
-    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#bccdb6">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
-            </div>
-            <h1>萃匠坚果</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-    	</div>
-    	<div class="swiper-slide">
-    	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=138" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#bccdb6;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/142820.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#bccdb6">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/142515.png">
-            </div>
-            <h1>萃匠坚果</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-	<a class="entermember_wrap" href="https://www.517ybang.com/member_biz/detail?biz_id=142" target="_self">
-        <div class="member_list wid710 auto border20" style="background-color:#0081c9;background: url(https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_thumb_url/201801/0119/150239.png) no-repeat center center;">
-        	            <div class="memberlistpic" style="background-color:#0081c9">
-                <img src="https://jinlaisandbox-images.b0.upaiyun.com/ornament_biz/member_logo_url/201801/0119/150233.png">
-            </div>
-            <h1>游乐游儿童游泳</h1>
-            <span class="entermember">加入会员</span>
-            <div class="memberdescription">
-            	会员享特权,多重优惠抢不停!            </div>
-        </div>
-	</a>
-    	</div>
+
+
     				<div class="swiper-paginationcoupon"></div>
 				</div>
 			</div>
@@ -214,15 +162,16 @@
 
 <?php endif ?>
 <script>
-        $(function(){
-			var params = common_params;
-            //会员卡顶部商家分类
+			$(function(){
+				
+//					//会员卡顶部商家分类
 			$.ajax({
-				url: api_url + 'item_category/index',
-				data : params,
+				type:"post",
+				url:"https://api.517ybang.com/item_category/index",
+				data : {app_type:'client'},
+				dataType : 'json',
 				success:function(res){
-					for (var i = 0;i < res.content.length;i++)
-					{
+					for (var i = 0;i < res.content.length;i++) {
 						if(res.content[i].level == 1){
 							console.log(res.content[i].name);
 						var memberTitleList = '<div class="swiper-slide"><a>'+res.content[i].name+'</a></div>';
@@ -312,10 +261,9 @@
 				}
 			})
 			
-			// TODO 如果不存在会员卡头像,那么显示默认头像
+			//如果不存在会员卡头像,那么显示默认头像
 			$('.memberlistpic').find('img').each(function(i){
-				if ($(this).attr('src') == 'https://medias.517ybang.com/biz/')
-				{
+				if($(this).attr('src') == 'https://medias.517ybang.com/biz/'){
 					$(this).attr('src','https://cdn-remote.517ybang.com/media/home/default.png');
 				}
 			});

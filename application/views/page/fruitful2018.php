@@ -173,42 +173,42 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '10点秒杀专场',
+        'title' => '14点秒杀专场',
 
-        // 070410
-        'items' => array(
-            array(
-                'item_id' => '5692',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
-                'name' => '网红妖娆花',
-                'price' => '1',
-                'tag_price' => '69',
-            ),
-            array(
-                'item_id' => '5712',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
-                'name' => '3D猫咪墙贴',
-                'price' => '6',
-                'tag_price' => '14.9',
-            ),
-            array(
-                'item_id' => '5709',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
-                'name' => '6拼果切',
-                'price' => '24.9',
-                'tag_price' => '39.9',
-            ),
-            array(
-                'item_id' => '5710',
-                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
-                'name' => '混合果盒8种水果装',
-                'price' => '49',
-                'tag_price' => '99',
-            ),
-        ),
+        // 070310
+//        'items' => array(
+//            array(
+//                'item_id' => '5692',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
+//                'name' => '网红妖娆花',
+//                'price' => '1',
+//                'tag_price' => '69',
+//            ),
+//            array(
+//                'item_id' => '5712',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
+//                'name' => '3D猫咪墙贴',
+//                'price' => '6',
+//                'tag_price' => '14.9',
+//            ),
+//            array(
+//                'item_id' => '5709',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
+//                'name' => '6拼果切',
+//                'price' => '24.9',
+//                'tag_price' => '39.9',
+//            ),
+//            array(
+//                'item_id' => '5710',
+//                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
+//                'name' => '混合果盒8种水果装',
+//                'price' => '49',
+//                'tag_price' => '99',
+//            ),
+//        ),
 
 /*
-        // 070412
+        // 070312
         'items' => array(
             array(
                 'item_id' => '5716',
@@ -241,10 +241,8 @@
         ),
 */
 
-
-        // 070414
-        /*'items' => array(
-
+        // 070314
+        'items' => array(
             array(
                 'item_id' => '5730',
                 'url_image_main' => '/media/fruitful2018/items/070314/0-1@2x.png',
@@ -273,73 +271,7 @@
                 'price' => '29.9',
                 'tag_price' => '49',
             ),
-
-        ),*/
-
-        // 070416
-        /*'items' => array(
-            array(
-                'item_id' => '5712',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
-                'name' => '3D猫咪墙贴',
-                'price' => '1',
-                'tag_price' => '29',
-            ),
-            array(
-                'item_id' => '5731',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-2@2x.png',
-                'name' => '实木创意凳儿童凳',
-                'price' => '268',
-                'tag_price' => '398',
-            ),
-            array(
-                'item_id' => '5732',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-3@2x.png',
-                'name' => '儿童益智4/6/9九宫格玩具',
-                'price' => '29',
-                'tag_price' => '69',
-            ),
-            array(
-                'item_id' => '5733',
-                'url_image_main' => '/media/fruitful2018/items/070316/0-4@2x.png',
-                'name' => '迪士尼亲子互动吸盘球',
-                'price' => '9.9',
-                'tag_price' => '29',
-            ),
-        ),*/
-
-        // 070420
-       /*'items' => array(
-           array(
-               'item_id' => '5736',
-               'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
-               'name' => '旺旺小小酥（多口味）6袋装',
-               'price' => '1',
-               'tag_price' => '16.9',
-           ),
-           array(
-               'item_id' => '5729',
-               'url_image_main' => '/media/fruitful2018/items/070320/0-2@2x.png',
-               'name' => '蜀道香麻辣牛肉',
-               'price' => '29.9',
-               'tag_price' => '49',
-           ),
-           array(
-               'item_id' => '5735',
-               'url_image_main' => '/media/fruitful2018/items/070320/0-3@2x.png',
-               'name' => '张君雅小妹妹整箱零食15包645g',
-               'price' => '59',
-               'tag_price' => '89',
-           ),
-           array(
-               'item_id' => '5737',
-               'url_image_main' => '/media/fruitful2018/items/070320/0-4@2x.png',
-               'name' => '泰国进口小老板海苔卷系列27g×3',
-               'price' => '25.9',
-               'tag_price' => '39.9',
-           ),
-        ),*/
-
+        ),
         'appended' => ''
     );
 
@@ -644,9 +576,6 @@
             $('[data-name=chances]').text(chance_count)
         })
 
-        <?php
-        if ($this->user_agent['is_wechat']):
-        ?>
         // 微信相关
         wx.ready(function(){
             <?php
@@ -689,7 +618,6 @@
             });
 
         })
-        <?php endif ?>
         // 点击分享，提示成功后可获取1次额外抽奖机会
         $('[data-action=share]').click(function(){
             alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
@@ -715,7 +643,7 @@
                 item.appended +
                 '   </div>' +
                 '</div>';
-            //console.log(dom);
+            console.log(dom);
 
             return dom;
         } // end generate_dom
@@ -752,7 +680,7 @@
     var wheelSurf
     // 初始化装盘数据 正常情况下应该由后台返回
     var prizes = lottery.prizes;
-    //console.log(prizes);
+    console.log(prizes);
 
     var initData = [
             {
@@ -829,7 +757,7 @@
             // 若已在抽奖中，不响应点击事件
             if ( ! throttle) return false;
 
-            //console.log(chance_count)
+            console.log(chance_count)
             if (chance_count < 1)
             {
                 var reminder = (wechat_shared == 0)? '每天首次分享后可额外获取1次抽奖机会': '今日抽奖次数已用完，明天可以继续参与哦';

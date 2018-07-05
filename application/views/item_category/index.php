@@ -204,10 +204,14 @@ $(function(){
                     if (current_children_count == 0)
                     {	
                     	//console.log(arr[i].category_id);
-                    	html+='<a href="https://www.517ybang.com/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
-                    	goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+                    	if(arr[i].url_image != null){
+                    		html+='<a href="https://www.517ybang.com/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
+                    		goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+                    	}
+                    	
                         
                     } else {
+                    	console.log(arr[i].url_image);
                         goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                     }
 

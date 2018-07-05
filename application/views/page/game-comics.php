@@ -714,7 +714,7 @@
 <div class="fresh_like wid670 auto bgfff border20 mt10 clearfix">
 	<ul id="jjlist">
 		
-	</ul>
+	</ul>	<span class="bottomline" style="display: none;position: absolute;font-size:.26rem;color: #999;width:80%;left:50%;margin-left:-40%;text-align: center;padding-top:.5rem;">亲,我是有底线的哇~</span>
 </div>
 	</div>
 	<div class="fresh_mart_content">
