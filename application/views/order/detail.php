@@ -530,6 +530,9 @@
              $('#status7').text('已取消');
          }else if( status=='已完成'){
             $('.status7').css('display','block');
+         }else{
+            $('.status7').css('display','block');
+                      $('#status7').text(status);
          }
 
 
