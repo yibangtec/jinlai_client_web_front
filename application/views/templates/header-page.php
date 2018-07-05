@@ -37,18 +37,7 @@
         <script defer src="<?php echo CDN_URL ?>font-awesome/v5.0.13/fontawesome-all.min.js"></script>
         <script defer src="<?php echo CDN_URL ?>jquery/jquery.lazyload.min.js"></script>
 
-        <?php if ($this->user_agent['is_wechat'] || $this->user_agent['is_ios']): ?>
         <meta name=viewport content="width=750,user-scalable=0">
-        <?php else: ?>
-<!--        <script>-->
-<!--            $(function(){-->
-<!--                var phoneScale = parseInt(window.screen.width) / 750;-->
-<!--                console.log(phoneScale);-->
-<!--                document.document('<meta name=viewport content="width=device-width,initial-scale='+ phoneScale +',maximum-scale='+ phoneScale +',user-scalable=1">');-->
-<!--            });-->
-<!--        </script>-->
-        <meta name=viewport content="width=device-width,initial-scale=0.48,maximum-scale=2,user-scalable=1">
-        <?php endif ?>
 
     <?php
         if ($this->user_agent['is_wechat']):

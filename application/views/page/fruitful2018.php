@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '16点秒杀专场',
+        'title' => '20点秒杀专场',
 
         // 070410
         /*'items' => array(
@@ -275,6 +275,7 @@
         ),*/
 
         // 070416
+        /*
         'items' => array(
             array(
                 'item_id' => '5712',
@@ -305,9 +306,10 @@
                 'tag_price' => '29',
             ),
         ),
+        */
 
         // 070420
-       /*'items' => array(
+       'items' => array(
            array(
                'item_id' => '5736',
                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
@@ -336,7 +338,7 @@
                'price' => '25.9',
                'tag_price' => '39.9',
            ),
-        ),*/
+        ),
 
         'appended' => ''
     );
@@ -571,46 +573,49 @@
         async : false
     });
 
-    var user_id;
+    var user_id = '<?php echo $this->session->user_id ?>';
      function setupWKWebViewJavascriptBridge(callback) {
 
-			        if (window.WKWebViewJavascriptBridge) { return callback(WKWebViewJavascriptBridge); }
+        if (window.WKWebViewJavascriptBridge) { return callback(WKWebViewJavascriptBridge); }
 
-			        if (window.WKWVJBCallbacks) { return window.WKWVJBCallbacks.push(callback); }
+    if (window.WKWVJBCallbacks) { return window.WKWVJBCallbacks.push(callback); }
 
-			        window.WKWVJBCallbacks = [callback];
-			          try{
+    window.WKWVJBCallbacks = [callback];
+    try{
 
-			            window.webkit.messageHandlers.iOS_Native_InjectJavascript.postMessage(null);
+        window.webkit.messageHandlers.iOS_Native_InjectJavascript.postMessage(null);
 
-			        }catch(e){
-			           console.log('ios');
+    }catch(e){
+        console.log('ios');
 
-			        }
+    }
 
-			    };
-		var checkIosUserStatus;
-		if(user_agent.is_ios){
-			checkIosUserStatus = setInterval(function(){
-			setupWKWebViewJavascriptBridge(function(bridge){
-				
-				bridge.callHandler('sendUserId', function(response) {
-				if(response){
-					clearInterval(checkIosUserStatus);
-					user_id = response;
-					
-				}
-					if(!response){
-						bridge.callHandler('iosNotLogin','notlogin');
-						return;
-					}
-					
-					
-				})
-				
-			})
-			},1000);
-		}
+    };
+
+    var checkIosUserStatus;
+
+    if(user_agent.is_ios){
+        checkIosUserStatus = setInterval(function(){
+        setupWKWebViewJavascriptBridge(function(bridge){
+
+            bridge.callHandler('sendUserId', function(response) {
+            if(response){
+                clearInterval(checkIosUserStatus);
+                user_id = response;
+
+            }
+                if(!response){
+                    bridge.callHandler('iosNotLogin','notlogin');
+                    return;
+                }
+
+
+            })
+
+        })
+        },1000);
+    }
+    console.log(user_id);
 
     // 当前可抽奖次数
     var chance_count = 1;
@@ -854,6 +859,8 @@
     $(function(){
         // 点击抽奖按钮
         $("#start, [data-action=try]").on('click', function () {
+            alert(user_id);
+
             // 若未登录，转到登录页面
             if (user_id == '')
             {
