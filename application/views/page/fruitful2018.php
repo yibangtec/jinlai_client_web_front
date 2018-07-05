@@ -644,6 +644,9 @@
             $('[data-name=chances]').text(chance_count)
         })
 
+        <?php
+        if ($this->user_agent['is_wechat']):
+        ?>
         // 微信相关
         wx.ready(function(){
             <?php
@@ -686,6 +689,7 @@
             });
 
         })
+        <?php endif ?>
         // 点击分享，提示成功后可获取1次额外抽奖机会
         $('[data-action=share]').click(function(){
             alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
@@ -711,7 +715,7 @@
                 item.appended +
                 '   </div>' +
                 '</div>';
-            console.log(dom);
+            //console.log(dom);
 
             return dom;
         } // end generate_dom
@@ -748,7 +752,7 @@
     var wheelSurf
     // 初始化装盘数据 正常情况下应该由后台返回
     var prizes = lottery.prizes;
-    console.log(prizes);
+    //console.log(prizes);
 
     var initData = [
             {
@@ -825,7 +829,7 @@
             // 若已在抽奖中，不响应点击事件
             if ( ! throttle) return false;
 
-            console.log(chance_count)
+            //console.log(chance_count)
             if (chance_count < 1)
             {
                 var reminder = (wechat_shared == 0)? '每天首次分享后可额外获取1次抽奖机会': '今日抽奖次数已用完，明天可以继续参与哦';

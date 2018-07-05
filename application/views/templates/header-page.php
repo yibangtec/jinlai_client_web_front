@@ -28,22 +28,32 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180703">
+		<meta name=version content="revision20180704">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
-
-        <meta name=viewport content="width=750,user-scalable=0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
         <script defer src="<?php echo CDN_URL ?>font-awesome/v5.0.13/fontawesome-all.min.js"></script>
         <script defer src="<?php echo CDN_URL ?>jquery/jquery.lazyload.min.js"></script>
 
-<?php
-    if ($this->user_agent['is_wechat']):
-        require_once(VIEWS_PATH.'templates/wechat.php');
-?>
+        <?php if ($this->user_agent['is_wechat'] || $this->user_agent['is_ios']): ?>
+        <meta name=viewport content="width=750,user-scalable=0">
+        <?php else: ?>
+<!--        <script>-->
+<!--            $(function(){-->
+<!--                var phoneScale = parseInt(window.screen.width) / 750;-->
+<!--                console.log(phoneScale);-->
+<!--                document.document('<meta name=viewport content="width=device-width,initial-scale='+ phoneScale +',maximum-scale='+ phoneScale +',user-scalable=1">');-->
+<!--            });-->
+<!--        </script>-->
+        <meta name=viewport content="width=device-width,initial-scale=0.48,maximum-scale=2,user-scalable=1">
+        <?php endif ?>
+
+    <?php
+        if ($this->user_agent['is_wechat']):
+            require_once(VIEWS_PATH.'templates/wechat.php');
+    ?>
         <script>
         <?php if ($this->test_mode != 'on'): ?>
         // 百度统计
@@ -62,6 +72,9 @@
 		<link rel=stylesheet media=all href="<?php echo CDN_URL ?>css/reset.css">
 
         <script>
+            var phoneScale = parseInt(window.screen.width) / 750;
+            console.log(phoneScale);
+
             console.log('意帮科技人才招聘' + "\n" + 'https://www.zhipin.com/gongsi/579c83446262d89f3n183tg~.html' + "\n\n");
 
             // UserAgent
