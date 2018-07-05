@@ -1,4 +1,5 @@
 <script src="<?php echo CDN_URL ?>js/rem.js"></script>
+<script src="<?php echo CDN_URL ?>js/clipboard.js"></script>
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/normal.css">
 <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
@@ -104,7 +105,7 @@
             <p style="padding-top: 0.2rem"><span class="remainingTime">2天2小时</span>后自动好评</p>
         </div>
         <div class="detail-type2 status2">
-            <p style="padding-top: 0.45rem">已评价</p>
+            <p id="status2" style="padding-top: 0.45rem">已评价</p>
         </div>
         <div class="detail-type3 status3">
             <p style="padding-top: 0.25rem">等待卖家发货</p>
@@ -122,8 +123,8 @@
             <p style="padding-top: 0.25rem">已关闭</p>
             <p style="padding-top: 0.2rem">超时未付款</p>
         </div>
-        <div class="detail-type6 status7">
-            <p style="padding-top: 0.25rem">已取消</p>
+        <div class="detail-type7 status7">
+            <p id="status7" style="padding-top: 0.25rem">已完成</p>
             <p style="padding-top: 0.2rem"></p>
         </div>
 
@@ -172,8 +173,9 @@
 
     <ul class=order-parameter>
         <li data-name=order_id>
-            订单号<span id="selectorOrder"></span>
-            <div class=number-copy  id="copyOrder">复制</div>
+            订单号<span></span>
+            <a class=number-copy href="javascript:;" class="f-r tac" data-clipboard-text="" data-clipboard-action="copy" id="copyOrder">复制</a>
+
         </li>
         <li data-name=time_create>创建时间<span></span></li>
         <li data-name=time_cancel data-group=time_cancel>取消时间<span></span></li>
@@ -184,7 +186,7 @@
         <li data-name=payment_type data-group=payed>支付方式<span></span></li>
         <li data-name=payment_id data-group=payed>
             支付流水号<span id="selectorWrite"></span>
-            <div class=number-copy  id="copyWrite">复制</div>
+            <a class=number-copy href="javascript:;" class="f-r tac" data-clipboard-text="" data-clipboard-action="copy" id="copyWrite">复制</a>
         </li>
 
         <!-- 接/拒单相关信息 -->
@@ -246,13 +248,36 @@
         <a>追加评论</a>
     </div>
     <!--已取消-->
-    <div class="detail-operation status7" data-action-group="已取消">
+    <div class="detail-operation status7" data-action-group="已完成">
         <a class="del-btn" data-action=delete href="#">删除</a>
     </div>
+
+
+
+
+
 </div>
 
 <script>
+
 	$(function(){
+	var clipboard = new Clipboard("#copyOrder");
+        clipboard.on('success', function(e) {
+            alert("已复制");
+        });
+
+        clipboard.on('error', function(e) {
+            alert("请重试");
+        });
+        var clipboardWrite = new Clipboard("#copyWrite");
+                clipboardWrite.on('success', function(e) {
+                    alert("已复制");
+                });
+
+                clipboardWrite.on('error', function(e) {
+                    alert("请重试");
+                });
+
 		var params = common_params;
 		var item = <?php echo json_encode($item) ?>;
         console.log(item);
@@ -431,8 +456,8 @@
                 if(meta[key].name == 'time_confirm_to_comment'){
                     console.log(meta[key].value);
                     var timestamp = Math.round(new Date().getTime()/1000).toString();
-                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
-                    time = sec_to_time(timestamp-temp);
+                    var temp = Number(item.time_create) + Number(meta[key].value)
+                    time = sec_to_time(temp-timestamp);
                     console.log(time);
 
                 }
@@ -452,9 +477,10 @@
              for(var key in meta){
                 if(meta[key].name == 'time_pay_to_deliver'){
                     console.log(meta[key].value);
+                    console.log(item.time_create);
                     var timestamp = Math.round(new Date().getTime()/1000).toString();
-                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
-                    time = sec_to_time(timestamp-temp);
+                    var temp = Number(item.time_create) + Number(meta[key].value)
+                    time = sec_to_time(temp-timestamp);
                     console.log(time);
                 }
              }
@@ -469,8 +495,8 @@
                 if(meta[key].name == 'time_created_to_expire'){
                     console.log(meta[key].value);
                     var timestamp = Math.round(new Date().getTime()/1000).toString();
-                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
-                    time = sec_to_time(timestamp-temp);
+                    var temp = Number(item.time_create) + Number(meta[key].value)
+                    time = sec_to_time(temp-timestamp);
                     console.log(time);
                 }
              }
@@ -485,8 +511,8 @@
                 if(meta[key].name == 'time_deliver_to_confirm'){
                     console.log(meta[key].value);
                     var timestamp = Math.round(new Date().getTime()/1000).toString();
-                    var temp = Number(item.time_create) + Number(meta[key].value/1000)
-                    time = sec_to_time(timestamp-temp);
+                    var temp = Number(item.time_create) + Number(meta[key].value)
+                    time = sec_to_time(temp-timestamp);
                     console.log(time);
                 }
              }
@@ -496,20 +522,20 @@
          else if(status=='已关闭')
          {
              // meta.name=time_expire_to_delete
-             $('.status6').css('display','block')
+             $('.status6').css('display','block');
          }else if( status=='已取消')
          {
              // meta.name=time_expire_to_delete
-             $('.status7').css('display','block')
-         }else{
-            // meta.name=time_expire_to_delete
-            $('.status7').css('display','block')
+             $('.status7').css('display','block');
+             $('#status7').text('已取消');
+         }else if( status=='已完成'){
+            $('.status7').css('display','block');
          }
 
 
         // 订单号
         $('[data-name=order_id] span').html(item.order_id);
-        $('.number-copy').attr('data-clipboard-text',item.order_id)
+        $('#copyOrder').attr('data-clipboard-text',item.order_id);
 
         $('[data-name=time_create] span').html( date(item.time_create) );
 
@@ -561,6 +587,7 @@
             $('[data-name=time_pay] span').html( date(item.time_pay) );
             $('[data-name=payment_type] span').html(item.payment_type);
             $('[data-name=payment_id] span').html(item.payment_id);
+            $('#copyWrite').attr('data-clipboard-text',item.payment_id)
 
             // 生成单品退款根URL
             refund_base_url = base_url + 'refund/create?record_id=';
@@ -616,13 +643,13 @@
             if(timePay!==''){
                 timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
             }else{
-                timePay = '';
+                if(orderItems[key].refund_status !== ''){
+                    timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
+                }else{
+                    timePay = '';
+                }
             }
-            if(orderItems[key].refund_status !== ''){
-                timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
-            }else{
-                timePay = '';
-            }
+
 
 
 
@@ -685,55 +712,7 @@
 
                  return time;
              }
-        var aEle = document.querySelector('#copyOrder');
-                aEle.addEventListener('click',function(){
-                var copyDOM = document.querySelector('#selectorOrder');
-                var range = document.createRange();
-                range.selectNode(copyDOM);
-                window.getSelection().addRange(range);
-                var successful = document.execCommand('copy');
-                try {
-                // Now that we've selected the anchor text, execute the copy command
 
-                var msg = successful ? copyDOM.innerText : 'unsuccessful';
-                if (confirm('已复制'+msg)==true){
-
-                 }else{
-                  return false;
-                 }
-                } catch(err) {
-                console.log('Oops, unable to copy');
-                }
-
-                // Remove the selections - NOTE: Should use
-                // removeRange(range) when it is supported
-                window.getSelection().removeAllRanges();
-                },false);
-
-        var WriteEle = document.querySelector('#copyWrite');
-                WriteEle.addEventListener('click',function(){
-                var copyDOM = document.querySelector('#selectorWrite');
-                var range = document.createRange();
-                range.selectNode(copyDOM);
-                window.getSelection().addRange(range);
-                var successful = document.execCommand('copy');
-                try {
-                // Now that we've selected the anchor text, execute the copy command
-
-                var msg = successful ? copyDOM.innerText : 'unsuccessful';
-                if (confirm('已复制'+msg)==true){
-
-                 }else{
-                  return false;
-                 }
-                } catch(err) {
-                console.log('Oops, unable to copy');
-                }
-
-                // Remove the selections - NOTE: Should use
-                // removeRange(range) when it is supported
-                window.getSelection().removeAllRanges();
-                },false);
 
 
 	})

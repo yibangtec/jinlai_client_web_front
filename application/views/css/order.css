@@ -271,6 +271,7 @@ a {text-decoration: none;}
 .detail-header{
     margin:0 0.2rem 0 0.2rem; background-color: #fff;border-radius: 0.15rem;font-size: 0.26rem;color: #3e3a39;
 }
+/*待评价*/
 .detail-type1{
     height: 1.4rem;
     background: url("../media/order/daipingjia@3x.png") no-repeat;
@@ -278,6 +279,7 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+/*已评价*/
 .detail-type2{
     height: 1.4rem;
     background: url("../media/order/daipingjia@3x.png") no-repeat;
@@ -285,6 +287,7 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+/*待发货*/
 .detail-type3{
     height: 1.4rem;
     background: url("../media/order/daifahuo@3x.png") no-repeat;
@@ -292,6 +295,7 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+/*待付款*/
 .detail-type4{
     height: 1.4rem;
     background: url("../media/order/daifukuan@3x.png") no-repeat;
@@ -299,6 +303,7 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+/*待收货*/
 .detail-type5{
     height: 1.4rem;
     background: url("../media/order/daishouhuo@3x.png") no-repeat;
@@ -306,6 +311,7 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+/*已关闭*/
 .detail-type6{
     height: 1.4rem;
     background: url("../media/order/yiguanbi@3x.png") no-repeat;
@@ -313,6 +319,15 @@ a {text-decoration: none;}
     padding-left: 0.8rem;
     color: #ffffff;
 }
+.detail-type7{
+    height: 1.4rem;
+    background: url("../media/order/yiwancheng@3x.png") no-repeat;
+    background-size: 100% 1.4rem;
+    padding-left: 0.8rem;
+    color: #ffffff;
+}
+/*已完成*/
+
 .detail-address{
     padding: 0.3rem 0.2rem 0.3rem 0.8rem;
     position: relative;

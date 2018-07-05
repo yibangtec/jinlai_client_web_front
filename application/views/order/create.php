@@ -281,7 +281,7 @@
             if(addresses[key].brief !== null){
                 brief = '<span class="address-type">'+addresses[key].brief+'</span>';
             }else{
-                brief = ''
+                brief = '';
             }
             if(default_address_id == addresses[key].address_id ){
                 var addressHtml = '<div class="address-title clearfix">'+

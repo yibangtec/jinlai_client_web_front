@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/address.css"/>
     <style>
         body{
-            width: 100%;background-color: #F2F2F3; height: 100%
+            width: 100%;background-color: #F2F2F3;
         }
         a {text-decoration: none;}
         .address{
@@ -13,10 +13,11 @@
            position: static;
         }
     </style>
-<div class="box">
+<div class="box" style="padding-bottom:1.6rem;">
 
 </div>
 <div class="creat-address"><a href="<?php echo base_url('address/create') ?>">新建地址</a></div>
+
 <script>
 $(function(){
     var params = common_params;
@@ -74,7 +75,20 @@ $(function(){
 
 
 
+   /* $.post(
+        api_url + 'address/index',
+        params,
+        function(result)
+        {
+            console.log(result); // 输出回调数据到控制台
+            if (result.status == 200)
+            {
 
+            } else {
+               alert(result.content.error.message);
+            }
+        }
+    );*/
 
     $(".select").click(function(){
             //console.log('jfsdk');

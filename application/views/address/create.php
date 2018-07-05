@@ -49,12 +49,70 @@
                 font-size: 0.3rem;text-align: center;color: #ffffff;padding: 0.3rem 0;
                 background-color: rgba(0, 0, 0, .3);border-radius: 0.15rem;background-size: 0.32rem 0.32rem;z-index: 100;}
             .error-tips img{width: 0.5rem;height: 0.5rem;}
-            .amap-geo{
-                display: block;
-            }
+
             .address{
                 height:0;
                 position: static;
+            }
+            #mapBox{display:none}
+            .center-point{
+                width: 0.9rem;
+                height: 0.9rem;
+                border-radius: 0.45rem;
+                background-color: #fff;
+                bottom: 0.4rem;
+                right: 0.4rem;
+                z-index:100000;
+                position:fixed;
+                text:align:center;
+                line-height:0.9rem;
+            }
+            .amap-controls{
+                display:block;
+            }
+            .amap-touch-toolbar .amap-zoomcontrol{
+                bottom: -29px;
+            }
+            .amap-lib-marker-from{
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                color: #e90000;
+                cursor: pointer;
+                background:url(../media/chatimages/images/dangqian@3x.png) no-repeat;
+                background-size: 30px 30px;
+            }
+            .amap-lib-marker-to{
+                position: absolute;
+                width: 20px;
+                height: 30px;
+                color: #e90000;
+                cursor: pointer;
+                background:url(../media/chatimages/images/keyidong@3x.png) no-repeat;
+                background-size: 20px 30px;
+            }
+            .amap-lib-driving {
+                margin: 0;
+                padding: 0;
+                color: #565656;
+                font-family: "Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 12px;
+                line-height: 1.5;
+                word-wrap: break-word;
+                background-color: white;
+                border: solid 1px silver;
+                display: none;
+            }
+            .icon-dangqianweizhi{
+                display:inline-block;
+                margin:0.15rem;
+            }
+            .icon-dangqianweizhi:before {
+              content: "\e9ce";
+              font-size:0.6rem;
+
+            }
+            .amap-geo{display:none;
             }
     </style>
 
@@ -70,6 +128,7 @@
     </div>
 
     <div class="box" id="box">
+
         <div class="error-tips">
             <p class="tips-text"></p>
             <i class="icon-failure"></i>
@@ -78,7 +137,7 @@
 
 
         <div class="create-content">
-            <form id=main-form action="" method=post>
+            <form id=main-form action="" method=post style="margin-bottom: 4rem">
                 <!-- 是否设为默认 -->
                 <input name=default_this type=hidden value=1>
 
@@ -114,13 +173,14 @@
                 <?php if ( ! empty($this->session->address_id) ): ?>
                 <div id="select" class="address-default">
                     <input id=defaultThis type=hidden name=default_this value=0>
-                    <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认地址</span>
+                    <i id="selectIcon" class="icon-zidongtui"></i> <span>默认地址</span>
                 </div>
                 <?php endif ?>
 
             </form>
 
-            <div class="map-box" style="position: fixed">
+            <div id="mapBox" class="map-box" style="position: fixed">
+                <div class="center-point" id="point"><i class="icon-dangqianweizhi"></i></div>
                 <div id="container" class="map" tabindex="0" style="width: 100%;height: 4rem;"></div>
                 <div id='right' style="display: none">
                     <div>
@@ -153,6 +213,7 @@
 
     <script>
         $(function(){
+
         var params = common_params
             var alert_to_show = '<?php echo urlencode($error) ?>';
             if (alert_to_show != '') alert( decodeURI(alert_to_show) );
@@ -162,6 +223,12 @@
             $("#demo1").focus(function(){
                 document.activeElement.blur();
             });
+            $('#detailAddress').bind('input onchange', function() {
+                    console.log($('#detailAddress').val());
+                    if($('#detailAddress').val().length > 4 ){
+                        $('#mapBox').css('display','block');
+                    }
+                });
 
             // 切换是否设为默认地址
             $("#select").click(function(){
@@ -263,6 +330,9 @@
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
     <script type="text/javascript">
 
+
+
+
         /*var sel=document.getElementById('select');
         sel.onclick = function(){
 
@@ -289,33 +359,40 @@
                 scrollWheel: false
             });
 
-            map.plugin(['AMap.Geolocation','AMap.Geocoder'], function () {
+
+            map.plugin(['AMap.Geolocation','AMap.Geocoder','AMap.ToolBar'], function () {
                 geolocation = new AMap.Geolocation({
                     enableHighAccuracy: true,//是否使用高精度定位，默认:true
                     timeout: 10000,          //超过10秒后停止定位，默认：无穷大
                     maximumAge: 0,           //定位结果缓存0毫秒，默认：0
                     convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
                     showButton: true,        //显示定位按钮，默认：true
-                    //buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+                    buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
                     //buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
                     showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
-                    showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+                    showCircle: false,        //定位成功后用圆圈表示定位精度范围，默认：true
                     panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-                    zoomToAccuracy: true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-                    noGeoLocation:3
+                    zoomToAccuracy:true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+
                 });
                 geocoder=new AMap.Geocoder({
 
                 });
                 map.addControl(geolocation);
                 map.addControl(geocoder);
+                 map.addControl(new AMap.ToolBar());
                 //地理编码,返回地理编码结果
+                var btn = document.getElementById('point');
+                btn.onclick = function(){
+                   geolocation.getCurrentPosition();
+
+                }
 
                 var pos;
 
                 geolocation.getCurrentPosition(function (status,result){
                     var start = result.position.Q;
-                    console.log(result.position.Q);
+                    console.log(start);
                     pos = result.position;
                     var positionPicker = new PositionPicker({
                         mode: 'dragMap',

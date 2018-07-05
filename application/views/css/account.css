@@ -123,14 +123,8 @@ input:-webkit-autofill {
 }
 .header-img img{
     display: inline-block;
-<<<<<<< HEAD
-    min-width: 100%;
-    min-height: 100%;
-
-=======
     max-width: 100%;
     max-height: 100%;
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 }
 .header-name{
     float: left;
@@ -201,15 +195,19 @@ input:-webkit-autofill {
     color: #ffffff;
     padding: 0.12rem 0;
 }
+.icon-guanzhu_bk{
+    display: inline-block;
+    padding: 0.03rem 0;
+}
 .icon-guanzhu_bk:before {
     content: "\e922";
-    font-size: 0.43rem;
+    font-size: 0.35rem;
     color: #ffffff;
+
 }
 .icon-shoucang:before {
     content: "\e9d5";
     font-size: 0.4rem;
-<<<<<<< HEAD
     color: #ffffff;
 }
 .icon-wokanguode:before {
@@ -217,15 +215,6 @@ input:-webkit-autofill {
     font-size: 0.4rem;
     color: #ffffff;
 }
-=======
-    color: #ffffff;
-}
-.icon-wokanguode:before {
-    content: "\e972";
-    font-size: 0.4rem;
-    color: #ffffff;
-}
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
 
 
@@ -390,21 +379,13 @@ input:-webkit-autofill {
     content: "\e9d4";
     color: #ffffff;
     font-size: 0.4rem;
-<<<<<<< HEAD
+
 }
 .icon-huiyuan1:before {
     content: "\e9d4";
     color: #3e3a39;
     font-size: 0.42rem;
 }
-=======
-}
-.icon-huiyuan1:before {
-    content: "\e9d4";
-    color: #3e3a39;
-    font-size: 0.42rem;
-}
->>>>>>> ac09f5a6f9df7ac43d2f05bacca7803ff799d425
 
 .icon-shezhi:before {
     content: "\e974";
