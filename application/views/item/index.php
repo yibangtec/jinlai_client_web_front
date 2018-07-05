@@ -271,6 +271,10 @@
                                                                     success: function(data){
 																		
                                                                         var items = data.content;
+                                                                        if(items.error){
+                                                                        	$('.dropload-load').text('没有更多商品啦~');
+                                                                        	return;
+                                                                        }
                                                                         if(items){
 
                                                                             for(var key in items){

@@ -300,7 +300,7 @@
 
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/mbcd.png">
+    <img src="<?php echo CDN_URL ?>media/home/qwsh.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
@@ -348,7 +348,7 @@
 </div>
 <!--分类区域开始-->
 <div class="wid710 auto bgfff border20 exercise clearfix">
-    <img src="<?php echo CDN_URL ?>media/home/hscw.png">
+    <img src="<?php echo CDN_URL ?>media/home/kcmt.png">
 </div>
 	
 <div class="like wid710 auto clearfix mt10 supermarketgoodslist">
