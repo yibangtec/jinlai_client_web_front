@@ -173,39 +173,39 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '20点秒杀专场',
+        'title' => '10点秒杀专场',
 
         // 070410
-//        'items' => array(
-//            array(
-//                'item_id' => '5692',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
-//                'name' => '网红妖娆花',
-//                'price' => '1',
-//                'tag_price' => '69',
-//            ),
-//            array(
-//                'item_id' => '5712',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
-//                'name' => '3D猫咪墙贴',
-//                'price' => '6',
-//                'tag_price' => '14.9',
-//            ),
-//            array(
-//                'item_id' => '5709',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
-//                'name' => '6拼果切',
-//                'price' => '24.9',
-//                'tag_price' => '39.9',
-//            ),
-//            array(
-//                'item_id' => '5710',
-//                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
-//                'name' => '混合果盒8种水果装',
-//                'price' => '49',
-//                'tag_price' => '99',
-//            ),
-//        ),
+        'items' => array(
+            array(
+                'item_id' => '5692',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
+                'name' => '网红妖娆花',
+                'price' => '1',
+                'tag_price' => '69',
+            ),
+            array(
+                'item_id' => '5712',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-2@2x.png',
+                'name' => '3D猫咪墙贴',
+                'price' => '6',
+                'tag_price' => '14.9',
+            ),
+            array(
+                'item_id' => '5709',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-3@2x.png',
+                'name' => '6拼果切',
+                'price' => '24.9',
+                'tag_price' => '39.9',
+            ),
+            array(
+                'item_id' => '5710',
+                'url_image_main' => '/media/fruitful2018/items/070310/0-4@2x.png',
+                'name' => '混合果盒8种水果装',
+                'price' => '49',
+                'tag_price' => '99',
+            ),
+        ),
 
 /*
         // 070412
@@ -309,7 +309,7 @@
         ),*/
 
         // 070420
-       'items' => array(
+       /*'items' => array(
            array(
                'item_id' => '5736',
                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
@@ -338,7 +338,7 @@
                'price' => '25.9',
                'tag_price' => '39.9',
            ),
-        ),
+        ),*/
 
         'appended' => ''
     );

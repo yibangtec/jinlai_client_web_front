@@ -226,7 +226,7 @@
                       {
                        console.log(result.content);
 
-                          location.href = base_url + "address/index";
+                          window.history.back(-1);
                        } else {
                           alert(result.content.error.message);
                        }
