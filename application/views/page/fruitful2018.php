@@ -571,7 +571,46 @@
         async : false
     });
 
-    var user_id = '<?php echo $this->session->user_id ?>';
+    var user_id;
+     function setupWKWebViewJavascriptBridge(callback) {
+
+			        if (window.WKWebViewJavascriptBridge) { return callback(WKWebViewJavascriptBridge); }
+
+			        if (window.WKWVJBCallbacks) { return window.WKWVJBCallbacks.push(callback); }
+
+			        window.WKWVJBCallbacks = [callback];
+			          try{
+
+			            window.webkit.messageHandlers.iOS_Native_InjectJavascript.postMessage(null);
+
+			        }catch(e){
+			           console.log('ios');
+
+			        }
+
+			    };
+		var checkIosUserStatus;
+		if(user_agent.is_ios){
+			checkIosUserStatus = setInterval(function(){
+			setupWKWebViewJavascriptBridge(function(bridge){
+				
+				bridge.callHandler('sendUserId', function(response) {
+				if(response){
+					clearInterval(checkIosUserStatus);
+					user_id = response;
+					
+				}
+					if(!response){
+						bridge.callHandler('iosNotLogin','notlogin');
+						return;
+					}
+					
+					
+				})
+				
+			})
+			},1000);
+		}
 
     // 当前可抽奖次数
     var chance_count = 1;
@@ -815,7 +854,6 @@
     $(function(){
         // 点击抽奖按钮
         $("#start, [data-action=try]").on('click', function () {
-
             // 若未登录，转到登录页面
             if (user_id == '')
             {
@@ -840,7 +878,8 @@
 
             // 进行抽奖
             var params = common_params;
-            params.lottery_id = lottery.lottery_id
+            params.lottery_id = lottery.lottery_id;
+            params.user_id = user_id;
             // AJAX获取结果并生成相关HTML
             $.post(
                 api_url + 'lottery_record/create',
