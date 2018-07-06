@@ -645,12 +645,13 @@
             var timePay = item.time_pay;
             if(timePay!==''){
                 timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
-            }else{
                 if(orderItems[key].refund_status !== ''){
                     timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
                 }else{
                     timePay = '';
                 }
+            }else{
+
             }
 
 

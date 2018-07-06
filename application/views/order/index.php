@@ -105,11 +105,29 @@
 
 
         for(var key in items){
+            var cart_string = ''; // CSV格式，商家ID|商品ID|SKU_ID(若无SKU则写0)|商品数量
+            // TODO 轮询订单信息中的order_items，并生成cart_string
+            var orderItems = items[key].order_items;
+            var arr = [];
+            var sku = '';
+            for (var j in orderItems)
+            {
+                sku = orderItems[j].sku_id;
+
+                if(sku == ''|| sku == null){
+                  sku = 0;
+                }
+                var str = orderItems[j].biz_id+'|'+orderItems[j].item_id+'|'+sku+'|'+orderItems[j].count;
+                arr.push(str);
+            }
+            cart_string = arr.join(',');
+
+
             var statusHtml = '';
             var status = items[key].status;
             if(status == '已评价'){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span><span data-id="'+items[key].order_id+'">申请售后</span><a href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">追加评论</a>';
-            }else if(status == '已关闭'){
+            }else if(status == '已关闭' || status == '已取消'){
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
             else if(status == '待发货'){
@@ -122,17 +140,11 @@
                 //<a href="' + base_url +'message?order_id='+items[key].order_id+'&biz_id='+items[key].biz_id +'">联系卖家</a>
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="can-btn">取消</span><a class="current-red go-pay" href="'+base_url + 'order/pay?id=' + items[key].order_id+'">付款</a>';
             }else if(status == "待评价"){
-                var cart_string = ''; // CSV格式，商家ID|商品ID|SKU_ID(若无SKU则写0)|商品数量
-                // TODO 轮询订单信息中的order_items，并生成cart_string
-               /* var orderItems = items[key].order_items;
-                var arr = [];
-                for (var j in orderItems)
-                {
-                    arr.push = orderItems[j].biz_id+'|'+orderItems[j]order_id+'|'+orderItems[j]sku_id+'|'+orderItems[j]count;
-                }
-                cart_string = arr.join(',');*/
-                statusHtml = '<a data-id="'+ items[key].order_id +'" href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">写评价</a>';
-            }else if(status == ""){
+
+                statusHtml = '<a href="'+base_url + 'order/create?cart_string=' + cart_string+'">再来一单</a><a data-id="'+ items[key].order_id +'" href="'+base_url + 'comment_item/create?id=' + items[key].order_id+'" class="pingjia">写评价</a>';
+            }else if(status == "已完成"){
+                statusHtml = '<a href="'+base_url + 'order/create?cart_string=' + cart_string+'">再来一单</a><span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
+            }else{
                 statusHtml = '<span data-id="'+items[key].order_id+'" class="del-btn">删除</span>';
             }
 
@@ -164,6 +176,12 @@
                  }else{
                       imgUrl =''
                  }
+                 var priceStyle = 'display:none;'
+                 if(li[k].tag_price > li[k].price){
+                    priceStyle = 'display:block;'
+                 }else{
+                    priceStyle = 'display:none;'
+                 }
 
                  orderItemHtml += '<a href="'+ base_url+'order/detail?&id='+li[k].order_id+ '" class="item-detail clearfix">'+
                                        '<div class="item-left left-float"><img src="'+imgUrl+ li[k].item_image +'" alt=""/></div>'+
@@ -173,8 +191,8 @@
                                        '</div>'+
                                        '<div class="item-right right-float">'+
                                             '<p>¥'+ li[k].price +'</p>'+
-                                            '<p class="price-text"> <del>¥'+ li[k].tag_price +'</del></p>'+
-                                            '<p class="cont-indent">'+ li[k].single_total +'</p>'+
+                                            '<p class="price-text" style="'+priceStyle+'"> <del>¥'+ li[k].tag_price +'</del></p>'+
+                                            '<p class="cont-indent">x'+ li[k].count +'</p>'+
                                        '</div>'+
                                   '</a>';
 

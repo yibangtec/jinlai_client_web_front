@@ -20,7 +20,7 @@
         .address-title{margin: 0 0.2rem;color: #3E3A39;padding: 0.24rem 0 0.16rem 0;}
         .title-left{float: left;}
         .title-right{float: right;}
-        .address-type{display: inline-block;width: 0.7rem;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;color: #ff3649;margin-right: 0.2rem;
+        .address-type{display: inline-block;height: 0.3rem;line-height: 0.3rem;text-align: center;border: 0.01rem solid #ff3649;border-radius: 0.04rem;color: #ff3649;margin-right: 0.2rem;
         }
         .address-content{margin: 0 0.2rem;color: #666464;padding-bottom: 0.24rem;}
         .address-content p{line-height:0.35rem;}

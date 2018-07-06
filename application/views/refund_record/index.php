@@ -76,6 +76,7 @@
 
 
                            } else {
+                                $('.box').hide();
                               alert(result.content.error.message);
                            }
                       },

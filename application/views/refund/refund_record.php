@@ -59,3 +59,33 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+            var id = getQueryString('id');
+
+            /*$.post(
+                  api_url + 'order/edit_bulk',
+                  params,
+                  function(result)
+                  {
+                      console.log(result); // 输出回调数据到控制台
+                      if (result.status == 200)
+                      {
+                        $('.tips').hide().children('.delete').hide();
+                      } else {
+                         alert(result.content.error.message);
+                      }
+                  }
+            );*/
+
+
+
+            function getQueryString(name){
+                 var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                 var r = window.location.search.substr(1).match(reg);
+                 if (r!=null) return r[2]; return '';
+            }
+
+
+        });
+    </script>
