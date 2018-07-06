@@ -56,6 +56,57 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
   	left: 50%;
   	margin-left: -1rem;
   }
+  .dotshowlist{
+      width: 2.1rem;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: .26rem;
+    border-radius: .1rem;
+    position: absolute;
+    right: -.24rem;
+    top: .7rem;
+    
+}
+.myarr{
+        border: 10px solid transparent;
+    border-bottom-color: #343131;
+    position: absolute;
+    right: .45rem;
+    top: .4rem;
+    display: none;
+}
+.dotshowlist p{
+    height: .76rem;
+    line-height: .76rem;
+    position: relative;
+}
+.dotshowlist .bizarr{
+    position: absolute;
+    top: -.08rem;
+    right: .45rem;
+}
+.dotshowlist .bizarr img{
+    display: block;
+    width: 100%;
+}
+.dotshowlist p b{
+        height: 1px;
+    background: #fff;
+    transform: scaleY(0.5);
+    transform-origin: 0 0;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.dotshowlist i{
+    font-size: .32rem;
+    margin-left: .2rem;
+}
+  #nav-main li.vice-button{
+  	border-right: none;
+  }
   #cartsuccess{
   	position: fixed;
   	bottom: 15%;
@@ -71,6 +122,41 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
   	left: 50%;
   	margin-left: -1rem;
   }
+  .topBar{
+  	position: absolute;
+  	top: .2rem;
+  	height: .6rem;
+  	width: 92%;
+  	left: 50%;
+  	margin-left: -46%;
+  	z-index: 999;
+  	line-height: .6rem;
+  }
+  .tabBarleft{
+  	width: .6rem;
+  	height: .6rem;
+  	border-radius: 50%;
+  	background: rgba(178,178,178,.4)
+  }
+  .tabBarright span.cir{
+  	display: block;
+  	width: .6rem;
+  	height: .6rem;
+  	float: left;
+  	background: #b2b2b2;
+  	border-radius: 50%;
+  	margin-left: .2rem;
+  	position: relative;
+  	
+  }
+  .icon-fanhui,.icon-gouwuche-2{
+  	font-size: .3rem;
+    position: absolute;
+    left: .2rem;
+    top: .15rem;
+    color: #f7f7f7;
+  }
+  
 </style>
 
 <script>
@@ -109,7 +195,41 @@ wx.ready(function(){
 </script>
 
 <base href="<?php echo $this->media_root ?>">
-
+<!--头部上边的导航条-->
+<div class="topBar">
+	  <div class="tabBarleft fl">
+	  	<i class="icon-fanhui"></i>
+	  </div>
+	  <div class="tabBarright fr">
+	  	<a href="https://www.517ybang.com/cart" target="_self">
+	  	<span class="cir">
+	  		<i class="icon-gouwuche-2" style="left: .1rem;top: .17rem;"></i>
+	  	</span>
+	  	</a>
+	  	<span class="cir" style="color: #f7f7f7 !important;font-size: .58rem;line-height: .28rem;text-align: center;">...</span>
+	  	  <div class="myarr">
+                    
+                </div>
+            <div class="dotshowlist" style="display: none;">
+                <div class="bizarr">
+                    <img src="<?php echo CDN_URL ?>media/home/biz_arr.png" alt="箭头">
+                </div>
+                <p>
+                    <a title="首页" href="<?php echo base_url() ?>" style="color: #fff;">
+                        <i class="icon-shouye_xiala"></i>
+                        <span>首页</span>
+                        <b></b>
+                    </a>
+                </p>
+                <p>
+                    <a title="个人中心" href="<?php echo base_url('mine') ?>" style="color: #fff;">
+                        <i class="icon-wode-2"></i>
+                        <span>我的</span>
+                    </a>
+                </p>
+            </div>
+	  </div>
+</div>
 <div id=content class=container>
     <!-- 主图&形象图 -->
 	<div id=item-figure class="swiper-container row">
@@ -270,14 +390,13 @@ wx.ready(function(){
     -->
 
 	<!-- 商品评价 -->
-    <?php if ( ! empty($comments)): ?>
-	<div class="productevaluation mt20 auto wid710 border20 clearfix skus">
+	<div class="productevaluation mt20 auto wid710 border20 clearfix skus" style="display: none;">
 		<div class="topcardwrap">
 			<h2>商品评价</h2>
 		</div>
 		
 		<hr>
-		<div class="topcardwrap clearfix">
+		<!--<div class="topcardwrap clearfix">
 			<div class="evaluationinfo clearfix">
 				<div class="pic fl">
 					<img src="<?php echo CDN_URL ?>media/item/detail/ximei@3x.png"/>
@@ -288,14 +407,13 @@ wx.ready(function(){
 		</div>
 
 		<!--商品评价内容区域-->
-		<div class="evaluationcontent">
+		<!--<div class="evaluationcontent">
 			<p>商品一如既往的好,实物和照片一样没有色差,口感非常好,以后一如既往的关注意帮管家平台的,希望平台以后多搞一些这样的</p>
-		</div>
+		</div>-->
 		<div class="evaluationbtn auto">
 			查看全部评价
 		</div>
 	</div>
-    <?php endif ?>
 	
 	<!-- 商家信息 -->
 	<div class="shopInfo mt20 auto border20 clearfix auto wid670">
@@ -528,28 +646,24 @@ wx.ready(function(){
             <?php
                 $item_status = '';
                 if ( ! empty($item['time_delete']) ):
-                    $item_status = '已下架';
+                    $item_status = '商品已经下架啦~';
 
                 elseif ( empty($item['time_publish']) ):
                     if (empty($item['time_to_publish']) || $item['time_to_publish'] < time()):
-                        $item_status = '未上架';
+                        $item_status = '商品还未上架';
                     elseif ($item['time_to_publish'] > time()):
-                        if (date('ymd') == date('ymd', $item['time_to_publish'])):
-                            $item_status = date('H:i', $item['time_to_publish']).' 开售';
-                        else:
-                            $item_status = date('m-d', $item['time_to_publish']).' 开售';
-                        endif;
+                        $item_status = date('Y-m-d H:i').'开售';
                     endif;
 
                 elseif ($item['stocks'] == 0 || $item['quantity_min'] > $item['stocks']):
                     if (empty($item['skus'])):
-                        $item_status = '抢光了';
+                        $item_status = '商品已经被抢光了~';
                     else:
                         $sku_stocks_overall = 0;
                         foreach ($sku as $item['skus']):
                             $sku_stocks_overall += $sku['stocks'];
                         endforeach;
-                        if ($sku_stocks_overall == 0) $item_status = '抢光了';
+                        if ($sku_stocks_overall == 0) $item_status = '商品已经被抢光了~';
                     endif;
 
                 endif;
@@ -600,21 +714,25 @@ wx.ready(function(){
 	var item = <?php echo $item_in_json ?>;
 	var record_id;
 	$.ajax({
-			url : api_url + 'fav_item/index',
-			data : {app_type:'client',user_id:user_id,item_id:item.item_id},
+			url : 'https://api.517ybang.com/fav_item/index',
+			type : 'post',
+			dataType:'json',
+			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
 			success : function(res){
 			for (var i = 0;i < res.content.length;i++) {
 				if(res.status == 200){
 					record_id = res.content[i].record_id;
 					$('.create').find('b').css('color','#fa3752').text('已收藏');
-						$('.create').find('img').attr('src', cdn_url + 'media/item/detail/shoucangcur.png')
+						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
 				}; 
 			}
 			}
 		});
 			//创建浏览记录
 		$.ajax({
-			url: api_url + "history_item_view/create",
+			url: "https://api.517ybang.com/history_item_view/create",
+			 type: "post",
+             dataType: 'json',
              data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
             success: function (res) {
             	//alert('加入浏览记录成功');
@@ -627,10 +745,12 @@ wx.ready(function(){
 				if(cancelfocus){
 						$.ajax({
 							url : api_url + 'fav_item/edit_bulk',
+							type : 'post',
+							dataType:'json',
 							data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
 							success : function(res){
 								$('.create').find('b').css('color','#3E3A39').text('收藏');
-								$('.create').find('img').attr('src', cdn_url + 'media/item/detail/shoucang-@3x.png')
+								$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
 							}
 						});
 				}
@@ -818,6 +938,39 @@ var loc = url.substring(url.lastIndexOf('=')+1, url.length);
 			    });
 
 			}
-	})
-	
+	});
+		var biz_flag = 0;
+	  $('.tabBarright').find('span').eq(1).on('click',function(){
+            if (biz_flag == 0)
+            {
+                $('.dotshowlist').show();
+                biz_flag = 1;
+            }
+            else
+            {
+                $('.dotshowlist').hide();
+                biz_flag = 0;
+            }
+        });
+        //商品评价区域
+    var params = common_params;
+    params.item_id = item.item_id;
+    params.user_id = '';
+    $.ajax({
+    	url:api_url + "/comment_item/index",
+    	data : params,
+    	success : function(res){
+    		if(res.content[0]){
+    			$('.productevaluation').css('display','block');
+    			console.log(res.content[0]);
+    			var con = res.content[0];
+    			var userLogo = con.avatar;
+    			var nickname = con.nickname;
+    			var content = con.content;
+    			var time_create = con.time_create;
+    			var oCon = '<div class="topcardwrap clearfix"><div class="evaluationinfo clearfix"><div class="pic fl"><img src="https://medias.517ybang.com/user/'+userLogo+'"></div><span class="fl block">'+nickname+'</span><time class="fr">'+time_create+'</time></div></div><div class="evaluationcontent"><p>'+content+'</p></div>';
+    			$('.productevaluation').find('hr').after(oCon);
+    		}
+    	} 
+    });
 </script>
