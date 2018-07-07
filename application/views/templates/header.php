@@ -128,7 +128,7 @@
             var user_agent = <?php echo json_encode($this->user_agent) ?>;
 
             // 当前用户信息
-            var user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>;
+            var user_id = <?php echo empty($this->session->user_id)? '': $this->session->user_id ?>;
 
             // 全局参数
             var api_url = '<?php echo API_URL ?>'; // API根URL

@@ -1,3 +1,4 @@
+<?php if ($this->input->post_get('test_mode') == 'on') var_dump($item['ornament']) ?>
 
 <?php if ( !empty($item['ornament']['home_slides']) ): ?>
     <!--头部banner区域开始-->

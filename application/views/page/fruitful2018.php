@@ -382,9 +382,9 @@
         ),
         'appended' =>
         '<ul id=zhuanxiang>'.
-        '<li><a href="'. BASE_URL . 'item/detail?id=5663"></a></li>'.
-        '<li><a href="'. BASE_URL . 'item/detail?id=5645"></a></li>'.
-        '<li><a href="'. BASE_URL .'item/detail?id=5646"></a></li>'.
+        '  <li><a href="'. BASE_URL . 'item/detail?id=5645"></a></li>'.
+        '  <li><a href="'. BASE_URL . 'item/detail?id=5663"></a></li>'.
+        '  <li><a href="'. BASE_URL .'item/detail?id=5646"></a></li>'.
         '</ul>'
     );
 
