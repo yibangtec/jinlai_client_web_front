@@ -172,9 +172,8 @@
 
 <?php
     $items = array();
-    /*
     $items[] = array(
-        'title' => '16点秒杀专场',
+        'title' => '10点秒杀专场',
 
         // 070410
         'items' => array(
@@ -209,7 +208,7 @@
         ),
 
         // 070412
-        'items' => array(
+       /* 'items' => array(
             array(
                 'item_id' => '5716',
                 'url_image_main' => '/media/fruitful2018/items/070312/0-1@2x.png',
@@ -238,11 +237,11 @@
                 'price' => '29.9',
                 'tag_price' => '36',
             ),
-        ),
+        ),*/
 
 
         // 070414
-        'items' => array(
+       /* 'items' => array(
 
             array(
                 'item_id' => '5730',
@@ -273,10 +272,10 @@
                 'tag_price' => '49',
             ),
 
-        ),
+        ),*/
 
         // 070416
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5712',
                 'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
@@ -305,10 +304,10 @@
                 'price' => '9.9',
                 'tag_price' => '29',
             ),
-        ),
+        ),*/
 
         // 070420
-        'items' => array(
+       /*'items' => array(
            array(
                'item_id' => '5736',
                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
@@ -337,11 +336,10 @@
                'price' => '25.9',
                'tag_price' => '39.9',
            ),
-        ),
+        ),*/
 
         'appended' => ''
     );
-    */
 
     $items[] = array(
         'title' => '进来爆款',
@@ -354,11 +352,11 @@
                 'tag_price' => '29.9',
             ),
             array(
-                'item_id' => '4389',
+                'item_id' => '4816',
                 'url_image_main' => '/media/fruitful2018/items/1-2.png',
-                'name' => '桃本桃-玫瑰公主',
-                'price' => '178',
-                'tag_price' => '298',
+                'name' => '阳山水蜜桃4只装',
+                'price' => '29.8',
+                'tag_price' => '38.9',
             ),
             array(
                 'item_id' => '5639',
@@ -384,9 +382,9 @@
         ),
         'appended' =>
         '<ul id=zhuanxiang>'.
-        '  <li><a href="'. BASE_URL . 'item/detail?id=5645"></a></li>'.
-        '  <li><a href="'. BASE_URL . 'item/detail?id=5663"></a></li>'.
-        '  <li><a href="'. BASE_URL .'item/detail?id=5646"></a></li>'.
+        '<li><a href="'. BASE_URL . 'item/detail?id=5663"></a></li>'.
+        '<li><a href="'. BASE_URL . 'item/detail?id=5645"></a></li>'.
+        '<li><a href="'. BASE_URL .'item/detail?id=5646"></a></li>'.
         '</ul>'
     );
 
