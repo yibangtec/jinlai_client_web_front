@@ -709,59 +709,56 @@ wx.ready(function(){
 		}
 		return false;
 	});
+
 	// 商品信息
-	var user_id = <?php echo $this->session->user_id ?>;
 	var item = <?php echo $item_in_json ?>;
 	var record_id;
 	$.ajax({
-			url : 'https://api.517ybang.com/fav_item/index',
-			type : 'post',
-			dataType:'json',
-			data : {app_type:'client',user_id:user_id,item_id : item.item_id},
-			success : function(res){
-			for (var i = 0;i < res.content.length;i++) {
+        url : api_url + 'fav_item/index',
+        data : {app_type:'client',user_id:user_id,item_id : item.item_id},
+        success : function(res){
+			for (var i = 0;i < res.content.length;i++)
+			{
 				if(res.status == 200){
 					record_id = res.content[i].record_id;
 					$('.create').find('b').css('color','#fa3752').text('已收藏');
-						$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
+						$('.create').find('img').attr('src', cdn_url+'media/item/detail/shoucangcur.png')
 				}; 
 			}
-			}
-		});
-			//创建浏览记录
-		$.ajax({
-			url: "https://api.517ybang.com/history_item_view/create",
-			 type: "post",
-             dataType: 'json',
-             data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
-            success: function (res) {
-            	//alert('加入浏览记录成功');
-            }
-		});
+        }
+    });
+
+    // 创建浏览记录
+    $.ajax({
+        url: api_url + "history_item_view/create",
+         data:{app_type:'client',user_id:user_id,item_id:item.item_id,last_viewed_platform:'web'},
+        success: function (res) {
+            console.log('添加浏览记录成功');
+        }
+    });
 		
 	$('.create').on('click',function(e){
-		if($(this).find('b').text() == '已收藏'){
+		if($(this).find('b').text() == '已收藏')
+		{
 			var cancelfocus = confirm('您确定要取消收藏此店铺吗?');
-				if(cancelfocus){
-						$.ajax({
-							url : api_url + 'fav_item/edit_bulk',
-							type : 'post',
-							dataType:'json',
-							data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
-							success : function(res){
-								$('.create').find('b').css('color','#3E3A39').text('收藏');
-								$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
-							}
-						});
-				}
-				else{
-				}
+            if(cancelfocus)
+            {
+                    $.ajax({
+                        url : api_url + 'fav_item/edit_bulk',
+                        type : 'post',
+                        dataType:'json',
+                        data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
+                        success : function(res){
+                            $('.create').find('b').css('color','#3E3A39').text('收藏');
+                            $('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
+                        }
+                    });
+            }
 		}
-		else{
+		else
+        {
 				$.ajax({
-			url: "https://api.517ybang.com/fav_item/create",
-			 type: "post",
-             dataType: 'json',
+			url: api_url + "fav_item/create",
              data:{app_type:'client',user_id:user_id,item_id:item.item_id},
             success: function (res) {
             	$('.create').find('b').css('color','#fa3752').text('已收藏');
@@ -770,170 +767,104 @@ wx.ready(function(){
               }
 		})
 		}
-		
 	});
+
 	//添加进购物车
-	
 	var offset = $("#end").offset();
-
-		var endLeft = $("#end").css("left");
-
-		var oldcar,
-
-			user_id,
-
-			item_id,
-
-			arrCur;
+    var endLeft = $("#end").css("left");
+    var oldcar, item_id, arrCur;
 	$('#cart-add').click(function(){
 		var url = window.location.search; 
-// alert(url.length); 
-// alert(url.lastIndexOf('=')); 
-var loc = url.substring(url.lastIndexOf('=')+1, url.length); 
+        // alert(url.length);
+        // alert(url.lastIndexOf('='));
+        var loc = url.substring(url.lastIndexOf('=')+1, url.length);
 		debugger;
 		var r = loc;
+        oldcar = r;
+        var count=1;
+        var addCartTime;
+        var oldShopList = [];
+        var countflag = 0;
+        if(user_agent.is_wechat)
+        {
+            var addcar = $(this);
+            $.ajax({
+                url: api_url + 'cart/index',
+                cache: false,
+                timeout: 10000,
+                async: false,
+                data : {app_type:'client',user_id:user_id},
+                error: function(date){
+                    alert(date);
+                },
+                success : function(data){
+                    item_id = data.content.order_items;
+                }
+            });
 
-			oldcar = r;
-
-			var count=1;
-
-			var addCartTime;
-
-			var oldShopList = [];
-
-			var countflag = 0;
-				if(user_agent.is_wechat){
-
-					var addcar = $(this);
-
-					var user_id = <?php echo $this->session->user_id ?>;
-
-					$.ajax({
-
-			        url: 'https://api.517ybang.com/cart/index',
-
-			        type: 'post',
-
-			        dataType: "json",
-
-			        cache: false,
-
-			        timeout: 10000,
-
-			        async: false,
-
-			        data : {app_type:'client',user_id:user_id},
-
-			        error: function(date){
-
-					alert(date);
-
-			        },
-
-			        success : function(data){
-
-			        	item_id = data.content.order_items;
-
-			        }
-
-		     });
-
-		      for (var i = 0;i < item_id.length;i++) {
-
-				for (var j = 0;j < item_id[i].order_items.length;j++) {
-
+		      for (var i = 0;i < item_id.length;i++)
+		      {
+				for (var j = 0;j < item_id[i].order_items.length;j++)
+				{
 					//var oldShopList = '1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count;
-
-					if(oldcar == item_id[i].order_items[j].item_id){
-
+					if (oldcar == item_id[i].order_items[j].item_id)
+					{
 						count = item_id[i].order_items[j].count;
-
-						if(countflag == 0){
-
+						if (countflag == 0)
+						{
 							count++;
-
 							countflag = 1;
-
 						}
 
 					}
-
-					else{
-
+					else
+                    {
 						oldShopList.push('1|' + item_id[i].order_items[j].item_id + '|0|' + item_id[i].order_items[j].count);
-
 					}
 
-				}				
-
+				}
 	        	}
 
 	        arrCur = oldShopList.join(",");
 
 			var img = addcar.parent().find('img').attr('src');
-
 			var flyer = $('<img class="u-flyer" src="'+img+'">');
 
 			flyer.fly({
 
 				start: {
-
 					left: addcar.offset().left - $(document).scrollLeft(),
-
 					top: addcar.offset().top - $(document).scrollTop()
-
 				},
 
 				end: {
-
 					left:parseInt(endLeft),
-
 					top: 0,
-
 					width: 0,
-
 					height: 0
-
 				},
 
 				onEnd: function(){
-
 					$("#msg").show().animate({width: '250px'}, 200).fadeOut(1000);
-
 					addcar.css("cursor","default").removeClass('orange');
-
 					this.destory();
-
 				}
 
 			});
 
-			    var shopInfo = '1|' + oldcar + '|0|' + count + ',' + arrCur;
+			    var shopInfo = '1|'+oldcar+'|0|'+count+',' + arrCur;
 
-			    //上传接口
-
+			    // 上传接口
 			    $.ajax({
-			    	type:"post",
-			    	url:"https://api.517ybang.com/cart/sync_up",
-
-			    	dataType:'json',
-
+			    	url: api_url + "cart/sync_up",
 			    	async : false,
-
 			    	data:{app_type:'client',id:user_id,name:'cart_string',value:shopInfo},
-
 			    	success:function(res){
-
 			    		console.log(res);
-
 			    		clearTimeout(addCartTime);
-
 					    addCartTime = setTimeout(function(){
-
 							$('#cartsuccess').show().delay(1000).fadeOut();
-
 					    },1000);
-
 			    	}
 			    });
 
@@ -952,13 +883,14 @@ var loc = url.substring(url.lastIndexOf('=')+1, url.length);
                 biz_flag = 0;
             }
         });
-        //商品评价区域
+
+    // 商品评价区域
     var params = common_params;
     params.item_id = item.item_id;
     params.user_id = '';
     console.log(params);
     $.ajax({
-    	url:api_url + "/comment_item/index",
+    	url:api_url + 'comment_item/index',
     	data : params,
     	success : function(res){
     		if(res.content[0]){
@@ -969,7 +901,7 @@ var loc = url.substring(url.lastIndexOf('=')+1, url.length);
     			var nickname = con.nickname;
     			var content = con.content;
     			var time_create = con.time_create;
-    			var oCon = '<div class="topcardwrap clearfix"><div class="evaluationinfo clearfix"><div class="pic fl"><img src="https://medias.517ybang.com/user/'+userLogo+'"></div><span class="fl block">'+nickname+'</span><time class="fr">'+time_create+'</time></div></div><div class="evaluationcontent"><p>'+content+'</p></div>';
+    			var oCon = '<div class="topcardwrap clearfix"><div class="evaluationinfo clearfix"><div class="pic fl"><img src="'+ media_url+'user/'+userLogo +'"></div><span class="fl block">'+nickname+'</span><time class="fr">'+time_create+'</time></div></div><div class="evaluationcontent"><p>'+content+'</p></div>';
     			$('.productevaluation').find('hr').after(oCon);
     		}
     	} 
