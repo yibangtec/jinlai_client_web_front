@@ -21,6 +21,7 @@
 ?>
 <!DOCTYPE html>
 <html lang=zh-cn>
+<!-- header-simple -->
 	<head>
 		<meta charset=utf-8>
 		<meta http-equiv=x-dns-prefetch-control content=on>
@@ -28,7 +29,7 @@
 		<title><?php echo $title ?></title>
 		<meta name=description content="<?php echo $description ?>">
 		<meta name=keywords content="<?php echo $keywords ?>">
-		<meta name=version content="revision20180630">
+		<meta name=version content="revision20180709">
 		<meta name=author content="刘亚杰Kamas,青岛意帮网络科技有限公司产品部&amp;技术部">
 		<meta name=copyright content="进来商城,青岛意帮网络科技有限公司">
 		<meta name=contact content="kamaslau@dingtalk.com">
@@ -79,7 +80,7 @@
         </script>
         <script>
             // 当前用户信息
-            var user_id = <?php echo empty($this->session->user_id)? 'null': $this->session->user_id ?>;
+            var user_id = '<?php echo $this->session->user_id ?>';
 
             // 全局参数
             var api_url = '<?php echo API_URL ?>'; // API根URL
@@ -91,7 +92,7 @@
             // AJAX参数
             var ajax_root = '<?php echo API_URL ?>';
             var common_params = new Object()
-            common_params.app_type = 'client' // 默认为商户端请求
+            common_params.app_type = 'client' // 默认为客户端请求
             common_params.user_id = user_id
 
             // UserAgent
