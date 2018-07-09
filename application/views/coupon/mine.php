@@ -31,6 +31,7 @@
 		}
 	</style>
 	<script src="<?php echo CDN_URL ?>js/educationclassification.js"></script>
+
 	<div class="havecoupon">
 		<div class="minecoupontopTabbar">
 			<div class="tab coupon">
@@ -98,9 +99,8 @@ margin-top: .5rem;" alt="">
 	<div class="morecoupon">领取更多</div>
 </a>
 <script>
-	var user_id = '<?php echo $this->session->user_id ?>';
 	function timestampToTime(timestamp) {
-	        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	        var date = new Date(timestamp * 1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
 	        Y = date.getFullYear() + '.';
 	        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '.';
 	        D = date.getDate() + ' ';

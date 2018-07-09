@@ -1,3 +1,4 @@
+<?php if ($this->input->post_get('test_mode') == 'on') var_dump($item['ornament']) ?>
 
 <?php if ( !empty($item['ornament']['home_slides']) ): ?>
     <!--头部banner区域开始-->
@@ -173,7 +174,10 @@ function assemble_item_image_url($item, $url_column_name)
         </div>-->
         <div class="pic mt10">
             <a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m1_ace_id']) ?>" target="_self">
-                <img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m1_ace_url'] ?>">
+                <img
+                        src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m1_ace_url'] ?>"
+                        data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m1_ace_url'] ?>"
+                >
             </a>
         </div>
         <!--卡片式导航商品内容区域-->
@@ -183,7 +187,10 @@ function assemble_item_image_url($item, $url_column_name)
                     <li>
                         <a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
                             <div class=pic>
-                                <img data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>">
+                                <img
+                                        src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                        data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                >
                             </div>
                             <h1><?php echo $module_item['name'] ?></h1>
                             <h2><?php echo $module_item['slogan'] ?></h2>
@@ -206,7 +213,10 @@ function assemble_item_image_url($item, $url_column_name)
         </div>-->
         <div class="pic mt10">
             <a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m2_ace_id']) ?>" target="_self">
-                <img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m2_ace_url'] ?>">
+                <img
+                        src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m2_ace_url'] ?>"
+                        data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m2_ace_url'] ?>"
+                >
             </a>
         </div>
         <!--卡片式导航商品内容区域-->
@@ -216,7 +226,10 @@ function assemble_item_image_url($item, $url_column_name)
                     <li>
                         <a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
                             <div class=pic>
-                                <img data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>">
+                                <img
+                                        src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                        data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                >
                             </div>
                             <h1><?php echo $module_item['name'] ?></h1>
                             <h2><?php echo $module_item['slogan'] ?></h2>
@@ -239,7 +252,10 @@ function assemble_item_image_url($item, $url_column_name)
         </div>-->
         <div class="pic mt10">
             <a href="<?php echo base_url('item/detail?id='.$item['ornament']['home_m3_ace_id']) ?>" target="_self">
-                <img data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m3_ace_url'] ?>">
+                <img
+                        src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m3_ace_url'] ?>"
+                        data-src="<?php echo MEDIA_URL.'ornament_biz/'.$item['ornament']['home_m3_ace_url'] ?>"
+                >
             </a>
         </div>
         <!--卡片式导航商品内容区域-->
@@ -249,7 +265,10 @@ function assemble_item_image_url($item, $url_column_name)
                     <li>
                         <a href="<?php echo base_url('item/detail?id='.$module_item['item_id']) ?>" target="_self">
                             <div class=pic>
-                                <img data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>">
+                                <img
+                                        src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                        data-src="<?php echo assemble_item_image_url($module_item, 'url_image_main') ?>"
+                                >
                             </div>
                             <h1><?php echo $module_item['name'] ?></h1>
                             <h2><?php echo $module_item['slogan'] ?></h2>

@@ -32,6 +32,9 @@
 	    left: 6.7rem;
 
 }
+#itemCategoryBiz{
+    overflow: scroll;
+}
 .itemContent{
 	display: block;
 	position: relative;
@@ -159,7 +162,7 @@
 
 
            </ul>
-           <span class="bottomline" style="padding-top: .5rem;display: none;position: absolute;font-size:.26rem;color: #999;width:80%;left:50%;margin-left:-40%;text-align: center;">亲,我是有底线的哇~</span>
+           <span class="bottomline" style="padding-top: .5rem;display: none;position: absolute;font-size:.26rem;color: #999;width:80%;left:50%;margin-left:-40%;text-align: center;">努力加载中...</span>
  
         </div>
         <!--<div class="itemContent" id="itemContentXL">
@@ -296,13 +299,17 @@
 	     	timers = null,
 	     	priceflag = 0;
 	     	var categary = category_id;
+	     	var sStatus; 
+            var min = '';
+            var max = '';
        $(".navigationCategory li").on('click',function(){
        	$('.shang-sanjiao').css('color','#9fa0a0');
        	$('.xia-sanjiao').css('color','#9fa0a0');
        	$(this).addClass('tabActive').siblings('li').removeClass('tabActive');
        	$('#listItem').html('');
  		$('.navigationCategory').scrollTop(0);
- 		$('.bottomline').css('display','none');
+ 		$('.bottomline').css('display','block');
+ 		sStatus = $(this).text();
 		page = 0;
 		if($(this).text() == '综合'){
 			LoadingDataFn(category_id,page);
@@ -334,13 +341,13 @@
 
 			//加载更多
 			//加载数据
-var LoadingDataFn = function(categary,page,xl,xp,jg) {
+var LoadingDataFn = function(categary,page,xl,xp,jg,jgmin,jgmax) {
     		$.ajax({
 			type:"post",
 			url:api_url,
 			async:false,
 			dataType : 'json',
-			data : {app_type:'client',orderby_price:jg,category_id:categary,limit:10,offset:page,orderby_sold_overall:xl,orderby_time_publish:xp},
+			data : {app_type:'client',orderby_price:jg,category_id:categary,limit:10,offset:page,orderby_sold_overall:xl,orderby_time_publish:xp,price_min:jgmin,price_max:jgmax},
 			success : function(res){
 				var con = res.content;
 				console.log(res);
@@ -367,10 +374,27 @@ $(window).scroll(function() {
         clearTimeout(timers);
         timers = setTimeout(function() {
             page+=10;
-            console.log('page是' + page);
+            
             $('.bottomline').css('display','block');
     		$('.bottomline').text('加载中...');
-             LoadingDataFn(categary,page);  //调用执行上面的加载方法
+    		if(sStatus == '综合'){
+    			LoadingDataFn(categary,page);  //调用执行上面的加载方法
+    		}
+             if(sStatus == '销量'){
+    			LoadingDataFn(category_id,page,'DESC');  //调用执行上面的加载方法
+    		}
+    			if(sStatus == '价格'){
+			if(priceflag == 1){
+				LoadingDataFn(category_id,page,'','','DESC');
+			}
+			else{
+				LoadingDataFn(category_id,page,'','','ASC');
+			}
+		}
+            if(sStatus == '筛选'){
+                console.log(page);
+                 LoadingDataFn(categary,page,'','','',min,max);
+            }
         }, 300);
     }
 });
@@ -450,16 +474,18 @@ $(window).scroll(function() {
 
             var promotionId ='';
 
-            var min = '';
-            var max = ''
+            
             $('#filterSubmit').on('click',function(){
             	$('html,body').css('overflow','auto');
+                    page = 0;
                   $('#listItem').html('');
                   min = $('#minPrice').val();
                   max = $('#maxPrice').val();
                   $('.thisFilter').hide();
-                  $('.itemContent').hide();
-                  $('.itemContent').eq(0).show();
+                  sStatus = '筛选';
+                  LoadingDataFn(categary,page,'','','',min,max);
+                  //$('.itemContent').hide();
+                  //$('.itemContent').eq(0).show();
 
 
                 $('#minPrice').val('');
@@ -468,34 +494,7 @@ $(window).scroll(function() {
                 $('#promotionBiz').html('');
 
              });
-            var name ='';
-            $('.thisFilter').on('click',function(){
-                if(status=='综合'){
-                  $('.itemContent').hide();
-                  $('.itemContent').eq(0).show();
-                }else if(status=='销量'){
-                    $('.itemContent').hide();
-                    $('.itemContent').eq(1).show();
-                }else if(status=='新品'){
-                    $('.itemContent').hide();
-                    $('.itemContent').eq(2).show();
-                }else if(status=='价格升序'){
-                    $('.itemContent').hide();
-                    $('.itemContent').eq(3).show();
-                    $('.shang-sanjiao').css('color','#ff3649');
-                    $('.xia-sanjiao').css('color','#9fa0a0');
-                }else if(status=='价格降序'){
-                    $('.itemContent').hide();
-                    $('.itemContent').eq(3).show();
-                    $('.xia-sanjiao').css('color','#ff3649');
-                    $('.shang-sanjiao').css('color','#9fa0a0');
-                }
-                $('#minPrice').val('');
-                $('#maxPrice').val('');
-                $('#itemCategoryBiz').html('');
-                $('#promotionBiz').html('');
-                $('.thisFilter').hide();
-            });
+          
            $('.filterList').on('click',function(event){
              event.stopPropagation()
 
