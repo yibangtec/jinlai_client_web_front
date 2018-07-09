@@ -172,11 +172,11 @@
 
 <?php
     $items = array();
-    $items[] = array(
+    /*$items[] = array(
         'title' => '10点秒杀专场',
 
         // 070410
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5692',
                 'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
@@ -205,7 +205,7 @@
                 'price' => '49',
                 'tag_price' => '99',
             ),
-        ),
+        ),*/
 
         // 070412
        /* 'items' => array(
@@ -336,10 +336,10 @@
                'price' => '25.9',
                'tag_price' => '39.9',
            ),
-        ),*/
+        ),
 
         'appended' => ''
-    );
+    );*/
 
     $items[] = array(
         'title' => '进来爆款',

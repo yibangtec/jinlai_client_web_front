@@ -23,12 +23,15 @@
         right: -0.2rem;
     }
     .item-operation a{
+        position:absolute;
+        bottom:0.2rem;
+        right:0.2rem;
+        margin:0;
         display: inline-block;
         width: 1.2rem;
         height: 0.54rem;
         text-align: center;
         line-height: 0.5rem;
-        margin: 0.5rem 0.2rem 0 0;
         border: 0.02rem solid #9fa0a0;
         border-radius: 0.27rem;
         color:#3e3a39;}
@@ -643,16 +646,15 @@
               }
             // 生成订单商品信息
             var timePay = item.time_pay;
-            if(timePay!==''){
+            if(timePay !==''){
                 timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
-                if(orderItems[key].refund_status !== ''){
-                    timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
-                }else{
-                    timePay = '';
-                }
-            }else{
 
+            }else if(orderItems[key].refund_status !==''){
+                timePay = '<a href="' + base_url + 'refund/detail?id=' +orderItems[key].order_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
+            }else{
+                timePay = '';
             }
+
 
 
 
@@ -708,6 +710,9 @@
                              var day = parseInt( parseInt( parseInt(second_time / 60) /60 ) / 24 );
                              //time = day + "天" + hour + "小时" + min + "分" + second + "秒";
                              time = day + "天" + hour + "小时";
+                         }else{
+                            time = hour + "小时" + min + "分";
+
                          }
                      }
 
