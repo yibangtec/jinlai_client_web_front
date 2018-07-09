@@ -690,6 +690,7 @@ wx.ready(function(){
 </nav>
 <span id="tip" style="display: none;">收藏成功</span>
 <span id="cartsuccess" style="display: none;">添加成功</span>
+
 <script>
 	var vH = ($(".shopInfo .headerinfo .pic").height() - $(".shopInfo .headerinfo .pic").find('img').height()) / 2;
 	$(".shopInfo .headerinfo .pic").find('img').css('marginTop',vH);
@@ -750,26 +751,26 @@ wx.ready(function(){
                         data : {app_type:'client',user_id:user_id,ids:record_id,operation:'delete'},
                         success : function(res){
                             $('.create').find('b').css('color','#3E3A39').text('收藏');
-                            $('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucang-@3x.png')
+                            $('.create').find('img').attr('src', cdn_url+'media/item/detail/shoucang-@3x.png')
                         }
                     });
             }
 		}
 		else
         {
-				$.ajax({
+            $.ajax({
 			url: api_url + "fav_item/create",
              data:{app_type:'client',user_id:user_id,item_id:item.item_id},
             success: function (res) {
             	$('.create').find('b').css('color','#fa3752').text('已收藏');
-							$('.create').find('img').attr('src','https://cdn-remote.517ybang.com/media/item/detail/shoucangcur.png')
-							$('#tip').show().delay(1000).fadeOut();
-              }
+                $('.create').find('img').attr('src', cdn_url+'media/item/detail/shoucangcur.png')
+                $('#tip').show().delay(1000).fadeOut();
+            }
 		})
 		}
 	});
 
-	//添加进购物车
+	// 添加进购物车
 	var offset = $("#end").offset();
     var endLeft = $("#end").css("left");
     var oldcar, item_id, arrCur;
@@ -785,7 +786,7 @@ wx.ready(function(){
         var addCartTime;
         var oldShopList = [];
         var countflag = 0;
-        if(user_agent.is_wechat)
+        if (user_agent.is_wechat)
         {
             var addcar = $(this);
             $.ajax({

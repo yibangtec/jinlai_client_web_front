@@ -161,7 +161,7 @@
                 </div>
 
                 <div class="create-list">
-                    <textarea rows="3" name=street contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type=text placeholder="请输入除省市区之外的详细地址，至少5个字符" value="<?php echo set_value('street') ?>" required></textarea>
+                    <textarea rows="3" name=street contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" placeholder="请输入除省市区之外的详细地址，至少5个字符" required><?php echo set_value('street') ?></textarea>
                 </div>
 
                 <!--
@@ -173,7 +173,7 @@
                 <?php if ( ! empty($this->session->address_id) ): ?>
                 <div id="select" class="address-default">
                     <input id=defaultThis type=hidden name=default_this value=0>
-                    <i id="selectIcon" class="icon-zidongtui"></i> <span>默认地址</span>
+                    <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认</span>
                 </div>
                 <?php endif ?>
 
@@ -222,9 +222,11 @@
         $("#demo1").focus(function(){
             document.activeElement.blur();
         });
+
         $('#detailAddress').bind('input onchange', function(){
             console.log($('#detailAddress').val());
-            if($('#detailAddress').val().length > 4 ){
+            if ($('#detailAddress').val().length > 4 )
+            {
                 $('#mapBox').css('display','block');
             }
         });
@@ -233,8 +235,7 @@
         $("#select").click(function(){
              if ($(this).find("i").is('.icon-zidongtui'))
              {
-                 $(this).find("i").removeClass('icon-zidongtui');
-                 $(this).find("i").addClass('icon-xuanzhong');
+                 $(this).find("i").removeClass('icon-zidongtui').addClass('icon-xuanzhong');
                  $(this).find("span").css('color','#ff3649');
                  $('[name=default_this]').val(1);
              }
@@ -247,7 +248,7 @@
         });
 
         $('form').submit(function(){
-            // 降低至空间获取到的值分拆赋值到相应字段
+            // 将地址控件获取到的值分拆赋值到相应字段
             var addressText = $('#demo1').val();
             console.log(addressText);
 
@@ -268,55 +269,34 @@
                 $('[name=county]').val(arr[2]);
             }
 
-            // 若无默认收货地址，则AJAX创建
-            if (default_address_id != '')
+            var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
+            for (var index in data_to_process)
             {
-
-                /*
-                var addressText = $('#demo1').val();
-                console.log(addressText);
-                var arr = [];
-                arr = addressText.split(',');
-                console.log(arr);
-
-                if(0<arr.length<3){
-                   params.province = arr[0];
-                   params.city = arr[0];
-                   params.county = arr[1];
-                }else{
-                   params.province = arr[0];
-                   params.city = arr[1];
-                   params.county = arr[2];
-                }
-                */
-                 var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
-                 for (var index in data_to_process)
-                 {
-                     params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
-
-                 }
-
-                 console.log(params);
-                 $.post(
-                     api_url + 'address/create',
-                     params,
-                     function(result)
-                     {
-                         console.log(result); // 输出回调数据到控制台
-                         if (result.status == 200)
-                         {
-                            console.log(result.content);
-
-                            window.history.back(-1);
-                         } else {
-                            alert(result.content.error.message);
-                         }
-                     }
-                 )
-
-                 return false;
-
+                params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
             }
+
+            console.log(params);
+            $.post(
+                api_url + 'address/create',
+                params,
+                function(result)
+                {
+                    console.log(result); // 输出回调数据到控制台
+                    if (result.status == 200)
+                    {
+                        console.log(result.content);
+                        location.href = base_url + 'address/index' // 转到地址列表页
+
+                        //window.history.back(-1);
+                    }
+                    else
+                    {
+                        alert(result.content.error.message);
+                    }
+                }
+            )
+
+             return false;
         });
 
     });
@@ -438,7 +418,6 @@
                     });
                 };
                 map.panBy(0, 1);
-
             });
 
         });

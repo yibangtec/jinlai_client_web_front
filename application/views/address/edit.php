@@ -151,27 +151,27 @@
                 <input id="tel" class="create-input" name="mobile" type="tel" placeholder="手机号" value="<?php echo empty(set_value('mobile'))? $item['mobile']: set_value('mobile') ?>">
             </div>
            <div class="create-list">
-                <input type=hidden name=province value="<?php echo set_value('province') ?>">
-                <input type=hidden name=city value="<?php echo set_value('city') ?>">
-                <input type=hidden name=county value="<?php echo set_value('county') ?>">
+                <input type=hidden name=province value="<?php echo $item['province'] ?>">
+                <input type=hidden name=city value="<?php echo $item['city'] ?>">
+                <input type=hidden name=county value="<?php echo $item['county'] ?>">
 
                 <!-- 省市区选择控件 -->
                 <input id=latAndLng type=hidden value="">
-                <input class="create-input" id="demo1" type=text name=input_area placeholder="省、市、区/县" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
+                <input class="create-input" id="demo1" type=text name=input_area placeholder="省、市、区/县" value="<?php echo trim($item['province'].','.$item['city'].','.$item['county'], ',') ?>" required>
             </div>
             <div class="create-list">
-                <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
+                <textarea rows="3" name=street contenteditable style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" placeholder="详细地址" required><?php echo empty(set_value('street'))? $item['street']: set_value('street') ?></textarea>
             </div>
             <div class="create-list" style="display:none">
                 <input class="create-input" type=number min=100000 step=1 placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
             </div>
+
             <?php if ( ! empty($this->session->address_id) ): ?>
             <div id="select" class="address-default">
                 <input id=defaultThis type=hidden name=default_this value=0>
-                <i id="selectIcon" class="icon-zidongtui"></i> <span>默认地址</span>
+                <i id="selectIcon" class="icon-zidongtui"></i> <span>设为默认</span>
             </div>
             <?php endif ?>
-
         </form>
 
         <div id="mapBox" class="map-box" style="position: fixed">
@@ -227,12 +227,10 @@
                 $('#mapBox').css('display','block');
             }
         });
+
          $("#select").click(function(){
-
-
                 if($(this).find("i").is('.icon-zidongtui')){
-                    $(this).find("i").removeClass('icon-zidongtui');
-                    $(this).find("i").addClass('icon-xuanzhong');
+                    $(this).find("i").removeClass('icon-zidongtui').addClass('icon-xuanzhong');
                     $(this).find("span").css('color','#ff3649');
                     $('#defaultThis').val('1');
 
@@ -249,33 +247,38 @@
                if (r != null) return unescape(r[2]);
                return null;
            }
+
         $('form').submit(function(){
+            var params = common_params
 
+            // 获取当前修改中地址ID
+            params.id = getQueryString('id');
 
-             var ID = getQueryString('id');
+            // 将地址控件获取到的值分拆赋值到相应字段
+            var addressText = $('#demo1').val();
+            console.log(addressText);
 
-             // 若无默认收货地址，则AJAX创建
-             params.id = ID;
-             var addressText = $('#demo1').val();
-             console.log(addressText);
-             var arr = [];
-             arr = addressText.split(',');
-             console.log(arr);
+            var arr = [];
+            arr = addressText.split(',');
+            console.log(arr);
 
-             if(arr.length<3){
+            // 省市区选择控件有可能存在仅可获取二级地址的现象
+            if (arr.length < 3){
                 $('[name=province]').val(arr[0]);
                 $('[name=city]').val(arr[0]);
                 $('[name=county]').val(arr[arr.length - 1]);
-             }else{
+            }
+            else
+            {
                 $('[name=province]').val(arr[0]);
                 $('[name=city]').val(arr[1]);
                 $('[name=county]').val(arr[2]);
-             }
+            }
+
               var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
               for (var index in data_to_process)
               {
                   params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
-
               }
 
               console.log(params);
@@ -288,8 +291,9 @@
                       if (result.status == 200)
                       {
                        console.log(result.content);
+                       location.href = base_url + 'address/index' // 转到地址列表页
 
-                          window.history.back(-1);
+                      //window.history.back(-1);
                        } else {
                           alert(result.content.error.message);
                        }
@@ -297,8 +301,6 @@
               )
 
               return false;
-
-
         });
 
     });
@@ -323,7 +325,6 @@
             zoom: 16,
             scrollWheel: false
         });
-
 
         map.plugin(['AMap.Geolocation','AMap.Geocoder','AMap.ToolBar'], function () {
             geolocation = new AMap.Geolocation({
@@ -365,7 +366,6 @@
                     map: map
                 });
 
-
                 positionPicker.on('success', function (positionResult) {
                     console.log(positionResult.position.lat);
                     if(start !== positionResult.position.lat){
@@ -383,8 +383,6 @@
                     }else{
                         //document.getElementById('detailAddress').value=positionResult.address;
                     }
-
-
                 });
                 positionPicker.on('fail', function (positionResult) {
 
@@ -413,8 +411,6 @@
                     });
                 };
                 map.panBy(0, 1);
-
-
             });
 
         });
