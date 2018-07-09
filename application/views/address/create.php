@@ -1,9 +1,10 @@
-	<script src="<?php echo CDN_URL ?>js/rem.js"></script>
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
-<!--    <script src="--><?php //echo CDN_URL ?><!--js/account.js"></script>-->
-    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css">
-    <script src="<?php echo CDN_URL ?>js/LArea.js"></script>
-    <script src="<?php echo CDN_URL ?>js/LAreaData1.js"></script>
+<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+<!--<script src="<?php echo CDN_URL ?>js/account.js"></script>-->
+<link rel="stylesheet" href="<?php echo CDN_URL ?>css/LArea.css">
+<script src="<?php echo CDN_URL ?>js/LArea.js"></script>
+<script src="<?php echo CDN_URL ?>js/LAreaData1.js"></script>
+
     <style>
             *:before, *:after {box-sizing: border-box; }
             *, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
@@ -135,7 +136,6 @@
         </div>
         <div class="clearfix"><button form=main-form class=save>保存</button></div>
 
-
         <div class="create-content">
             <form id=main-form action="" method=post style="margin-bottom: 4rem">
                 <!-- 是否设为默认 -->
@@ -157,7 +157,7 @@
 
                     <!-- 省市区选择控件 -->
                     <input id=latAndLng type=hidden value="">
-                    <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
+                    <input class="create-input" id="demo1" type=text name=input_area placeholder="省、市、区/县" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
                 </div>
 
                 <div class="create-list">
@@ -166,7 +166,7 @@
 
                 <!--
                 <div class="create-list" style="display:none;" >
-                    <input class="create-input" type="tel" placeholder="邮编">
+                    <input class="create-input" type=number min=100000 step=1 placeholder="邮编">
                 </div>
                 -->
 
@@ -211,242 +211,236 @@
         </div>
     </div>
 
-    <script>
-        $(function(){
+<script>
+    $(function(){
+    var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
 
-        var params = common_params
-            var alert_to_show = '<?php echo urlencode($error) ?>';
-            if (alert_to_show != '') alert( decodeURI(alert_to_show) );
+    var params = common_params
+        var alert_to_show = '<?php echo urlencode($error) ?>';
+        if (alert_to_show != '') alert( decodeURI(alert_to_show) );
 
-            var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
+        $("#demo1").focus(function(){
+            document.activeElement.blur();
+        });
+        $('#detailAddress').bind('input onchange', function(){
+            console.log($('#detailAddress').val());
+            if($('#detailAddress').val().length > 4 ){
+                $('#mapBox').css('display','block');
+            }
+        });
 
-            $("#demo1").focus(function(){
-                document.activeElement.blur();
-            });
-            $('#detailAddress').bind('input onchange', function() {
-                    console.log($('#detailAddress').val());
-                    if($('#detailAddress').val().length > 4 ){
-                        $('#mapBox').css('display','block');
-                    }
-                });
+        // 切换是否设为默认地址
+        $("#select").click(function(){
+             if ($(this).find("i").is('.icon-zidongtui'))
+             {
+                 $(this).find("i").removeClass('icon-zidongtui');
+                 $(this).find("i").addClass('icon-xuanzhong');
+                 $(this).find("span").css('color','#ff3649');
+                 $('[name=default_this]').val(1);
+             }
+             else
+             {
+                $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
+                $(this).find("span").css('color','#666464');
+                 $('[name=default_this]').val(0);
+             }
+        });
 
-            // 切换是否设为默认地址
-            $("#select").click(function(){
-                 if ($(this).find("i").is('.icon-zidongtui'))
-                 {
-                     $(this).find("i").removeClass('icon-zidongtui');
-                     $(this).find("i").addClass('icon-xuanzhong');
-                     $(this).find("span").css('color','#ff3649');
-                     $('[name=default_this]').val(1);
-                 }
-                 else
-                 {
-                    $("#select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
-                    $(this).find("span").css('color','#666464');
-                     $('[name=default_this]').val(0);
-                 }
-            });
+        $('form').submit(function(){
+            // 降低至空间获取到的值分拆赋值到相应字段
+            var addressText = $('#demo1').val();
+            console.log(addressText);
 
-            $('form').submit(function(){
-                // 降低至空间获取到的值分拆赋值到相应字段
+            var arr = [];
+            arr = addressText.split(',');
+            console.log(arr);
+
+            // 省市区选择控件有可能存在仅可获取二级地址的现象
+            if (arr.length < 3){
+                $('[name=province]').val(arr[0]);
+                $('[name=city]').val(arr[0]);
+                $('[name=county]').val(arr[arr.length - 1]);
+            }
+            else
+            {
+                $('[name=province]').val(arr[0]);
+                $('[name=city]').val(arr[1]);
+                $('[name=county]').val(arr[2]);
+            }
+
+            // 若无默认收货地址，则AJAX创建
+            if (default_address_id != '')
+            {
+
+                /*
                 var addressText = $('#demo1').val();
                 console.log(addressText);
-
                 var arr = [];
                 arr = addressText.split(',');
                 console.log(arr);
 
-                // 省市区选择控件有可能存在仅可获取二级地址的现象
-                if (arr.length < 3){
-                    $('[name=province]').val(arr[0]);
-                    $('[name=city]').val(arr[0]);
-                    $('[name=county]').val(arr[arr.length - 1]);
+                if(0<arr.length<3){
+                   params.province = arr[0];
+                   params.city = arr[0];
+                   params.county = arr[1];
+                }else{
+                   params.province = arr[0];
+                   params.city = arr[1];
+                   params.county = arr[2];
                 }
-                else
-                {
-                    $('[name=province]').val(arr[0]);
-                    $('[name=city]').val(arr[1]);
-                    $('[name=county]').val(arr[2]);
-                }
+                */
+                 var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
+                 for (var index in data_to_process)
+                 {
+                     params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
 
-                // 若无默认收货地址，则AJAX创建
-                if (default_address_id != '')
-                {
+                 }
 
-                    /*
-                    var addressText = $('#demo1').val();
-                    console.log(addressText);
-                    var arr = [];
-                    arr = addressText.split(',');
-                    console.log(arr);
-
-                    if(0<arr.length<3){
-                       params.province = arr[0];
-                       params.city = arr[0];
-                       params.county = arr[1];
-                    }else{
-                       params.province = arr[0];
-                       params.city = arr[1];
-                       params.county = arr[2];
-                    }
-                    */
-                     var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
-                     for (var index in data_to_process)
+                 console.log(params);
+                 $.post(
+                     api_url + 'address/create',
+                     params,
+                     function(result)
                      {
-                         params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
-
-                     }
-
-                     console.log(params);
-                     $.post(
-                         api_url + 'address/create',
-                         params,
-                         function(result)
+                         console.log(result); // 输出回调数据到控制台
+                         if (result.status == 200)
                          {
-                             console.log(result); // 输出回调数据到控制台
-                             if (result.status == 200)
-                             {
-                                console.log(result.content);
+                            console.log(result.content);
 
-                                window.history.back(-1);
-                             } else {
-                                alert(result.content.error.message);
-                             }
+                            window.history.back(-1);
+                         } else {
+                            alert(result.content.error.message);
                          }
-                     )
+                     }
+                 )
 
-                     return false;
+                 return false;
 
-                }
-            });
-
-        });
-    </script>
-
-    <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/">
-    <script src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
-
-    <!-- UI组件库 1.0 -->
-    <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
-    <script type="text/javascript">
-
-
-
-
-        /*var sel=document.getElementById('select');
-        sel.onclick = function(){
-
-            if(sel.classList.contains('icon-zidongtui')==true){
-                sel.classList.add('icon-xuanzhong');
-                sel.classList.remove('icon-zidongtui')
-            }else{
-                sel.classList.add('icon-zidongtui');
-                sel.classList.remove('icon-xuanzhong');
             }
-        };*/
-
-        var area = new LArea();
-        area.init({
-            'trigger': '#demo1',//触发选择控件的文本框，同时选择完毕后name属性输出到该位置
-            'valueTo':'#value1',//选择完毕后id属性输出到该位置
-            'keys':{id:'id',name:'name'},//绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
-            'type':1,//数据源类型
-            'data':LAreaData//数据源
         });
-        AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
-            var map = new AMap.Map('container', {
-                zoom: 16,
-                scrollWheel: false
+
+    });
+</script>
+
+<base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/">
+<script src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
+
+<!-- UI组件库 1.0 -->
+<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script>
+    /*var sel=document.getElementById('select');
+    sel.onclick = function(){
+
+        if(sel.classList.contains('icon-zidongtui')==true){
+            sel.classList.add('icon-xuanzhong');
+            sel.classList.remove('icon-zidongtui')
+        }else{
+            sel.classList.add('icon-zidongtui');
+            sel.classList.remove('icon-xuanzhong');
+        }
+    };*/
+
+    var area = new LArea();
+    area.init({
+        'trigger': '#demo1',//触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+        'valueTo':'#value1',//选择完毕后id属性输出到该位置
+        'keys':{id:'id',name:'name'},//绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+        'type':1,//数据源类型
+        'data':LAreaData//数据源
+    });
+    AMapUI.loadUI(['misc/PositionPicker'], function(PositionPicker) {
+        var map = new AMap.Map('container', {
+            zoom: 16,
+            scrollWheel: false
+        });
+
+        map.plugin(['AMap.Geolocation','AMap.Geocoder','AMap.ToolBar'], function () {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+                convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+                showButton: true,        //显示定位按钮，默认：true
+                buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+                //buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+                showCircle: false,        //定位成功后用圆圈表示定位精度范围，默认：true
+                panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+                zoomToAccuracy:true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+
             });
+            geocoder=new AMap.Geocoder({
+
+            });
+            map.addControl(geolocation);
+            map.addControl(geocoder);
+             map.addControl(new AMap.ToolBar());
+            //地理编码,返回地理编码结果
+            var btn = document.getElementById('point');
+            btn.onclick = function(){
+               geolocation.getCurrentPosition();
+
+            }
+
+            var pos;
+
+            geolocation.getCurrentPosition(function (status,result){
+                var start = result.position.Q;
+                console.log(start);
+                pos = result.position;
+                var positionPicker = new PositionPicker({
+                    mode: 'dragMap',
+                    map: map
+                });
+
+                positionPicker.on('success', function (positionResult) {
+                    console.log(positionResult.position.lat);
+                    if(start !== positionResult.position.lat){
+                        /*document.getElementById('tips').style.display = 'block';
+                        //document.getElementById('box').style.display = 'none';
+                        document.getElementById('cancel').onclick=function(){
+                            document.getElementById('tips').style.display = 'none';
 
 
-            map.plugin(['AMap.Geolocation','AMap.Geocoder','AMap.ToolBar'], function () {
-                geolocation = new AMap.Geolocation({
-                    enableHighAccuracy: true,//是否使用高精度定位，默认:true
-                    timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-                    maximumAge: 0,           //定位结果缓存0毫秒，默认：0
-                    convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
-                    showButton: true,        //显示定位按钮，默认：true
-                    buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
-                    //buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-                    showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
-                    showCircle: false,        //定位成功后用圆圈表示定位精度范围，默认：true
-                    panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-                    zoomToAccuracy:true,     //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                        };
+                        document.getElementById('confirm').onclick=function(){
+                            document.getElementById('tips').style.display = 'none';
+                            document.getElementById('detailAddress').value=positionResult.address;
+                        };*/
+                    }else{
+                        //document.getElementById('detailAddress').value=positionResult.address;
+                    }
 
                 });
-                geocoder=new AMap.Geocoder({
+                positionPicker.on('fail', function (positionResult) {
 
                 });
-                map.addControl(geolocation);
-                map.addControl(geocoder);
-                 map.addControl(new AMap.ToolBar());
-                //地理编码,返回地理编码结果
-                var btn = document.getElementById('point');
-                btn.onclick = function(){
-                   geolocation.getCurrentPosition();
-
-                }
-
-                var pos;
-
-                geolocation.getCurrentPosition(function (status,result){
-                    var start = result.position.Q;
-                    console.log(start);
-                    pos = result.position;
-                    var positionPicker = new PositionPicker({
-                        mode: 'dragMap',
-                        map: map
-                    });
-
-                    positionPicker.on('success', function (positionResult) {
-                        console.log(positionResult.position.lat);
-                        if(start !== positionResult.position.lat){
-                            /*document.getElementById('tips').style.display = 'block';
-                            //document.getElementById('box').style.display = 'none';
-                            document.getElementById('cancel').onclick=function(){
-                                document.getElementById('tips').style.display = 'none';
-
-
-                            };
-                            document.getElementById('confirm').onclick=function(){
-                                document.getElementById('tips').style.display = 'none';
-                                document.getElementById('detailAddress').value=positionResult.address;
-                            };*/
+                var onModeChange = function (e) {
+                    positionPicker.setMode(e.target.value)
+                };
+                positionPicker.start(pos);
+                var address = document.getElementById('detailAddress');
+                address.onblur=function(){
+                    var aress = address.value;
+                    console.log(aress);
+                    geocoder.getLocation(aress, function(status, result) {
+                        if (status === 'complete' && result.info === 'OK') {
+                            console.log(result);
+                            pos=result.geocodes[0].location;
+                            positionPicker.start(pos);
+                            var lat =result.geocodes[0].location.lat;
+                            var lng =result.geocodes[0].location.lng;
+                            var latAndLng = lat +','+ lng;
+                            $('#latAndLng').val(latAndLng);
                         }else{
-                            //document.getElementById('detailAddress').value=positionResult.address;
+                            console.log(result)
                         }
-
                     });
-                    positionPicker.on('fail', function (positionResult) {
-
-                    });
-                    var onModeChange = function (e) {
-                        positionPicker.setMode(e.target.value)
-                    };
-                    positionPicker.start(pos);
-                    var address = document.getElementById('detailAddress');
-                    address.onblur=function(){
-                        var aress = address.value;
-                        console.log(aress);
-                        geocoder.getLocation(aress, function(status, result) {
-                            if (status === 'complete' && result.info === 'OK') {
-                                console.log(result);
-                                pos=result.geocodes[0].location;
-                                positionPicker.start(pos);
-                                var lat =result.geocodes[0].location.lat;
-                                var lng =result.geocodes[0].location.lng;
-                                var latAndLng = lat +','+ lng;
-                                $('#latAndLng').val(latAndLng);
-                            }else{
-                                console.log(result)
-                            }
-                        });
-                    };
-                    map.panBy(0, 1);
-
-                });
+                };
+                map.panBy(0, 1);
 
             });
-        })
-    </script>
+
+        });
+    })
+</script>

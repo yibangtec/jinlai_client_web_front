@@ -157,13 +157,13 @@
 
                 <!-- 省市区选择控件 -->
                 <input id=latAndLng type=hidden value="">
-                <input class="create-input" id="demo1" type=text name=input_area placeholder="省份、城市、县区" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
+                <input class="create-input" id="demo1" type=text name=input_area placeholder="省、市、区/县" value="<?php echo trim(set_value('province').','.set_value('city').','.set_value('county'), ',') ?>" required>
             </div>
             <div class="create-list">
                 <textarea rows="3" name="street" contenteditable="true" style="-webkit-user-select: text;-user-select: text;outline:none;resize:none;font-family: 'Microsoft YaHei';font-size: 0.28rem;color: #666464" class="create-input" id="detailAddress" type="text" placeholder="详细地址"/></textarea>
             </div>
             <div class="create-list" style="display:none">
-                <input class="create-input" type="tel" placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
+                <input class="create-input" type=number min=100000 step=1 placeholder="邮编" value="<?php echo empty(set_value('zipcode'))? $item['zipcode']: set_value('zipcode') ?>">
             </div>
             <?php if ( ! empty($this->session->address_id) ): ?>
             <div id="select" class="address-default">
@@ -255,8 +255,6 @@
              var ID = getQueryString('id');
 
              // 若无默认收货地址，则AJAX创建
-
-
              params.id = ID;
              var addressText = $('#demo1').val();
              console.log(addressText);
@@ -279,8 +277,6 @@
                   params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
 
               }
-
-
 
               console.log(params);
               $.post(
@@ -309,15 +305,11 @@
 </script>
 
 <base href="//webapi.amap.com/ui/1.0/ui/misc/PositionPicker/examples/">
-<script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
+<script src='//webapi.amap.com/maps?v=1.4.1&key=c2ccaabde1fdbecc2e750cfae5957781&plugin=AMap.ToolBar'></script>
 
 <!-- UI组件库 1.0 -->
 <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
-<script type="text/javascript">
-
-
-
-
+<script>
     var area = new LArea();
     area.init({
         'trigger': '#demo1',//触发选择控件的文本框，同时选择完毕后name属性输出到该位置
