@@ -361,7 +361,7 @@
                          console.log(result); // 输出回调数据到控制台
                          if (result.status == 200)
                          {
-                           $('.tips').hide().children('.cancel').hide();
+                           $('.tips').hide().children('.receipt').hide();
                          } else {
                             alert(result.content.error.message);
                          }

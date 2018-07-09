@@ -103,8 +103,8 @@ $(function(){
                 var params = common_params;
                 var ID = that.attr('data-id');
                 params.name = 'address_id';
-                params.id = ID;
-                params.value = '1';
+                params.id = params.user_id;
+                params.value = ID;
                 console.log(params);
                 $.post(
                      api_url + 'user/edit_certain',
@@ -130,7 +130,7 @@ $(function(){
 
     $('.operation-del').click(function(){
         var params = common_params;
-        var that =$(this);
+        //var that =$(this);
         var ID = $(this).attr('data-id');
         params.operation = 'delete';
         params.ids = ID;
