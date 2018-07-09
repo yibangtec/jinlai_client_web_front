@@ -228,7 +228,7 @@
 
     <!--待收货-->
     <div class="detail-operation status5" data-action-group="待收货">
-        <a class="again" href="#">再来一单</a>
+        <!--<a class="again" href="#">再来一单</a>-->
         <!--<a>查看物流</a>-->
         <a class="refundBtn" data-action=refund href="#">申请退款</a>
         <a class="goods-receipt" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=confirm href="#">确认收货</a>
@@ -241,7 +241,7 @@
     <div class="detail-operation status1" data-action-group="待评价">
         <a class="del-btn" data-action=delete href="#">删除</a>
         <a class="refundBtn" data-action=refund href="#">申请售后</a>
-        <a class="again" href="#">再来一单</a>
+        <!--<a class="again" href="#">再来一单</a>-->
         <a href="<?php echo base_url('comment_item/create') ?>" class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment >写评价</a>
     </div>
     <!--已评价-->
@@ -647,16 +647,16 @@
             // 生成订单商品信息
             var timePay = item.time_pay;
             if(timePay !==''){
-                timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
 
+                if(orderItems[key].refund_status !=='未申请'){
+                    timePay = '<a href="' + base_url + 'refund/detail?record_id=' +orderItems[key].record_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
+                }else{
+                    timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
+                }
             }else{
 
             }
-            if(orderItems[key].refund_status !=='未申请'){
-                timePay = '<a href="' + base_url + 'refund/detail?record_id=' +orderItems[key].record_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
-            }else{
 
-            }
 
 
 

@@ -152,13 +152,21 @@ a {text-decoration: none;}
 .eva-left{
     float: left;
 }
-.eva-left img{
+.avatarImg{
     display: inline-block;
     vertical-align: middle;
     width: 0.56rem;
     height: 0.56rem;
     border-radius: 50%;
     margin-right: 0.1rem;
+    text-align: center;
+    background-color: rgba(0,0,0,0.1);
+}
+.avatarImg img{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 0.56rem;
+    max-height: 0.56rem;
 }
 
 .eva-right{

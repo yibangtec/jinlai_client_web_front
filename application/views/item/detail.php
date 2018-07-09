@@ -411,7 +411,7 @@ wx.ready(function(){
 			<p>商品一如既往的好,实物和照片一样没有色差,口感非常好,以后一如既往的关注意帮管家平台的,希望平台以后多搞一些这样的</p>
 		</div>-->
 		<div class="evaluationbtn auto">
-			查看全部评价
+			<a style="color:#fff;" href="<?php echo base_url('comment_item/index?id='.$item['item_id']) ?>">查看全部评价</a>
 		</div>
 	</div>
 	
@@ -956,6 +956,7 @@ var loc = url.substring(url.lastIndexOf('=')+1, url.length);
     var params = common_params;
     params.item_id = item.item_id;
     params.user_id = '';
+    console.log(params);
     $.ajax({
     	url:api_url + "/comment_item/index",
     	data : params,
