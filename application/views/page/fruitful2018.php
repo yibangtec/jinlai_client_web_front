@@ -173,7 +173,7 @@
 <?php
     $items = array();
     $items[] = array(
-        'title' => '16点秒杀专场',
+        'title' => '20点秒杀专场',
 
         // 070410
        /* 'items' => array(
@@ -275,7 +275,7 @@
         ),*/
 
         // 070416
-        'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5712',
                 'url_image_main' => '/media/fruitful2018/items/070316/0-1@2x.png',
@@ -304,10 +304,10 @@
                 'price' => '9.9',
                 'tag_price' => '29',
             ),
-        ),
+        ),*/
 
         // 070420
-       /*'items' => array(
+       'items' => array(
            array(
                'item_id' => '5736',
                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
@@ -336,7 +336,7 @@
                'price' => '25.9',
                'tag_price' => '39.9',
            ),
-        ),*/
+        ),
 
         'appended' => ''
     );
