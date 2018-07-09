@@ -269,7 +269,9 @@
                 console.log(id);
                 var obj ={app_type:'client'};
                 var refundObj = {app_type:'client'};
-                obj.id = id;
+                obj.id = id;//订单id
+                var recordId = getQueryString('record');
+                refundObj.record_id = recordId;
 
                 console.log(obj);
                 var type = '仅退款';
@@ -297,9 +299,9 @@
                          	refundObj.user_id=result.content.user_id;
 
                          	var orderItem = result.content.order_items;
-                         	var recordArr = [];
+                         	//var recordArr = [];
                          	for(var i= 0; i<orderItem.length; i++){
-                         		recordArr.push(orderItem[i].record_id);
+                         		//recordArr.push(orderItem[i].record_id);
                          			console.log(orderItem[i].item_image);
                          			var imgUrl = orderItem[i].item_image;
                                  	var reg = RegExp(/http/);
@@ -309,10 +311,15 @@
                                  }else{
                                       imgUrl =''
                                  }
-                                 $('#refundImg').append('<img src="'+imgUrl + orderItem[i].item_image+'" alt="">');
+                                 if(recordId == orderItem[i].record_id ){
+                                    $('#refundImg').append('<img src="'+imgUrl + orderItem[i].item_image+'" alt="">');
+                                    console.log(orderItem[i].price);
+                                    $('#refundPrice').text(orderItem[i].price);
+                                 }
+
                          	}
-                         	refundObj.record_id = recordArr.join(',');
-                         	$('#refundPrice').text(result.content.total);
+                         	//refundObj.record_id = recordArr.join(',');
+                         	//$('#refundPrice').text(result.content.total);
                          	if(result.content.time_deliver !== null){
                          		//console.log(result.content.time_deliver);
                          			statusItem = '已收货';

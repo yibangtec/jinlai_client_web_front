@@ -222,15 +222,15 @@
     </div>
 
     <!--待发货-->
-    <div class="detail-operation status3" data-action-group="待发货">
-        <a class="refundBtn" data-action=refund href="#">申请退款</a>
+    <div style="height:0;" class="detail-operation status3" data-action-group="待发货">
+
     </div>
 
     <!--待收货-->
     <div class="detail-operation status5" data-action-group="待收货">
         <!--<a class="again" href="#">再来一单</a>-->
         <!--<a>查看物流</a>-->
-        <a class="refundBtn" data-action=refund href="#">申请退款</a>
+
         <a class="goods-receipt" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=confirm href="#">确认收货</a>
     </div>
     <!--已关闭-->
@@ -240,14 +240,12 @@
     <!--待评价-->
     <div class="detail-operation status1" data-action-group="待评价">
         <a class="del-btn" data-action=delete href="#">删除</a>
-        <a class="refundBtn" data-action=refund href="#">申请售后</a>
         <!--<a class="again" href="#">再来一单</a>-->
         <a href="<?php echo base_url('comment_item/create') ?>" class="pingjia" style="color: #FF3649;border: 0.01rem solid #FF3649" data-action=comment >写评价</a>
     </div>
     <!--已评价-->
     <div class="detail-operation status2" data-action-group="已评价">
         <a class="del-btn" data-action=delete href="#">删除</a>
-        <a class="refundBtn" data-action=refund href="#">申请售后</a>
         <a>追加评论</a>
     </div>
     <!--已取消-->
@@ -570,7 +568,7 @@
         }
         else
         {
-            $('[data-group=time_cancel]').hide()
+            $('[data-group=time_cancel]').hide();
         }
  		
         // 若已过期
@@ -651,15 +649,11 @@
                 if(orderItems[key].refund_status !=='未申请'){
                     timePay = '<a href="' + base_url + 'refund/detail?record_id=' +orderItems[key].record_id + '" class="refundBtn" >'+ orderItems[key].refund_status +'</a>';
                 }else{
-                    timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '" class="refundBtn" >退款</a>';
+                    timePay = '<a href="' + base_url + 'refund/create?id=' +orderItems[key].order_id + '&record='+orderItems[key].record_id+'" class="refundBtn" >退款</a>';
                 }
             }else{
 
             }
-
-
-
-
 
 
              var order_item = '<div class="item-detail clearfix">'+
