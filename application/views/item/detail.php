@@ -77,7 +77,7 @@ hr{border:none;height:1px;background:#ccc;margin:.3rem 0}
 }
 .dotshowlist p{
     height: .76rem;
-    line-height: .76rem;
+    line-height: .76rem !important;
     position: relative;
 }
 .dotshowlist .bizarr{
@@ -197,7 +197,7 @@ wx.ready(function(){
 <base href="<?php echo $this->media_root ?>">
 <!--头部上边的导航条-->
 <div class="topBar">
-	  <div class="tabBarleft fl">
+	  <div class="tabBarleft fl" onclick="javascript:history.back(-1);">
 	  	<i class="icon-fanhui"></i>
 	  </div>
 	  <div class="tabBarright fr">
