@@ -1,4 +1,4 @@
-		<div class="bgfff">
+<div class="bgfff">
 		<div class="couponcentertitle auto bgfff" style="display: none;">
 			<div class="swiper-containercouponcenter">
 				<div class="swiper-wrapper">
@@ -762,13 +762,11 @@
 
 <script>
 $(function(){
-
     $('.circle').each(function(index, el){
         var num = $(this).find('span').text() * 3.6;
         if (num<=180) {
             $(this).find('.cirright').css('transform', "rotate(" + num + "deg)");
         } else {
-
             $(this).find('.cirright').css('transform', "rotate(180deg)");
             $(this).find('.cirleft').css('transform', "rotate(" + (num - 180) + "deg)");
             if(num==360){
@@ -819,7 +817,6 @@ $(function(){
                     $(this).addClass('couponcenter');
 //						 $(".paymentdetailsnav span").removeClass('paymentcur').eq(index).addClass('paymentcur');
                 swiperIndex.slideTo(index,1000,false);
-
     });
 });
 function timestampToTime(timestamp)
@@ -833,26 +830,17 @@ function timestampToTime(timestamp)
     s = date.getSeconds();
     return Y+M+D;
 }
-
 // 获取可领优惠券模板
 $.ajax({
         url: api_url + 'coupon_template/index',
         data: {app_type:'client'},
         success: function (res)
         {
-            console.log(res)
-
             // 若无可领优惠券模板
-            if ($('#canusercoupon li').length == 0)
-            {
-                var oLi = '<span style="display:block;text-align:center;color:#999;font-size:.26rem;"><img src="'+ cdn_url +'media/home/nocart.png" style="width:4rem;margin:1.5rem auto;margin-bottom:.6rem;">目前暂无可领取的优惠券</span>';
-                $('#canusercoupon').before(oLi);
-            }
-
+           
              for (var i=0;i<res.content.length;i++)
              {
                  var item = res.content[i]; // 单项数据
-
                 var amount = item.amount;
                 var biz_id = item.biz_id;
                 var max_amount = item.max_amount;
@@ -864,7 +852,6 @@ $.ajax({
                 var min_subtotal = item.min_subtotal;
                 var name = item.brief_name + ' ' + item.name;
                 var couponid = item.template_id;
-
                  // TODO 生成优惠券DOM
                 if (amount == 0){
                     if(max_amount == 0 && max_amount_user == 0){
@@ -883,7 +870,6 @@ $.ajax({
                         var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
                         $('#canusercoupon').append(canuse);
                     }
-
                 }
                 else{
                      if(max_amount == 0 && max_amount_user == 0){
@@ -903,11 +889,14 @@ $.ajax({
                         $('#canusercoupon').append(canuse);
                     }
                 }
-
+            }
+             if ($('#canusercoupon li').length == 0)
+            {
+                var oLi = '<span style="display:block;text-align:center;color:#999;font-size:.26rem;"><img src="'+ cdn_url +'media/home/nocart.png" style="width:4rem;margin:1.5rem auto;margin-bottom:.6rem;">目前暂无可领取的优惠券</span>';
+                $('#canusercoupon').before(oLi);
             }
             $('.couponcentercontent li').on('click', 'a.getTemplate', function(){
                 var template_id = $(this).parents().siblings('a').attr('data-coupon-id');
-
                 var params = common_params
                 params.template_id = template_id
                 $.ajax({
@@ -918,7 +907,6 @@ $.ajax({
                     }
                 });
         });
-
         }
 });
 </script>
