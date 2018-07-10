@@ -35,7 +35,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -70,7 +70,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -105,7 +105,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -140,7 +140,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -179,7 +179,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -214,7 +214,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -249,7 +249,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -284,7 +284,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -323,7 +323,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -358,7 +358,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -393,7 +393,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -428,7 +428,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -467,7 +467,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -502,7 +502,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -537,7 +537,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -572,7 +572,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -611,7 +611,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -651,7 +651,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -686,7 +686,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -721,7 +721,7 @@
 						<h1>青岛东堂纹身麦岛路店</h1>
 						<div class="coupontipinfo">
 							<i class="block imgwrap">
-								<img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/>
+								<img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/>
 							</i>
 							<p class="fl">
 								<span>¥
@@ -785,7 +785,7 @@ $(function(){
                     "background" : "#ff3a49"
                 });
             $(this).parents().parents("li").css({
-                "background":"url(<?php echo CDN_URL ?>media/coupon_template/coupons-bged@3x.png)",
+                "background":"url(https://cdn-remote.517ybang.com/media/coupon_template/coupons-bged@3x.png)",
                 "background-size" : "cover"
             });
             }
@@ -837,7 +837,11 @@ $.ajax({
         success: function (res)
         {
             // 若无可领优惠券模板
-           
+            var couponList = ['不限','人限','限量'];
+           	function getCouponDom(couponlimit){
+           		var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="https://cdn-remote.517ybang.com/media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem">'+couponlimit+'</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
+           		$('#canusercoupon').append(canuse);
+           	}
              for (var i=0;i<res.content.length;i++)
              {
                  var item = res.content[i]; // 单项数据
@@ -855,38 +859,33 @@ $.ajax({
                  // TODO 生成优惠券DOM
                 if (amount == 0){
                     if(max_amount == 0 && max_amount_user == 0){
-                    var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem;">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                    $('#canusercoupon').append(canuse);
+                    getCouponDom(couponList[0]);
                     }
                     if(max_amount == 0 && max_amount_user != 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                        getCouponDom(couponList[1]);
                     }
                     if(max_amount != 0 && max_amount_user == 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                        getCouponDom(couponList[2]);
                     }
                     if(max_amount != 0 && max_amount_user != 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+rate+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                    	
+                        getCouponDom(couponList[2]);
                     }
                 }
                 else{
                      if(max_amount == 0 && max_amount_user == 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i style="margin-top: .33rem">不限</i><div class="pdt10"></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                     	//不限
+                        getCouponDom(couponList[0]);
                     }
                     if(max_amount == 0 && max_amount_user != 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                    	//人限
+                        getCouponDom(couponList[1]);
                     }
                     if(max_amount != 0 && max_amount_user == 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>限量</i><div class="pdt10"><span>'+max_amount+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                        getCouponDom(couponList[2]);
                     }
                     if(max_amount != 0 && max_amount_user != 0){
-                        var canuse = '<li><a data-coupon-id="'+couponid+'" href="<?php echo base_url('biz/detail?id=') ?>'+biz_id+'"><div class="left fl"><h1>'+name+'</h1><div class="coupontipinfo"> <i class="block imgwrap"><img src="<?php echo CDN_URL ?>media/coupon_template/juan@3x.png"/></i><p class="fl"><span>¥<i>'+amount+'</i><b style="color:#666464;padding-left:.1rem;">满'+min_subtotal+'元可用</b></span><span>适用于:指定商品</span><span style="width:50%" class="fl">'+start_time+'</span><span style="width:43%" class="fl">-'+end_time+'</span></p></div></div></a><div class="right fr"><div class="circle"><div class="pie_left"><div class="cirleft"></div></div><div class="pie_right"><div class="cirright"></div></div><div class="mask"><i>人限</i><div class="pdt10"><span>'+max_amount_user+'</span></div></div></div><a class="getTemplate">立即领取</a></div></li>';
-                        $('#canusercoupon').append(canuse);
+                       getCouponDom(couponList[1]);
                     }
                 }
             }
