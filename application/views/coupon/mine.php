@@ -116,6 +116,16 @@ margin-top: .5rem;" alt="">
             data: params,
             success: function (res) {
             	//var count = 0;
+            	//可以使用的优惠券
+            	function createDom(rate){
+            		var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+            		$('#canusercoupon').append(canuse); 
+            	}
+            	//已使用的优惠券dom
+            	function everCoupon(rate){
+            		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
+						$('#yiguoqi').append(canuse);
+            	}
                 for (var i=0;i<res.content.length;i++) {
                 	if(user_id == res.content[i].user_id){
                 		//count++;
@@ -131,23 +141,19 @@ margin-top: .5rem;" alt="">
 	                	var time_expire = res.content[i].time_expire;
 	                	if (!time_used && !time_expire){
 	                	if(res.content[i].amount == 0){
-                		var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
-						$('#canusercoupon').append(canuse);  
+							createDom(rate);  
                 	}
                 	else{
-                		 var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
-						$('#canusercoupon').append(canuse); 
+                		 createDom('¥' + amount); 
                 	}
 	                	}
                 //此处填写已经使用过的优惠券
                 	if(time_used){
                 		if(res.content[i].amount == 0){
-                		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="<?php echo CDN_URL ?>media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
-						$('#yiguoqi').append(canuse);  
+                		everCoupon(rate); 
                 	}
                 	else{
-                		 var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="evertime"><img src="<?php echo CDN_URL ?>media/coupon/yishiyong@3x.png" /></div> <!--<div class="posttime">快过期</div>--></div></div></a>';
-						$('#yiguoqi').append(canuse); 
+                		everCoupon('¥' + amount); 
                 	}
 					          		
                 	}
