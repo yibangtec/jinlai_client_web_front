@@ -785,7 +785,7 @@ $(function(){
                     "background" : "#ff3a49"
                 });
             $(this).parents().parents("li").css({
-                "background":"url(https://cdn-remote.517ybang.com/media/coupon_template/coupons-bged@3x.png)",
+                "background":"url("+ cdn_url +"media/coupon_template/coupons-bged@3x.png)",
                 "background-size" : "cover"
             });
             }

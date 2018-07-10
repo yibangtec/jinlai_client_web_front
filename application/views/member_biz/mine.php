@@ -18,7 +18,7 @@
             // 若未指定会员卡LOGO，使用商家LOGO
             $logo_url = MEDIA_URL. (!empty($item['member_logo_url'])? 'ornament_biz/'. $item['member_logo_url']: 'biz/'. $item['url_logo']);
 			if($logo_url == 'https://jinlaisandbox-images.b0.upaiyun.com/biz/')
-          $logo_url = '<?php echo CDN_URL ?>media/home/default.png';
+          $logo_url = cdn_url+'media/home/default.png';
             $inline_style = ''; // 根据商家店铺装修方案设置样式
             if ( !empty($item['vi_color_first']) )
                 $inline_style .= 'background-color:#'.$item['vi_color_first'].';';

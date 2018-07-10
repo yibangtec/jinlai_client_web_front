@@ -257,7 +257,6 @@
 </div>
 <script>
 	$(document).ready(function(){
-	var user_id = <?php echo $this->session->user_id ?>;	
 //	if($('.sc').css('display') == 'block'){
 //		alert(1);
 //		$('.currenttime').css('display','none');

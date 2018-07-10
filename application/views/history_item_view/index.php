@@ -140,7 +140,7 @@
 		<script type="text/javascript" src="<?php echo CDN_URL ?>js/PullToRefresh.min.js"></script>-->
 		<script type="text/javascript">
 		//获取商品浏览记录列表
-			var user_id = <?php echo $this->session->user_id ?>;
+			//var user_id = <?php echo $this->session->user_id ?>;
 			var myCalendar = new SimpleCalendar('#calendar');
 			//myCalendar.createDate();
 			$(function(){

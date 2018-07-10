@@ -205,7 +205,7 @@ $(function(){
                     {	
                     	//console.log(arr[i].category_id);
                     	if(arr[i].url_image != null){
-                    		html+='<a href="<?php echo BASE_URL ?>/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="'+media_url+'item_category/'+arr[i].url_image+'"></li></a>';
+                    		html+='<a href="'+base_url+'item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="'+media_url+'item_category/'+arr[i].url_image+'"></li></a>';
                     		goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                     	}
                     	
