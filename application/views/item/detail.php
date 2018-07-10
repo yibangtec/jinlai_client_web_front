@@ -201,7 +201,7 @@ wx.ready(function(){
 	  	<i class="icon-fanhui"></i>
 	  </div>
 	  <div class="tabBarright fr">
-	  	<a href="https://www.517ybang.com/cart" target="_self">
+	  	<a href="<?php echo BASE_URL ?>cart" target="_self">
 	  	<span class="cir">
 	  		<i class="icon-gouwuche-2" style="left: .1rem;top: .17rem;"></i>
 	  	</span>

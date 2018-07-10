@@ -43,31 +43,31 @@ input.goodsCheck:checked{
 	<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
-				<a href="https://www.517ybang.com" target="_self">
+				<a href="<?php echo BASE_URL ?>" target="_self">
 				<div class="itemmenulist">
 					<i class="homeIcon homeIcon1"></i>
 					<span class="text">主页</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/item_category" target="_self">
+				<a href="<?php echo BASE_URL ?>item_category" target="_self">
 				<div class="itemmenulist">
 					<i class="homeFenlei"></i>
 					<span class="text">分类</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/member_biz" target="_self">
+				<a href="<?php echo BASE_URL ?>member_biz" target="_self">
 				<div class="itemmenulist">
 					<i class="homeHuiyuan"></i>
 					<span class="text">会员</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/cart" target="_self">
+				<a href="<?php echo BASE_URL ?>cart" target="_self">
 				<div class="itemmenulist">
 					<i class="homeGouwuche homeGouwuche1"></i>
 					<span class="text"  style="color: #ff753e;">购物车</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/mine" target="_self">
+				<a href="<?php echo BASE_URL ?>mine" target="_self">
 				<div class="itemmenulist">
 					<i class="homeWode"></i>
 					<span class="text">我的</span>
@@ -107,7 +107,7 @@ input.goodsCheck:checked{
 	    })
 	    $.ajax({
 	    	type:"post",
-	    	url:"https://api.517ybang.com/cart/sync_down",
+	    	url:api_url+"art/sync_down",
 	    	dataType : 'json',
 	    	data :{app_type:'client',id:user_id},
 	    	async : false,
@@ -124,7 +124,7 @@ input.goodsCheck:checked{
 	success : function(res){
 		for (var i = 0;i<res.content.order_items.length;i++) {
 			var biz_name = res.content.order_items[i].biz_name;
-			var biz_img = "https://medias.517ybang.com/biz/" + res.content.order_items[i].biz_url_logo;
+			var biz_img = media_url+"biz/" + res.content.order_items[i].biz_url_logo;
 			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="'+biz_img+'" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
 			$('.item').append(list);
 			for (var j = 0;j < res.content.order_items[i].order_items.length;j++ ) {
@@ -140,7 +140,7 @@ input.goodsCheck:checked{
 				  for (var k = 0;k < newShopInfo.length;k++) {
 				   	//取出每一组数据,如果有多个商品,更新视图
 				   	if(item_id == newShopInfo[k].split('|')[1]){
-				   		var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><a href="https://www.517ybang.com/item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >'+newShopInfo[k].split('|')[3]+'</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
+				   		var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="<?php echo BASE_URL ?>item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><a href="<?php echo BASE_URL ?>item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >'+newShopInfo[k].split('|')[3]+'</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
 				   	}
 				   		
 				   }
@@ -148,7 +148,7 @@ input.goodsCheck:checked{
 			}
 		}
 		if($('.item .my-address-list').length == 0){
-			var oSpan = '<img src="https://cdn-remote.517ybang.com/media/home/nocart.png" style="width:4rem;margin:0 auto;margin-top:2rem;display:block;"><span style="display:block;font-size:.26rem;width:100%;text-align:center;color:#3e3a39;padding-top:.4rem">亲,您的购物车里什么都没有......</span><a href="https://www.517ybang.com" target="_self" style="display: block;width: 1.5rem;height: .5rem;border: 1px solid #f6964a;margin: .3rem auto;font-size: .26rem;text-align: center;line-height: .5rem;color: #f6964a;border-radius: .1rem;">去逛逛叭</a>'
+			var oSpan = '<img src="<?php echo CDN_URL ?>media/home/nocart.png" style="width:4rem;margin:0 auto;margin-top:2rem;display:block;"><span style="display:block;font-size:.26rem;width:100%;text-align:center;color:#3e3a39;padding-top:.4rem">亲,您的购物车里什么都没有......</span><a href="<?php echo BASE_URL ?>" target="_self" style="display: block;width: 1.5rem;height: .5rem;border: 1px solid #f6964a;margin: .3rem auto;font-size: .26rem;text-align: center;line-height: .5rem;color: #f6964a;border-radius: .1rem;">去逛逛叭</a>'
 			$('.item').append(oSpan);
 			$('.payment-bar').hide();
 		};
@@ -201,7 +201,7 @@ input.goodsCheck:checked{
 			}
 		}
 		//选完之后把cartsting传过去
-		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+		var curCartList = '<?php echo BASE_URL ?>order/create?cart_string=' + finalNum.join();
 	    $('.settlement').attr('href',curCartList);
 		if (goods.length == goodsC.length) {
 			Shops.prop("checked", true);
@@ -264,7 +264,7 @@ input.goodsCheck:checked{
 			TotalPrice()
 		}
 		//选完之后把cartsting传过去
-		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+		var curCartList = '<?php echo BASE_URL ?>order/create?cart_string=' + finalNum.join();
 	    $('.settlement').attr('href',curCartList);
 	});
 	$("#AllCheck").click(function() {
@@ -289,7 +289,7 @@ input.goodsCheck:checked{
 		}
 		//选完之后把cartsting传过去
 		console.log(finalNum.join());
-		var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+		var curCartList = '<?php echo BASE_URL ?>order/create?cart_string=' + finalNum.join();
 	    $('.settlement').attr('href',curCartList);
 		$(".shopCheck").change()
 	});
@@ -337,11 +337,11 @@ input.goodsCheck:checked{
 					newShopInfo.splice(i,1);
 				}
 			}
-			var curCartList = 'https://www.517ybang.com/order/create?cart_string=' + finalNum.join();
+			var curCartList = '<?php echo BASE_URL ?>order/create?cart_string=' + finalNum.join();
 	    	$('.settlement').attr('href',curCartList);
 			$.ajax({
 				type:"post",
-				url:"https://api.517ybang.com/cart/sync_up",
+				url:api_url+"cart/sync_up",
 				async:false,
 				dataType : 'json',
 				data : {app_type:'client',name : 'cart_string',id:user_id,value:newShopInfo.join()},

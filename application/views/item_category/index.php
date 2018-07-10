@@ -84,31 +84,31 @@ background:#f7f7f7;
 	<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
-				<a href="https://www.517ybang.com" target="_self">
+				<a href="<?php echo BASE_URL ?>" target="_self">
 				<div class="itemmenulist">
 					<i class="homeIcon homeIcon1"></i>
 					<span class="text">主页</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/item_category" target="_self">
+				<a href="<?php echo BASE_URL ?>/item_category" target="_self">
 				<div class="itemmenulist">
 					<i class="homeFenlei homeFenlei2"></i>
 					<span class="text" style="color: #ff753e;">分类</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/member_biz" target="_self">
+				<a href="<?php echo BASE_URL ?>/member_biz" target="_self">
 				<div class="itemmenulist">
 					<i class="homeHuiyuan"></i>
 					<span class="text">会员</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/cart" target="_self">
+				<a href="<?php echo BASE_URL ?>/cart" target="_self">
 				<div class="itemmenulist">
 					<i class="homeGouwuche"></i>
 					<span class="text">购物车</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/mine" target="_self">
+				<a href="<?php echo BASE_URL ?>/mine" target="_self">
 				<div class="itemmenulist">
 					<i class="homeWode"></i>
 					<span class="text">我的</span>
@@ -205,7 +205,7 @@ $(function(){
                     {	
                     	//console.log(arr[i].category_id);
                     	if(arr[i].url_image != null){
-                    		html+='<a href="https://www.517ybang.com/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
+                    		html+='<a href="<?php echo BASE_URL ?>/item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="'+media_url+'item_category/'+arr[i].url_image+'"></li></a>';
                     		goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                     	}
                     	

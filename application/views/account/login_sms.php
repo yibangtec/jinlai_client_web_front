@@ -139,13 +139,13 @@
 		    			return false;
 		    		}
 		    		$.ajax({
-					  url: "https://api.517ybang.com/account/login_sms",
+					  url: api_url+"account/login_sms",
 					  type: 'post',
 					  dataType: 'json',
 					  data: {app_type:'biz',mobile:$('#mobile').val(),sms_id:sms_id,captcha:$('#verification').val()},
 					  success: function (data, status) {
 					   if(data.status == 200){
-					   	window.location.href = 'https://www.517ybang.com';
+					   	window.location.href = base_url;
 					   }
 					   else{
 					   	alert(data.content.error.message);

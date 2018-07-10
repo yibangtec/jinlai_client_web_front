@@ -7,7 +7,7 @@
 		padding: 0 .2rem;
 	}
 	input.check {
-    background: url(https://cdn-remote.517ybang.com/media/cart/icon/icon_radio3.png) no-repeat center left;
+    background: url('<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png') no-repeat center left;
     background-size: cover;
     /* position: absolute; */
     /* top: 50%; */
@@ -214,10 +214,10 @@
 			<i class="icon-back"></i>
 		</li>
 		<li class="shop favtab">
-			<a href="https://www.517ybang.com/fav_item">商品</a>
+			<a href="<?php echo BASE_URL ?>fav_item">商品</a>
 		</li>
 		<li class='biz favtab active'>
-			<a href="https://www.517ybang.com/fav_biz" style="color: #fe3749;">店铺</a>
+			<a href="<?php echo BASE_URL ?>fav_biz" style="color: #fe3749;">店铺</a>
 		</li>
 		<li class="fr edit" style="color: #7c7c7c;">
 			编辑
@@ -266,22 +266,22 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide advercube">
                                 <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img src="http://www.ybslux.com/uploadfiles/images//1bfdf9ca-1fd6-4c87-9f05-07ad56224bbf.jpg">
+                                	<img src="<?php echo MEDIA_URL ?>uploadfiles/images//1bfdf9ca-1fd6-4c87-9f05-07ad56224bbf.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
                                 <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img src="http://www.ybslux.com/uploadfiles/images//1476ce6f-a973-431c-b0a0-16f4b3941ab0.jpg">
+                                	<img src="<?php echo MEDIA_URL ?>uploadfiles/images//1476ce6f-a973-431c-b0a0-16f4b3941ab0.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
                                 <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img src="http://www.ybslux.com/uploadfiles/images//48c8c46d-909b-42d2-91b0-cfb815a3270e.jpg">
+                                	<img src="<?php echo MEDIA_URL ?>uploadfiles/images//48c8c46d-909b-42d2-91b0-cfb815a3270e.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
                                 <a href="<?php echo base_url('biz/detail?id=1') ?>" target="_self">
-                                	<img src="http://www.ybslux.com/uploadfiles/images//527d206d-5f16-445f-ac44-be93c34592f0.jpg">
+                                	<img src="<?php echo MEDIA_URL ?>uploadfiles/images//527d206d-5f16-445f-ac44-be93c34592f0.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube" style="text-align: center;line-height: 2.2rem;"> 

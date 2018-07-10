@@ -71,7 +71,7 @@
             // 若未指定会员卡LOGO，使用商家LOGO
             $logo_url = MEDIA_URL. (!empty($item['member_logo_url'])? 'ornament_biz/'. $item['member_logo_url']: 'biz/'. $item['url_logo']);
           	if($logo_url == 'https://jinlaisandbox-images.b0.upaiyun.com/biz/')
-            	$logo_url = 'https://cdn-remote.517ybang.com/media/home/default.png';
+            	$logo_url = '<?php echo CDN_URL ?>media/home/default.png';
             $inline_style = '';
             if ( !empty($item['vi_color_first']) )
                 $inline_style .= 'background-color:#'.$item['vi_color_first'].';';
@@ -263,8 +263,8 @@
 			
 			//如果不存在会员卡头像,那么显示默认头像
 			$('.memberlistpic').find('img').each(function(i){
-				if($(this).attr('src') == 'https://medias.517ybang.com/biz/'){
-					$(this).attr('src','https://cdn-remote.517ybang.com/media/home/default.png');
+				if($(this).attr('src') == media_url+'biz/'){
+					$(this).attr('src',cdn_url+'media/home/default.png');
 				}
 			});
 					

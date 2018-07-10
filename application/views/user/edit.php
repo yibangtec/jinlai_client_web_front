@@ -1,8 +1,8 @@
-	<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
-	<script src="https://cdn-remote.517ybang.com/js/hash.js"></script>
-    <link href="https://cdn-remote.517ybang.com/css/base.css" rel="stylesheet">
-    <link href="https://cdn-remote.517ybang.com/css/swiper.mini.css" rel="stylesheet">
-    <link href="https://cdn-remote.517ybang.com/css/index.min.css" rel="stylesheet">
+	<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+	<script src="<?php echo CDN_URL ?>js/hash.js"></script>
+    <link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">
+    <link href="<?php echo CDN_URL ?>css/swiper.mini.css" rel="stylesheet">
+    <link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
 	<style>
 		body{
 			background: #fff;
@@ -126,7 +126,7 @@
 
 			</form>
 		</div>
-		<script src="https://cdn-remote.517ybang.com/js/index.min.js"></script>
+		<script src="<?php echo CDN_URL ?>js/index.min.js"></script>
 
 		<script type="text/javascript">
 			var real_api_url = '<?php echo API_URL ?>';

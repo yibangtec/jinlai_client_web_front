@@ -142,11 +142,11 @@ margin-top: .5rem;" alt="">
                 //此处填写已经使用过的优惠券
                 	if(time_used){
                 		if(res.content[i].amount == 0){
-                		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
+                		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="<?php echo CDN_URL ?>media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#yiguoqi').append(canuse);  
                 	}
                 	else{
-                		 var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="evertime"><img src="https://cdn-remote.517ybang.com/media/coupon/yishiyong@3x.png" /></div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+                		 var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>¥' + amount +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="evertime"><img src="<?php echo CDN_URL ?>media/coupon/yishiyong@3x.png" /></div> <!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#yiguoqi').append(canuse); 
                 	}
 					          		

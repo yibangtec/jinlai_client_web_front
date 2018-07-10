@@ -34,7 +34,7 @@
         <ul id=templates>
             <!--
             <li class="card clearfix">
-                <img src="https://cdn-remote.517ybang.com/media/share_redenvelope/kaquanding@3x.png" />
+                <img src="<?php echo CDN_URL ?>media/share_redenvelope/kaquanding@3x.png" />
                 <h1 class="fl">迈菲克国际武道教育</h1>
                 <span>满<i>9999</i>可用</span>
                 <div class="validity">有效期至<i>2018-05-01</i></div>

@@ -4,10 +4,10 @@
 		<meta charset="UTF-8">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 		<title>关于我们</title>
-		<link href="https://cdn-remote.517ybang.com/css/index.min.css" rel="stylesheet">
-		<script src="https://cdn-remote.517ybang.com/js/jquery-2.1.4.min.js"></script>
-		<script src="https://cdn-remote.517ybang.com/js/swiper.min.js"></script>
-		<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
+		<link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
+		<script src="<?php echo CDN_URL ?>js/jquery-2.1.4.min.js"></script>
+		<script src="<?php echo CDN_URL ?>js/swiper.min.js"></script>
+		<script src="<?php echo CDN_URL ?>js/rem.js"></script>
 		<style type="text/css">
 			body{
 				background: #efefef;
@@ -89,7 +89,7 @@
 			<ul>
                 <?php if ($this->user_agent['is_android']): ?>
 				<li>
-					<a href="https://www.517ybang.com/jinlai_client_0.0.1.apk">
+					<a href="<?php echo BASE_URL ?>jinlai_client_0.0.1.apk">
 						<img src="<?php echo CDN_URL ?>media/home/android@3x.png" alt="">
 						<span>Android</span>
 					</a>
