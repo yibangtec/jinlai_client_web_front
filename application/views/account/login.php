@@ -61,7 +61,7 @@
             </button>
         </form>
 
-        <div class="login_sms"><a href="https://www.517ybang.com/login_sms">短信登录</a></div>
+        <div class="login_sms"><a href="<?php echo BASE_URL ?>login_sms">短信登录</a></div>
     </div>
     <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>

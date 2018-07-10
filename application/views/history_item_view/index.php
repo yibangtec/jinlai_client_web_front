@@ -9,8 +9,8 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		
 		<!--主要样式-->
-		<link rel="stylesheet" type="text/css" href="https://cdn-remote.517ybang.com/css/simple-calendar.css">
-		<link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/calendar.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo CDN_URL ?>css/simple-calendar.css">
+		<link rel="stylesheet" href="<?php echo CDN_URL ?>css/calendar.css" />
 		<link rel="stylesheet" href="https://i.icomoon.io/public/022b3dd411/jinlai/style.css">
 		<title>我的足跡</title>
 		<style>
@@ -18,7 +18,7 @@
 				overflow-x: hidden; 
 			}
 			input.check:checked {
-		    background: url(https://cdn-remote.517ybang.com/media/cart/icon/icon_radio4.png) no-repeat center left;
+		    background: url(<?php echo CDN_URL ?>media/cart/icon/icon_radio4.png) no-repeat center left;
 		    background-size: contain;
 		}
 			.content{margin: 0 0.15rem;}
@@ -107,7 +107,7 @@
 				<div class="sc-header">
 					<div class="sc-title">
 						<span class="downArr">
-							<img src="https://cdn-remote.517ybang.com/media/home/down.png" alt="">
+							<img src="<?php echo CDN_URL ?>media/home/down.png" alt="">
 						</span>
 						<div class="year"><span class="sc-select-year" name=""></span>年</div>
 						<div class="month">
@@ -134,10 +134,10 @@
 				</ul>
 			</div>
 		</div>
-		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/jquery-3.3.1.min.js" ></script>
-		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/simple-calendar.js"></script>
-		<!--<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/hammer-2.0.8-min.js"></script>
-		<script type="text/javascript" src="https://cdn-remote.517ybang.com/js/PullToRefresh.min.js"></script>-->
+		<script type="text/javascript" src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="<?php echo CDN_URL ?>js/simple-calendar.js"></script>
+		<!--<script type="text/javascript" src="<?php echo CDN_URL ?>js/hammer-2.0.8-min.js"></script>
+		<script type="text/javascript" src="<?php echo CDN_URL ?>js/PullToRefresh.min.js"></script>-->
 		<script type="text/javascript">
 		//获取商品浏览记录列表
 			var user_id = <?php echo $this->session->user_id ?>;
@@ -248,7 +248,7 @@
 			});
 			
 			$.ajax({
-			url: "https://api.517ybang.com/history_item_view/index",
+			url: api_url+"history_item_view/index",
 			 type: "post",
              dataType: 'json',
              data:{app_type:'client',user_id:user_id},
@@ -276,14 +276,14 @@
             			//alert($('.firstDate').eq(i).find('span').text());
             			if(arrDate[j] == $('.firstDate').eq(i).find('span').text()){
             				$.ajax({
-							url: "https://api.517ybang.com/item/detail",
+							url: api_url+"item/detail",
 							 type: "post",
 				             dataType: 'json',
 				             async:false,
 				             data:{app_type:'client',id:itemDate[j]},
 				            success: function (res) {
 				            	console.log(j + '--' + res.content.name);
-				            	var oItem = '<li class="items-li"><a href="https://www.517ybang.com/item/detail?id='+res.content.item_id+'"><img class="items-image" src="'+res.content.url_image_main+'" alt=""></a><div class="items-text outer"><div class="price">¥'+res.content.price+'</div><div class="star editStar"><i class="icon-weixuanzhong2"></i></div><input type="checkbox" class="check"></div></li>';
+				            	var oItem = '<li class="items-li"><a href='+base_url+'"item/detail?id='+res.content.item_id+'"><img class="items-image" src="'+res.content.url_image_main+'" alt=""></a><div class="items-text outer"><div class="price">¥'+res.content.price+'</div><div class="star editStar"><i class="icon-weixuanzhong2"></i></div><input type="checkbox" class="check"></div></li>';
             					$('.firstDate').eq(i).after(oItem);
 				            }
 				            })
@@ -492,7 +492,7 @@
 //			return '<li class="firstDate" style="float: none;font-size: .36rem;border: none;color: #828282;padding: .1rem;width:2rem">4月18日</li>'
 //		}
 //function appendTestData(){
-//return '<li class="items-li"><img class="items-image" src="https://cdn-remote.517ybang.com/media/home/placeholder.png" alt=""/><div class="items-text outer"><div class="price">¥100.00</div><div class="star editStar"><i class="icon-weixuanzhong2"></i></div><div class="selected editSelected"><i class="icon-un-selected"></i></div></div></li>'
+//return '<li class="items-li"><img class="items-image" src="<?php echo CDN_URL ?>media/home/placeholder.png" alt=""/><div class="items-text outer"><div class="price">¥100.00</div><div class="star editStar"><i class="icon-weixuanzhong2"></i></div><div class="selected editSelected"><i class="icon-un-selected"></i></div></div></li>'
 //}
 //function addhtml(type){
 //$("#app .items")[type](appendDate()+appendTestData()+appendTestData()+appendTestData()+appendTestData())

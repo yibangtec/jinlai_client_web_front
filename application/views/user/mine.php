@@ -1,8 +1,8 @@
-<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
-    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/fontStyle.css">
-    <link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/account.css">
+<script src="<?php echo CDN_URL ?>js/rem.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
+    <link rel="stylesheet" href="<?php echo CDN_URL ?>css/account.css">
  <!--   提前加载历史记录页面,提高页面加载速度-->
-	<link rel="prefetch" href="https://www.517ybang.com/history_item_view" />
+	<link rel="prefetch" href="<?php echo BASE_URL ?>history_item_view" />
 	<style>
         body{
             background-color: #efefef;

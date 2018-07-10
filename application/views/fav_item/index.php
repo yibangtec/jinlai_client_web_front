@@ -7,7 +7,7 @@
 		padding: 0 .2rem;
 	}
 	input.check {
-    background: url(https://cdn-remote.517ybang.com/media/cart/icon/icon_radio3.png) no-repeat center left;
+    background: url('<?php echo CDN_URL ?>media/cart/icon/icon_radio3.png') no-repeat center left;
     background-size: cover;
     /* position: absolute; */
     /* top: 50%; */
@@ -180,10 +180,10 @@
 			<i class="icon-back"></i>
 		</li>
 		<li class="shop favtab active">
-			<a href="https://www.517ybang.com/fav_item" style="color: #fe3749;">商品</a>
+			<a href="<?php echo BASE_URL ?>fav_item" style="color: #fe3749;">商品</a>
 		</li>
 		<li class='biz favtab'>
-			<a href="https://www.517ybang.com/fav_biz">店铺</a>
+			<a href="<?php echo BASE_URL ?>fav_biz">店铺</a>
 		</li>
 		<li class="fr edit" style="color: #7c7c7c;">
 			编辑
@@ -319,7 +319,7 @@ $(".item_list").on("swipeleft",
     		$('.deleteAll').on('click',function(){
     			  //批量删除
 			    $.ajax({
-						url: "https://api.517ybang.com/fav_item/edit_bulk",
+						url: api_url+"fav_item/edit_bulk",
 						 type: "post",
 			             dataType: 'json',
 			             data:{app_type:'client',user_id : user_id,operation:'delete',ids : checkedString},

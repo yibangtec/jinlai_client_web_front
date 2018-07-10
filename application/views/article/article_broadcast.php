@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>进来说</title>
-	<link href="https://cdn-remote.517ybang.com/css/index.min.css" rel="stylesheet">
-	<link href="https://cdn-remote.517ybang.com/css/swiper.mini.css" rel="stylesheet">
-	<script src="https://cdn-remote.517ybang.com/js/jquery-3.3.1.min.js"></script>
-	<script src="https://cdn-remote.517ybang.com/js/index.min.js"></script>
+	<link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
+	<link href="<?php echo CDN_URL ?>css/swiper.mini.css" rel="stylesheet">
+	<script src="<?php echo CDN_URL ?>js/jquery-3.3.1.min.js"></script>
+	<script src="<?php echo CDN_URL ?>js/index.min.js"></script>
 	<script>
 		 (function (doc, win) {
   var docEl = doc.documentElement,
@@ -103,19 +103,19 @@
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="newsimg">
-							<img src="https://cdn-remote.517ybang.com/media/news/m1.png" alt="" />
+							<img src="<?php echo CDN_URL ?>media/news/m1.png" alt="" />
 							<h1>可恩口腔,您身边的口s腔专家</h1>
 							<p>世界上最健康的口腔专家</p>
 							<time>2017-10-19</time>
 						</div>
 						<div class="newsimg">
-							<img src="https://cdn-remote.517ybang.com/media/news/m2.png" alt="" />
+							<img src="<?php echo CDN_URL ?>media/news/m2.png" alt="" />
 							<h1>可恩口腔,您身边的口腔专家</h1>
 							<p>世界上最健康的口腔专家</p>
 							<time>2017-10-19</time>
 						</div>
 						<div class="newsimg">
-							<img src="https://cdn-remote.517ybang.com/media/news/m3.png" alt="" />
+							<img src="<?php echo CDN_URL ?>media/news/m3.png" alt="" />
 							<h1>可恩口腔,您身边的口腔专家</h1>
 							<p>世界上最健康的口腔专家</p>
 							<time>2017-10-19</time>

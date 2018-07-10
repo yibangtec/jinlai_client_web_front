@@ -101,5 +101,15 @@
                         '</div>'+
                         '<div class="refund-amount">×'+orderItem.count+'</div>';
         $('.refund-goodsName').html(orderHtml);
+
+        save(item);
+        function save(cp_value){
+            var num = new Object;
+            num.cp_keynum ="baseInfo";
+            num.cp_num_value = cp_value;
+            var str = JSON.stringify(num); // 将对象转换为字符串
+            localStorage.setItem(num.cp_keynum,str);
+            console.log(str);
+        }
     });
 </script>

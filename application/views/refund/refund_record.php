@@ -63,20 +63,20 @@
         $(function(){
             var id = getQueryString('id');
 
-            /*$.post(
-                  api_url + 'order/edit_bulk',
+            $.post(
+                  api_url + 'refund_record/index',
                   params,
                   function(result)
                   {
                       console.log(result); // 输出回调数据到控制台
                       if (result.status == 200)
                       {
-                        $('.tips').hide().children('.delete').hide();
+                        //$('.tips').hide().children('.delete').hide();
                       } else {
                          alert(result.content.error.message);
                       }
                   }
-            );*/
+            );
 
 
 

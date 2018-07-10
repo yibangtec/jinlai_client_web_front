@@ -1,6 +1,6 @@
     <script src="<?php echo CDN_URL ?>js/rem.js"></script>
     <script src="<?php echo CDN_URL ?>js/indexBiz.js"></script>
-    <script src="https://cdn-remote.517ybang.com/js/js.cookie.js"></script>
+    <script src="<?php echo CDN_URL ?>js/js.cookie.js"></script>
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/reset.css">
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/base.css">
     <link rel="stylesheet" href="<?php echo CDN_URL ?>css/fontStyle.css">
@@ -359,7 +359,7 @@ var LoadingDataFn = function(categary,page,xl,xp,jg,jgmin,jgmax) {
 					return;
 				};
 				for (var i = 0;i < con.length;i++) {
-					var oLi = '<li class="itemList"><a href="'+page_item_detail+con[i].item_id+'"><img class="itemListImg" src="https://medias.517ybang.com/item/'+con[i].url_image_main+'" alt=""><h2 class="itemSlogan">'+con[i].slogan+'</h2><p class="itemPrice">¥'+con[i].price+'</p></a><div class="carItem"><i class="icon-gouwuche-2"></i></div></li>';
+					var oLi = '<li class="itemList"><a href="'+page_item_detail+con[i].item_id+'"><img class="itemListImg" src="'+media_url+'item/'+con[i].url_image_main+'" alt=""><h2 class="itemSlogan">'+con[i].slogan+'</h2><p class="itemPrice">¥'+con[i].price+'</p></a><div class="carItem"><i class="icon-gouwuche-2"></i></div></li>';
 				$('#listItem').append(oLi);
 				}
 				addCart()
@@ -558,7 +558,7 @@ $(window).scroll(function() {
 					var params = common_params;
 					
 					if(params.user_id == null){
-						window.location.href = 'https://www.517ybang.com/login';
+						window.location.href = base_url+'login';
 						return;
 					}
 					$.ajax({
@@ -666,7 +666,7 @@ $(window).scroll(function() {
 				params.id = params.user_id;
 			    $.ajax({
 			    	type:"post",
-			    	url:"https://api.517ybang.com/cart/sync_up",
+			    	url:base_url+"cart/sync_up",
 			    	dataType:'json',
 			    	async : false,
 

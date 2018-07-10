@@ -834,7 +834,7 @@ body {background:#eaeaea;}
 								<li>
 									<a href="<?php echo base_url('item/detail?id=5669') ?>" target="_self">
 									<div class="pic">
-										<img src="https://cdn-remote.517ybang.com/media/home/qt.jpg">
+										<img src="<?php echo CDN_URL ?>media/home/qt.jpg">
 									</div>
 									</a>
 									<p>上海风味青团</p>
@@ -843,7 +843,7 @@ body {background:#eaeaea;}
 								<li style="margin-left:.3rem;">
 									<a href="<?php echo base_url('item/detail?id=5671') ?>" target="_self">
 									<div class="pic">
-										<img data-src="https://cdn-remote.517ybang.com/media/home/ht.jpg">
+										<img data-src="<?php echo CDN_URL ?>media/home/ht.jpg">
 									</div>
 									</a>
 									<p>网红花团</p>
@@ -866,7 +866,7 @@ body {background:#eaeaea;}
 							<li>
 								<a href="<?php echo base_url('item/detail?id=620') ?>" target="_self">
 								<div class="pic">
-									<img data-src="https://cdn-remote.517ybang.com/media/home/yjyx.jpg">
+									<img data-src="<?php echo CDN_URL ?>media/home/yjyx.jpg">
 								</div>
 								</a>
 								<p>壹家壹洗5件洗衣套装</p>
@@ -875,7 +875,7 @@ body {background:#eaeaea;}
 							<li style="margin-right:0">
 								<a href="<?php echo base_url('item/detail?id=178') ?>" target="_self">
 								<div class="pic">
-									<img data-src="https://cdn-remote.517ybang.com/media/home/xc.jpg">
+									<img data-src="<?php echo CDN_URL ?>media/home/xc.jpg">
 								</div>
 								</a>
 								<p>BBA级洗车套餐30元（英皇之星）</p>
@@ -2123,30 +2123,30 @@ body {background:#eaeaea;}
 	<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
-				<a href="https://www.517ybang.com" target="_self">
+				<a href="<?php echo BASE_URL ?>" target="_self">
 				<div class="itemmenulist">
 					<i class="homeIcon"></i>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/item_category" target="_self">
+				<a href="<?php echo BASE_URL ?>item_category" target="_self">
 				<div class="itemmenulist">
 					<i class="homeFenlei"></i>
 					<span class="text">分类</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/member_biz" target="_self">
+				<a href="<?php echo BASE_URL ?>member_biz" target="_self">
 				<div class="itemmenulist">
 					<i class="homeHuiyuan"></i>
 					<span class="text">会员</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/cart" target="_self">
+				<a href="<?php echo BASE_URL ?>cart" target="_self">
 				<div class="itemmenulist">
 					<i class="homeGouwuche"></i>
 					<span class="text">购物车</span>
 				</div>
 				</a>
-				<a href="https://www.517ybang.com/mine" target="_self">
+				<a href="<?php echo BASE_URL ?>mine" target="_self">
 				<div class="itemmenulist">
 					<i class="homeWode"></i>
 					<span class="text">我的</span>
@@ -2174,7 +2174,7 @@ body {background:#eaeaea;}
                 <i class="icon-搜索"></i>
             </div>
             <div class="biz_gouwuche fl">
-                <a title="购物车" href="https://www.517ybang.com/cart">
+                <a title="购物车" href="<?php echo BASE_URL ?>cart">
                     <i class="icon-gouwuche-2" style="color: #949494;font-size: .4rem;float: left;margin-left: .8rem;margin-top: .1rem;"></i>
                 </a>
             </div>
@@ -2190,17 +2190,17 @@ body {background:#eaeaea;}
                 </div>
             <div class="dotshowlist" style="display: none;">
                 <div class="bizarr">
-                    <img src="https://cdn-remote.517ybang.com/media/home/biz_arr.png" alt="箭头">
+                    <img src="<?php echo CDN_URL ?>media/home/biz_arr.png" alt="箭头">
                 </div>
                 <p>
-                    <a title="首页" href="https://www.517ybang.com/">
+                    <a title="首页" href="<?php echo BASE_URL ?>">
                         <i class="icon-shouye_xiala"></i>
                         <span>首页</span>
                         <b></b>
                     </a>
                 </p>
                 <p>
-                    <a title="个人中心" href="https://www.517ybang.com/mine">
+                    <a title="个人中心" href="<?php echo BASE_URL ?>mine">
                         <i class="icon-wode-2"></i>
                         <span>我的</span>
                     </a>
@@ -2357,7 +2357,7 @@ $(function(){
 	$('.maptext').on('click',function(){
 			$.ajax({
 			type:'get',
-            url: 'https://cdn-remote.517ybang.com/address.txt', 
+            url: '<?php echo CDN_URL ?>address.txt',
             async: true,
             cache: false,
             dataType: 'html',
@@ -2387,7 +2387,7 @@ $('.itemIndexSearchInput').keydown(function(event){
 					// 商品列表API路径
 					var api_item_index = api_url + 'item/index';
 					if(!user_id){
-						window.location.href = 'https://www.517ybang.com/login';
+						window.location.href = base_url+'login';
 						return false;
 					};
 					// 商品详情页路径

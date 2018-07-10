@@ -96,7 +96,7 @@
 		    		$(this).focus();
 		    		$(this).css('background','#ccc');
 		    		$.ajax({
-					  url: "https://api.517ybang.com/sms/create",
+					  url: api_url+"sms/create",
 					  type: 'post',
 					  dataType: 'json',
 					  data: {app_type:'client',mobile:$('#mobile').val()},
@@ -154,14 +154,14 @@
                 	return;
                 }
 		   		$.ajax({
-					  url: "https://api.517ybang.com/account/password_reset",
+					  url: api_url+"account/password_reset",
 					  type: 'post',
 					  dataType: 'json',
 					  data: {app_type:'biz',mobile:$('#mobile').val(),password:$('#password1').val(),password_confirm:$('#password2').val(),sms_id:sms_id,captcha:$('#verification').val()},
 					  success: function (data, status) {
 					  	console.log(data);
 					   if(data.status == 200){
-					   	window.location.href = 'https://www.517ybang.com/login';
+					   	window.location.href = base_url+'login';
 					   }
 					    if(data.status == 400){
 					   	alert('验证码错误或已过期');
