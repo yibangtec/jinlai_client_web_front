@@ -38,6 +38,7 @@ background:#f7f7f7;
       }
 .menu-right{
 	padding-bottom: 1.5rem;
+
 }
 
 .menu-right::-webkit-scrollbar{width:0;height:0}
@@ -155,9 +156,9 @@ $(function(){
 				}
 			}
 		}
-
+	var that = '';
 	$('#sidebar li').click(function(){
-        $('section').eq(num - 1).scrollTop(0);
+        //$('section').eq(num - 1).scrollTop(0);
         $('section').eq(num - 1).find('.category_wrap').html(' ');
         num = $(this).index() + 1;
         $(this).addClass('active').siblings('li').removeClass('active');
@@ -217,6 +218,15 @@ $(function(){
 
 					//console.log(goodsListContent);
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
+					// 给安卓传当前top
+					if(user_agent.is_android){
+                    	$('section').eq(num - 1).scroll(function(){
+           					var Top = $('section').eq(num - 1).scrollTop()+'';
+                          		console.log(Top);
+                          		HostApp.topScrollY('right',Top);
+                         });
+                    }
+
                  }
 			}
 		}
@@ -227,6 +237,17 @@ $(function(){
 
     $('#sidebar li')[0].click();
     $('.menu-left').find('li').last().remove();
+	if(user_agent.is_android){
+		$('#sidebar').scroll(function(){
+     		var scrollTop = $('#sidebar').scrollTop()+'';
+     		console.log(scrollTop);
+     		HostApp.topScrollY('left',scrollTop);
+
+     	});
+	}
+
+
+
 
 
 });

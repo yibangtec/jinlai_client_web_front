@@ -885,6 +885,10 @@ wx.ready(function(){
             }
         });
 
+
+
+
+
     // 商品评价区域
     var params = common_params;
     params.item_id = item.item_id;
