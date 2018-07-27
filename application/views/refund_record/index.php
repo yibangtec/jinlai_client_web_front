@@ -7,61 +7,51 @@
     <div class="box">
         <div class="placeholder-div"></div>
         <div class="record-list">
-            <div class="record-shops clearfix">
-                <div class="shop-name">
-                    <i class="icon-dianpu"></i>
-                    <span>东塘文身</span>
-                </div>
-                <div class="record-date">2017-09-01 11:09</div>
-            </div>
-            <div class="record-detail">
-                <p class="record-message">卖家（东堂纹身）已同意了退款申请</p>
-            </div>
-        </div>
-        <div class="record-list">
-            <div class="record-shops clearfix">
-                <div class="shop-name">
-                    <i class="icon-dianpu"></i>
-                    <span>东塘文身</span>
-                </div>
-                <div class="record-date">2017-09-01 11:09</div>
-            </div>
-            <div class="record-detail">
-                <p class="record-message">该笔订单已于2017年09月01日，批量同意退款。</p>
-                <p class="record-operation">操作人：东堂纹身：晓东</p>
-            </div>
-        </div>
-        <div class="record-list">
-            <div class="record-shops clearfix">
-                <div class="shop-name">
-                    <i class="icon-dianpu"></i>
-                    <span>东塘文身</span>
-                </div>
-                <div class="record-date">2017-09-01 11:09</div>
-            </div>
-            <div class="record-detail">
-                <p class="record-message">该笔订单已通过退款审核，审核员为：【晓东】</p>
-            </div>
-        </div>
-        <div class="record-list">
-            <div class="record-shops clearfix">
-                <div class="shop-name">
-                    <i class="icon-wode-2"></i>
-                    <span>东塘文身</span>
-                </div>
-                <div class="record-date">2017-09-01 11:09</div>
-            </div>
-            <div class="record-detail">
-                <p class="record-message">卖家小叶于2017-09-01 10:60:10创建了退款申请</p>
-                <p class="record-type">退款类型：不退货仅退款</p>
-                <p class="record-type">退款金额：¥：49.80</p>
-                <p class="record-type">退款原因：协商一致退款</p>
-            </div>
+
         </div>
     </div>
     <script>
+    $(function(){
 
         var item = find();
+        var userId = item.user_id;
+        var name = '';
+            $.ajax({
+                url: api_url + 'user/detail',
+                data: {app_type:'client',id:userId},
+                success: function(result){
+                		//console.log(result); // 输出回调数据到控制台
+                     if (result.status == 200)
+                     {
+                        //window.history.back(-1);
+                      name = result.content.nickname;
+                      console.log(name);
+                      var itemHtml = '<div class="record-shops clearfix">'+
+                                                     '<div class="shop-name">'+
+                                                         '<i class="icon-wode-2"></i>'+
+                                                         '<span>'+ name +'</span>'+
+                                                     '</div>'+
+                                                     '<div class="record-date">'+item.time_edit+'</div>'+
+                                                 '</div>'+
+                                                 '<div class="record-detail">'+
+                                                     '<p class="record-message">买家家于'+item.time_edit+'创建了退款申请</p>'+
+                                                     '<p class="record-type">退款类型：'+item.type+'</p>'+
+                                                     '<p class="record-type">退款金额：¥：'+item.order_item.price+'</p>'+
+                                                     '<p class="record-type">退款原因：协商一致退款</p>'+
+                                                 '</div>';
+
+                                  $('.record-list').append(itemHtml);
+
+                     } else {
+                        alert(result.content.error.message);
+                     }
+                },
+                error:function(result){
+                	console.log(result);
+                },
+                dataType: 'json'
+            });
+
 
         function find(){
             var cp_keynum = "baseInfo";
@@ -69,4 +59,5 @@
             var num = JSON.parse(str);
             return num.cp_num_value
         }
+    })
     </script>

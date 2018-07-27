@@ -37,7 +37,7 @@
         for (var key in items){
             var orderItem = items[key].order_item;
             var slogan = orderItem.slogan;
-                            if(slogan == 'null'){
+                            if(slogan == null){
                                slogan = '';
                             };
             var imgUrl = orderItem.item_image;
@@ -67,7 +67,7 @@
                                         '<img src="'+ imgUrl + orderItem.item_image +'" alt=""/>'+
                                         '<div class="goods-info">'+
                                             '<p>'+orderItem.name+'</p>'+
-                                            '<p>'+orderItem.slogan+'</p>'+
+                                            '<p>'+slogan+'</p>'+
                                             '<p>退款金额：¥'+orderItem.single_total+'</p>'+
                                         '</div>'+
                                         '<div class="refund-amount">× '+orderItem.count+'</div>'+

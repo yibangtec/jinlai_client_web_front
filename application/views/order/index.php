@@ -238,6 +238,21 @@
             }
             load_more(10, listAllOffset, api_url+'order/index', status);
         });
+
+        var urlStatus = getQueryString('status');
+        console.log(urlStatus);
+        if(urlStatus == 'order1'){
+            $('.order-tab').eq(1).click();
+        }else if(urlStatus == 'order2'){
+            $('.order-tab').eq(2).click();
+        }else if(urlStatus == 'order3'){
+            $('.order-tab').eq(3).click();
+        }else if(urlStatus == 'order4'){
+            $('.order-tab').eq(4).click();
+        }else{
+            $('.order-tab').eq(0).click();
+        }
+
         $('body').on('click','.refundBtn',function(){
             if(true){
                  if(confirm("网页版退款功能即将开放，现阶段您可通过AppStore下载进来商城应用申请退款"))
@@ -254,12 +269,12 @@
                 }
              }
 
-         });
+        });
         $('.cancel').on('click',function(event){
-            event.stopPropagation()
+            event.stopPropagation();
         })
         $('.receipt').on('click',function(event){
-            event.stopPropagation()
+            event.stopPropagation();
         });
 
         $('.delete').on('click',function(event){
@@ -543,6 +558,13 @@
                 "JSON"
             );
         } // end load_more
+
+        function getQueryString(name){
+           var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+           var r = window.location.search.substr(1).match(reg);
+           if (r!=null) return r[2]; return '';
+        }
+
     });
 
 

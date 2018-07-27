@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="refund-operation">
-        <span>联系卖家</span><span><a href="tel:<?php echo $item['tel_public'] == '' ? '' : $item['tel_public']; ?>">拨打电话</a></span>
+        <span><a href="tel:<?php echo $item['tel_public'] == '' ? '' : $item['tel_public']; ?>">拨打电话</a></span>
     </div>
 </div>
 

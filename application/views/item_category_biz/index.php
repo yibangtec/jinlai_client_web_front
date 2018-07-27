@@ -147,13 +147,13 @@
           		//console.log(i);
           		if(i == 0){
           		    goodsListContent = '<h2>'+
-                                           '<a href="<?php echo base_url('item/index?biz_id='.$biz_id) ?>" class="negotiate border-active">'+
+                                           '<a href="<?php echo base_url('item/index?biz_id='.$biz_id) ?>&name='+arr[i].name+'" class="negotiate border-active">'+
                                                '<span>'+arr[i].name+'</span><span class="see-all">查看全部</span>'+
                                            '</a>'+
                                        '</h2>';
           		}else{
           		    goodsListContent = '<h2>'+
-                                            '<a href="<?php echo base_url('item/index?biz_id='.$biz_id) ?>" class="negotiate">'+
+                                            '<a href="<?php echo base_url('item/index?biz_id='.$biz_id) ?>&name='+arr[i].name+'" class="negotiate">'+
                                                 '<span>'+arr[i].name+'</span><span class="see-all">查看全部</span>'+
                                             '</a>'+
                                         '</h2>';

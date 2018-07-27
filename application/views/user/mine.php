@@ -53,19 +53,19 @@
             <a class="title-right" title="全部订单" href="<?php echo base_url('order') ?>">全部<i class="icon-Arrow"></i></a>
         </div>
         <div class="order-item clearfix">
-            <a class="item-list" title="待付款订单" href="<?php echo base_url('order?status=待付款') ?>">
+            <a class="item-list" title="待付款订单" href="<?php echo base_url('order?status=order1') ?>">
                 <i class="icon-daifukuan"></i>
                 <p>待付款</p>
             </a>
-            <a class="item-list" title="待发货订单" href="<?php echo base_url('order?status=待发货') ?>">
+            <a class="item-list" title="待发货订单" href="<?php echo base_url('order?status=order2') ?>">
                 <i class="icon-daifahuo"></i>
                 <p>待发货</p>
             </a>
-            <a class="item-list" itle="待收货订单" href="<?php echo base_url('order?status=待收货') ?>">
+            <a class="item-list" itle="待收货订单" href="<?php echo base_url('order?status=order3') ?>">
                 <i class="icon-daishouhuo"></i>
                 <p>待收货</p>
             </a>
-            <a class="item-list" title="待评价订单" href="<?php echo base_url('order?status=待评价') ?>">
+            <a class="item-list" title="待评价订单" href="<?php echo base_url('order?status=order4') ?>">
                 <i class="icon-daipingjia"></i>
                 <p>待评价</p>
             </a>

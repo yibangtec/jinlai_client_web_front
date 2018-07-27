@@ -895,7 +895,8 @@
     getMore();
             function getQueryString(name) {
                     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                    var r = window.location.search.substr(1).match(reg);
+                    var url = decodeURI(window.location.search)
+                    var r = url.substr(1).match(reg);
                     if (r != null) return unescape(r[2]);
                     return null;
             }
@@ -908,6 +909,20 @@
             //console.log(page_item_detail);
             var userID = user_id;
             api_url = ajax_root + api_url;
+
+            var name ='';
+
+            var currentName = '';
+            currentName = getQueryString('name');
+            console.log(currentName);
+            if(currentName !== ''){
+           	    name = currentName;
+           	    console.log(name);
+                $('.itemContent').hide();
+                $('.itemContent').eq(4).show();
+           	    getMoreSearch();
+
+           	}
             $.ajax({
                 type: 'post',
                 dataType: 'json',
@@ -1160,7 +1175,7 @@
                 $('#promotionBiz').html('');
 
              });
-            var name ='';
+
             $('.thisFilter').on('click',function(){
                 if(status=='综合'){
                   $('.itemContent').hide();

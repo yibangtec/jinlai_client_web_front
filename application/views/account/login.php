@@ -65,11 +65,7 @@
     </div>
     <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
-        <?php
-        // 微信授权网址
-        $wechat_oauth_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.WECHAT_APP_ID.'&redirect_uri='. urlencode(base_url('login_wechat')).'&response_type=code&scope=snsapi_userinfo#wechat_redirect';
-        ?>
-        <a class="wx-icon" href="<?php echo $wechat_oauth_url ?>">
+        <a class="wx-icon" href="">
             <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt="">
         </a>
     </div>
