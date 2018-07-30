@@ -608,7 +608,8 @@ wx.ready(function(){
 		<?php // TODO 显示客服按钮前检查当前店铺客服工作状态，决定留言或即时通讯 ?>
 		<li class=vice-button>
             <!--<a title="客服" href="<?php echo base_url('message?biz_id='.$item['biz_id']) ?>">-->
-            <a title="客服" href="tel:<?php echo $biz['tel_public'] ?>">
+            <!--<a title="客服"  href="tel:<?php echo $biz['tel_public'] ?>">-->
+            <a title="客服"  href="#"  class="jinlaiChat">
 				<img src="<?php echo CDN_URL ?>media/item/detail/kafu_icon@3x.png">
 				客服
 			</a>
@@ -713,6 +714,11 @@ wx.ready(function(){
 
 	// 商品信息
 	var item = <?php echo $item_in_json ?>;
+
+	//获取当前商品所属的店铺id
+    var bizId = <?php echo $item['biz_id'] ?>;
+    var itemId = item.item_id;
+
 	var record_id;
 	$.ajax({
         url : api_url + 'fav_item/index',
@@ -886,8 +892,8 @@ wx.ready(function(){
         });
 
 
-
-
+		console.log($('#sidebar').scrollTop())
+        
 
     // 商品评价区域
     var params = common_params;
@@ -911,4 +917,32 @@ wx.ready(function(){
     		}
     	} 
     });
+
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  // 匹配目标参数
+    if (r != null) return unescape(r[2]); return null; // 返回参数值
+}
+$('.jinlaiChat').click(function(e){
+	e.preventDefault();
+	$.post({
+        url:  api_url + 'wsmessage/hi',
+        data: {app_type:'client',biz_id:bizId,user_id:user_id},
+        success: function(result){
+             if (result.status == 200)
+             {
+
+				window.location.href = 'https://www.517ybang.com/chat/index?biz_id='+bizId+'&item_id=' + itemId;
+             } else {
+                alert(result);
+             }
+        },
+        error:function(result){
+        	console.log(result);
+        },
+        dataType: 'json'
+    });
+
+})
 </script>

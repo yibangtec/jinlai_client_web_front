@@ -67,6 +67,16 @@
                 height: 100%;
                 width: 100%;
             }
+            #chat .message{
+                padding-left:0;
+                padding-right:0;
+            }
+            #chat .send{
+                padding-left:0.3rem;
+            }
+            #chat .show{
+                padding-right:0.3rem;
+            }
         </style>
 </head>
 <script type="text/javascript">
@@ -141,22 +151,9 @@
         </div>
     </header>
     <div class="message" id="message">
-    	<div class="show">
-    		<div class="time">5月07日 12:00</div>
-    		<div class="msg">
-    			<div class="arrow"></div>
-    			<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiangm.png" alt="" />
-    			<p><i clas="msg_input"></i>你家宝贝质量杠杠滴,给你点赞,哈哈哈哈...</p>
-    		</div>
-    	</div>
-    	<!--<div class="send">
-    		<div class="time">5月07日 12:00</div>
-    		<div class="msg">
-    			<div class="arrowL"></div>
-    			<img src="https://cdn-remote.517ybang.com//media/chatimages/images/touxiang.png" alt="" />
-    			<p><i class="msg_input"></i>谢谢,亲!我们会努力做到更好滴,嘻嘻嘻嘻嘻...</p>
-    		</div>
-    	</div>-->
+
+
+
 
     </div>
     <div class="footer">
@@ -176,41 +173,76 @@
     			</span>
     			<em>图片</em>
     		</li>
-    		<!--<li>
-    			<span>
-    				<i class="icon-liulan"></i>
-    			</span>
-    			<em>浏览历史</em>
-    		</li>
-    		<li>
-    			<span>
-    				<i class="icon-sc"></i>
-    			</span>
-    			<em>收藏宝贝</em>
-    		</li>
-    		<li style="margin-right: 0px;" class="shdz">
-    			<span>
-    				<i class="icon-sh-dizhi"></i>
-    			</span>
-    			<em>收货地址</em>
-    		</li>
-    		<li class="khdsjdd">
-    			<span>
-    				<i class="icon-sp-dingdan"></i>
-    			</span>
-    			<em>商品订单</em>
-    		</li>
-    		<li>
-    			<span>
-    				<i class="icon-fw-dingdan"></i>
-    			</span>
-    			<em>服务订单</em>
-    		</li>
-    		<li class="dqdz">
-    			<span>
-    				<i class="icon-dq-weizhi"></i>
-    			</span>
-    			<em>当前位置</em>
+    		<!--<li>
+
+    			<span>
+
+    				<i class="icon-liulan"></i>
+
+    			</span>
+
+    			<em>浏览历史</em>
+
+    		</li>
+
+    		<li>
+
+    			<span>
+
+    				<i class="icon-sc"></i>
+
+    			</span>
+
+    			<em>收藏宝贝</em>
+
+    		</li>
+
+    		<li style="margin-right: 0px;" class="shdz">
+
+    			<span>
+
+    				<i class="icon-sh-dizhi"></i>
+
+    			</span>
+
+    			<em>收货地址</em>
+
+    		</li>
+
+    		<li class="khdsjdd">
+
+    			<span>
+
+    				<i class="icon-sp-dingdan"></i>
+
+    			</span>
+
+    			<em>商品订单</em>
+
+    		</li>
+
+    		<li>
+
+    			<span>
+
+    				<i class="icon-fw-dingdan"></i>
+
+    			</span>
+
+    			<em>服务订单</em>
+
+    		</li>
+
+    		<li class="dqdz">
+
+    			<span>
+
+    				<i class="icon-dq-weizhi"></i>
+
+    			</span>
+
+    			<em>当前位置</em>
+
     		</li>-->
     	</ul>
     </div>
@@ -218,15 +250,101 @@
 <script>
 	var ws = '';
 	var wsflag = 0;
-	  function getUrlParam(name) {
+
+$(function(){
+    function getUrlParam(name) {
 		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
 		    var r = window.location.search.substr(1).match(reg);  // 匹配目标参数
 		    if (r != null) return unescape(r[2]); return null; // 返回参数值
 		}
-		var sbiz_id = getUrlParam('biz_id');
+    var locationUrl = getUrlParam('biz_id');
+    console.log(locationUrl);
+    if(locationUrl !== null){
+        console.log(locationUrl);
+        var thisItemImg = '';
+        var slogan = '';
+        var price = '';
+        var thisContent = '';
 	//一进页面就开始聊天
 	      $('#chat').show();//聊天窗口与消息通知切换
             $('.content').hide();
+            var sbiz_id = getUrlParam('biz_id');
+            var sItem_id = getUrlParam('item_id');
+
+            		 //获取token
+                    var token = '';
+                    var params = {};
+                    params.app_type = 'client';
+                    params.user_id = user_id;
+
+                    $.post({
+                        async:false,
+                        url:  api_url + 'wsmessage/getverify',
+                        data: params,
+                        success: function(result){
+                             if (result.status == 200)
+                             {
+                                token = result.content.token;
+
+                             } else {
+                                alert(result.content.error.message);
+                             }
+                        },
+                        error:function(result){
+                        	console.log(result);
+                        },
+                        dataType: 'json'
+                    });
+                    ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
+            		$.post({
+                        url:  api_url + 'item/detail',
+                        async:false,
+                        data: {app_type:'client',id:sItem_id},
+                        success: function(result){
+                             if (result.status == 200)
+                             {
+                                console.log(result);
+                                thisItemImg = result.content.url_image_main;
+                                slogan = result.content.name;
+                                price = result.content.price;
+                                var reg = RegExp(/http/);
+                                //console.log(reg.test(imgUrl)); // true
+                                if(reg.test(thisItemImg) !== true){
+                                     thisItemImg = media_url+'item/' + thisItemImg;
+                                }else{
+                                     thisItemImg = result.content.url_image_main;
+                                }
+                                var itemHtml ='<div class="send-order">'+
+                                                          '<div class="send-orderInfo">'+
+                                                              '<img class="send-mainImg" src="'+thisItemImg+'" alt=""/>'+
+                                                              '<p class="send-slogans">'+ result.content.slogan+'</p>'+
+                                                          '</div>'+
+                                                          '<div class="sendBtn">发送</div>'+
+                                                      '</div>';
+                                $('.message').append(itemHtml);
+                                thisContent = JSON.stringify({"item_id":sItem_id,"url_image_main":result.content.url_image_main,"name":result.content.name,"tag_price":result.content.tag_price,"price":result.content.price,"sku_price_max":result.content.sku_price_max,"sku_price_min":result.content.sku_price_min});
+
+
+
+                             } else {
+                                alert(result);
+                             }
+                        },
+                        error:function(result){
+                        	console.log(result);
+                        },
+                        dataType: 'json'
+                    });
+                    $('.sendBtn').on('click',function(){
+                    console.log('sfdsfd');
+                          var timestamp = (new Date()).getTime();
+                          var thisItemStr = JSON.stringify({"biz_id": sbiz_id,"type":"item","content":thisContent, "time_create":timestamp});
+                          console.log(thisItemStr);
+                          ws.send(thisItemStr);
+
+                          showkhdSp('https://medias.517ybang.com/user/' + avatar,'<img src="'+thisItemImg+'" style="width:1.2rem;height:1.2rem;display:block;float:left"><span style="display:block;width:2.2rem;float:left;font-size:.24rem;color:rgb(62,58,57);height:.8rem;overflow:hidden;margin-left:.1rem;">'+ slogan+'</span><a style="display:block;width:2.2rem;margin-left:.1rem;margin-top:.1rem;float:left;"><i class="fl" style="font-size:.28rem;color:rgb(255,54,73)">¥'+ price+'</i></a>');
+                          $('.send-order').hide();
+                      });
             	
                     //获取当前点击聊天好友的userID和最后一条聊天内容id获取聊天记录
                     //var objUserId = $(this).attr('data-id');
@@ -239,11 +357,13 @@
                     //objList.message_id = messageId;
                     $.post({
                         url:  api_url + 'wsmessage/index',
+                        async:false,
                         data: objList,
                         success: function(result){
-                        	
-                             if (result.status == 200)
+
+                             if (result.status == 200 && parseInt(result.content.length) > 0)
                              {
+                                console.log(result);
                                 imgUrl = result.content[0].url_logo;
                                 var reg = RegExp(/http/);
                                 //console.log(reg.test(imgUrl)); // true
@@ -271,14 +391,14 @@
                                         time1 =  new Date(date1).getTime();
                                         time2 =  new Date(date1).getTime();
                                    }
-                                   if(arr[i].chat == "send"){
+                                   if(arr[i].chat == "receive"){
                                        if(arr[i].type == 'text'){
                                        	
                                             send(imgUrl,arr[i].content);
                                        }else if(arr[i].type == 'image'){
                                             sendPic(imgUrl,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
                                        }
-                                   }else if(arr[i].chat == "receive"){
+                                   }else if(arr[i].chat == "send"){
                                              //我接收到的
                                        if(arr[i].type == 'text'){
                                        //客户端添加时间
@@ -293,12 +413,14 @@
                                             }
                                        
                                        }else if(arr[i].type == 'image'){
-                                       sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
+                                            sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
                                        }
                                    }
                                 }
                              } else {
-                                alert(result.content.error.message);
+                                console.log(url_logo);
+                                $('#firstCome').show();
+                                //alert(result.content.error.message);
                              }
                         },
                         error:function(result){
@@ -306,41 +428,19 @@
                         },
                         dataType: 'json'
                     });
-                    //获取token
-                    var token = '';
-                    var params = {};
-                    params.app_type = 'client';
-                    params.user_id = user_id;
-                    
-                    $.post({
-                        async:false,
-                        url:  api_url + 'wsmessage/getverify',
-                        data: params,
-                        success: function(result){
-                             if (result.status == 200)
-                             {
-                                token = result.content.token;
-                                
 
-                             } else {
-                                alert(result.content.error.message);
-                             }
-                        },
-                        error:function(result){
-                        	console.log(result);
-                        },
-                        dataType: 'json'
-                    });
-                    ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
 					
 
                     ws.onopen = function () {
+
+                    /*let str = JSON.stringify({"s_biz_id": sbiz_id,"type":"read"});
+                    ws.send(str);*/
 
                       //alert("数据发送中...");
                       document.onkeyup = function (e) {
                                          	var code = e.charCode || e.keyCode;
                                          	if (code == 13) {
-                                         		debugger;
+                                         		//debugger;
                                          		var content = $('#chat .footer .chatInput').text();
                                          		var oMessage = document.getElementById('message').scrollHeight + 500;
                                           		$(".message").animate({scrollTop:oMessage}, 50);
@@ -357,7 +457,8 @@
 
 
                     ws.onmessage = function (evt) {
-                          var data = JSON.parse(evt.data)
+                       var data = JSON.parse(evt.data);
+                       console.log(data);
                        if(data.msg == '新的消息' && data.status == '200'){
                             var img = data.content[0].url_logo;
                             var reg = RegExp(/http/);
@@ -379,20 +480,38 @@
                                 }else{
                                     sendPic(img,'<img src="'+currentContent+'">');
                                 }
+                            }else if(currentType == 'item'){
+                                //sendkhdSp('https://medias.517ybang.com/user/' + avatar,'<img src="'+thisItemImg+'" style="width:1.2rem;height:1.2rem;display:block;float:left"><span style="display:block;width:2.2rem;float:left;font-size:.24rem;color:rgb(62,58,57);height:.8rem;overflow:hidden;margin-left:.1rem;">'+ slogan+'</span><a style="display:block;width:2.2rem;margin-left:.1rem;margin-top:.1rem;float:left;"><i class="fl" style="font-size:.28rem;color:rgb(255,54,73)">¥'+ price+'</i></a>');
+
                             }
+
+
+                            /*let str = JSON.stringify({"s_biz_id": sbiz_id,"type":"read"});
+                            ws.send(str);*/
 
                        }
                     };
                     ws.onerror = function (e) {
                         console.log(e)
                     }
+
+            $('#closeChat').on('click',function(){
+
+
+                 ws.onclose = function(){
+                    console.log('close');
+                 }
+                 window.history.back(-1);
+
+            });
                    // 一进页面就开始聊天结束
-    $(function(){
+    }else{
+
 		  function getUrlParam(name) {
 		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
 		    var r = window.location.search.substr(1).match(reg);  // 匹配目标参数
 		    if (r != null) return unescape(r[2]); return null; // 返回参数值
-		}
+		  }
 		var sbiz_id = getUrlParam('biz_id');
         $('body').on('click','.friends .notice',function(){
         	wsflag++;
@@ -400,36 +519,60 @@
             $('.content').hide();
             	
                     //获取当前点击聊天好友的userID和最后一条聊天内容id获取聊天记录
-                    var objUserId = $(this).attr('data-id');
-                    //var messageId = $(this).attr('data-messId');
-                    var imgUrl = '';
-                    var objList = {};
-                    objList.app_type = 'client';
+                    var objUserId = $(this).attr('data-id');
+
+                    //var messageId = $(this).attr('data-messId');
+
+                    var imgUrl = '';
+
+                    var objList = {};
+
+                    objList.app_type = 'client';
+
                     objList.user_id = user_id;
                     //获取当前的bizid
-                    objList.biz_id = $(this).attr('data-id');
+                    objList.biz_id = $(this).attr('data-id');
+
                     //objList.message_id = messageId;
                     
-                    console.log(objList);
-                    $.post({
-                        url:  api_url + 'wsmessage/index',
-                        data: objList,
-                        success: function(result){
-                        	
-                             if (result.status == 200)
+                    console.log(objList);
+
+                    $.post({
+
+                        url:  api_url + 'wsmessage/index',
+
+                        data: objList,
+
+                        success: function(result){
+
+                        	console.log(result.content);
+
+                             if (result.status == 200)
+
                              {
                                 imgUrl = result.content[0].url_logo;
-                                var reg = RegExp(/http/);
-                                //console.log(reg.test(imgUrl)); // true
-                                if(reg.test(imgUrl) !== true){
-                                     imgUrl = media_url+'biz/' + imgUrl;
-                                }else{
-                                     imgUrl = result.content[0].url_logo;
-                                }
-
-                                var arr = [];
-                                arr = result.content[0].list;
-                                for(var i=0; i<arr.length; i++){
+                                var reg = RegExp(/http/);
+
+                                //console.log(reg.test(imgUrl)); // true
+
+                                if(reg.test(imgUrl) !== true){
+
+                                     imgUrl = media_url+'biz/' + imgUrl;
+
+                                }else{
+
+                                     imgUrl = result.content[0].url_logo;
+
+                                }
+
+
+
+                                var arr = [];
+
+                                arr = result.content[0].list;
+
+                                for(var i=0; i<arr.length; i++){
+
 									   var time1 = '';
                                     var time2 = '';
                                    if(i < arr.length-1){
@@ -444,15 +587,19 @@
                                         date1 = arr[i].time_create;
                                         time1 =  new Date(date1).getTime();
                                         time2 =  new Date(date1).getTime();
-                                   }
-                                   if(arr[i].chat == "send"){
+                                   }
+
+                                   if(arr[i].chat == "receive"){
+
                                        if(arr[i].type == 'text'){
                                        	
                                             send(imgUrl,arr[i].content);
                                        }else if(arr[i].type == 'image'){
                                             sendPic(imgUrl,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
-                                       }
-                                   }else if(arr[i].chat == "receive"){
+                                       }
+
+                                   }else if(arr[i].chat == "send"){
+
                                              //我接收到的
                                        if(arr[i].type == 'text'){
                                        //客户端添加时间
@@ -467,18 +614,29 @@
                                             }
                                        
                                        }else if(arr[i].type == 'image'){
-                                       sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
-                                       }
-                                   }
-                                }
-                             } else {
-                                console.log(result.content.error.message);
-                             }
-                        },
-                        error:function(result){
-                        	console.log(result);
-                        },
-                        dataType: 'json'
+                                            sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
+                                       }
+
+                                   }
+
+                                }
+
+                             } else {
+
+                                console.log(result.content.error.message);
+
+                             }
+
+                        },
+
+                        error:function(result){
+
+                        	console.log(result);
+
+                        },
+
+                        dataType: 'json'
+
                     });
                     //获取token
                     var token = '';
@@ -504,12 +662,14 @@
                         },
                         dataType: 'json'
                     });
-                    if(wsflag != 0){
-                    	ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
-                    }
+
+                    ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
 
 
                     ws.onopen = function () {
+                         console.log('链接打开');
+                         let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                         ws.send(str);
 
                       //alert("数据发送中...");
                       document.onkeyup = function (e) {
@@ -523,8 +683,9 @@
                                          		$('#chat .footer .chatInput').text('');
                                          		var timestamp = (new Date()).getTime();
 
-                                         		console.log(content);
-                                         		let str = JSON.stringify({"biz_id": '2',"type":"text","content":content, "time_create":timestamp})
+
+                                         		let str = JSON.stringify({"biz_id": objUserId,"type":"text","content":content, "time_create":timestamp})
+                                         		console.log(str);
                                          		ws.send(str);
                                          	}
                                          	}
@@ -533,6 +694,7 @@
 
                     ws.onmessage = function (evt) {
                           var data = JSON.parse(evt.data)
+                          console.log(data);
                        if(data.msg == '新的消息' && data.status == '200'){
                             var img = data.content[0].url_logo;
                             var reg = RegExp(/http/);
@@ -556,6 +718,9 @@
                                 }
                             }
 
+                            let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                            ws.send(str);
+
                        }
                     };
                     ws.onerror = function (e) {
@@ -566,17 +731,20 @@
         });
 
         $('#closeChat').on('click',function(){
-            $('#chat').hide();
-            $('.content').show();
-            $('#message').html('');
-             ws.onclose = function(){
-                console.log('close')
-             }
+
+                $('#chat').hide();
+                $('.content').show();
+                $('#message').html('');
+                 ws.onclose = function(){
+                    console.log('close');
+                 }
+                 location.reload();
+
         });
         //有没有未读消息
         var params = {};
         params.app_type = 'client';
-        params.user_id = '200';
+        params.user_id = user_id;
         $.post({
             url:  api_url + 'wsmessage/sync',
             data: params,
@@ -587,13 +755,13 @@
                  var item = result.content;
                  for(var key in item){
                     var list = item[key].list;
-                     var newText = list[list.length-1].content;
+                     var newText = list[0].content;
                      console.log(newText.indexOf('image') >= 0);
                     if(newText.indexOf('image') >= 0){
 						newText = '[图片]';
                     }
-                    var timeCreate = list[list.length-1].time_create;
-                    var messageId = list[list.length-1].message_id;
+                    var timeCreate = list[0].time_create;
+                    //var messageId = list[0].message_id;
                     var imgUrl = item[key].url_logo;
                     var reg = RegExp(/http/);
                     //console.log(reg.test(imgUrl)); // true
@@ -602,7 +770,7 @@
                     }else{
                          imgUrl = item[key].url_logo;
                     }
-                    var friendsHtml = '<div class="notice" data-messId="'+messageId+'" data-id="'+ item[key].biz_id +'">'+
+                    var friendsHtml = '<div class="notice" data-id="'+ item[key].biz_id +'">'+
                                                   '<div class="notice-image">'+
                                                       '<img class="notice-header-img" src="'+imgUrl+'" alt=""/>'+
                                                       '<div class="newNews"></div>'+
@@ -628,7 +796,9 @@
 
 
 
-    });
+
+    }
+});
     var user = sbiz_id;//传入
 </script>
 </body>
