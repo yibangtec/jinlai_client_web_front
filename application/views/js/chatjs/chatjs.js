@@ -6,6 +6,12 @@ function send(headSrc,str){
 	"<p>"+str+"</p></div></div>";
 	upView(html);
 }
+ function getUrlParam(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 构造一个含有目标参数的正则表达式对象
+		    var r = window.location.search.substr(1).match(reg);  // 匹配目标参数
+		    if (r != null) return unescape(r[2]); return null; // 返回参数值
+		}
+
 /*接受消息*/
 function show(headSrc,str,time){
 	var html="<div class='show'>"+time+"<div class='msg'><div class='arrow'></div><img src="+headSrc+" />"+
@@ -313,7 +319,7 @@ function test(){
       
         for(var i = 0;i < list.length;i++){
             //$('.editContent .loading').show();
-            var time=buildkhdFileName(i, user);
+            var time=buildkhdFileName(i, '');
             console.log(time);
             var save_key="image/"+time;
             var url="https://v0.api.upyun.com/"+ bucketname;
@@ -354,10 +360,11 @@ function test(){
 
                     //console.log('图片地址是' + img);
                     var sendImgSrc = 'https://jinlaisandbox-images.b0.upaiyun.com/'+JSON.parse(data).url;
-                    sendkhdPic(url_logo,'<img src="'+sendImgSrc+'">');
+                    
+                    sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="'+sendImgSrc+'">');
 
                     var timestamp = (new Date()).getTime();
-                    var str = JSON.stringify({"biz_id": '2',"type":"image","content":save_key, "time_create":timestamp});
+                    var str = JSON.stringify({"biz_id": getUrlParam('biz_id'),"type":"image","content":save_key, "time_create":timestamp});
                     console.log(str);
                     console.log(ws);
                     ws.send(str);
@@ -385,7 +392,7 @@ function test(){
         if (mm < 10) mm = '0' + mm;
         var ss = objD.getSeconds()+s;
         if (ss < 10) ss = '0' + ss;
-        userId = userId.toString();
+        //userId = userId.toString();
         timeStr = yy + '/' + MM + dd + '/' + hh + mm + ss + userId + '.jpg';
         return timeStr;
     }

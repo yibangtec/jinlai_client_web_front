@@ -668,13 +668,14 @@ $(function(){
 
                     ws.onopen = function () {
                          console.log('链接打开');
-                         let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
-                         ws.send(str);
+                         /*let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                         ws.send(str);*/
 
                       //alert("数据发送中...");
                       document.onkeyup = function (e) {
                                          	var code = e.charCode || e.keyCode;
                                          	if (code == 13) {
+                                         	    console.log('dksfja');
                                          		//debugger;
                                          		var content = $('#chat .footer .chatInput').text();
                                          		var oMessage = document.getElementById('message').scrollHeight + 500;
@@ -718,8 +719,8 @@ $(function(){
                                 }
                             }
 
-                            let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
-                            ws.send(str);
+                           /* let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                            ws.send(str);*/
 
                        }
                     };
@@ -799,7 +800,7 @@ $(function(){
 
     }
 });
-    var user = sbiz_id;//传入
+   // var user = sbiz_id;//传入
 </script>
 </body>
 </html>

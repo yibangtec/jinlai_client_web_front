@@ -23,10 +23,10 @@
             	<span class="nick-name" data-name=nickname></span>
                 <span class="member">VIP<?php echo $item['level'] ?></span>
             </a>
-            <div class="header-news">
+            <a class="header-news" href="<?php echo base_url('chat/index') ?>">
                  <!--图标-->
                  <i class="icon-chat"></i>
-            </div>
+            </a>
         </div>
         <div class="header-bot">
             <a class="bot-float" title="收藏商家" href="<?php echo base_url('fav_biz') ?>">
@@ -73,6 +73,26 @@
                 <i class="icon-jintuikuan"></i>
                 <p>退款售后</p>
             </a>
+        </div>
+    </div>
+    <div class="mine-order">
+        <div class="order-title">
+            <div class="title-left">团购订单</div>
+            <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
+        </div>
+        <div class="order-item clearfix">
+            <div class="item-team">
+                <i class="icon-daifukuan"></i>
+                <p>未消费</p>
+            </div>
+            <div class="item-team">
+                <i class="icon-daishiyong"></i>
+                <p>已使用</p>
+            </div>
+            <div class="item-team">
+                <i class="icon-daipingjia"></i>
+                <p>已过期</p>
+            </div>
         </div>
     </div>
     <div class="mine-order">
