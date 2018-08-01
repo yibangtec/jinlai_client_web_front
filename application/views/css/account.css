@@ -408,3 +408,10 @@ input:-webkit-autofill {
     color: #81b5f1;
     font-size: 0.45rem;
 }
+
+
+.icon-daishiyong:before {
+    content: "\e912";
+    font-size: 0.48rem;
+    color: #4d4d4d;
+}

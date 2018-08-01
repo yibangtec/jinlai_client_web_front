@@ -7,6 +7,16 @@
         body{
             background-color: #efefef;
         }
+        .icon-钱:before {
+            content: "\e933";
+            font-size: 0.48rem;
+                color: #4d4d4d;
+        }
+        .icon-时间:before {
+            content: "\e934";
+            font-size: 0.48rem;
+                color: #4d4d4d;
+        }
     </style>
 
 <div class="box">
@@ -78,11 +88,11 @@
     <div class="mine-order">
         <div class="order-title">
             <div class="title-left">团购订单</div>
-            <div class="title-right">全部订单<i class="icon-Arrow"></i></div>
+            <a title="全部订单" href="<?php echo base_url('order') ?>" class="title-right">全部订单<i class="icon-Arrow"></i></a>
         </div>
         <div class="order-item clearfix">
             <div class="item-team">
-                <i class="icon-daifukuan"></i>
+                <i class="icon-钱"></i>
                 <p>未消费</p>
             </div>
             <div class="item-team">
@@ -90,7 +100,7 @@
                 <p>已使用</p>
             </div>
             <div class="item-team">
-                <i class="icon-daipingjia"></i>
+                <i class="icon-时间"></i>
                 <p>已过期</p>
             </div>
         </div>
