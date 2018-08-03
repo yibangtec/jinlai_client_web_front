@@ -136,44 +136,44 @@ body {background:#eaeaea;}
         // 第一行
         array(
             'name' => '生鲜超市', // 导航项名称
-            'url' => base_url('page/detail?id=2'), // 目标页面URL
+            'url' => base_url('page/newdetail?id=2'), // 目标页面URL
             'icon_url' => CDN_URL.'media/home/shengxianchaoshi@3x.png', // 图标URL
         ),
         array(
             'name' => '地方特产',
-            'url' => base_url('page/detail?id=9'),
+            'url' => base_url('page/newdetail?id=9'),
             'icon_url' => CDN_URL.'media/home/jiaodongtechan@3x.png',
         ),
         array(
             'name' => '母婴用品',
-            'url' => base_url('page/detail?id=10'),
+            'url' => base_url('page/newdetail?id=10'),
             'icon_url' => CDN_URL.'media/home/muyingyongpin@3x.png',
         ),
         array(
             'name' => '科技数码',
-            'url' => base_url('page/detail?id=11'),
+            'url' => base_url('page/newdetail?id=11'),
             'icon_url' => CDN_URL.'media/home/kejishuma@3x.png',
         ),
         array(
             'name' => '居家生活',
-            'url' => base_url('page/detail?id=12'),
+            'url' => base_url('page/newdetail?id=12'),
             'icon_url' => CDN_URL.'media/home/jujiashenghuo@3x.png',
         ),
 
         // 第二行
         array(
             'name' => '休闲零食',
-            'url' => base_url('page/detail?id=13'),
+            'url' => base_url('page/newdetail?id=13'),
             'icon_url' => CDN_URL.'media/home/xiuxianlingshi@3x.png',
         ),
         array(
             'name' => '运动户外',
-            'url' => base_url('page/detail?id=14'),
+            'url' => base_url('page/newdetail?id=14'),
             'icon_url' => CDN_URL.'media/home/yundonghuwai@3x.png',
         ),
         array(
             'name' => '游戏动漫',
-            'url' => base_url('page/detail?id=15'),
+            'url' => base_url('page/newdetail?id=15'),
             'icon_url' => CDN_URL.'media/home/youxidongman@3x.png',
         ),
         array(
@@ -190,27 +190,27 @@ body {background:#eaeaea;}
         // 第三行
         array(
             'name' => '学习教育',
-            'url' => base_url('page/detail?id=4'),
+            'url' => base_url('page/newdetail?id=4'),
             'icon_url' => CDN_URL.'media/home/xuexijiaoyu@3x.png',
         ),
         array(
             'name' => '休闲娱乐',
-            'url' => base_url('page/detail?id=5'),
+            'url' => base_url('page/newdetail?id=5'),
             'icon_url' => CDN_URL.'media/home/xiuxianyule@3x.png',
         ),
         array(
             'name' => '特色美食',
-            'url' => base_url('page/detail?id=3'),
+            'url' => base_url('page/newdetail?id=3'),
             'icon_url' => CDN_URL.'media/home/tesemeishi@3x.png',
         ),
         array(
             'name' => '运动健康',
-            'url' => base_url('page/detail?id=4'),
+            'url' => base_url('page/newdetail?id=4'),
             'icon_url' => CDN_URL.'media/home/yundognjiankang@3x.png',
         ),
         array(
             'name' => '时尚丽人',
-            'url' => base_url('page/detail?id=5'),
+            'url' => base_url('page/newdetail?id=5'),
             'icon_url' => CDN_URL.'media/home/shishangliren@3x.png',
         ),
 
@@ -237,7 +237,7 @@ body {background:#eaeaea;}
         ),
         array(
             'name' => '私人订制',
-            'url' => base_url('page/detail?id=6'),
+            'url' => base_url('page/newdetail?id=6'),
             'icon_url' => CDN_URL.'media/home/sirendingzhi@3x.png',
         ),
     );
@@ -276,7 +276,7 @@ body {background:#eaeaea;}
                 <div class="menuWrap auto clearfix swiper-slide">
 					<ul data-name=menu_items_top class="clearfix">
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=2') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap">
                                     <img data-src="<?php echo CDN_URL ?>media/home/shengxianchaoshi@3x.png">
@@ -286,7 +286,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                             <a href="<?php echo base_url('page/detail?id=15') ?>" target=_self>
+                             <a href="<?php echo base_url('page/newdetail?id=15') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/chao liu ku wan@3x.png">
@@ -296,7 +296,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=8') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=8') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/muyingyongpin.png">
@@ -306,7 +306,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=10') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=10') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/kejishuma.png">
@@ -316,7 +316,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li style="margin-right:0">
-                            <a href="<?php echo base_url('page/detail?id=11') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=11') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap5">
                                     <img data-src="<?php echo CDN_URL ?>media/home/jujiashenghuo.png">
@@ -326,7 +326,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=12') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=12') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap">
                                     <img data-src="<?php echo CDN_URL ?>media/home/xiuxianlingshi.png">
@@ -336,7 +336,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                             <a href="<?php echo base_url('page/detail?id=13') ?>" target=_self>
+                             <a href="<?php echo base_url('page/newdetail?id=13') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/yundonghuwai.png">
@@ -346,7 +346,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=14') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=14') ?>" target=_self>
                                 <!--图标-->
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/youxidongman.png">
@@ -382,7 +382,7 @@ body {background:#eaeaea;}
                 <div class="menuWrap auto clearfix swiper-slide">
 					<ul class="clearfix">
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=2') ?>" target=_self>
                                 <div class="iconWrap">
                                     <img data-src="<?php echo CDN_URL ?>media/home/xuexijiaoyu.png">
                                 </div>
@@ -390,7 +390,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                             <a href="<?php echo base_url('page/detail?id=6') ?>" target=_self>
+                             <a href="<?php echo base_url('page/newdetail?id=6') ?>" target=_self>
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/xiuxianyule.png">
                                 </div>
@@ -398,7 +398,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=3') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=3') ?>" target=_self>
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/tesemeishi.png">
                                 </div>
@@ -406,7 +406,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=5') ?>" target=_self>
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/yundognjiankang@3x.png">
                                 </div>
@@ -414,7 +414,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li style="margin-right:0">
-                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=4') ?>" target=_self>
                                 <div class="iconWrap5">
                                     <img data-src="<?php echo CDN_URL ?>media/home/shishangliren@3x.png">
                                 </div>
@@ -422,7 +422,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=2') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=2') ?>" target=_self>
                                 <div class="iconWrap">
                                     <img data-src="<?php echo CDN_URL ?>media/home/hunshasheying.png">
                                 </div>
@@ -430,7 +430,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                             <a href="<?php echo base_url('page/detail?id=6') ?>" target=_self>
+                             <a href="<?php echo base_url('page/newdetail?id=6') ?>" target=_self>
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/chongwufuwu.png">
                                 </div>
@@ -438,7 +438,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=3') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=3') ?>" target=_self>
                                 <div class="iconWrap3">
                                     <img data-src="<?php echo CDN_URL ?>media/home/lvyouminsu.png">
                                 </div>
@@ -446,7 +446,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li>
-                            <a href="<?php echo base_url('page/detail?id=5') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=5') ?>" target=_self>
                                 <div class="iconWrap4">
                                     <img data-src="<?php echo CDN_URL ?>media/home/qicheguanjia.png">
                                 </div>
@@ -454,7 +454,7 @@ body {background:#eaeaea;}
                             </a>
 						</li>
 						<li style="margin-right:0">
-                            <a href="<?php echo base_url('page/detail?id=4') ?>" target=_self>
+                            <a href="<?php echo base_url('page/newdetail?id=4') ?>" target=_self>
                                 <div class="iconWrap5">
                                     <img data-src="<?php echo CDN_URL ?>media/home/sirendingzhi.png">
                                 </div>
@@ -585,12 +585,12 @@ body {background:#eaeaea;}
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('page/detail?id=8') ?>" target="_self">
+                                <a href="<?php echo base_url('page/newdetail?id=8') ?>" target="_self">
                                 	<img data-src="https://cdn-remote.517ybang.com/media/home/hami.jpg">
                                 </a>
                             </div>
                             <div class="swiper-slide advercube">
-                                <a href="<?php echo base_url('page/detail?id=12') ?>" target="_self">
+                                <a href="<?php echo base_url('page/newdetail?id=12') ?>" target="_self">
                                 	<img data-src="https://cdn-remote.517ybang.com/media/home/durian.jpg">
                                 </a>
                             </div>
@@ -621,19 +621,19 @@ body {background:#eaeaea;}
 			<div class="coloroverlaycontent clearfix" style="margin-top:.14rem">
 				<!--运动装备区域-->
 				<div class="mid fl dzcpinfo">
-					<a href="<?php echo base_url('item/detail?id=3912') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5751') ?>" target="_self">
 						<div class="midright fr mt0">
 							<div class="bgefefef">
-							<img data-src="http://www.ybslux.com/uploadfiles/images//39202060-921a-4ac3-973d-2b7277c6c858.jpg">
+							<img data-src="https://cdn-remote.517ybang.com/media/home/hxq.jpg">
 							</div>
-							<h1>城阳自种大油菜 3.99/斤</h1>
+							<h1>越南红绣球 400-500g/个</h1>
 						</div>
 					</a>
 					<a href="<?php echo base_url('item/detail?id=3883') ?>" target="_self">
 						<div class="midleft fl mt0">
 							<div class="bgefefef">
 							<!-- <img data-src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sl.jpg"> -->
-                            <img src="http://www.ybslux.com/uploadfiles/images//2ba16f8f-086c-4842-9825-70cd66630d1a.jpg">
+                            <img src="https://cdn-remote.517ybang.com/media/home/jztd.jpg">
 							</div>
 							<h1>胶州新土豆（2018年新）1.99/斤</h1>
 						</div>
@@ -642,17 +642,17 @@ body {background:#eaeaea;}
 				</div>
 				<div class="coloroverlaycontent clearfix dzcpinfo" style="margin-top:.10rem">
 				<div class="mid fl">
-					<a href="<?php echo base_url('item/detail?id=3865') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=3866') ?>" target="_self">
 						<div class="midleft fr">
-							<img src="https://cdn-remote.517ybang.com/media/home/jzg.jpg" class="success">
-							<h1>雪蓉牌金针菇 1.99/包</h1>
+							<img src="https://cdn-remote.517ybang.com/media/home/whr.jpg" class="success">
+							<h1>优选去皮五花肉 500g/份</h1>
 							<!--<h2>1309 我的MAC</h2>-->
 						</div>
 					</a>
 					<a href="<?php echo base_url('item/detail?id=3916') ?>" target="_self">
 					<div class="midright fl">
 						<img src="https://cdn-remote.517ybang.com/media/home/kj.jpg" class="success">
-						<h1>夏庄农家苦菊</h1>
+						<h1>夏庄农家苦菊 4.70/300g</h1>
 						<!--<h2>爱疯 爱疯 疯</h2>-->
 					</div>
 					</a>
@@ -663,12 +663,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=5650') ?>">
+				      <a href="<?php echo base_url('item/detail?id=3883') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/jbnrl.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/jztd.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.9km</span>
-				         <h1>泰国山竹10个装</h1>
+				         <h1>胶州新土豆（2018年新）1.99/斤</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -688,12 +688,12 @@ body {background:#eaeaea;}
 				        </div>
 				       </div>
 				       </a>
-                       <a href="<?php echo base_url('item/detail?id=4752') ?>">
+                       <a href="<?php echo base_url('item/detail?id=5751') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/dfsc.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/hxq.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>新西兰金果6个装</h1>
+				         <h1>越南红绣球 400-500g/个</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -704,7 +704,7 @@ body {background:#eaeaea;}
 				          </ul>
 				         </div>
 				         <div class="tag">
-				          新西兰金果6个装
+				         越南红绣球 400-500g/个
 				         </div>
 				         <div class="allbuy">
 				          <span class="tuan">团</span>
@@ -712,12 +712,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-				       <a href="<?php echo base_url('item/detail?id=4816') ?>">
+				       <a href="<?php echo base_url('item/detail?id=3916') ?>">
 				      <div class="list">
-				       <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/yxy.jpg" class="fl">
+				       <img src="https://cdn-remote.517ybang.com/media/home/kj.jpg" class="fl">
 				       <div class="listtext fr">
 				        <span class="area">0.3km</span>
-				        <h1>阳山水蜜桃4个装</h1>
+				        <h1>夏庄农家苦菊</h1>
 				        <div class="star">
 				         <ul>
 				          <li><i class="icon-weixuanzhong2"></i></li>
@@ -739,10 +739,10 @@ body {background:#eaeaea;}
 				      </a>
                          <a href="<?php echo base_url('item/detail?id=5648') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/shangjiabaopin/sjbp/bjtx.jpg" class="fl" />
+				        <img src="https://cdn-remote.517ybang.com/media/home/whr.jpg" class="fl" />
 				        <div class="listtext fr">
 				         <span class="area">2.3km</span>
-				         <h1>台湾树上熟木瓜</h1>
+				         <h1>优选去皮五花肉 500g/份</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -768,18 +768,18 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=4498') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5747') ?>" target="_self">
 							<li>
-								<img src="http://www.ybslux.com/uploadfiles/images//3fbb391c-b4f2-4f73-b921-77f484fc503a.jpg" class="auto block">
-								<h1>寿光面包茄子</h1>
-								<h2>¥3.99/斤</h2>
+								<img src="https://cdn-remote.517ybang.com/media/home/lls.jpg" class="auto block">
+								<h1>泰国金枕榴莲 2-2.25kg/个</h1>
+								<h2>¥75.00/个</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=3963') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=4180') ?>" target="_self">
 							<li>
-								<img src="http://www.ybslux.com/uploadfiles/images//45fe05d3-f048-439c-accd-0ec1ea369079.jpg" class="auto block">
-								<h1>农家紫皮圆洋葱</h1>
-								<h2>¥0.99/斤</h2>
+								<img src="https://cdn-remote.517ybang.com/media/home/bg.jpg" class="auto block">
+								<h1>君博黑牛棒骨  1kg/份（下单后次日送达，请提前下单）</h1>
+								<h2>¥40.00/份</h2>
 							</li>
 							</a>
 							<a href="<?php echo base_url('item/detail?id=4037') ?>" target="_self">
@@ -789,11 +789,11 @@ body {background:#eaeaea;}
 								<h2>3个/份</h2>
 							</li>
 							</a>
-							<a href="<?php echo base_url('item/detail?id=4033') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5758') ?>" target="_self">
 							<li>
-								<img src="http://www.ybslux.com/uploadfiles/images/A1224/edb1d3c4-d807-45ed-8c89-410cc457770c.jpg" class="auto block">
-								<h1>天然有机茄子</h1>
-								<h2>¥2.88/斤</h2>
+								<img src="https://cdn-remote.517ybang.com/media/home/jfpt.jpg" class="auto block">
+								<h1>巨峰葡萄 700-750g/份</h1>
+								<h2>¥16.80/斤</h2>
 							</li>
 							</a>
 						</ul>
@@ -810,44 +810,44 @@ body {background:#eaeaea;}
 						<div class="goodsleft">
 							<ul class="clearfix">
 								<li>
-									<a href="<?php echo base_url('item/detail?id=5676') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5682') ?>" target="_self">
 									<div class="pic">
-										<img src="/media/selection/dalieba.jpg">
+										<img src="https://cdn-remote.517ybang.com/media/home/hm.jpg">
 									</div>
 									</a>
-									<p>新疆大列巴面包</p>
-									<span>¥32.00</span>
+									<p>实木脚凳创意河马换鞋凳沙发凳设计师家具储物矮凳试鞋凳收纳脚凳</p>
+									<span>¥196.00</span>
 								</li>
 								<li style="margin-left: .3rem;">
-									<a href="<?php echo base_url('item/detail?id=5679') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5740') ?>" target="_self">
 									<div class="pic">
-										<img data-src="/media/selection/yougurt.jpg">
+										<img data-src="https://cdn-remote.517ybang.com/media/home/shy.jpg">
 									</div>
 										</a>
-									<p>西悦冰激凌酸奶</p>
-									<span>¥60.00</span>
+									<p>mbot Ranger三合一可编程教育机器人 蓝牙遥控智能拼装玩具</p>
+									<span>¥989.00</span>
 								</li>
 							</ul>
 						</div>
 						<div class="goodsleft" style="margin-left:.1rem">
 							<ul class="clearfix">
 								<li>
-									<a href="<?php echo base_url('item/detail?id=5669') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=5657') ?>" target="_self">
 									<div class="pic">
-										<img src="<?php echo CDN_URL ?>media/home/qt.jpg">
+										<img data-src="https://cdn-remote.517ybang.com/media/home/lz.jpg">
 									</div>
 									</a>
-									<p>上海风味青团</p>
-									<span>¥4.00</span>
+									<p>JackWolfskin狼爪都市休闲棉质中性帽子1900671</p>
+									<span>¥149.00</span>
 								</li>
 								<li style="margin-left:.3rem;">
-									<a href="<?php echo base_url('item/detail?id=5671') ?>" target="_self">
+									<a href="<?php echo base_url('item/detail?id=4700') ?>" target="_self">
 									<div class="pic">
-										<img data-src="<?php echo CDN_URL ?>media/home/ht.jpg">
+										<img data-src="https://cdn-remote.517ybang.com/media/home/hwsh.jpg">
 									</div>
 									</a>
-									<p>网红花团</p>
-									<span>¥8.00</span>
+									<p>华为（HUAWEI）运动手环B3</p>
+									<span>¥999.00</span>
 								</li>
 							</ul>
 						</div>
@@ -875,7 +875,7 @@ body {background:#eaeaea;}
 							<li style="margin-right:0">
 								<a href="<?php echo base_url('item/detail?id=178') ?>" target="_self">
 								<div class="pic">
-									<img data-src="<?php echo CDN_URL ?>media/home/xc.jpg">
+									<img data-src="<?php echo CDN_URL ?>media/home/cart1.jpg">
 								</div>
 								</a>
 								<p>BBA级洗车套餐30元（英皇之星）</p>
@@ -986,33 +986,33 @@ body {background:#eaeaea;}
 				<!--时尚内容-->
 				<div class="colorovertab clearfix" style="display:block" data-title="junbo">
 				<div class="left fl refreshcontent">
-					<a href="<?php echo base_url('item/detail?id=4691') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5136') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="/media/child/box.jpg">
+						<img data-src="https://cdn-remote.517ybang.com/media/home/hlj.jpg">
 						</div>
-						<h1>婴儿奶瓶收纳盒 52.8元</h1>
+						<h1>亨氏金宝宝婴儿颗粒面 320g*3盒装</h1>
 					</a>
 				</div>
 				<div class="right fr refreshcontent">
-					<a href="<?php echo base_url('item/detail?id=4808') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=5084') ?>" target="_self">
 						<div class="bgefefef">
-						<img data-src="/media/child/card.jpg">
+						<img data-src="https://cdn-remote.517ybang.com/media/home/mdy.jpg">
 						</div>
-						<h1>奥乐有声挂图 120元</h1>
+						<h1>美帝亚大砧板CSG02</h1>
 					</a>
 				</div>
 				<div class="mid fl" style="margin-top:.1rem !important">
 					<div class="midleft refreshcontent">
-						<a href="<?php echo base_url('item/detail?id=4647') ?>" target="_self">
-							<img data-src="/media/child/thermometer.jpg">
-							<h1>好孩子大象温度计 130元</h1>
+						<a href="<?php echo base_url('item/detail?id=5143') ?>" target="_self">
+							<img data-src="https://cdn-remote.517ybang.com/media/home/jndgdp.jpg">
+							<h1>加拿大果丹皮SunRype72条 1010g</h1>
 							<!--<h2>面包也可以带有亲情</h2>-->
 						</a>
 					</div>
 					<div class="midright fr refreshcontent">
-						<a href="<?php echo base_url('item/detail?id=4840') ?>" target="_self">
-							<img data-src="/media/child/toybricks.jpg">
-							<h1>磁力片积木儿童玩具</h1>
+						<a href="<?php echo base_url('item/detail?id=4628') ?>" target="_self">
+							<img data-src="https://cdn-remote.517ybang.com/media/home/hhzcy.jpg">
+							<h1>gb好孩子儿童餐椅 9.38kg</h1>
 							<!--<h2>甜品也可以甜而不腻</h2>-->
 						</a>
 					</div>
@@ -1022,12 +1022,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=4202') ?>">
+				      <a href="<?php echo base_url('item/detail?id=5136') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/hlj.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>精选薏米</h1>
+				         <h1>亨氏金宝宝婴儿颗粒面 320g*3盒装</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1046,12 +1046,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4197') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5084') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/mdy.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">5.3km</span>
-				         <h1>硕溙五常大米</h1>
+				         <h1>美帝亚大砧板CSG02</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1070,12 +1070,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4198') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5143') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/jndgdp.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.9km</span>
-				         <h1>聚糖大米</h1>
+				         <h1>加拿大果丹皮SunRype72条 1010g</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1096,10 +1096,10 @@ body {background:#eaeaea;}
 				       </div></a>
                          <a href="<?php echo base_url('item/detail?id=4322') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/hhzcy.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>月子小米</h1>
+				         <h1>gb好孩子儿童餐椅 9.38kg</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1205,32 +1205,32 @@ body {background:#eaeaea;}
 				<div class="botWrap auto wid718 border20 fl mt10 clearfix">
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
-							<a href="<?php echo base_url('item/detail?id=4914') ?>" target="_self">
+							<a href="<?php echo base_url('item/detail?id=5840') ?>" target="_self">
 							<li>
-                                <img data-src="/media/child/plasticine.jpg" class="auto block">
-                                <h1>绘儿乐黏土彩泥橡皮泥套装</h1>
-                                <h2>¥129.00</h2>
+                                <img data-src="https://cdn-remote.517ybang.com/media/home/wz.jpg" class="auto block">
+                                <h1>婴儿蚊帐儿童宝宝纹帐</h1>
+                                <h2>¥69.00</h2>
 							</li>
 							</a>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=4832') ?>" target="_self">
-									<img data-src="/media/child/mp3toy.jpg" class="auto block">
-									<h1>火火兔G6早教机</h1>
-									<h2>¥168.00</h2>
+								<a href="<?php echo base_url('item/detail?id=4796') ?>" target="_self">
+									<img data-src="https://cdn-remote.517ybang.com/media/home/gq.jpg" class="auto block">
+									<h1>费雪新生儿音乐钢琴 W2621</h1>
+									<h2>¥359.00</h2>
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=5087') ?>" target="_self">
-									<img data-src="/media/child/scoop.jpg" class="auto block">
-									<h1>挤压式婴儿喂养勺</h1>
-									<h2>¥79.00</h2>
+								<a href="<?php echo base_url('item/detail?id=5157') ?>" target="_self">
+									<img data-src="https://cdn-remote.517ybang.com/media/home/xm.jpg" class="auto block">
+									<h1>谷之爱小米米粉 225g</h1>
+									<h2>¥52.00</h2>
 								</a>
 							</li>
 							<li>
-								<a href="<?php echo base_url('item/detail?id=5171') ?>" target="_self">
-									<img data-src="/media/child/shampoo.jpg" class="auto block">
-									<h1>好孩子儿童沐浴露</h1>
-									<h2>¥48.00</h2>
+								<a href="<?php echo base_url('item/detail?id=4644') ?>" target="_self">
+									<img data-src="https://cdn-remote.517ybang.com/media/home/etcz.jpg" class="auto block">
+									<h1>gb好孩子分隔盘叉勺水杯4件套</h1>
+									<h2>¥109.00</h2>
 								</a>
 							</li>
 						</ul>
@@ -1305,12 +1305,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=5700') ?>">
+				      <a href="<?php echo base_url('item/detail?id=5808') ?>">
 				       <div class="list">
-				        <img src="/media/snacks/coldnoddle.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/yuyuan.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>咕咕熊朝鲜冷面</h1>
+				         <h1>真味珍芋圆 19.8元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1330,12 +1330,12 @@ body {background:#eaeaea;}
 				        </div>
 				       </div>
 				       </a>
-                         <a href="<?php echo base_url('item/detail?id=5701') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5799') ?>">
 				       <div class="list">
-				        <img src="/media/snacks/beef.jpg" class="fl">
+				        <img src="https://medias.517ybang.com/item/url_image_main/201807/0716/152803.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">3.3km</span>
-				         <h1>手撕风干牛肉500克</h1>
+				         <h1>辣木籽 59.9元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1354,12 +1354,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=5432') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5973') ?>">
 				       <div class="list">
-				        <img src="/media/snacks/coconutdrink.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/msd.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">9.3km</span>
-				         <h1>可口可乐泰国进口椰子汁12瓶</h1>
+				         <h1>蜜三刀 18元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1374,17 +1374,17 @@ body {background:#eaeaea;}
 				         </div>
 				         <div class="allbuy">
 				          <span class="tuan">团</span>
-				          <span>15.80元 </span>
+				          <span>18.00元 </span>
 				         </div>
 				        </div>
 				       </div>
 				       </a>
-                         <a href="<?php echo base_url('item/detail?id=5408') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5788') ?>">
 				       <div class="list">
-				        <img src="/media/snacks/vc.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/pgp.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>999维生素C泡腾片</h1>
+				         <h1>泰国进口苹果片 24.8元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1443,7 +1443,7 @@ body {background:#eaeaea;}
 				</div>
 				<!--运动健康区域-->
 				<div class="wid718 auto bgfff border20 exercise">
-					<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/yundongjiankang@3x.png">
+					<img data-src="<?php echo CDN_URL ?>media/home/yundongjiankang/kjsm.png">
 				</div>
 				<div class="coloroverlay mt14 fl">
     				<div class="coloroverlaywrap">
@@ -1454,7 +1454,7 @@ body {background:#eaeaea;}
     					
     					<div class="zbottom zthree action">
     						Come in Recommend
-    						<span class="r">满减心跳</span>
+    						<span class="r">科技数码</span>
     					</div>
     				</div>
     				<div class="fr square" id="ydjkmore">
@@ -1465,21 +1465,21 @@ body {background:#eaeaea;}
 				
 				<!--运动装备区域-->
 				<div class="mid fl mt10">
-					<a href="<?php echo base_url('item/detail?id=4678') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4624') ?>" target="_self">
 					<div class="midleft fr mt0">
 						<div class="bgefefef">
-						<img src="/media/3c/brush.jpg">
+						<img src="https://cdn-remote.517ybang.com/media/home/flp.jpg">
 						</a>
 						</div>
-						<h1>赛嘉儿童电动牙刷</h1>
+						<h1>飞利浦电动剃须刀S566</h1>
 					</div>
 					</a>
-					<a href="<?php echo base_url('item/detail?id=4614') ?>" target="_self">
+					<a href="<?php echo base_url('item/detail?id=4653') ?>" target="_self">
 					<div class="midright fl mt0">
 						<div class="bgefefef">
-						<img src="/media/3c/shaver.jpg">
+						<img src="https://cdn-remote.517ybang.com/media/home/ol.jpg">
 						</div>
-						<h1>飞利浦电动剃须刀</h1>
+						<h1>欧乐电动牙刷B(Oral-B) D12013</h1>
 					</div>
 					</a>
 				</div>
@@ -1491,20 +1491,20 @@ body {background:#eaeaea;}
 				<div class="mid fl ydjkinfo">
 					<div class="midleft fl">
 						<div class="bgefefef">
-							<a href="<?php echo base_url('item/detail?id=4767') ?>" target="_self">
-						<img data-src="/media/3c/midea.jpg">
+							<a href="<?php echo base_url('item/detail?id=5841') ?>" target="_self">
+						<img data-src="https://cdn-remote.517ybang.com/media/home/sd.jpg">
 							</a>
 						</div>
-						<h1>美的U1吸尘器</h1>
+						<h1>飞利浦扫地机器人FC8794</h1>
 						<!--<h2>DIOS精准标靶装备</h2>-->
 					</div>
 					<div class="midright fr">
 						<div class="bgefefef">
-							<a href="<?php echo base_url('item/detail?id=4894') ?>" target="_self">
-						<img data-src="/media/3c/midea2.jpg">
+							<a href="<?php echo base_url('item/detail?id=4690') ?>" target="_self">
+						<img data-src="https://cdn-remote.517ybang.com/media/home/xmai.jpg">
 							</a>
 						</div>
-						<h1>美的大功率挂烫机</h1>
+						<h1>小米(MI) 小米AI音箱 （小）</h1>
 						<!--<h2>极限运动装备</h2>-->
 					</div>
 				</div>
@@ -1514,12 +1514,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=4274') ?>">
+				      <a href="<?php echo base_url('item/detail?id=4653') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_0.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/ol.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.9km</span>
-				         <h1>【预售3-5天送达】Apple iPhoneX  256GB 银色</h1>
+				         <h1>欧乐电动牙刷B(Oral-B) D12013</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1538,12 +1538,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=3937') ?>">
+                         <a href="<?php echo base_url('item/detail?id=4624') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_1.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/flp.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.1km</span>
-				         <h1>龙泉青瓷冰裂纹挂盘</h1>
+				         <h1>飞利浦电动剃须刀S566</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1562,12 +1562,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4057') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5841') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_2.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/sd.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.4km</span>
-				         <h1>日本资生堂秀场造型质感发蜡（自然型白）</h1>
+				         <h1>飞利浦扫地机器人FC8794</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1586,12 +1586,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4244') ?>">
+                         <a href="<?php echo base_url('item/detail?id=4690') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/yundongjiankang/160x160_3.jpg" class="fl">
+				        <img src="https://cdn-remote.517ybang.com/media/home/xmai.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>【预售5-7天送达】Yale 耶鲁指纹锁智能锁密码锁刷卡感应防盗门家用锁ZEN-R</h1>
+				         <h1>小米(MI) 小米AI音箱 （小）</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1618,31 +1618,31 @@ body {background:#eaeaea;}
 					<div class="dotcontent clearfix bgfff border20">
 						<ul>
                             <li>
-							    <a href="<?php echo base_url('item/detail?id=5188') ?>" target="_self">
-                                    <img data-src="/media/3c/mideaoven.jpg">
-                                    <h1>美的迷你电烤箱</h1>
-                                    <h2>¥99.00</h2>
+							    <a href="<?php echo base_url('item/detail?id=4730') ?>" target="_self">
+                                    <img data-src="https://cdn-remote.517ybang.com/media/home/xcq.jpg">
+                                    <h1>美的(Midea) 吸尘器 SC861A</h1>
+                                    <h2>¥138.00</h2>
 							    </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('item/detail?id=5696') ?>" target="_self">
-                                    <img data-src="/media/3c/airfryer.jpg">
-                                    <h1>九阳空气炸锅</h1>
+                                <a href="<?php echo base_url('item/detail?id=4909') ?>" target="_self">
+                                    <img data-src="https://cdn-remote.517ybang.com/media/home/gt.jpg">
+                                    <h1>飞利浦挂烫机家用GC509/18</h1>
+                                    <h2>¥348.00</h2>
+							    </a>
+                            </li>
+                            <li>
+							    <a href="<?php echo base_url('item/detail?id=4936') ?>" target="_self">
+                                    <img data-src="https://cdn-remote.517ybang.com/media/home/mbj.jpg">
+                                    <h1>美的（Midea）面包机 TSC2011</h1>
                                     <h2>¥469.00</h2>
 							    </a>
                             </li>
                             <li>
-							    <a href="<?php echo base_url('item/detail?id=5213') ?>" target="_self">
-                                    <img data-src="/media/3c/joyoung.jpg">
-                                    <h1>九阳原汁榨汁机</h1>
-                                    <h2>¥299.00</h2>
-							    </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('item/detail?id=5678') ?>" target="_self">
-                                    <img data-src="/media/3c/breakfastmachine.jpg">
-                                    <h1>小型早餐机</h1>
-                                    <h2>¥99.00</h2>
+                                <a href="<?php echo base_url('item/detail?id=5209') ?>" target="_self">
+                                    <img data-src="https://cdn-remote.517ybang.com/media/home/zzj.jpg">
+                                    <h1>九阳V5PLUS榨汁机</h1>
+                                    <h2>¥399.00</h2>
                                 </a>
                             </li>
 						</ul>
@@ -1652,7 +1652,7 @@ body {background:#eaeaea;}
 				<!--电子产品-->
 				<div class="wid718 auto bgfff border20 exercise clearfix">
 					<div class="bgefefef">
-					    <img src="/media/sport/sportbanner.png">
+					    <img src="https://cdn-remote.517ybang.com/media/home/ydhw.png">
 					</div>
 				</div>
 				<div class="coloroverlay mt14">
@@ -1664,7 +1664,7 @@ body {background:#eaeaea;}
                         
                         <div class="zbottom zthree action">
                             Come in Recommend
-                            <span class="r">攻心折扣</span>
+                            <span class="r">运动户外</span>
                         </div>
                     </div>
                     <div class="fr square" id="gxzkmore">
@@ -1716,12 +1716,12 @@ body {background:#eaeaea;}
 				   <div class="swiper-wrapper">
 				    <div class="swiper-slide">
 				     <div class="list-group-item">
-				      <a href="<?php echo base_url('item/detail?id=4202') ?>">
+				      <a href="<?php echo base_url('item/detail?id=5050') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_0.jpg" class="fl">
+				        <img src="https://www.517ybang.com/media/sport/face.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>精选薏米</h1>
+				         <h1>百变运动头巾面巾</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1740,12 +1740,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4197') ?>">
+                         <a href="<?php echo base_url('item/detail?id=4990') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_1.jpg" class="fl">
+				        <img src="https://www.517ybang.com/media/sport/ball.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">5.3km</span>
-				         <h1>硕溙五常大米</h1>
+				         <h1>正品恒博黄金1号羽毛球12只装 29元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1764,12 +1764,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4198') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5656') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_2.jpg" class="fl">
+				        <img src="/media/sport/adidas.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.9km</span>
-				         <h1>聚糖大米</h1>
+				         <h1>阿迪达斯运动头带吸汗带 159元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1788,12 +1788,12 @@ body {background:#eaeaea;}
 				         </div>
 				        </div>
 				       </div></a>
-                         <a href="<?php echo base_url('item/detail?id=4322') ?>">
+                         <a href="<?php echo base_url('item/detail?id=5655') ?>">
 				       <div class="list">
-				        <img src="<?php echo CDN_URL ?>media/home/dianzichanpin/dzcp/160x160_3.jpg" class="fl">
+				        <img src="/media/sport/backpack.jpg" class="fl">
 				        <div class="listtext fr">
 				         <span class="area">0.3km</span>
-				         <h1>月子小米</h1>
+				         <h1>探路者背包 83.40元</h1>
 				         <div class="star">
 				          <ul>
 				           <li><i class="icon-weixuanzhong2"></i></li>
@@ -1860,12 +1860,12 @@ body {background:#eaeaea;}
             </div>
                 <!--运动装备区域-->
                 <div class="mid fl mt10">
-                    <a href="<?php echo base_url('item/detail?id=5687') ?>" target="_self">
+                    <a href="<?php echo base_url('item/detail?id=5690') ?>" target="_self">
                     <div class="midright fr mt0">
                         <div class="bgefefef">
-                        <img data-src="/media/young/carton.jpg">
+                        <img data-src="https://cdn-remote.517ybang.com/media/home/th.jpg">
                         </div>
-                        <h1>墙贴画ins风卡通猫门贴</h1>
+                        <h1>墙贴画ins风门贴卡通客厅卧室墙纸自粘简约寝室门贴纸墙面装饰品</h1>
                     </div>
                     </a>
                     <a href="<?php echo base_url('item/detail?id=5694') ?>" target="_self">
@@ -1880,17 +1880,17 @@ body {background:#eaeaea;}
                 </div>
                 <div class="coloroverlaycontent clearfix gxzkinfo" style="margin-top:.10rem">
                 <div class="mid fl">
-                    <a href="<?php echo base_url('item/detail?id=5683') ?>" target="_self">
+                    <a href="<?php echo base_url('item/detail?id=5711') ?>" target="_self">
                     <div class="midleft fr">
-                        <img src="/media/young/hippochair.jpg" class="success">
-                        <h1>创意实木脚凳恐龙小凳子 214.40元</h1>
+                        <img src="https://cdn-remote.517ybang.com/media/home/yrh.jpg" class="success">
+                        <h1>网红妖娆花</h1>
                         <!--<h2>1309 我的MAC</h2>-->
                     </div>
                     </a>
-                    <a href="<?php echo base_url('item/detail?id=5682') ?>" target="_self">
+                    <a href="<?php echo base_url('item/detail?id=5689') ?>" target="_self">
                     <div class="midright fl">
-                        <img src="/media/young/dragonchair.jpg" class="success">
-                        <h1>实木脚凳创意河马换鞋凳 190.40元</h1>
+                        <img src="https://cdn-remote.517ybang.com/media/home/xy.jpg" class="success">
+                        <h1>实木创意小羊换鞋凳矮凳化妆凳家用穿鞋凳梳妆凳收纳沙发拆洗脚凳</h1>
                         <!--<h2>爱疯 爱疯 疯</h2>-->
                     </div>
                     </a>
@@ -2018,11 +2018,11 @@ body {background:#eaeaea;}
                                 <h2>¥79.00</h2>
                             </li>
                             </a>
-                            <a href="<?php echo base_url('item/detail?id=5691') ?>">
+                            <a href="<?php echo base_url('item/detail?id=5725') ?>">
                             <li>
-                                <img src="/media/young/rabbit.jpg" class="auto block">
-                                <h1>抖音玩具一捏耳朵会动的兔子帽子</h1>
-                                <h2>¥49.00</h2>
+                                <img src="https://cdn-remote.517ybang.com/media/home/whtz.jpg" class="auto block">
+                                <h1>抖音会动的兔子帽子</h1>
+                                <h2>¥29.90</h2>
                             </li>
                             </a>
                             <a href="<?php echo base_url('item/detail?id=5693') ?>">
@@ -2517,6 +2517,9 @@ $(function(){
 });
 
 $(function(){
+    $('kefu').on('click',function(){
+        window.location.href = base_url+'chat/index';
+    });
 	$("#timer2").oaoTime();
 	var lazyLoadImg = new LazyLoadImg({
 		el: document.querySelector('#listMenu'),

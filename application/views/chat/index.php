@@ -513,223 +513,7 @@ $(function(){
 		    if (r != null) return unescape(r[2]); return null; // 返回参数值
 		  }
 		var sbiz_id = getUrlParam('biz_id');
-        $('body').on('click','.friends .notice',function(){
-        	wsflag++;
-            $('#chat').show();//聊天窗口与消息通知切换
-            $('.content').hide();
-            	
-                    //获取当前点击聊天好友的userID和最后一条聊天内容id获取聊天记录
-                    var objUserId = $(this).attr('data-id');
 
-                    //var messageId = $(this).attr('data-messId');
-
-                    var imgUrl = '';
-
-                    var objList = {};
-
-                    objList.app_type = 'client';
-
-                    objList.user_id = user_id;
-                    //获取当前的bizid
-                    objList.biz_id = $(this).attr('data-id');
-
-                    //objList.message_id = messageId;
-                    
-                    console.log(objList);
-
-                    $.post({
-
-                        url:  api_url + 'wsmessage/index',
-
-                        data: objList,
-
-                        success: function(result){
-
-                        	console.log(result.content);
-
-                             if (result.status == 200)
-
-                             {
-                                imgUrl = result.content[0].url_logo;
-                                var reg = RegExp(/http/);
-
-                                //console.log(reg.test(imgUrl)); // true
-
-                                if(reg.test(imgUrl) !== true){
-
-                                     imgUrl = media_url+'biz/' + imgUrl;
-
-                                }else{
-
-                                     imgUrl = result.content[0].url_logo;
-
-                                }
-
-
-
-                                var arr = [];
-
-                                arr = result.content[0].list;
-
-                                for(var i=0; i<arr.length; i++){
-
-									   var time1 = '';
-                                    var time2 = '';
-                                   if(i < arr.length-1){
-
-                                        date1 = arr[i].time_create;
-                                        time1 =  new Date(date1).getTime();
-
-                                        console.log(i);
-                                        var date2 = arr[i+1].time_create;
-                                        time2 =  new Date(date2).getTime();
-                                   }else{
-                                        date1 = arr[i].time_create;
-                                        time1 =  new Date(date1).getTime();
-                                        time2 =  new Date(date1).getTime();
-                                   }
-
-                                   if(arr[i].chat == "receive"){
-
-                                       if(arr[i].type == 'text'){
-                                       	
-                                            send(imgUrl,arr[i].content);
-                                       }else if(arr[i].type == 'image'){
-                                            sendPic(imgUrl,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
-                                       }
-
-                                   }else if(arr[i].chat == "send"){
-
-                                             //我接收到的
-                                       if(arr[i].type == 'text'){
-                                       //客户端添加时间
-                                         if((time2 - (5*60*1000)) > time1){
-                                                var strTime =arr[i].time_create;
-                                                strTime = strTime.substring(5,16);
-                                                var timeHtml = "<div class='time'>"+strTime+"</div>";
-                                                console.log(timeHtml);
-                                                show('https://medias.517ybang.com/user/' + avatar,arr[i].content,timeHtml);
-                                            }else{
-                                                show('https://medias.517ybang.com/user/' + avatar,arr[i].content,'');
-                                            }
-                                       
-                                       }else if(arr[i].type == 'image'){
-                                            sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
-                                       }
-
-                                   }
-
-                                }
-
-                             } else {
-
-                                console.log(result.content.error.message);
-
-                             }
-
-                        },
-
-                        error:function(result){
-
-                        	console.log(result);
-
-                        },
-
-                        dataType: 'json'
-
-                    });
-                    //获取token
-                    var token = '';
-                    var params = {};
-                    params.app_type = 'client';
-                    params.user_id = user_id;
-                    
-                    $.post({
-                        async:false,
-                        url:  api_url + 'wsmessage/getverify',
-                        data: params,
-                        success: function(result){
-                             if (result.status == 200)
-                             {
-                                token = result.content.token;
-
-                             } else {
-                                alert(result.content.error.message);
-                             }
-                        },
-                        error:function(result){
-                        	console.log(result);
-                        },
-                        dataType: 'json'
-                    });
-
-                    ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
-
-
-                    ws.onopen = function () {
-                         console.log('链接打开');
-                         /*let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
-                         ws.send(str);*/
-
-                      //alert("数据发送中...");
-                      document.onkeyup = function (e) {
-                                         	var code = e.charCode || e.keyCode;
-                                         	if (code == 13) {
-                                         	    console.log('dksfja');
-                                         		//debugger;
-                                         		var content = $('#chat .footer .chatInput').text();
-                                         		var oMessage = document.getElementById('message').scrollHeight + 500;
-                                          		$(".message").animate({scrollTop:oMessage}, 50);
-                                         		show('https://medias.517ybang.com/user/' + avatar,$('#chat .footer .chatInput').text(),'');
-                                         		$('#chat .footer .chatInput').text('');
-                                         		var timestamp = (new Date()).getTime();
-
-
-                                         		let str = JSON.stringify({"biz_id": objUserId,"type":"text","content":content, "time_create":timestamp})
-                                         		console.log(str);
-                                         		ws.send(str);
-                                         	}
-                                         	}
-                    };
-
-
-                    ws.onmessage = function (evt) {
-                          var data = JSON.parse(evt.data)
-                          console.log(data);
-                       if(data.msg == '新的消息' && data.status == '200'){
-                            var img = data.content[0].url_logo;
-                            var reg = RegExp(/http/);
-                            //console.log(reg.test(imgUrl)); // true
-                            if(reg.test(img) !== true){
-                                 img = media_url+'biz/' + img;
-                            }else{
-                                 img = data.content[0].avatar;
-                            }
-                            console.log(img);
-                            var currentType = data.content[0].list.type;
-                            var currentContent = data.content[0].list.content;
-                            if(currentType == 'text'){
-                                send(img,currentContent);
-                            }else if(currentType == 'image'){
-
-                                if(reg.test(currentContent) !== true){
-                                    sendPic(img,'<img src="'+mediaUrl+currentContent+'">');
-                                }else{
-                                    sendPic(img,'<img src="'+currentContent+'">');
-                                }
-                            }
-
-                           /* let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
-                            ws.send(str);*/
-
-                       }
-                    };
-                    ws.onerror = function (e) {
-                        console.log(e)
-                    }
-
-
-        });
 
         $('#closeChat').on('click',function(){
 
@@ -784,6 +568,223 @@ $(function(){
                                               '</div>';
                     $('.friends').append(friendsHtml);
                  }
+                 $('.notice').on('click',function(){
+                         	wsflag++;
+                             $('#chat').show();//聊天窗口与消息通知切换
+                             $('.content').hide();
+
+                                     //获取当前点击聊天好友的userID和最后一条聊天内容id获取聊天记录
+                                     var objUserId = $(this).attr('data-id');
+
+                                     //var messageId = $(this).attr('data-messId');
+
+                                     var imgUrl = '';
+
+                                     var objList = {};
+
+                                     objList.app_type = 'client';
+
+                                     objList.user_id = user_id;
+                                     //获取当前的bizid
+                                     objList.biz_id = $(this).attr('data-id');
+
+                                     //objList.message_id = messageId;
+
+                                     console.log(objList);
+
+                                     $.post({
+
+                                         url:  api_url + 'wsmessage/index',
+
+                                         data: objList,
+
+                                         success: function(result){
+
+                                         	console.log(result.content);
+
+                                              if (result.status == 200)
+
+                                              {
+                                                 imgUrl = result.content[0].url_logo;
+                                                 var reg = RegExp(/http/);
+
+                                                 //console.log(reg.test(imgUrl)); // true
+
+                                                 if(reg.test(imgUrl) !== true){
+
+                                                      imgUrl = media_url+'biz/' + imgUrl;
+
+                                                 }else{
+
+                                                      imgUrl = result.content[0].url_logo;
+
+                                                 }
+
+
+
+                                                 var arr = [];
+
+                                                 arr = result.content[0].list;
+
+                                                 for(var i=0; i<arr.length; i++){
+
+                 									   var time1 = '';
+                                                     var time2 = '';
+                                                    if(i < arr.length-1){
+
+                                                         date1 = arr[i].time_create;
+                                                         time1 =  new Date(date1).getTime();
+
+                                                         console.log(i);
+                                                         var date2 = arr[i+1].time_create;
+                                                         time2 =  new Date(date2).getTime();
+                                                    }else{
+                                                         date1 = arr[i].time_create;
+                                                         time1 =  new Date(date1).getTime();
+                                                         time2 =  new Date(date1).getTime();
+                                                    }
+
+                                                    if(arr[i].chat == "receive"){
+
+                                                        if(arr[i].type == 'text'){
+
+                                                             send(imgUrl,arr[i].content);
+                                                        }else if(arr[i].type == 'image'){
+                                                             sendPic(imgUrl,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
+                                                        }
+
+                                                    }else if(arr[i].chat == "send"){
+
+                                                              //我接收到的
+                                                        if(arr[i].type == 'text'){
+                                                        //客户端添加时间
+                                                          if((time2 - (5*60*1000)) > time1){
+                                                                 var strTime =arr[i].time_create;
+                                                                 strTime = strTime.substring(5,16);
+                                                                 var timeHtml = "<div class='time'>"+strTime+"</div>";
+                                                                 console.log(timeHtml);
+                                                                 show('https://medias.517ybang.com/user/' + avatar,arr[i].content,timeHtml);
+                                                             }else{
+                                                                 show('https://medias.517ybang.com/user/' + avatar,arr[i].content,'');
+                                                             }
+
+                                                        }else if(arr[i].type == 'image'){
+                                                             sendkhdPic('https://medias.517ybang.com/user/' + avatar,'<img src="https://jinlaisandbox-images.b0.upaiyun.com/'+arr[i].content+'">');
+                                                        }
+
+                                                    }
+
+                                                 }
+
+                                              } else {
+
+                                                 console.log(result.content.error.message);
+
+                                              }
+
+                                         },
+
+                                         error:function(result){
+
+                                         	console.log(result);
+
+                                         },
+
+                                         dataType: 'json'
+
+                                     });
+                                     //获取token
+                                     var token = '';
+                                     var params = {};
+                                     params.app_type = 'client';
+                                     params.user_id = user_id;
+
+                                     $.post({
+                                         async:false,
+                                         url:  api_url + 'wsmessage/getverify',
+                                         data: params,
+                                         success: function(result){
+                                              if (result.status == 200)
+                                              {
+                                                 token = result.content.token;
+
+                                              } else {
+                                                 alert(result.content.error.message);
+                                              }
+                                         },
+                                         error:function(result){
+                                         	console.log(result);
+                                         },
+                                         dataType: 'json'
+                                     });
+
+                                     ws = new WebSocket('wss:biz.517ybang.com/jinlai_chat?token='+token);
+
+
+                                     ws.onopen = function () {
+                                          console.log('链接打开');
+                                          /*let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                                          ws.send(str);*/
+
+                                       //alert("数据发送中...");
+                                       document.onkeyup = function (e) {
+                                                          	var code = e.charCode || e.keyCode;
+                                                          	if (code == 13) {
+                                                          	    console.log('dksfja');
+                                                          		//debugger;
+                                                          		var content = $('#chat .footer .chatInput').text();
+                                                          		var oMessage = document.getElementById('message').scrollHeight + 500;
+                                                           		$(".message").animate({scrollTop:oMessage}, 50);
+                                                          		show('https://medias.517ybang.com/user/' + avatar,$('#chat .footer .chatInput').text(),'');
+                                                          		$('#chat .footer .chatInput').text('');
+                                                          		var timestamp = (new Date()).getTime();
+
+
+                                                          		let str = JSON.stringify({"biz_id": objUserId,"type":"text","content":content, "time_create":timestamp})
+                                                          		console.log(str);
+                                                          		ws.send(str);
+                                                          	}
+                                                          	}
+                                     };
+
+
+                                     ws.onmessage = function (evt) {
+                                           var data = JSON.parse(evt.data)
+                                           console.log(data);
+                                        if(data.msg == '新的消息' && data.status == '200'){
+                                             var img = data.content[0].url_logo;
+                                             var reg = RegExp(/http/);
+                                             //console.log(reg.test(imgUrl)); // true
+                                             if(reg.test(img) !== true){
+                                                  img = media_url+'biz/' + img;
+                                             }else{
+                                                  img = data.content[0].avatar;
+                                             }
+                                             console.log(img);
+                                             var currentType = data.content[0].list.type;
+                                             var currentContent = data.content[0].list.content;
+                                             if(currentType == 'text'){
+                                                 send(img,currentContent);
+                                             }else if(currentType == 'image'){
+
+                                                 if(reg.test(currentContent) !== true){
+                                                     sendPic(img,'<img src="'+mediaUrl+currentContent+'">');
+                                                 }else{
+                                                     sendPic(img,'<img src="'+currentContent+'">');
+                                                 }
+                                             }
+
+                                            /* let str = JSON.stringify({"s_biz_id": objUserId,"type":"read"});
+                                             ws.send(str);*/
+
+                                        }
+                                     };
+                                     ws.onerror = function (e) {
+                                         console.log(e)
+                                     }
+
+
+                         });
                  } else {
                     alert(result.content.error.message);
                  }

@@ -87,22 +87,22 @@
     </div>
     <div class="mine-order">
         <div class="order-title">
-            <div class="title-left">团购订单</div>
-            <a title="全部订单" href="<?php echo base_url('order') ?>" class="title-right">全部订单<i class="icon-Arrow"></i></a>
+            <div class="title-left">服务订单</div>
+            <a title="全部订单" href="<?php echo base_url('order/order_service?status=order') ?>" class="title-right">全部订单<i class="icon-Arrow"></i></a>
         </div>
         <div class="order-item clearfix">
-            <div class="item-team">
-                <i class="icon-钱"></i>
+            <a class="item-team" href="<?php echo base_url('order/order_service?status=order1') ?>">
+                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/weixiaofei.png"></img>
                 <p>未消费</p>
-            </div>
-            <div class="item-team">
-                <i class="icon-daishiyong"></i>
+            </a>
+            <a class="item-team" href="<?php echo base_url('order/order_service?status=order2') ?>">
+                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yishiyong.png"></img>
                 <p>已使用</p>
-            </div>
-            <div class="item-team">
-                <i class="icon-时间"></i>
+            </a>
+            <a class="item-team" href="<?php echo base_url('order/order_service?status=order3') ?>">
+                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yiguoqi.png"></img>
                 <p>已过期</p>
-            </div>
+            </a>
         </div>
     </div>
     <div class="mine-order">

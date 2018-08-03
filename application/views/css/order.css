@@ -75,10 +75,12 @@ a {text-decoration: none;}
 .item-center p:first-child{
     color: #3e3a39;
     padding: 0.2rem 0 0.15rem 0;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
 }
 .item-center p:last-child{
     font-size: 0.22rem;
     color: #9fa0a0;
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
 }
 .item-right{
     padding-top: 0.2rem;
