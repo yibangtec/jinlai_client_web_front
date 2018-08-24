@@ -63,9 +63,13 @@
 
         <div class="login_sms"><a href="<?php echo BASE_URL ?>login_sms">短信登录</a></div>
     </div>
-    <div class="login-bot">
+       <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
-        <a class="wx-icon" href="">
+        <?php
+        // 微信授权网址
+        $wechat_oauth_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.WECHAT_APP_ID.'&redirect_uri='. urlencode(base_url('login_wechat')).'&response_type=code&scope=snsapi_userinfo#wechat_redirect';
+        ?>
+        <a class="wx-icon" href="<?php echo $wechat_oauth_url ?>">
             <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt="">
         </a>
     </div>
@@ -79,7 +83,14 @@
                 if(tel){
                     $('#mobile').val(tel);
                 }
-
+                var errorlogin = "<?php echo $error ?>";
+                if (errorlogin) {
+                    $('.tips-text').html(errorlogin);
+                    $('.error-tips').show();
+                    setInterval(function(){
+                        $('.error-tips').hide();
+                    }, 2000);
+                }
                 $('#loginSms').on('click',function(){
                     var tel = $('#mobile').val();
                     if(tel) {
@@ -109,7 +120,7 @@
                         params.password = $('[name=password]').val();
                         params.sms_id = $('[name=sms_id]').val();
                         params.captcha = $('[name=captcha]').val();
-                        console.log(params);
+                        $('[name=captcha]').val('');
                         
                         // 若未传入密码，使用短信登录；若传入了密码，使用密码登录
                         var url = api_url + (params.password == ''? 'account/login_sms': 'account/login');

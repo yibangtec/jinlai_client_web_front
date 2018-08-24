@@ -217,11 +217,7 @@
 
 <script>
     var default_address_id = '<?php echo $this->session->address_id ?>' // 默认收货地址ID
-    // 若未创建过地址，则转到地址创建页
-    if (default_address_id == '')
-    {
-        location.href = base_url + 'address/create'
-    }
+
 
     var item = <?php echo json_encode($item) ?>;
     var addresses = item.addresses; // 可选的收货地址
@@ -335,7 +331,7 @@
                          '</div>'+
                          '<div class="item-title clearfix">'+
                              '<div class="title-left left-float">配送方式</div>'+
-                             '<div class="title-right right-float"><span>包邮</span><i class="icon-Arrow"></i></div>'+
+                             '<div class="title-right right-float"><span>同城3小时配送</span></div>'+
                          '</div>'+
                          '<div class="item-title clearfix">'+
                             '<input class="message" type="text" placeholder="给卖家留言">'+
@@ -385,7 +381,7 @@
 
                 if(confirm("您还没有收获地址，是否创建？"))
                 {
-                    var target_url = base_url + 'address/create' ;
+                    var target_url = base_url + 'address/create?fromorder=1' ;
                     location.href = target_url;
                 }
                 else{
@@ -405,7 +401,7 @@
                 $.each(form_data, function(i, field){
                     params[field.name] = field.value;
                 });
-
+                params['wepay_from'] = '公众号';
                 $.ajax({
                     url: api_url + 'order/create',
                     data: params,
@@ -414,7 +410,7 @@
                     {
                         console.log(result);
                         if (result.status === 200)
-                        {
+                        {   
                             // 转到支付页
                             var target_url = base_url + 'order/pay?id=' + result.content.ids;
                             location.href = target_url;

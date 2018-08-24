@@ -24,13 +24,13 @@
 
 <script>
 $(function(){
-    var items = <?php echo empty($items)? '': json_encode($items) ?>; // 当前用户所有收货地址
+    var items = <?php echo empty($items)? "''": json_encode($items) ?>; // 当前用户所有收货地址
     var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
 
     // 若当前用户未创建过地址，则转到创建页，否则输出DOM
     if (items == '')
     {
-        location.href = base_url + 'address/create'
+        // location.href = base_url + 'address/create'
     }
     else
     {

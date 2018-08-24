@@ -296,10 +296,7 @@ wx.ready(function(){
 
 		<div class="detailtag">
 			<span>运费 <?php if (empty($item['freight_template_id'])) echo '包邮' ?></span>
-
-            <?php if ($item['sold_monthly'] > 0): ?>
-			<span>月销 <?php echo $item['sold_monthly'].$item['unit_name'] ?></span>
-            <?php endif ?>
+			<span>月销 <?php echo $item['sold_display'].$item['unit_name'] ?></span>
 
 <!--			<span>美国进口</span>-->
 		</div>
@@ -785,7 +782,6 @@ wx.ready(function(){
         // alert(url.length);
         // alert(url.lastIndexOf('='));
         var loc = url.substring(url.lastIndexOf('=')+1, url.length);
-		debugger;
 		var r = loc;
         oldcar = r;
         var count=1;

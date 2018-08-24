@@ -211,7 +211,7 @@
 			data : {name:$('.qymc').val(),area:$('.jyfw').val(),lxr:$('.lxr').val(),tel:$('.lxfs').val()},
 			success:function(res){
 				alert('进来等你');
-				debugger;
+				// debugger;
 				$('input').val('');
 			}
 		});
@@ -239,18 +239,25 @@
 			$(this).parent('i').parent('p').find('span').remove();
 		}
 		
-		if($(this).is($('.lxr'))){
-			if(!regnoVal.test($(this).val())){
+		if($(this).is($('.lxr'))){
+
+			if(!regnoVal.test($(this).val())){
+
 				tip = '*';
 				var oError = '<span style="font-size:.2rem;position:absolute;right:.2rem;top:.7rem;color:#fa4a5c;">'+tip+'</span>';
 				$(this).parent('i').parent('p').find('span').remove();
 				$(this).parent('i').parent('p').append(oError);
-				return false;
+				return false;
+
 			}
-			$(this).parent('i').parent('p').find('span').remove();
-		}
-//		//联系方式
-		if($(this).is($('.lxfs'))){
+			$(this).parent('i').parent('p').find('span').remove();
+
+		}
+
+//		//联系方式
+
+		if($(this).is($('.lxfs'))){
+
 			if(!regTel.test($(this).val())){
 				tip = '手机号错误';
 				var oError = '<span style="font-size:.2rem;position:absolute;right:.2rem;top:.7rem;color:#fa4a5c;">'+tip+'</span>';
@@ -258,8 +265,10 @@
 				$(this).parent('i').parent('p').append(oError);
 				return false;
 			}
-			$(this).parent('i').parent('p').find('span').remove();
-		}
+			$(this).parent('i').parent('p').find('span').remove();
+
+		}
+
 		
 	})
 </script>
