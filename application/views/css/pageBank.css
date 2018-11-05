@@ -1,0 +1,351 @@
+*:before, *:after {box-sizing: border-box; }
+*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+em, strong { font-style: normal;}
+ul, ol, li {list-style: none;}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+input{outline:none;}
+button{border: none; outline: none;}
+html{ margin: 0 auto; height: 100%}
+body {width: 100%;background-color: #fff;background: url("https://cdn-remote.517ybang.com/media/page/bank/beijing@2x.png") repeat-y;
+    background-size: 100% auto;
+    }
+a {text-decoration: none;}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.content {
+    width: 100%;height:100%;position: relative;
+    padding-bottom: 0.3rem;
+
+}
+section{
+    width: 100%;
+}
+.time{
+    position: absolute;
+    height: 0.48rem;
+    width: 3rem;
+    font-size: 0.28rem;
+    line-height: 0.48rem;
+    color: #ffffff;
+    background-color: #7E38F0;
+    transform:rotate(45deg);
+    text-align: center;
+    right: -0.85rem;
+    top: 0.5rem;
+
+}
+.theme-banner{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.theme-li{
+    width: 2.4rem;
+    height: 3.43rem;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/baina@3x.png") no-repeat;
+    background-size: 2.4rem 3.43rem;
+    padding-bottom: 0.05rem;
+    float: left;
+    margin-left: 0.08rem;
+
+}
+.theme-li:first-child{
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/baisong@3x.png") no-repeat;
+    background-size:  2.4rem 3.43rem;
+}
+.theme-li:last-child{
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/baizhuan@3x.png") no-repeat;
+    background-size:  2.4rem 3.43rem;
+}
+.theme-img{
+    height: 1.78rem;
+    width: 2.14rem;
+    border-radius: 0.3rem;
+    display: block;
+    margin-right: 0.18rem;
+    margin-top: 0.63rem;
+}
+.them-text{
+    font-size: 0.16rem;
+    color: rgb(0,255,216);
+    text-align: center;
+    margin: 0 0.05rem;
+    display: block;
+}
+.them-text p {
+    padding: 0.05rem;
+    font-size: 0.22rem;
+    line-height: 0.24rem;
+}
+.them-text .text-top{
+    font-size: 0.16rem;
+    color: #ffffff;
+    padding: 0.85rem 0 0.05rem 0;
+}
+.them-text .text-bottom{
+    font-size: 0.20rem;
+    color: #ffffff;
+    padding: 0.05rem 0 0.1rem 0;
+}
+.now{
+    width: 1.54rem;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    display: inline-block;
+    border-radius: 0.17rem;
+    font-size: 0.2rem;
+    color: rgb(54,3,82);
+    text-align: center;
+    background-color: rgb(255,233,16);
+}
+
+
+
+
+.coupon{
+    margin: 0.3rem 0;
+}
+.coupon-li:first-child{
+    float: left;
+    width: 3.4rem;
+    height: 1.16rem;
+    font-size: 0.18rem;
+    color: #ffffff;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/10@3x.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 0.2rem;
+}
+.coupon-li:last-child{
+    float: left;
+    width: 3.4rem;
+    height: 1.16rem;
+    font-size: 0.18rem;
+    color: #ffffff;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/20@3x.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 0.2rem;
+}
+
+.coupon-right p {
+    padding: 0.02rem 0;
+}
+.coupon-right span{
+    display: inline-block;
+    text-align: center;
+    padding: 0.02rem;
+    color: rgb(97,21,233);
+    background-color: #fff;border-radius: 0.1rem;
+}
+.title{
+    width: 90%;
+    height: 1.8rem;
+    margin: 0 auto;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/title_bg@3x.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 0.6rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+.title p{
+    padding-top: 0.7rem;
+}
+.date{
+    text-align: center;
+    font-size: 0.26rem;
+    color: #ffffff;
+}
+.rule{
+    width: 7.1rem;
+    height: 4.15rem;
+    margin: 0.3rem auto;
+    border-radius: 0.15rem;
+    border: 0.02rem solid rgb(106,6,224);
+    box-shadow: 0 0 0.09rem #820adb;
+    background-color: rgb(127,13,197);
+    box-sizing: border-box;
+    position: relative;
+}
+.rule-left{
+    float: left;
+    width: 1.8rem;
+    font-size: 0.18rem;
+    color: #ffffff;
+    padding: 0 0.1rem;
+    line-height: 0.24rem;
+}
+.rule-right{
+    float: right;
+    width: 1.8rem;
+    font-size: 0.18rem;
+    color: #ffffff;
+    line-height: 0.26rem;
+    padding: 0 0.1rem;
+}
+.rule-center{
+    position: absolute;
+    width: 3rem;
+    height: 4.5rem;
+    border-radius: 0.15rem;
+    background-color: #fff;font-size: 0.26rem;
+    top:-0.2rem;
+    left: 50%;
+    margin-left: -1.53rem;
+    text-align: center;
+
+}
+.center-title{
+    font-size: 0.24rem;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    float: right;
+    width: 2.8rem;
+    height: 0.49rem;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/biantie@3x.png") no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0.15rem;
+    padding-top: 0.06rem;
+}
+.center-img{
+    display: inline-block;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: -0.1rem;
+}
+.rule-center .center-slogan{
+    font-size: 0.22rem;
+    color: rgb(114,113,114);
+    line-height: 0.22rem;
+}
+.rule-center .center-name{
+    font-size: 0.26rem;
+    color: rgb(89,87,87);
+    padding: 0 0 0.15rem 0;
+    font-weight: 700;
+}
+.rule-center p:last-child{
+    font-size: 0.44rem;
+    color: rgb(246,38,96);
+    padding: 0.25rem 0 0 0;
+}
+.gift-ul{
+   margin: 0 0.2rem;
+}
+.gift-li{
+    float: left;
+    width: 2.1rem;
+    background-color: #fff;
+    border: 0.02rem solid rgb(106,6,224);
+    border-radius: 0.15rem;
+    box-shadow: 0 0 0.09rem #820adb;
+    text-align: center;
+    padding: 0 0 0.26rem 0;
+    margin-left: 0.2rem;
+    margin-bottom: 0.25rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.gift-img{
+    height: 1.53rem;
+    width: 2.1rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.01rem;
+}
+.gift-name{
+    font-size: 0.2rem;
+    color: rgb(249, 1, 49);
+    padding: 0.15rem 0;
+    white-space:nowrap; text-overflow:ellipsis;
+    overflow: hidden;
+
+}
+.gift-slogan{
+    font-size: 0.16rem;
+    color: rgb(114, 113, 113);
+    height: 0.55rem;
+}
+.gift-price{
+    font-size: 0.22rem;
+    color: rgb(249,255,72);
+
+}
+.price-bg{
+    display: inline-block;
+    width: 1.7rem;
+    height: 0.26rem;
+    line-height: 0.26rem;
+    background: url("https://cdn-remote.517ybang.com/media/page/bank/price-bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.gift-price .symbol{
+    font-size: 0.18rem;
+    color: rgb(249,255,72);
+}
+.gift-price del{
+    font-size: 0.18rem;
+    color: rgb(255,255,255);
+}
+.vip-item{
+    width: 6.7rem;
+    height: 2.6rem;
+    border: 0.02rem solid rgb(106,6,224);
+    border-radius: 0.15rem;
+    box-shadow: 0 0 0.09rem #820adb;
+    margin: 0 auto;
+}
+.vip-bg{
+    background-color: #fff;
+    width: 6.5rem;
+    display: flex;
+    margin: 0.1rem auto;
+}
+.vip-img{
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 0.1rem 0.25rem;
+
+}
+.item-info{
+    flex: 1;
+}
+.vip-price{
+    font-size: 0.42rem;color:rgb(246,38,96);font-weight: 700;
+    padding: 0.2rem 0 0 0;
+}
+.go-buy{
+    width: 1.5rem;
+    text-align: center;
+    font-size: 0.3rem;
+    color: rgb(249,237,5);
+    background-color: rgb(246, 38, 96);
+    padding: 0.08rem 0.1rem;
+    border-radius: 0.08rem;
+    margin-top: 0.1rem;
+    float: left;
+}
+
+.hot .give-item .gift-li{
+    width: 3.21rem;
+    margin-left: 0.23rem;
+
+}
+.hot .give-item .gift-li .gift-img{
+    margin-top: -0.02rem;
+    width: 3.26rem;
+    height: 1.9rem;
+
+}

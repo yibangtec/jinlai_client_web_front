@@ -1,0 +1,258 @@
+*:before, *:after {box-sizing: border-box; }
+*, *:before, *:after {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;font-family: "Microsoft YaHei"; font-size: inherit;color: inherit; margin: 0;padding: 0;vertical-align: baseline;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+em, strong { font-style: normal;}
+ul, ol, li {list-style: none;}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+}
+input{outline:none;}
+button{border: none; outline: none;}
+html{ margin: 0 auto; height: 100%}
+body {width: 100%;background-color: #fff;background: url("https://cdn-remote.517ybang.com/media/springbg@3x.jpg") repeat-y;
+    background-size: 100% auto;}
+a {text-decoration: none;}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+.content {
+    width: 100%;height:100%;position: relative;
+    padding-bottom: 0.3rem;
+}
+.content-bg{
+    display: block;
+    width: 6rem;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 0.8rem;
+}
+.more-btn{
+    display: block;
+    width: 3rem;
+    height: 0.52rem;
+    border-radius: 0.26rem;
+    line-height: 0.52rem;
+    text-align: center;
+    font-size: 0.3rem;
+    color: #fff;
+    background-color: #E69136;
+    margin: 0.4rem auto;
+}
+.activities-item{
+    width: 6.1rem;
+    height: 2.1rem;
+    background: url("https://cdn-remote.517ybang.com/media/bg-c@3x.png") no-repeat;
+    background-size: 6.1rem 2.1rem;
+    margin: 0 auto 0.2rem;
+    display: flex;
+}
+.item-left{
+    height: 100%;
+    width: 2rem;
+    border-right: 0.01rem dashed #ffffff;
+    text-align: center;
+    padding-left: 0.2rem;
+}
+.item-right{
+    flex: 1;
+    padding: 0 0.1rem 0 0.24rem;
+}
+.item-logo{
+    display: inline-block;
+    width: 0.88rem;
+    height: 0.88rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.item-name{
+    font-size: 0.22rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 0.12rem 0 0.2rem 0;
+}
+.btn-operation{
+    height: 0.34rem;
+    font-size: 0.22rem;
+}
+.see-detail{
+    height: 0.34rem;
+    line-height: 0.34rem;
+    padding: 0 0.2rem;
+    background-color: #FD7394;
+    color: #3B010D;
+    border-radius: 0.17rem;
+    font-size: 0.22rem;
+
+}
+.receive{
+    display: inline-block;
+    height: 0.34rem;
+    line-height: 0.34rem;
+    padding: 0 0.2rem;
+    background-color: #F1E34E;
+    color: #D8395F;
+    border-radius: 0.17rem;
+    font-size: 0.22rem;
+}
+
+.current-slogan{
+    font-size: 0.26rem;
+    width: 3.5rem;
+    line-height: 0.26rem;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.23rem 0 0.2rem 0;
+    white-space:nowrap; text-overflow:ellipsis;
+    overflow: hidden;
+}
+.expiry-date{
+    font-size: 0.20rem;
+    line-height: 0.2rem;
+    color: #ffffff;
+}
+.limited{
+    font-size: 0.18rem;
+    line-height: 0.18rem;
+    color: #F8FF11;
+    padding: 0.45rem 0 0.19rem 0;
+}
+.usage-mode{
+    font-size: 0.2rem;
+    line-height: 0.2rem;
+    color: #ffffff;
+}
+.more-icon{
+    display: inline-block;
+    width: 0.26rem;
+    height: 0.26rem;
+    vertical-align: middle;
+    padding-bottom: 0.05rem;
+}
+.confirm{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+.tips{
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    background-color: #fff;
+    font-size: 0.28rem;
+    margin-top: 5rem;
+    border-radius: 0.2rem;
+    color: #3E3A39;
+}
+.tips-text{
+    padding: 0.3rem 0;
+    border-bottom: 0.01rem solid #e1e1e1;
+
+}
+.tips-btns{
+    width: 4rem;
+    height: 0.6rem;
+    padding: 0.2rem 0;
+}
+.look-detail{
+    display: inline-block;
+    width: 1.9rem;
+    line-height: 0.6rem;
+}
+.tips-cancel{
+    display: inline-block;
+    width: 1.9rem;
+    line-height: 0.6rem;
+    border-left: 0.01rem solid #e1e1e1;
+    box-sizing: border-box;
+}
+
+
+.coupon-detail{
+    width: 6.7rem;
+    margin: 0 auto;
+    padding: 0 0.2rem;
+    background-color: #fff;
+    border-radius: 0.14rem;
+}
+.public{
+    font-size: 0.26rem;
+    color: rgb(62,58,57);
+    line-height: 0.26rem;
+    padding: 0.3rem 0;
+    border-bottom: 0.01rem solid rgb(225,225,225);
+}
+.public:last-child{
+    border-bottom: none;
+}
+.public-name{
+    padding-right: 0.4rem;
+}
+.public-color{
+    color: rgb(234,59,100);
+}
+.biz-detail{
+    margin: 0.1rem 0.2rem;
+    background-color: #fff;
+    font-size: 0.26rem;
+    color: rgb(62,58,57);
+    border-radius: 0.14rem;
+}
+.coupon-name{
+    padding: 0.3rem 0;
+    margin: 0 0.2rem;
+    border-bottom: 0.01rem solid #DDDDDD;
+}
+.biz-name{
+    padding: 0.3rem 0 0.1rem 0.2rem;
+    border-bottom: 0.01rem solid #DDDDDD;
+}
+.total{
+    margin: 0 0.2rem;
+}
+.total span:first-child{
+    display: inline-block;
+    width: 80%;
+    font-size: 0.24rem;
+    color: #666464;
+}
+.total span:last-child{
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+    font-size: 0.24rem;
+    color: #666464;
+}
+.total-box{
+    padding: 0 0 0.28rem 0;
+}
+.icon-tel:before {
+    content: "\e90c";
+    color: #585859;
+    font-size:0.4rem;
+    padding-right:0.3rem;
+}
+.goTips{
+    font-size: 0.22rem;
+    color: rgb(62,58,57);
+    padding: 0.3rem 0 0 0.5rem;
+
+}
+.point{
+    display: inline-block;
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    background-color: rgb(234,59,100);
+    margin-right: 0.15rem;
+    margin-bottom: 0.04rem;
+}
