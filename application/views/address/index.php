@@ -24,13 +24,13 @@
 
 <script>
 $(function(){
-    var items = <?php echo empty($items)? '': json_encode($items) ?>; // 当前用户所有收货地址
+    var items = <?php echo empty($items)? "''": json_encode($items) ?>; // 当前用户所有收货地址
     var default_address_id = '<?php echo $this->session->address_id ?>'; // 默认收货地址ID
 
     // 若当前用户未创建过地址，则转到创建页，否则输出DOM
     if (items == '')
     {
-        location.href = base_url + 'address/create'
+        // location.href = base_url + 'address/create'
     }
     else
     {
@@ -47,6 +47,9 @@ $(function(){
                 defaultText = '默认地址';
                 color = 'color:#ff3649;';
                 style = 'display:none';
+                if (items.length == 1) {
+                   style = 'display:inline-block';
+                }
             }
             else
             {
@@ -94,9 +97,7 @@ $(function(){
 
     $(".select").click(function(){
             //console.log('jfsdk');
-            $(".select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
-            $(".select").siblings(".title-right").find(".operation-del").css('display','inline-block');
-            $(".select").find("span").css('color','#666464');
+            
             var that = $(this);
             if (that.find("i").is('.icon-zidongtui'))
             {
@@ -110,24 +111,28 @@ $(function(){
                      api_url + 'user/edit_certain',
                      params,
                      function(result)
-                     {
-                         console.log(result); // 输出回调数据到控制台
-                         if (result.status == 200)
-                         {
-                           that.find("i").removeClass('icon-zidongtui');
-                           that.find("i").addClass('icon-xuanzhong');
-                           that.find("span").css('color','#ff3649');
-                           that.siblings(".title-right").find(".operation-del").css('display','none');
-                         } else {
-                            alert(result.content.error.message);
-                         }
+                     {  
+                        console.log(result); // 输出回调数据到控制台
+                        if (result.status != 200)
+                        {
+                          alert(result.content.error.message);
+                        } else {
+                          record(ID);
+                        }
                      }
                  );
 
             }
 
     });
-
+    function record(aid){
+       $.get('https://www.517ybang.com/address/addtosession?address_id=' + aid, function(rr){
+          location.reload();
+          // $(".select").find("i").removeClass('icon-xuanzhong').addClass('icon-zidongtui');
+          // $(".select").siblings(".title-right").find(".operation-del").css('display','inline-block');
+          // $(".select").find("span").css('color','#666464');
+       }); 
+    }
     $('.operation-del').click(function(){
         var params = common_params;
         //var that =$(this);

@@ -101,7 +101,7 @@
     <ul>
         <?php if ($this->user_agent['is_android']): ?>
         <li>
-            <a href="<?php echo base_url('jinlai_client_0.0.1.apk') ?>">
+            <a href="<?php echo base_url('jinlai_client_1.0.7.apk') ?>">
                 <img src="<?php echo CDN_URL ?>media/home/android@3x.png" alt="Android客户端">
                 <span>Android</span>
             </a>

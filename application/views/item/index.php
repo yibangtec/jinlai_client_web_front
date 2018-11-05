@@ -15,7 +15,7 @@
         }
         .service-text{padding-top:0.1rem;}
         .itemContent{
-        margin-bottom:1rem;}
+        padding-bottom:1rem;}
         #end{
 		    position: fixed;
 	
@@ -52,9 +52,43 @@
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
+.itemNone{
+            width: 100%;
+            height: 8rem;
+            position: relative;
+        }
+        .itemNone p {
+            font-size: 0.26rem;
+            text-align: center;
+        }
+        .itemNone img{
+            height: 4rem;
+            width: 4rem;
+            position: absolute;
+            margin-top: 0.3rem;
+            left: 50%;
+            margin-left: -2rem;
+
+        }
+        .thisList .menuSearchList{
+        position: fixed;
+        width: 2rem;
+        float:right;
+        top:0;
+        right:0;
+        margin-top: 0.8rem;
+        margin-right: 0.4rem;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 0.1rem;
+        z-index: 10000000;
+        }
+        .dropload-down{overflow:visible;height: 8.2rem;}
+
     </style>
+
 	<i id="end" style="left: 85%;"></i>
-    <div class="thisList">
+    <div class="thisList" styl="float:right;">
+        <div style="position:relative;height:4rem;width:100%;">
         <ul class="menuSearchList menuListActive">
             <li>
                 <a title="首页" href="<?php echo base_url() ?>">
@@ -68,6 +102,7 @@
             </li>
             <i class="iconSanjiao"></i>
         </ul>
+        </div>
     </div>
     <div class="thisFilter">
         <ul class="filterList">
@@ -176,6 +211,7 @@
     	var oneZh = 0;
     	function getQueryString(name) {
 		    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+
 		    var r = window.location.search.substr(1).match(reg);
 		    if (r != null) {
 		        return unescape(r[2]);
@@ -183,9 +219,28 @@
 		    return null;
 		}
 		var category_id = getQueryString('category_id');
+		var name ='';
+        var currName = getQueryString('name');
+        currName = decodeURI(currName);
+        console.log(currName);
+
+
         $(function(){
         var status = '综合';
-		getMore();
+        $('.bottomNav').hide();
+		if(currName !== 'null'){
+		    console.log(currName);
+		    name = currName;
+		    console.log(name);
+             $('.itemContent').hide();
+             $('.itemContent').eq(4).show();
+
+             getMoreSearch();
+        }else{
+            $('.itemContent').hide();
+            $('.itemContent').eq(0).show();
+            getMore();
+        }
 		 var searchHistory = '<div class="itemListWrap" style="font-size: .26rem;color:#3e3a39;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;left: .57rem;top: .2rem;background: #fff;float: left;width: 1.5rem;height: .5rem;border-radius: .35rem;text-align: center;line-height: .5rem;"><span class="itemDeletList" style="position:absolute;right:.2rem;top:.0rem">x</span>'+Cookies.get('SearchIndexList')+'</div>';
             				   $('.searchInput').children('.itemListWrap').remove();
             				   if(!Cookies.get('SearchIndexList') == ''){
@@ -217,7 +272,7 @@
                                      domClass   : 'dropload-down',
                                      domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                                      domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                                     domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                                     domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                                  },
                                  loadUpFn : function(me){
                                  },
@@ -244,11 +299,8 @@
                                                                     success: function(data){
 																		
                                                                         var items = data.content;
-                                                                        if(items.error){
-                                                                        	$('.dropload-load').text('没有更多商品啦~');
-                                                                        	return;
-                                                                        }
-                                                                        if(items){
+
+                                                                        if(items instanceof Array == true){
                                                                             for(var key in items){
                                                                                 var imgUrl = items[key].url_image_main;
                                                                                 var reg = RegExp(/http/);
@@ -260,7 +312,7 @@
                                                                                     result +=  '<li class="itemList">'+
                                                                                                     '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                                         '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt="">'+
-                                                                                                        '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                                        '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                                         '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                                     '</a>'+
                                                                                                     '<div class="carItem">'+
@@ -275,7 +327,16 @@
                                                                             me.lock();
                                                                             // 无数据
                                                                             me.noData();
+
+
                                                                         }
+                                                                         if(items.error){
+
+                                                                         	$('.dropload-load').html('<div class="itemNone"><p>没有更多商品啦~</p><img src="'+cdn_url+'media/none.png" alt=""></div>');
+                                                                         	//$('.dropload-down').after('<div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>');
+
+                                                                         	return;
+                                                                         }
                                                                         // 为了测试，延迟1秒加载
                                                                         setTimeout(function(){
                                                                             // 插入数据到页面，放到最后面
@@ -289,6 +350,7 @@
                                                                         console.log('Ajax error!');
                                                                         // 即使加载出错，也得重置
                                                                         me.resetload();
+
                                                                     }
                                                                 });
                                         //销量
@@ -315,7 +377,7 @@
                                             domClass   : 'dropload-down',
                                             domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                                             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                                            domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                                            domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                                         },
                                         loadUpFn : function(me){
                                         alert('上拉');
@@ -365,7 +427,7 @@
                                                                            	console.log('page1是' + page1);
                                                                                console.log(data);
                                                                                var items = data.content;
-                                                                               if(items){
+                                                                               if(items instanceof Array == true){
                                                                                    console.log(items);
                                                                                    for(var key in items){
                                                                                        var imgUrl = items[key].url_image_main;
@@ -378,7 +440,7 @@
                                                                                            result +=  '<li class="itemList">'+
                                                                                                            '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                                                '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                                                                               '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                                               '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                                                '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                                            '</a>'+
                                                                                                            '<div class="carItem">'+
@@ -432,7 +494,7 @@
                                             domClass   : 'dropload-down',
                                             domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                                             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                                            domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                                            domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                                         },
                                         loadUpFn : function(me){
                                         alert('上拉');
@@ -478,7 +540,7 @@
                                                                            success: function(data){
                                                                                console.log(data);
                                                                                var items = data.content;
-                                                                               if(items.length > 0){
+                                                                               if(items instanceof Array == true){
                                                                                    console.log(items);
                                                                                    for(var key in items){
                                                                                        var imgUrl = items[key].url_image_main;
@@ -491,7 +553,7 @@
                                                                                            result +=  '<li class="itemList">'+
                                                                                                            '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                                                '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                                                                               '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                                               '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                                                '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                                            '</a>'+
                                                                                                            '<div class="carItem">'+
@@ -544,7 +606,7 @@
                                                 domClass   : 'dropload-down',
                                                 domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                                                 domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                                                domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                                                domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                                             },
                                             loadUpFn : function(me){
                                             alert('上拉');
@@ -590,7 +652,7 @@
                                                                                success: function(data){
                                                                                    console.log(data);
                                                                                    var items = data.content;
-                                                                                   if(items.length > 0){
+                                                                                   if(items instanceof Array == true){
                                                                                        console.log(items);
                                                                                        for(var key in items){
                                                                                            var imgUrl = items[key].url_image_main;
@@ -603,7 +665,7 @@
                                                                                                result +=  '<li class="itemList">'+
                                                                                                                '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                                                    '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                                                                                   '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                                                   '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                                                    '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                                                '</a>'+
                                                                                                                '<div class="carItem">'+
@@ -657,7 +719,7 @@
                                                     domClass   : 'dropload-down',
                                                     domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                                                     domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                                                    domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                                                    domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                                                 },
                                                 loadUpFn : function(me){
                                                 alert('上拉');
@@ -703,7 +765,7 @@
                                                                                    success: function(data){
                                                                                        console.log(data);
                                                                                        var items = data.content;
-                                                                                       if(items.length > 0){
+                                                                                       if(items instanceof Array == true){
                                                                                            console.log(items);
                                                                                            for(var key in items){
                                                                                                var imgUrl = items[key].url_image_main;
@@ -716,7 +778,7 @@
                                                                                                    result +=  '<li class="itemList">'+
                                                                                                                    '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                                                        '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                                                                                       '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                                                       '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                                                        '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                                                    '</a>'+
                                                                                                                    '<div class="carItem">'+
@@ -764,13 +826,13 @@
                     domClass   : 'dropload-up',
                     domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
                     domUpdate  : '<div class="dropload-update">↑释放更新</div>',
-                    domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>'
+                    domLoad    : '<div class="dropload-load"></div>'
                 },
                 domDown : {
                     domClass   : 'dropload-down',
                     domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                     domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                    domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                    domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                 },
                 loadUpFn : function(me){
                 },
@@ -780,12 +842,12 @@
                     var result = '';
                             $.ajax({
                                  url: api_url_item_index,
-                                 data : {category_id:category_id,app_type:'client',limit:10,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId},
+                                 data : {category_id:category_id,app_type:'client',limit:10,offset:page1,price_min:min,price_max:max,category_biz_id:categoryId,promotion_id:promotionId,name:name},
                                  success: function(data){
                                      console.log(data);
                                      addCart();
                                      var items = data.content;
-                                     if(items.length > 0){
+                                     if(items instanceof Array == true){
                                          console.log(items);
                                          for(var key in items){
                                              var imgUrl = items[key].url_image_main;
@@ -798,7 +860,7 @@
                                                                result +=  '<li class="itemList">'+
                                                                                '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                    '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt="">'+
-                                                                                   '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                   '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                    '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                '</a>'+
                                                                                '<div class="carItem">'+
@@ -852,7 +914,7 @@
                          domClass   : 'dropload-down',
                          domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
                          domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中</div>',
-                         domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                         domNoData  : '<div class="dropload-noData">暂无数据</div><div class="itemNone"><img src="'+cdn_url+'media/none.png" alt=""></div>'
                      },
                      loadUpFn : function(me){
                      },
@@ -872,8 +934,9 @@
                                       success: function(data){
                                       	addCart();
                                           console.log('搜索');
+                                          console.log(data);
                                           var items = data.content;
-                                          if(items.length > 0){
+                                          if(items instanceof Array == true){
                                               console.log(items);
                                               for(var key in items){
                                                   var imgUrl = items[key].url_image_main;
@@ -886,7 +949,7 @@
                                                                     result +=  '<li class="itemList">'+
                                                                                     '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                                                         '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt="">'+
-                                                                                        '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                                                        '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                                                         '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                                                                     '</a>'+
                                                                                     '<div class="carItem">'+
@@ -921,8 +984,7 @@
                                       threshold : 10
                                  });
      }
-    $('.itemContent').hide();
-    $('.itemContent').eq(0).show();
+
     
             function getQueryString(name) {
                     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -1002,7 +1064,7 @@
                             listHtml +=  '<li class="itemList">'+
                                             '<a href="'+page_item_detail+items[key].item_id+'">'+
                                                 '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-                                                '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+                                                '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
                                                 '<p class="itemPrice">¥'+items[key].price+'</p>'+
                                             '</a>'+
                                             '<div class="carItem">'+
@@ -1042,13 +1104,13 @@
                             oneClick = 0;
                             $('.shang-sanjiao').css('color','#9fa0a0');
                             $('.xia-sanjiao').css('color','#9fa0a0');
-                            $('#listItemXl').html('');
+                            $('#listItemXL').html('');
                             getMoreXl();
                         }else if(statusType == 'orderList2'){
                             status = '新品';
                             $('.shang-sanjiao').css('color','#9fa0a0');
                             $('.xia-sanjiao').css('color','#9fa0a0');
-                            $('#listItem').html('');
+                            $('#listItemXP').html('');
                             oneClick = 0;
                             getMoreXP();
                             
@@ -1088,31 +1150,57 @@
                 //$('#listItem').html('');
                 listAllOffset = 0;
                 $('.thisFilter').show();
-                $.ajax({
-                     url : ajax_root + 'item_category_biz/index',
-                     data : {app_type:'client',biz_id:bizID},
-                     success : function(res){
-                         var items = res.content;
-                         var itemCategoryBizHtml= '';
-                         console.log(items);
-                         		for(var key in items){
-                                 			if(items[key].parent_id == 0 ){   //2及的parentID = 1级的categoryID
-                                                itemCategoryBizHtml += '<li id="'+items[key].category_id+'" class="filterTypeList">'+ items[key].name +'</li>';
-                                 			}
+                 if(category_id !== ''){
+                 	$.ajax({
+                          url: ajax_root + 'item_category/index',
+                          data: {app_type:'client',id:category_id},
+                          success: function(res){
+                              var items = res.content;
+
+                              var itemCategoryBizHtml= '';
+                                 console.log(items);
+                                 console.log(category_id);  //2及的parentID = 1级的categoryID
+                                 if(items.category_id == undefined){
+                                    itemCategoryBizHtml += '<li id=" " class="filterTypeList filterActive">全部</li>';
+                                 }else{
+                                    itemCategoryBizHtml += '<li id="'+items.category_id+'" class="filterTypeList filterActive">'+ items.name +'</li>';
                                  }
-                                 $('#itemCategoryBiz').append(itemCategoryBizHtml);
-                                 $('.filterTypeList').on('click',function(){
-                                                 $('.filterTypeList').removeClass('filterActive');
-                                                 console.log('0000');
-                                                 $(this).addClass('filterActive');
-                                                 categoryId = $(this).attr('id');
-                                                 console.log(categoryId);
-                                 });
-                     },
-                     error:function(e){
-                         console.log(e);
-                     }
-                 });
+                 				category_biz_id = items.category_id;
+
+                 			$('#itemCategoryBiz').append(itemCategoryBizHtml);
+
+                 						console.log(category_biz_id);
+                          },
+                          error:function(e){
+                                 console.log(e);
+                          }
+                     });
+
+                 }else{
+                     $.ajax({
+                          url: ajax_root + 'item_category_biz/index',
+                          data: {app_type:'client',biz_id:bizID},
+                          success: function(res){
+                              var items = res.content;
+
+                              var itemCategoryBizHtml= '';
+                                 console.log(items);
+                 					console.log(category_id);
+                              		for(var key in items){
+                                     		if(items[key].parent_id == 0 ){   //2及的parentID = 1级的categoryID
+                                                 itemCategoryBizHtml += '<li id="'+items[key].category_id+'" class="filterTypeList">'+ items[key].name +'</li>';
+                                     		}
+                                     }
+
+
+                                     $('#itemCategoryBiz').append(itemCategoryBizHtml);
+                                     $('.filterTypeList').on('click',function(){
+                                         $('.filterTypeList').removeClass('filterActive');
+                                     });
+                          }
+
+                     });
+                 }
                  $.ajax({
                      url : ajax_root + 'promotion_biz/index',
                      data : {app_type:'client',biz_id:bizID},
@@ -1121,7 +1209,12 @@
                          var promotionBizHtml= '';
                          console.log(items);
                          		for(var key in items){
+                         		    if(promotionTrue == 'true'){
+
+                                      promotionBizHtml += '<li id="'+items[key].promotion_id+'" class="activityList filterActive">'+ items[key].name +'</li>';
+                                    }else{
                                       promotionBizHtml += '<li id="'+items[key].promotion_id+'" class="activityList">'+ items[key].name +'</li>';
+                                    }
                                  }
                                  $('#promotionBiz').append(promotionBizHtml);
                                  $('.activityList').on('click',function(){
@@ -1130,6 +1223,7 @@
                                                  $(this).addClass('filterActive');
                                                  promotionId = $(this).attr('id');
                                                  console.log(promotionId);
+                                                 promotionTrue = 'true';
                                  });
                      },
                      error:function(e){
@@ -1140,7 +1234,10 @@
             $('#filterReset').on('click',function(){
                 $('#minPrice').val('');
                 $('#maxPrice').val('');
+                $('.activityList').removeClass('filterActive');
+                promotionId = '';
             })
+            var promotionTrue = 'false';
             var categoryId = '';
             var promotionId ='';
             var min = '';
@@ -1158,8 +1255,9 @@
                 $('#maxPrice').val('');
                 $('#itemCategoryBiz').html('');
                 $('#promotionBiz').html('');
+
              });
-            var name ='';
+            //var name ='';
             $('.thisFilter').on('click',function(){
                 if(status=='综合'){
                   $('.itemContent').hide();
@@ -1190,29 +1288,34 @@
            $('.filterList').on('click',function(event){
              event.stopPropagation()
           });
+          $('.filterBottom').on('click',function(event){
+                       event.stopPropagation()
+                    });
           var curleft=0.57;
             $('#searchItem').keydown(function(event){
                     name = $('#searchItem').val();
             				//event.preventDefault();
             			
             				if(event.which == 13){
+            				    console.log(name);
                                 $('.itemContent').hide();
                                 $('.itemContent').eq(4).show();
                                 oneClick = 0;
+
             				    getMoreSearch();
             				   // 生成用户的搜索关键词dom
             				   //首先清空cookie
-            				   Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
-            				   Cookies.set('SearchIndexList', $(this).val(), { expires: 9999, path: '' });
+            				  /* Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
+            				   Cookies.set('SearchIndexList', $(this).val(), { expires: 9999, path: '' });*/
             				   
-            				   var searchHistory = '<div class="itemListWrap" style="font-size: .26rem;color:#3e3a39;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;left: '+curleft+'rem;top: .2rem;background: #fff;float: left;width: 1.5rem;height: .5rem;border-radius: .35rem;text-align: center;line-height: .5rem;"><span class="itemDeletList" style="position:absolute;right:.2rem;top:.0rem">x</span>'+Cookies.get('SearchIndexList')+'</div>';
+            				   /*var searchHistory = '<div class="itemListWrap" style="font-size: .26rem;color:#3e3a39;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;position: absolute;left: '+curleft+'rem;top: .2rem;background: #fff;float: left;width: 1.5rem;height: .5rem;border-radius: .35rem;text-align: center;line-height: .5rem;"><span class="itemDeletList" style="position:absolute;right:.2rem;top:.0rem">x</span>'+Cookies.get('SearchIndexList')+'</div>';
             				   $('.searchInput').children('.itemListWrap').remove();
             				    $('.searchInput').append(searchHistory);
             				     $('.itemDeletList').click(function(){
             				     	$('#searchItem').focus();
             				     	$(this).parents('.itemListWrap').remove();
             				     	Cookies.set('SearchIndexList', '', { expires: 9999, path: '' });
-            				     })
+            				     })*/
             				}
             });
             /*function refresh(refresh,loadmore) {
@@ -1337,7 +1440,7 @@
 //                                                                      listHtml +=  '<li class="itemList">'+
 //                                                                                      '<a href="'+page_item_detail+items[key].item_id+'">'+
 //                                                                                          '<img class="itemListImg" src="'+imgUrl+ items[key].url_image_main+'" alt=""/>'+
-//                                                                                          '<h2 class="itemSlogan">'+items[key].slogan+'</h2>'+
+//                                                                                          '<h2 class="itemSlogan">'+items[key].name+'</h2>'+
 //                                                                                          '<p class="itemPrice">¥'+items[key].price+'</p>'+
 //                                                                                      '</a>'+
 //                                                                                      '<div class="carItem">'+

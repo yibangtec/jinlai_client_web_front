@@ -172,11 +172,11 @@
 
 <?php
     $items = array();
-    $items[] = array(
-        'title' => '20点秒杀专场',
+    /*$items[] = array(
+        'title' => '10点秒杀专场',
 
         // 070410
-       /* 'items' => array(
+        /*'items' => array(
             array(
                 'item_id' => '5692',
                 'url_image_main' => '/media/fruitful2018/items/070310/0-1@2x.png',
@@ -307,7 +307,7 @@
         ),*/
 
         // 070420
-       'items' => array(
+       /*'items' => array(
            array(
                'item_id' => '5736',
                'url_image_main' => '/media/fruitful2018/items/070320/0-1@2x.png',
@@ -339,7 +339,7 @@
         ),
 
         'appended' => ''
-    );
+    );*/
 
     $items[] = array(
         'title' => '进来爆款',
@@ -352,11 +352,11 @@
                 'tag_price' => '29.9',
             ),
             array(
-                'item_id' => '4389',
+                'item_id' => '4816',
                 'url_image_main' => '/media/fruitful2018/items/1-2.png',
-                'name' => '桃本桃-玫瑰公主',
-                'price' => '178',
-                'tag_price' => '298',
+                'name' => '阳山水蜜桃4只装',
+                'price' => '29.8',
+                'tag_price' => '38.9',
             ),
             array(
                 'item_id' => '5639',
@@ -571,7 +571,7 @@
         async : false
     });
 
-    var user_id;
+    var user_id = '<?php echo $this->session->user_id ?>';
      function setupWKWebViewJavascriptBridge(callback) {
 
         if (window.WKWebViewJavascriptBridge) { return callback(WKWebViewJavascriptBridge); }
@@ -613,26 +613,7 @@
         })
         },1000);
     }
-            var checkAndroidUserStatus;
-
-        if(user_agent.is_android){
-
-                checkAndroidUserStatus = setInterval(function(){
-
-                            if(HostApp.getUserId()){
-
-                                clearInterval(checkAndroidUserStatus);
-                                user_id = HostApp.getUserId();
-                            }
-                            else{
-                                clearInterval(checkAndroidUserStatus);
-                                HostApp.gotoLogin();
-                                return;
-                            }
-
-                },1000);
-
-        }
+    console.log(user_id);
 
     // 当前可抽奖次数
     var chance_count = 1;
@@ -657,13 +638,7 @@
             {
                 lottery = result.content;
             } else {
-                if(user_agent.is_android){
-                    HostApp.alert(result.content.error.message);
-                }
-                else{
-                    alert(result.content.error.message);
-                }
-                
+                alert(result.content.error.message);
             }
         }
     )
@@ -689,13 +664,7 @@
                 $('[data-name=chances]').text(chance_count)
                 wechat_shared = 1;
             }
-            if(user_agent.is_android){
-                 HostApp.alert('分享成功，每天完成分享可以额外抽1次奖');
-            }
-            else{
-                 alert('分享成功，每天完成分享可以额外抽1次奖');
-            }
-           
+            alert('分享成功，每天完成分享可以额外抽1次奖');
 
             // 页面滚动到转盘区
             var target = $('#lottery');
@@ -737,13 +706,7 @@
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
-                    if(user_agent.is_android){
-                        HostApp.alert('每天首次分享后可额外获取1次抽奖机会');
-                    }
-                    else{
-                        alert('每天首次分享后可额外获取1次抽奖机会');
-                    }
-                    
+                    alert('每天首次分享后可额外获取1次抽奖机会');
                 }
             });
 
@@ -761,13 +724,7 @@
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
-                     if(user_agent.is_android){
-                        HostApp.alert('每天首次分享后可额外获取1次抽奖机会');
-                     }
-                     else{
-                        alert('每天首次分享后可额外获取1次抽奖机会');
-                     }
-                    
+                    alert('每天首次分享后可额外获取1次抽奖机会');
                 }
             });
 
@@ -775,12 +732,7 @@
         <?php endif ?>
         // 点击分享，提示成功后可获取1次额外抽奖机会
         $('[data-action=share]').click(function(){
-            if(user_agent.is_android){
-                 HostApp.alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
-            }
-            else{
-                 alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
-            }
+            alert('将本页面分享到朋友圈或微信好友，可额外获取1次抽奖机会哦');
         });
 
         // 将相关商品输出为DOM
@@ -922,12 +874,7 @@
             if (chance_count < 1)
             {
                 var reminder = (wechat_shared == 0)? '每天首次分享后可额外获取1次抽奖机会': '今日抽奖次数已用完，明天可以继续参与';
-                if(user_agent.is_android){
-                    HostApp.alert(reminder);
-                }
-                else{
-                    alert(reminder);
-                }
+                alert(reminder);
                 return false;
             }
 
@@ -983,13 +930,8 @@
                                         // 弹出客服微信二维码
                                         $('[data-window-name=customer-service]').show();
                                     }
-                                    if(user_agent.is_android){
-                                        HostApp.alert(reminder);
-                                    }
-                                    else{
-                                        alert(reminder);
-                                    }
-                                    
+
+                                    alert(reminder);
                                     break
                                 }
                             }
@@ -1000,9 +942,6 @@
                         use_chance()
 
                     } else {
-                        if(user_agent.is_android){
-                             alert(result.content.error.message);
-                        }
                         alert(result.content.error.message);
                     }
 

@@ -29,7 +29,14 @@
         .order-having{
             display: block;
             font-size: 0.26rem;
-            margin: 0 0.2rem 1rem 0.2rem;
+            margin: 0 0.2rem 0.2rem 0.2rem;
+        }
+        .order-bottom{
+             display: block;
+             background-color: #fff;
+             border-radius: 0.15rem;
+             font-size: 0.26rem;
+             margin: 0 0.2rem 0.2rem 0.2rem;
         }
         .left-float{
             float: left;
@@ -48,8 +55,8 @@
         }
         .item-detail{
             display: flex;
-            padding: 0.2rem;
-            border-bottom: 0.01rem solid #DDDDDD;
+            padding: 0.2rem 0.2rem 0 0.2rem;
+
         }
         .item-left{
             height: 1.4rem;
@@ -106,9 +113,7 @@
             color: #3e3a39;
             padding-right: 0.2rem;
         }
-        .total span:nth-child(1){
-            margin-right: 0.2rem;
-        }
+
         .total span:nth-child(2){
             font-size: 0.26rem;
             color: #3e3a39;
@@ -172,6 +177,28 @@
         .creat-address a{
             color: #FF3649;
         }
+        .item-count{
+            padding-left: 1.6rem;
+            padding-bottom:0.2rem;
+            border-bottom: 0.01rem solid #DDDDDD;
+        }
+        .item-count span{
+            display: inline-block;
+            padding: 0 0.2rem;
+            line-height: 0.4rem;
+            text-align: center;
+        }
+        .item-count i{
+            padding:0.2rem;
+        }
+        .icon-jian{
+            font-size: 0.44rem;
+
+        }
+        .item-count .icon-add-add-red:before{
+            font-size: 0.44rem;
+            color: #FF3649;
+        }
 
     </style>
 
@@ -187,6 +214,24 @@
 
         <div class="order-having">
 
+        </div>
+        <div class="order-bottom">
+            <div class="item-title clearfix">
+                <div class="title-left left-float">商品金额</div>
+                <div class="title-right right-float">¥ <span class="totalPrice"></span></div>
+            </div>
+            <div class="item-title clearfix">
+                <div class="title-left left-float">运费</div>
+                <div class="title-right right-float">+ ¥ <span class="totalFreight"></span></div>
+            </div>
+            <div class="item-title clearfix">
+                <div class="title-left left-float">优惠券</div>
+                <div class="title-right right-float" style="color:#ff3649">- ¥ <span class="totalDiscount"></span></div>
+            </div>
+            <div class="item-title clearfix" style="border:none">
+                <div class="title-left left-float">合计</div>
+                <div class="title-right right-float">¥ <span class="totalSum"></span></div>
+            </div>
         </div>
 
         <!--
@@ -217,21 +262,25 @@
 
 <script>
     var default_address_id = '<?php echo $this->session->address_id ?>' // 默认收货地址ID
-    // 若未创建过地址，则转到地址创建页
-    if (default_address_id == '')
-    {
-        location.href = base_url + 'address/create'
-    }
+
 
     var item = <?php echo json_encode($item) ?>;
     var addresses = item.addresses; // 可选的收货地址
     var order_data = item.order_data; // 子订单信息
-    // console.log(item);
+    var orderList = item.price_list;
+    console.log(item);
     // console.log(default_address_id);
-    console.log(addresses);
-   // console.log(order_data);
+    //console.log(priceList);
+    console.log(order_data);
+    var quantity_max = order_data[0].order_items[0].quantity_max;
+    var itemCount = order_data[0].order_items[0].count;
+    console.log(quantity_max);
+
 
     $(function(){
+        var immediately = '';
+        immediately = getQueryString('immediately');
+
         var addressID = default_address_id;
         $('.sele').click(function(){
             $(".sele").find("i").removeClass('reasonSelect').addClass('reasonUnSelect');
@@ -325,7 +374,11 @@
             if(order_data[i].coupon_name == null){
                  couponNameStyle = 'display:none;';
             };
-            var bizNameHtml = '<div style="margin-top:0.15rem;background:#fff;border-radius:0.15rem;"><a href="<?php echo base_url('biz/detail') . "?&id='+order_data[i].biz_id+'" ?>" class="item-title clearfix">'+
+            // var bizNameHtml = '<div style="margin-top:0.15rem;background:#fff;border-radius:0.15rem;"><a href="<?php echo base_url('biz/detail') . "?&id='+order_data[i].biz_id+'" ?>" class="item-title clearfix">'+
+            //                      '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+order_data[i].biz_name+'</span></div>'+
+            //                      '<div class="title-right right-float"><i class="icon-Arrow"></i></div>'+
+            //                   '</a>';
+            var bizNameHtml = '<div style="margin-top:0.15rem;background:#fff;border-radius:0.15rem;"><a href="javascript:void(0)" class="item-title clearfix">'+
                                  '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+order_data[i].biz_name+'</span></div>'+
                                  '<div class="title-right right-float"><i class="icon-Arrow"></i></div>'+
                               '</a>';
@@ -334,14 +387,17 @@
                              '<div class="title-right right-float"><span>'+order_data[i].coupon_name+'</span><i class="icon-Arrow"></i></div>'+
                          '</div>'+
                          '<div class="item-title clearfix">'+
-                             '<div class="title-left left-float">配送方式</div>'+
-                             '<div class="title-right right-float"><span>包邮</span><i class="icon-Arrow"></i></div>'+
-                         '</div>'+
+                             '<div class="title-left left-float">配送方式</div>';
+             
+                botHtml += '<div class="title-right right-float"><span>'+order_data[i].dispatch+'</span><i class="icon-Arrow"></i></div>';
+           
+                
+                botHtml += '</div>' +
                          '<div class="item-title clearfix">'+
                             '<input class="message" type="text" placeholder="给卖家留言">'+
                          '</div>'+
                          '<div class="total">'+
-                             '<span>共'+order_data.length+'件商品</span>合计：<span>¥ '+order_data[i].subtotal+'</span>(含运费¥ 0.00)'+
+                             '共<span class="current-count">'+order_items.length+'</span>件商品 合计：¥ <span class="subtotal">'+order_data[i].subtotal+'</span>(含运费¥ 0.00)'+
                          '</div></div>';
             var orderItemHtml = '';
             for (var j in order_items)
@@ -361,18 +417,132 @@
                 }else{
                      imgUrl =''
                 }
-                orderItemHtml +='<a href="'+ base_url+'biz/detail?&id='+order_data[i].biz_id +'" class="item-detail">'+
+                var countHTML = '';
+                if(immediately == 'yes'){
+                    countHTML ='<div class="item-count"><i id="jian" class="icon-jian"></i><span class="current-count">'+order_items[j].count+'</span><i id="add" class="icon-add-add-red"></i></div>';
+
+                }else{
+
+                }
+                // orderItemHtml +='<a href="'+ base_url+'biz/detail?&id='+order_data[i].biz_id +'" class="item-detail">'+
+                //                     '<div class="item-left"><img src="'+imgUrl+order_items[j].item_image+'" alt=""></div>'+
+                //                     '<div class="item-center">'+
+                //                         '<p>'+order_items[j].name+'</p>'+
+                //                         '<p>'+slogan+'</p>'+
+                //                         '<p>¥ <span class="currentItemPrice">'+order_items[j].price+'</span>×<span class="countNum">'+order_items[j].count+'</span></p>'+
+                //                     '</div>'+
+                //                 '</a>'+ countHTML;
+
+                orderItemHtml +='<a href="javascript:void(0)" class="item-detail">'+
                                     '<div class="item-left"><img src="'+imgUrl+order_items[j].item_image+'" alt=""></div>'+
                                     '<div class="item-center">'+
                                         '<p>'+order_items[j].name+'</p>'+
                                         '<p>'+slogan+'</p>'+
-                                        '<p><span>¥ '+order_items[j].price+'</span><span>×'+order_items[j].count+'</span></p>'+
+                                        '<p>¥ <span class="currentItemPrice">'+order_items[j].price+'</span>×<span class="countNum">'+order_items[j].count+'</span></p>'+
                                     '</div>'+
-                                '</a>';
+                                '</a>'+ countHTML;
             }
 
             $('.order-having').append(bizNameHtml + orderItemHtml + botHtml);
+
+
+
         }
+        //增加件数
+
+        $('#add').on('click',function(){
+            var num = parseInt($('.countNum').text());
+             var n = 1;
+            console.log(quantity_max);
+            if(num < quantity_max){
+                num = num + n;
+                $('.countNum').text(num);
+                $('.current-count').text(num);
+                var price = $('.currentItemPrice').text();
+                $('.subtotal').text((num*price+(parseInt(orderList.freight))-(parseInt(orderList.discount))).toFixed(2));
+                cart_string = (','+order['biz_id'] + '|' + order['item_id'] + '|' + (order['sku_id'] || 0) + '|' + (num || 1));
+                console.log(cart_string);
+                $.ajax({
+                     url: api_url + 'order/prepare',
+                     data: {app_type:'client',user_id:user_id,cart_string:cart_string},
+                     cache: false,
+                     success: function(result)
+                     {
+                         console.log(result);
+                         if (result.status === 200)
+                         {
+                            var list = result.content.price_list;
+                              $('.totalPrice').text(list.price);
+                              $('.totalFreight').text(list.freight);
+                              $('.totalDiscount').text(list.discount);
+                              $('.totalSum').text(list.sum);
+                         }
+                         else if (result.status !== undefined)
+                         {
+                             alert(result.content.error.message);
+                         }
+                         else
+                         {
+                             alert('网络通信失败，请稍后重试');
+                         }
+                     },
+                 });
+
+                $('[name=cart_string]').val(cart_string);
+            }else{
+                console.log(num);
+            }
+
+        });
+        $('#jian').on('click',function(){
+            var num = parseInt($('.countNum').text());
+            var n = 1;
+            console.log(num);
+            if(num > 1){
+                num = num - n;
+                $('.countNum').text(num);
+                $('.current-count').text(num);
+                var price = $('.currentItemPrice').text();
+                $('.subtotal').text((num*price+(parseInt(orderList.freight))-(parseInt(orderList.discount))).toFixed(2));
+                cart_string = (','+order['biz_id'] + '|' + order['item_id'] + '|' + (order['sku_id'] || 0) + '|' + (num || 1));
+                console.log(cart_string);
+                $.ajax({
+                    url: api_url + 'order/prepare',
+                    data: {app_type:'client',user_id:user_id,cart_string:cart_string},
+                    cache: false,
+                    success: function(result)
+                    {
+                        console.log(result);
+                        if (result.status === 200)
+                        {
+                           var list = result.content.price_list;
+                             $('.totalPrice').text(list.price);
+                             $('.totalFreight').text(list.freight);
+                             $('.totalDiscount').text(list.discount);
+                             $('.totalSum').text(list.sum);
+                        }
+                        else if (result.status !== undefined)
+                        {
+                            alert(result.content.error.message);
+                        }
+                        else
+                        {
+                            alert('网络通信失败，请稍后重试');
+                        }
+                    },
+                });
+                $('[name=cart_string]').val(cart_string);
+            }
+
+        });
+
+        //优惠信息
+        $('.totalPrice').text(orderList.price);
+        $('.totalFreight').text(orderList.freight);
+        $('.totalDiscount').text(orderList.discount);
+        $('.totalSum').text(orderList.sum);
+
+
         $('[name=cart_string]').val(cart_string);
 
         // 提交表单
@@ -383,9 +553,9 @@
 
                 console.log('address none');
 
-                if(confirm("您还没有收获地址，是否创建？"))
+                if(confirm("您还没有收货地址，是否创建？"))
                 {
-                    var target_url = base_url + 'address/create' ;
+                    var target_url = base_url + 'address/create?fromorder=1' ;
                     location.href = target_url;
                 }
                 else{
@@ -405,7 +575,11 @@
                 $.each(form_data, function(i, field){
                     params[field.name] = field.value;
                 });
-
+                params['wepay_from'] = '公众号';
+                params['immediately'] = 'no';
+                if(immediately == 'yes'){
+                    params['immediately'] = 'yes';
+                }
                 $.ajax({
                     url: api_url + 'order/create',
                     data: params,
@@ -414,7 +588,7 @@
                     {
                         console.log(result);
                         if (result.status === 200)
-                        {
+                        {   
                             // 转到支付页
                             var target_url = base_url + 'order/pay?id=' + result.content.ids;
                             location.href = target_url;
@@ -434,9 +608,9 @@
 
         });
         function getQueryString(name){
-                               var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-                               var r = window.location.search.substr(1).match(reg);
-                               if (r!=null) return r[2]; return '';
-                          }
+             var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+             var r = window.location.search.substr(1).match(reg);
+             if (r!=null) return r[2]; return '';
+        }
     })
 </script>

@@ -462,10 +462,10 @@
 
 
             <div class="swiper-slide">
-                <a href="https://www.517ybang.com/item/detail?id=3963" target="_self">
+                <a href="https://www.517ybang.com/biz/detail?id=1" target="_self">
 
 
-                	<img src="https://cdn-remote.517ybang.com/media/home/紫皮圆葱.jpg">
+                	<img src="https://cdn-remote.517ybang.com/media/home/sxb.jpg">
 
 
                 </a>
@@ -642,7 +642,7 @@
             </div>
 
 
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/rou@3x.png">
+            <img src="https://cdn-remote.517ybang.com/media/home/rq.jpg">
 
 
             <div class="downarrow arrRed"></div>
@@ -676,7 +676,7 @@
             </div>
 
 
-            <img src="<?php echo CDN_URL ?>media/fresh_mart/tuijian@3x.png">
+            <img src="https://cdn-remote.517ybang.com/media/fresh_mart/rou@3x.png">
 
 
             <div class="downarrow arrBlue"></div>
@@ -1246,19 +1246,19 @@
          <li>
 
 
-        	<a href="https://www.517ybang.com/item/detail?id=5801" class="freshshopid" target="_self" data-id="5801">
+        	<a href="https://www.517ybang.com/item/detail?id=5873" class="freshshopid" target="_self" data-id="5873">
 
 
-            <img src="https://medias.517ybang.com/item/url_image_main/201807/0717/112716.jpg">
+            <img src="https://medias.517ybang.com/item/url_image_main/201807/0724/161333.jpg">
 
 
-            <h1 class="text-left">阳山水蜜桃 500-550g/份</h1>
+            <h1 class="text-left">库尔勒梨  500g/份</h1>
 
 
-            <h2 class="text-left">皮韧易剥，汁多甘厚，味浓香溢，入口即化</h2>
+           <!-- <h2 class="text-left">皮韧易剥，汁多甘厚，味浓香溢，入口即化</h2>-->
 
 
-            <h3 class="text-left">￥16.5/份</h3>
+            <h3 class="text-left">￥8.80/份</h3>
 
 
              </a>
@@ -1275,19 +1275,19 @@
         <li>
 
 
-        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=5802" target="_self" data-id="5802">
+        	<a class="freshshopid" href="https://www.517ybang.com/item/detail?id=5871" target="_self" data-id="5871">
 
 
-            <img src="https://medias.517ybang.com/item/url_image_main/201807/0717/113112.jpg">
+            <img src="https://medias.517ybang.com/item/url_image_main/201807/0724/160411.jpg">
 
 
-            <h1 class="text-left">泰国山竹 6A 大果  450-500g/份</h1>
+            <h1 class="text-left">8424西瓜  8-10斤</h1>
 
 
             <h2 class="text-left">抗氧化，清凉解热，美颜，抗皮肤老化</h2>
 
 
-            <h3 class="text-left">￥24.90/份</h3>
+            <h3 class="text-left">￥29.80/份</h3>
 
 
             </a>
@@ -1306,19 +1306,19 @@
         <li class="mr0">
 
 
-        	 <a href="https://www.517ybang.com/item/detail?id=5751" class="freshshopid" target="_self" data-id="5751">
+        	 <a href="https://www.517ybang.com/item/detail?id=5850" class="freshshopid" target="_self" data-id="5850">
 
 
-            <img src="https://medias.517ybang.com/item/url_image_main/201807/0713/104002.jpg">
+            <img src="https://medias.517ybang.com/item/url_image_main/201807/0724/142240.jpg">
 
 
-            <h1 class="text-left">越南红绣球 400-500g/个 </h1>
+            <h1 class="text-left">网纹瓜  2kg</h1>
 
 
-            <h2 class="text-left">排毒护胃、促消化、清宿便</h2>
+            <h2 class="text-left">日本进口青提 一口爆汁</h2>
 
 
-            <h3 class="text-left">￥7.80/份</h3>
+            <h3 class="text-left">￥19.80/份</h3>
 
 
             </a>

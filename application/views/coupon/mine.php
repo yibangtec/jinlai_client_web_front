@@ -62,10 +62,7 @@
 							<p class="coupontip">
 								已过期优惠券3天后将不再显示
 							</p>
-                        <img src="<?php echo CDN_URL ?>media/coupon/nocoupon@3x.png" style="width: 4rem !important;
-height: auto !important;
-margin: 0 auto;
-margin-top: .5rem;" alt="">
+                     
                         <!--<div class="couponlist wid710 auto">
                             <div class="couponopic fl yiguoqi">
                                 <h1>¥50</h1>
@@ -107,7 +104,7 @@ margin-top: .5rem;" alt="">
 	        h = date.getHours() + ':';
 	        m = date.getMinutes();
 	        s = date.getSeconds();
-	        return Y+M+D+h+m;
+	        return Y+M+D;
     }
 
     var params = common_params;
@@ -118,14 +115,12 @@ margin-top: .5rem;" alt="">
             	//var count = 0;
             	//可以使用的优惠券
             	function createDom(rate){
-            		var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
+            		var canuse = '<a href="'+ base_url+(biz_id? 'biz/detail?id='+biz_id: '') +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>&nbsp;-&nbsp;</span>'+end_time+'</div></div><div class="sudouse fr">立即使用</div> <!--<div class="posttime">快过期</div>--></div></div></a>';
             		$('#canusercoupon').append(canuse); 
             	}
             	//已使用的优惠券dom
             	function everCoupon(rate){
-
-            		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>-</span>'+end_time+'</div></div> <div class="evertime"><img src="'+cdn_url+'/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
-
+            		var canuse = '<a href="'+ base_url+'order/detail?id='+order_id +'"><div class="list-group-item"><div class="couponlist wid710 auto"><div class="couponopic fl yiguoqi"><h1>' + rate +'</h1><h2>满'+min_subtotal+'元可用</h2></div><div class="coupontext fl"><p>'+name+'</p><div class="time">'+start_time+'<span>&nbsp;-&nbsp;</span>'+end_time+'</div></div> <div class="evertime"><img src="'+cdn_url+'/media/coupon/yishiyong@3x.png" /></div><!--<div class="posttime">快过期</div>--></div></div></a>';
 						$('#yiguoqi').append(canuse);
             	}
                 for (var i=0;i<res.content.length;i++) {
@@ -134,8 +129,10 @@ margin-top: .5rem;" alt="">
                 		var amount = res.content[i].amount;
 	                	var biz_id = res.content[i].biz_id;
                         var order_id = res.content[i].order_id;
-	                	var start_time = date(res.content[i].time_start);
-	                	var end_time = date(res.content[i].time_end);
+	                	var start_time = timestampToTime(res.content[i].time_start);
+	                	var end_time = timestampToTime(res.content[i].time_end);
+	                	start_time = start_time.substr(0, 11);
+	                	end_time = end_time.substr(0, 11);
 	                	var rate = (100 - res.content[i].rate*100)/10 + '折';
 	                	var min_subtotal = res.content[i].min_subtotal;
 	                	var name = (res.content[i].brief_name || '平台通用') + ' ' + res.content[i].name;
@@ -160,9 +157,9 @@ margin-top: .5rem;" alt="">
 					          		
                 	}
                 	//没使用过当时可用的时候,显示过期
-                	if(!time_used && time_expire){
-                		alert('这是已经过期的优惠券');
-                	}
+                	// if(!time_used && time_expire){
+                	// 	//alert('这是已经过期的优惠券');
+                	// }
                 	}
                 }
                 //$('#count').text('('+count+')');
@@ -176,7 +173,7 @@ margin-top: .5rem;" alt="">
 					$(".nocoupon").hide();
 				}
 				else{
-					$(".havecoupon").hide();
+					$(".havecoupon").show();
 					$(".nocoupon").show();
 				}
               }

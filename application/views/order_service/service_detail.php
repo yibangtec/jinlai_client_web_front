@@ -56,7 +56,7 @@
 
 	$(function(){
 	    var params = common_params;
-        params.user_id = '783';
+        params.user_id = user_id;
         params.id = getQueryString('orderId');
         params.record_id=getQueryString('recordId');
 
@@ -75,11 +75,13 @@
                     $('#terminable').text(timestampToTime(itemList.time_expire));
                     $('#verifyCode').text(itemList.verify_code);
                     $('#bizTel').html('<a href="tel:'+item.mobile+'"><i class="icon-tel"></i></a>');
-                    if(itemList.refund_status == '未申请'){
+                    if(itemList.refund_status == '未申请' && itemList.status == '未消费'){
                         $('#currentStatus').html('<a style="color:#ff3649" href="' + base_url + 'refund/create?id=' +itemList.order_id + '&record='+itemList.record_id+'">申请退款</a>');
-                    }else{
+                    }else if(itemList.refund_status == '待处理'){
                         $('#currentStatus').html('<span style="color:#ff3649">'+itemList.refund_status+'</span>');
 
+                    }else{
+                        $('#currentStatus').html('<span style="color:#ff3649">'+itemList.status+'</span>');
                     }
 
                     var orderHtml ='<div class="total" style="color: #9FA0A0;">订单编号：<span>'+itemList.record_id+'</span><span> </span></div>'+
@@ -141,7 +143,6 @@
 
                          }
                      }
-
 
                  }
 

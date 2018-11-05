@@ -15,7 +15,7 @@
         border-radius: 0.27rem;
         color:#3e3a39;}
         .order-header li{
-            width:25%
+            width:20%
         }
 </style>
 <div class="tips">
@@ -66,9 +66,10 @@
     <div class="line"></div>
     <ul class="order-header clearfix">
         <li><a data-id="orderList" class="order-tab order-active">全部</a></li>
-        <li><a data-id="orderList1" class="order-tab">未消费</a></li>
-        <li><a data-id="orderList2" class="order-tab">已使用</a></li>
-        <li><a data-id="orderList3" class="order-tab">已过期</a></li>
+        <li><a data-id="orderList1" class="order-tab">待付款</a></li>
+        <li><a data-id="orderList2" class="order-tab">未消费</a></li>
+        <li><a data-id="orderList3" class="order-tab">已使用</a></li>
+        <li><a data-id="orderList4" class="order-tab">已过期</a></li>
     </ul>
     <div class="content">
         <div class="order-item-none">
@@ -184,14 +185,18 @@
                 statusType = $(this).attr('data-id');
 
                 if(statusType == 'orderList1'){
-                    status = '未消费';
+                    status = '未付款';
                     $('#orderList').html('');
                     listAllOffset = 0;
                 }else if(statusType == 'orderList2'){
-                    status = '已使用';
+                    status = '未消费';
                     $('#orderList').html('');
                     listAllOffset = 0;
                 }else if(statusType == 'orderList3'){
+                    status = '已使用';
+                    $('#orderList').html('');
+                    listAllOffset = 0;
+                }else if(statusType == 'orderList4'){
                     status = '已过期';
                     $('#orderList').html('');
                     listAllOffset = 0;
@@ -206,15 +211,17 @@
             });
 
             if(urlStatus == 'order1'){
-                        $('.order-tab').eq(1).click();
-                    }else if(urlStatus == 'order2'){
-                        $('.order-tab').eq(2).click();
-                    }else if(urlStatus == 'order3'){
-                        $('.order-tab').eq(3).click();
-                    }else{
-                        console.log(urlStatus);
-                        $('.order-tab').eq(0).click();
-                    }
+                $('.order-tab').eq(2).click();
+            }else if(urlStatus == 'order2'){
+                $('.order-tab').eq(3).click();
+            }else if(urlStatus == 'order3'){
+                $('.order-tab').eq(4).click();
+            }else if(urlStatus == 'order4'){
+               $('.order-tab').eq(1).click();
+            }else{
+                console.log(urlStatus);
+                $('.order-tab').eq(0).click();
+            }
 
             function refresh(refresh,loadmore) {
                                 $(window).scroll(function(){
@@ -271,7 +278,7 @@
                         // 初始化参数
                         params = common_params;
                         params.limit = limit;
-                        params.user_id = '783'
+                        params.user_id = user_id;
                         params.item_status = status;
                         params.nature = '服务';
                         params.offset = current_offset; // 新的偏移量等于当前偏移量加当前获取量
@@ -288,7 +295,14 @@
                                 if (result.status == 200)
                                 {
                                     var items = result.content;
+                                    console.log(items);
                                     for(var key in items){
+                                    var statusHtml = '';
+                                            var currentStatusItem = items[key].status;
+                                         if(currentStatusItem == '待付款'){
+                                         console.log(items[key].status);
+                                             statusHtml = '<a href="'+base_url + 'order/pay?status=nature&id=' + items[key].order_id+'" class="current-red go-pay">付款</a>';
+                                         }
 
 
                                           var li = items[key].order_items;
@@ -296,12 +310,12 @@
                                           var bizNameHtml = '<div class="order-item">'+
                                                                  '<div class="item-title clearfix">'+
                                                                      '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                                                     '<div class="title-right right-float current-status">'+li[0].status+'</div>'+
+                                                                     '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                                                  '</div>'+
                                                                  '<div class="item-list">';
                                           var bot = '</div>'+
                                                          '<div class="item-price">共<span>'+items[key].order_items.length+'</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
-
+                                                         '<div class="item-operation">'+statusHtml+'</div>'+
                                                     '</div>';
                                           //$('#orderList').append(bizNameHtml);
 

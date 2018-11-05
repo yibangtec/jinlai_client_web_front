@@ -1,153 +1,153 @@
-<!DOCTYPE html>
-<html lang=zh-cn>
-	<head>
-	    <meta charset=utf-8>
-	    <title>dom2csv</title>
-		<meta name=version content="revision20180211">
-		<meta name=viewport content="width=device-width">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-		<script src="jquery-1.7.1.min.js"></script>
-		<script>
-		    $(function(){
-		        $('#submit').on('click',function(){
-				   	// 检查并提示用户填写必要字段，为留空字段赋默认值（若有）
-		            var url = $('#url').val();
-		            var start = $('#start').val();
-		            var end = $('#end').val();
-		            var charset = $('#charset').val();
- 
-		            if (url.trim() == '')
-					{
-		                alert("请输入网页地址。");
-		                return;
-		            }
-		            if (start.trim() == '')
-					{
-		                start = "<tr class='countytr'><td><a";
-		            }
-		            if (end.trim() == '')
-					{
-		                end = '</table';
-		            }
-
-		            $.ajax({
-		                url:'https://api.517ybang.com/tool/curl',
-		                type:'POST',
-		                dataType:'json',
-		                async:false,
-		                data:{
-		                    client_type:'client',
-		                    url:url,
-		                    charset:charset,
-		                    start_html:start,
-		                    end_html:end
-		                },
-		                success:function(result){
-		                    //console.log(result);
-					
-		                    var str = result.content;
-		                    var regex = /<a.*?>(.*?)<\/a>/ig;
-		                    var result;
-		                    var arr = [];
-		                    while((result= regex.exec(str))!==null)
-		                        arr.push(result[1]);
-
-
-		                    console.log(arr);
-
-		                    var arr1 = [];
-		                    for(var i = 0; i < arr.length; i++){
-		                        if((i%2) !== 0){
-		                            arr1.push(arr[i])
-		                        }
-		                    }
-		//console.log(alist);
-		                    //console.log(arr1.join(','));
-							var csv = arr1.join(',');
-							$('#csv').html(csv);
-							
-		                    // 若指定了模板标识符且模板中含有标识符，替换标识符为CSV内容，否则直接拼接CSV到模板末尾
-							var edit_after = $('#edit_after').val().trim();
-							if (edit_after != '')
-							{
-								var generated = $('#source').val().trim().replace(edit_after, csv);
-							} else {
-								var generated = $('#source').val().trim() + csv;
-							}
-							
-							$('#generated').val(generated);
-		                },
-		                error:function(res){
-		                    console.log(res);
-		                }
-		            });
-
-		        });
-		    })
-		</script>
-			
-		<style>
-			noscript {text-align:center;}
-			html{
-				width: 100%;
-				height: 100%;
-			}
-            body{
-                width: 100%;
-				height: 100%;
-				text-align: center;
-				margin: 0;
-				position: relative;
-            }
-			input[type=text],input[type=url],textarea {width:95%;margin-bottom:20px;display:block;}
-			button {width:100%;display:block;}
-			
-			p:not(:last-child) {margin-bottom:20px;}
-			
-			#content {display:inline-block;width:80%;height:100%;overflow:hidden;text-align: center;position: relative;}
-				#content>* {float:left;width:45%;height:100%;display:inline-block; position: relative;
-					top: 50%;margin-top: -250px;}
-				#content>#action {width:10%;}
-			#submit{margin-top: 445px;margin-left: -10px;}
-		</style>
-	</head>
-
-	<body>
-		<noscript>
-			<p>dom2csv 需要通过JavaScript运行</p>
-		</noscript>
-
-		<div id=content>
-			<div id=params>
-				<input id=url type=url placeholder="请输入待解析DOM所在页面URL" required>
-				<input id=charset type=text value="gb2312" placeholder="请输入待解析DOM所在页面字符编码，如gb2312；留空则默认utf-8">
-				<input id=start type=text placeholder="请输入待解析DOM起始处HTML标签" required>
-				<input id=end type=text placeholder="请输入待解析DOM结束处HTML标签" required>
-				<textarea id=source rows=20 placeholder="待生成内容模板">
-//test_mode:on
-app_type:admin
-user_id:1
-nation:中国
-province:山西省
-province_index:sx
-province_abbr:晋
-province_brief:山西
-city:太原市
-counties:[[csv]]
-				</textarea>
-				<br>
-				<input id=edit_after type=text value="[[csv]]" placeholder="请输入模板内容可修改位置标识符，例如[[csv]]；若未指定标识符，则解析出来的CSV将直接拼接到模板内容末尾">
-			</div>
-			
-			<div id=action>
-				<button id=submit>确定 &gt;</button>
-			</div>
-			
-			<div id=results>
-				<p id=csv></p>
-				<textarea id=generated rows=20></textarea>
-			</div>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang=zh-cn>
+	<head>
+	    <meta charset=utf-8>
+	    <title>dom2csv</title>
+		<meta name=version content="revision20180211">
+		<meta name=viewport content="width=device-width">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<script src="jquery-1.7.1.min.js"></script>
+		<script>
+		    $(function(){
+		        $('#submit').on('click',function(){
+				   	// 检查并提示用户填写必要字段，为留空字段赋默认值（若有）
+		            var url = $('#url').val();
+		            var start = $('#start').val();
+		            var end = $('#end').val();
+		            var charset = $('#charset').val();
+ 
+		            if (url.trim() == '')
+					{
+		                alert("请输入网页地址。");
+		                return;
+		            }
+		            if (start.trim() == '')
+					{
+		                start = "<tr class='countytr'><td><a";
+		            }
+		            if (end.trim() == '')
+					{
+		                end = '</table';
+		            }
+
+		            $.ajax({
+		                url:'https://api.517ybang.com/tool/curl',
+		                type:'POST',
+		                dataType:'json',
+		                async:false,
+		                data:{
+		                    client_type:'client',
+		                    url:url,
+		                    charset:charset,
+		                    start_html:start,
+		                    end_html:end
+		                },
+		                success:function(result){
+		                    //console.log(result);
+					
+		                    var str = result.content;
+		                    var regex = /<a.*?>(.*?)<\/a>/ig;
+		                    var result;
+		                    var arr = [];
+		                    while((result= regex.exec(str))!==null)
+		                        arr.push(result[1]);
+
+
+		                    console.log(arr);
+
+		                    var arr1 = [];
+		                    for(var i = 0; i < arr.length; i++){
+		                        if((i%2) !== 0){
+		                            arr1.push(arr[i])
+		                        }
+		                    }
+		//console.log(alist);
+		                    //console.log(arr1.join(','));
+							var csv = arr1.join(',');
+							$('#csv').html(csv);
+							
+		                    // 若指定了模板标识符且模板中含有标识符，替换标识符为CSV内容，否则直接拼接CSV到模板末尾
+							var edit_after = $('#edit_after').val().trim();
+							if (edit_after != '')
+							{
+								var generated = $('#source').val().trim().replace(edit_after, csv);
+							} else {
+								var generated = $('#source').val().trim() + csv;
+							}
+							
+							$('#generated').val(generated);
+		                },
+		                error:function(res){
+		                    console.log(res);
+		                }
+		            });
+
+		        });
+		    })
+		</script>
+			
+		<style>
+			noscript {text-align:center;}
+			html{
+				width: 100%;
+				height: 100%;
+			}
+            body{
+                width: 100%;
+				height: 100%;
+				text-align: center;
+				margin: 0;
+				position: relative;
+            }
+			input[type=text],input[type=url],textarea {width:95%;margin-bottom:20px;display:block;}
+			button {width:100%;display:block;}
+			
+			p:not(:last-child) {margin-bottom:20px;}
+			
+			#content {display:inline-block;width:80%;height:100%;overflow:hidden;text-align: center;position: relative;}
+				#content>* {float:left;width:45%;height:100%;display:inline-block; position: relative;
+					top: 50%;margin-top: -250px;}
+				#content>#action {width:10%;}
+			#submit{margin-top: 445px;margin-left: -10px;}
+		</style>
+	</head>
+
+	<body>
+		<noscript>
+			<p>dom2csv 需要通过JavaScript运行</p>
+		</noscript>
+
+		<div id=content>
+			<div id=params>
+				<input id=url type=url placeholder="请输入待解析DOM所在页面URL" required>
+				<input id=charset type=text value="gb2312" placeholder="请输入待解析DOM所在页面字符编码，如gb2312；留空则默认utf-8">
+				<input id=start type=text placeholder="请输入待解析DOM起始处HTML标签" required>
+				<input id=end type=text placeholder="请输入待解析DOM结束处HTML标签" required>
+				<textarea id=source rows=20 placeholder="待生成内容模板">
+//test_mode:on
+app_type:admin
+user_id:1
+nation:中国
+province:山西省
+province_index:sx
+province_abbr:晋
+province_brief:山西
+city:太原市
+counties:[[csv]]
+				</textarea>
+				<br>
+				<input id=edit_after type=text value="[[csv]]" placeholder="请输入模板内容可修改位置标识符，例如[[csv]]；若未指定标识符，则解析出来的CSV将直接拼接到模板内容末尾">
+			</div>
+			
+			<div id=action>
+				<button id=submit>确定 &gt;</button>
+			</div>
+			
+			<div id=results>
+				<p id=csv></p>
+				<textarea id=generated rows=20></textarea>
+			</div>
+		</div>
+	</body>
 </html>

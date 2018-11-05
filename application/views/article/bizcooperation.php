@@ -1,4 +1,5 @@
-
+<link href="https://cdn-remote.517ybang.com/css/index.min.css" rel="stylesheet">
+	<title>商家合作</title>
 	<style type="text/css">
 		.zccom{
 			width: 6.7rem;
@@ -28,7 +29,7 @@
 		}
 		.zccontent p img{
 			float: left;
-			width: .4rem;
+			width: .3rem;
 			display: block;
 			padding-right: .12rem;
 			margin-top: .55rem;
@@ -157,11 +158,11 @@
      	<div class="zcfootercontent clearfix">
      		<strong>
      			<span>招商电话:</span>
-     			<i><a href="tel:15066199888">15066199888</a></i>
+     			<i><a href="tel:15863118873">15863118873</a></i>
      		</strong>
      		<strong>
      			<span>固话:</span>
-     			<i><a href="tel:0532-4008820532">0532-4008820532</a></i>
+     			<i><a href="tel:4008820532">4008820532</a></i>
      		</strong>
      		<strong>
      			<span>邮箱:</span>
@@ -170,6 +171,8 @@
      	</div>
 		</div>
 </div>
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://cdn-remote.517ybang.com/js/rem.js"></script>
 <script type="text/javascript">
 	var regnoVal = /\S/;
 	var regTel = /^1\d{10}$/;
@@ -211,7 +214,6 @@
 			data : {name:$('.qymc').val(),area:$('.jyfw').val(),lxr:$('.lxr').val(),tel:$('.lxfs').val()},
 			success:function(res){
 				alert('进来等你');
-				debugger;
 				$('input').val('');
 			}
 		});

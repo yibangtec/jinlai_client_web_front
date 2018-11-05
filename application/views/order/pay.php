@@ -139,7 +139,6 @@
 
     var item = <?php echo json_encode($item) ?>;
     console.log(item);
-
     // 生成支付链接通用参数
     var payment_common_params = 'type=order&body=';
     payment_common_params += encodeURI('进来商城商品订单 ' + date('')+'_' +item.order_id);

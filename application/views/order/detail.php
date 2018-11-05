@@ -170,7 +170,7 @@
 
     <div class="detail-btn clearfix">
         <!--<a title="客服" href="<?php echo base_url('message?biz_id='.$item['biz_id']) ?>">客服</a>-->
-        <div class="customer-service"><a href="tel:<?php echo $item['tel_public'] ?>">联系卖家</a></div>
+        <div class="customer-service"><span class="jinlaiChat">联系卖家</span></div>
         <div class="tel-service"><a href="tel:<?php echo $item['tel_public'] ?>">拨打电话</a></div>
     </div>
 
@@ -261,8 +261,18 @@
 
 <script>
 
-	$(function(){
-	var clipboard = new Clipboard("#copyOrder");
+    $(function(){
+//     var noback = '<?php if(isset($_GET['noback'])){echo 1;}?>';
+//     if (noback) {
+//         //防止页面后退
+//         history.pushState(null, null, document.URL);
+//         window.addEventListener('popstate', function () {
+//             window.history.pushState('forward', null, '#');
+// 　　         window.history.forward(1);
+//         });
+//     }
+    
+    var clipboard = new Clipboard("#copyOrder");
         clipboard.on('success', function(e) {
             alert("已复制");
         });
@@ -279,8 +289,8 @@
                     alert("请重试");
                 });
 
-		var params = common_params;
-		var item = <?php echo json_encode($item) ?>;
+        var params = common_params;
+        var item = <?php echo json_encode($item) ?>;
         console.log(item);
         var refund_base_url = ''; // 单品退款根URL
         var reasonCancel = '我不想买了';
@@ -561,7 +571,7 @@
             $('[data-name=time_refuse] span').html( date(item.time_refuse) );
             $('[data-name=time_accept]').hide();
         }
-	
+    
         // 若已取消
         if (item.time_cancel > 0) {
             $('[data-name=time_cancel] span').html( date(item.time_cancel) );
@@ -570,7 +580,7 @@
         {
             $('[data-group=time_cancel]').hide();
         }
- 		
+        
         // 若已过期
         if (item.time_expire > 0) {
 
@@ -677,7 +687,36 @@
              //console.log(order_item);
              $('#orderList').append(order_item);
          }
+$('.jinlaiChat').click(function(e){
+    e.preventDefault();
 
+    if(user_id == ''){
+        window.location.href=base_url+'login?url_after_login=<?php echo urlencode( trim($_SERVER['REQUEST_URI'], '/') ) ?>';
+        return false;
+    } else {
+        var bizId = item.biz_id;
+        var itemId = item.order_items[0].item_id;
+        $.post({
+            url:  api_url + 'wsmessage/hi',
+            data: {app_type:'client',biz_id:bizId,user_id:user_id},
+            success: function(result){
+                 if (result.status == 200)
+                 {
+
+                    window.location.href = 'https://www.517ybang.com/chat/index?biz_id='+bizId+'&item_id=' + itemId;
+                 } else {
+                    alert(result);
+                 }
+            },
+            error:function(result){
+                console.log(result);
+            },
+            dataType: 'json'
+        });
+    }
+
+
+})
          function timestampToTime(timestamp) {
                  var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
                  Y = date.getFullYear() + '-';
@@ -721,5 +760,5 @@
 
 
 
-	})
+    })
 </script>

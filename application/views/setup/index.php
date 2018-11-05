@@ -15,7 +15,8 @@
             <span class="account-set-text">密码重置</span>
             <i class="icon-Arrow"></i>
         </a>
-        <a href="<?php echo base_url('download') ?>" class="account-set clearfix">
+
+        <a style="display:none" href="<?php echo base_url('download') ?>" class="account-set clearfix">
             <span class="account-set-text">应用下载</span>
             <i class="icon-Arrow"></i>
         </a>

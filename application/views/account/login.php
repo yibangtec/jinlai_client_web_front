@@ -9,7 +9,7 @@
         <img src="<?php echo CDN_URL ?>media/account/login/logo@3x.png" alt="">
     </div>
     <div style="height: 5rem;">
-        <form method=post>
+        <form method=post >
             <input name=sms_id type=hidden>
 
             <div class="input-box clearfix">
@@ -63,9 +63,13 @@
 
         <div class="login_sms"><a href="<?php echo BASE_URL ?>login_sms">短信登录</a></div>
     </div>
-    <div class="login-bot">
+       <div class="login-bot">
         <div><span class="line"></span> 第三方登录 <span class="line"></span> </div>
-        <a class="wx-icon" href="">
+        <?php
+        // 微信授权网址
+        $wechat_oauth_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.WECHAT_APP_ID.'&redirect_uri='. urlencode(base_url('login_wechat')).'&response_type=code&scope=snsapi_userinfo#wechat_redirect';
+        ?>
+        <a class="wx-icon" href="<?php echo $wechat_oauth_url ?>">
             <img class="wx-icon" src="<?php echo CDN_URL ?>media/account/login/weixin@3x.png" alt="">
         </a>
     </div>
@@ -73,13 +77,21 @@
 </div>
 
 <script src="<?php echo CDN_URL ?>js/account.js"></script>
+<?php echo $message;?>
 <script>
     $(function(){
                 var tel = getQueryString('tel');
                 if(tel){
                     $('#mobile').val(tel);
                 }
-
+                var errorlogin = "<?php echo $error ?>";
+                if (errorlogin) {
+                    $('.tips-text').html(errorlogin);
+                    $('.error-tips').show();
+                    setInterval(function(){
+                        $('.error-tips').hide();
+                    }, 2000);
+                }
                 $('#loginSms').on('click',function(){
                     var tel = $('#mobile').val();
                     if(tel) {
@@ -109,23 +121,27 @@
                         params.password = $('[name=password]').val();
                         params.sms_id = $('[name=sms_id]').val();
                         params.captcha = $('[name=captcha]').val();
-                        console.log(params);
+                        //$('[name=captcha]').val('');
                         
                         // 若未传入密码，使用短信登录；若传入了密码，使用密码登录
                         var url = api_url + (params.password == ''? 'account/login_sms': 'account/login');
 
                 		var regTel = /^1\d{10}$/;
-                		 var regPass = new RegExp( /^([a-z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,20}$/i);
+                		var regPass = new RegExp( /^([a-z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,20}$/i);
 		                if (!regTel.test($('#mobile').val())) {
 		                	alert('请输入正确的手机号');
 		                	return false;
                 		}
-                		if ($('#password').css.display == 'block' && !regPass.test($('#password').val())) {
-		                	alert('请输入6-20位密码');
-		                	console.log($('#password').val());
-		                	$('#password').val('').focus();
-		                	return false;
-                		}
+                        console.log(params.password.length)
+                        if (Exist && (params.password.length > 20 || params.password.length < 6)) {
+                            alert('请输入6-20位密码');
+                            return false;
+                        }
+                		if (!Exist && params.captcha.length == 0) {
+                            alert('请输入验证码');
+                            return false;
+                        }
+
                 		/*
                 		$.ajax({
 							  url: url,

@@ -60,7 +60,7 @@
     <div class="mine-order">
         <div class="order-title">
             <div class="title-left">商品订单</div>
-            <a class="title-right" title="全部订单" href="<?php echo base_url('order') ?>">全部<i class="icon-Arrow"></i></a>
+            <a class="title-right" title="全部订单" href="<?php echo base_url('order') ?>">全部订单<i class="icon-Arrow"></i></a>
         </div>
         <div class="order-item clearfix">
             <a class="item-list" title="待付款订单" href="<?php echo base_url('order?status=order1') ?>">
@@ -91,18 +91,23 @@
             <a title="全部订单" href="<?php echo base_url('order/order_service?status=order') ?>" class="title-right">全部订单<i class="icon-Arrow"></i></a>
         </div>
         <div class="order-item clearfix">
+            <a class="item-team" href="<?php echo base_url('order/order_service?status=order4') ?>">
+                <i class="icon-daifukuan"></i>
+                <p>待付款</p>
+            </a>
             <a class="item-team" href="<?php echo base_url('order/order_service?status=order1') ?>">
-                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/weixiaofei.png"></img>
+                <img style="height:0.45rem;width:auto;" src="<?php echo CDN_URL ?>media/order/weixiaofei.png"></img>
                 <p>未消费</p>
             </a>
             <a class="item-team" href="<?php echo base_url('order/order_service?status=order2') ?>">
-                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yishiyong.png"></img>
+                <img style="height:0.45rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yishiyong.png"></img>
                 <p>已使用</p>
             </a>
             <a class="item-team" href="<?php echo base_url('order/order_service?status=order3') ?>">
-                <img style="height:0.4rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yiguoqi.png"></img>
+                <img style="height:0.45rem;width:auto;" src="<?php echo CDN_URL ?>media/order/yiguoqi.png"></img>
                 <p>已过期</p>
             </a>
+
         </div>
     </div>
     <div class="mine-order">

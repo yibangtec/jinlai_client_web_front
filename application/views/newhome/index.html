@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>进来app</title>
+
+<!--Swiper3.0.4-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="shortcut icon" href="https://cdn-remote.517ybang.com/icon/jinlai_client/icon28@3x.png">
+
+<link rel="stylesheet" href="./css/reset.css" />
+
+<link rel="stylesheet" href="https://cdn-remote.517ybang.com/css/swiper.mini.css">
+
+<link rel="stylesheet" href="./css/newhome.css" />
+
+<link rel="stylesheet" href="css/idangerous.swiper.3dflow.css" />
+
+<script src="js/jquery.js"></script>
+
+<style type="text/css">
+
+	.swiper-pagination-bullet-active{
+
+		opacity: 1;
+
+    	background: #727171 !important;
+
+	}
+
+	.swiper-pagination-bullet{
+
+		width: .12rem;
+
+		height: .12rem;
+
+		margin-right: .2rem;
+
+	}
+
+	.swiper-container-3d {
+
+	width: 100%;
+
+}
+
+.swiper-slide {
+
+	background-size:cover;
+
+	background-repeat:no-repeat;
+
+	background-position:center;
+
+	width: 'auto' !important;
+
+}
+
+.swiper-wrapper{
+
+	height: 3rem;
+
+}
+
+</style>
+
+</head>
+
+<body id="newImgLazy">
+
+<script>
+
+	(function (doc, win) {
+
+                      var docEl = doc.documentElement,
+
+                        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+
+                        recalc = function () {
+
+                          var clientWidth = docEl.clientWidth;
+
+                          if (!clientWidth) return;
+
+                    // [注]:chrome下不支持10px所以前边的100代表，1rem = 100px;后边的750代表设计稿的宽度
+
+                          docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+
+                        };
+
+                    
+
+                      if (!doc.addEventListener) return;recalc();
+
+                      win.addEventListener(resizeEvt, recalc, false);
+
+                      doc.addEventListener('DOMContentLoaded', recalc, false);
+
+                    })(document, window);          		
+
+</script>
+
+<!--定位区域-->
+
+<div class="city">
+
+  <div class="city-wrapper city-wrapper-hook">
+
+    <div class="scroller-hook">
+
+      <div class="cities cities-hook"></div>
+
+    </div>
+
+    <div class="shortcut shortcut-hook"></div>
+
+  </div>
+
+</div>
+
+<div class="newbanner">
+
+		<div class="newswiper-container">
+
+			<div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+
+					<ul class="clearfix">
+
+						<li>
+
+                            <a href="###" target=_self>
+
+                            	<img src="images/top_banner@3x.png"/>
+
+                            </a>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+				 <div class="swiper-slide">
+
+					<ul class="clearfix">
+
+						<li>
+
+                            <a href="###" target=_self>
+
+                            	<img src="images/top_banner@3x.png"/>
+
+                            </a>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+				 
+
+			</div>
+
+			 <div class="newswiper-pagination"></div>
+
+		</div>
+
+		<!--定位搜索区域-->
+
+		<div class="newhomeSearch newwid710">
+
+			<span class="selectCity">崂山区</span>
+
+			<div class="newdownarr">
+
+				<img src="images/top_jiantou@3x.png"/>
+
+			</div>
+
+			<div class="search-icon">
+
+				<img src="images/top_search@3x.png"/>
+
+			</div>
+
+			<input type="" name="" id="" value="" placeholder="请输入您想要搜索的内容"/>
+
+			<span class="fr newicon">
+
+				<img src="images/chat.png" alt="" />
+
+			</span>
+
+			<span class="fr newicon">
+
+				<img src="images/top_saoyisao@3x.png" alt="" />
+
+			</span>
+
+		</div>
+
+</div>
+
+
+
+<!--分类小icon-->
+
+<div class="newClass newwid710 clearfix">
+
+	<div class="newcir">
+		
+	</div>
+
+	<ul class="clearfix">
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_chaoshi@3x.png" alt="" />
+
+			<span class="padbottom">生鲜超市</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_kuwan@3x.png" alt="" />
+
+			<span class="padbottom">潮流酷玩</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_muying@3x.png" alt="" />
+
+			<span class="padbottom">母婴用品</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_shuma@3x.png" alt="" />
+
+			<span class="padbottom">科技数码</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_shenghuo@3x.png" alt="" />
+
+			<span class="padbottom">居家生活</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_lingshi@3x.png" alt="" />
+
+			<span>休闲零食</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_yundong@3x.png" alt="" />
+
+			<span>运动户外</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_dongman@3x.png" alt="" />
+
+			<span>游戏动漫</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_lingquan@3x.png" alt="" />
+
+			<span>领券中心</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/icon_ruzhu@3x.png" alt="" />
+
+			<span>我要入驻</span>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<!--1像素边框-->
+
+<div class="border1px"></div>
+
+
+
+<!--进来说,大事件滚动区域-->
+
+<div class="newwid710 newtalk">
+
+	<img src="images/jinlaishuo@3x.png" alt="" class="fl" />
+
+	<span class="linevertical fl"></span>
+
+	<!--热点事件文字区域-->
+
+	<div class="newtalktext fl">
+
+		<ul>
+
+			<li>
+
+				<img src="images/hottalk.png" alt="" />
+
+				<span>注册就送50元新人礼包,赶快行动!</span>
+
+			</li>
+
+			<li>
+
+				<img src="images/hottalk.png" alt="" />
+
+				<span>注册就送50元新人礼包,赶快行动!</span>
+
+			</li>
+
+			<li>
+
+				<img src="images/hottalk.png" alt="" />
+
+				<span>进来吧!</span>
+
+			</li>
+
+			<li>
+
+				<img src="images/hottalk.png" alt="" />
+
+				<span>进来,与精良为伍!</span>
+
+			</li>
+
+			<li>
+
+				<img src="images/hottalk.png" alt="" />
+
+				<span>进来3.0即将上线</span>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+	<div class="newtalkbg"></div>
+
+</div>
+
+<div class="border1px"></div>
+
+<!--活动区域开始-->
+
+<div class="newparty newwid710">
+
+	<img src="images/hd_banner@3x.png"/>
+
+</div>
+
+<div class="newpartycard newwid710 clearfix">
+
+	<div class="left fl">
+
+		<h1>新人专享
+
+			<b class="bottom-line"></b>
+
+		</h1>
+
+		<span>新人专享专区</span>
+
+	</div>
+
+	<div class="right fr">
+
+		<div class="card-r card-r-1">
+
+			<h1>新人专享
+
+			<b class="bottom-line"></b>
+
+		</h1>
+
+		<span>新人专享专区</span>
+
+		</div>
+
+		<div class="card-r card-r-2">
+
+			<h1>新人专享
+
+			<b class="bottom-line"></b>
+
+		</h1>
+
+		<span>新人专享专区</span>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="border1px"></div>
+
+
+
+<!--专题页区域-->
+
+<div class="specialpage clearfix newwid710">
+
+	<h1 class="fl">专题页</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<div class="specialcontent clearfix fl">
+
+		<ul class="clearfix">
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+	<!--图片区域-->
+
+	<div class="special-pic">
+
+		<img src="images/wanhzuanqingdoa@3x.png" alt="" />
+
+		<p>舌尖青岛 | <span>玩转青岛美食</span></p>
+
+	</div>
+
+	<div class="special-pic-2 clearfix">
+
+		<div class="newleft fl">
+
+			<img src="images/shejianqingdao@3x.png" alt="" />
+
+			<p>舌尖青岛 | 玩转青岛美食</p>
+
+		</div>
+
+		<div class="newright fr">
+
+			<img src="images/tiantiantejia@3x.png" alt="" />
+
+			<p>舌尖青岛</p>
+
+		</div>
+
+	</div>
+
+		<div class="specialcontent clearfix fl" style="margin-top: 0px;margin-bottom: .4rem;">
+
+		<ul class="clearfix">
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+			<li>
+
+				<strong>运动健康</strong>
+
+				<span>秀出你的马甲线</span>
+
+				<img src="images/default.png" data-src="images/yundongjiankang@3x.png"/>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+</div>
+
+<div class="border1px"></div>
+
+
+
+<!--红包专区-->
+
+<div class="specialpage clearfix newwid710">
+
+	<h1 class="fl">红包专区</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+</div>
+
+<!--红包内容区域-->
+
+<div class="newred newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li>
+
+			<span>
+
+				<b>5</b>&nbsp;元
+
+			</span>
+
+			<p>单笔满<i>199</i>使用</p>
+
+		</li>
+
+		<li>
+
+			<span>
+
+				<b>15</b>&nbsp;元
+
+			</span>
+
+			<p>单笔满<i>199</i>使用</p>
+
+		</li>
+
+		<li>
+
+			<span>
+
+				<b>25</b>&nbsp;元
+
+			</span>
+
+			<p>单笔满<i>199</i>使用</p>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<div class="border1px"></div>
+
+
+
+<!--进来严选-->
+
+<div class="specialpage clearfix newwid710">
+
+	<h1 class="fl">进来严选</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+</div>
+
+<!--进来严选内容区域-->
+
+<div class="newstrain mt40 mb10">
+
+	<img src="images/jinlaiyanxuan@3x.png"/>
+
+</div>
+
+<div class="newstraincube newwid710 clearfix">
+
+	<ul>
+
+		<li class="mb10 l1">
+
+			<h1>运动健康</h1>
+
+			<h2>秀出你的马甲线</h2>
+
+		</li>
+
+		<li class="mb10 l2">
+
+			<h1>特权专享</h1>
+
+			<h2>独家发售,会员专供</h2>
+
+		</li>
+
+		<li class="mb10 l3">
+
+			<h1>品质好物</h1>
+
+			<h2>高颜值,好品质美物</h2>
+
+		</li>
+
+		<li class="l1">
+
+			<h1>运动健康</h1>
+
+			<h2>秀出你的马甲线</h2>
+
+		</li>
+
+		<li class="l2">
+
+			<h1>特权专享</h1>
+
+			<h2>独家发售,会员专供</h2>
+
+		</li>
+
+		<li class="l3">
+
+			<h1>品质好物</h1>
+
+			<h2>高颜值,好品质美物</h2>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<div class="border1px"></div>
+
+<!--新品首发-->
+
+<div class="specialpage clearfix newwid710" style="padding-bottom: .5rem;">
+
+	<h1 class="fl">新品首发</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+</div>
+
+
+
+<!--3d旋转-->
+
+<div class="newwrapper-3d">
+
+<div class="swiper-container-3d" >
+
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide" data-id='0'><img src="images/xinpin_1@3x.png" class="main-img"></div>
+
+    <div class="swiper-slide" data-id='1'><img src="images/xinpin_2@3x.png" class="main-img"></div>
+
+    <div class="swiper-slide" data-id='2'><img src="images/xinpin_3@3x.png" class="main-img"></div>
+
+    <div class="swiper-slide" data-id='3'><img src="images/xinpin_4@3x.png" class="main-img"></div>
+
+    <div class="swiper-slide" data-id='4'><img src="images/xinpin_5@3x.png" class="main-img"></div>
+
+  </div>
+
+ 
+
+ 
+
+</div>
+
+ <div class="swiper-pagination" id="pagination"></div>
+
+ </div>
+
+ <div class="border1px"></div>
+
+<!--  热卖专区 -->
+
+<div class="specialpage clearfix newwid710 pt40">
+
+	<h1 class="fl">热卖专区</h1>
+
+</div>
+
+<div class="border1px"></div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">热卖推荐</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+	
+
+</div>
+
+<div class="newcommondtitle clearfix">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondcontent newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">居家生活</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix mb10">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondclass newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">热卖推荐</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondcontent newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">居家生活</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix mb10">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondclass newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">热卖推荐</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondcontent newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">居家生活</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix mb10">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondclass newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">热卖推荐</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondcontent newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		<li>
+
+			<img src="images/default.png" data-src="images/tuijian_3@3x.png">
+
+			<h1>进口新加坡榴莲</h1>
+
+			<h2>¥50.00</h2>
+
+			<span class="newsalenum">成交<i>100</i>笔</span>
+
+		</li>
+
+		
+
+	</ul>
+
+</div>
+
+<!-- 热卖推荐复用区域 -->
+
+<div class="newwid710 newcommond mt40">
+
+	<h1 class="fl">居家生活</h1>
+
+	<h2 class="fl">精心选购,为爱美的你</h2>
+
+	<h3 class="fr">
+
+		<img src="images/gengduo@3x.png" alt="" />
+
+	</h3>
+
+	<h2 class="fr">更多</h2>
+
+</div>
+
+<div class="newcommondtitle clearfix mb10">
+
+	<div class="newcommondtitle-pic1 fl">
+
+		<img src="images/tuijian_banner@3x.png">
+
+	</div>
+
+	<div class="newcommondtitle-pic2 fl">
+
+		<img src="images/tuijian_shangjia@3x.png">
+
+	</div>
+
+</div>
+
+<div class="newcommondclass newwid710 clearfix">
+
+	<ul class="clearfix">
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+		<li class="mb10">
+
+			<img src="images/default.png" data-src="images/jujiashenghuo_1@3x.png">
+
+			<h1>天天特价</h1>
+
+			<h2>领优惠券更省钱</h2>
+
+			<h3>¥&nbsp;38.0</h3>
+
+			<span>+</span>
+
+		</li>
+
+	</ul>
+
+</div>
+
+<script src="js/idangerous.swiper.min.js"></script>
+
+<script src="js/bscroll.min.js"></script>
+
+<script src="js/city.js"></script>
+
+<script src="js/lazy-load-img.js"></script>
+
+<script src="js/idangerous.swiper.3dflow.js"></script>
+
+<script src="js/newhome.js"></script>
+
+
+
+</body>
+
+</html>
+

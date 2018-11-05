@@ -2517,9 +2517,6 @@ $(function(){
 });
 
 $(function(){
-    $('kefu').on('click',function(){
-        window.location.href = base_url+'chat/index';
-    });
 	$("#timer2").oaoTime();
 	var lazyLoadImg = new LazyLoadImg({
 		el: document.querySelector('#listMenu'),

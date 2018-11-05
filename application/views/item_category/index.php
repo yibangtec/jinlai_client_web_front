@@ -4,6 +4,7 @@
 		overflow: auto;
 		-webkit-overflow-scrolling: touch !important;
 		z-index:1;
+		padding-bottom:1.2rem;
 	}
 body{
 background:#f7f7f7;
@@ -20,7 +21,7 @@ background:#f7f7f7;
             content:"";  
             width: 100%;  
             clear: both;  
-            display: block;  
+            display: block;
       }
 .menu-left:before {  
             content:"";  
@@ -38,7 +39,6 @@ background:#f7f7f7;
       }
 .menu-right{
 	padding-bottom: 1.5rem;
-
 }
 
 .menu-right::-webkit-scrollbar{width:0;height:0}
@@ -85,31 +85,31 @@ background:#f7f7f7;
 	<div class="tabWrap fiex">
 		<div class="tabbar auto">
 			<div class="column">
-				<a href="<?php echo BASE_URL ?>" target="_self">
+				<a href="https://www.517ybang.com" target="_self">
 				<div class="itemmenulist">
 					<i class="homeIcon homeIcon1"></i>
 					<span class="text">主页</span>
 				</div>
 				</a>
-				<a href="<?php echo BASE_URL ?>/item_category" target="_self">
+				<a href="https://www.517ybang.com/item_category" target="_self">
 				<div class="itemmenulist">
 					<i class="homeFenlei homeFenlei2"></i>
 					<span class="text" style="color: #ff753e;">分类</span>
 				</div>
 				</a>
-				<a href="<?php echo BASE_URL ?>/member_biz" target="_self">
+				<a href="https://www.517ybang.com/member_biz" target="_self">
 				<div class="itemmenulist">
 					<i class="homeHuiyuan"></i>
 					<span class="text">会员</span>
 				</div>
 				</a>
-				<a href="<?php echo BASE_URL ?>/cart" target="_self">
+				<a href="https://www.517ybang.com/cart" target="_self">
 				<div class="itemmenulist">
 					<i class="homeGouwuche"></i>
 					<span class="text">购物车</span>
 				</div>
 				</a>
-				<a href="<?php echo BASE_URL ?>/mine" target="_self">
+				<a href="https://www.517ybang.com/mine" target="_self">
 				<div class="itemmenulist">
 					<i class="homeWode"></i>
 					<span class="text">我的</span>
@@ -124,7 +124,6 @@ background:#f7f7f7;
 
 <script>
 $(function(){
-	
 	var num;
 	
 	// <?php echo $this->class_name_cn ?>数据
@@ -156,15 +155,9 @@ $(function(){
 				}
 			}
 		}
-	var that = '';
+
 	$('#sidebar li').click(function(){
-		if(user_agent.is_android){
-
-            HostApp.topScrollY('right','0');
-
-        }
-        //$('section').eq(num - 1).scrollTop(0);
-
+        $('section').eq(num - 1).scrollTop(0);
         $('section').eq(num - 1).find('.category_wrap').html(' ');
         num = $(this).index() + 1;
         $(this).addClass('active').siblings('li').removeClass('active');
@@ -172,18 +165,19 @@ $(function(){
 
         //获取点击li后的商品分类总id
         var category_id = $(this).find('span').text();
-
 		//console.log(category_id);
 		for(var key in items)
 		{
+			
             // 2级的parentID = 1级的categoryID
 			if (items[key].parent_id == category_id)
 			{
+				console.log(items[key].parent_id);
                 // 当前level=2的商品分类
                 var arr = []
                  arr.push(items[key]);
                  //console.log(items[key]);
-
+				
                  for (var i=0;i<arr.length;i++)
                  {
                     //console.log( arr[i].url_image);
@@ -193,46 +187,38 @@ $(function(){
 
                  	// 生成level=3的商品分类DOM
                      var current_children_count = 0;
+                     
                     for (var key in items)
                  	{
                  		// 分类ID
                  	   // console.log(arr[i].category_id);
                         //console.log(items[key].parent_id);
-
+						
                         if (arr[i].category_id == items[key].parent_id)
                         {
                            // console.log(items[key].parent_id);
-                            html += '<li><a href="'+ base_url+'item/detail?id='+items[key].item_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>';
+                            html += '<li><a href="'+ base_url+'item/index?category_id='+items[key].category_id +'"><img src="' + media_url + 'item_category/'+items[key].url_image+'">'+'<span>' +items[key].name +'</span>' +'</a></li>';
                             current_children_count ++;
                         }
+                        //console.log(items[key].parent_id);
                         
                     }
-
+					
                     if (current_children_count == 0)
                     {	
+                    	
                     	//console.log(arr[i].category_id);
                     	if(arr[i].url_image != null){
-                    		html+='<a href="'+base_url+'item/index?category_id='+arr[i].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="'+media_url+'item_category/'+arr[i].url_image+'"></li></a>';
-                    		goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
+                    		html+='<a href="https://www.517ybang.com/item/index?category_id='+items[key].category_id+'"><li style="width:100%;margin-bottom:0px;"><img style="width:100%;border-radius:.2rem;" src="https://medias.517ybang.com/item_category/'+arr[i].url_image+'"></li></a>';
+                    		//goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
                     	}
+                    
                     	
                         
-                    } else {
-                    	console.log(arr[i].url_image);
-                        goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
-                    }
-
+                    } 
+					 goodsListContent = goodsListContent + '<ul>'+html+'</ul>';
 					//console.log(goodsListContent);
 					$('section').eq(num - 1).find('.category_wrap').append(goodsListContent);
-					// 给安卓传当前top
-					if(user_agent.is_android){
-                    	$('section').eq(num - 1).scroll(function(){
-           					var Top = $('section').eq(num - 1).scrollTop()+'';
-                          		console.log(Top);
-                          		HostApp.topScrollY('right',Top);
-                         });
-                    }
-
                  }
 			}
 		}
@@ -242,18 +228,8 @@ $(function(){
 	
 
     $('#sidebar li')[0].click();
-    $('.menu-left').find('li').last().remove();
-	if(user_agent.is_android){
-		$('#sidebar').scroll(function(){
-     		var scrollTop = $('#sidebar').scrollTop()+'';
-     		console.log(scrollTop);
-     		HostApp.topScrollY('left',scrollTop);
-     	});
-	}
-if(user_agent.is_android){
-	HostApp.topScrollY('left','0');
+    //$('.menu-left').find('li').last().remove();
 
-}
 
 });
 

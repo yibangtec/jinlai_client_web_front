@@ -145,7 +145,7 @@ function assemble_item_image_url($item, $url_column_name)
 <div class="threecol clearfix none">
     <ul>
         <li>
-            <a href="<?php echo BASE_URL ?>item/detail?id=3" target="_self">
+            <a href="https://www.517ybang.com/item/detail?id=3" target="_self">
                 <div class="pic shopIndexpic">
                     <img data-src="<?php echo CDN_URL ?>media/home/jianhuo_putao@3x.png">
                 </div>

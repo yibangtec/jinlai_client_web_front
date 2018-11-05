@@ -149,13 +149,20 @@
             }
 
             var li = items[key].order_items;
+
             //console.log(li);
-            var bizNameHtml = '<div class="order-item">'+
-                                   '<a href="'+ base_url+'order/detail?id='+items[key].order_id+'" class="item-title clearfix">'+
-                                       '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
-                                       '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
-                                   '</a>'+
-                                   '<div class="item-list">';
+            // var bizNameHtml = '<div class="order-item">'+
+            //                        '<a href="'+ base_url+'order/detail?id='+items[key].order_id+'" class="item-title clearfix">'+
+            //                            '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
+            //                            '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
+            //                        '</a>'+
+            //                        '<div class="item-list">';
+             var bizNameHtml = '<div class="order-item">'+
+             '<a href="<?php echo base_url('biz/detail')?>?id='+items[key].biz_id+'" class="item-title clearfix">'+
+                 '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
+                 '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
+             '</a>'+
+             '<div class="item-list">';
             var bot = '</div>'+
                            '<div class="item-price">共<span>'+items[key].order_items.length+'</span>件商品 合计：<span class="weight">¥'+items[key].total+'</span>（含运费¥<span>'+items[key].freight+'</span>）</div>'+
                            '<div class="item-operation">'+statusHtml+'</div>'+
@@ -183,7 +190,7 @@
                     priceStyle = 'display:none;'
                  }
 
-                 orderItemHtml += '<a href="'+ base_url+'order/detail?&id='+li[k].order_id+ '" class="item-detail clearfix">'+
+                 orderItemHtml += '<a href="'+ base_url+'order/detail?id='+li[k].order_id+ '" class="item-detail clearfix">'+
                                        '<div class="item-left left-float"><img src="'+imgUrl+ li[k].item_image +'" alt=""/></div>'+
                                        '<div class="item-center left-float">'+
                                             '<p>'+ li[k].name +'</p>'+
@@ -327,7 +334,8 @@
                      console.log(result); // 输出回调数据到控制台
                      if (result.status == 200)
                      {
-                       $('.tips').hide().children('.delete').hide();
+                       //$('.tips').hide().children('.delete').hide();
+                       location.reload();
                      } else {
                         alert(result.content.error.message);
                      }
@@ -346,7 +354,9 @@
                  {
                      console.log(result); // 输出回调数据到控制台
                      if (result.status == 200)
-                     {
+                     {  
+                      console.log(result); // 输出回调数据到控制台
+                      location.reload();
                        $('.tips').hide().children('.cancel').hide();
                      } else {
                         alert(result.content.error.message);
@@ -482,7 +492,7 @@
                                     var li = items[key].order_items;
                                     //console.log(li);
                                     var bizNameHtml = '<div class="order-item">'+
-                                                           '<a href="<?php echo base_url('order/detail') . "?&id='+items[key].order_id+'" ?>" class="item-title clearfix">'+
+                                                           '<a href="<?php echo base_url('order/detail') . "?id='+items[key].order_id+'" ?>" class="item-title clearfix">'+
                                                                '<div class="title-left left-float"><i class="icon-dianpu"></i><span>'+items[key].biz_name+'</span><i class="icon-Arrow"></i></div>'+
                                                                '<div class="title-right right-float current-status">'+items[key].status+'</div>'+
                                                            '</a>'+
@@ -512,7 +522,7 @@
                                          }else{
                                             style='display:none;'
                                          }
-                                         orderItemHtml += '<a href="<?php echo base_url('order/detail') . "?&id='+li[k].order_id+'" ?>" class="item-detail clearfix">'+
+                                         orderItemHtml += '<a href="<?php echo base_url('order/detail') . "?id='+li[k].order_id+'" ?>" class="item-detail clearfix">'+
                                                                '<div class="item-left left-float"><img src="'+imgUrl+ li[k].item_image +'" alt=""/></div>'+
                                                                '<div class="item-center left-float">'+
                                                                     '<p>'+ li[k].name +'</p>'+

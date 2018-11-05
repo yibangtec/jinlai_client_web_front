@@ -101,7 +101,7 @@
         <!--公用部分css-->
         <!--<link href="<?php echo CDN_URL ?>css/base.css" rel="stylesheet">-->
         <link href="<?php echo CDN_URL ?>css/swiper.mini.css" rel="stylesheet">
-        <link href="<?php echo CDN_URL ?>css/index.min.css" rel="stylesheet">
+        <link href="<?php echo CDN_URL ?>css/index.min.css?v=1538029519" rel="stylesheet">
         <style>
             .pagination-bullet-active{
                 background:#606060 !important;

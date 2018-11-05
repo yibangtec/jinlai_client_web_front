@@ -84,7 +84,7 @@ input.goodsCheck:checked{
             </div>
             <div class="shop-total fl">
                 <strong>合计：<span>¥</span><i class="total" id="AllTotal">0.00</i></strong>
-                <p>不含运费</p>
+                <p id="nofreight">不含运费</p>
             </div>
             <a href="###" class="settlement fr">结算</a>
         </div>
@@ -94,9 +94,11 @@ input.goodsCheck:checked{
 
 <script src="<?php echo CDN_URL ?>js/jqm.js"></script>
 <script>
+	var isChanging = false;
 	$(function(){
 	    var params = common_params;
 	    var newShopInfo;
+	    
 	    //请求下购物车最新的商品信息,尤其是重复的商品数量
 	    $('.settlement').on('click',function(){
 	    	if($(this).attr('href') == '###'){
@@ -106,7 +108,7 @@ input.goodsCheck:checked{
 	    })
 	    $.ajax({
 	    	type:"post",
-	    	url:api_url+"art/sync_down",
+	    	url:api_url+"cart/sync_down",
 	    	dataType : 'json',
 	    	data :{app_type:'client',id:user_id},
 	    	async : false,
@@ -124,7 +126,7 @@ input.goodsCheck:checked{
 		for (var i = 0;i<res.content.order_items.length;i++) {
 			var biz_name = res.content.order_items[i].biz_name;
 			var biz_img = media_url+"biz/" + res.content.order_items[i].biz_url_logo;
-			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="'+biz_img+'" /></h4><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></div></div></div></div></div></div>';
+			var list = '<div class="my-address-list wid710 auto border20 mt20 bgfff"><div class="shopping"><div class="shop-group-item"><div class="touch"><div class="buycarshoptitle"><div class="shop-name clearfix"><input type="checkbox" name="itemShopall" class="check goods-check shopCheck"><h4><img src="'+biz_img+'" /></h4><a href="'+base_url+'biz/detail?id='+res.content.order_items[i].biz_id+'" ><h3 class="fl">'+biz_name+'<i class="icon-Arrow"></i></h3></a></div></div></div></div></div></div>';
 			$('.item').append(list);
 			for (var j = 0;j < res.content.order_items[i].order_items.length;j++ ) {
 			    var order_item = res.content.order_items[i].order_items[j];
@@ -133,16 +135,27 @@ input.goodsCheck:checked{
 				var name = order_item.name;
 				var price = order_item.price;
 				var unit_name = order_item.unit_name;
+				let _current_goods_num = order_item.count;
+
                 // 生成订单所含商品主图URL
                 var item_image_url = (order_item.item_image.indexOf('http') === -1)? media_url+'item/'+order_item.item_image: order_item.item_image;
 				var item_id = res.content.order_items[i].order_items[j].item_id;
-				  for (var k = 0;k < newShopInfo.length;k++) {
+				for (var k = 0;k < newShopInfo.length;k++) {
 				   	//取出每一组数据,如果有多个商品,更新视图
 				   	if(item_id == newShopInfo[k].split('|')[1]){
-				   		var itemList = '<div class="itemlist"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="'+base_url+'item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><a href="'+base_url+'item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic"><a href="javascript:;" class="minus fl"><i class="icon-jian" style="font-size: .44rem;"></i></a><span class="num fl" >'+newShopInfo[k].split('|')[3]+'</span><a href="javascript:;" class="plus active fl"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
+				   	//if(sku_id == newShopInfo[k].split('|')[2]){
+				   		var itemList = '<div class="itemlist" data="' + order_item.sku_id +'"><div class="goodslist clearfix"><div class="shop-info clearfix"><input type="checkbox" name="item" class="check goods-check goodsCheck"><div class="shop-info-img"><a href="'+base_url+'item/detail?id='+item_id+'" target="_self"><img src="'+item_image_url+'" /></a></div><div class="shop-info-text fl"><input type="hidden" value="' + order_item.biz_id + '" /><a href="'+base_url+'item/detail?id='+item_id+'" target="_self"><h4>'+name+'</h4></a><div class="shop-price"><div class="shop-pices">￥<b class="price">'+price+'</b>/'+unit_name+'</div><div class="shop-arithmetic">';
+				   		let num = newShopInfo[k].split('|')[3];
+				   		if (parseInt(num) > 1) {
+				   			itemList +='<a href="javascript:;" class="minus fl"  item=' + item_id + '><i class="icon-jian icon-jian-active" style="font-size: .44rem;">';
+				   		} else {
+				   			itemList +='<a href="javascript:;" class="minus fl"  item=' + item_id + '><i class="icon-jian" style="font-size: .44rem;">';
+				   		}
+				   		
+				   		itemList +='</i></a><input pre="'+_current_goods_num+'" item="' + item_id + '" class="num fl" type="number" step="1" min="1" max="99" value="'+_current_goods_num+'" /><a href="javascript:;" class="plus active fl" item="' + item_id + '"><i class="icon-add-add-red" style="font-size: .44rem;"></i></a></div></div></div></div><div class="shopPrice">本店总计：￥<span class="shop-total-amount ShopTotal">0.00</span></div></div><a href="javascript:;" class="remove">删除</a></div>';
 				   	}
 				   		
-				   }
+				}
 				$('.touch').eq(i).append(itemList);
 			}
 		}
@@ -151,25 +164,101 @@ input.goodsCheck:checked{
 			$('.item').append(oSpan);
 			$('.payment-bar').hide();
 		};
+
+
+
 		$(".minus").click(function() {
-		var t = $(this).parent().find(".num");
-		t.text(parseInt(t.text()) - 1);
-		if (t.text() <= 1) {
-			t.text(1);
-			$(this).children("i").removeClass("icon-jian-active")
-		}
-		TotalPrice()
+		
+		updateCart($(this), -1, 'one')
 	});
+
 	$(".plus").click(function() {
-		var t = $(this).parent().find(".num");
-		t.text(parseInt(t.text()) + 1);
-		if (t.text() <= 1) {
-			t.text(1)
-		}
-		$(this).siblings(".minus").children("i").addClass("icon-jian-active");
-		TotalPrice()
+		updateCart($(this), 1, 'one')
+		
 	});
 	
+	$(".num").bind('blur', function(){
+		let numStr = $(this).val();
+		//回车执行查询
+		let preVal = parseInt($(this).attr('pre'));
+		if (numStr == '') {
+			$(this).val(preVal);
+			alert('至少为1件！');
+			return true;
+		}
+		if (isNaN(numStr) == true) {
+			$(this).val(preVal);
+			alert('至少为1件！');
+			return true;
+		}
+		let newVal = parseInt(numStr);
+		if (newVal == 0 || newVal > 99){
+			$(this).val(preVal);
+			alert('请填写正确的数量！');
+			return true;
+		}
+		
+		if (newVal != preVal) {
+			updateCart($(this), parseInt($(this).val()), 'set');
+		}
+	});
+
+	function updateCart(domObj, changeNum, type){
+		if (isChanging) {
+			alert('您的操作太快啦');
+			return false;
+		}
+		let itemid = domObj.attr('item');
+		if (!itemid) {
+			return false;
+		}
+		isChanging = true;
+		let all_str = newShopInfo;
+		let t = domObj.parent().find(".num");
+		let intNum = parseInt(t.val())
+		let afterNum = changeNum;
+		if (type == 'one') {
+			afterNum = intNum + changeNum
+		}
+		if(afterNum < 1) {
+			isChanging = false;
+			return false;
+		}
+		for (let i = 0; i <= all_str.length; i++){
+			if (all_str[i].indexOf(itemid) >= 0) {
+				let arr = all_str[i].split('|');
+				all_str[i] = arr[0] + '|' + itemid + '|0|' + afterNum;
+				console.log(arr[0] + '|' + itemid + '|0|' + afterNum);
+				break;
+			}
+		}
+		$.ajax({
+	    	type:"post",
+	    	url:api_url+"cart/sync_up",
+	    	dataType : 'json',
+	    	data :{app_type:'client',op_type:'reduce',id:user_id, name: 'cart_string', value: all_str.join(',')},
+	    	success : function(res){
+	    		if (res.status == 200) {
+					t.text(afterNum)
+					if (afterNum <= 1) {
+						domObj.find("i").removeClass('icon-jian-active');
+					} else {
+						domObj.siblings(".minus").eq(0).find("i").addClass('icon-jian-active')
+						//domObj.find("i").addClass('icon-jian-active');
+					}
+					t.val(afterNum)
+					t.attr('pre', afterNum);
+					TotalPrice()
+	    		} else {
+	    			if (res.status == 434) {
+	    				alert(res.content.error.message);
+	    				t.val(t.attr('pre'));
+	    			}
+	    		}
+	    		isChanging = false;
+	    	}
+	    });
+	}
 	var checkFlag = 0;
 	//最后添加进购物车的数组
 	var finalNum = [];
@@ -181,7 +270,7 @@ input.goodsCheck:checked{
 		if($(this).prop('checked') == true){
 			var url = $(this).siblings('.shop-info-text').find('a').attr('href'); 
 			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
-			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').text();
+			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').val();
 			console.log(shopNumList);
 			finalNum.push('1' + '|' + loc + '|0|' + shopNumList);
 			$('.settlement').css('background','#ff5353');
@@ -190,7 +279,7 @@ input.goodsCheck:checked{
 		else{
 			var url = $(this).siblings('.shop-info-text').find('a').attr('href'); 
 			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
-			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').text();
+			var shopNumList = $(this).siblings('.shop-info-text').find('.shop-arithmetic').find('.num').val();
 			var delShoplist = '1' + '|' + loc + '|0|' + shopNumList;
 			for (var i = 0;i <finalNum.length;i++) {
 				if(delShoplist == finalNum[i]){
@@ -225,7 +314,7 @@ input.goodsCheck:checked{
 				if($(this).parents(".shop-group-item").find(".goodsCheck").eq(i).prop("checked") == false){
 						var url = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-info-img').find('a').attr('href'); 
 						var loc = url.substring(url.lastIndexOf('=')+1, url.length);
-						var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').text();
+						var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').val();
 						finalNum.push('1' + '|' + loc + '|0|' + shopNumList);
 				};
 			}
@@ -243,7 +332,7 @@ input.goodsCheck:checked{
 				for (var i = 0;i < $(this).parents(".shop-group-item").find(".goodsCheck").length;i++) {
 			var url = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-info-img').find('a').attr('href'); ; 
 			var loc = url.substring(url.lastIndexOf('=')+1, url.length);
-			var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').text();
+			var shopNumList = $(this).parents('.shop-group-item').find('.itemlist').eq(i).find('.shop-arithmetic').find('.num').val();
 			var delShoplist = '1' + '|' + loc + '|0|' + shopNumList;
 			delShopListArr.push(delShoplist);
 			}
@@ -273,7 +362,7 @@ input.goodsCheck:checked{
 			finalNum = [];
 				for (var i = 0;i < $('.shop-info-img').length;i++) {
 			var allCartSelect = $('.shop-info-img').eq(i).find('a').attr('href');
-			var allCartSelectNum = $('.shop-arithmetic').eq(i).find('.num').text();
+			var allCartSelectNum = $('.shop-arithmetic').eq(i).find('.num').val();
 			var loc = allCartSelect.substring(allCartSelect.lastIndexOf('=')+1, allCartSelect.length);
 			//把数组清空
 			finalNum.push('1|' + loc + '|0|' + allCartSelectNum);
@@ -292,39 +381,55 @@ input.goodsCheck:checked{
 	    $('.settlement').attr('href',curCartList);
 		$(".shopCheck").change()
 	});
-
+	var shopPrice = [];
+	var testlist  = [];
+	var shopIndex = 0;
 	function TotalPrice() {
+		shopPrice = [];
+		shopIndex = 0;
 		var allprice = 0;
 		$(".shop-group-item").each(function() {
 			var oprice = 0;
 			$(this).find(".goodsCheck").each(function() {
 				if ($(this).is(":checked")) {
-					var num = parseInt($(this).parents(".shop-info").find(".num").text());
+					var num = parseInt($(this).parents(".shop-info").find(".num").val());
 					var price = parseFloat($(this).parents(".shop-info").find(".price").text());
 					var total = price * num;
 					oprice += total
+
+					// $("#nofreight").text(oprice)
 				}
-				$(this).closest(".shop-group-item").find(".ShopTotal").text(oprice.toFixed(2))
+	
+				$(this).closest(".shop-group-item").find(".ShopTotal").text(oprice.toFixed(2));
+				shopPrice[shopIndex] = oprice.toFixed(2);
 			});
-			var oneprice = parseFloat($(this).find(".ShopTotal").text());
-			allprice += oneprice
+			shopIndex++;
 		});
-		$("#AllTotal").text(allprice.toFixed(2))
+		for(let j = 0; j < shopIndex; j ++){
+			allprice += Math.ceil(shopPrice[j] * 100) / 100;
+		}
+		$("#AllTotal").text(allprice.toFixed(2));
 	}
+
 	$(".itemlist").on("swipeleft", function() {
 		$(".itemlist").addClass("unselected");
 		$(".itemlist").removeClass("selected");
 		$(this).addClass("selected");
 		$(this).removeClass("unselected");
+		var that = $(this);
 		$(this).find("a.remove").on("click", function() {
-		
+			var sku = that.attr('data');
+			if (sku == 'undefined') {
+				sku = 0;
+			}
 			//删除购物车
 			var delCartHref = $(this).siblings('.goodslist').find('.shop-info-text').find('a').attr('href');
-			var delCartText = $(this).siblings('.goodslist').find('.shop-arithmetic').text();
+			var delBizid = $(this).siblings('.goodslist').find('.shop-info-text').find('input').val();
+			var delCartText = $(this).siblings('.goodslist').find('.shop-arithmetic').find('.num').val();
 			
 			var loc = delCartHref.substring(delCartHref.lastIndexOf('=')+1, delCartHref.length);
 			//要删除的数据拼接
-			var delCartNum = '1|' + loc + '|0|' + delCartText; 
+			var delCartNum = delBizid + '|' + loc + '|' + sku + '|' + delCartText; 
 			for (var i = 0;i < finalNum.length;i++) {
 				if(finalNum[i] == delCartNum){
 					//当删除的时候,数组里面也删除

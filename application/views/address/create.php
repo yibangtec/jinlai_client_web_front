@@ -269,7 +269,8 @@
                 $('[name=county]').val(arr[2]);
             }
 
-            var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this']
+            var data_to_process = ['brief', 'fullname', 'mobile', 'province', 'city', 'county', 'street', 'zipcode', 'default_this'];
+            var newaddress_id = '';
             for (var index in data_to_process)
             {
                 params[ data_to_process[index] ] = $('[name='+ data_to_process[index] +']').val();
@@ -285,7 +286,8 @@
                     if (result.status == 200)
                     {
                         console.log(result.content);
-                        location.href = base_url + 'address/index' // 转到地址列表页
+                        newaddress_id = result.content.address_id;
+                        record(result.content.address_id);
 
                         //window.history.back(-1);
                     }
@@ -295,6 +297,17 @@
                     }
                 }
             )
+            function record(aid){
+               $.get('https://www.517ybang.com/address/addtosession?address_id=' + aid, function(){
+                    <?php if ($fromorder): ?>
+                        // location.href = base_url + 'cart/index';
+                        window.history.back(-1);
+                    <?php else: ?>
+                        location.href = base_url + 'address/index'; // 转到地址列表页
+                    <?php endif;?>
+               }); 
+            }
+            
 
              return false;
         });

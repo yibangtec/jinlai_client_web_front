@@ -6,9 +6,38 @@
     <script src="../js/rem.js"></script>
     <link rel="stylesheet" href="../css/fontStyle.css"/>
     <link rel="stylesheet" href="../css/refund.css"/>
+    <style>
+        .item-count{
+            padding-left: 2.5rem;
+
+        }
+        .item-count span{
+            display: inline-block;
+            padding: 0 0.2rem;
+            line-height: 0.4rem;
+            text-align: center;
+        }
+        .icon-jian{
+            font-size: 0.44rem;
+        }
+        .item-count .icon-add-add-red:before{
+            font-size: 0.44rem;
+            color: #FF3649;
+        }
+        
+    </style>
 </head>
 <body>
 <div class="box">
+
+
+
+
+
+
+
+
+
     <div class="placeholder-div"></div>
 
     <div class="refund-notice status1">
@@ -51,6 +80,9 @@
             </div>
             <div class="refund-amount">×1</div>
         </div>
+        <div class="item-count">
+            <i id="jian" class="icon-jian"></i><span class="current-count">1</span><i id="add" class="icon-add-add-red"></i>
+        </div>
     </div>
     <div class="refund-info">
         <div class="info-title">
@@ -73,6 +105,23 @@
     if(status == 1){
         status1.css('display','block');
     }
+
+    $('#add').on('click',function(){
+        var num = $('.countNum').val();
+        if(num<n){
+            num ++;
+            $('.countNum').val(num);
+        }
+
+    });
+    $('#jian').on('click',function(){
+        var num = $('.countNum').val();
+        if(num>1){
+            num --;
+            $('.countNum').val(num);
+        }
+
+    });
 </script>
 </body>
 </html>

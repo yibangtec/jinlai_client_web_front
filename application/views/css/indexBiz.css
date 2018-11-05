@@ -138,6 +138,8 @@ input:-webkit-autofill {
     position: relative;
     height: 100%;
     background-color: #fff;float: right;
+    overflow-y: auto;
+    padding-bottom: 1rem;
 
 }
 .priceInterval{
